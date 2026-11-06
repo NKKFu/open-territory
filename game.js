@@ -445,7 +445,7 @@ function upperFloors(place, color, floors) {
 function closedBuilding(x,z,w,d,color,floors) {
   const height=5+floors*3.8;
   block(x,.2,z,w+2,.35,d+2,'#d9d0b8');
-  block(x,height/2+.25,z,w,height,d,color);solid(x,z,w,d);
+  block(x,height/2+.25,z,w,height,d,color);solid(x,z,w,d).opaque=true;
   block(x,height+.4,z,w+1,.6,d+1,'#f2e5ca');block(x,height+.8,z,w-1,.25,d-1,pick(roofColors));
   for(let y=4.2;y<height-1;y+=3.8){
     for(let dx=-w/2+2.2;dx<w/2-1;dx+=3.5) facadeWindow(x+dx,y,z+d/2+.08,2);
@@ -479,8 +479,8 @@ function enterableBuilding(x,z,w,d,color,kind,name,floors=1) {
     block(sx,2.6,front+.17,.1,3,.1,'#dfe5d3');
   }
   block(x,4.5,front,doorW,1.4,.4,color);
-  solid(x-w/2,z,.45,d);solid(x+w/2,z,.45,d);solid(x,back,w,.45);
-  solid(x-(doorW/2+side/2),front,side,.45);solid(x+(doorW/2+side/2),front,side,.45);
+  for(const wall of [solid(x-w/2,z,.45,d),solid(x+w/2,z,.45,d),solid(x,back,w,.45),
+    solid(x-(doorW/2+side/2),front,side,.45),solid(x+(doorW/2+side/2),front,side,.45)])wall.opaque=true;
   place.door=doorAt(x,front,doorW-.16,kind==='hospital'||kind==='station');
   upperFloors(place,color,floors);
   const awning=kind==='police'?'#54809b':kind==='fire'?'#c76350':kind==='hospital'?'#e6e5d6':kind==='market'?'#e7ac79':kind==='gallery'?'#668f82':kind==='book'?'#8b9eb8':kind==='flower'?'#a6be8e':'#df907a';
@@ -1396,8 +1396,17 @@ speechTexture.colorSpace=THREE.SRGBColorSpace;
 const speechSprite=new THREE.Sprite(new THREE.SpriteMaterial({map:speechTexture,transparent:true,depthWrite:false}));
 speechSprite.scale.set(6.2,2.325,1);speechSprite.visible=false;scene.add(speechSprite);
 let activeSpeech=null;
-function clearSpeech(){activeSpeech=null;speechSprite.visible=false;}
+function clearSpeech(){
+  const person=activeSpeech?.target;
+  if(person?.g&&activeSpeech.pose){
+    person.g.rotation.y=activeSpeech.pose.yaw;
+    person.g.userData.limbs?.forEach((limb,i)=>limb.rotation.x=activeSpeech.pose.limbs[i]);
+  }
+  activeSpeech=null;speechSprite.visible=false;
+}
 function showSpeech(target,name,line){
+  clearSpeech();
+  const pose=target.g?{yaw:target.g.rotation.y,limbs:target.g.userData.limbs?.map(limb=>limb.rotation.x)||[]}:null;
   const ctx=speechContext;ctx.clearRect(0,0,1024,384);
   ctx.fillStyle='#faf4dc';ctx.strokeStyle='#668479';ctx.lineWidth=7;
   ctx.beginPath();ctx.moveTo(12,12);ctx.lineTo(1012,12);ctx.lineTo(1012,320);
@@ -1414,7 +1423,7 @@ function showSpeech(target,name,line){
   if(current)lines.push(current);
   lines.forEach((text,i)=>ctx.fillText(text,48,105+i*59,928));
   speechTexture.needsUpdate=true;speechSprite.material.opacity=1;speechSprite.visible=true;
-  activeSpeech={target,name,line,until:gameTime+Math.max(5.5,Math.min(9,line.length/11))};
+  activeSpeech={target,name,line,pose,until:gameTime+Math.max(5.5,Math.min(9,line.length/11))};
   updateSpeech();
 }
 function updateSpeech(){
@@ -1432,29 +1441,45 @@ function updateSpeech(){
   if(person)speechSprite.position.y=person.position.y+2.5+height/2;
   speechSprite.material.opacity=Math.min(1,(until-gameTime)*2);
 }
+function interactionReachable(x,z){
+  const start=player.position,steps=Math.max(1,Math.ceil(Math.hypot(x-start.x,z-start.z)/.12));
+  for(let i=1;i<steps;i++){
+    const px=start.x+(x-start.x)*i/steps,pz=start.z+(z-start.z)*i/steps;
+    if(solids.some(w=>w.opaque&&Math.abs(px-w.x)<w.w/2+.04&&Math.abs(pz-w.z)<w.d/2+.04))return false;
+    for(const p of places){
+      const d=p.door,ax=d.x+d.width/2+d.offset;
+      if(distanceToSegment(px,pz,ax,d.z,ax-Math.cos(d.angle)*d.width,d.z+Math.sin(d.angle)*d.width)<.14)return false;
+    }
+  }
+  return true;
+}
 function nearestInteraction(){
+  // E continues the current conversation even if another passerby comes closer.
+  const talking=activeSpeech?.target;
+  if(talking?.g&&!talking.ragdoll&&Math.hypot(player.position.x-talking.g.position.x,player.position.z-talking.g.position.z)<2.9&&interactionReachable(talking.g.position.x,talking.g.position.z))return {type:'person',data:talking};
   let best=null, bestDistance=3.4;
   for(const person of people){
     if(person.ragdoll)continue;
     const distance=Math.hypot(player.position.x-person.g.position.x,player.position.z-person.g.position.z);
-    if(distance<bestDistance&&distance<2.9){bestDistance=distance;best={type:'person',data:person};}
+    if(distance<bestDistance&&distance<2.9&&interactionReachable(person.g.position.x,person.g.position.z)){bestDistance=distance;best={type:'person',data:person};}
   }
   for(const car of cars){
+    if(car.auto||Math.abs(car.velocity)>.7)continue;
     const distance=Math.hypot(player.position.x-car.g.position.x,player.position.z-car.g.position.z);
-    if(distance<bestDistance&&distance<3.4){bestDistance=distance;best={type:'car',data:car};}
+    if(distance<bestDistance&&distance<3.4&&interactionReachable(car.g.position.x,car.g.position.z)){bestDistance=distance;best={type:'car',data:car};}
   }
   for(const animal of animals){
     const distance=Math.hypot(player.position.x-animal.g.position.x,player.position.z-animal.g.position.z);
-    if(distance<bestDistance&&distance<2.4){bestDistance=distance;best={type:'animal',data:animal};}
+    if(distance<bestDistance&&distance<2.4&&interactionReachable(animal.g.position.x,animal.g.position.z)){bestDistance=distance;best={type:'animal',data:animal};}
   }
   for(const bench of benches){
     if(bench.occupied||!bench.group.parent)continue;
     const distance=Math.hypot(player.position.x-bench.x,player.position.z-bench.z);
-    if(distance<bestDistance&&distance<2.4){bestDistance=distance;best={type:'bench',data:bench};}
+    if(distance<bestDistance&&distance<2.4&&interactionReachable(bench.x,bench.z)){bestDistance=distance;best={type:'bench',data:bench};}
   }
   for(const service of servicePoints){
     const distance=Math.hypot(player.position.x-service.x,player.position.z-service.z);
-    if(distance<bestDistance&&distance<2.4){bestDistance=distance;best={type:'service',data:service};}
+    if(distance<bestDistance&&distance<2.4&&interactionReachable(service.x,service.z)){bestDistance=distance;best={type:'service',data:service};}
   }
   return best;
 }
@@ -1471,9 +1496,16 @@ function standUp(){
 }
 function exitVehicle(c){
   const p=c.g.position,angle=c.g.rotation.y;
-  for(const side of [1,-1,2,-2]){
-    const x=p.x+Math.cos(angle)*3*side,z=p.z-Math.sin(angle)*3*side;
-    if(collides(x,z,.45)||vehicleBlocks(x,z,.45,c.g)||personBlocks(x,z,player))continue;
+  const halfWidth=(c.width??(c.kind==='bike'?.7:2.5))/2;
+  for(const side of [c.entrySide||1,-(c.entrySide||1)]){
+    const distance=halfWidth+.85,x=p.x+Math.cos(angle)*distance*side,z=p.z-Math.sin(angle)*distance*side;
+    let blocked=false;
+    // Check the complete step outside the cabin, not only the landing point.
+    for(let offset=halfWidth+.15;offset<=distance+.001;offset+=.1){
+      const sx=p.x+Math.cos(angle)*offset*side,sz=p.z-Math.sin(angle)*offset*side;
+      if(collides(sx,sz,.45)||vehicleBlocks(sx,sz,.45,c.g)||personBlocks(sx,sz,player)){blocked=true;break;}
+    }
+    if(blocked||Math.abs(groundHeight(x,z)-groundHeight(p.x,p.z))>.6)continue;
     player.position.set(x,groundHeight(x,z),z);player.rotation.y=angle;jumpHeight=0;player.visible=true;
     c.velocity=0;c.exitRequested=false;c.spots.forEach(l=>l.visible=false);if(c.rider)c.rider.visible=false;if(c.driver)c.driver.visible=false;
     if(c.reverse)c.reverse.emissiveIntensity=0;c.signal=null;vehicle=null;targetYaw=yaw;velocity.set(0,0,0);return true;
@@ -1507,7 +1539,8 @@ function interact(){
     showSpeech(person,person.name,lines[(person.talkCount||0)%lines.length]);person.talkCount=(person.talkCount||0)+1;
   }else{
     clearSpeech();
-    vehicle=candidate.data;vehicle.auto=false;vehicle.velocity=0;vehicleOrbit=0;cameraSafetySnap=true;vehicle.spots.forEach(l=>l.visible=true);if(vehicle.rider)vehicle.rider.visible=true;if(vehicle.driver)vehicle.driver.visible=true;
+    petting=null;player.rotation.x=0;player.userData.limbs[2].rotation.x=0;
+    vehicle=candidate.data;vehicle.entrySide=Math.sign((player.position.x-vehicle.g.position.x)*Math.cos(vehicle.g.rotation.y)-(player.position.z-vehicle.g.position.z)*Math.sin(vehicle.g.rotation.y))||1;vehicle.auto=false;vehicle.velocity=0;vehicleOrbit=0;cameraSafetySnap=true;vehicle.spots.forEach(l=>l.visible=true);if(vehicle.rider)vehicle.rider.visible=true;if(vehicle.driver)vehicle.driver.visible=true;
     player.visible=false;velocity.set(0,0,0);verticalVelocity=0;jumpHeight=0;
   }
 }
@@ -1742,6 +1775,15 @@ function impactActors(){
 function updatePeople(dt){
   for(const p of people){
     if(p.ragdoll)continue;
+    if(activeSpeech?.target===p&&Math.hypot(player.position.x-p.g.position.x,player.position.z-p.g.position.z)<3.5){
+      if(!p.sitting){
+        const facing=Math.atan2(player.position.x-p.g.position.x,player.position.z-p.g.position.z);
+        const delta=Math.atan2(Math.sin(facing-p.g.rotation.y),Math.cos(facing-p.g.rotation.y));
+        p.g.rotation.y+=delta*(1-Math.exp(-dt*7));
+        p.g.userData.limbs?.forEach((limb,i)=>limb.rotation.x=i===2?-.4+Math.sin(gameTime*3)*.1:0);
+      }
+      continue;
+    }
     if(p.stationary){
       if(p.chatting&&p.g.userData.limbs)p.g.userData.limbs[2].rotation.x=-.35+Math.sin(gameTime*2+p.phase)*.2;
       continue;
@@ -1921,9 +1963,9 @@ function animate(){
     vegetationOnPavement:vegetationPositions.filter(p=>isPaved(p.x,p.z)).length,terrainSamples:hills.map(([x,z])=>terrainHeight(x,z)),
     traffic:cars.filter(c=>c.auto).map(c=>({id:c.debugId||null,x:c.g.position.x,z:c.g.position.z,speed:c.velocity,driverShown:!!c.driver?.visible,stoppedReason:c.stoppedReason,signal:c.signal})),
     services:servicePoints.map(p=>({kind:p.kind,x:p.x,z:p.z,active:!!p.active})),
-    speech:activeSpeech?{name:activeSpeech.name,line:activeSpeech.line,remaining:activeSpeech.until-gameTime}:null,
+    speech:activeSpeech?{name:activeSpeech.name,line:activeSpeech.line,remaining:activeSpeech.until-gameTime,speaker:activeSpeech.target.g?{x:activeSpeech.target.g.position.x,z:activeSpeech.target.g.position.z}:null}:null,
     lighting:{places:litPlaces.map(p=>p.name),shopIntensity:shopLights[0].intensity,canopyIntensity:canopyLight.intensity},
-    debugPerson:people.find(p=>p.debugId==='yield')?.g.position||null});
+    debugPerson:people.find(p=>p.debugId==='yield')?.g.position||null,conversationActor:(()=>{const p=people.find(p=>p.debugId==='conversation');return p?{x:p.g.position.x,z:p.g.position.z,yaw:p.g.rotation.y,responding:activeSpeech?.target===p}:null;})()});
   }
   renderer.render(scene,camera);
 }
@@ -1960,6 +2002,24 @@ if(debugMode){
   if(destination==='driver'){
     const testCar=cars.find(c=>c.auto&&c.axis==='x'&&!c.curve);testCar.g.position.set(-36,groundHeight(-36,-3.3),-3.3);testCar.g.rotation.y=Math.PI/2;testCar.direction=1;testCar.laneRoad=0;testCar.velocity=0;testCar.debugId='driver';testCar.debugHoldUntil=20;
     player.position.set(-40,groundHeight(-40,3.7),3.7);yaw=0;pitch=.32;zoom=10;
+  }
+  if(destination==='boarding'){
+    const c=cars.find(c=>c.auto&&c.axis==='z');c.g.position.set(3.3,groundHeight(3.3,56),56);c.g.rotation.y=0;c.velocity=7;c.direction=1;c.laneRoad=0;c.debugId='boarding';
+    player.position.set(5.8,groundHeight(5.8,56),56);yaw=0;pitch=.32;
+  }
+  if(destination==='conversation'){
+    const p=people.find(p=>!p.indoor&&!p.stationary);p.g.position.set(-36,groundHeight(-36,16),16);Object.assign(p,{axis:'x',origin:-36,range:8,dir:1,speed:1.2,wait:0,debugId:'conversation'});
+    player.position.set(-36,groundHeight(-36,18.3),18.3);yaw=0;pitch=.32;
+  }
+  if(destination==='conversation-wall'){
+    const p=people.find(p=>!p.indoor&&!p.stationary);p.g.position.set(-36,groundHeight(-36,16),16);p.stationary=true;
+    solid(-36,17.1,5,.3).opaque=true;part(scene,-36,1.5,17.1,5,3,.3,'#c6c6b3');
+    player.position.set(-36,groundHeight(-36,18.3),18.3);yaw=0;pitch=.32;
+  }
+  if(destination==='exit-wall'){
+    const c=cars[0];c.g.position.set(-18,groundHeight(-18,60),60);c.g.rotation.y=0;
+    solid(-16.2,60,.35,6);part(scene,-16.2,1.5,60,.35,3,6,'#c6c6b3');
+    player.position.set(-20.8,groundHeight(-20.8,60),60);yaw=0;pitch=.32;
   }
   if(destination==='break'){const testCar=cars[0];testCar.g.position.set(-49,groundHeight(-49,12),12);testCar.g.rotation.y=0;player.position.set(-49,groundHeight(-49,8.8),8.8);yaw=0;pitch=.32;}
   if(destination==='yield'){
