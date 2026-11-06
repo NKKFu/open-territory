@@ -20,6 +20,8 @@ Os modelos fora da vista deixam de entrar nos lotes de desenho, preservando os q
 
 O ambient occlusion acrescenta sombras suaves nos encontros de paredes, móveis, personagens e chão. Ele acompanha a câmera e os objetos em movimento, com suavização que respeita as bordas. Navegadores sem os recursos WebGL necessários mantêm a iluminação normal.
 
+A paleta tem vegetação, fachadas e roupas mais coloridas, com um ajuste leve de contraste e saturação. Uma vinheta suave escurece as bordas sem reduzir a visibilidade do centro. Asfalto, reboco, calçadas, madeira, grama, areia e água usam texturas geradas no próprio jogo em um atlas de 512 × 256 pixels. Os detalhes mantêm uma escala coerente entre objetos de tamanhos diferentes; os quarteirões continuam compartilhando os lotes de desenho.
+
 Os sons começam no primeiro clique ou comando de teclado, respeitando o bloqueio de reprodução automática do navegador. Há vento, mar perto da praia, aves durante o dia, passos diferentes no piso e na grama, motores com volume e posição conforme a distância, portas e impactos. O áudio é gerado no próprio jogo, sem arquivos ou serviços externos. O volume também pode ser controlado ou silenciado pela aba do navegador.
 
 ## Controles
@@ -45,6 +47,8 @@ Os moradores alternam destinos e afazeres: casa, trabalho, comida, leitura, celu
 
 Os pombos dão pequenos voos pela praça e reagem em grupos quando alguém corre perto. As asas acompanham o voo e fazem um ruído discreto; o pouso procura espaço livre e espera quando alguém ocupa o local. Os mesmos animais retomam seus passeios depois, sem aumentar a quantidade de modelos na cidade.
 
+Há murais junto ao café, à galeria e a um dos residenciais. Dora pinta ao lado do Café Aurora, faz pausas e continua sua rotina; uma conversa interrompe o trabalho e ela volta a usar o pincel depois. A água tem movimento na superfície, a fonte produz pequenas ondas onde as gotas caem e algumas folhas flutuam com a brisa. Esses efeitos usam conjuntos fixos de instâncias, sem criar novos objetos a cada quadro.
+
 O trânsito mantém distância de outros veículos e freia para pedestres. Nas vias com duas faixas no mesmo sentido, pode mudar de faixa para contornar um veículo, quando a faixa vizinha está livre e longe do PARE. Após uma batida significativa com o jogador, o motorista para, liga o pisca-alerta, procura uma saída livre, sai para conferir e volta ao carro antes de retomar a rota. Faróis do jogador e do trânsito próximo iluminam o chão durante a noite. Há também bicicletas utilizáveis, ciclo de dia e noite, partículas e objetos que se quebram quando atingidos por um veículo.
 
 Cada roda acompanha o piso que está desenhado, incluindo rampas, meio-fio e relevo, com inclinação da carroceria e curso de suspensão. A direção responde gradualmente e fica menos brusca em alta velocidade; aceleração, curvas e frenagem também afetam a carroceria. O ciclista se apoia no selim, segura o guidão e acompanha os pedais. A câmera inicial fica mais próxima da altura da rua e procura uma vista por cima de coberturas baixas quando necessário.
@@ -53,7 +57,7 @@ A cidade é um mundo pequeno e delimitado visualmente pelo mar e pela floresta. 
 
 ## Verificação
 
-Os testes de reserva de atividades, suspensão de rotinas e viagens, continuidade fora da câmera, reação dos motoristas a colisões, transformações dos modelos, apoio das rodas em pisos, meios-fios e encostas e voos dos pombos usam o executor nativo do Node.js:
+Os testes de reserva de atividades, suspensão de rotinas, pintura e viagens, continuidade fora da câmera, reação dos motoristas a colisões, transformações e texturas dos modelos, apoio das rodas em pisos, meios-fios e encostas e voos dos pombos usam o executor nativo do Node.js:
 
 ```sh
 node --test tests/*.test.mjs
@@ -63,4 +67,4 @@ As interações e a navegação do mapa também precisam ser verificadas no nave
 
 ## Pontos para revisão
 
-Para inspecionar o estado no navegador, acrescente `?debug` à URL. Cenários úteis: `?debug&near=cafe`, `hospital`, `station`, `bike`, `pet`, `birds`, `seat`, `car`, `curb`, `vehicle-hill`, `break`, `cross`, `ring`, `coast`, `curve`, `loop`, `hill`, `yield`, `turn`, `police`, `fire`, `police-info`, `fire-water`, `officer`, `firefighter`, `patrol`, `engine`, `driver`, `conversation`, `conversation-wall`, `boarding`, `exit-wall`, `home`, `restaurant`, `bus`, `bus-stop`, `pare`, `oneway`, `parking`, `avoid`, `avoid-blocked`, `incident`, `routine-home` ou `routine-bus` (mantenha `near=` antes do nome). `&time=120` inicia à noite. Os dados de diagnóstico ficam no atributo `data-city` do elemento HTML e não aparecem durante a exploração normal; incluem distância dos pneus ao piso, estado do áudio e do ambient occlusion.
+Para inspecionar o estado no navegador, acrescente `?debug` à URL. Cenários úteis: `?debug&near=cafe`, `hospital`, `station`, `bike`, `pet`, `birds`, `mural`, `fountain`, `seat`, `car`, `curb`, `vehicle-hill`, `break`, `cross`, `ring`, `coast`, `curve`, `loop`, `hill`, `yield`, `turn`, `police`, `fire`, `police-info`, `fire-water`, `officer`, `firefighter`, `patrol`, `engine`, `driver`, `conversation`, `conversation-wall`, `boarding`, `exit-wall`, `home`, `restaurant`, `bus`, `bus-stop`, `pare`, `oneway`, `parking`, `avoid`, `avoid-blocked`, `incident`, `routine-home` ou `routine-bus` (mantenha `near=` antes do nome). `&time=120` inicia à noite. Os dados de diagnóstico ficam no atributo `data-city` do elemento HTML e não aparecem durante a exploração normal; incluem distância dos pneus ao piso, estado do áudio, dos efeitos, das texturas e do ambient occlusion.

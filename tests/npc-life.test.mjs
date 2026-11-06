@@ -88,3 +88,15 @@ test('a bus journey suspends a routine until the resident finishes disembarking'
   resident.busState=null;resident.inBus=false;resident.routineFinished=true;life.update(.1,101);
   assert.equal(life.snapshot()[0].destination,'rest');assert.equal(life.snapshot()[0].state,'activity');
 });
+
+test('painting pauses for a conversation and resumes with the same reusable tools',()=>{
+  const painter=person('Painter');painter.routine=['paint'];
+  const {life,talk}=setup([painter],[{id:'mural',x:0,z:0,activity:'paint',capacity:1,duration:100,rotation:Math.PI/2}],{moveTo:()=>true});
+  life.update(.1,0);life.update(.1,.1);
+  const brush=painter.g.getObjectByName('routine-paint-brush'),palette=painter.g.getObjectByName('routine-paint-palette');
+  assert.ok(brush?.visible&&palette?.visible);let count=0;painter.g.traverse(()=>count++);
+  talk(true);painter.g.rotation.y=0;life.update(5,5);assert.equal(brush.visible,false);assert.equal(palette.visible,false);
+  talk(false);life.update(.1,5.1);assert.equal(brush.visible,true);assert.equal(life.snapshot()[0].destination,'mural');
+  life.update(.5,5.6);assert.ok(Math.abs(painter.g.rotation.y-Math.PI/2)<.1,'faces the wall again after talking');
+  let after=0;painter.g.traverse(()=>after++);assert.equal(after,count);
+});

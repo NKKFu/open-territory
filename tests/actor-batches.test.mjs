@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as THREE from '../vendor/three.module.js';
 import {createActorBatches} from '../actor-batches.js';
+import {createCitySurfaces} from '../city-surfaces.js';
 
 test('draw batches preserve articulated world transforms and visibility',()=>{
   const scene=new THREE.Scene(),actor=new THREE.Group(),arm=new THREE.Group();
@@ -56,4 +57,18 @@ test('actors outside the camera are omitted and return with their current pose',
   const matrix=new THREE.Matrix4();batch.getMatrixAt(0,matrix);
   matrix.elements.forEach((v,i)=>assert.ok(Math.abs(v-hand.matrixWorld.elements[i])<.00001));
   actor.position.x=100;batches.update([actor],camera);assert.equal(batch.count,0);
+});
+
+test('textured color palettes retain their shared atlas and stay separate from plain actors',()=>{
+  const atlas=new THREE.DataTexture(new Uint8Array([255,255,255,255]),1,1),surfaces=createCitySurfaces({THREE,atlas});
+  const scene=new THREE.Scene(),root=new THREE.Group();scene.add(root);
+  for(const color of ['#d48e79','#7facb8'])root.add(new THREE.Mesh(new THREE.BoxGeometry(),surfaces.decorate(new THREE.MeshStandardMaterial({color}),2)));
+  root.add(new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial({color:'#ffffff'})));
+  const batches=createActorBatches({THREE,scene});batches.update([root]);
+  const meshes=scene.children.filter(o=>o.isInstancedMesh),textured=meshes.find(m=>m.material.userData.citySurface===2);
+  assert.equal(meshes.length,2);assert.equal(textured.count,2);
+  const shader={uniforms:{},vertexShader:THREE.ShaderLib.standard.vertexShader,fragmentShader:THREE.ShaderLib.standard.fragmentShader};
+  textured.material.onBeforeCompile(shader);
+  assert.equal(shader.uniforms.cityAtlas.value,atlas);assert.equal(shader.uniforms.cityKind.value,2);
+  const color=new THREE.Color();textured.getColorAt(0,color);assert.ok(Math.abs(color.r-new THREE.Color('#d48e79').r)<.00001);
 });

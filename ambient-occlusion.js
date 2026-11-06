@@ -2,7 +2,10 @@
 // Only the small AO buffer is sampled repeatedly; color is rendered once.
 export function createAmbientOcclusion({THREE:T,renderer,scene,camera,software=false}){
   const supported=renderer.capabilities.isWebGL2&&renderer.extensions.has('EXT_color_buffer_float');
-  if(!supported)return {render:()=>renderer.render(scene,camera),snapshot:()=>({enabled:false,reason:'depth-render-target-unavailable'})};
+  if(!supported){
+    renderer.domElement.parentElement?.classList.add('post-fallback');
+    return {render:()=>renderer.render(scene,camera),snapshot:()=>({enabled:false,reason:'depth-render-target-unavailable',vignette:true})};
+  }
   const colorTarget=new T.WebGLRenderTarget(1,1,{type:T.HalfFloatType,depthBuffer:true});
   colorTarget.depthTexture=new T.DepthTexture(1,1,T.UnsignedIntType);
   colorTarget.texture.colorSpace=T.LinearSRGBColorSpace;
@@ -80,13 +83,16 @@ export function createAmbientOcclusion({THREE:T,renderer,scene,camera,software=f
   });
   const compositeMaterial=new T.ShaderMaterial({
     depthTest:false,depthWrite:false,vertexShader,
-    uniforms:{tColor:{value:colorTarget.texture},tAO:{value:aoTarget.texture},colorTexel:{value:new T.Vector2()},strength:{value:1}},
+    uniforms:{tColor:{value:colorTarget.texture},tAO:{value:aoTarget.texture},colorTexel:{value:new T.Vector2()},strength:{value:1},vignette:{value:.28},saturation:{value:1.14},contrast:{value:1.025}},
     fragmentShader:`
       varying vec2 vUv;
       uniform sampler2D tColor;
       uniform sampler2D tAO;
       uniform vec2 colorTexel;
       uniform float strength;
+      uniform float vignette;
+      uniform float saturation;
+      uniform float contrast;
       vec3 sceneColor(){
         vec3 center=texture2D(tColor,vUv).rgb;
         ${software?`
@@ -111,6 +117,11 @@ export function createAmbientOcclusion({THREE:T,renderer,scene,camera,software=f
         float shade=texture2D(tAO,vUv).r;
         gl_FragColor=vec4(sceneColor()*mix(1.0,shade,strength),1.0);
         #include <tonemapping_fragment>
+        float luminance=dot(gl_FragColor.rgb,vec3(0.2126,0.7152,0.0722));
+        gl_FragColor.rgb=mix(vec3(luminance),gl_FragColor.rgb,saturation);
+        gl_FragColor.rgb=max(vec3(0.0),(gl_FragColor.rgb-0.18)*contrast+0.18);
+        float edge=smoothstep(0.27,0.73,length((vUv-vec2(0.5,0.52))*vec2(0.95,1.0)));
+        gl_FragColor.rgb*=1.0-vignette*edge;
         #include <colorspace_fragment>
       }
     `
@@ -139,9 +150,14 @@ export function createAmbientOcclusion({THREE:T,renderer,scene,camera,software=f
       quad.material=compositeMaterial;renderer.setRenderTarget(previous);renderer.render(postScene,postCamera);
       renderer.info.autoReset=autoReset;
     },
-    snapshot:()=>({enabled:true,method:'SSAO',samples:software?8:16,width:aoTarget.width,height:aoTarget.height}),
+    snapshot:()=>({enabled:true,method:'SSAO',samples:software?8:16,width:aoTarget.width,height:aoTarget.height,vignette:compositeMaterial.uniforms.vignette.value,saturation:compositeMaterial.uniforms.saturation.value}),
     // Kept out of the game's interface; useful for a fixed-frame visual review.
     setStrength(value){compositeMaterial.uniforms.strength.value=Math.max(0,Math.min(1,value));},
+    setLook({vignette=.28,saturation=1.14,contrast=1.025}={}){
+      compositeMaterial.uniforms.vignette.value=Math.max(0,Math.min(.6,vignette));
+      compositeMaterial.uniforms.saturation.value=Math.max(0,Math.min(1.4,saturation));
+      compositeMaterial.uniforms.contrast.value=Math.max(.8,Math.min(1.2,contrast));
+    },
     dispose(){colorTarget.dispose();aoTarget.dispose();blurTarget.dispose();aoMaterial.dispose();blurMaterial.dispose();compositeMaterial.dispose();quad.geometry.dispose();}
   };
 }

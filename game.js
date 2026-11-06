@@ -7,6 +7,9 @@ import {vehicleGroundPose} from './vehicle-grounding.js';
 import {createAmbientOcclusion} from './ambient-occlusion.js';
 import {createCityAudio} from './city-audio.js';
 import {createBirdLife} from './bird-life.js';
+import {createCitySurfaces,surfaceKind,cityPigment} from './city-surfaces.js';
+import {createWorldEffects} from './world-effects.js';
+import {addStreetArt} from './street-art.js';
 
 // Open Territory: geometria low-poly criada no próprio jogo, sem modelos externos.
 const $ = (selector) => document.querySelector(selector);
@@ -23,11 +26,12 @@ renderer.shadowMap.enabled = !softwareRendering;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.13;
+renderer.toneMappingExposure = 1.08;
 $('#world').appendChild(renderer.domElement);
 const camera = new THREE.PerspectiveCamera(58, innerWidth / innerHeight, 0.1, 1000);
 const ambientOcclusion=createAmbientOcclusion({THREE,renderer,scene,camera,software:softwareRendering});
 const cityAudio=createCityAudio();
+const citySurfaces=createCitySurfaces({THREE,enabled:renderer.capabilities.maxVaryings>=12,software:softwareRendering});
 const ambient=new THREE.HemisphereLight('#eaf9ff', '#738e69', 2.15);scene.add(ambient);
 const sunlight = new THREE.DirectionalLight('#fff0d0', 2.7);
 sunlight.position.set(-75, 130, 75);
@@ -43,7 +47,7 @@ scene.add(sunlight.target);
 const materials = new Map();
 const cube = new THREE.BoxGeometry(1, 1, 1);
 function material(color) {
-  if (!materials.has(color)) materials.set(color, new THREE.MeshStandardMaterial({ color, roughness: 0.82 }));
+  if (!materials.has(color)) materials.set(color,citySurfaces.decorate(new THREE.MeshStandardMaterial({color:cityPigment(color),roughness:surfaceKind(color)===7?.35:.82,metalness:surfaceKind(color)===7?.06:0}),surfaceKind(color)));
   return materials.get(color);
 }
 const batches = new Map();
@@ -73,9 +77,11 @@ function flushBlocks() {
       if(!grouped.has(key))grouped.set(key,{kind,items:[]});grouped.get(key).items.push({color,matrix});
     }
   }
-  const paletteMaterial=new THREE.MeshStandardMaterial({color:'#ffffff',roughness:.82});
+  const paletteMaterial=citySurfaces.decorate(new THREE.MeshStandardMaterial({color:'#ffffff',roughness:.82}),0,true);
   for (const {kind,items} of grouped.values()) {
-    const mesh = new THREE.InstancedMesh(cube, kind==='lamps'?material('#ffefba'):paletteMaterial, items.length);
+    const geometry=kind==='lamps'?cube:cube.clone();
+    if(kind!=='lamps')geometry.setAttribute('citySurface',new THREE.InstancedBufferAttribute(new Float32Array(items.map(item=>surfaceKind(item.color))),1));
+    const mesh = new THREE.InstancedMesh(geometry, kind==='lamps'?material('#ffefba'):paletteMaterial, items.length);
     items.forEach(({color,matrix},index)=>{mesh.setMatrixAt(index,matrix);if(kind!=='lamps')mesh.setColorAt(index,material(color).color);});
     mesh.instanceMatrix.needsUpdate = true;
     if(mesh.instanceColor)mesh.instanceColor.needsUpdate=true;
@@ -227,6 +233,7 @@ const pavedAreas=[
 // Useful objects sit on connected paving instead of isolated patches of grass.
 for(const [x,z,w,d] of [[-55,58,14,4],[20,53.5,12,7.5],[12.5,55.5,5,3],[25,50,4,3],[91,53.5,9,7.5],[85,55.5,7,3],[-36,65,3.4,8],[85.5,21,6.5,3],[-85,-90,6,3],[-61.5,-44,4,2.5]])pavedAreas.push({x,z,w,d,top:.23,kind:'forecourt'});
 for(const [x,z] of [[-104,-104],[-104,-36],[-104,36],[-36,-36],[36,-36],[36,36],[104,36]])pavedAreas.push({x,z:z+12,w:23,d:3,top:.23,kind:'forecourt'});
+pavedAreas.push({x:17.5,z:36,w:13,d:3.2,top:.23,kind:'path'});
 const vacantLots=[{x:164,z:-103,w:30,d:20}];
 const busStops=[
   {id:'acacias',name:'Acácias',x:-61.7,z:-36,roadX:-68.7,roadZ:-36,rotation:-Math.PI/2},
@@ -858,6 +865,7 @@ function pump(x,z) {
 // Posto integrado ao bairro, com loja, bombas e cobertura.
 block(104,.13,-27.7,30,.25,34.4,'#ded8c6');
 const station=enterableBuilding(104,-50,22,10,'#ecdfc5','station','POSTO SOL',1);
+const streetArt=addStreetArt({THREE,scene,places});
 for(const x of [98,110])for(const z of [-35,-26])pump(x,z);
 for(const x of [93,115])for(const z of [-40,-21])block(x,3,z,.5,6,.5,'#d1d6c7');
 for(const x of [98,110])for(const z of [-35,-26])block(x,5.9,z,2,.12,1.2,'#ffefba');
@@ -894,10 +902,6 @@ function smallPlaza() {
   planter(108,99);bin(99,106);
 }
 plaza();smallPlaza();
-const fountainDrops=[];
-for(let i=0;i<10;i++){
-  const drop=part(scene,-36,2.8,36,.18,.18,.18,'#b9e2dd');fountainDrops.push({mesh:drop,phase:i/10});
-}
 
 // Calçadas ganham bancos, lixeiras, árvores, postes, pontos de ônibus e serviços.
 for(const road of roads)for(const side of [-1,1]){
@@ -1525,6 +1529,10 @@ servicePatrol(44,-84,'police','Mara · policial',['Estou fazendo a ronda por est
 worker(-44,53,'Zeca · vendedor de pipoca','Pipoca quentinha para passear pela praça!','#e7b875','#f5dec0');
 const urbanCleaner=worker(-86,31,'Célia · limpeza urbana','Ajudo a deixar a praça e as calçadas cuidadas.','#7ea38a','#729781');
 Object.assign(urbanCleaner,{stationary:false,lifeResident:true,routine:['work','rest','work','phone'],initialDestination:'limpeza-mercado'});
+const urbanPainter=worker(23.4,36,'Dora · artista de rua','A maré inspirou as cores deste mural.','#d77d68','#728e9f');
+Object.assign(urbanPainter,{stationary:false,lifeResident:true,fixedScale:1,routine:['paint','rest','chat','paint'],initialDestination:'mural-aurora'});
+part(urbanPainter.g,0,1.17,.27,.65,.61,.05,'#dde0c2');
+for(const [x,y,color] of [[-.15,1.3,'#4d9eac'],[.1,1.17,'#edc86a'],[-.1,.99,'#df9874']])part(urbanPainter.g,x,y,.302,.12,.09,.015,color);
 // Carrinho do vendedor, com rodas, toldo e grãos de pipoca.
 block(-47,.8,53,2.1,1.6,1.2,'#f2d5ad');solid(-47,53,2.1,1.2);
 block(-47,1.65,53,2.3,.12,1.4,'#d57962');
@@ -2116,6 +2124,7 @@ function interact(){
     const person=candidate.data;
     const activities={home:['Vou passar em casa antes de continuar o dia.','Nada como um pouco de sossego em casa.'],
       work:['Vou cuidar de umas coisas no trabalho.','Estou cuidando desse cantinho para deixar tudo em ordem.'],
+      paint:['Vou voltar ao mural depois desta pausa.','A maré inspirou as cores deste mural. Estou terminando alguns detalhes.'],
       eat:['Vou procurar alguma coisa para comer.','Uma pausa para comer e depois continuo o passeio.'],
       read:['Vou achar um lugar tranquilo para ler.','Esse livro está me prendendo a atenção.'],
       phone:['Vou parar um instante para ver uma mensagem.','Só estou respondendo uma mensagem. Já volto ao passeio.'],
@@ -2762,10 +2771,7 @@ function updatePeople(dt){
   }
 }
 function updateBoats(){
-  fountainDrops.forEach((drop,i)=>{
-    const t=(gameTime*.6+drop.phase)%1,angle=i*Math.PI*2/10,radius=.5+t*2.6;
-    drop.mesh.position.set(-36+Math.cos(angle)*radius,2.6+t*2.5-t*t*3.8,36+Math.sin(angle)*radius);
-  });
+  worldEffects.update(gameTime,vehicle?vehicle.g.position:player.position,nightAmount);
   for(const boat of boats){
     boat.g.position.x=boat.baseX+Math.sin(gameTime*.13+boat.phase)*.7;
     boat.g.position.y=.15+Math.sin(gameTime*.8+boat.phase)*.12;
@@ -2921,7 +2927,7 @@ function updateContactShadows(){
 }
 
 // Vizinhança se transforma devagar: céu, sol, lua, luz das ruas e interiores.
-const nightSky=new THREE.Color('#1f344a'),daySky=new THREE.Color('#a9dce5'),skyColor=new THREE.Color();
+const nightSky=new THREE.Color('#1f344a'),daySky=new THREE.Color('#98d2e3'),skyColor=new THREE.Color();
 const streetLights=Array.from({length:3},()=>{const light=new THREE.PointLight('#ffe1a4',0,18,1.5);scene.add(light);return light;});
 // Duas fontes em cada construção próxima mantêm o salão iluminado.
 const shopLights=Array.from({length:4},()=>{const light=new THREE.PointLight('#ffe5bb',0,26,1.45);scene.add(light);return light;});
@@ -2935,7 +2941,8 @@ function updateDayNight(time,dt){
   const sunHeight=Math.cos(cycle);
   const daylight=THREE.MathUtils.smoothstep(sunHeight,-.22,.38);
   skyColor.copy(nightSky).lerp(daySky,daylight);scene.background.copy(skyColor);scene.fog.color.copy(skyColor);
-  ambient.intensity=.48+1.67*daylight;sunlight.intensity=.12+2.58*daylight;
+  // Approximate the room's bounced light so faces remain readable at night.
+  ambient.intensity=.48+1.67*daylight+(currentPlace?.28*(1-daylight):0);sunlight.intensity=.12+2.58*daylight;
   sunlight.color.set(sunHeight<.4&&sunHeight>-.2?'#ffd5a4':'#fff0d0');
   skySun.visible=daylight>.25;sunHalo.visible=skySun.visible;moon.visible=daylight<.75;
   skySun.position.y=45+Math.sin(cycle)*13;sunHalo.position.y=skySun.position.y;
@@ -3024,7 +3031,7 @@ function animate(){
     gameTime+=step;updateSignals(gameTime);updateDoors(step);updatePlayer(step);updateTraffic(step);updateBusPassengers(step);npcLife.update(step,gameTime);updatePeople(step);updateAnimals(step);impactActors();
     updateRagdolls(step);updateParticles(step);updateDebris(step);
   }
-  updateBoats();updateServiceEffects();updateActorVisibility(dt);updateVehicleGrounding(dt);updateGroundingDiagnostics(dt);updateDayNight(gameTime,dt);updateSpeech();
+  updateBoats();updateServiceEffects();updateActorVisibility(dt);updateVehicleGrounding(dt);updateGroundingDiagnostics(dt);updateDayNight(gameTime,dt);citySurfaces.update(gameTime);updateSpeech();
   cars.forEach(animateVehicleLights);
   const transition=updateIndoorVisibility();updateCamera(dt,transition);
   cityAudio.update({dt,time:gameTime,position:vehicle?vehicle.g.position:player.position,yaw,vehicle,vehicles:cars,
@@ -3037,7 +3044,7 @@ function animate(){
   if(debugMode){
     metricFrames++;const now=performance.now();if(now-metricTime>=1000){metricFps=metricFrames*1000/(now-metricTime);metricFrames=0;metricTime=now;}
     document.documentElement.dataset.city=JSON.stringify({time:gameTime,fps:metricFps,drawCalls:renderer.info.render.calls,camera:{x:camera.position.x,y:camera.position.y,z:camera.position.z},player:{x:player.position.x,y:player.position.y,z:player.position.z,ground:groundHeight(player.position.x,player.position.z),ragdoll:!!playerActor.ragdoll},car:vehicle?{x:vehicle.g.position.x,z:vehicle.g.position.z,speed:vehicle.velocity,kind:vehicle.kind||'car',role:vehicle.role||null,driverShown:!!vehicle.driver?.visible,emergencyLights:!!vehicle.emergency?.on,signal:vehicle.signal||null,reverse:vehicle.velocity<-.3,braking:!!vehicle.braking}:null,inside:currentPlace?.name||null,candidate:nearestInteraction()?.type||null,doors:places.map(p=>({name:p.name,x:p.door.x,z:p.door.z,angle:p.door.angle,offset:p.door.offset,automatic:p.door.automatic,open:p.door.open})),people:people.length,cars:cars.length,petting:!!petting,sitting:!!sitting,props:destructibles.filter(p=>p.active).length,debris:debris.length,
-    vegetationOnPavement:vegetationPositions.filter(p=>isPaved(p.x,p.z)).length,terrainSamples:hills.map(([x,z])=>terrainHeight(x,z)),grounding:groundingDebug,routines:npcLife.snapshot(),birds:birdLife.snapshot(),audio:cityAudio.snapshot(),rendering:{software:softwareRendering,pixelRatio:renderer.getPixelRatio(),shadows:renderer.shadowMap.enabled,ambientOcclusion:ambientOcclusion.snapshot()},
+    vegetationOnPavement:vegetationPositions.filter(p=>isPaved(p.x,p.z)).length,terrainSamples:hills.map(([x,z])=>terrainHeight(x,z)),grounding:groundingDebug,routines:npcLife.snapshot(),birds:birdLife.snapshot(),audio:cityAudio.snapshot(),effects:worldEffects.snapshot(),rendering:{software:softwareRendering,pixelRatio:renderer.getPixelRatio(),shadows:renderer.shadowMap.enabled,surfaces:citySurfaces.snapshot(),ambientOcclusion:ambientOcclusion.snapshot()},
     incidents:cars.filter(c=>c.incident||c.incidentCount).map(c=>({id:c.debugId||null,state:c.incident?.state||null,count:c.incidentCount,speed:c.velocity,hazards:!!c.hazards,driverShown:c.driver.visible,actor:c.incident?.actor?{x:c.incident.actor.g.position.x,z:c.incident.actor.g.position.z}:null})),
     traffic:cars.filter(c=>c.auto).map(c=>({id:c.debugId||null,x:c.g.position.x,z:c.g.position.z,speed:c.velocity,driverShown:!!c.driver?.visible,stoppedReason:c.stoppedReason,signal:c.signal})),
     services:servicePoints.map(p=>({kind:p.kind,x:p.x,z:p.z,active:!!p.active})),
@@ -3067,6 +3074,8 @@ if(debugMode){
   if(destination==='beach'){player.position.set(0,0,-145);yaw=0;pitch=.15;}
   if(destination==='bike'){player.position.set(-51,groundHeight(-51,60.7),60.7);yaw=0;pitch=.32;}
   if(destination==='pet'){player.position.set(-24,groundHeight(-24,29),29);yaw=0;pitch=.32;}
+  if(destination==='mural'){player.position.set(20.8,groundHeight(20.8,35.2),35.2);yaw=-Math.PI/2;pitch=.25;}
+  if(destination==='fountain'){player.position.set(-36,groundHeight(-36,43.4),43.4);yaw=0;pitch=.42;}
   if(destination==='birds'){
     animals.filter(a=>a.type==='pigeon').slice(0,3).forEach((bird,i)=>{const x=-45+i*1.4,z=30+(i%2)*.8;bird.g.position.set(x,groundHeight(x,z),z);bird.originX=x;bird.originZ=z;});
     player.position.set(-45,groundHeight(-45,24),24);yaw=Math.PI;pitch=.32;
@@ -3191,7 +3200,8 @@ const lifeLocations=[
   {id:'mares-descanso',x:147,z:36,activity:'rest',capacity:1},
   {id:'padaria-vizinhos',x:-95,z:-21,activity:'chat',capacity:2},
   {id:'livraria-celular',x:46,z:-22,activity:'phone',capacity:1},
-  {id:'mercado-limpeza',x:-98,z:51,activity:'work',capacity:1}
+  {id:'mercado-limpeza',x:-98,z:51,activity:'work',capacity:1},
+  {id:'mural-aurora',x:23.4,z:36,activity:'paint',capacity:1,rotation:Math.PI/2}
 ];
 for(const p of places){
   if(p.kind==='home'||p.kind==='residence')lifeLocations.push({id:`casa-${p.kind}-${p.x}`,x:p.x,z:p.z+2,activity:'home',capacity:2});
@@ -3204,7 +3214,7 @@ for(const stop of busStops)lifeLocations.push({id:`espera-${stop.id}`,x:stop.x+(
 const initialResidents=people.filter(p=>!p.stationary&&!p.indoor&&!p.role&&!p.debugId);
 const initialSpots=lifeLocations.filter(l=>!['wait','home'].includes(l.activity));
 for(let i=0;i<Math.min(22,initialResidents.length,initialSpots.length);i++){
-  const person=initialResidents[i],spot=initialSpots[i];if(person===urbanCleaner)continue;
+  const person=initialResidents[i],spot=initialSpots[i];if(person===urbanCleaner||person===urbanPainter)continue;
   if(collides(spot.x,spot.z,.5)||vehicleBlocks(spot.x,spot.z,.5,null)||people.some(p=>p!==person&&Math.hypot(p.g.position.x-spot.x,p.g.position.z-spot.z)<1.3))continue;
   person.g.position.set(spot.x,groundHeight(spot.x,spot.z),spot.z);person.g.rotation.y=spot.rotation||0;
   person.lifeResident=true;person.indoor=!!placeContaining(spot.x,spot.z);person.initialDestination=spot.id;
@@ -3239,6 +3249,7 @@ if(debugMode&&new URLSearchParams(location.search).get('near')==='seat'){
 }
 const actorBatches=createActorBatches({THREE,scene});
 const contactShadows=createContactShadows();
+const worldEffects=createWorldEffects({THREE,scene,groundHeight});
 const birdLife=createBirdLife({birds:animals.filter(a=>a.type==='pigeon'),groundHeight,random,isPetting:b=>petting?.animal===b,
   canTravel:(x,z)=>!collides(x,z,.3)&&!vehicleBlocks(x,z,.3,null),
   canLand:(x,z)=>!collides(x,z,.4)&&!pointOnRoad(x,z)&&!vehicleBlocks(x,z,.4,null)&&!personBlocks(x,z,player)&&(vehicle||Math.hypot(x-player.position.x,z-player.position.z)>1),

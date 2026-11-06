@@ -17,10 +17,10 @@ export function createActorBatches({THREE:T,scene}){
     const mat=source.material;
     const mergeColor=mat.isMeshStandardMaterial&&!mat.isMeshPhysicalMaterial&&!mat.transparent&&!mat.map&&!mat.normalMap&&!mat.roughnessMap&&!mat.metalnessMap&&!mat.emissiveMap&&
       mat.emissive.getHex()===0&&mat.opacity===1&&mat.depthWrite&&mat.depthTest&&mat.blending===T.NormalBlending&&!mat.wireframe&&!mat.polygonOffset&&mat.alphaTest===0&&!mat.vertexColors&&!mat.clippingPlanes?.length;
-    const style=mergeColor?`palette:${mat.roughness}:${mat.metalness}:${mat.side}:${mat.flatShading}:${mat.fog}`:mat.uuid;
+    const style=mergeColor?`palette:${mat.roughness}:${mat.metalness}:${mat.side}:${mat.flatShading}:${mat.fog}:${mat.userData.citySurface||0}`:mat.uuid;
     const key=`${geometryKey(source.geometry)}:${style}:${mergeColor||!!source.instanceColor}`;
     if(!pools.has(key)){
-      const material=mergeColor?mat.clone():mat;if(mergeColor)material.color.set('#ffffff');
+      const material=mergeColor?mat.clone():mat;if(mergeColor){material.color.set('#ffffff');material.onBeforeCompile=mat.onBeforeCompile;material.customProgramCacheKey=mat.customProgramCacheKey;}
       pools.set(key,{mesh:makeMesh(source.geometry,material,256),capacity:256,used:0,useColor:mergeColor||!!source.instanceColor,mergeColor});
     }
     return pools.get(key);

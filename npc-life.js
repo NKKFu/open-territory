@@ -8,7 +8,7 @@ export function createNpcLife({THREE:T, scene, people, player, groundHeight,
   const programs=[['home','work','eat','wait','rest','phone'],['chat','phone','eat','read','home'],
     ['play','rest','phone','eat','home'],['work','rest','chat','read','home']];
   const defaults={phone:[10,22],chat:[20,42],read:[25,55],eat:[28,55],work:[35,75],
-    smoke:[12,24],play:[25,50],wait:[10,20],rest:[25,50],home:[40,85]};
+    smoke:[12,24],play:[25,50],wait:[10,20],rest:[25,50],home:[40,85],paint:[35,65]};
   let now=0;
   function material(color){
     if(!materials.has(color))materials.set(color,new T.MeshStandardMaterial({color,roughness:.85}));
@@ -91,6 +91,19 @@ export function createNpcLife({THREE:T, scene, people, player, groundHeight,
     }else if(activity==='work'){
       props.broom.visible=true;arm(3,-.35+Math.sin(t*2)*.2);arm(2,-.25);
       props.broom.rotation.z=Math.sin(t*2)*.18;props.broom.position.y=-.65;
+    }else if(activity==='paint'){
+      if(!props.brush){
+        const hand=g.userData.limbs?.[3]||g,left=g.userData.limbs?.[2]||g;
+        const brush=new T.Group();brush.name='routine-paint-brush';brush.position.set(0,-.78,.1);hand.add(brush);
+        box(brush,0,0,.15,.07,.07,.3,'#99764e');box(brush,0,0,.34,.13,.08,.1,'#e4b759');
+        const palette=box(left,0,-.77,.1,.34,.07,.46,'#c9aa77');palette.name='routine-paint-palette';
+        for(const [index,color] of ['#df9874','#4d9eac','#edc86a'].entries())box(palette,(index-1)*.23,.65,.1,.17,.35,.17,color);
+        props.brush=brush;props.palette=palette;
+      }
+      props.brush.visible=props.palette.visible=true;
+      const facing=actor.target.rotation??g.rotation.y;
+      g.rotation.y+=Math.atan2(Math.sin(facing-g.rotation.y),Math.cos(facing-g.rotation.y))*(1-Math.exp(-dt*5));
+      arm(3,-1.3+Math.sin(t*2.1)*.16);arm(2,-.85);props.brush.rotation.z=Math.sin(t*1.4)*.15;
     }else if(activity==='smoke'){
       props.cigarette.visible=true;arm(3,-.9-Math.max(0,Math.sin(t*.85))*.65);
       props.smoke.visible=true;
@@ -122,7 +135,7 @@ export function createNpcLife({THREE:T, scene, people, player, groundHeight,
     const actor={person,program,next:person.routine?0:index%program.length,state:'idle',target:null,elapsed:0,
       phase:random()*20,lastLocation:null,props:null};
     // Keep every actor's feet at the same origin, varying height and accessories.
-    const scale=.86+random()*.25;person.g.scale.multiplyScalar(scale);
+    const scale=.86+random()*.25;person.g.scale.multiplyScalar(person.fixedScale??scale);
     if(index%4===0)box(person.g,0,1.35,-.35,.62,.7,.24,['#6d8270','#b58864','#70899d'][index%3]);
     if(index%7===0){box(person.g,0,2.36,0,.72,.16,.65,'#b8a27b');box(person.g,0,2.49,-.02,.48,.2,.44,'#b8a27b');}
     if(index%6===1){box(person.g,0,2.12,-.23,.6,.6,.15,person.g.userData.hair||'#594942');}
