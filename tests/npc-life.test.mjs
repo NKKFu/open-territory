@@ -63,3 +63,28 @@ test('children are never assigned smoking activities',()=>{
   for(let time=0;time<20;time++)life.update(1,time);
   assert.equal(life.snapshot()[0].activity,null);
 });
+
+test('residents keep travelling while their models are culled',()=>{
+  const resident=person('Distant');resident.g.visible=false;
+  const {life}=setup([resident],[{id:'destination',x:8,z:0,activity:'home',capacity:1}]);
+  life.update(1,1);assert.ok(resident.g.position.x>0);
+});
+
+test('an unreachable destination is released so another routine can be chosen',()=>{
+  const {life}=setup([person('Resident')],[
+    {id:'blocked',x:1,z:0,activity:'home',capacity:1},
+    {id:'accessible',x:5,z:0,activity:'phone',capacity:1}
+  ],{moveTo:(_person,goal)=>goal.id==='blocked'?'unreachable':true});
+  for(let i=0;i<10;i++)life.update(.1,i*.1);
+  assert.equal(life.snapshot()[0].destination,'accessible');
+  assert.equal(life.snapshot()[0].state,'activity');
+});
+
+test('a bus journey suspends a routine until the resident finishes disembarking',()=>{
+  const resident=person('Commuter');resident.routine=['phone','rest'];
+  const {life}=setup([resident],[{id:'phone',x:0,z:0,activity:'phone',capacity:1},{id:'rest',x:5,z:0,activity:'rest',capacity:1}],{moveTo:()=>true});
+  life.update(.1,0);resident.busState='riding';resident.inBus=true;life.update(100,100);
+  assert.equal(life.snapshot()[0].destination,'phone');
+  resident.busState=null;resident.inBus=false;resident.routineFinished=true;life.update(.1,101);
+  assert.equal(life.snapshot()[0].destination,'rest');assert.equal(life.snapshot()[0].state,'activity');
+});

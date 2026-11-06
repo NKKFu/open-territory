@@ -7,8 +7,8 @@ export function createNpcLife({THREE:T, scene, people, player, groundHeight,
   const cube=new T.BoxGeometry(1,1,1);
   const programs=[['home','work','eat','wait','rest','phone'],['chat','phone','eat','read','home'],
     ['play','rest','phone','eat','home'],['work','rest','chat','read','home']];
-  const defaults={phone:[8,18],chat:[10,22],read:[15,28],eat:[12,24],work:[12,25],
-    smoke:[9,16],play:[12,22],wait:[10,20],rest:[10,24],home:[12,22]};
+  const defaults={phone:[10,22],chat:[20,42],read:[25,55],eat:[28,55],work:[35,75],
+    smoke:[12,24],play:[25,50],wait:[10,20],rest:[25,50],home:[40,85]};
   let now=0;
   function material(color){
     if(!materials.has(color))materials.set(color,new T.MeshStandardMaterial({color,roughness:.85}));
@@ -30,7 +30,7 @@ export function createNpcLife({THREE:T, scene, people, player, groundHeight,
     const eligible=locations.filter(l=>l.activity===activity&&validFor(actor,l)&&l.id!==actor.lastLocation);
     // Prefer nearby, less occupied places, with a little variation between people.
     const ranked=eligible.map(l=>({l,score:Math.hypot(l.x-actor.person.g.position.x,l.z-actor.person.g.position.z)+
-      (reservations.get(l.id)?.size||0)*18+random()*20})).sort((a,b)=>a.score-b.score);
+      (reservations.get(l.id)?.size||0)*18+random()*20-(l.id===actor.person.initialDestination&&actor.next===1?1000:0)})).sort((a,b)=>a.score-b.score);
     for(const {l} of ranked){
       const assigned=reservations.get(l.id)||new Set(),capacity=Math.max(1,Math.min(6,l.capacity||1));
       if(assigned.size>=capacity)continue;
@@ -52,9 +52,9 @@ export function createNpcLife({THREE:T, scene, people, player, groundHeight,
     const requested=actor.program[actor.next++%actor.program.length];
     const options=[requested,...actor.program,'rest','phone','chat','wait','home'];
     for(const activity of [...new Set(options)])if(reserve(actor,activity)){
-      actor.state='travel';actor.elapsed=0;return;
+      actor.state='travel';actor.elapsed=0;actor.person.lifeActivity=actor.target.activity;actor.person.lifeState='travel';return;
     }
-    actor.state='idle';actor.elapsed=0;
+    actor.state='idle';actor.elapsed=0;actor.person.lifeActivity=null;actor.person.lifeState='idle';
   }
   function hideProps(actor){
     if(actor.props)for(const prop of Object.values(actor.props))prop.visible=false;
@@ -90,7 +90,7 @@ export function createNpcLife({THREE:T, scene, people, player, groundHeight,
       props.cup.visible=true;arm(3,-.8-Math.max(0,Math.sin(t*1.3))*.65);
     }else if(activity==='work'){
       props.broom.visible=true;arm(3,-.35+Math.sin(t*2)*.2);arm(2,-.25);
-      props.broom.rotation.z=Math.sin(t*2)*.18;
+      props.broom.rotation.z=Math.sin(t*2)*.18;props.broom.position.y=-.65;
     }else if(activity==='smoke'){
       props.cigarette.visible=true;arm(3,-.9-Math.max(0,Math.sin(t*.85))*.65);
       props.smoke.visible=true;
@@ -115,16 +115,20 @@ export function createNpcLife({THREE:T, scene, people, player, groundHeight,
       arm(2,-.15);arm(3,-.15);
     }
   }
-  const candidates=people.filter(p=>!p.indoor&&!p.stationary&&!p.sitting&&!p.role&&!p.debugId);
+  const candidates=people.filter(p=>(!p.indoor||p.lifeResident)&&!p.stationary&&!p.sitting&&!p.role&&!p.debugId&&!p.busState);
   candidates.forEach((person,index)=>{
-    const program=[...programs[index%programs.length]];
-    if(index%9===0&&!person.child&&person.age!=='child')program.splice(2,0,'smoke');
-    const actor={person,program,next:index%program.length,state:'idle',target:null,elapsed:0,
+    const program=[...(person.routine||programs[index%programs.length])];
+    if(!person.routine&&index%9===0&&!person.child&&person.age!=='child')program.splice(2,0,'smoke');
+    const actor={person,program,next:person.routine?0:index%program.length,state:'idle',target:null,elapsed:0,
       phase:random()*20,lastLocation:null,props:null};
     // Keep every actor's feet at the same origin, varying height and accessories.
-    const scale=.9+random()*.17;person.g.scale.multiplyScalar(scale);
+    const scale=.86+random()*.25;person.g.scale.multiplyScalar(scale);
     if(index%4===0)box(person.g,0,1.35,-.35,.62,.7,.24,['#6d8270','#b58864','#70899d'][index%3]);
     if(index%7===0){box(person.g,0,2.36,0,.72,.16,.65,'#b8a27b');box(person.g,0,2.49,-.02,.48,.2,.44,'#b8a27b');}
+    if(index%6===1){box(person.g,0,2.12,-.23,.6,.6,.15,person.g.userData.hair||'#594942');}
+    if(index%5===2)box(person.g,0,1,0,.84,.57,.53,person.g.userData.shirt||'#a595b9');
+    if(index%6===3)for(const side of [-1,1])box(person.g,side*.16,2.05,.285,.22,.12,.045,'#425960');
+    if(index%8===4&&!person.child)box(person.g,0,1.83,.25,.42,.18,.055,person.g.userData.hair||'#594942');
     person.lifeManaged=true;actors.push(actor);managed.add(person);choose(actor);
   });
   return {
@@ -133,15 +137,18 @@ export function createNpcLife({THREE:T, scene, people, player, groundHeight,
       now=time;
       for(const actor of actors){
         const p=actor.person;
-        if(p.ragdoll||!p.g.visible||isTalking(p)){hideProps(actor);continue;}
+        if(p.routineFinished){p.routineFinished=false;actor.lastLocation=actor.target?.id;choose(actor);}
+        // Visibility is only a rendering optimization: distant residents keep living.
+        if(p.ragdoll||p.inBus||p.busState||isTalking(p)){hideProps(actor);continue;}
         actor.elapsed+=dt;
         if(actor.state==='idle'){if(actor.elapsed>2+actor.phase%3)choose(actor);continue;}
         if(!actor.target){choose(actor);continue;}
         if(actor.state==='travel'){
           hideProps(actor);
-          if(actor.elapsed>65){actor.lastLocation=actor.target.id;choose(actor);continue;}
-          if(moveTo(p,actor.target,dt)){
-            actor.state='activity';actor.elapsed=0;
+          const result=moveTo(p,actor.target,dt);
+          if(result==='unreachable'||actor.elapsed>420){actor.lastLocation=actor.target.id;choose(actor);continue;}
+          if(result===true){
+            actor.state='activity';actor.elapsed=0;p.lifeState='activity';
             const duration=actor.target.duration||defaults[actor.target.activity]||[10,20];
             actor.duration=Array.isArray(duration)?duration[0]+random()*(duration[1]-duration[0]):duration;
             if(Number.isFinite(actor.target.rotation))p.g.rotation.y=actor.target.rotation;
@@ -154,7 +161,9 @@ export function createNpcLife({THREE:T, scene, people, player, groundHeight,
       return managed;
     },
     snapshot(){return actors.map(a=>({name:a.person.name,state:a.state,activity:a.target?.activity||null,
-      destination:a.target?.id||null,x:a.person.g.position.x,z:a.person.g.position.z,slot:a.target?.slot??null}));},
+      destination:a.target?.id||null,x:a.person.g.position.x,z:a.person.g.position.z,slot:a.target?.slot??null,
+      child:!!a.person.child,indoor:!!a.person.indoor,busState:a.person.busState||null,route:a.person.nav?{steps:a.person.nav.path?.length??0,index:a.person.nav.index,stuck:a.person.nav.stuck,
+        crossing:a.person.nav.crossing,next:a.person.nav.path?.[a.person.nav.index]||null}:null}));},
     dispose(){
       for(const actor of actors){release(actor);if(actor.props)for(const prop of Object.values(actor.props))prop.removeFromParent();actor.smokeMaterial?.dispose();}
       for(const mat of materials.values())mat.dispose();cube.dispose();managed.clear();
