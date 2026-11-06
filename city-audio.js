@@ -78,7 +78,8 @@ export function createCityAudio(){
         const item=audible[i];if(!item){value(voice.gain.gain,0);voice.id=null;return;}
         const {c,d}=item,placement=spatial(c.g.position.x,c.g.position.z),speed=Math.abs(c.velocity);
         const scale=(c.kind==='bus'||c.role==='fire') ? .75 : 1;
-        value(voice.oscillator.frequency,(32+speed*3.4)*scale,.1);value(voice.filter.frequency,130+speed*22,.15);
+        const enginePitch=c.engineRpm?22+c.engineRpm/50:32+speed*3.4;
+        value(voice.oscillator.frequency,enginePitch*scale,.1);value(voice.filter.frequency,130+speed*22,.15);
         value(voice.gain.gain,(c===vehicle ? .06 : .025)*placement.gain*(inside ? .3 : 1)*(1+speed/30),.2);
         value(voice.pan.pan,c===vehicle?0:placement.pan);voice.id=c.debugId||`${c.kind||'car'}:${Math.round(d)}`;
       });

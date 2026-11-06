@@ -10,7 +10,7 @@ export function createAmbientOcclusion({THREE:T,renderer,scene,camera,software=f
   colorTarget.depthTexture=new T.DepthTexture(1,1,T.UnsignedIntType);
   colorTarget.texture.colorSpace=T.LinearSRGBColorSpace;
   colorTarget.samples=software?0:Math.min(2,renderer.capabilities.maxSamples);
-  const aoTarget=new T.WebGLRenderTarget(1,1,{depthBuffer:false,minFilter:T.LinearFilter,magFilter:T.LinearFilter});
+  const aoTarget=new T.WebGLRenderTarget(1,1,{type:T.HalfFloatType,depthBuffer:false,minFilter:T.LinearFilter,magFilter:T.LinearFilter});
   const blurTarget=aoTarget.clone();
   const postScene=new T.Scene(),postCamera=new T.OrthographicCamera(-1,1,1,-1,0,1);
   const vertexShader='varying vec2 vUv; void main(){vUv=uv;gl_Position=vec4(position.xy,0.0,1.0);}';
@@ -35,8 +35,11 @@ export function createAmbientOcclusion({THREE:T,renderer,scene,camera,software=f
       void main(){
         if(texture2D(tDepth,vUv).x>=0.99999){gl_FragColor=vec4(1.0);return;}
         vec3 p=viewPosition(vUv);
-        vec3 left=viewPosition(vUv-vec2(texel.x,0.0)),right=viewPosition(vUv+vec2(texel.x,0.0));
-        vec3 below=viewPosition(vUv-vec2(0.0,texel.y)),above=viewPosition(vUv+vec2(0.0,texel.y));
+        // A wider baseline keeps the reconstructed normal stable when depth
+        // values are quantized, especially on nearly edge-on surfaces.
+        vec2 normalStep=texel*4.0;
+        vec3 left=viewPosition(vUv-vec2(normalStep.x,0.0)),right=viewPosition(vUv+vec2(normalStep.x,0.0));
+        vec3 below=viewPosition(vUv-vec2(0.0,normalStep.y)),above=viewPosition(vUv+vec2(0.0,normalStep.y));
         vec3 dx=abs(right.z-p.z)<abs(p.z-left.z)?right-p:p-left;
         vec3 dy=abs(above.z-p.z)<abs(p.z-below.z)?above-p:p-below;
         vec3 normal=normalize(cross(dx,dy));
@@ -46,8 +49,8 @@ export function createAmbientOcclusion({THREE:T,renderer,scene,camera,software=f
         vec3 tangent=normalize(randomVector-normal*dot(randomVector,normal));
         vec3 bitangent=cross(normal,tangent);
         float occlusion=0.0;
-        for(int i=0;i<${software?8:16};i++){
-          float f=(float(i)+0.5)/${software?'8.0':'16.0'};
+        for(int i=0;i<${software?8:20};i++){
+          float f=(float(i)+0.5)/${software?'8.0':'20.0'};
           float angle=float(i)*2.399963;
           float h=0.15+f*0.8,spread=sqrt(1.0-h*h);
           vec3 direction=tangent*cos(angle)*spread+bitangent*sin(angle)*spread+normal*h;
@@ -56,10 +59,15 @@ export function createAmbientOcclusion({THREE:T,renderer,scene,camera,software=f
           vec2 uv=projected.xy/projected.w*0.5+0.5;
           if(uv.x<0.0||uv.x>1.0||uv.y<0.0||uv.y>1.0)continue;
           vec3 surface=viewPosition(uv);
-          float range=smoothstep(0.0,1.0,radius/max(abs(p.z-surface.z),0.0001));
-          occlusion+=step(samplePosition.z+0.035,surface.z)*range;
+          float range=1.0-smoothstep(radius*0.5,radius*1.5,length(surface-p));
+          // A sample on the same plane is not an occluder. Rejecting it in
+          // view space also prevents depth quantization from striping walls
+          // and roads viewed at a shallow angle.
+          float separation=dot(surface-p,normal);
+          float abovePlane=smoothstep(0.04,0.12,separation);
+          occlusion+=step(samplePosition.z+0.035,surface.z)*range*abovePlane;
         }
-        float ao=clamp(1.0-occlusion/${software?'8.0':'16.0'}*1.3,0.42,1.0);
+        float ao=clamp(1.0-occlusion/${software?'8.0':'20.0'}*1.3,0.42,1.0);
         gl_FragColor=vec4(vec3(ao),1.0);
       }
     `
@@ -72,9 +80,12 @@ export function createAmbientOcclusion({THREE:T,renderer,scene,camera,software=f
       uniform vec2 direction;
       void main(){
         float center=viewPosition(vUv).z,shade=0.0,weightSum=0.0;
+        float before=center-viewPosition(vUv-direction).z,after=viewPosition(vUv+direction).z-center;
+        float slope=abs(before)<abs(after)?before:after;
         for(int i=-3;i<=3;i++){
           vec2 uv=vUv+direction*float(i);
-          float weight=exp(-float(i*i)*0.16-abs(viewPosition(uv).z-center)*5.0);
+          float difference=abs(viewPosition(uv).z-(center+slope*float(i)));
+          float weight=exp(-float(i*i)*0.16-max(0.0,difference-0.02)*5.0);
           shade+=texture2D(tAO,uv).r*weight;weightSum+=weight;
         }
         gl_FragColor=vec4(vec3(shade/max(weightSum,0.0001)),1.0);
@@ -83,7 +94,7 @@ export function createAmbientOcclusion({THREE:T,renderer,scene,camera,software=f
   });
   const compositeMaterial=new T.ShaderMaterial({
     depthTest:false,depthWrite:false,vertexShader,
-    uniforms:{tColor:{value:colorTarget.texture},tAO:{value:aoTarget.texture},colorTexel:{value:new T.Vector2()},strength:{value:1},vignette:{value:.28},saturation:{value:1.14},contrast:{value:1.025}},
+    uniforms:{tColor:{value:colorTarget.texture},tAO:{value:aoTarget.texture},colorTexel:{value:new T.Vector2()},strength:{value:.75},vignette:{value:.28},saturation:{value:1.14},contrast:{value:1.025}},
     fragmentShader:`
       varying vec2 vUv;
       uniform sampler2D tColor;
@@ -150,7 +161,7 @@ export function createAmbientOcclusion({THREE:T,renderer,scene,camera,software=f
       quad.material=compositeMaterial;renderer.setRenderTarget(previous);renderer.render(postScene,postCamera);
       renderer.info.autoReset=autoReset;
     },
-    snapshot:()=>({enabled:true,method:'SSAO',samples:software?8:16,width:aoTarget.width,height:aoTarget.height,vignette:compositeMaterial.uniforms.vignette.value,saturation:compositeMaterial.uniforms.saturation.value}),
+    snapshot:()=>({enabled:true,method:'SSAO',samples:software?8:20,width:aoTarget.width,height:aoTarget.height,vignette:compositeMaterial.uniforms.vignette.value,saturation:compositeMaterial.uniforms.saturation.value}),
     // Kept out of the game's interface; useful for a fixed-frame visual review.
     setStrength(value){compositeMaterial.uniforms.strength.value=Math.max(0,Math.min(1,value));},
     setLook({vignette=.28,saturation=1.14,contrast=1.025}={}){
