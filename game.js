@@ -10,9 +10,11 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color('#a9dce5');
 scene.fog = new THREE.Fog('#c9e3df', 150, 370);
 const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.6));
+const rendererContext=renderer.getContext(),rendererInfo=rendererContext.getExtension('WEBGL_debug_renderer_info');
+const softwareRendering=rendererInfo?/swiftshader|llvmpipe|software|swrast/i.test(rendererContext.getParameter(rendererInfo.UNMASKED_RENDERER_WEBGL)):false;
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, softwareRendering ? .7 : 1.6));
 renderer.setSize(innerWidth, innerHeight);
-renderer.shadowMap.enabled = true;
+renderer.shadowMap.enabled = !softwareRendering;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -47,13 +49,23 @@ function block(x, y, z, w, h, d, color, rot = 0) {
   batches.get(key).push(dummy.matrix.clone());
 }
 function flushBlocks() {
-  for (const [color, transforms] of batches) {
-    const mesh = new THREE.InstancedMesh(cube, material(color), transforms.length);
-    transforms.forEach((matrix, i) => mesh.setMatrixAt(i, matrix));
+  const grouped=new Map(),unshadowed=new Set(['#60767b','#f8f4de','#f0dd9c','#fbf4df','#bcbdae']);
+  for(const [color,transforms] of batches){
+    const kind=color==='#ffefba'?'lamps':unshadowed.has(color)?'ground':'solid';
+    for(const matrix of transforms){
+      const key=`${kind}:${Math.floor(matrix.elements[12]/64)}:${Math.floor(matrix.elements[14]/64)}`;
+      if(!grouped.has(key))grouped.set(key,{kind,items:[]});grouped.get(key).items.push({color,matrix});
+    }
+  }
+  const paletteMaterial=new THREE.MeshStandardMaterial({color:'#ffffff',roughness:.82});
+  for (const {kind,items} of grouped.values()) {
+    const mesh = new THREE.InstancedMesh(cube, kind==='lamps'?material('#ffefba'):paletteMaterial, items.length);
+    items.forEach(({color,matrix},index)=>{mesh.setMatrixAt(index,matrix);if(kind!=='lamps')mesh.setColorAt(index,material(color).color);});
     mesh.instanceMatrix.needsUpdate = true;
-    mesh.castShadow = !['#60767b','#f8f4de','#f0dd9c','#fbf4df','#bcbdae'].includes(color);
+    if(mesh.instanceColor)mesh.instanceColor.needsUpdate=true;
+    mesh.castShadow = kind!=='ground';
     mesh.receiveShadow = true;
-    mesh.frustumCulled = false;
+    mesh.computeBoundingSphere();
     scene.add(mesh);
   }
 }
@@ -2726,6 +2738,32 @@ function updateActorVisibility(dt){
   for(const car of cars)car.g.visible=car===vehicle||Math.hypot(car.g.position.x-pos.x,car.g.position.z-pos.z)<115;
   for(const animal of animals)animal.g.visible=Math.hypot(animal.g.position.x-pos.x,animal.g.position.z-pos.z)<75;
 }
+function createContactShadows(){
+  if(!softwareRendering)return null;
+  const canvas=document.createElement('canvas');canvas.width=canvas.height=64;
+  const context=canvas.getContext('2d'),gradient=context.createRadialGradient(32,32,4,32,32,32);
+  gradient.addColorStop(0,'rgba(35,55,44,.25)');gradient.addColorStop(.5,'rgba(35,55,44,.14)');gradient.addColorStop(1,'rgba(35,55,44,0)');
+  context.fillStyle=gradient;context.fillRect(0,0,64,64);
+  const texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;
+  const mesh=new THREE.InstancedMesh(new THREE.PlaneGeometry(1,1),new THREE.MeshBasicMaterial({map:texture,transparent:true,depthWrite:false}),256);
+  mesh.frustumCulled=false;mesh.count=0;mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);scene.add(mesh);return mesh;
+}
+function updateContactShadows(){
+  if(!contactShadows)return;
+  let index=0;
+  const draw=(g,w,d,offset=0)=>{
+    if(!g.visible||index>=256)return;
+    const x=g.position.x+Math.sin(g.rotation.y)*offset,z=g.position.z+Math.cos(g.rotation.y)*offset;
+    dummy.position.set(x,groundHeight(x,z)+.025,z);dummy.rotation.set(-Math.PI/2,0,-g.rotation.y);dummy.scale.set(w,d,1);dummy.updateMatrix();
+    contactShadows.setMatrixAt(index++,dummy.matrix);
+  };
+  draw(player,1.3,1.3);
+  for(const p of people)draw(p.g,1.2,1.2);
+  for(const c of cars)draw(c.g,(c.width??.7)+.4,(c.length??3)+.4,c.centerOffset||0);
+  for(const a of animals)draw(a.g,a.type==='pigeon'?.55:1,a.type==='pigeon'?.55:1.6);
+  if(sitting)draw(sitting.avatar,1.3,1.3);
+  contactShadows.count=index;contactShadows.instanceMatrix.needsUpdate=true;
+}
 
 // Vizinhança se transforma devagar: céu, sol, lua, luz das ruas e interiores.
 const nightSky=new THREE.Color('#1f344a'),daySky=new THREE.Color('#a9dce5'),skyColor=new THREE.Color();
@@ -2822,7 +2860,7 @@ function timeForAnimal(animal){return gameTime+animal.phase;}
 
 const timer=new THREE.Clock();let metricTime=performance.now(),metricFrames=0,metricFps=0;
 function animate(){
-  requestAnimationFrame(animate);const dt=Math.min(timer.getDelta(),.12),steps=Math.max(1,Math.ceil(dt/.025)),step=dt/steps;
+  requestAnimationFrame(animate);const dt=Math.min(timer.getDelta(),.25),steps=Math.max(1,Math.ceil(dt/.025)),step=dt/steps;
   for(let i=0;i<steps;i++){
     gameTime+=step;updateSignals(gameTime);updateDoors(step);updatePlayer(step);updateTraffic(step);updateBusPassengers(step);npcLife.update(step,gameTime);updatePeople(step);updateAnimals(step);impactActors();
     updateRagdolls(step);updateParticles(step);updateDebris(step);
@@ -2832,10 +2870,11 @@ function animate(){
   const transition=updateIndoorVisibility();updateCamera(dt,transition);
   actorBatches.update(new Set([player,...people.map(p=>p.g),...cars.map(c=>c.g),...animals.map(a=>a.g),...boats.map(b=>b.g),
     ...destructibles.filter(p=>p.active).map(p=>p.group),...benches.filter(b=>b.group.parent).map(b=>b.group),...cityFixtures,...places.map(p=>p.upper),sitting?.avatar]));
+  updateContactShadows();
   if(debugMode){
     metricFrames++;const now=performance.now();if(now-metricTime>=1000){metricFps=metricFrames*1000/(now-metricTime);metricFrames=0;metricTime=now;}
     document.documentElement.dataset.city=JSON.stringify({time:gameTime,fps:metricFps,drawCalls:renderer.info.render.calls,camera:{x:camera.position.x,y:camera.position.y,z:camera.position.z},player:{x:player.position.x,y:player.position.y,z:player.position.z,ground:groundHeight(player.position.x,player.position.z),ragdoll:!!playerActor.ragdoll},car:vehicle?{x:vehicle.g.position.x,z:vehicle.g.position.z,speed:vehicle.velocity,kind:vehicle.kind||'car',role:vehicle.role||null,driverShown:!!vehicle.driver?.visible,emergencyLights:!!vehicle.emergency?.on,signal:vehicle.signal||null,reverse:vehicle.velocity<-.3,braking:!!vehicle.braking}:null,inside:currentPlace?.name||null,candidate:nearestInteraction()?.type||null,doors:places.map(p=>({name:p.name,x:p.door.x,z:p.door.z,angle:p.door.angle,offset:p.door.offset,automatic:p.door.automatic,open:p.door.open})),people:people.length,cars:cars.length,petting:!!petting,sitting:!!sitting,props:destructibles.filter(p=>p.active).length,debris:debris.length,
-    vegetationOnPavement:vegetationPositions.filter(p=>isPaved(p.x,p.z)).length,terrainSamples:hills.map(([x,z])=>terrainHeight(x,z)),routines:npcLife.snapshot(),
+    vegetationOnPavement:vegetationPositions.filter(p=>isPaved(p.x,p.z)).length,terrainSamples:hills.map(([x,z])=>terrainHeight(x,z)),routines:npcLife.snapshot(),rendering:{software:softwareRendering,pixelRatio:renderer.getPixelRatio(),shadows:renderer.shadowMap.enabled},
     incidents:cars.filter(c=>c.incident||c.incidentCount).map(c=>({id:c.debugId||null,state:c.incident?.state||null,count:c.incidentCount,speed:c.velocity,hazards:!!c.hazards,driverShown:c.driver.visible,actor:c.incident?.actor?{x:c.incident.actor.g.position.x,z:c.incident.actor.g.position.z}:null})),
     traffic:cars.filter(c=>c.auto).map(c=>({id:c.debugId||null,x:c.g.position.x,z:c.g.position.z,speed:c.velocity,driverShown:!!c.driver?.visible,stoppedReason:c.stoppedReason,signal:c.signal})),
     services:servicePoints.map(p=>({kind:p.kind,x:p.x,z:p.z,active:!!p.active})),
@@ -3026,5 +3065,6 @@ if(debugMode&&new URLSearchParams(location.search).get('near')==='seat'){
   player.position.set(x,groundHeight(x,z),z);yaw=targetYaw=b.rotation;pitch=targetPitch=.32;
 }
 const actorBatches=createActorBatches({THREE,scene});
+const contactShadows=createContactShadows();
 animate();
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});

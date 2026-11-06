@@ -28,3 +28,16 @@ test('existing instances retain individual transforms when a batch grows',()=>{
   for(const i of [0,255,299]){batch.getMatrixAt(i,matrix);assert.equal(matrix.elements[12],10+i);assert.equal(matrix.elements[13],2);}
   batches.update([]);assert.equal(batch.count,0);assert.equal(batch.visible,false);
 });
+
+test('color palettes preserve clothing colors while emissive lights remain independent',()=>{
+  const scene=new THREE.Scene(),actor=new THREE.Group();scene.add(actor);
+  const red=new THREE.MeshStandardMaterial({color:'#cc7766'}),blue=new THREE.MeshStandardMaterial({color:'#6699bb'});
+  const lamp=new THREE.MeshStandardMaterial({color:'#eeeecc',emissive:'#ffeeaa',emissiveIntensity:2});
+  for(const mat of [red,blue,lamp])actor.add(new THREE.Mesh(new THREE.BoxGeometry(),mat));
+  const batches=createActorBatches({THREE,scene});batches.update([actor]);
+  const meshes=scene.children.filter(p=>p.isInstancedMesh),palette=meshes.find(p=>p.count===2),light=meshes.find(p=>p.material===lamp),color=new THREE.Color();
+  assert.equal(meshes.length,2);palette.getColorAt(0,color);for(const channel of ['r','g','b'])assert.ok(Math.abs(color[channel]-red.color[channel])<.00001);
+  palette.getColorAt(1,color);assert.ok(Math.abs(color.b-blue.color.b)<.00001);
+  red.color.set('#447755');lamp.emissiveIntensity=0;batches.update([actor]);palette.getColorAt(0,color);
+  assert.ok(Math.abs(color.g-red.color.g)<.00001);assert.equal(light.material.emissiveIntensity,0);
+});

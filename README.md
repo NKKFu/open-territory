@@ -14,6 +14,8 @@ python3 -m http.server 8790 --bind 127.0.0.1
 
 Depois acesse `http://127.0.0.1:8790/`. Se a porta estiver ocupada, use outra. O arquivo `index.html` precisa ser servido por HTTP por usar módulos JavaScript; o Three.js já está incluído em `vendor`, sem depender de download.
 
+Quando o navegador usa renderização por software, o jogo reduz automaticamente a resolução interna e usa sombras de contato mais leves. Navegadores com GPU mantêm a resolução maior e as sombras dinâmicas. Isso não acrescenta menus nem controles à tela.
+
 ## Controles
 
 - **WASD ou setas:** andar. **Shift:** correr. **Espaço:** pular.

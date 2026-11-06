@@ -1,7 +1,7 @@
 // Characters and vehicles keep their articulated scene graphs for simulation.
 // Compatible visible parts are drawn together, including their current poses.
 export function createActorBatches({THREE:T,scene}){
-  const pools=new Map(),geometryKeys=new WeakMap(),local=new T.Matrix4(),world=new T.Matrix4();
+  const pools=new Map(),geometryKeys=new WeakMap(),local=new T.Matrix4(),world=new T.Matrix4(),tint=new T.Color(),instanceTint=new T.Color();
   function geometryKey(geometry){
     if(!geometryKeys.has(geometry))geometryKeys.set(geometry,`${geometry.type}:${JSON.stringify(geometry.parameters)}`);
     return geometryKeys.get(geometry);
@@ -12,17 +12,27 @@ export function createActorBatches({THREE:T,scene}){
     mesh.castShadow=true;mesh.receiveShadow=true;scene.add(mesh);return mesh;
   }
   function poolFor(source){
-    const key=`${geometryKey(source.geometry)}:${source.material.uuid}`;
-    if(!pools.has(key))pools.set(key,{mesh:makeMesh(source.geometry,source.material,256),capacity:256,used:0});
+    const mat=source.material;
+    const mergeColor=mat.isMeshStandardMaterial&&!mat.isMeshPhysicalMaterial&&!mat.transparent&&!mat.map&&!mat.normalMap&&!mat.roughnessMap&&!mat.metalnessMap&&!mat.emissiveMap&&
+      mat.emissive.getHex()===0&&mat.opacity===1&&mat.depthWrite&&mat.depthTest&&mat.blending===T.NormalBlending&&!mat.wireframe&&!mat.polygonOffset&&mat.alphaTest===0&&!mat.vertexColors&&!mat.clippingPlanes?.length;
+    const style=mergeColor?`palette:${mat.roughness}:${mat.metalness}:${mat.side}:${mat.flatShading}:${mat.fog}`:mat.uuid;
+    const key=`${geometryKey(source.geometry)}:${style}:${mergeColor||!!source.instanceColor}`;
+    if(!pools.has(key)){
+      const material=mergeColor?mat.clone():mat;if(mergeColor)material.color.set('#ffffff');
+      pools.set(key,{mesh:makeMesh(source.geometry,material,256),capacity:256,used:0,useColor:mergeColor||!!source.instanceColor,mergeColor});
+    }
     return pools.get(key);
   }
-  function append(pool,matrix){
+  function append(pool,matrix,color){
     if(pool.used===pool.capacity){
       const next=makeMesh(pool.mesh.geometry,pool.mesh.material,pool.capacity*2);
       next.instanceMatrix.array.set(pool.mesh.instanceMatrix.array);
+      if(pool.mesh.instanceColor){next.setColorAt(0,new T.Color());next.instanceColor.array.set(pool.mesh.instanceColor.array);}
       pool.mesh.removeFromParent();pool.mesh.dispose();pool.mesh=next;pool.capacity*=2;
     }
-    pool.mesh.setMatrixAt(pool.used++,matrix);
+    pool.mesh.setMatrixAt(pool.used,matrix);
+    if(pool.useColor)pool.mesh.setColorAt(pool.used,color);
+    pool.used++;
   }
   function visit(object){
     if(!object.visible)return;
@@ -31,8 +41,13 @@ export function createActorBatches({THREE:T,scene}){
       object.layers.disable(0);object.layers.enable(1);
       const pool=poolFor(object);
       if(object.isInstancedMesh){
-        for(let i=0;i<object.count;i++){object.getMatrixAt(i,local);world.multiplyMatrices(object.matrixWorld,local);append(pool,world);}
-      }else append(pool,object.matrixWorld);
+        for(let i=0;i<object.count;i++){
+          object.getMatrixAt(i,local);world.multiplyMatrices(object.matrixWorld,local);
+          if(pool.mergeColor)tint.copy(object.material.color);else tint.setRGB(1,1,1);
+          if(object.instanceColor){object.getColorAt(i,instanceTint);tint.multiply(instanceTint);}
+          append(pool,world,tint);
+        }
+      }else append(pool,object.matrixWorld,object.material.color);
     }
     for(const child of object.children)visit(child);
   }
@@ -47,7 +62,7 @@ export function createActorBatches({THREE:T,scene}){
       }
       for(const pool of pools.values()){
         pool.mesh.count=pool.used;pool.mesh.visible=pool.used>0;
-        if(pool.used)pool.mesh.instanceMatrix.needsUpdate=true;
+        if(pool.used){pool.mesh.instanceMatrix.needsUpdate=true;if(pool.mesh.instanceColor)pool.mesh.instanceColor.needsUpdate=true;}
       }
     }
   };
