@@ -1,1 +1,15 @@
-*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden}body{background:#a8dbe2;color:#fff;font-family:ui-rounded,"Avenir Next",system-ui,sans-serif;touch-action:none}#world,#world canvas{position:fixed;inset:0;width:100%;height:100%;display:block}.hidden{display:none!important}.overlay{position:fixed;inset:0;display:flex;align-items:center;padding:clamp(24px,7vw,100px);background:linear-gradient(90deg,#143f45ee 0%,#154c50c9 39%,#194f4b32 75%,transparent 100%)}.menu-card{max-width:540px}.eyebrow{font-size:10px;font-weight:800;letter-spacing:.23em;color:#f9db9e}.menu-card h1{font-size:clamp(62px,8vw,112px);line-height:.95;letter-spacing:-.055em;margin:25px 0;font-weight:750}.menu-card h1 span{color:#ffe2a0}.intro-copy{font-size:16px;line-height:1.8;color:#e3f2ed;max-width:420px}.overlay button{border:0;cursor:pointer;font:700 14px inherit;color:#234845;background:#ffe0a2;border-radius:12px;padding:18px 24px;margin:18px 0;box-shadow:0 6px 18px #1234}.overlay button span{padding-left:60px}.controls{margin-top:20px;font-size:11px;line-height:1.5;color:#d2e7e2}.controls p{margin:9px 0}kbd{font:inherit;font-size:10px;color:white;padding:3px 5px;border:1px solid #ffffff77;border-radius:4px}#dialog{justify-content:center;padding:25px;background:#123b3eaa;backdrop-filter:blur(5px)}.dialog-card{width:min(480px,100%);background:#174e51;border:1px solid #ffffff30;padding:32px;border-radius:22px;box-shadow:0 20px 60px #1533}#speech{font-size:21px;line-height:1.5}#touch{display:none}@media(pointer:coarse){#touch:not(.hidden){display:flex;position:fixed;bottom:22px;left:20px;right:20px;justify-content:space-between;align-items:end;pointer-events:none}.dpad{display:grid;grid-template-columns:repeat(3,46px);gap:5px}.dpad button:first-child{grid-column:2}.dpad button:nth-child(2){grid-column:1}.touch-actions{display:flex;gap:8px}#touch button{pointer-events:auto;width:46px;height:46px;border:0;border-radius:12px;background:#163f46a8;color:white;font-weight:700;font-size:18px;touch-action:none}.touch-actions button{width:52px;height:52px}}@media(max-width:600px){.menu-card h1{font-size:60px}.intro-copy{font-size:14px}.controls{font-size:10px}.overlay{background:linear-gradient(90deg,#143f45ee,#154c50bb)}}
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden}
+body{background:#a8dbe2;color:#fff;font-family:ui-rounded,"Avenir Next",system-ui,sans-serif;touch-action:none}
+#world,#world canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+.hidden{display:none!important}
+#touch{display:none}
+@media(pointer:coarse){
+  #touch:not(.hidden){display:flex;position:fixed;bottom:22px;left:20px;right:20px;justify-content:space-between;align-items:end;pointer-events:none}
+  .dpad{display:grid;grid-template-columns:repeat(3,46px);gap:5px}
+  .dpad button:first-child{grid-column:2}
+  .dpad button:nth-child(2){grid-column:1}
+  .touch-actions{display:flex;gap:8px}
+  #touch button{pointer-events:auto;width:46px;height:46px;border:0;border-radius:12px;background:#163f46a8;color:white;font-weight:700;font-size:18px;touch-action:none}
+  .touch-actions button{width:52px;height:52px}
+}
