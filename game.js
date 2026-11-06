@@ -6,6 +6,7 @@ import {createSurfaceSampler} from './surface-sampler.js';
 import {vehicleGroundPose} from './vehicle-grounding.js';
 import {createAmbientOcclusion} from './ambient-occlusion.js';
 import {createCityAudio} from './city-audio.js';
+import {createBirdLife} from './bird-life.js';
 
 // Open Territory: geometria low-poly criada no próprio jogo, sem modelos externos.
 const $ = (selector) => document.querySelector(selector);
@@ -33,7 +34,9 @@ sunlight.position.set(-75, 130, 75);
 sunlight.castShadow = true;
 sunlight.shadow.mapSize.set(1024, 1024);
 Object.assign(sunlight.shadow.camera, { left: -65, right: 65, top: 65, bottom: -65, near: 1, far: 310 });
+sunlight.shadow.camera.updateProjectionMatrix();
 sunlight.shadow.bias = -0.0004;
+sunlight.shadow.normalBias = .05;
 scene.add(sunlight);
 scene.add(sunlight.target);
 
@@ -1645,8 +1648,12 @@ function pigeon(x,z,i){
   const body=part(g,0,.25,0,.34,.3,.48,i%2?'#8e9e9e':'#aab4b1');
   const head=part(g,0,.46,.22,.23,.23,.23,'#7e9292');
   part(g,0,.42,.35,.08,.07,.12,'#d2a477');
-  for(const side of [-1,1]){part(g,side*.21,.24,0,.11,.17,.4,'#738c8c');part(g,side*.09,.06,0,.05,.12,.05,'#c78e78');}
-  animals.push({g,type:'pigeon',body,head,originX:x,originZ:z,heading:random()*Math.PI*2,speed:.35,phase:random()*6,turn:0});
+  const wings=[];
+  for(const side of [-1,1]){
+    const wing=new THREE.Group();wing.position.set(side*.12,.3,0);wing.rotation.z=side*1.3;g.add(wing);part(wing,side*.2,0,0,.45,.08,.4,'#738c8c');wings.push({group:wing,side});
+    part(g,side*.09,.06,0,.05,.12,.05,'#c78e78');
+  }
+  animals.push({g,type:'pigeon',body,head,wings,originX:x,originZ:z,heading:random()*Math.PI*2,speed:.35,phase:random()*6,turn:0});
 }
 for(let i=0;i<12;i++){
   let x,z;for(let tries=0;tries<50;tries++){x=-55+random()*38;z=18+random()*36;if(!collides(x,z,.35))break;}
@@ -1744,7 +1751,7 @@ function vehicleSolidOverlap(car,x,z){
 }
 function personBlocks(x,z,ignore){
   if(ignore!==player)return false;
-  return people.some(person=>!person.ragdoll&&!person.inBus&&Math.hypot(x-person.g.position.x,z-person.g.position.z)<.8)||animals.some(a=>Math.hypot(x-a.g.position.x,z-a.g.position.z)<(a.type==='pigeon'?.5:.7));
+  return people.some(person=>!person.ragdoll&&!person.inBus&&Math.hypot(x-person.g.position.x,z-person.g.position.z)<.8)||animals.some(a=>!a.flight&&Math.hypot(x-a.g.position.x,z-a.g.position.z)<(a.type==='pigeon'?.5:.7));
 }
 function moveWithCollision(g,dx,dz,r){
   const distance=Math.hypot(dx,dz), steps=Math.max(1,Math.ceil(distance/.25));let hitX=false,hitZ=false;
@@ -2013,6 +2020,7 @@ function nearestInteraction(){
     if(distance<bestDistance&&distance<3.4&&interactionReachable(car.g.position.x,car.g.position.z)){bestDistance=distance;best={type:'car',data:car};}
   }
   for(const animal of animals){
+    if(animal.flight)continue;
     const distance=Math.hypot(player.position.x-animal.g.position.x,player.position.z-animal.g.position.z);
     if(distance<bestDistance&&distance<2.4&&interactionReachable(animal.g.position.x,animal.g.position.z)){bestDistance=distance;best={type:'animal',data:animal};}
   }
@@ -2743,7 +2751,7 @@ function updatePeople(dt){
     const nx=p.axis==='x'?next:p.g.position.x,nz=p.curved?curvedRoadZ(nx)+p.side*8.6:(p.axis==='z'?next:p.g.position.z);
     const nearPerson=people.some(other=>other!==p&&!other.ragdoll&&!other.inBus&&Math.hypot(nx-other.g.position.x,nz-other.g.position.z)<.9);
     const nearPlayer=!vehicle&&!playerActor.ragdoll&&Math.hypot(nx-player.position.x,nz-player.position.z)<.9;
-    const nearAnimal=animals.some(a=>Math.hypot(nx-a.g.position.x,nz-a.g.position.z)<.7);
+    const nearAnimal=animals.some(a=>!a.flight&&Math.hypot(nx-a.g.position.x,nz-a.g.position.z)<.7);
     const blocked=collides(nx,nz,.36)||vehicleBlocks(nx,nz,.4,null)||nearPerson||nearPlayer||nearAnimal;
     if(Math.abs(next-p.origin)>p.range||blocked){if(!p.wait){p.dir*=-1;p.wait=.45;}}
     else if(!p.wait){p.g.position[p.axis]=next;if(p.curved)p.g.position.z=nz;}
@@ -2847,12 +2855,18 @@ function updateActorVisibility(dt){
 function updateVehicleGrounding(dt){
   for(const car of cars){
     if(!car.wheelContacts?.length||(!car.g.visible&&car!==vehicle&&car.groundPose))continue;
-    const pose=vehicleGroundPose({x:car.g.position.x,z:car.g.position.z,yaw:car.g.rotation.y,wheels:car.wheelContacts,
-      heightAt:renderedGround.heightAt,previous:car.groundPose||null,dt,
+    const input={x:car.g.position.x,z:car.g.position.z,yaw:car.g.rotation.y,
       pitchBias:car===vehicle&&car.kind!=='bike'?THREE.MathUtils.clamp(-(car.bodyAcceleration||0)*.003,-.04,.06):0,
-      rollBias:car===vehicle&&car.kind!=='bike'?THREE.MathUtils.clamp((car.yawRate||0)*car.velocity*.006,-.06,.06):0});
-    car.groundPose=pose;car.g.position.y=pose.height;car.g.rotation.x=pose.pitch;car.g.rotation.z=pose.roll;
-    car.wheelContacts.forEach((contact,i)=>contact.parts.forEach(part=>part.position.y=contact.y+pose.offsets[i]));
+      rollBias:car===vehicle&&car.kind!=='bike'?THREE.MathUtils.clamp((car.yawRate||0)*car.velocity*.006,-.06,.06):0};
+    const unchanged=car.groundInput&&Object.keys(input).every(key=>Math.abs(input[key]-car.groundInput[key])<.000001);
+    // A settled parked car can reuse its support until it moves or leans again.
+    if(!unchanged||car.groundingStable<.35){
+      const previous=car.groundPose,pose=vehicleGroundPose({...input,wheels:car.wheelContacts,heightAt:renderedGround.heightAt,previous:previous||null,dt});
+      const settled=previous&&['height','pitch','roll'].every(key=>Math.abs(pose[key]-previous[key])<.00001)&&pose.offsets.every((v,i)=>Math.abs(v-previous.offsets[i])<.00001);
+      car.groundingStable=unchanged&&settled?(car.groundingStable||0)+dt:0;car.groundInput=input;
+      car.groundPose=pose;car.g.position.y=pose.height;car.g.rotation.x=pose.pitch;car.g.rotation.z=pose.roll;
+      car.wheelContacts.forEach((contact,i)=>contact.parts.forEach(part=>part.position.y=contact.y+pose.offsets[i]));
+    }
     if(car.kind==='bike'){
       car.pedalPhase=(car.pedalPhase||0)+Math.sign(car.velocity)*Math.min(7,Math.abs(car.velocity)*.8)*dt;
       car.rider.userData.pedal(car.pedalPhase);
@@ -2876,7 +2890,7 @@ function updateGroundingDiagnostics(dt){
       }
     }
     return {id:c.debugId||null,kind:c.kind||c.role||'car',controlled:c===vehicle,x:c.g.position.x,y:c.g.position.y,z:c.g.position.z,
-      pitch:c.g.rotation.x,roll:c.g.rotation.z,clearance,suspension:c.groundPose?.offsets};
+      pitch:c.g.rotation.x,roll:c.g.rotation.z,clearance,suspension:c.groundPose?.offsets,sleeping:c.groundingStable>=.35};
   });
 }
 function createContactShadows(){
@@ -2901,7 +2915,7 @@ function updateContactShadows(){
   draw(player,1.3,1.3);
   for(const p of people)draw(p.g,1.2,1.2);
   for(const c of cars)draw(c.g,(c.width??.7)+.4,(c.length??3)+.4,c.centerOffset||0);
-  for(const a of animals)draw(a.g,a.type==='pigeon'?.55:1,a.type==='pigeon'?.55:1.6);
+  for(const a of animals)if(!a.flight)draw(a.g,a.type==='pigeon'?.55:1,a.type==='pigeon'?.55:1.6);
   if(sitting)draw(sitting.avatar,1.3,1.3);
   contactShadows.count=index;contactShadows.instanceMatrix.needsUpdate=true;
 }
@@ -2974,8 +2988,12 @@ function updateServiceEffects(){
   }
 }
 function updateAnimals(dt){
+  const threat=vehicle?vehicle.g.position:player.position;
+  birdLife.update(dt,{x:threat.x,z:threat.z,speed:vehicle?Math.abs(vehicle.velocity):Math.hypot(velocity.x,velocity.z)},nightAmount);
   for(const animal of animals){
     const p=animal.g.position,distToOrigin=Math.hypot(p.x-animal.originX,p.z-animal.originZ);
+    if(animal.wings)for(const wing of animal.wings)wing.group.rotation.z=wing.side*(animal.flight ? .15+Math.sin(gameTime*26+animal.phase)*.8 : 1.3);
+    if(animal.flight)continue;
     if(petting?.animal===animal){
       animal.g.rotation.y=Math.atan2(player.position.x-p.x,player.position.z-p.z);
       if(animal.tail)animal.tail.rotation.y=Math.sin(gameTime*16)*.65;
@@ -3011,13 +3029,15 @@ function animate(){
   const transition=updateIndoorVisibility();updateCamera(dt,transition);
   cityAudio.update({dt,time:gameTime,position:vehicle?vehicle.g.position:player.position,yaw,vehicle,vehicles:cars,
     walking:!vehicle&&!sitting&&!petting&&!playerActor.ragdoll&&jumpHeight<.02,paved:!!currentPlace||isPaved(player.position.x,player.position.z),inside:!!currentPlace,doors:places,night:nightAmount});
+  let shadowFrustum=null;
+  if(renderer.shadowMap.enabled){sunlight.updateWorldMatrix(true,false);sunlight.target.updateWorldMatrix(true,false);sunlight.shadow.updateMatrices(sunlight);shadowFrustum=sunlight.shadow.getFrustum();}
   actorBatches.update(new Set([player,...people.map(p=>p.g),...cars.map(c=>c.g),...animals.map(a=>a.g),...boats.map(b=>b.g),
-    ...destructibles.filter(p=>p.active).map(p=>p.group),...benches.filter(b=>b.group.parent).map(b=>b.group),...cityFixtures,...places.map(p=>p.upper),sitting?.avatar]));
+    ...destructibles.filter(p=>p.active).map(p=>p.group),...benches.filter(b=>b.group.parent).map(b=>b.group),...cityFixtures,...places.map(p=>p.upper),sitting?.avatar]),camera,shadowFrustum);
   updateContactShadows();
   if(debugMode){
     metricFrames++;const now=performance.now();if(now-metricTime>=1000){metricFps=metricFrames*1000/(now-metricTime);metricFrames=0;metricTime=now;}
     document.documentElement.dataset.city=JSON.stringify({time:gameTime,fps:metricFps,drawCalls:renderer.info.render.calls,camera:{x:camera.position.x,y:camera.position.y,z:camera.position.z},player:{x:player.position.x,y:player.position.y,z:player.position.z,ground:groundHeight(player.position.x,player.position.z),ragdoll:!!playerActor.ragdoll},car:vehicle?{x:vehicle.g.position.x,z:vehicle.g.position.z,speed:vehicle.velocity,kind:vehicle.kind||'car',role:vehicle.role||null,driverShown:!!vehicle.driver?.visible,emergencyLights:!!vehicle.emergency?.on,signal:vehicle.signal||null,reverse:vehicle.velocity<-.3,braking:!!vehicle.braking}:null,inside:currentPlace?.name||null,candidate:nearestInteraction()?.type||null,doors:places.map(p=>({name:p.name,x:p.door.x,z:p.door.z,angle:p.door.angle,offset:p.door.offset,automatic:p.door.automatic,open:p.door.open})),people:people.length,cars:cars.length,petting:!!petting,sitting:!!sitting,props:destructibles.filter(p=>p.active).length,debris:debris.length,
-    vegetationOnPavement:vegetationPositions.filter(p=>isPaved(p.x,p.z)).length,terrainSamples:hills.map(([x,z])=>terrainHeight(x,z)),grounding:groundingDebug,routines:npcLife.snapshot(),audio:cityAudio.snapshot(),rendering:{software:softwareRendering,pixelRatio:renderer.getPixelRatio(),shadows:renderer.shadowMap.enabled,ambientOcclusion:ambientOcclusion.snapshot()},
+    vegetationOnPavement:vegetationPositions.filter(p=>isPaved(p.x,p.z)).length,terrainSamples:hills.map(([x,z])=>terrainHeight(x,z)),grounding:groundingDebug,routines:npcLife.snapshot(),birds:birdLife.snapshot(),audio:cityAudio.snapshot(),rendering:{software:softwareRendering,pixelRatio:renderer.getPixelRatio(),shadows:renderer.shadowMap.enabled,ambientOcclusion:ambientOcclusion.snapshot()},
     incidents:cars.filter(c=>c.incident||c.incidentCount).map(c=>({id:c.debugId||null,state:c.incident?.state||null,count:c.incidentCount,speed:c.velocity,hazards:!!c.hazards,driverShown:c.driver.visible,actor:c.incident?.actor?{x:c.incident.actor.g.position.x,z:c.incident.actor.g.position.z}:null})),
     traffic:cars.filter(c=>c.auto).map(c=>({id:c.debugId||null,x:c.g.position.x,z:c.g.position.z,speed:c.velocity,driverShown:!!c.driver?.visible,stoppedReason:c.stoppedReason,signal:c.signal})),
     services:servicePoints.map(p=>({kind:p.kind,x:p.x,z:p.z,active:!!p.active})),
@@ -3047,6 +3067,10 @@ if(debugMode){
   if(destination==='beach'){player.position.set(0,0,-145);yaw=0;pitch=.15;}
   if(destination==='bike'){player.position.set(-51,groundHeight(-51,60.7),60.7);yaw=0;pitch=.32;}
   if(destination==='pet'){player.position.set(-24,groundHeight(-24,29),29);yaw=0;pitch=.32;}
+  if(destination==='birds'){
+    animals.filter(a=>a.type==='pigeon').slice(0,3).forEach((bird,i)=>{const x=-45+i*1.4,z=30+(i%2)*.8;bird.g.position.set(x,groundHeight(x,z),z);bird.originX=x;bird.originZ=z;});
+    player.position.set(-45,groundHeight(-45,24),24);yaw=Math.PI;pitch=.32;
+  }
   if(destination==='curve'){player.position.set(0,groundHeight(0,132),132);yaw=Math.PI;pitch=.32;}
   if(destination==='car'){
     const c=cars[0];c.g.position.set(-162.8,groundHeight(-162.8,-103),-103);c.g.rotation.y=0;
@@ -3215,5 +3239,10 @@ if(debugMode&&new URLSearchParams(location.search).get('near')==='seat'){
 }
 const actorBatches=createActorBatches({THREE,scene});
 const contactShadows=createContactShadows();
+const birdLife=createBirdLife({birds:animals.filter(a=>a.type==='pigeon'),groundHeight,random,isPetting:b=>petting?.animal===b,
+  canTravel:(x,z)=>!collides(x,z,.3)&&!vehicleBlocks(x,z,.3,null),
+  canLand:(x,z)=>!collides(x,z,.4)&&!pointOnRoad(x,z)&&!vehicleBlocks(x,z,.4,null)&&!personBlocks(x,z,player)&&(vehicle||Math.hypot(x-player.position.x,z-player.position.z)>1),
+  onTakeoff:(x,z)=>cityAudio.play('flutter',x,z)});
+if(debugMode&&new URLSearchParams(location.search).get('near')==='birds')animals.filter(a=>a.type==='pigeon').slice(0,3).forEach(b=>b.flightCooldown=0);
 animate();
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});

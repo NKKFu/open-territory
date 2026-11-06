@@ -1,7 +1,9 @@
 // Characters and vehicles keep their articulated scene graphs for simulation.
 // Compatible visible parts are drawn together, including their current poses.
 export function createActorBatches({THREE:T,scene}){
-  const pools=new Map(),geometryKeys=new WeakMap(),local=new T.Matrix4(),world=new T.Matrix4(),tint=new T.Color(),instanceTint=new T.Color();
+  const pools=new Map(),geometryKeys=new WeakMap(),bounds=new WeakMap(),local=new T.Matrix4(),world=new T.Matrix4(),tint=new T.Color(),instanceTint=new T.Color();
+  const frustum=new T.Frustum(),viewProjection=new T.Matrix4(),viewSphere=new T.Sphere();
+  const batchable=object=>object.isMesh&&!Array.isArray(object.material)&&['BoxGeometry','CylinderGeometry','TorusGeometry'].includes(object.geometry.type);
   function geometryKey(geometry){
     if(!geometryKeys.has(geometry))geometryKeys.set(geometry,`${geometry.type}:${JSON.stringify(geometry.parameters)}`);
     return geometryKeys.get(geometry);
@@ -36,7 +38,7 @@ export function createActorBatches({THREE:T,scene}){
   }
   function visit(object){
     if(!object.visible)return;
-    if(object.isMesh&&!Array.isArray(object.material)&&['BoxGeometry','CylinderGeometry','TorusGeometry'].includes(object.geometry.type)){
+    if(batchable(object)){
       // Layer 1 preserves visibility flags used by props, culling and ragdolls.
       object.layers.disable(0);object.layers.enable(1);
       const pool=poolFor(object);
@@ -52,18 +54,32 @@ export function createActorBatches({THREE:T,scene}){
     for(const child of object.children)visit(child);
   }
   return {
-    update(roots){
+    update(roots,camera=null,shadowFrustum=null){
+      if(camera){camera.updateMatrixWorld();viewProjection.multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse);frustum.setFromProjectionMatrix(viewProjection);}
       for(const pool of pools.values())pool.used=0;
       for(const root of roots){
         if(!root)continue;
         let visible=true;for(let p=root;p;p=p.parent)if(!p.visible){visible=false;break;}
         if(!visible)continue;
-        root.updateWorldMatrix(true,true);visit(root);
+        if(camera){
+          if(!bounds.has(root)){
+            root.updateWorldMatrix(true,true);
+            const sphere=new T.Box3().setFromObject(root).getBoundingSphere(new T.Sphere());
+            sphere.center.applyMatrix4(root.matrixWorld.clone().invert());sphere.radius=sphere.radius/root.matrixWorld.getMaxScaleOnAxis()+1.5;bounds.set(root,sphere);
+            root.traverse(object=>{if(batchable(object)){object.layers.disable(0);object.layers.enable(1);}});
+          }else root.updateWorldMatrix(true,false);
+          viewSphere.copy(bounds.get(root)).applyMatrix4(root.matrixWorld);
+          // Off-screen casters can still shade something inside the view.
+          if(!frustum.intersectsSphere(viewSphere)&&!shadowFrustum?.intersectsSphere(viewSphere))continue;
+          root.updateWorldMatrix(false,true);
+        }else root.updateWorldMatrix(true,true);
+        visit(root);
       }
       for(const pool of pools.values()){
         pool.mesh.count=pool.used;pool.mesh.visible=pool.used>0;
         if(pool.used){pool.mesh.instanceMatrix.needsUpdate=true;if(pool.mesh.instanceColor)pool.mesh.instanceColor.needsUpdate=true;}
       }
-    }
+    },
+    invalidate(root){bounds.delete(root);}
   };
 }

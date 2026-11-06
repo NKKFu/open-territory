@@ -41,3 +41,19 @@ test('color palettes preserve clothing colors while emissive lights remain indep
   red.color.set('#447755');lamp.emissiveIntensity=0;batches.update([actor]);palette.getColorAt(0,color);
   assert.ok(Math.abs(color.g-red.color.g)<.00001);assert.equal(light.material.emissiveIntensity,0);
 });
+
+test('actors outside the camera are omitted and return with their current pose',()=>{
+  const scene=new THREE.Scene(),actor=new THREE.Group(),arm=new THREE.Group();scene.add(actor);actor.add(arm);
+  const hand=new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial());hand.position.set(0,1,0);arm.add(hand);
+  const camera=new THREE.PerspectiveCamera(60,1,.1,80);camera.position.set(0,2,10);camera.lookAt(0,1,0);
+  const batches=createActorBatches({THREE,scene});batches.update([actor],camera);
+  const batch=scene.children.find(p=>p.isInstancedMesh);assert.equal(batch.count,1);
+  actor.position.z=25;arm.rotation.x=.8;batches.update([actor],camera);assert.equal(batch.count,0);assert.equal(actor.visible,true);
+  const shadowCamera=new THREE.OrthographicCamera(-10,10,10,-10,.1,40);shadowCamera.position.set(0,20,25);shadowCamera.lookAt(0,0,25);shadowCamera.updateMatrixWorld();
+  const shadowFrustum=new THREE.Frustum().setFromProjectionMatrix(new THREE.Matrix4().multiplyMatrices(shadowCamera.projectionMatrix,shadowCamera.matrixWorldInverse));
+  batches.update([actor],camera,shadowFrustum);assert.equal(batch.count,1,'off-screen shadow casters are retained');
+  actor.position.z=-4;batches.update([actor],camera);assert.equal(batch.count,1);
+  const matrix=new THREE.Matrix4();batch.getMatrixAt(0,matrix);
+  matrix.elements.forEach((v,i)=>assert.ok(Math.abs(v-hand.matrixWorld.elements[i])<.00001));
+  actor.position.x=100;batches.update([actor],camera);assert.equal(batch.count,0);
+});

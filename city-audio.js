@@ -37,9 +37,9 @@ export function createCityAudio(){
     if(!context||context.state!=='running'||muted)return;
     const location=spatial(x,z);if(location.gain<.015)return;
     const now=context.currentTime,gain=context.createGain(),pan=context.createStereoPanner();
-    const frequency={step:210,grass:850,door:360,automatic:1500,impact:170,break:1100,splash:1700}[kind]||300;
-    const duration={step:.11,grass:.12,door:.22,automatic:.45,impact:.32,break:.28,splash:.25}[kind]||.12;
-    const level={step:.19,grass:.11,door:.14,automatic:.055,impact:.3,break:.18,splash:.13}[kind]||.1;
+    const frequency={step:210,grass:850,door:360,automatic:1500,impact:170,break:1100,flutter:1600}[kind]||300;
+    const duration={step:.11,grass:.12,door:.22,automatic:.45,impact:.32,break:.28,flutter:.23}[kind]||.12;
+    const level={step:.19,grass:.11,door:.14,automatic:.055,impact:.3,break:.18,flutter:.07}[kind]||.1;
     const source=context.createBufferSource(),filter=context.createBiquadFilter();source.buffer=noiseBuffer;
     filter.type=kind==='automatic'?'bandpass':'lowpass';filter.frequency.value=frequency;filter.Q.value=.6;
     gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(level*location.gain,now+.008);
