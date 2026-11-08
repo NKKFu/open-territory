@@ -1,0 +1,8 @@
+System.ArgumentException: An item with the same key has already been added. Key: Piso-17,21 • bike shop retired floors
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) [0x0015a] in <16ec009baa7541e7b79bc4548f1d744c>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) [0x00000] in <16ec009baa7541e7b79bc4548f1d744c>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector, System.Collections.Generic.IEqualityComparer`1[T] comparer) [0x00086] in <3afc7090220843a58d515b3d75f6725a>:0 
+  at System.Linq.Enumerable.ToDictionary[TSource,TKey] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] keySelector) [0x00000] in <3afc7090220843a58d515b3d75f6725a>:0 
+  at OpenTerritory.Editor.CityStreetReviewBuilder.ApplyPatch (System.String patchPath, System.String assetPath) [0x00560] in C:\Users\nelso\open-territory\Unity\OpenTerritory\Assets\Editor\CityStreetReviewBuilder.cs:117 
+  at OpenTerritory.Editor.CityOverallMapBuilder.Apply () [0x001cd] in C:\Users\nelso\open-territory\Unity\OpenTerritory\Assets\Editor\CityOverallMapBuilder.cs:92 
+  at OpenTerritory.Editor.CityOverallMapBuilder.ApplyRequested () [0x00106] in C:\Users\nelso\open-territory\Unity\OpenTerritory\Assets\Editor\CityOverallMapBuilder.cs:38 

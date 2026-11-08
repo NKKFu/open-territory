@@ -1,0 +1,94 @@
+{
+  "verifiedAtUtc": "2026-11-08T07:14:20.0115961Z",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\ParkourCamera-20261108-0707\\BaiaDoSol.exe",
+  "assemblySha256": "5D9970106154BA01A0B1918BDDA3D97BF1F5F4552ACC7D1C9A89B9476890E3FF",
+  "sceneSha256": "9EAF01349408D016BE954E969428CB223BF21ADEE78CA923B5FDC70F60ED7368",
+  "passed": true,
+  "checks": 248.0,
+  "nativeRuns": [
+    {
+      "verifiedAtUtc": "2026-11-08T07:11:32.6905315Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\ParkourCamera-20261108-0707\\BaiaDoSol.exe",
+      "assemblySha256": "5D9970106154BA01A0B1918BDDA3D97BF1F5F4552ACC7D1C9A89B9476890E3FF",
+      "checks": 166,
+      "exitCode": 0,
+      "cameraOnly": false,
+      "graphics": true,
+      "arguments": [
+        "-batchmode",
+        "-screen-fullscreen",
+        "0",
+        "-screen-width",
+        "960",
+        "-screen-height",
+        "540",
+        "--city-parkour-qa",
+        "--city-report-dir",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\parkour-camera\\native-full\"",
+        "-logFile",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\parkour-camera\\native-full\\player.log\""
+      ],
+      "passed": true,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\parkour-camera\\native-full\\parkour-qa.json"
+    },
+    {
+      "verifiedAtUtc": "2026-11-08T07:12:30.0275739Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\ParkourCamera-20261108-0707\\BaiaDoSol.exe",
+      "assemblySha256": "5D9970106154BA01A0B1918BDDA3D97BF1F5F4552ACC7D1C9A89B9476890E3FF",
+      "passed": true,
+      "exitCode": 0,
+      "checks": 32,
+      "arguments": [
+        "-batchmode",
+        "-screen-fullscreen",
+        "0",
+        "-screen-width",
+        "1280",
+        "-screen-height",
+        "800",
+        "--city-locomotion-qa",
+        "--city-report-dir",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\parkour-camera\\native-locomotion\"",
+        "-logFile",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\parkour-camera\\native-locomotion\\player.log\""
+      ],
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\parkour-camera\\native-locomotion\\qa.json"
+    },
+    {
+      "verifiedAtUtc": "2026-11-08T07:13:29.4083328Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\ParkourCamera-20261108-0707\\BaiaDoSol.exe",
+      "assemblySha256": "5D9970106154BA01A0B1918BDDA3D97BF1F5F4552ACC7D1C9A89B9476890E3FF",
+      "passed": true,
+      "checks": 50,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\parkour-camera\\native-seats\\seat-camera-qa.json"
+    }
+  ],
+  "sources": [
+    {
+      "path": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Assets\\Scripts\\Gameplay\\CityFollowCamera.cs",
+      "sha256": "EFAB72D8D3A4080B1DC46FE3249327590AAE82C98DC73191DECE4C4DE70398D7",
+      "modifiedAtUtc": "2026-11-08T07:06:45.5440696Z"
+    },
+    {
+      "path": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Assets\\Scripts\\Gameplay\\CityParkourProbe.cs",
+      "sha256": "4BBAF433DCACC774F97A868AC5F08BEF2027E612ED0486035B6940A4B6B441AF",
+      "modifiedAtUtc": "2026-11-08T07:06:45.5539170Z"
+    }
+  ],
+  "graphicsApi": "Direct3D 12, default player API; AMD Radeon RX 9070",
+  "playerExitCodes": [
+    0,
+    0,
+    0
+  ],
+  "editorState": {
+    "activeScene": "Assets/Scenes/BaiaDoSol.unity",
+    "playing": false,
+    "dirty": false
+  },
+  "regression": {
+    "beforeEditorLateralStep": 0.8600000143051147,
+    "afterNativeLateralStep": 5.123205681911713E-08,
+    "afterNativeMinimumDistance": 2.5999999046325684
+  }
+}

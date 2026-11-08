@@ -1,0 +1,29 @@
+﻿{
+    "verifiedAtUtc":  "2026-11-08T13:10:39.5802934Z",
+    "startedAtUtc":  "2026-11-08T13:10:23.2446461Z",
+    "passed":  true,
+    "executable":  "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\OverallMap-20261108\\BaiaDoSol.exe",
+    "assemblySha256":  "57BBD90D0688B9F3070B64C7900FA6945D945271E03B1F99CEFA834A17BAFB36",
+    "exitCode":  0,
+    "checks":  [
+                   {
+                       "name":  "walking-through-real-input-poller",
+                       "passed":  true,
+                       "detail":  "distance=3.9093322753906"
+                   },
+                   {
+                       "name":  "pause-stops-city-clock",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "native-session-has-no-runtime-errors",
+                       "passed":  true,
+                       "detail":  "errors=0"
+                   },
+                   {
+                       "name":  "normal-exit-with-default-graphics-api",
+                       "passed":  true,
+                       "detail":  "exit=0"
+                   }
+               ]
+}

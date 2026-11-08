@@ -1,0 +1,189 @@
+{
+    "passed": true,
+    "sampleRate": 48000,
+    "captureFrames": 816128,
+    "outputPeak": 0.21942393481731416,
+    "checks": [
+        {
+            "name": "bank-loaded-with-no-missing-assets",
+            "detail": "",
+            "passed": true,
+            "value": 111.0
+        },
+        {
+            "name": "every-clip-has-licensed-source-provenance",
+            "detail": "",
+            "passed": true,
+            "value": 111.0
+        },
+        {
+            "name": "all-clips-native-44khz-finite-with-headroom",
+            "detail": "",
+            "passed": true,
+            "value": 0.819976806640625
+        },
+        {
+            "name": "built-audio-content-matches-imported-source-levels",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "stereo-long-ambience-loops",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "six-recorded-ambience-loops-with-smooth-joins",
+            "detail": "",
+            "passed": true,
+            "value": 6.0
+        },
+        {
+            "name": "older-settings-keep-new-audio-defaults",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "walking-emits-distance-driven-footsteps",
+            "detail": "",
+            "passed": true,
+            "value": 6.0
+        },
+        {
+            "name": "idle-does-not-emit-footsteps",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "four-surfaces-use-sixteen-distinct-recorded-steps",
+            "detail": "",
+            "passed": true,
+            "value": 4.0
+        },
+        {
+            "name": "human-pain-rotates-three-recorded-performances",
+            "detail": "",
+            "passed": true,
+            "value": 3.0
+        },
+        {
+            "name": "surface-follows-road-trail-and-pier",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "distant-one-shots-are-inaudible-and-culled",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "wall-muffles-and-attenuates-source",
+            "detail": "",
+            "passed": true,
+            "value": 1399.9998779296875
+        },
+        {
+            "name": "occlusion-recovers-after-wall-is-removed",
+            "detail": "",
+            "passed": true,
+            "value": 15993.2685546875
+        },
+        {
+            "name": "native-car-entry-starts-engine-loop",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "engine-pitch-follows-actual-rpm",
+            "detail": "idle=0.6500002 idle-speed=0.001675425 rpm=3458.868",
+            "passed": true,
+            "value": 1.606652021408081
+        },
+        {
+            "name": "siren-is-continuous-not-repeated-bursts",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "recorded-real-native-audio-output",
+            "detail": "frames=816128",
+            "passed": true,
+            "value": 0.21942393481731416
+        },
+        {
+            "name": "effects-can-be-muted-independently",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sea-follows-new-coast-not-old-z-coordinate",
+            "detail": "inland=0.004544725",
+            "passed": true,
+            "value": 0.01990075781941414
+        },
+        {
+            "name": "interiors-shelter-and-filter-the-rain",
+            "detail": "outside=0.4127477",
+            "passed": true,
+            "value": 0.10525110363960266
+        },
+        {
+            "name": "downloaded-ambience-recorded-from-native-dsp",
+            "detail": "frames=197632",
+            "passed": true,
+            "value": 0.21245327591896058
+        },
+        {
+            "name": "radio-plays-continuous-licensed-performance",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "settings-pause-freezes-audio-playhead",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "four-accessible-sound-sliders",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "audio-resumes-after-settings",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "master-volume-controls-listener",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "native-output-is-audible-and-unclipped",
+            "detail": "",
+            "passed": true,
+            "value": 0.21942393481731416
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "errors": []
+}

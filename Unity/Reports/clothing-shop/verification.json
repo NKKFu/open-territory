@@ -1,0 +1,146 @@
+{
+  "passed": true,
+  "verifiedAtUtc": "2026-11-08T11:57:27.8948169Z",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\ClothingShop-20261108\\BaiaDoSol.exe",
+  "assemblySha256": "E92D3489AE7921C5D40AF26D8A76AE257B4C3EEFBA9472723F5043400D9B053B",
+  "assemblyStillMatches": true,
+  "build": {
+    "passed": true,
+    "result": "Succeeded",
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\ClothingShop-20261108\\BaiaDoSol.exe",
+    "completedAtUtc": "2026-11-08T11:55:00.1307716Z",
+    "errors": 0,
+    "warnings": 3,
+    "bytes": 1803045067
+  },
+  "buildProcess": {
+    "completedAtUtc": "2026-11-08T11:55:03.5907141Z",
+    "processExitCode": 0,
+    "output": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\ClothingShop-20261108\\BaiaDoSol.exe"
+  },
+  "placement": {
+    "passed": true,
+    "createdAtUtc": "2026-11-08T11:48:12.7213855Z",
+    "center": {
+      "x": 897.1502685546875,
+      "y": 9.618790626525879,
+      "z": 955.4244384765625
+    },
+    "yaw": 169.87364196777344,
+    "upperFloor": 2.280980110168457,
+    "replaced": [
+      "Doorway sidelight-23683-right",
+      "Doorway sidelight-23683-left",
+      "building:Reused residential interior 125",
+      "Casa • #639A60",
+      "Foundation • 142",
+      "Janelas • 142",
+      "Group-1985",
+      "Colisão-3743",
+      "Colisão-3744",
+      "Colisão-3745",
+      "Colisão-3746",
+      "Colisão-3747",
+      "Colisão-3748",
+      "Colisão-3749",
+      "Colisão-3761",
+      "Colisão-3762",
+      "Luminária independente • 23679",
+      "Luminária independente • 23679",
+      "Doorway sidelight-23764-right",
+      "Doorway sidelight-23764-left",
+      "building:Reused residential interior 128",
+      "Casa • #366604",
+      "Foundation • 145",
+      "Janelas • 145",
+      "Group-1985",
+      "Colisão-3812",
+      "Colisão-3813",
+      "Colisão-3814",
+      "Colisão-3815",
+      "Colisão-3816",
+      "Colisão-3817",
+      "Colisão-3818",
+      "Colisão-3830",
+      "Colisão-3831",
+      "Luminária independente • 23760",
+      "Luminária independente • 23760"
+    ],
+    "originalColliders": 31929,
+    "authorizedReplacedColliders": 145,
+    "authorizedFloorCuts": 6,
+    "preservedColliders": 31778,
+    "preservationFailures": 0,
+    "newColliders": 73,
+    "blockers": []
+  },
+  "native": {
+    "verifiedAtUtc": "2026-11-08T11:55:52.2230105Z",
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\ClothingShop-20261108\\BaiaDoSol.exe",
+    "assemblySha256": "E92D3489AE7921C5D40AF26D8A76AE257B4C3EEFBA9472723F5043400D9B053B",
+    "assemblyChangedDuringRun": false,
+    "processExitCode": 0,
+    "passed": true,
+    "checks": 49,
+    "routeSamples": 648,
+    "graphics": "Direct3D12",
+    "arguments": [
+      "-batchmode",
+      "-screen-fullscreen",
+      "0",
+      "-screen-width",
+      "1280",
+      "-screen-height",
+      "800",
+      "--city-clothing-qa",
+      "--city-report-dir",
+      "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\clothing-shop\\native\"",
+      "-logFile",
+      "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\clothing-shop\\native\\player.log\""
+    ],
+    "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\clothing-shop\\native\\clothing-qa.json"
+  },
+  "sceneSha256": "DBB06626DF7F2D3DF278EB6DC368A72163574B70B52456E555B609CD4661F362",
+  "criticalFiles": [
+    {
+      "file": "Assets/Scripts/Core/CityContext.cs",
+      "sha256": "EFD1E447C93ACA44DF2A133EE2B99264D335B50D475AAB681FF0BB7CC87DBF55",
+      "matchesSource": true
+    },
+    {
+      "file": "Assets/Scripts/World/CityCommerce.cs",
+      "sha256": "483109CA629B460C6FE0A3290CA49F086B50810D92647989D9BEF35B1F1EEE9D",
+      "matchesSource": true
+    },
+    {
+      "file": "Assets/Scripts/UI/CityUI.cs",
+      "sha256": "87081F882FEEFE1F5449EEF3150D0F6510EFE935768F8AF1CD4399677F522C54",
+      "matchesSource": true
+    },
+    {
+      "file": "Assets/Scripts/UI/CityMapUI.cs",
+      "sha256": "15515AE25046643ECCEDB0923F6D34051CC9C156DA8F8B6B7E5F490B45A8379D",
+      "matchesSource": true
+    },
+    {
+      "file": "Assets/Scripts/UI/CityClothingUI.cs",
+      "sha256": "F9248C019DC86AE56FAC2E634EB1B5F70D39AB5B316814AD00AEEB48BE73B681",
+      "matchesSource": true
+    },
+    {
+      "file": "Assets/Scripts/World/CityClothingShop.cs",
+      "sha256": "19152BA842D7B174F5D2EF2E24DD9FC5FE339BCD24EC892F7188929E27769556",
+      "matchesSource": true
+    },
+    {
+      "file": "Assets/Scripts/World/CityWardrobe.cs",
+      "sha256": "1D0FA8060CF0C0BC788C0367E5FD044B30F107571ACD520FB910F8B8A94A1416",
+      "matchesSource": true
+    },
+    {
+      "file": "Assets/Imported/ClothingShop.asset",
+      "sha256": "DDCE79F909722DABE7FDA292F495D98A20E6484722114B3E8ABAC2544E06FDA2",
+      "matchesSource": true
+    }
+  ]
+}

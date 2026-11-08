@@ -1,0 +1,653 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace OpenTerritory
+{
+    [DefaultExecutionOrder(-100)]
+    public partial class CityVehicles : MonoBehaviour
+    {
+        public sealed class Vehicle
+        {
+            public VehicleData Data;public Transform Root,Driver,Rider,Steering;public Rigidbody Body;public CityVehicleMath.State Motion;
+            public Transform[] WheelPivots,WheelSpins,Doors,Hands,Arms,Legs;public Vector3[] WheelHomes,DoorHomes;public Quaternion[] WheelRotations,SpinRotations,DoorRotations;public Quaternion SteeringRotation;
+            public float[] Compression,WheelTravel;public Vector3[] ContactPoints,ContactNormals;public float Speed=>Vector3.Dot(Body.linearVelocity,Root.forward);
+            public float Progress,RouteLength,TargetSpeed,Dwell,Pedal,Spin,DoorOpen,SteeringBase,LastHorn,LastImpact,StoppedTime,JamUntil;
+            public float LastUsed=-1000;
+            public float RemoteUntil,RemoteDirection,AlarmUntil,NextAlarm;
+            public float CruiseSpeed,Headway,Acceleration,StopPatience,LaneBias,LaneOffset,LanePhase,LaneAmplitude;
+            public Vector3[] Route;public float[] Cumulative;public StopData AtStop;public int StopCount,LastStop=-1,NextStop=-1,Signal;
+            public bool ExitRequested,Controlled,Passenger,Occupied,Commanded,Siren,Hazards,TrafficHold;public Vector3 CommandTarget;public string TrafficHoldReason;
+            public float StopGap=float.PositiveInfinity,ObstacleGap=float.PositiveInfinity;public string StoppedReason="";
+            public Renderer[] BrakeLights,LeftIndicators,RightIndicators,ReverseLights;
+            public bool HeadlightsOn,LeftIndicatorLit,RightIndicatorLit;
+            public CityTrafficPolicy.State Traffic=new CityTrafficPolicy.State();
+            public float[] StopProgress;public Light[] Headlights,Beacons;public AudioSource Engine,SirenSource;public bool[] WheelGrounded;
+            public Vector3 Position=>Root.position;
+        }
+        CityContext ctx;readonly List<Vehicle> fleet=new List<Vehicle>();readonly Dictionary<int,Vehicle> byId=new Dictionary<int,Vehicle>();
+        MaterialPropertyBlock lightProperties;CityTrafficPolicy traffic;
+        public CityVehicleEffects Effects { get; private set; }
+        readonly System.Random ambientRandom=new System.Random(60139);
+        readonly Dictionary<int,Vector3[]> pendingRoutes=new Dictionary<int,Vector3[]>();
+        float Ambient(float low,float high)=>Mathf.Lerp(low,high,(float)ambientRandom.NextDouble());
+        sealed class Passenger {public Transform Root;public Vehicle Bus;public int Seat;public Vector3 Entry;public float Boarded;}
+        readonly List<Passenger> passengers=new List<Passenger>();
+        static readonly Vector3[] PassengerSeats={new Vector3(-.65f,.54f,-1.4f),new Vector3(.65f,.54f,-2.4f),new Vector3(-.65f,.54f,-2.8f)};
+        Vehicle active;Vehicle transitionVehicle;float transition,entryDoorStart;bool exiting;Vector3 transitionFrom,transitionTo;Quaternion transitionRotationFrom;int entrySide=-1;
+        public IReadOnlyList<Vehicle> Fleet=>fleet;
+        public Vehicle Active=>active;
+        public float TransitionProgress=>transitionVehicle!=null?transition:0;
+        public event Action<string,Vector3> Crime;
+        public event Action<Vehicle,float,Collider> Impact;
+        public event Action<Vehicle> Spawned;
+        public void Initialize(CityContext context)
+        {
+            ctx=context;lightProperties=new MaterialPropertyBlock();traffic=new CityTrafficPolicy(ctx,this);
+            Effects=gameObject.AddComponent<CityVehicleEffects>();Effects.Initialize(ctx,this);
+            ctx.AddAction("vehicle-exit",()=>ctx.Player.position+Vector3.up,ExitLabel,RequestExit,()=>active!=null&&transitionVehicle==null&&!ctx.Motor.Remote,3,80,requiresLook:false);
+        }
+        Vehicle Create(VehicleData data)
+        {
+                var root=ctx.Node(data.id);if(!root)return null;
+                var car=new Vehicle{Data=data,Root=root,Driver=ctx.Node(data.driver),Rider=ctx.Node(data.rider),Steering=ctx.Node(data.steeringWheel),Occupied=data.auto,LastImpact=-1000};
+                SetLayer(root,CityContext.VehicleLayer);
+                car.Body=root.GetComponent<Rigidbody>();if(!car.Body)car.Body=root.gameObject.AddComponent<Rigidbody>();
+                car.Body.mass=data.kind=="bike"?105:Mathf.Max(75,data.mass);car.Body.linearDamping=.015f;car.Body.angularDamping=.45f;car.Body.maxAngularVelocity=5;
+                car.Body.interpolation=RigidbodyInterpolation.Interpolate;car.Body.collisionDetectionMode=CollisionDetectionMode.ContinuousDynamic;
+                car.Body.centerOfMass=new Vector3(0,data.kind=="bike"?.6f:.48f,data.kind=="bike"?data.centerOffset:data.wheelbase*Mathf.Clamp(data.frontWeight,.3f,.7f)-data.rearOffset);
+                if(data.kind=="bike")car.Body.constraints=RigidbodyConstraints.FreezeRotationZ;
+                AddBodyColliders(car);
+                var contacts=root.gameObject.AddComponent<CityVehicleContact>();contacts.Owner=this;contacts.Vehicle=car;
+                car.WheelPivots=Map(data.wheels,w=>w.pivot);car.WheelSpins=Map(data.wheels,w=>w.spin);car.Compression=new float[data.wheels.Length];car.WheelGrounded=new bool[data.wheels.Length];
+                car.WheelTravel=new float[data.wheels.Length];car.ContactPoints=new Vector3[data.wheels.Length];car.ContactNormals=new Vector3[data.wheels.Length];
+                car.WheelHomes=new Vector3[data.wheels.Length];car.WheelRotations=new Quaternion[data.wheels.Length];car.SpinRotations=new Quaternion[data.wheels.Length];
+                for(int i=0;i<data.wheels.Length;i++){var pivot=car.WheelPivots[i];car.WheelHomes[i]=pivot?pivot.localPosition:data.wheels[i].position;car.WheelRotations[i]=pivot?pivot.localRotation:Quaternion.identity;car.SpinRotations[i]=car.WheelSpins[i]?car.WheelSpins[i].localRotation:Quaternion.identity;}
+                car.Doors=Map(data.doors);car.DoorHomes=new Vector3[car.Doors.Length];car.DoorRotations=new Quaternion[car.Doors.Length];
+                for(int i=0;i<car.Doors.Length;i++)if(car.Doors[i]){car.DoorHomes[i]=car.Doors[i].localPosition;car.DoorRotations[i]=car.Doors[i].localRotation;}
+                car.Hands=Map(data.driverHands);car.Arms=Map(data.driverArms);car.Legs=Map(data.riderLegs);
+                car.SteeringRotation=car.Steering?car.Steering.localRotation:Quaternion.identity;
+                car.BrakeLights=LampRenderers(data.brakeLights);car.LeftIndicators=LampRenderers(data.leftIndicators);car.RightIndicators=LampRenderers(data.rightIndicators);car.ReverseLights=LampRenderers(data.reverseLights);
+                car.Headlights=Lights(data.headlights);car.Beacons=MakeBeacons(car);
+                if(car.Driver)car.Driver.gameObject.SetActive(data.auto);if(car.Rider)car.Rider.gameObject.SetActive(false);
+                car.Route=data.route!=null&&data.route.Length>2?data.route:ctx.Data.roadRoute;
+                PrepareRoute(car);traffic.Prepare(car);byId[data.id]=car;
+                ctx.AddAction("vehicle-"+data.id,()=>EntryPoint(car),()=>data.kind=="bike"?"Pedalar":data.kind=="bus"?"Embarcar":car.Occupied?"Roubar veículo":"Entrar",()=>Enter(car),
+                    ()=>CanEnter(car),data.kind=="bus"?3.2f:3,5,target:()=>root,
+                    focus:()=>root.TransformPoint(new Vector3(0,1,data.kind=="bus"?2.3f:data.seatMount.z)));
+                return car;
+        }
+        public bool IsSpawned(int id)=>byId.TryGetValue(id,out var car)&&fleet.Contains(car);
+        public Vector3[] SelectAmbientRoute(VehicleData data,Vector3 observer)
+        {
+            var route=data.auto&&data.kind!="bus"&&data.role!="police"?ctx.LifeNavigation.ChooseCircuit(ctx,observer):null;
+            if(route==null)route=data.route!=null&&data.route.Length>2?data.route:ctx.Data.roadRoute;
+            pendingRoutes[data.id]=route;return route;
+        }
+        public Vehicle Spawn(VehicleData data,Vector3 position,Quaternion rotation)
+        {
+            if(!byId.TryGetValue(data.id,out var car))car=Create(data);
+            if(car==null||fleet.Contains(car))return car;
+            car.Root.SetPositionAndRotation(position,rotation);car.Body.position=position;car.Body.rotation=rotation;
+            car.Motion=new CityVehicleMath.State{Direction=1,Gear=1,Speed=data.auto?data.speed:0};
+            if(pendingRoutes.TryGetValue(data.id,out var route)){car.Route=route;pendingRoutes.Remove(data.id);}
+            PrepareRoute(car);car.Traffic=new CityTrafficPolicy.State();traffic.Prepare(car);car.Progress=Closest(car,position);
+            car.CruiseSpeed=Ambient(5.7f,8.6f);car.Headway=Ambient(.65f,1.05f);car.Acceleration=Ambient(1.05f,1.9f);car.StopPatience=Ambient(1.15f,2.15f);
+            car.LaneBias=Ambient(-.20f,.20f);car.LanePhase=Ambient(0,Mathf.PI*2);car.LaneAmplitude=Ambient(.07f,.15f);car.LaneOffset=0;
+            car.AtStop=null;car.Dwell=0;car.NextStop=car.LastStop=-1;car.TargetSpeed=data.auto?data.speed:0;
+            car.StoppedTime=car.JamUntil=car.DoorOpen=0;car.StoppedReason="";car.ExitRequested=false;car.Occupied=data.auto;
+            car.Signal=0;car.Hazards=car.Siren=false;car.RemoteUntil=car.RemoteDirection=car.AlarmUntil=car.NextAlarm=0;
+            if(car.Driver)car.Driver.gameObject.SetActive(data.auto);if(car.Rider)car.Rider.gameObject.SetActive(false);
+            car.Root.gameObject.SetActive(true);car.Body.linearVelocity=car.Root.forward*car.Motion.Speed;car.Body.angularVelocity=Vector3.zero;
+            car.Body.WakeUp();fleet.Add(car);Spawned?.Invoke(car);return car;
+        }
+        public void Despawn(Vehicle car)
+        {
+            car.Body.linearVelocity=car.Body.angularVelocity=Vector3.zero;car.Body.Sleep();
+            car.Root.gameObject.SetActive(false);fleet.Remove(car);
+        }
+        Transform[] Map(int[] ids){var a=new Transform[ids?.Length??0];for(int i=0;i<a.Length;i++)a[i]=ctx.Node(ids[i]);return a;}
+        Transform[] Map(WheelData[] values,Func<WheelData,int> id){var a=new Transform[values.Length];for(int i=0;i<a.Length;i++)a[i]=ctx.Node(id(values[i]));return a;}
+        Light[] Lights(int[] ids){var list=new List<Light>();foreach(int id in ids??Array.Empty<int>()){var t=ctx.Node(id);if(t)foreach(var light in t.GetComponentsInChildren<Light>(true))
+            {
+                // Donor headlights were hidden during the day. Enabling the component
+                // alone cannot reactivate the imported GameObject.
+                light.gameObject.SetActive(true);t.gameObject.SetActive(true);
+                light.type=LightType.Spot;light.range=30;light.spotAngle=62;
+                light.transform.rotation=t.rotation*Quaternion.Euler(7,0,0);
+                light.color=new Color(1,.94f,.80f);light.renderMode=LightRenderMode.ForcePixel;
+                light.shadows=LightShadows.Hard;light.shadowBias=.025f;light.shadowNormalBias=.12f;
+                list.Add(light);
+            }}return list.ToArray();}
+        Renderer[] LampRenderers(int[] ids){var list=new List<Renderer>();foreach(int id in ids??Array.Empty<int>()){var t=ctx.Node(id);if(t)list.AddRange(t.GetComponentsInChildren<Renderer>(true));}return list.ToArray();}
+        static void SetLayer(Transform root,int layer){root.gameObject.layer=layer;foreach(Transform child in root)SetLayer(child,layer);}
+        void AddBodyColliders(Vehicle car)
+        {
+            if(car.Root.GetComponentsInChildren<Collider>(true).Length>0)return;
+            var data=car.Data;
+            if(data.surfaces.Length>0)foreach(var s in data.surfaces)
+            {
+                if(s.w<.22f||s.d<.22f)continue;
+                var box=car.Root.gameObject.AddComponent<BoxCollider>();float bottom=data.kind=="bus"?.26f:.20f;
+                box.center=new Vector3(s.x,(s.top+bottom)*.5f,s.z);box.size=new Vector3(Mathf.Max(.15f,s.w),Mathf.Max(.08f,s.top-bottom),Mathf.Max(.15f,s.d));
+            }
+            else
+            {
+                var box=car.Root.gameObject.AddComponent<BoxCollider>();
+                float bottom=data.kind=="bike"?.35f:.26f,top=data.kind=="bike"?1.45f:data.kind=="bus"?3.2f:2.4f;
+                box.center=new Vector3(0,(bottom+top)*.5f,data.centerOffset);box.size=new Vector3(data.width,top-bottom,data.length);
+            }
+            var material=new PhysicsMaterial("Pneus simulados · contato da carroceria"){dynamicFriction=.15f,staticFriction=.2f,bounciness=.04f};
+            foreach(var c in car.Root.GetComponents<Collider>())c.sharedMaterial=material;
+        }
+        Light[] MakeBeacons(Vehicle car)
+        {
+            if(car.Data.role!="police"&&car.Data.role!="fire")return Array.Empty<Light>();
+            var lights=new Light[2];for(int i=0;i<2;i++){var g=new GameObject("Luz de emergência");g.transform.SetParent(car.Root,false);g.transform.localPosition=new Vector3(i==0?-.40f:.40f,2.2f,0);var light=g.AddComponent<Light>();light.type=LightType.Point;light.range=8;light.intensity=0;light.color=i==0?new Color(1,.16f,.10f):new Color(.1f,.35f,1);lights[i]=light;}return lights;
+        }
+        void PrepareRoute(Vehicle car)
+        {
+            if(car.Route==null||car.Route.Length<2){car.Route=Array.Empty<Vector3>();return;}
+            car.Cumulative=new float[car.Route.Length+1];for(int i=0;i<car.Route.Length;i++)car.Cumulative[i+1]=car.Cumulative[i]+CityPhysics.Flat(car.Route[(i+1)%car.Route.Length]-car.Route[i]).magnitude;
+            car.RouteLength=car.Cumulative[car.Route.Length];car.Progress=Closest(car,car.Root.position);
+            car.StopProgress=new float[ctx.Data.stops.Length];for(int i=0;i<car.StopProgress.Length;i++)car.StopProgress[i]=Closest(car,new Vector3(ctx.Data.stops[i].roadX,0,ctx.Data.stops[i].roadZ));
+        }
+        float Closest(Vehicle car,Vector3 point,bool localSearch=false)
+        {
+            float score=float.MaxValue,progress=0;
+            for(int i=0;i<car.Route.Length;i++)
+            {
+                var a=car.Route[i];var d=CityPhysics.Flat(car.Route[(i+1)%car.Route.Length]-a);float t=Mathf.Clamp01(Vector3.Dot(CityPhysics.Flat(point-a),d)/Mathf.Max(.001f,d.sqrMagnitude));
+                float candidate=car.Cumulative[i]+d.magnitude*t;
+                float step=Mathf.Repeat(candidate-car.Progress+car.RouteLength*.5f,car.RouteLength)-car.RouteLength*.5f;
+                if(localSearch&&(step< -8||step>30))continue;
+                float distance=CityPhysics.Flat(point-a-d*t).sqrMagnitude;if(distance<score){score=distance;progress=candidate;}
+            }
+            if(localSearch&&score>144)return Closest(car,point);
+            return progress;
+        }
+        Vector3 Sample(Vehicle car,float distance,Vector3[] points=null)
+        {
+            if(car.RouteLength<.1f)return car.Root.position;
+            if(points==null)points=car.Route;
+            distance=Mathf.Repeat(distance,car.RouteLength);int i=Array.BinarySearch(car.Cumulative,distance);if(i<0)i=~i-1;i=Mathf.Clamp(i,0,car.Route.Length-1);
+            float span=car.Cumulative[i+1]-car.Cumulative[i];return Vector3.Lerp(points[i],points[(i+1)%points.Length],span>.001f?(distance-car.Cumulative[i])/span:0);
+        }
+        public Vector3 RoutePoint(Vehicle car,float distance,bool alternate=false)=>Sample(car,distance,alternate&&car.Data.alternateRoute.Length==car.Route.Length?car.Data.alternateRoute:null);
+        public float RouteDistance(Vehicle car,Vector3 point)=>Closest(car,point);
+        int ApproachSide(Vehicle car)=>car.Root.InverseTransformPoint(ctx.Player.position).x<0?-1:1;
+        Vector3 EntryPoint(Vehicle car)=>car.Root.TransformPoint(car.Data.kind=="bus"?new Vector3(car.Data.width*.5f+.65f,1.0f,2.3f):new Vector3(ApproachSide(car)*(car.Data.width*.5f+.50f),.95f,car.Data.seatMount.z));
+        bool CanEnter(Vehicle car)=>active==null&&transitionVehicle==null&&car.Root.gameObject.activeInHierarchy&&
+            !ctx.Motor.Busy&&!ctx.Motor.Riding&&!ctx.Motor.Swimming&&!ctx.Motor.SeatHeight.HasValue&&
+            CityPhysics.Flat(car.Body.linearVelocity).sqrMagnitude<1&&car.Body.angularVelocity.sqrMagnitude<.25f&&
+            (car.Data.kind!="bus"||car.AtStop!=null)&&ctx.Incidents.CanTakeover(car)&&ApproachClear(car);
+        bool ApproachClear(Vehicle car)
+        {Vector3 from=ctx.Player.position+Vector3.up*1.1f,d=EntryPoint(car)-from;return !CityPhysics.Cast(from,.10f,d.normalized,d.magnitude,out _,ctx.Player,car.Root);}
+        void Enter(Vehicle car)
+        {
+            if(!CanEnter(car)||Vector3.Distance(ctx.Player.position+Vector3.up,EntryPoint(car))>(car.Data.kind=="bus"?3.2f:3))return;
+            if(car.Occupied&&car.Driver&&car.Data.kind!="bus"&&car.Data.kind!="bike"&&ctx.Incidents.Get(car)==null)
+            {if(!BeginCarjacking(car))ctx.Say("Sem espaço para retirar o motorista.",EntryPoint(car));return;}
+            Board(car);
+        }
+        void Board(Vehicle car)
+        {
+            float open=car.DoorOpen;
+            ctx.Incidents.ReleaseForTakeover(car);
+            car.DoorOpen=open;ctx.Combat.Holster();
+            active=car;car.LastUsed=ctx.Clock;car.Body.WakeUp();car.Controlled=car.Data.kind!="bus";car.Passenger=car.Data.kind=="bus";car.ExitRequested=false;
+            if(car.Controlled){car.Commanded=false;car.RemoteUntil=car.JamUntil=0;car.TargetSpeed=0;}
+            if(car.Occupied&&car.Data.kind!="bus"){Crime?.Invoke(car.Data.role=="police"?"furto-policial":"furto",car.Position);car.Occupied=false;}
+            ctx.Motor.SetRide(car.Root,car.Data.kind!="bike"&&car.Data.kind!="bus");
+            if(car.Data.kind=="bike"){if(car.Rider)car.Rider.gameObject.SetActive(true);ctx.Motor.SetVisible(false);return;}
+            if(car.Data.kind=="bus"){if(car.Rider)car.Rider.gameObject.SetActive(true);ctx.Motor.SetVisible(false);ctx.Sound("bus-door",car.Position);return;}
+            entrySide=ApproachSide(car);
+            entryDoorStart=car.DoorOpen;
+            transitionRotationFrom=ctx.Player.rotation;
+            transitionVehicle=car;transition=0;exiting=false;transitionFrom=car.Root.InverseTransformPoint(ctx.Player.position);transitionTo=car.Root.TransformPoint(car.Data.seatMount);
+            ctx.Motor.SetInputLock(true);ctx.Sound("door",car.Position);
+        }
+        string ExitLabel()=>active==null?"":active.Data.kind=="bus"?(active.AtStop!=null?"Desembarcar":"Pedir parada"):Mathf.Abs(active.Speed)>.7f?"Parar e sair":active.Data.kind=="bike"?"Descer":"Sair";
+        void RequestExit()
+        {
+            if(active==null)return;active.ExitRequested=true;
+            if(active.Data.kind=="bus"&&active.AtStop==null){ctx.Say("Próxima parada.",active.Position+Vector3.up*2.3f);return;}
+            if(Mathf.Abs(active.Speed)<.8f)Exit(active);
+        }
+        bool Landing(Vehicle car,out Vector3 point)
+        {
+            if(car.Data.kind=="bus")return BusLanding(car,ctx.Player,out point);
+            var signs=car.Data.kind=="bus"?new[]{1}:new[]{entrySide,-entrySide};
+            foreach(int side in signs)foreach(float ahead in new[]{0f,-.8f,.8f})
+            {
+                point=car.Root.TransformPoint(new Vector3(side*(car.Data.width*.5f+.85f),0,(car.Data.kind=="bus"?2.4f:car.Data.seatMount.z)+ahead));
+                point.y=ctx.Ground(point.x,point.z)+.045f;
+                if(Mathf.Abs(point.y-car.Position.y)>.75f||!CityPhysics.StandClear(point,ctx.Player,car.Root))continue;
+                Vector3 edge=car.Root.TransformPoint(new Vector3(side*(car.Data.width*.5f+.38f),0,car.Data.kind=="bus"?2.4f:car.Data.seatMount.z));edge.y=point.y;
+                if(!CityPhysics.SweepClear(edge,point,ctx.Player,car.Root))continue;
+                entrySide=side;return true;
+            }
+            point=car.Position;return false;
+        }
+        bool BusLanding(Vehicle bus,Transform actor,out Vector3 point)
+        {
+            // Leave the step clear for the next passenger. The authored stops
+            // put the sidewalk 4.4 m to the right of the bus centre line.
+            foreach(float along in new[]{2.4f,1.1f,3.3f,-.2f})foreach(float side in new[]{4.45f,4.70f,4.95f})
+            {
+                point=bus.Root.TransformPoint(new Vector3(side,0,along));point.y=ctx.Ground(point.x,point.z)+.045f;
+                if(Mathf.Abs(point.y-bus.Position.y)>.75f||!CityPhysics.StandClear(point,actor,bus.Root))continue;
+                Vector3 edge=PassengerEntryPoint(bus);edge.y=point.y;
+                if(CityPhysics.SweepClear(edge,point,actor,bus.Root))return true;
+            }
+            point=bus.Position;return false;
+        }
+        bool Exit(Vehicle car)
+        {
+            if(!Landing(car,out var point)){car.ExitRequested=false;ctx.Say("Saída bloqueada.",car.Position+Vector3.up*2);return false;}
+            if(car.Data.kind=="bus"&&car.AtStop==null)return false;
+            if(car.Data.kind=="bike"||car.Data.kind=="bus"){FinishExit(car,point);return true;}
+            entryDoorStart=0;transitionVehicle=car;transition=0;exiting=true;transitionFrom=car.Root.TransformPoint(car.Data.seatMount);transitionFrom.y=point.y;
+            transitionTo=point;ctx.Motor.SetVisible(true);if(car.Driver)car.Driver.gameObject.SetActive(false);ctx.Motor.SetInputLock(true);ctx.Sound("door",car.Position);return true;
+        }
+        void FinishExit(Vehicle car,Vector3 point)
+        {
+            car.LastUsed=ctx.Clock;
+            if(car.Rider)car.Rider.gameObject.SetActive(false);if(car.Driver&&car.Data.kind!="bus")car.Driver.gameObject.SetActive(false);
+            car.Controlled=false;car.Passenger=false;car.ExitRequested=false;car.Data.auto=car.Data.kind=="bus";
+            active=null;transitionVehicle=null;ctx.Motor.SetInputLock(false);ctx.Motor.SetRide(null);ctx.Motor.Warp(point);ctx.Player.rotation=Quaternion.Euler(0,car.Root.eulerAngles.y,0);
+        }
+        void Update()
+        {
+            if(!ctx||!ctx.Ready||ctx.Paused)return;float dt=Mathf.Min(Time.deltaTime,.05f);
+            if(carjacking!=null)TickCarjacking(dt);
+            else if(transitionVehicle!=null)
+            {
+                var car=transitionVehicle;transition=Mathf.Min(1,transition+dt/(exiting?.82f:1.0f));car.DoorOpen=Mathf.Max(Mathf.Sin(Mathf.PI*transition),entryDoorStart*(1-Mathf.SmoothStep(0,1,(transition-.65f)/.35f)));
+                Vector3 from=exiting?transitionFrom:car.Root.TransformPoint(transitionFrom);
+                Vector3 to=exiting?transitionTo:car.Root.TransformPoint(car.Data.seatMount);
+                Vector3 point=Vector3.Lerp(from,to,CityPhysics.Ease(transition));
+                point.y=exiting?transitionTo.y:Mathf.Lerp(from.y,car.Position.y,transition);
+                ctx.Motor.SetCarriedPose(point,exiting?car.Root.rotation:Quaternion.Slerp(transitionRotationFrom,car.Root.rotation,CityPhysics.Ease(transition)),0,"car-door");
+                if(transition>=1){if(exiting)FinishExit(car,transitionTo);else{ctx.Motor.SetVisible(true);if(car.Driver)car.Driver.gameObject.SetActive(false);ctx.Motor.SetInputLock(false);transitionVehicle=null;}}
+            }
+            foreach(var car in fleet)
+            {
+                if(car.AtStop!=null)
+                {
+                    car.Dwell-=dt;
+                    if(car.Passenger&&car.ExitRequested&&Mathf.Abs(car.Speed)<.7f)Exit(car);
+                    if(car.Dwell<=0&&!car.ExitRequested){car.AtStop=null;car.Dwell=0;}
+                }
+                if((car==active&&car.Controlled||car==remoteCar)&&transitionVehicle==null)
+                {
+                    if(ctx.Input.Horn&&ctx.Clock-car.LastHorn>.5f){ctx.Sound(car.Data.kind=="bike"?"bell":"horn",car.Position);if(ctx.Residents)ctx.Residents.ReactToHorn(car.Position,car.Data.kind=="bike");car.LastHorn=ctx.Clock;}
+                    if(ctx.Input.LeftSignal)car.Signal=car.Signal==-1?0:-1;if(ctx.Input.RightSignal)car.Signal=car.Signal==1?0:1;
+                    if(ctx.Input.Emergency){if(car.Beacons.Length>0)car.Siren=!car.Siren;else car.Hazards=!car.Hazards;}
+                    if(car.ExitRequested&&Mathf.Abs(car.Speed)<.65f)Exit(car);
+                }
+                TickRemoteAlarm(car);AnimateVehicle(car,dt);
+            }
+        }
+        void FixedUpdate()
+        {
+            if(!ctx||!ctx.Ready||ctx.Paused)return;float dt=Time.fixedDeltaTime;
+            foreach(var car in fleet)
+            {
+                if(car.Body.IsSleeping()&&!car.Data.auto&&!car.Commanded&&car!=active&&car!=remoteCar&&car.RemoteUntil<=0)continue;
+                int grounded=Suspension(car,dt);float throttle=0,steer=0,brake=0,handbrake=0;
+                bool human=car==active&&car.Controlled||car==remoteCar;
+                if(car==remoteCar)
+                {throttle=ctx.Input.Drive.y;steer=ctx.Input.Drive.x;brake=ctx.Input.Brake?1:0;handbrake=ctx.Input.Handbrake?1:0;}
+                else if(human&&!ctx.Motor.Remote&&!ctx.Motor.Busy&&!car.ExitRequested&&transitionVehicle==null)
+                {throttle=ctx.Input.Drive.y;steer=ctx.Input.Drive.x;brake=ctx.Input.Brake?1:0;handbrake=ctx.Input.Handbrake?1:0;}
+                else if((car.Data.auto||car.Commanded)&&!human){DriveAI(car,dt,out throttle,out steer,out brake);}
+                else brake=.8f;
+                if(car.ExitRequested&&car.Data.kind!="bus"||transitionVehicle==car)brake=1;
+                ApplyRemoteMotion(car,ref throttle,ref steer,ref brake);
+                if(ctx.Clock<car.JamUntil){throttle=0;brake=Mathf.Max(brake,.8f);}
+                var local=car.Root.InverseTransformDirection(car.Body.linearVelocity);car.Motion.Speed=local.z;car.Motion.Lateral=local.x;car.Motion.YawRate=car.Body.angularVelocity.y;
+                if(car.Data.kind=="bike")StepBicycle(car,throttle,steer,brake,dt,grounded);
+                else if(grounded>0)
+                {
+                    Vector3 front=car.Root.TransformPoint(new Vector3(0,0,car.Data.wheelbase-car.Data.rearOffset)),rear=car.Root.TransformPoint(new Vector3(0,0,-car.Data.rearOffset));
+                    float frontGrip=ctx.Systems?ctx.Systems.SurfaceGrip(front):1,rearGrip=ctx.Systems?ctx.Systems.SurfaceGrip(rear):1;
+                    int frontWheels=0,rearWheels=0,frontContacts=0,rearContacts=0;
+                    for(int i=0;i<car.Data.wheels.Length;i++)
+                        if(car.Data.wheels[i].front){frontWheels++;if(car.WheelGrounded[i])frontContacts++;}
+                        else{rearWheels++;if(car.WheelGrounded[i])rearContacts++;}
+                    frontGrip*=frontContacts/(float)Mathf.Max(1,frontWheels);rearGrip*=rearContacts/(float)Mathf.Max(1,rearWheels);
+                    var controls=new CityVehicleMath.Controls{Throttle=throttle,Steer=steer,Brake=brake,Handbrake=handbrake,Wheelbase=car.Data.wheelbase,RearOffset=car.Data.rearOffset,MassScale=car.Data.massScale,DriveScale=car.Data.driveScale,
+                        SteeringLock=car.Data.maxSteering,FrontWeight=car.Data.frontWeight,FrontDrive=car.Data.frontDrive,TopSpeed=car.Data.kind=="bus"?16:human?CityVehicleMath.DriverTopSpeed:39,FrontGrip=frontGrip,RearGrip=rearGrip,AutomaticDirection=!human,DriverAssist=human};
+                    var result=CityVehicleMath.Step(car.Motion,controls,dt);
+                    Vector2 change=CityVehicleMath.VelocityChange(car.Motion,result);
+                    Vector3 delta=car.Root.forward*change.y+car.Root.right*change.x;
+                    // Tyre forces act below the centre of mass: suspension now
+                    // carries acceleration squat, braking dive and cornering roll.
+                    car.Body.AddForceAtPosition(delta*(car.Body.mass/Mathf.Max(dt,.001f)),car.Body.worldCenterOfMass-car.Root.up*.32f,ForceMode.Force);
+                    car.Body.AddTorque(Vector3.up*((result.YawRate-car.Body.angularVelocity.y)/Mathf.Max(dt,.001f)),ForceMode.Acceleration);car.Motion=result;
+                }
+                if(!human&&!car.Data.auto&&!car.Commanded&&car.RemoteUntil<=0&&car.Body.linearVelocity.sqrMagnitude<.015f)car.Body.Sleep();
+                if(car.Position.y< -25){car.Body.position=car.Data.position+Vector3.up*.2f;car.Body.rotation=Quaternion.Euler(0,car.Data.yaw*Mathf.Rad2Deg,0);car.Body.linearVelocity=car.Body.angularVelocity=Vector3.zero;}
+            }
+        }
+        int Suspension(Vehicle car,float dt)
+        {
+            int count=car.Data.wheels.Length,contacts=0;if(count==0)return 0;
+            float spring=car.Body.mass*9.81f/(count*.09f),damper=car.Body.mass/count*(car.Data.kind=="bike"?8:11.8f);
+            for(int i=0;i<count;i++)
+            {
+                var wheel=car.Data.wheels[i];Vector3 origin=car.Root.TransformPoint(wheel.position+Vector3.up*.18f),down=-car.Root.up;
+                bool hit=CityPhysics.Cast(origin,0,down,wheel.radius+.53f,out var ground,car.Root,ctx.Player)&&ground.normal.y>.25f;
+                car.WheelGrounded[i]=hit;
+                if(hit)
+                {
+                    car.ContactPoints[i]=ground.point;car.ContactNormals[i]=ground.normal;
+                    contacts++;float travel=Mathf.Clamp(ground.distance-wheel.radius,0,.53f),compression=.27f-travel;
+                    Vector3 up=Vector3.Slerp(car.Root.up,ground.normal,.6f);float verticalSpeed=Vector3.Dot(car.Body.GetPointVelocity(origin),up);
+                    float force=Mathf.Clamp(compression*spring-verticalSpeed*damper,0,car.Body.mass*9.81f*3/count);
+                    car.Body.AddForceAtPosition(up*force,origin,ForceMode.Force);
+                    car.Compression[i]=CityVehicleMath.Damp(car.Compression[i],Mathf.Clamp(.18f-travel,-.18f,.18f),18,dt);
+                }
+                else car.Compression[i]=CityVehicleMath.Damp(car.Compression[i],-.18f,12,dt);
+            }
+            if(contacts>0)
+            {
+                Vector3 tilt=Vector3.Cross(car.Root.up,Vector3.up);car.Body.AddTorque(tilt*(car.Data.kind=="bike"?20:5)-new Vector3(car.Body.angularVelocity.x,0,car.Body.angularVelocity.z)*1.8f,ForceMode.Acceleration);
+            }
+            return contacts;
+        }
+        void StepBicycle(Vehicle car,float throttle,float steer,float brake,float dt,int grounded)
+        {
+            if(grounded==0)return;float speed=car.Speed;
+            float acceleration=throttle*2.4f-(Mathf.Abs(speed)>.01f?Mathf.Sign(speed)*(.18f+speed*speed*.015f+brake*6.5f):0);
+            float next=Mathf.Clamp(speed+acceleration*dt,-3.5f,9.5f);if(brake>0&&next*speed<=0)next=0;
+            car.Motion.Steering=CityVehicleMath.Damp(car.Motion.Steering,steer*Mathf.Lerp(.52f,.23f,Mathf.Abs(speed)/9),8,dt);
+            car.Motion.Speed=next;car.Motion.YawRate=next*Mathf.Tan(car.Motion.Steering)/2.5f;
+            Vector3 lateral=Vector3.Project(car.Body.linearVelocity,car.Root.right);
+            car.Body.AddForce(car.Root.forward*(next-speed)/dt-lateral*9,ForceMode.Acceleration);
+            var angular=car.Body.angularVelocity;angular.y=car.Motion.YawRate;car.Body.angularVelocity=angular;
+            car.Motion.Braking=brake>0;car.Pedal+=next*dt/1.6f;
+        }
+        void DriveAI(Vehicle car,float dt,out float throttle,out float steer,out float brake)
+        {
+            throttle=steer=brake=0;if(car.RouteLength<1){brake=1;return;}
+            if(car.TrafficHold){car.TargetSpeed=0;car.StoppedReason=car.TrafficHoldReason;brake=1;return;}
+            car.StoppedReason="";car.ObstacleGap=float.PositiveInfinity;car.StopGap=float.PositiveInfinity;
+            car.Progress=Closest(car,car.Position,true);float speed=Mathf.Max(0,car.Speed),look=2.5f+speed*.40f;
+            Vector3 target=Sample(car,car.Progress+look),ahead=Sample(car,car.Progress+look+7);
+            if(car.Commanded)
+            {
+                float destination=Closest(car,car.CommandTarget),left=Mathf.Repeat(destination-car.Progress,car.RouteLength);
+                if(left<look)target=Sample(car,destination);
+            }
+            var local=car.Root.InverseTransformPoint(target);float curvature=2*local.x/Mathf.Max(3,local.x*local.x+local.z*local.z);
+            float desired=Mathf.Atan(car.Data.wheelbase*curvature);steer=Mathf.Clamp(desired/Mathf.Max(.12f,CityVehicleMath.SteeringLock(speed,car.Data.maxSteering)),-1,1);
+            float bend=Vector3.Angle(CityPhysics.Flat(target-car.Position),CityPhysics.Flat(ahead-target))*Mathf.Deg2Rad/7;
+            // Brake before a tight turn reaches the steering target, rather
+            // than discovering its radius after the car has entered it.
+            for(float distance=3;distance<=15;distance+=4)
+            {
+                var a=Sample(car,car.Progress+distance-2);var b=Sample(car,car.Progress+distance);var c=Sample(car,car.Progress+distance+2);
+                bend=Mathf.Max(bend,Vector3.Angle(CityPhysics.Flat(b-a),CityPhysics.Flat(c-b))*Mathf.Deg2Rad/2);
+            }
+            float cruise=car.Commanded?12:car.Data.kind=="bus"?7.7f:car.CruiseSpeed*(1+Mathf.Sin(ctx.Clock*.065f+car.LanePhase)*.035f);
+            float targetSpeed=Mathf.Min(cruise,Mathf.Sqrt(1.35f/Mathf.Max(.012f,bend)));
+            // Small, slow variations stay inside a 3.2 m lane. Bends and
+            // nearby road users bring the target back towards its centre.
+            float lateralRoom=car.Commanded||car.Data.kind=="bus"?0:Mathf.Clamp01(1-bend*16);
+            foreach(var other in fleet)if(other!=car&&CityPhysics.Flat(other.Position-car.Position).sqrMagnitude<14*14)lateralRoom*=.25f;
+            foreach(var nearbyPerson in ctx.Residents.People)if(!nearbyPerson.Down&&CityPhysics.Flat(nearbyPerson.Root.position-target).sqrMagnitude<9*9)lateralRoom=0;
+            if(CityPhysics.Flat(ctx.Player.position-target).sqrMagnitude<9*9)lateralRoom=0;
+            float lateralTarget=(car.LaneBias+Mathf.Sin(ctx.Clock*.11f+car.LanePhase)*car.LaneAmplitude)*lateralRoom;
+            car.LaneOffset=Mathf.MoveTowards(car.LaneOffset,lateralTarget,dt*.10f);
+            Vector3 tangent=CityPhysics.Flat(Sample(car,car.Progress+look+1)-Sample(car,car.Progress+look-1)).normalized;
+            target+=Vector3.Cross(Vector3.up,tangent)*car.LaneOffset;
+            car.Signal=Mathf.Abs(desired)>.12f?(desired>0?1:-1):0;
+            if(car.Commanded&&CityPhysics.Flat(car.Position-car.CommandTarget).magnitude<7)targetSpeed=Mathf.Min(targetSpeed,2.5f);
+            if(car.Data.kind=="bus")
+            {
+                if(car.AtStop==null&&car.NextStop<0)
+                {
+                    float nearest=36;
+                    for(int i=0;i<car.StopProgress.Length;i++){float gap=Mathf.Repeat(car.StopProgress[i]-car.Progress,car.RouteLength);if(i==car.LastStop&&gap<12)continue;if(gap<nearest){nearest=gap;car.NextStop=i;}}
+                }
+                if(car.NextStop>=0&&car.AtStop==null)
+                {
+                    int i=car.NextStop;float gap=Mathf.Repeat(car.StopProgress[i]-car.Progress+car.RouteLength*.5f,car.RouteLength)-car.RouteLength*.5f;car.StopGap=gap;
+                    if(gap< -4){car.NextStop=-1;}
+                    else
+                    {
+                        float approach=Mathf.Sqrt(2*1.25f*Mathf.Max(0,gap-.65f-speed*.45f));
+                        if(gap>1.20f)approach=Mathf.Max(.55f,approach);
+                        targetSpeed=Mathf.Min(targetSpeed,approach);car.StoppedReason="parada-"+ctx.Data.stops[i].id;
+                        if(gap<1.35f&&speed<.55f){car.AtStop=ctx.Data.stops[i];car.Dwell=Ambient(5.5f,8.5f);car.LastStop=i;car.NextStop=-1;car.StopCount++;ctx.Sound("bus-door",car.Position);}
+                    }
+                }
+                if(car.AtStop!=null){targetSpeed=0;car.StoppedReason="embarque-"+car.AtStop.id;}
+            }
+            traffic.Stop(car,dt,ref targetSpeed);
+            traffic.Pass(car,dt,ref target,ref targetSpeed,ref car.Signal);
+            float nose=car.Data.length*.5f+car.Data.centerOffset;
+            foreach(var signal in ctx.Data.signals)
+            {
+                if(signal.approaches.Length>0)
+                {
+                    if(!CitySignalRules.Approach(signal,car.Position,car.Root.forward,nose,out var arm,out float stopGap))continue;
+                    int light=ctx.Systems?ctx.Systems.SignalState(signal,arm.axis):CitySignalRules.State(signal,ctx.Clock,arm.axis);
+                    if(light!=0)
+                    {
+                        float remaining=CitySignalRules.AmberRemaining(signal,ctx.Clock,arm.axis);
+                        bool committed=light==1&&speed>2&&stopGap<speed*speed/6.4f&&stopGap/speed+.12f<remaining;
+                        if(!committed){float limit=Mathf.Sqrt(2*2.2f*Mathf.Max(0,stopGap));if(limit<targetSpeed)car.StoppedReason="semaforo";targetSpeed=Mathf.Min(targetSpeed,limit);}
+                    }
+                    continue;
+                }
+                Vector3 offset=new Vector3(signal.x,car.Position.y,signal.z)-car.Position;float along=Vector3.Dot(offset,car.Root.forward),cross=Mathf.Abs(Vector3.Dot(offset,car.Root.right));
+                if(along<nose+5.7f||along>35||cross>5.5f)continue;
+                float phase=Mathf.Repeat(ctx.Clock+signal.phase,24);bool ns=Mathf.Abs(car.Root.forward.z)>.7f;
+                int state=ctx.Systems?ctx.Systems.SignalState(signal,ns):(ns?(phase<9?0:phase<11?1:2):(phase>=12&&phase<21?0:phase>=21&&phase<23?1:2));
+                if(state!=0)
+                {
+                    float gap=along-nose-8.2f,remaining=ns?11-phase:23-phase;
+                    bool committed=state==1&&speed>2&&gap<speed*speed/6.4f&&gap/speed+.12f<remaining;
+                    if(!committed){float limit=Mathf.Sqrt(2*2.2f*Mathf.Max(0,gap));if(limit<targetSpeed)car.StoppedReason="semaforo";targetSpeed=Mathf.Min(targetSpeed,limit);}
+                }
+            }
+            float sensorRadius=Mathf.Min(.92f,car.Data.width*.34f);
+            Vector3 eye=car.Position+car.Root.forward*(nose+.18f)+Vector3.up*Mathf.Max(1.10f,sensorRadius+.20f);
+            float scan=Mathf.Max(5,speed*1.85f+speed*speed/5);
+            // Road surfaces provide wheel support, not a vehicle ahead. A
+            // sphere initially intersecting a slope reports a reverse normal,
+            // which otherwise looks like a wall and deadlocks the queue.
+            int trafficMask=(ctx.AllMask|(1<<CityContext.PlayerLayer))&~(1<<CityContext.GroundLayer);
+            if(CityPhysics.Cast(eye,sensorRadius,car.Root.forward,scan,out var obstacle,car.Root,null,trafficMask))
+            {
+                if(obstacle.normal.y<.7f||obstacle.collider.gameObject.layer==CityContext.ActorLayer||obstacle.collider.gameObject.layer==CityContext.PlayerLayer)
+                {
+                    float lead=obstacle.rigidbody?Mathf.Max(0,Vector3.Dot(obstacle.rigidbody.linearVelocity,car.Root.forward)):0;
+                    float gap=Mathf.Max(0,obstacle.distance-1.4f-speed*car.Headway);
+                    car.ObstacleGap=obstacle.distance;float limit=Mathf.Sqrt(lead*lead+2*2.35f*gap);if(limit<targetSpeed)car.StoppedReason="obstaculo-"+obstacle.collider.name;targetSpeed=Mathf.Min(targetSpeed,limit);
+                    if(obstacle.distance<1.5f)targetSpeed=0;
+                }
+            }
+            // Pure pursuit belongs to the rear axle. Offset both the target
+            // and the reference point so the body centre follows its lane.
+            Vector3 rearGoal=target-tangent*car.Data.rearOffset,rearAxle=car.Position-car.Root.forward*car.Data.rearOffset;
+            local=car.Root.InverseTransformDirection(rearGoal-rearAxle);curvature=2*local.x/Mathf.Max(3,local.x*local.x+local.z*local.z);
+            steer=Mathf.Clamp(Mathf.Atan(car.Data.wheelbase*curvature)/Mathf.Max(.12f,CityVehicleMath.SteeringLock(speed,car.Data.maxSteering)),-1,1);
+            float peopleGap=traffic.PeopleGap(car,curvature,car.Traffic.Reverse,out string roadUser);
+            float peopleLimit=float.PositiveInfinity;
+            if(!float.IsPositiveInfinity(peopleGap))
+            {
+                float deceleration=Mathf.Lerp(3.2f,2.2f,ctx.Wetness),reaction=deceleration*.45f;
+                peopleLimit=Mathf.Max(0,Mathf.Sqrt(reaction*reaction+2*deceleration*Mathf.Max(0,peopleGap-2.2f))-reaction);
+                if(peopleLimit<targetSpeed||car.Traffic.Reverse)car.StoppedReason=roadUser;
+                targetSpeed=Mathf.Min(targetSpeed,peopleLimit);car.ObstacleGap=Mathf.Min(car.ObstacleGap,peopleGap);
+                // A nearer physical sensor or a crossing can already demand
+                // zero. Complete that stop instead of creeping toward a person.
+                if(targetSpeed<.1f)peopleLimit=0;
+                if(peopleLimit<.1f)car.Traffic.PersonHoldUntil=ctx.Clock+.35f;
+            }
+            if(ctx.Clock<car.Traffic.PersonHoldUntil){peopleLimit=targetSpeed=0;car.StoppedReason="aguardando-pedestre";}
+            if(car.Traffic.Reverse)
+            {
+                car.TargetSpeed=0;steer=0;
+                if(peopleLimit<1.4f){throttle=0;brake=1;return;}
+                throttle=-Mathf.Clamp01((1.3f-Mathf.Abs(car.Speed))*.65f+.12f);return;
+            }
+            car.TargetSpeed=Mathf.MoveTowards(car.TargetSpeed,targetSpeed,(targetSpeed<car.TargetSpeed?3.3f:car.Acceleration)*dt);
+            // Safety caps bypass the comfort filter. Otherwise a newly detected
+            // pedestrian can leave the old target above actual speed: throttle
+            // stays open precisely when the driver should already be braking.
+            car.TargetSpeed=Mathf.Min(car.TargetSpeed,peopleLimit);
+            float error=car.TargetSpeed-speed;if(error>.1f)throttle=Mathf.Clamp01(error*.8f+.09f);else if(error<-.08f)brake=Mathf.Clamp01(-error*.19f);
+            if(speed>peopleLimit+.04f||peopleLimit<.1f)
+            {
+                throttle=0;
+                float required=speed*speed/(2*Mathf.Max(.15f,peopleGap-.65f));
+                brake=Mathf.Max(brake,peopleLimit<.1f?1:Mathf.Clamp(required/Mathf.Lerp(5.5f,3.4f,ctx.Wetness),.22f,1));
+            }
+            if(targetSpeed<.1f&&speed<.12f)brake=.7f;
+        }
+        void AnimateVehicle(Vehicle car,float dt)
+        {
+            float speed=car.Speed;car.Spin+=speed*dt;
+            for(int i=0;i<car.Data.wheels.Length;i++)
+            {
+                var wheel=car.Data.wheels[i];float angle=wheel.front?CityVehicleMath.WheelAngle(car.Motion.Steering,car.Data.wheelbase,wheel.position.x):0;
+                if(car.WheelPivots[i]){car.WheelPivots[i].localPosition=car.WheelHomes[i]+Vector3.up*car.Compression[i];car.WheelPivots[i].localRotation=car.WheelRotations[i]*Quaternion.Euler(0,angle*Mathf.Rad2Deg,0);}
+                float driven=wheel.front?car.Data.frontDrive:1-car.Data.frontDrive;
+                float wheelSpeed=speed+car.Motion.Direction*car.Motion.Wheelspin*driven*9;
+                if(!wheel.front)wheelSpeed*=1-car.Motion.Handbrake*.9f;
+                wheelSpeed*=1-car.Motion.BrakePressure*.55f;car.WheelTravel[i]+=wheelSpeed*dt;
+                if(car.WheelSpins[i])car.WheelSpins[i].localRotation=car.SpinRotations[i]*Quaternion.Euler(car.WheelTravel[i]/Mathf.Max(.1f,wheel.radius)*Mathf.Rad2Deg,0,0);
+            }
+            if(transitionVehicle!=car)car.DoorOpen=CityVehicleMath.Damp(car.DoorOpen,car.AtStop!=null?1:0,8,dt);
+            for(int i=0;i<car.Doors.Length;i++)if(car.Doors[i])
+            {
+                if(car.Data.kind=="bus")car.Doors[i].localPosition=car.DoorHomes[i]+Vector3.forward*(i==0?-.72f:.72f)*car.DoorOpen;
+                else car.Doors[i].localRotation=car.DoorRotations[i]*Quaternion.Euler(0,(i==0?1:-1)*61*car.DoorOpen*(transitionVehicle==car&&i!=(entrySide<0?0:1)?0:1),0);
+            }
+            if(car.Steering)
+            {
+                float turn=-car.Motion.Steering*4.15f;car.Steering.localRotation=car.SteeringRotation*Quaternion.Euler(0,0,turn*Mathf.Rad2Deg);
+                float grip=Mathf.Clamp(turn,-1.1f,1.1f);
+                for(int i=0;i<car.Hands.Length;i++)if(car.Hands[i]&&car.Driver)
+                {
+                    float side=i==0?-1:1;Vector3 wheel=car.Steering.position;
+                    Vector3 hand=wheel+car.Root.right*(side*.215f*Mathf.Cos(grip))+car.Root.up*(side*.215f*Mathf.Sin(grip));
+                    car.Hands[i].position=hand;
+                    if(i<car.Arms.Length&&car.Arms[i])
+                    {
+                        Vector3 shoulder=car.Driver.TransformPoint(new Vector3(side*.27f,1.41f,-.03f));var arm=car.Arms[i];arm.position=(shoulder+hand)*.5f;arm.rotation=Quaternion.LookRotation(hand-shoulder,car.Root.up);
+                        var scale=arm.localScale;scale.z=(hand-shoulder).magnitude;arm.localScale=scale;
+                    }
+                }
+            }
+            if(car.Data.kind=="bike"&&car.Legs.Length>=6)
+            {
+                for(int i=0;i<2;i++)
+                {
+                    float side=i==0?-1:1,phase=car.Pedal+(i==0?Mathf.PI:0),x=side*.24f;
+                    Vector3 hip=new Vector3(x,1.74f,0),foot=new Vector3(x,.85f+Mathf.Cos(phase)*.27f,.62f+Mathf.Sin(phase)*.27f),delta=foot-hip;
+                    float distance=delta.magnitude,bend=Mathf.Sqrt(Mathf.Max(0,.49f-distance*distance*.25f));
+                    Vector3 knee=(hip+foot)*.5f+new Vector3(0,delta.z,-delta.y)/Mathf.Max(.01f,distance)*bend;
+                    Bone(car.Legs[i*3],hip,knee);Bone(car.Legs[i*3+1],knee,foot);if(car.Legs[i*3+2])car.Legs[i*3+2].localPosition=foot+Vector3.forward*.08f;
+                }
+            }
+            bool lights=car==active||ctx.Night>.15f||ctx.Rain>.4f;
+            car.HeadlightsOn=false;
+            foreach(var light in car.Headlights)if(light){light.enabled=lights&&(light.transform.position-ctx.Camera.transform.position).sqrMagnitude<80*80;light.intensity=lights?2.5f:0;car.HeadlightsOn|=light.isActiveAndEnabled&&light.intensity>0;}
+            bool blink=Mathf.Repeat(ctx.Clock,1.0f)<.50f,hazard=car.Hazards||ctx.Clock<car.JamUntil||ctx.Clock<car.AlarmUntil;
+            car.LeftIndicatorLit=blink&&(hazard||car.Signal<0);car.RightIndicatorLit=blink&&(hazard||car.Signal>0);
+            SetLamp(car.LeftIndicators,new Color(1,.58f,.12f),car.LeftIndicatorLit?1.6f:0);
+            SetLamp(car.RightIndicators,new Color(1,.58f,.12f),car.RightIndicatorLit?1.6f:0);
+            SetLamp(car.BrakeLights,new Color(1,.12f,.06f),car.Motion.Braking?1.5f:lights?.16f:.02f);
+            SetLamp(car.ReverseLights,new Color(1,.93f,.76f),car.Motion.Direction<0?1.25f:0);
+            for(int i=0;i<car.Beacons.Length;i++)car.Beacons[i].intensity=car.Siren&&Mathf.FloorToInt(ctx.Clock*7)%2==i?4:0;
+        }
+        void SetLamp(Renderer[] renderers,Color emission,float intensity)
+        {
+            foreach(var renderer in renderers)
+            {if(!renderer)continue;renderer.GetPropertyBlock(lightProperties);lightProperties.SetColor("_EmissionColor",emission*intensity);renderer.SetPropertyBlock(lightProperties);}
+        }
+        static void Bone(Transform mesh,Vector3 a,Vector3 b){if(!mesh)return;var delta=b-a;mesh.localPosition=(a+b)*.5f;mesh.localRotation=Quaternion.FromToRotation(Vector3.up,delta.normalized);var scale=mesh.localScale;scale.y=delta.magnitude;mesh.localScale=scale;}
+        void LateUpdate()
+        {
+            if(!ctx||!ctx.Ready||ctx.Paused)return;
+            foreach(var passenger in passengers)
+            {
+                if(!passenger.Root)continue;
+                float t=PassengerTransition(passenger.Root);Vector3 seat=PassengerSeats[passenger.Seat],entry=passenger.Entry;
+                Vector3 aisle=new Vector3(.10f,.54f,2.3f),local;
+                if(t<.3f)local=Vector3.Lerp(entry,aisle,CityPhysics.Ease(t/.3f));
+                else if(t<.75f)local=Vector3.Lerp(aisle,new Vector3(.10f,.54f,seat.z),CityPhysics.Ease((t-.3f)/.45f));
+                else local=Vector3.Lerp(new Vector3(.10f,.54f,seat.z),seat,CityPhysics.Ease((t-.75f)/.25f));
+                passenger.Root.SetPositionAndRotation(passenger.Bus.Root.TransformPoint(local),passenger.Bus.Root.rotation);
+            }
+            if(active==null||transitionVehicle!=null)return;
+            Vector3 point=active.Root.TransformPoint(active.Data.kind=="bus"?new Vector3(.6f,.1f,-.2f):active.Data.seatMount);
+            if(active.Data.kind!="bus"&&active.Data.kind!="bike")for(int i=0;i<2&&i<active.Hands.Length;i++)if(active.Hands[i])ctx.Motor.HandTargets[i]=active.Hands[i].position;
+            ctx.Motor.SetCarriedPose(point,active.Root.rotation,active.Speed,active.Data.kind=="bike"?"bike":active.Data.kind=="bus"?"sit":"drive");
+        }
+        public Vector3 PassengerEntryPoint(Vehicle bus)
+        {
+            if(bus==null)return Vector3.zero;
+            Vector3 point=bus.Root.TransformPoint(new Vector3(bus.Data.width*.5f+.72f,0,2.3f));point.y=ctx.Ground(point.x,point.z)+.045f;return point;
+        }
+        public Vehicle PassengerVehicle(Transform root){foreach(var p in passengers)if(p.Root==root)return p.Bus;return null;}
+        public bool TryPassengerLanding(Transform root,out Vector3 point)
+        {var bus=PassengerVehicle(root);if(bus==null){point=Vector3.zero;return false;}return BusLanding(bus,root,out point);}
+        public Vector3 PassengerLocalSeat(Transform root){foreach(var p in passengers)if(p.Root==root)return PassengerSeats[p.Seat];return Vector3.zero;}
+        public float PassengerTransition(Transform root){foreach(var p in passengers)if(p.Root==root)return Mathf.Clamp01((ctx.Clock-p.Boarded)/1.35f);return 0;}
+        public int PassengerCount(Vehicle bus){int count=0;foreach(var p in passengers)if(p.Bus==bus)count++;return count;}
+        public bool BoardPassenger(Transform root,Vehicle preferred=null)
+        {
+            if(!root||PassengerVehicle(root)!=null)return false;
+            foreach(var bus in fleet)
+            {
+                if(bus.Data.kind!="bus"||bus.AtStop==null||Mathf.Abs(bus.Speed)>.45f||preferred!=null&&bus!=preferred||CityPhysics.Flat(root.position-PassengerEntryPoint(bus)).magnitude>1.25f)continue;
+                Vector3 door=PassengerEntryPoint(bus),delta=door-root.position;
+                if(CityPhysics.Cast(root.position+Vector3.up*1.15f,.25f,delta.normalized,delta.magnitude,out _,root,bus.Root))continue;
+                int seat=-1;for(int i=0;i<PassengerSeats.Length;i++){bool used=false;foreach(var p in passengers)if(p.Bus==bus&&p.Seat==i)used=true;if(!used){seat=i;break;}}
+                if(seat<0)return false;
+                passengers.Add(new Passenger{Root=root,Bus=bus,Seat=seat,Entry=bus.Root.InverseTransformPoint(root.position),Boarded=ctx.Clock});
+                bus.Dwell=Mathf.Max(bus.Dwell,1.6f);return true;
+            }
+            return false;
+        }
+        public bool LeavePassenger(Transform root,Vector3 point)
+        {
+            for(int i=0;i<passengers.Count;i++)
+            {
+                var p=passengers[i];if(p.Root!=root)continue;
+                if(p.Bus.AtStop==null||Mathf.Abs(p.Bus.Speed)>.45f||PassengerTransition(root)<1)return false;
+                Vector3 door=PassengerEntryPoint(p.Bus);point.y=ctx.Ground(point.x,point.z)+.045f;
+                if(CityPhysics.Flat(point-door).magnitude>6||!CityPhysics.StandClear(point,root,p.Bus.Root)||!CityPhysics.SweepClear(door,point,root,p.Bus.Root))return false;
+                passengers.RemoveAt(i);root.SetPositionAndRotation(point,p.Bus.Root.rotation);p.Bus.Dwell=Mathf.Max(p.Bus.Dwell,.8f);return true;
+            }
+            return false;
+        }
+        public bool Command(int id,Vector3 target,bool siren)
+        {if(!byId.TryGetValue(id,out var car)||!fleet.Contains(car)){ctx.Population.RequestVehicle(id);return false;}if(car==active)return false;car.Commanded=true;car.CommandTarget=target;car.Siren=siren;return true;}
+        public bool Command(string id,Vector3 target,bool siren)=>int.TryParse(id,out int value)&&Command(value,target,siren);
+        public void ReleaseCommand(int id){if(byId.TryGetValue(id,out var car)){car.Commanded=false;car.Siren=false;}}
+        public void SetTrafficHold(Vehicle car,bool hold,string reason="motorista")
+        {if(car==null)return;car.TrafficHold=hold;car.TrafficHoldReason=reason;if(hold)car.Body.WakeUp();}
+        public bool RemoteBrake(Transform target,float seconds=4)
+        {foreach(var car in fleet)if(target&&(target==car.Root||target.IsChildOf(car.Root))){car.JamUntil=ctx.Clock+seconds;ctx.Sound("brake",car.Position);return true;}return false;}
+        public void Collision(Vehicle car,Collision collision)
+        {
+            if(ctx.Systems&&ctx.Systems.Destruction)ctx.Systems.Destruction.VehicleImpact(car,collision);
+            float speed=collision.relativeVelocity.magnitude;if(speed<.7f||ctx.Clock-car.LastImpact<.2f)return;car.LastImpact=ctx.Clock;
+            ctx.Sound("impact",car.Position,Mathf.Clamp01(speed/12));Impact?.Invoke(car,speed,collision.collider);
+            if(car==active&&speed>2&&collision.collider.gameObject.layer==CityContext.ActorLayer)Crime?.Invoke("agressao",collision.GetContact(0).point);
+        }
+    }
+    public class CityVehicleContact : MonoBehaviour
+    {
+        public CityVehicles Owner;public CityVehicles.Vehicle Vehicle;
+        void OnCollisionEnter(Collision collision){if(Owner)Owner.Collision(Vehicle,collision);}
+    }
+}

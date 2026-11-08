@@ -1,0 +1,29 @@
+{
+  "verifiedAtUtc": "2026-11-08T08:27:53.0701722Z",
+  "startedAtUtc": "2026-11-08T08:27:37.9867666Z",
+  "passed": true,
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrouchParkour-Final-20261108\\BaiaDoSol.exe",
+  "assemblySha256": "28FB967A1AF6D5E94C2111401616E37F21E542DA1593422733CCC8AB9472F0A9",
+  "exitCode": 0,
+  "checks": [
+    {
+      "name": "walking-through-real-input-poller",
+      "passed": true,
+      "detail": "distance=3.94247436523438"
+    },
+    {
+      "name": "pause-stops-city-clock",
+      "passed": true
+    },
+    {
+      "name": "native-session-has-no-runtime-errors",
+      "passed": true,
+      "detail": "errors=0"
+    },
+    {
+      "name": "normal-exit-with-default-graphics-api",
+      "passed": true,
+      "detail": "exit=0"
+    }
+  ]
+}

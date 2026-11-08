@@ -1,0 +1,167 @@
+using UnityEngine;
+
+namespace OpenTerritory
+{
+    // The same axle model drives a human and an NPC. Physics contacts remain
+    // owned by Unity; their resulting velocity is fed into the next step.
+    public static class CityVehicleMath
+    {
+        public const float DriverTopSpeed=52;
+        public struct State
+        {
+            public float Speed, Lateral, YawRate, Steering, Pedal, Handbrake, ShiftTime;
+            public float Slip, CornerAcceleration, Acceleration, Rpm, DeltaYaw, Wheelspin, BrakePressure;
+            public int Gear, Direction;
+            public bool Braking;
+        }
+        public struct Controls
+        {
+            public float Throttle, Steer, Brake, Handbrake, FrontGrip, RearGrip;
+            public float Wheelbase, RearOffset, MassScale, DriveScale, SteeringLock, FrontWeight, FrontDrive, TopSpeed, Pitch;
+            public bool AutomaticDirection, DriverAssist;
+        }
+        static readonly float[] ShiftSpeeds={8.5f,15,22.5f,30.5f};
+        static readonly float[] Ratios={0,3.65f,2.24f,1.54f,1.12f,.86f};
+        public static float Damp(float from,float to,float rate,float dt) => Mathf.Lerp(from,to,1-Mathf.Exp(-rate*dt));
+        public static float SteeringLock(float speed,float maximum=.62f,bool driverAssist=false)
+        {
+            float range=driverAssist?15.5f:11;
+            float lockAngle=driverAssist?Mathf.Min(.82f,maximum*1.12f):maximum;
+            return Mathf.Atan(Mathf.Tan(lockAngle)/(1+speed*speed/(range*range)));
+        }
+        public static float WheelAngle(float steering,float wheelbase,float x) => Mathf.Atan2(wheelbase*Mathf.Tan(steering),wheelbase-x*Mathf.Tan(steering));
+        // Step integrates velocities in a rotating body frame. Convert the end
+        // velocity back into the starting frame before applying a physical force;
+        // otherwise Unity's rotation applies the centrifugal terms a second time.
+        public static Vector2 VelocityChange(State before,State after)
+        {
+            float sin=Mathf.Sin(after.DeltaYaw),cos=Mathf.Cos(after.DeltaYaw);
+            return new Vector2(after.Lateral*cos+after.Speed*sin-before.Lateral,
+                after.Speed*cos-after.Lateral*sin-before.Speed);
+        }
+        public static State Step(State state,Controls input,float dt)
+        {
+            state.DeltaYaw=0;if(dt<=0)return state;
+            const float gravity=9.81f;
+            float throttle=Mathf.Clamp(input.Throttle,-1,1),requested=Mathf.Sign(throttle);
+            if(Mathf.Abs(throttle)<.001f)requested=0;
+            float service=Mathf.Clamp01(input.Brake),wheelbase=Mathf.Max(1,input.Wheelbase),mass=Mathf.Max(.5f,input.MassScale);
+            float frontWeight=Mathf.Clamp(input.FrontWeight,.3f,.7f),frontGrip=Mathf.Clamp(input.FrontGrip,0,1.15f),rearGrip=Mathf.Clamp(input.RearGrip,0,1.15f);
+            // State velocities belong to the rigidbody's centre of mass, as do
+            // the axle lever arms. Mixing root and COM velocities adds a false
+            // sideways impulse whenever yaw changes, especially on long trucks.
+            float rearArm=wheelbase*frontWeight,frontArm=wheelbase-rearArm;
+            float inertia=wheelbase*wheelbase*(.19f+.025f*Mathf.Min(2,Mathf.Max(0,mass-1))),grade=gravity*Mathf.Sin(input.Pitch);
+            float initialSpeed=state.Speed;
+            if(state.Direction==0)state.Direction=state.Speed<-.12f?-1:1;
+            int steps=Mathf.Max(1,Mathf.CeilToInt(dt*100));float h=dt/steps;
+            for(int i=0;i<steps;i++)
+            {
+                float speed=state.Speed,absolute=Mathf.Abs(speed);bool changing=requested!=0&&requested!=state.Direction;
+                if(changing&&absolute<.12f&&service<.001f)
+                {
+                    state.ShiftTime+=h;
+                    if(input.AutomaticDirection||state.ShiftTime>=.24f){state.Direction=(int)requested;changing=false;state.ShiftTime=0;}
+                }
+                else state.ShiftTime=0;
+                float brake=Mathf.Max(service,changing||requested*speed<-.045f?Mathf.Abs(throttle):0);
+                float power=brake>.015f?0:Mathf.Abs(throttle);
+                state.Pedal=Damp(state.Pedal,power,power>state.Pedal?13:19,h);
+                state.Handbrake=Damp(state.Handbrake,Mathf.Clamp01(input.Handbrake),input.Handbrake>state.Handbrake?16:12,h);
+                state.BrakePressure=Damp(state.BrakePressure,brake,18,h);
+                state.Braking=brake>.015f||state.Handbrake>.08f;
+                // Unity's positive yaw turns toward +X. Input D is +X too.
+                float lockAngle=SteeringLock(speed,input.SteeringLock);
+                if(input.DriverAssist)lockAngle=Mathf.Lerp(lockAngle,SteeringLock(speed,input.SteeringLock,true),1-state.Handbrake*.8f);
+                float target=Mathf.Clamp(input.Steer,-1,1)*lockAngle;
+                bool returning=state.Steering*target<=0||Mathf.Abs(target)<Mathf.Abs(state.Steering);
+                float rack=(input.DriverAssist?(returning?8.0f:6.4f):(returning?4.6f:3.2f))/(1+absolute*.028f)/Mathf.Pow(mass,.19f);
+                float rackRate=input.DriverAssist?(returning?30:24):(returning?19:13);
+                state.Steering+=Mathf.Clamp((target-state.Steering)*(1-Mathf.Exp(-rackRate*h)),-rack*h,rack*h);
+                bool reverse=state.Direction<0;float top=reverse?7:input.TopSpeed;
+                float engine=input.DriverAssist?10.5f:5.8f,powerBand=input.DriverAssist?220:104;
+                float motor=brake>.015f?0:state.Direction*state.Pedal*(1-state.Handbrake)*input.DriveScale/Mathf.Sqrt(mass)*
+                    Mathf.Min(reverse?3.8f:engine,(reverse?17:powerBand)/Mathf.Max(absolute,1))*Mathf.Clamp01((top-absolute)/(reverse?2:8));
+                float travel=Mathf.Abs(speed)>.0001f?Mathf.Sign(speed):Mathf.Abs(grade)>.0001f?Mathf.Sign(grade):0;
+                float serviceForce=brake*(input.DriverAssist?15.5f:10.8f)/Mathf.Pow(mass,.12f),request=motor-travel*(serviceForce+state.Handbrake*3.5f);
+                float loadFront=Mathf.Clamp(frontWeight-request*(input.DriverAssist?.32f:.58f)/(gravity*wheelbase),.26f,.82f);
+                float frontMax=gravity*1.16f*frontGrip*loadFront,rearMax=gravity*1.16f*rearGrip*(1-loadFront);
+                // More longitudinal bite gives direct driving an immediate
+                // launch. Keep the cornering ellipse separate, and retain a
+                // pronounced wet-road penalty instead of cancelling the rain.
+                float frontLongMax=input.DriverAssist?gravity*2.1f*frontGrip*frontGrip*loadFront:frontMax;
+                float rearLongMax=input.DriverAssist?gravity*2.1f*rearGrip*rearGrip*(1-loadFront):rearMax;
+                float bias=Mathf.Clamp(frontWeight+.12f,.56f,.72f);
+                // Leave the driven front tyres some cornering capacity under
+                // power, so holding W through a bend does not erase the steering.
+                float driveReserve=input.DriverAssist?.93f-.24f*Mathf.Clamp01(Mathf.Abs(state.Steering)*absolute/3.5f):.95f-.19f*Mathf.Clamp01(Mathf.Abs(state.Steering)*absolute/3.5f);
+                float frontLimit=frontLongMax*(brake>.015f?.93f:driveReserve);
+                float frontLong=Mathf.Clamp(motor*input.FrontDrive-travel*serviceForce*bias,-frontLimit,frontLimit);
+                float rearLong=Mathf.Clamp(motor*(1-input.FrontDrive)-travel*(serviceForce*(1-bias)+state.Handbrake*4.2f),-rearLongMax*.96f,rearLongMax*.96f);
+                float frontUse=input.DriverAssist?frontLong*frontMax/Mathf.Max(.001f,frontLongMax):frontLong;
+                float rearUse=input.DriverAssist?rearLong*rearMax/Mathf.Max(.001f,rearLongMax):rearLong;
+                float frontCorner=Mathf.Sqrt(Mathf.Max(0,frontMax*frontMax-frontUse*frontUse));
+                float rearCorner=Mathf.Sqrt(Mathf.Max(0,rearMax*rearMax-rearUse*rearUse))*(1-state.Handbrake*.74f);
+                float spin=brake>.015f?0:Mathf.Clamp01((Mathf.Abs(motor)-Mathf.Abs(frontLong+rearLong))/Mathf.Max(1,Mathf.Abs(motor)));
+                state.Wheelspin=Damp(state.Wheelspin,spin,spin>state.Wheelspin?12:18,h);
+                float centerSide=state.Lateral,frontSide=centerSide+state.YawRate*frontArm,rearSide=centerSide-state.YawRate*rearArm;
+                float sin=Mathf.Sin(state.Steering),cos=Mathf.Cos(state.Steering);
+                float frontSlip=(frontSide*cos-speed*sin)/Mathf.Max(2.5f,Mathf.Abs(speed*cos+frontSide*sin));
+                float rearSlip=rearSide/Mathf.Max(2.5f,absolute);
+                float tireFront=-frontCorner*(float)System.Math.Tanh(frontSlip*8.8f),tireRear=-rearCorner*(float)System.Math.Tanh(rearSlip*10.4f);
+                float frontSideForce=tireFront*cos+frontLong*sin;
+                state.CornerAcceleration=frontSideForce+tireRear;
+                float newYaw=state.YawRate+(frontArm*frontSideForce-rearArm*tireRear)/inertia*h;
+                if(input.DriverAssist)
+                {
+                    // Direct driving favours a tight, readable trajectory over
+                    // power understeer. The assist produces bounded tyre forces
+                    // and yaw acceleration; it never rotates/teleports the body.
+                    float grip=Mathf.Min(frontGrip,rearGrip);
+                    float authority=Mathf.Clamp01(grip/.7f)*Mathf.Clamp01(absolute/3)*(1-state.Handbrake)*(1-state.Handbrake);
+                    float lateralBudget=gravity*1.55f*grip;
+                    float yawLimit=lateralBudget/Mathf.Max(5,absolute);
+                    float desiredYaw=Mathf.Clamp(speed*Mathf.Tan(state.Steering)/wheelbase,-yawLimit,yawLimit);
+                    float response=Mathf.Lerp(8,5,Mathf.InverseLerp(15,32,absolute))/Mathf.Pow(mass,.25f);
+                    newYaw=Damp(newYaw,desiredYaw,response*authority,h);
+                    newYaw=Mathf.Lerp(newYaw,Mathf.Clamp(newYaw,-yawLimit,yawLimit),authority);
+                    float sideTarget=desiredYaw*rearArm*Mathf.Clamp01((6-absolute)/4);
+                    float alignment=Mathf.Clamp((sideTarget-centerSide)*7.5f,-lateralBudget*.70f,lateralBudget*.70f)*authority;
+                    // At zero authority retain the axle solver exactly, including
+                    // a released rear axle during a handbrake turn.
+                    state.CornerAcceleration=Mathf.Lerp(state.CornerAcceleration,
+                        Mathf.Clamp(state.CornerAcceleration+alignment,-lateralBudget,lateralBudget),authority);
+                }
+                float rotation=(state.YawRate+newYaw)*.5f,newSide=centerSide+(state.CornerAcceleration-speed*rotation)*h;
+                float rolling=.23f+(input.DriverAssist?.0015f:.0031f)*speed*speed+(1-(frontGrip+rearGrip)*.5f)*1.1f;
+                float moving=speed+(frontLong*cos-tireFront*sin+rearLong+grade+centerSide*rotation)*h;
+                float next=Mathf.Sign(moving)*Mathf.Max(0,Mathf.Abs(moving)-rolling*h);
+                if((state.Braking||state.Handbrake>.6f)&&Mathf.Abs(grade)<serviceForce+state.Handbrake*3.5f&&
+                    (speed*next<=0||absolute<.12f&&Mathf.Abs(next)<.12f))next=0;
+                state.Speed=Mathf.Clamp(next,-40,Mathf.Max(44,input.TopSpeed+5));
+                float parking=Mathf.Clamp01((4.5f-absolute)/2.5f),settle=1-Mathf.Exp(-20*parking*h);
+                float parkingYaw=state.Speed*Mathf.Tan(state.Steering)/wheelbase;
+                state.YawRate=Mathf.Lerp(newYaw,parkingYaw,settle);
+                float assist=Mathf.Clamp01(1-Mathf.Abs(state.Steering)/.065f)*(1-state.Handbrake)*Mathf.Clamp01(absolute/8);
+                state.YawRate*=Mathf.Exp(-2.0f*assist*h);
+                // A gentle alignment assist catches a large slide after the
+                // handbrake is released; ordinary cornering remains axle driven.
+                float slipAngle=Mathf.Atan2(newSide,Mathf.Max(3,absolute));
+                float recovery=Mathf.Clamp01((Mathf.Abs(slipAngle)-.10f)*3)*(1-state.Handbrake)*Mathf.Clamp01(absolute/7);
+                if(slipAngle*state.YawRate<0)state.YawRate+=Mathf.Clamp(slipAngle*4,-1.8f,1.8f)*recovery*h;
+                state.Lateral=Mathf.Lerp(newSide,parkingYaw*rearArm,settle);
+                state.DeltaYaw+=rotation*h;
+                if(state.Speed==0&&Mathf.Abs(state.Lateral)<.035f&&Mathf.Abs(state.YawRate)<.045f){state.Lateral=state.YawRate=0;}
+                state.Slip=Mathf.Max(Mathf.Abs(frontSlip),Mathf.Abs(rearSlip),state.Handbrake*Mathf.Min(.35f,absolute*.028f));
+            }
+            float absSpeed=Mathf.Abs(state.Speed);state.Gear=state.Direction<0?-1:Mathf.Max(1,state.Gear);
+            if(state.Gear>0)
+            {
+                while(state.Gear<5&&absSpeed>ShiftSpeeds[state.Gear-1]+.5f)state.Gear++;
+                while(state.Gear>1&&absSpeed<ShiftSpeeds[state.Gear-2]-.8f)state.Gear--;
+            }
+            state.Rpm=Mathf.Clamp(820+absSpeed*(state.Gear<0?3.4f:Ratios[state.Gear])*85+state.Pedal*380,820,6200);
+            state.Acceleration=dt>0?(state.Speed-initialSpeed)/dt:0;return state;
+        }
+    }
+}

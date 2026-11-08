@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "verifiedAtUtc": "2026-11-08T10:19:38.0200616Z",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\SteeringColumn-20261108\\BaiaDoSol.exe",
+  "executableSha256": "F083B0E879A9298CDCF9933A8F3B4F2B013E13F7D3E51221FC0D756B79E28807",
+  "assemblySha256": "E6D5EF4F61D461D2488F2787F404DA97BB59357F9B28CE527BAE4AF40E7EA959",
+  "fullBuild": {
+    "job_id": "build-2ea3a2ad68",
+    "result": "succeeded",
+    "platform": "StandaloneWindows64",
+    "output_path": "C:/Users/nelso/open-territory/Unity/Deliveries/SteeringColumn-20261108/BaiaDoSol.exe",
+    "started_at": "2026-11-08T10:16:14.3818895Z",
+    "duration_seconds": 39.1056887,
+    "completed_at": "2026-11-08T10:16:53.4875782Z",
+    "total_size_mb": 1525.14,
+    "errors": 0,
+    "warnings": 3
+  },
+  "native": {
+    "verifiedAtUtc": "2026-11-08T10:18:27.9681639Z",
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\SteeringColumn-20261108\\BaiaDoSol.exe",
+    "assemblySha256": "E6D5EF4F61D461D2488F2787F404DA97BB59357F9B28CE527BAE4AF40E7EA959",
+    "assemblyUnchanged": true,
+    "processExitCode": 0,
+    "captures": true,
+    "graphics": "Direct3D12",
+    "arguments": [
+      "-batchmode",
+      "-screen-fullscreen",
+      "0",
+      "-screen-width",
+      "1280",
+      "-screen-height",
+      "800",
+      "--city-driver-contact-qa",
+      "--city-report-dir",
+      "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\steering-column\\native\"",
+      "-logFile",
+      "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\steering-column\\native\\player.log\""
+    ],
+    "passed": true,
+    "checks": 117,
+    "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\steering-column\\native\\driver-contact-qa.json"
+  },
+  "sceneCars": 34,
+  "displayCars": 10,
+  "colliders": 31982,
+  "sceneryMeshes": 86750,
+  "collidersPreserved": true,
+  "sceneryPreserved": true,
+  "inputsStillMatch": true,
+  "normalLauncher": "Unity/Jogar.ps1"
+}

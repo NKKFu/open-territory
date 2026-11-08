@@ -1,0 +1,189 @@
+{
+  "passed": true,
+  "distanceMeters": 7.877288818359375,
+  "fps": 46.036258697509766,
+  "before": {
+    "seq": 1,
+    "frame": 1,
+    "errors": 0,
+    "ready": true,
+    "grounded": false,
+    "paused": false,
+    "fps": 0.28511425852775574,
+    "speed": 0.0,
+    "health": 100.0,
+    "rain": 0.0,
+    "clock": 0.019999992102384567,
+    "position": {
+      "x": 250.52297973632812,
+      "y": 9.186760902404785,
+      "z": 371.7659606933594
+    },
+    "camera": {
+      "x": 251.5029754638672,
+      "y": 11.990204811096191,
+      "z": 369.293212890625
+    },
+    "mode": "fall",
+    "action": "",
+    "speech": "",
+    "police": "livre",
+    "nearby": [
+      "seat-30614 Sentar",
+      "stand Levantar",
+      "vehicle-exit ",
+      "boat-exit Desembarcar",
+      "resident-16737 Conversar com Ivo · violonista",
+      "resident-19260 Conversar com Maya",
+      "resident-19325 Conversar com Nilo",
+      "police-surrender Render-se",
+      "music-service-7 Falar com o músico",
+      "remote-return Voltar ao corpo"
+    ],
+    "cars": []
+  },
+  "after": {
+    "seq": 3,
+    "frame": 358,
+    "errors": 0,
+    "ready": true,
+    "grounded": true,
+    "paused": false,
+    "fps": 46.036258697509766,
+    "speed": 0.0,
+    "health": 100.0,
+    "rain": 0.0,
+    "clock": 4.167136192321777,
+    "position": {
+      "x": 250.52297973632812,
+      "y": 9.1063871383667,
+      "z": 379.64324951171875
+    },
+    "camera": {
+      "x": 251.5029754638672,
+      "y": 11.909829139709473,
+      "z": 377.1705017089844
+    },
+    "mode": "idle",
+    "action": "",
+    "speech": "",
+    "police": "livre",
+    "nearby": [
+      "seat-30614 Sentar",
+      "stand Levantar",
+      "vehicle-exit ",
+      "boat-exit Desembarcar",
+      "resident-16737 Conversar com Ivo · violonista",
+      "resident-19260 Conversar com Maya",
+      "resident-19325 Conversar com Nilo",
+      "police-surrender Render-se",
+      "map-service-0 Ler mapa do bairro",
+      "map-service-1 Ler mapa do bairro",
+      "music-service-7 Falar com o músico",
+      "remote-return Voltar ao corpo"
+    ],
+    "cars": [
+      {
+        "id": 10609,
+        "position": {
+          "x": 362.26800537109375,
+          "y": 9.08316707611084,
+          "z": 470.357177734375
+        },
+        "speed": 2.8661186695098877,
+        "kind": "car"
+      },
+      {
+        "id": 10796,
+        "position": {
+          "x": 206.455078125,
+          "y": 6.207030296325684,
+          "z": 326.6543273925781
+        },
+        "speed": 5.29527473449707,
+        "kind": "car"
+      },
+      {
+        "id": 10976,
+        "position": {
+          "x": 368.5112609863281,
+          "y": 9.066488265991211,
+          "z": 464.16949462890625
+        },
+        "speed": 1.7055611610412598,
+        "kind": "car"
+      },
+      {
+        "id": 11171,
+        "position": {
+          "x": 114.52644348144531,
+          "y": 1.550933599472046,
+          "z": 309.73919677734375
+        },
+        "speed": 3.3648083209991455,
+        "kind": "car"
+      },
+      {
+        "id": 11366,
+        "position": {
+          "x": 363.2510986328125,
+          "y": 9.077051162719727,
+          "z": 459.7835693359375
+        },
+        "speed": 2.7557060718536377,
+        "kind": "car"
+      },
+      {
+        "id": 11742,
+        "position": {
+          "x": 146.5147705078125,
+          "y": 6.187127590179443,
+          "z": 342.2167663574219
+        },
+        "speed": 2.2045204639434814,
+        "kind": "car"
+      },
+      {
+        "id": 11923,
+        "position": {
+          "x": 327.5123596191406,
+          "y": 9.12653636932373,
+          "z": 509.58734130859375
+        },
+        "speed": 2.026357412338257,
+        "kind": "car"
+      },
+      {
+        "id": 12497,
+        "position": {
+          "x": 356.39892578125,
+          "y": 9.094466209411621,
+          "z": 489.97967529296875
+        },
+        "speed": 1.4917075634002686,
+        "kind": "car"
+      },
+      {
+        "id": 12684,
+        "position": {
+          "x": 344.6307067871094,
+          "y": 9.095800399780273,
+          "z": 486.90155029296875
+        },
+        "speed": 0.9658312797546387,
+        "kind": "car"
+      },
+      {
+        "id": 13625,
+        "position": {
+          "x": 325.62249755859375,
+          "y": 9.138517379760742,
+          "z": 498.2725830078125
+        },
+        "speed": 0.4956400692462921,
+        "kind": "car"
+      }
+    ]
+  },
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\LightingWindowsReview\\BaiaDoSol.exe"
+}

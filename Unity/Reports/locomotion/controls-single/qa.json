@@ -1,0 +1,125 @@
+{
+    "passed": false,
+    "checks": [
+        {
+            "name": "walk-speed",
+            "passed": true,
+            "value": 2.6499998569488527
+        },
+        {
+            "name": "diagonal-normalized",
+            "passed": true,
+            "value": 2.6499991416931154
+        },
+        {
+            "name": "sprint-speed",
+            "passed": false,
+            "value": 8.522787094116211
+        },
+        {
+            "name": "braking-stops",
+            "passed": false,
+            "value": 4.834930896759033
+        },
+        {
+            "name": "strafe-does-not-steer-camera",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "reverse-follows-camera",
+            "passed": false,
+            "value": 0.5919814109802246
+        },
+        {
+            "name": "manual-orbit",
+            "passed": true,
+            "value": 60.631797790527347
+        },
+        {
+            "name": "move-uses-new-orbit",
+            "passed": false,
+            "value": 0.7217420935630798
+        },
+        {
+            "name": "jump-leaves-ground",
+            "passed": true,
+            "value": 0.2047271728515625
+        },
+        {
+            "name": "jump-lands",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "articulated-pose-valid",
+            "passed": true,
+            "value": 201.00894165039063
+        },
+        {
+            "name": "camera-wall-retracts",
+            "passed": true,
+            "value": 1.6876789331436158
+        },
+        {
+            "name": "camera-restores-distance",
+            "passed": true,
+            "value": 2.499032735824585
+        },
+        {
+            "name": "exploration-offset-shoulder",
+            "passed": true,
+            "value": 0.3691214919090271
+        },
+        {
+            "name": "aim-closes-over-shoulder",
+            "passed": true,
+            "value": 0.3206770122051239
+        },
+        {
+            "name": "stationary-aim-aligns-body",
+            "passed": true,
+            "value": 0.009185791015625
+        },
+        {
+            "name": "reticle-and-target-aligned",
+            "passed": true,
+            "value": 0.00006362802378134802
+        },
+        {
+            "name": "aim-strafe-speed-limited",
+            "passed": true,
+            "value": 1.7499995231628419
+        },
+        {
+            "name": "aim-strafe-retains-facing",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "aim-backstep",
+            "passed": true,
+            "value": 1.3499999046325684
+        },
+        {
+            "name": "aim-fire",
+            "passed": true,
+            "value": 1.0
+        },
+        {
+            "name": "shot-hits-reticle-target",
+            "passed": true,
+            "value": 0.0006863137823529542
+        },
+        {
+            "name": "aim-exit-restores-framing",
+            "passed": false,
+            "value": 2.131969690322876
+        },
+        {
+            "name": "settings-pause-preserved",
+            "passed": true,
+            "value": 0.0
+        }
+    ]
+}

@@ -1,0 +1,262 @@
+{
+    "passed": true,
+    "completed": true,
+    "checks": [
+        {
+            "name": "native-QA-storage-is-isolated",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "probe-is-opt-in",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "aiming-intimidates-the-actual-target",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compact-Rob-action-is-selected",
+            "detail": "rob-resident-4485",
+            "passed": true
+        },
+        {
+            "name": "E-rob-transfers-cash-once",
+            "detail": "balance=347",
+            "passed": true
+        },
+        {
+            "name": "robbery-starts-police-call-and-crowd-alarm",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "victim-cannot-be-robbed-repeatedly",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual-player-punch-damages-and-reports",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "police-identifies-player-for-player-assault",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "assault-alarms-other-residents",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPC-can-start-real-assault",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPC-attack-has-visible-windup",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-NPC-strike-before-contact",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPC-fist-contact-damages-victim",
+            "detail": "health=82",
+            "passed": true
+        },
+        {
+            "name": "NPC-assault-selects-one-witness",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPC-crime-does-not-charge-innocent-player",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPC-witnesses-do-not-blame-player-in-memory",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "offender-does-not-flee-from-own-crime",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-call-and-crowd-reactions",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hacking-interrupts-NPC-report",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "nearby-officer-pursues-NPC-aggressor",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "self-defence-does-not-create-player-charges",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "officer-physically-detains-NPC",
+            "detail": "rendicao",
+            "passed": true
+        },
+        {
+            "name": "detained-NPC-stops-and-raises-hands",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "detention-prevents-further-NPC-attacks",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPC-custody-cleans-up-and-resumes-life",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPC-can-attack-player-with-same-contact-rules",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "police-protects-player-victim",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual-player-defensive-punch-does-not-create-charges",
+            "detail": "suspectHealth=76",
+            "passed": true
+        },
+        {
+            "name": "ambient-entry-starts-NPC-robbery",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPC-robbery-alarms-witnesses-and-identifies-robber",
+            "detail": "encounter=threat police=chamada victim=Surrender witness=Flee callers=1",
+            "passed": true
+        },
+        {
+            "name": "NPC-robber-takes-victim-wallet-and-flees",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPC-robbery-does-not-touch-player-wallet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPC-escape-uses-real-controller",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "simultaneous-crimes-keep-separate-suspects",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "officer-has-only-one-target",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "quiet-crime-behind-observer-does-not-invent-witness",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "wall-blocks-quiet-assault-evidence",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "nearby-hidden-shot-produces-location-report",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hearing-never-blames-nearby-player",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "lost-NPC-sight-enters-search",
+            "detail": "busca",
+            "passed": true
+        },
+        {
+            "name": "police-approaches-player-and-offers-surrender",
+            "detail": "abordagem",
+            "passed": true
+        },
+        {
+            "name": "E-surrender-enters-custody",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "surrender-records-fine-and-releases-controls",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "resisting-violent-approach-triggers-real-police-strike",
+            "detail": "health=82",
+            "passed": true
+        },
+        {
+            "name": "real-city-has-clear-crime-and-witness-space",
+            "detail": "(254.57, 9.14, 381.16)",
+            "passed": true
+        },
+        {
+            "name": "real-city-NPC-assault-starts",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-city-assault-calls-police",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "reinforcements-spawn-and-target-actual-NPC",
+            "detail": "responders=2",
+            "passed": true
+        },
+        {
+            "name": "reinforcements-move-through-current-city",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

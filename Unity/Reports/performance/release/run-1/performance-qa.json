@@ -1,0 +1,766 @@
+{
+    "passed": true,
+    "completed": true,
+    "development": false,
+    "optimizedExpected": true,
+    "allocationCounterAvailable": false,
+    "referenceImplementation": false,
+    "label": "release",
+    "unity": "6000.3.27f1",
+    "layout": "marin-reference-v2",
+    "cpu": "AMD Ryzen 9 7900X 12-Core Processor ",
+    "gpu": "AMD Radeon RX 9070",
+    "graphicsApi": "Direct3D11",
+    "operatingSystem": "Windows 11  (10.0.26300)",
+    "startedUtc": "2026-11-08T04:12:13.8633671Z",
+    "width": 1280,
+    "height": 720,
+    "quality": 1,
+    "msaa": 2,
+    "vSync": 0,
+    "targetFrameRate": -1,
+    "navigationNodes": 11316,
+    "poolBefore": 72,
+    "poolAfter": 72,
+    "phases": [
+        {
+            "name": "city-street",
+            "frames": 823,
+            "residents": 24,
+            "vehicles": 10,
+            "frameMs": {
+                "available": true,
+                "samples": 823,
+                "mean": 12.133300972053448,
+                "median": 11.8249,
+                "p95": 16.2272,
+                "p99": 18.4782,
+                "maximum": 22.2152,
+                "total": 9985.706699999988
+            },
+            "mainThreadMs": {
+                "available": true,
+                "samples": 823,
+                "mean": 12.137213363304989,
+                "median": 11.8493,
+                "p95": 16.054299999999999,
+                "p99": 17.8183,
+                "maximum": 22.2245,
+                "total": 9988.926598000005
+            },
+            "renderThreadMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gpuMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gcBytes": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "usedMemoryMiB": {
+                "available": true,
+                "samples": 823,
+                "mean": 1486.8984899034187,
+                "median": 1486.6530714035034,
+                "p95": 1490.3547010421753,
+                "p99": 1490.7304859161377,
+                "maximum": 1490.7698469161987,
+                "total": 1223717.4571905137
+            },
+            "drawCalls": {
+                "available": true,
+                "samples": 823,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        },
+        {
+            "name": "destruction-stress",
+            "frames": 16,
+            "residents": 24,
+            "vehicles": 10,
+            "frameMs": {
+                "available": true,
+                "samples": 16,
+                "mean": 20.920787500000004,
+                "median": 16.2782,
+                "p95": 52.2592,
+                "p99": 52.2592,
+                "maximum": 52.2592,
+                "total": 334.73260000000007
+            },
+            "mainThreadMs": {
+                "available": true,
+                "samples": 16,
+                "mean": 25.3734999375,
+                "median": 18.289199999999999,
+                "p95": 64.9872,
+                "p99": 64.9872,
+                "maximum": 64.9872,
+                "total": 405.975999
+            },
+            "renderThreadMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gpuMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gcBytes": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "usedMemoryMiB": {
+                "available": true,
+                "samples": 16,
+                "mean": 1502.329889178276,
+                "median": 1502.4351148605347,
+                "p95": 1502.5400943756104,
+                "p99": 1502.5400943756104,
+                "maximum": 1502.5400943756104,
+                "total": 24037.278226852417
+            },
+            "drawCalls": {
+                "available": true,
+                "samples": 16,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        },
+        {
+            "name": "destruction-stress-tail",
+            "frames": 48,
+            "residents": 24,
+            "vehicles": 10,
+            "frameMs": {
+                "available": true,
+                "samples": 48,
+                "mean": 14.336010416666668,
+                "median": 14.1421,
+                "p95": 19.3091,
+                "p99": 20.8221,
+                "maximum": 20.8221,
+                "total": 688.1285
+            },
+            "mainThreadMs": {
+                "available": true,
+                "samples": 48,
+                "mean": 14.331166666666667,
+                "median": 14.455,
+                "p95": 17.4911,
+                "p99": 20.4816,
+                "maximum": 20.4816,
+                "total": 687.896
+            },
+            "renderThreadMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gpuMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gcBytes": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "usedMemoryMiB": {
+                "available": true,
+                "samples": 48,
+                "mean": 1503.024300078551,
+                "median": 1503.0341062545776,
+                "p95": 1503.2135572433472,
+                "p99": 1503.222315788269,
+                "maximum": 1503.222315788269,
+                "total": 72145.16640377045
+            },
+            "drawCalls": {
+                "available": true,
+                "samples": 48,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        }
+    ],
+    "operations": [
+        {
+            "name": "resident-routes",
+            "count": 144,
+            "succeeded": 141,
+            "milliseconds": {
+                "available": true,
+                "samples": 144,
+                "mean": 2.200386111111112,
+                "median": 1.794,
+                "p95": 4.8702,
+                "p99": 5.5756,
+                "maximum": 5.7949,
+                "total": 316.8556000000001
+            },
+            "allocatedBytes": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        },
+        {
+            "name": "prop-destruction",
+            "count": 64,
+            "succeeded": 64,
+            "milliseconds": {
+                "available": true,
+                "samples": 64,
+                "mean": 1.287559375,
+                "median": 1.1907,
+                "p95": 1.973,
+                "p99": 5.0091,
+                "maximum": 5.0091,
+                "total": 82.4038
+            },
+            "allocatedBytes": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        }
+    ],
+    "routes": [
+        {
+            "start": 17,
+            "goal": 503,
+            "count": 305,
+            "found": true,
+            "valid": true,
+            "signature": "B0100EAB"
+        },
+        {
+            "start": 1014,
+            "goal": 3222,
+            "count": 172,
+            "found": true,
+            "valid": true,
+            "signature": "216677D6"
+        },
+        {
+            "start": 2011,
+            "goal": 5941,
+            "count": 212,
+            "found": true,
+            "valid": true,
+            "signature": "A2DF7502"
+        },
+        {
+            "start": 3008,
+            "goal": 8660,
+            "count": 114,
+            "found": true,
+            "valid": true,
+            "signature": "E35D95A2"
+        },
+        {
+            "start": 4005,
+            "goal": 63,
+            "count": 465,
+            "found": true,
+            "valid": true,
+            "signature": "91348800"
+        },
+        {
+            "start": 5002,
+            "goal": 2782,
+            "count": 289,
+            "found": true,
+            "valid": true,
+            "signature": "E9B93349"
+        },
+        {
+            "start": 5999,
+            "goal": 5501,
+            "count": 185,
+            "found": true,
+            "valid": true,
+            "signature": "4B7E31D7"
+        },
+        {
+            "start": 6996,
+            "goal": 8220,
+            "count": 87,
+            "found": true,
+            "valid": true,
+            "signature": "EBB5475F"
+        },
+        {
+            "start": 7993,
+            "goal": 10939,
+            "count": 218,
+            "found": true,
+            "valid": true,
+            "signature": "E4C8EA49"
+        },
+        {
+            "start": 8990,
+            "goal": 2342,
+            "count": 112,
+            "found": true,
+            "valid": true,
+            "signature": "DC7318EA"
+        },
+        {
+            "start": 9987,
+            "goal": 5061,
+            "count": 0,
+            "found": false,
+            "valid": true,
+            "signature": "811C9DC5"
+        },
+        {
+            "start": 10984,
+            "goal": 7780,
+            "count": 83,
+            "found": true,
+            "valid": true,
+            "signature": "F6A4EEAB"
+        },
+        {
+            "start": 665,
+            "goal": 10499,
+            "count": 179,
+            "found": true,
+            "valid": true,
+            "signature": "1AFE2177"
+        },
+        {
+            "start": 1662,
+            "goal": 1902,
+            "count": 33,
+            "found": true,
+            "valid": true,
+            "signature": "091759F1"
+        },
+        {
+            "start": 2659,
+            "goal": 4621,
+            "count": 298,
+            "found": true,
+            "valid": true,
+            "signature": "688D4C10"
+        },
+        {
+            "start": 3656,
+            "goal": 7340,
+            "count": 322,
+            "found": true,
+            "valid": true,
+            "signature": "B43B845D"
+        },
+        {
+            "start": 4653,
+            "goal": 10059,
+            "count": 132,
+            "found": true,
+            "valid": true,
+            "signature": "DDECD5AA"
+        },
+        {
+            "start": 5650,
+            "goal": 1462,
+            "count": 189,
+            "found": true,
+            "valid": true,
+            "signature": "EAA8CFAD"
+        },
+        {
+            "start": 6647,
+            "goal": 4181,
+            "count": 298,
+            "found": true,
+            "valid": true,
+            "signature": "BF70A9B4"
+        },
+        {
+            "start": 7644,
+            "goal": 6900,
+            "count": 60,
+            "found": true,
+            "valid": true,
+            "signature": "A9CBA623"
+        },
+        {
+            "start": 8641,
+            "goal": 9619,
+            "count": 119,
+            "found": true,
+            "valid": true,
+            "signature": "370511D7"
+        },
+        {
+            "start": 9638,
+            "goal": 1022,
+            "count": 152,
+            "found": true,
+            "valid": true,
+            "signature": "8BCA0477"
+        },
+        {
+            "start": 10635,
+            "goal": 3741,
+            "count": 253,
+            "found": true,
+            "valid": true,
+            "signature": "201EA097"
+        },
+        {
+            "start": 316,
+            "goal": 6460,
+            "count": 261,
+            "found": true,
+            "valid": true,
+            "signature": "9CE64A9F"
+        },
+        {
+            "start": 1313,
+            "goal": 9179,
+            "count": 235,
+            "found": true,
+            "valid": true,
+            "signature": "CBD7C654"
+        },
+        {
+            "start": 2310,
+            "goal": 582,
+            "count": 257,
+            "found": true,
+            "valid": true,
+            "signature": "FA4096D6"
+        },
+        {
+            "start": 3307,
+            "goal": 3301,
+            "count": 7,
+            "found": true,
+            "valid": true,
+            "signature": "2CE0E0C3"
+        },
+        {
+            "start": 4304,
+            "goal": 6020,
+            "count": 421,
+            "found": true,
+            "valid": true,
+            "signature": "B7AB5929"
+        },
+        {
+            "start": 5301,
+            "goal": 8739,
+            "count": 61,
+            "found": true,
+            "valid": true,
+            "signature": "324555CD"
+        },
+        {
+            "start": 6298,
+            "goal": 142,
+            "count": 137,
+            "found": true,
+            "valid": true,
+            "signature": "1C24147C"
+        },
+        {
+            "start": 7295,
+            "goal": 2861,
+            "count": 82,
+            "found": true,
+            "valid": true,
+            "signature": "2F3F9D1C"
+        },
+        {
+            "start": 8292,
+            "goal": 5580,
+            "count": 25,
+            "found": true,
+            "valid": true,
+            "signature": "E77CD7F5"
+        },
+        {
+            "start": 9289,
+            "goal": 8299,
+            "count": 89,
+            "found": true,
+            "valid": true,
+            "signature": "614A7718"
+        },
+        {
+            "start": 10286,
+            "goal": 11018,
+            "count": 123,
+            "found": true,
+            "valid": true,
+            "signature": "47226C98"
+        },
+        {
+            "start": 11283,
+            "goal": 2421,
+            "count": 26,
+            "found": true,
+            "valid": true,
+            "signature": "9A0DAED1"
+        },
+        {
+            "start": 964,
+            "goal": 5140,
+            "count": 322,
+            "found": true,
+            "valid": true,
+            "signature": "2E37F92F"
+        },
+        {
+            "start": 1961,
+            "goal": 7859,
+            "count": 96,
+            "found": true,
+            "valid": true,
+            "signature": "E1A7FA59"
+        },
+        {
+            "start": 2958,
+            "goal": 10578,
+            "count": 35,
+            "found": true,
+            "valid": true,
+            "signature": "5F3D7640"
+        },
+        {
+            "start": 3955,
+            "goal": 1981,
+            "count": 185,
+            "found": true,
+            "valid": true,
+            "signature": "1D6EEE36"
+        },
+        {
+            "start": 4952,
+            "goal": 4700,
+            "count": 74,
+            "found": true,
+            "valid": true,
+            "signature": "25C03000"
+        },
+        {
+            "start": 5949,
+            "goal": 7419,
+            "count": 81,
+            "found": true,
+            "valid": true,
+            "signature": "D229E981"
+        },
+        {
+            "start": 6946,
+            "goal": 10138,
+            "count": 201,
+            "found": true,
+            "valid": true,
+            "signature": "32F1788B"
+        },
+        {
+            "start": 7943,
+            "goal": 1541,
+            "count": 72,
+            "found": true,
+            "valid": true,
+            "signature": "3021083C"
+        },
+        {
+            "start": 8940,
+            "goal": 4260,
+            "count": 417,
+            "found": true,
+            "valid": true,
+            "signature": "26292248"
+        },
+        {
+            "start": 9937,
+            "goal": 6979,
+            "count": 84,
+            "found": true,
+            "valid": true,
+            "signature": "A419857B"
+        },
+        {
+            "start": 10934,
+            "goal": 9698,
+            "count": 248,
+            "found": true,
+            "valid": true,
+            "signature": "5A354792"
+        },
+        {
+            "start": 615,
+            "goal": 1101,
+            "count": 121,
+            "found": true,
+            "valid": true,
+            "signature": "6C68946F"
+        },
+        {
+            "start": 1612,
+            "goal": 3820,
+            "count": 195,
+            "found": true,
+            "valid": true,
+            "signature": "7F6CE8D7"
+        }
+    ],
+    "checks": [
+        {
+            "name": "isolated-QA-storage",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "routes-follow-unblocked-real-edges",
+            "detail": "successes=141/144",
+            "passed": true
+        },
+        {
+            "name": "unreachable-goal-clears-old-path",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "valid-search-recovers-after-failure",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "city-population-is-running",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bullet-melee-vehicle-damage-still-break-props",
+            "detail": "broken=64",
+            "passed": true
+        },
+        {
+            "name": "debris-budget-is-bounded",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "debris-keeps-collision-filter-and-source-color",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "fixed-pool-reused-under-saturation",
+            "detail": "before=72 after=72",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-debris-and-expiry",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "debris-expires-after-resume",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "returned-pool-has-no-live-physics",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "only-explicit-performance-probe",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "errors=0",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

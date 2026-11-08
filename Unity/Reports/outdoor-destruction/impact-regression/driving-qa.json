@@ -1,0 +1,4831 @@
+{
+    "passed": true,
+    "controlsOnly": false,
+    "unity": "6000.3.27f1",
+    "layout": "marin-reference-v2",
+    "checks": [
+        {
+            "name": "native-context-ready",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sedã-1350/launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 1.9199999570846558
+        },
+        {
+            "name": "sedã-1350/stronger-arcade-launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 1.9199999570846558
+        },
+        {
+            "name": "sedã-1350/top-speed-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 46.1533088684082
+        },
+        {
+            "name": "sedã-1350/braking",
+            "detail": "metres from 72 km/h",
+            "passed": true,
+            "value": 12.575763702392579
+        },
+        {
+            "name": "sedã-1350/wet-road-has-less-grip",
+            "detail": "",
+            "passed": true,
+            "value": 18.99176597595215
+        },
+        {
+            "name": "sedã-1350/responsive-curve",
+            "detail": "",
+            "passed": true,
+            "value": 100.17620086669922
+        },
+        {
+            "name": "sedã-1350/left-right-symmetry",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sedã-1350/fixed-step-convergence",
+            "detail": "",
+            "passed": true,
+            "value": 2.384185791015625e-7
+        },
+        {
+            "name": "sedã-1350/powered-turn-in-at-least-50-percent-faster",
+            "detail": "degrees in 0.5 s at 54 km/h",
+            "passed": true,
+            "value": 21.422582626342775
+        },
+        {
+            "name": "sedã-1350/full-throttle-closes-curve",
+            "detail": "",
+            "passed": true,
+            "value": 84.03821563720703
+        },
+        {
+            "name": "sedã-1350/high-speed-steering-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 0.4630858898162842
+        },
+        {
+            "name": "sedã-1350/wet-corner-retains-weather-effect",
+            "detail": "radians/s at 108 km/h",
+            "passed": true,
+            "value": 0.34883636236190798
+        },
+        {
+            "name": "sedã-1350/handbrake-slide-recovers",
+            "detail": "",
+            "passed": true,
+            "value": 8.948892499829843e-16
+        },
+        {
+            "name": "sedã-1350/reverse-brakes-before-shifting",
+            "detail": "",
+            "passed": true,
+            "value": -6.749813079833984
+        },
+        {
+            "name": "sedã-1350/world-impulse-does-not-double-rotation",
+            "detail": "",
+            "passed": true,
+            "value": -0.0002369214198552072
+        },
+        {
+            "name": "perua-1539/launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 1.9199999570846558
+        },
+        {
+            "name": "perua-1539/stronger-arcade-launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 1.9199999570846558
+        },
+        {
+            "name": "perua-1539/top-speed-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 45.59162902832031
+        },
+        {
+            "name": "perua-1539/braking",
+            "detail": "metres from 72 km/h",
+            "passed": true,
+            "value": 12.766873359680176
+        },
+        {
+            "name": "perua-1539/wet-road-has-less-grip",
+            "detail": "",
+            "passed": true,
+            "value": 18.971820831298829
+        },
+        {
+            "name": "perua-1539/responsive-curve",
+            "detail": "",
+            "passed": true,
+            "value": 98.49820709228516
+        },
+        {
+            "name": "perua-1539/left-right-symmetry",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "perua-1539/fixed-step-convergence",
+            "detail": "",
+            "passed": true,
+            "value": 1.1920928955078126e-7
+        },
+        {
+            "name": "perua-1539/powered-turn-in-at-least-50-percent-faster",
+            "detail": "degrees in 0.5 s at 54 km/h",
+            "passed": true,
+            "value": 21.524288177490236
+        },
+        {
+            "name": "perua-1539/full-throttle-closes-curve",
+            "detail": "",
+            "passed": true,
+            "value": 82.7450180053711
+        },
+        {
+            "name": "perua-1539/high-speed-steering-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 0.46900588274002077
+        },
+        {
+            "name": "perua-1539/wet-corner-retains-weather-effect",
+            "detail": "radians/s at 108 km/h",
+            "passed": true,
+            "value": 0.3441128730773926
+        },
+        {
+            "name": "perua-1539/handbrake-slide-recovers",
+            "detail": "",
+            "passed": true,
+            "value": 8.948892499829843e-16
+        },
+        {
+            "name": "perua-1539/reverse-brakes-before-shifting",
+            "detail": "",
+            "passed": true,
+            "value": -6.7131147384643559
+        },
+        {
+            "name": "perua-1539/world-impulse-does-not-double-rotation",
+            "detail": "",
+            "passed": true,
+            "value": -0.0002369214198552072
+        },
+        {
+            "name": "picape-1768.5/launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 2.240000009536743
+        },
+        {
+            "name": "picape-1768.5/stronger-arcade-launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 2.240000009536743
+        },
+        {
+            "name": "picape-1768.5/top-speed-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 43.994022369384769
+        },
+        {
+            "name": "picape-1768.5/braking",
+            "detail": "metres from 72 km/h",
+            "passed": true,
+            "value": 12.97270679473877
+        },
+        {
+            "name": "picape-1768.5/wet-road-has-less-grip",
+            "detail": "",
+            "passed": true,
+            "value": 18.950422286987306
+        },
+        {
+            "name": "picape-1768.5/responsive-curve",
+            "detail": "",
+            "passed": true,
+            "value": 86.70416259765625
+        },
+        {
+            "name": "picape-1768.5/left-right-symmetry",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "picape-1768.5/fixed-step-convergence",
+            "detail": "",
+            "passed": true,
+            "value": 4.76837158203125e-7
+        },
+        {
+            "name": "picape-1768.5/powered-turn-in-at-least-50-percent-faster",
+            "detail": "degrees in 0.5 s at 54 km/h",
+            "passed": true,
+            "value": 21.78075408935547
+        },
+        {
+            "name": "picape-1768.5/full-throttle-closes-curve",
+            "detail": "",
+            "passed": true,
+            "value": 84.34362030029297
+        },
+        {
+            "name": "picape-1768.5/high-speed-steering-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 0.47731921076774599
+        },
+        {
+            "name": "picape-1768.5/wet-corner-retains-weather-effect",
+            "detail": "radians/s at 108 km/h",
+            "passed": true,
+            "value": 0.3388725221157074
+        },
+        {
+            "name": "picape-1768.5/handbrake-slide-recovers",
+            "detail": "",
+            "passed": true,
+            "value": 8.948892499829843e-16
+        },
+        {
+            "name": "picape-1768.5/reverse-brakes-before-shifting",
+            "detail": "",
+            "passed": true,
+            "value": -6.639704704284668
+        },
+        {
+            "name": "picape-1768.5/world-impulse-does-not-double-rotation",
+            "detail": "",
+            "passed": true,
+            "value": -0.0002369214198552072
+        },
+        {
+            "name": "compacto-1228.5/launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 2.0
+        },
+        {
+            "name": "compacto-1228.5/stronger-arcade-launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 2.0
+        },
+        {
+            "name": "compacto-1228.5/top-speed-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 46.17759704589844
+        },
+        {
+            "name": "compacto-1228.5/braking",
+            "detail": "metres from 72 km/h",
+            "passed": true,
+            "value": 12.83204174041748
+        },
+        {
+            "name": "compacto-1228.5/wet-road-has-less-grip",
+            "detail": "",
+            "passed": true,
+            "value": 19.02140998840332
+        },
+        {
+            "name": "compacto-1228.5/responsive-curve",
+            "detail": "",
+            "passed": true,
+            "value": 104.56070709228516
+        },
+        {
+            "name": "compacto-1228.5/left-right-symmetry",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "compacto-1228.5/fixed-step-convergence",
+            "detail": "",
+            "passed": true,
+            "value": 4.76837158203125e-7
+        },
+        {
+            "name": "compacto-1228.5/powered-turn-in-at-least-50-percent-faster",
+            "detail": "degrees in 0.5 s at 54 km/h",
+            "passed": true,
+            "value": 21.799863815307618
+        },
+        {
+            "name": "compacto-1228.5/full-throttle-closes-curve",
+            "detail": "",
+            "passed": true,
+            "value": 84.88011169433594
+        },
+        {
+            "name": "compacto-1228.5/high-speed-steering-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 0.4636887311935425
+        },
+        {
+            "name": "compacto-1228.5/wet-corner-retains-weather-effect",
+            "detail": "radians/s at 108 km/h",
+            "passed": true,
+            "value": 0.3507954180240631
+        },
+        {
+            "name": "compacto-1228.5/handbrake-slide-recovers",
+            "detail": "",
+            "passed": true,
+            "value": 8.325185083075059e-16
+        },
+        {
+            "name": "compacto-1228.5/reverse-brakes-before-shifting",
+            "detail": "",
+            "passed": true,
+            "value": -6.751568794250488
+        },
+        {
+            "name": "compacto-1228.5/world-impulse-does-not-double-rotation",
+            "detail": "",
+            "passed": true,
+            "value": -0.0002369214198552072
+        },
+        {
+            "name": "furgão-1741.5/launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 2.259999990463257
+        },
+        {
+            "name": "furgão-1741.5/stronger-arcade-launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 2.259999990463257
+        },
+        {
+            "name": "furgão-1741.5/top-speed-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 43.92367935180664
+        },
+        {
+            "name": "furgão-1741.5/braking",
+            "detail": "metres from 72 km/h",
+            "passed": true,
+            "value": 12.949752807617188
+        },
+        {
+            "name": "furgão-1741.5/wet-road-has-less-grip",
+            "detail": "",
+            "passed": true,
+            "value": 19.00162696838379
+        },
+        {
+            "name": "furgão-1741.5/responsive-curve",
+            "detail": "",
+            "passed": true,
+            "value": 101.16130828857422
+        },
+        {
+            "name": "furgão-1741.5/left-right-symmetry",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "furgão-1741.5/fixed-step-convergence",
+            "detail": "",
+            "passed": true,
+            "value": 1.1920928955078126e-7
+        },
+        {
+            "name": "furgão-1741.5/powered-turn-in-at-least-50-percent-faster",
+            "detail": "degrees in 0.5 s at 54 km/h",
+            "passed": true,
+            "value": 21.75056266784668
+        },
+        {
+            "name": "furgão-1741.5/full-throttle-closes-curve",
+            "detail": "",
+            "passed": true,
+            "value": 84.87450408935547
+        },
+        {
+            "name": "furgão-1741.5/high-speed-steering-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 0.4788917005062103
+        },
+        {
+            "name": "furgão-1741.5/wet-corner-retains-weather-effect",
+            "detail": "radians/s at 108 km/h",
+            "passed": true,
+            "value": 0.3473343849182129
+        },
+        {
+            "name": "furgão-1741.5/handbrake-slide-recovers",
+            "detail": "",
+            "passed": true,
+            "value": 8.70417303466505e-16
+        },
+        {
+            "name": "furgão-1741.5/reverse-brakes-before-shifting",
+            "detail": "",
+            "passed": true,
+            "value": -6.637598991394043
+        },
+        {
+            "name": "furgão-1741.5/world-impulse-does-not-double-rotation",
+            "detail": "",
+            "passed": true,
+            "value": -0.0002369214198552072
+        },
+        {
+            "name": "picape-4050/launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 3.2799999713897707
+        },
+        {
+            "name": "picape-4050/stronger-arcade-launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 3.2799999713897707
+        },
+        {
+            "name": "picape-4050/top-speed-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 37.2696533203125
+        },
+        {
+            "name": "picape-4050/braking",
+            "detail": "metres from 72 km/h",
+            "passed": true,
+            "value": 14.268234252929688
+        },
+        {
+            "name": "picape-4050/wet-road-has-less-grip",
+            "detail": "",
+            "passed": true,
+            "value": 18.875375747680665
+        },
+        {
+            "name": "picape-4050/responsive-curve",
+            "detail": "",
+            "passed": true,
+            "value": 79.9902572631836
+        },
+        {
+            "name": "picape-4050/left-right-symmetry",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "picape-4050/fixed-step-convergence",
+            "detail": "",
+            "passed": true,
+            "value": 2.384185791015625e-7
+        },
+        {
+            "name": "picape-4050/powered-turn-in-at-least-50-percent-faster",
+            "detail": "degrees in 0.5 s at 54 km/h",
+            "passed": true,
+            "value": 19.864124298095704
+        },
+        {
+            "name": "picape-4050/full-throttle-closes-curve",
+            "detail": "",
+            "passed": true,
+            "value": 92.43203735351563
+        },
+        {
+            "name": "picape-4050/high-speed-steering-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 0.49627241492271426
+        },
+        {
+            "name": "picape-4050/wet-corner-retains-weather-effect",
+            "detail": "radians/s at 108 km/h",
+            "passed": true,
+            "value": 0.35200828313827517
+        },
+        {
+            "name": "picape-4050/handbrake-slide-recovers",
+            "detail": "",
+            "passed": true,
+            "value": 8.948892499829843e-16
+        },
+        {
+            "name": "picape-4050/reverse-brakes-before-shifting",
+            "detail": "",
+            "passed": true,
+            "value": -6.282374858856201
+        },
+        {
+            "name": "picape-4050/world-impulse-does-not-double-rotation",
+            "detail": "",
+            "passed": true,
+            "value": -0.0002369214198552072
+        },
+        {
+            "name": "E-selects-vehicle",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "E-enters-driver-seat",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "impact-coast-reference",
+            "detail": "",
+            "passed": true,
+            "value": 11.555997848510743
+        },
+        {
+            "name": "broken-light-prop-preserves-momentum",
+            "detail": "",
+            "passed": true,
+            "value": 10.408613204956055
+        },
+        {
+            "name": "broken-prop-removes-all-colliders",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "resistant-prop-costs-more-momentum",
+            "detail": "",
+            "passed": true,
+            "value": 8.954190254211426
+        },
+        {
+            "name": "heavier-car-loses-less-speed",
+            "detail": "",
+            "passed": true,
+            "value": 10.086212158203125
+        },
+        {
+            "name": "authored-street-lamp-available",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "authored-street-lamp-retains-momentum",
+            "detail": "",
+            "passed": true,
+            "value": 8.95491886138916
+        },
+        {
+            "name": "compound-prop-does-not-stop-car",
+            "detail": "",
+            "passed": true,
+            "value": 10.413222312927246
+        },
+        {
+            "name": "successive-props-cost-speed-without-freezing",
+            "detail": "",
+            "passed": true,
+            "value": 8.01724624633789
+        },
+        {
+            "name": "surviving-prop-still-stops-car",
+            "detail": "",
+            "passed": true,
+            "value": -0.18634353578090669
+        },
+        {
+            "name": "parking-speed-does-not-break-or-pass-prop",
+            "detail": "",
+            "passed": true,
+            "value": -0.0000044495227484731
+        },
+        {
+            "name": "broken-prop-does-not-bypass-wall",
+            "detail": "",
+            "passed": true,
+            "value": -0.06673500686883927
+        },
+        {
+            "name": "simultaneous-solid-contact-still-blocks",
+            "detail": "wall blocks forward travel; a bounded physical rebound is allowed",
+            "passed": true,
+            "value": 0.00005922197306063026
+        },
+        {
+            "name": "glancing-prop-preserves-travel",
+            "detail": "",
+            "passed": true,
+            "value": 9.937787055969239
+        },
+        {
+            "name": "reverse-impact-retains-reverse-momentum",
+            "detail": "",
+            "passed": true,
+            "value": -10.366052627563477
+        },
+        {
+            "name": "pause-freezes-approach-and-prop",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "resume-keeps-impact-momentum",
+            "detail": "",
+            "passed": true,
+            "value": 10.41693115234375
+        },
+        {
+            "name": "service-brake-still-stops-after-prop",
+            "detail": "",
+            "passed": true,
+            "value": 0.0006417075055651367
+        },
+        {
+            "name": "E-exits-after-driving",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "models": [
+        {
+            "model": "sedã-1350",
+            "mass": 1350.0,
+            "speedAt2": 17.41975975036621,
+            "speedAt4": 31.859636306762697,
+            "zeroTo60": 1.9199999570846558,
+            "brakeDistance": 12.575763702392579,
+            "wetBrakeDistance": 18.99176597595215,
+            "turnDegrees": 100.17620086669922,
+            "turnSpeed": 16.82242202758789,
+            "handbrakeSlip": 1.3197389841079713,
+            "recoveredSlip": 8.948892499829843e-16,
+            "poweredTurnDegrees": 84.03821563720703,
+            "poweredTurnSpeed": 23.59541130065918,
+            "turnInDegrees": 21.422582626342775,
+            "unassistedTurnInDegrees": 11.025469779968262,
+            "highSpeedYaw": 0.4630858898162842
+        },
+        {
+            "model": "perua-1539",
+            "mass": 1539.0,
+            "speedAt2": 17.446678161621095,
+            "speedAt4": 30.981609344482423,
+            "zeroTo60": 1.9199999570846558,
+            "brakeDistance": 12.766873359680176,
+            "wetBrakeDistance": 18.971820831298829,
+            "turnDegrees": 98.49820709228516,
+            "turnSpeed": 16.56086540222168,
+            "handbrakeSlip": 1.1608245372772217,
+            "recoveredSlip": 8.948892499829843e-16,
+            "poweredTurnDegrees": 82.7450180053711,
+            "poweredTurnSpeed": 25.358421325683595,
+            "turnInDegrees": 21.524288177490236,
+            "unassistedTurnInDegrees": 11.076704978942871,
+            "highSpeedYaw": 0.46900588274002077
+        },
+        {
+            "model": "picape-1768.5",
+            "mass": 1768.5,
+            "speedAt2": 14.890220642089844,
+            "speedAt4": 27.760818481445314,
+            "zeroTo60": 2.240000009536743,
+            "brakeDistance": 12.97270679473877,
+            "wetBrakeDistance": 18.950422286987306,
+            "turnDegrees": 86.70416259765625,
+            "turnSpeed": 16.410221099853517,
+            "handbrakeSlip": 0.9442670345306397,
+            "recoveredSlip": 8.948892499829843e-16,
+            "poweredTurnDegrees": 84.34362030029297,
+            "poweredTurnSpeed": 24.7801570892334,
+            "turnInDegrees": 21.78075408935547,
+            "unassistedTurnInDegrees": 13.213761329650879,
+            "highSpeedYaw": 0.47731921076774599
+        },
+        {
+            "model": "compacto-1228.5",
+            "mass": 1228.5,
+            "speedAt2": 16.81015396118164,
+            "speedAt4": 31.367103576660158,
+            "zeroTo60": 2.0,
+            "brakeDistance": 12.83204174041748,
+            "wetBrakeDistance": 19.02140998840332,
+            "turnDegrees": 104.56070709228516,
+            "turnSpeed": 16.418073654174806,
+            "handbrakeSlip": 2.0309677124023439,
+            "recoveredSlip": 8.325185083075059e-16,
+            "poweredTurnDegrees": 84.88011169433594,
+            "poweredTurnSpeed": 22.62405776977539,
+            "turnInDegrees": 21.799863815307618,
+            "unassistedTurnInDegrees": 11.711307525634766,
+            "highSpeedYaw": 0.4636887311935425
+        },
+        {
+            "model": "furgão-1741.5",
+            "mass": 1741.5,
+            "speedAt2": 14.833785057067871,
+            "speedAt4": 27.684436798095704,
+            "zeroTo60": 2.259999990463257,
+            "brakeDistance": 12.949752807617188,
+            "wetBrakeDistance": 19.00162696838379,
+            "turnDegrees": 101.16130828857422,
+            "turnSpeed": 15.589509010314942,
+            "handbrakeSlip": 1.1566162109375,
+            "recoveredSlip": 8.70417303466505e-16,
+            "poweredTurnDegrees": 84.87450408935547,
+            "poweredTurnSpeed": 24.29361343383789,
+            "turnInDegrees": 21.75056266784668,
+            "unassistedTurnInDegrees": 12.036905288696289,
+            "highSpeedYaw": 0.4788917005062103
+        },
+        {
+            "model": "picape-4050",
+            "mass": 4050.0,
+            "speedAt2": 10.192645072937012,
+            "speedAt4": 20.16626739501953,
+            "zeroTo60": 3.2799999713897707,
+            "brakeDistance": 14.268234252929688,
+            "wetBrakeDistance": 18.875375747680665,
+            "turnDegrees": 79.9902572631836,
+            "turnSpeed": 15.113525390625,
+            "handbrakeSlip": 0.4453907907009125,
+            "recoveredSlip": 8.948892499829843e-16,
+            "poweredTurnDegrees": 92.43203735351563,
+            "poweredTurnSpeed": 20.078821182250978,
+            "turnInDegrees": 19.864124298095704,
+            "unassistedTurnInDegrees": 10.563132286071778,
+            "highSpeedYaw": 0.49627241492271426
+        }
+    ],
+    "samples": [
+        {
+            "phase": "enter",
+            "time": 0.0,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 1.725549054754083e-7,
+            "roll": 1.8406730362130475e-7,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.80398941040039,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.019999992102384568,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 1.725549054754083e-7,
+            "roll": 1.8406730362130475e-7,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.80398941040039,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.13087739050388337,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 1.725549054754083e-7,
+            "roll": 1.8406730362130475e-7,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.80398941040039,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.2308783084154129,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 1.725549054754083e-7,
+            "roll": 1.8406730362130475e-7,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.80398941040039,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.33087942004203799,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 1.725549054754083e-7,
+            "roll": 1.8406730362130475e-7,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.80398941040039,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.43088021874427798,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 1.725549054754083e-7,
+            "roll": 1.8406730362130475e-7,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.80398941040039,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.5308810472488403,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 1.725549054754083e-7,
+            "roll": 1.8406730362130475e-7,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.80398941040039,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.6331004500389099,
+            "speed": 0.0000824386443127878,
+            "lateral": 0.0,
+            "yaw": 4.810202902660876e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.009484592825174332,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.0834045410156,
+                "y": 24.762096405029298,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.7331021428108215,
+            "speed": 0.0003130999975837767,
+            "lateral": 0.0,
+            "yaw": 1.7182684075578437e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.24133963882923127,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.0854187011719,
+                "y": 24.682077407836915,
+                "z": 919.466796875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.8331027626991272,
+            "speed": 0.0003658497880678624,
+            "lateral": 0.0,
+            "yaw": 4.828257260669488e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5471391677856445,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.0882568359375,
+                "y": 24.63844108581543,
+                "z": 919.467041015625
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.9331036806106567,
+            "speed": 0.0007205391302704811,
+            "lateral": 0.0,
+            "yaw": -3.475409471320745e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.6511911749839783,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.08917236328127,
+                "y": 24.63077735900879,
+                "z": 919.467041015625
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.0331043004989625,
+            "speed": 0.000860086060129106,
+            "lateral": 0.0,
+            "yaw": -5.193543302084436e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5958675742149353,
+            "roll": -0.00006103515625,
+            "contacts": 4,
+            "position": {
+                "x": -269.0885314941406,
+                "y": 24.6373233795166,
+                "z": 919.4669799804688
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.1331053972244263,
+            "speed": 0.0007830223767086864,
+            "lateral": 0.0,
+            "yaw": -1.136866245587953e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5142773389816284,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.08770751953127,
+                "y": 24.643768310546876,
+                "z": 919.4669799804688
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.2331064939498902,
+            "speed": 0.0007012016139924526,
+            "lateral": 0.0,
+            "yaw": 2.4644697305120646e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4717545509338379,
+            "roll": 0.000003762067535717506,
+            "contacts": 4,
+            "position": {
+                "x": -269.08721923828127,
+                "y": 24.646312713623048,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.3331072330474854,
+            "speed": 0.0006710924208164215,
+            "lateral": 0.0,
+            "yaw": 9.234251052703257e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.46628788113594057,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.0871276855469,
+                "y": 24.646259307861329,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.433109164237976,
+            "speed": 0.0006730721215717495,
+            "lateral": 0.0,
+            "yaw": -2.085121195705142e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4751220941543579,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.0871887207031,
+                "y": 24.64551544189453,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.5331100225448609,
+            "speed": 0.0006832481012679637,
+            "lateral": 0.0,
+            "yaw": -3.8272503388725456e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48291534185409548,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.645023345947267,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.6332321166992188,
+            "speed": 0.0006891924422234297,
+            "lateral": 0.0,
+            "yaw": 5.495762778195967e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4857974648475647,
+            "roll": 0.00005547060209210031,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644893646240236,
+                "z": 919.4668579101563
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.7332329750061036,
+            "speed": 0.0006912350654602051,
+            "lateral": 0.0,
+            "yaw": -1.1740116656611122e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48555320501327517,
+            "roll": 0.00008639430598122999,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.64494514465332,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.8332337141036988,
+            "speed": 0.0006901113083586097,
+            "lateral": 0.0,
+            "yaw": -3.6678944326240529e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4845643639564514,
+            "roll": 0.00009373169450554997,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.645017623901368,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.933254361152649,
+            "speed": 0.0006896235863678157,
+            "lateral": 0.0,
+            "yaw": -1.3782237573423118e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4839783012866974,
+            "roll": 0.00009722693357616663,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.645050048828126,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 2.0333468914031984,
+            "speed": 0.0006887824856676161,
+            "lateral": 0.0,
+            "yaw": -1.3919208186052857e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4838651120662689,
+            "roll": 0.00010042871144833043,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.64505386352539,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 2.133347988128662,
+            "speed": 0.0006890861550346017,
+            "lateral": 0.0,
+            "yaw": -3.951915061861655e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4839456379413605,
+            "roll": 0.00010357710561947897,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.645044326782228,
+                "z": 919.4669799804688
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 2.233349084854126,
+            "speed": 0.0006894614780321717,
+            "lateral": 0.0,
+            "yaw": -6.492265214319559e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4840414226055145,
+            "roll": 0.00010216298687737435,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.645044326782228,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "impact-warmup",
+            "time": 2.333350419998169,
+            "speed": 2.8031632837155487e-7,
+            "lateral": 0.0,
+            "yaw": 1.9704775588991198e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.00008279198664240539,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.709052856515349e-11,
+                "y": 200.06884765625,
+                "z": -20.0
+            }
+        },
+        {
+            "phase": "impact-warmup",
+            "time": 2.435255527496338,
+            "speed": 0.0002548138436395675,
+            "lateral": 0.0,
+            "yaw": 5.174183570488822e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.10968126356601715,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.6545656339749258e-8,
+                "y": 200.0286407470703,
+                "z": -20.000934600830079
+            }
+        },
+        {
+            "phase": "impact-warmup",
+            "time": 2.5352563858032228,
+            "speed": 0.000365109124686569,
+            "lateral": 0.0,
+            "yaw": -1.3783848729076454e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.37648069858551028,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -5.013506410023183e-8,
+                "y": 199.98902893066407,
+                "z": -20.00328826904297
+            }
+        },
+        {
+            "phase": "impact-warmup",
+            "time": 2.635261058807373,
+            "speed": 0.0005514856893569231,
+            "lateral": 0.0,
+            "yaw": -2.3897079870494055e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5482324957847595,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.9704989518440928e-8,
+                "y": 199.9735870361328,
+                "z": -20.004804611206056
+            }
+        },
+        {
+            "phase": "impact-warmup",
+            "time": 2.735262155532837,
+            "speed": 0.0007306988118216395,
+            "lateral": 0.0,
+            "yaw": -5.318394613595956e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5678552389144898,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.3813665706029498e-8,
+                "y": 199.97393798828126,
+                "z": -20.004899978637697
+            }
+        },
+        {
+            "phase": "impact-warmup",
+            "time": 2.835299491882324,
+            "speed": 0.0007390324608422816,
+            "lateral": 0.0,
+            "yaw": 6.523566575822315e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5200018882751465,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -1.968000873375786e-8,
+                "y": 199.97833251953126,
+                "z": -20.00438117980957
+            }
+        },
+        {
+            "phase": "impact-warmup",
+            "time": 2.9354593753814699,
+            "speed": 0.0006824683514423668,
+            "lateral": 0.0,
+            "yaw": 1.0580272657989554e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4781285226345062,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.3288322381631589e-8,
+                "y": 199.981201171875,
+                "z": -20.00393295288086
+            }
+        },
+        {
+            "phase": "impact-warmup",
+            "time": 3.0354602336883547,
+            "speed": 0.0006452532834373415,
+            "lateral": 0.0,
+            "yaw": -9.162399692286272e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.462844580411911,
+            "roll": 0.000002692782118174364,
+            "contacts": 4,
+            "position": {
+                "x": 1.993522324994501e-8,
+                "y": 199.98193359375,
+                "z": -20.003734588623048
+            }
+        },
+        {
+            "phase": "impact-coast",
+            "time": 3.1354615688323976,
+            "speed": 11.987485885620118,
+            "lateral": 0.0,
+            "yaw": 1.4678102289167328e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.0006768063176423311,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.727420511661194e-10,
+                "y": 200.0687255859375,
+                "z": -19.921226501464845
+            }
+        },
+        {
+            "phase": "impact-coast",
+            "time": 3.2354631423950197,
+            "speed": 11.926437377929688,
+            "lateral": -5.943704906030689e-8,
+            "yaw": 1.4629470967975068e-7,
+            "steering": 0.0,
+            "slip": 2.2082607742390793e-8,
+            "pitch": 0.12605224549770356,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.7462672136380207e-8,
+                "y": 200.02850341796876,
+                "z": -18.72641372680664
+            }
+        },
+        {
+            "phase": "impact-coast",
+            "time": 3.3354640007019045,
+            "speed": 11.867325782775879,
+            "lateral": -2.5225167732401134e-8,
+            "yaw": 5.655748758215395e-9,
+            "steering": 0.0,
+            "slip": 6.050252743250439e-9,
+            "pitch": 0.40168243646621706,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.527426173377535e-8,
+                "y": 199.98802185058595,
+                "z": -17.538978576660158
+            }
+        },
+        {
+            "phase": "impact-coast",
+            "time": 3.435465097427368,
+            "speed": 11.808177947998047,
+            "lateral": 2.9394819023309539e-8,
+            "yaw": -6.182329315151947e-8,
+            "steering": 0.0,
+            "slip": 9.191336580727239e-9,
+            "pitch": 0.5754674673080444,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -1.8397227075084289e-9,
+                "y": 199.97067260742188,
+                "z": -16.356548309326173
+            }
+        },
+        {
+            "phase": "impact-coast",
+            "time": 3.53558087348938,
+            "speed": 11.75014591217041,
+            "lateral": 3.354147182221823e-8,
+            "yaw": -3.0050216537347299e-8,
+            "steering": 0.0,
+            "slip": 7.42691064203882e-9,
+            "pitch": 0.5982527732849121,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 3.3389600417876866e-8,
+                "y": 199.96917724609376,
+                "z": -15.177225112915039
+            }
+        },
+        {
+            "phase": "impact-coast",
+            "time": 3.6356589794158937,
+            "speed": 11.692944526672364,
+            "lateral": 1.1328309845737295e-8,
+            "yaw": 9.158385161356364e-9,
+            "steering": 0.0,
+            "slip": 1.5248130535994165e-9,
+            "pitch": 0.5536739826202393,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 5.037168904209466e-8,
+                "y": 199.97283935546876,
+                "z": -14.003503799438477
+            }
+        },
+        {
+            "phase": "impact-coast",
+            "time": 3.7356667518615724,
+            "speed": 11.635863304138184,
+            "lateral": -2.595633041835299e-9,
+            "yaw": 2.427887046962951e-8,
+            "steering": 0.0,
+            "slip": 2.725210057619165e-9,
+            "pitch": 0.5123894214630127,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 5.688578497142771e-8,
+                "y": 199.97592163085938,
+                "z": -12.836362838745118
+            }
+        },
+        {
+            "phase": "impact-coast",
+            "time": 3.8356680870056154,
+            "speed": 11.578792572021485,
+            "lateral": -1.9936812201137856e-9,
+            "yaw": 2.0639086883988967e-8,
+            "steering": 0.0,
+            "slip": 2.374840768482045e-9,
+            "pitch": 0.49492859840393069,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 6.492568616067729e-8,
+                "y": 199.97720336914063,
+                "z": -11.675230026245118
+            }
+        },
+        {
+            "phase": "impact-light-prop",
+            "time": 3.935669183731079,
+            "speed": 11.962645530700684,
+            "lateral": -2.116971309362725e-8,
+            "yaw": 1.1515545139673122e-7,
+            "steering": 0.0,
+            "slip": 9.035935555345987e-9,
+            "pitch": 0.019603056833148004,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -6.485743941908595e-9,
+                "y": 200.05661010742188,
+                "z": -19.439828872680665
+            }
+        },
+        {
+            "phase": "impact-light-prop",
+            "time": 4.035670757293701,
+            "speed": 11.90279483795166,
+            "lateral": -5.64743665165679e-8,
+            "yaw": 9.59860173566085e-8,
+            "steering": 0.0,
+            "slip": 1.8774940713228717e-8,
+            "pitch": 0.23533980548381806,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.728018782567233e-8,
+                "y": 200.009765625,
+                "z": -18.248254776000978
+            }
+        },
+        {
+            "phase": "impact-light-prop",
+            "time": 4.13567590713501,
+            "speed": 11.843603134155274,
+            "lateral": -2.099179302605947e-10,
+            "yaw": -3.650388435971763e-8,
+            "steering": 0.0,
+            "slip": 1.8206555152389115e-9,
+            "pitch": 0.4917845129966736,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.465159099074299e-8,
+                "y": 199.97836303710938,
+                "z": -17.062990188598634
+            }
+        },
+        {
+            "phase": "impact-light-prop",
+            "time": 4.241369724273682,
+            "speed": 10.619192123413086,
+            "lateral": 0.15891115367412568,
+            "yaw": -0.04588841646909714,
+            "steering": 0.0,
+            "slip": 0.027016237378120424,
+            "pitch": 0.2924826741218567,
+            "roll": -0.204864501953125,
+            "contacts": 4,
+            "position": {
+                "x": 0.009440186433494091,
+                "y": 199.95887756347657,
+                "z": -16.092735290527345
+            }
+        },
+        {
+            "phase": "impact-light-prop",
+            "time": 4.341371059417725,
+            "speed": 10.564531326293946,
+            "lateral": 0.026628276333212854,
+            "yaw": -0.003996906336396933,
+            "steering": 0.0,
+            "slip": 0.0037748708855360748,
+            "pitch": 0.3693792223930359,
+            "roll": -0.266357421875,
+            "contacts": 4,
+            "position": {
+                "x": 0.010094908997416497,
+                "y": 199.96307373046876,
+                "z": -15.034276962280274
+            }
+        },
+        {
+            "phase": "impact-light-prop",
+            "time": 4.441371917724609,
+            "speed": 10.511783599853516,
+            "lateral": 0.00455299811437726,
+            "yaw": 0.000033396434446331114,
+            "steering": 0.0,
+            "slip": 0.00054879643721506,
+            "pitch": 0.4715826213359833,
+            "roll": -0.1246337890625,
+            "contacts": 4,
+            "position": {
+                "x": 0.005810173228383064,
+                "y": 199.97344970703126,
+                "z": -13.981350898742676
+            }
+        },
+        {
+            "phase": "impact-light-prop",
+            "time": 4.541373252868652,
+            "speed": 10.460114479064942,
+            "lateral": 0.0007458347245119512,
+            "yaw": 0.0003149809199385345,
+            "steering": 0.0,
+            "slip": 0.00012162927305325866,
+            "pitch": 0.4878860116004944,
+            "roll": -0.04168701171875,
+            "contacts": 4,
+            "position": {
+                "x": -0.000009145616786554456,
+                "y": 199.97842407226563,
+                "z": -12.932954788208008
+            }
+        },
+        {
+            "phase": "impact-lamp",
+            "time": 4.641374111175537,
+            "speed": 11.926311492919922,
+            "lateral": -5.943704906030689e-8,
+            "yaw": 1.4629470967975068e-7,
+            "steering": 0.0,
+            "slip": 2.2082607742390793e-8,
+            "pitch": 0.11080248653888703,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.574420499001917e-8,
+                "y": 200.03143310546876,
+                "z": -18.798059463500978
+            }
+        },
+        {
+            "phase": "impact-lamp",
+            "time": 4.853586673736572,
+            "speed": 11.867308616638184,
+            "lateral": -2.5225167732401134e-8,
+            "yaw": 5.655748758215395e-9,
+            "steering": 0.0,
+            "slip": 6.050252743250439e-9,
+            "pitch": 0.396997332572937,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.588038666180182e-8,
+                "y": 199.98854064941407,
+                "z": -17.561237335205079
+            }
+        },
+        {
+            "phase": "impact-lamp",
+            "time": 4.95519495010376,
+            "speed": 9.150688171386719,
+            "lateral": 2.9394819023309539e-8,
+            "yaw": -0.13203205168247224,
+            "steering": 0.0,
+            "slip": 9.191336580727239e-9,
+            "pitch": 0.5155080556869507,
+            "roll": -0.02716064453125,
+            "contacts": 4,
+            "position": {
+                "x": 0.0016487982356920839,
+                "y": 199.96885681152345,
+                "z": -16.435585021972658
+            }
+        },
+        {
+            "phase": "impact-lamp",
+            "time": 5.055196285247803,
+            "speed": 9.100578308105469,
+            "lateral": 0.042491789907217029,
+            "yaw": -0.008268363773822785,
+            "steering": 0.0,
+            "slip": 0.007546542678028345,
+            "pitch": 0.2999288737773895,
+            "roll": -0.298431396484375,
+            "contacts": 4,
+            "position": {
+                "x": 0.010460827499628067,
+                "y": 199.9589385986328,
+                "z": -15.650562286376954
+            }
+        },
+        {
+            "phase": "impact-lamp",
+            "time": 5.1551971435546879,
+            "speed": 9.053678512573243,
+            "lateral": 0.0059004491195082668,
+            "yaw": -0.00039707496762275696,
+            "steering": 0.0,
+            "slip": 0.0009213765733875334,
+            "pitch": 0.43599849939346316,
+            "roll": -0.17840576171875,
+            "contacts": 4,
+            "position": {
+                "x": 0.00819144956767559,
+                "y": 199.96939086914063,
+                "z": -14.743734359741211
+            }
+        },
+        {
+            "phase": "impact-lamp",
+            "time": 5.2551984786987309,
+            "speed": 9.008261680603028,
+            "lateral": 0.000896011246368289,
+            "yaw": 0.00033364270348101854,
+            "steering": 0.0,
+            "slip": 0.00016179977683350444,
+            "pitch": 0.4830942153930664,
+            "roll": -0.06353759765625,
+            "contacts": 4,
+            "position": {
+                "x": 0.0040343571454286579,
+                "y": 199.97732543945313,
+                "z": -13.840778350830079
+            }
+        },
+        {
+            "phase": "impact-lamp",
+            "time": 5.355200290679932,
+            "speed": 8.963200569152832,
+            "lateral": 0.0001168418166344054,
+            "yaw": 0.0001870498526841402,
+            "steering": 0.0,
+            "slip": 0.000041671730286907405,
+            "pitch": 0.48290717601776125,
+            "roll": -0.018096923828125,
+            "contacts": 4,
+            "position": {
+                "x": -0.0009255593176931143,
+                "y": 199.97962951660157,
+                "z": -12.941987991333008
+            }
+        },
+        {
+            "phase": "impact-heavy-car",
+            "time": 5.455202102661133,
+            "speed": 11.950421333312989,
+            "lateral": -3.8818924963379689e-8,
+            "yaw": 1.4496335154490226e-7,
+            "steering": 0.0,
+            "slip": 1.5832846145258374e-8,
+            "pitch": 0.0440695621073246,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -1.2837515939168043e-8,
+                "y": 200.04806518554688,
+                "z": -19.206493377685548
+            }
+        },
+        {
+            "phase": "impact-heavy-car",
+            "time": 5.55534029006958,
+            "speed": 11.890987396240235,
+            "lateral": -4.81530442186795e-8,
+            "yaw": 6.375795180701971e-8,
+            "steering": 0.0,
+            "slip": 1.4836474271362477e-8,
+            "pitch": 0.2920047640800476,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.8826094339583508e-8,
+                "y": 200.00167846679688,
+                "z": -18.01476287841797
+            }
+        },
+        {
+            "phase": "impact-heavy-car",
+            "time": 5.655341625213623,
+            "speed": 11.831756591796875,
+            "lateral": 1.1265330002174779e-8,
+            "yaw": -5.103743561107876e-8,
+            "steering": 0.0,
+            "slip": 4.9645607624881908e-9,
+            "pitch": 0.526189923286438,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -1.7722182832358159e-8,
+                "y": 199.97503662109376,
+                "z": -16.83051109313965
+            }
+        },
+        {
+            "phase": "impact-heavy-car",
+            "time": 5.755342960357666,
+            "speed": 10.280998229980469,
+            "lateral": -0.10544964671134949,
+            "yaw": 0.023046454414725305,
+            "steering": 0.0,
+            "slip": 0.01715637557208538,
+            "pitch": 0.17311100661754609,
+            "roll": 0.08427944779396057,
+            "contacts": 4,
+            "position": {
+                "x": -0.011993386782705784,
+                "y": 199.95339965820313,
+                "z": -15.95889663696289
+            }
+        },
+        {
+            "phase": "impact-heavy-car",
+            "time": 5.855344295501709,
+            "speed": 10.227598190307618,
+            "lateral": -0.016324011608958246,
+            "yaw": 0.0021074358373880388,
+            "steering": 0.0,
+            "slip": 0.0023211371153593065,
+            "pitch": 0.334271103143692,
+            "roll": 0.17698334157466889,
+            "contacts": 4,
+            "position": {
+                "x": -0.010623715817928315,
+                "y": 199.96116638183595,
+                "z": -14.933586120605469
+            }
+        },
+        {
+            "phase": "impact-heavy-car",
+            "time": 5.955442428588867,
+            "speed": 10.17631721496582,
+            "lateral": -0.002705547260120511,
+            "yaw": -0.000051731251005548984,
+            "steering": 0.0,
+            "slip": 0.0003335468063596636,
+            "pitch": 0.46577173471450808,
+            "roll": 0.08582447469234467,
+            "contacts": 4,
+            "position": {
+                "x": -0.0060950075276196,
+                "y": 199.9737548828125,
+                "z": -13.914216995239258
+            }
+        },
+        {
+            "phase": "impact-heavy-car",
+            "time": 6.055455684661865,
+            "speed": 10.126211166381836,
+            "lateral": -0.0004363368498161435,
+            "yaw": -0.0002055779768852517,
+            "steering": 0.0,
+            "slip": 0.00007594897761009634,
+            "pitch": 0.48481589555740359,
+            "roll": 0.02880208007991314,
+            "contacts": 4,
+            "position": {
+                "x": -0.0005774195888079703,
+                "y": 199.9791717529297,
+                "z": -12.898881912231446
+            }
+        },
+        {
+            "phase": "impact-authored-lamp",
+            "time": 6.155457019805908,
+            "speed": 11.987485885620118,
+            "lateral": 0.0,
+            "yaw": 1.4678102289167328e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.0006756291841156781,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.792955394210651e-10,
+                "y": 200.0687255859375,
+                "z": -19.921363830566408
+            }
+        },
+        {
+            "phase": "impact-authored-lamp",
+            "time": 6.255555629730225,
+            "speed": 11.92643928527832,
+            "lateral": -5.943704906030689e-8,
+            "yaw": 1.4629470967975068e-7,
+            "steering": 0.0,
+            "slip": 2.2082607742390793e-8,
+            "pitch": 0.12626805901527406,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.759715655997752e-8,
+                "y": 200.0284423828125,
+                "z": -18.725399017333986
+            }
+        },
+        {
+            "phase": "impact-authored-lamp",
+            "time": 6.355556964874268,
+            "speed": 11.867325782775879,
+            "lateral": -2.5225167732401134e-8,
+            "yaw": 5.655748758215395e-9,
+            "steering": 0.0,
+            "slip": 6.050252743250439e-9,
+            "pitch": 0.40189528465270998,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.536388604175045e-8,
+                "y": 199.98800659179688,
+                "z": -17.537965774536134
+            }
+        },
+        {
+            "phase": "impact-authored-lamp",
+            "time": 6.4555583000183109,
+            "speed": 9.158759117126465,
+            "lateral": 0.3953200876712799,
+            "yaw": -0.12913863360881806,
+            "steering": 0.0,
+            "slip": 0.0840882882475853,
+            "pitch": 0.4222390353679657,
+            "roll": 0.26130953431129458,
+            "contacts": 4,
+            "position": {
+                "x": 0.015458410605788231,
+                "y": 199.96826171875,
+                "z": -16.612964630126954
+            }
+        },
+        {
+            "phase": "impact-authored-lamp",
+            "time": 6.5555877685546879,
+            "speed": 9.109774589538575,
+            "lateral": 0.05236099287867546,
+            "yaw": -0.007269832771271467,
+            "steering": 0.0,
+            "slip": 0.008585565723478794,
+            "pitch": 0.3842448890209198,
+            "roll": -0.15667724609375,
+            "contacts": 4,
+            "position": {
+                "x": 0.022892091423273088,
+                "y": 199.96665954589845,
+                "z": -15.698753356933594
+            }
+        },
+        {
+            "phase": "impact-authored-lamp",
+            "time": 6.655609607696533,
+            "speed": 9.063511848449707,
+            "lateral": 0.007019915152341127,
+            "yaw": -0.0008002727990970016,
+            "steering": 0.0,
+            "slip": 0.001126543153077364,
+            "pitch": 0.4662114679813385,
+            "roll": -0.15655517578125,
+            "contacts": 4,
+            "position": {
+                "x": 0.016109928488731386,
+                "y": 199.9736328125,
+                "z": -14.790380477905274
+            }
+        },
+        {
+            "phase": "impact-authored-lamp",
+            "time": 6.755610942840576,
+            "speed": 9.018135070800782,
+            "lateral": 0.0010459779296070338,
+            "yaw": 0.0002047851012321189,
+            "steering": 0.0,
+            "slip": 0.00016264473379123956,
+            "pitch": 0.4882476329803467,
+            "roll": -0.06231689453125,
+            "contacts": 4,
+            "position": {
+                "x": 0.007910598069429398,
+                "y": 199.97796630859376,
+                "z": -13.886296272277832
+            }
+        },
+        {
+            "phase": "impact-authored-lamp",
+            "time": 6.855612277984619,
+            "speed": 8.972965240478516,
+            "lateral": 0.00014113934594206512,
+            "yaw": 0.0001663849106989801,
+            "steering": 0.0,
+            "slip": 0.00004165368227404542,
+            "pitch": 0.4876886308193207,
+            "roll": -0.018707275390625,
+            "contacts": 4,
+            "position": {
+                "x": -0.0009651146829128265,
+                "y": 199.97897338867188,
+                "z": -12.98658275604248
+            }
+        },
+        {
+            "phase": "impact-compound-prop",
+            "time": 6.911168575286865,
+            "speed": 11.950469970703125,
+            "lateral": -3.8818924963379689e-8,
+            "yaw": 1.4496335154490226e-7,
+            "steering": 0.0,
+            "slip": 1.5832846145258374e-8,
+            "pitch": 0.04989604279398918,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -1.4368974454725958e-8,
+                "y": 200.04637145996095,
+                "z": -19.1640625
+            }
+        },
+        {
+            "phase": "impact-compound-prop",
+            "time": 7.081270217895508,
+            "speed": 11.891085624694825,
+            "lateral": -4.81530442186795e-8,
+            "yaw": 6.375795180701971e-8,
+            "steering": 0.0,
+            "slip": 1.4836474271362477e-8,
+            "pitch": 0.3089698851108551,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.9046632593908728e-8,
+                "y": 199.99942016601563,
+                "z": -17.944469451904298
+            }
+        },
+        {
+            "phase": "impact-compound-prop",
+            "time": 7.18142032623291,
+            "speed": 11.83176326751709,
+            "lateral": 1.1265330002174779e-8,
+            "yaw": -5.103743561107876e-8,
+            "steering": 0.0,
+            "slip": 4.9645607624881908e-9,
+            "pitch": 0.535385012626648,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -1.5661996144444857e-8,
+                "y": 199.97418212890626,
+                "z": -16.758739471435548
+            }
+        },
+        {
+            "phase": "impact-compound-prop",
+            "time": 7.281421661376953,
+            "speed": 10.61355972290039,
+            "lateral": 0.010610892437398434,
+            "yaw": -0.0020463441032916309,
+            "steering": 0.0,
+            "slip": 0.0016307038022205234,
+            "pitch": 0.18681372702121736,
+            "roll": -0.00799560546875,
+            "contacts": 4,
+            "position": {
+                "x": 0.0009056354174390435,
+                "y": 199.95428466796876,
+                "z": -15.878061294555664
+            }
+        },
+        {
+            "phase": "impact-compound-prop",
+            "time": 7.381422996520996,
+            "speed": 10.558772087097168,
+            "lateral": 0.0016674961661919952,
+            "yaw": -0.0001721949956845492,
+            "steering": 0.0,
+            "slip": 0.000221031135879457,
+            "pitch": 0.35283851623535159,
+            "roll": -0.01470947265625,
+            "contacts": 4,
+            "position": {
+                "x": 0.0008452557376585901,
+                "y": 199.96286010742188,
+                "z": -14.820919036865235
+            }
+        },
+        {
+            "phase": "impact-compound-prop",
+            "time": 7.481424331665039,
+            "speed": 10.50604248046875,
+            "lateral": 0.0002797371707856655,
+            "yaw": 0.0000015314244592445903,
+            "steering": 0.0,
+            "slip": 0.000033336378692183644,
+            "pitch": 0.4699229300022125,
+            "roll": -0.007293701171875,
+            "contacts": 4,
+            "position": {
+                "x": 0.0004853107675444335,
+                "y": 199.97445678710938,
+                "z": -13.768678665161133
+            }
+        },
+        {
+            "phase": "impact-compound-prop",
+            "time": 7.581425666809082,
+            "speed": 10.454424858093262,
+            "lateral": 0.00004612518023350276,
+            "yaw": 0.00001800871359591838,
+            "steering": 0.0,
+            "slip": 0.000007319863470911514,
+            "pitch": 0.4857243597507477,
+            "roll": -0.002471923828125,
+            "contacts": 4,
+            "position": {
+                "x": 0.00003970304169342853,
+                "y": 199.97909545898438,
+                "z": -12.72083854675293
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 7.681426525115967,
+            "speed": 11.987488746643067,
+            "lateral": 0.0,
+            "yaw": 1.4678102289167328e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.0012898138957098127,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -5.144542014612341e-10,
+                "y": 200.0675811767578,
+                "z": -19.849876403808595
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 7.781428337097168,
+            "speed": 11.92656135559082,
+            "lateral": -5.943704906030689e-8,
+            "yaw": 1.4629470967975068e-7,
+            "steering": 0.0,
+            "slip": 2.2082607742390793e-8,
+            "pitch": 0.14113542437553407,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.9388488087533916e-8,
+                "y": 200.0255889892578,
+                "z": -18.65555191040039
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 7.8814544677734379,
+            "speed": 11.867379188537598,
+            "lateral": -2.5225167732401134e-8,
+            "yaw": 5.655748758215395e-9,
+            "steering": 0.0,
+            "slip": 6.050252743250439e-9,
+            "pitch": 0.41658446192741396,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.406215043355587e-8,
+                "y": 199.986328125,
+                "z": -17.468177795410158
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 7.9814558029174809,
+            "speed": 10.635689735412598,
+            "lateral": 0.08557868748903275,
+            "yaw": -0.018585622310638429,
+            "steering": 0.0,
+            "slip": 0.01320531778037548,
+            "pitch": 0.0976208820939064,
+            "roll": -0.29302978515625,
+            "contacts": 4,
+            "position": {
+                "x": 0.011812779121100903,
+                "y": 199.96426391601563,
+                "z": -16.61043930053711
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 8.081457138061524,
+            "speed": 10.580770492553711,
+            "lateral": 0.014242696575820446,
+            "yaw": -0.0015516998246312142,
+            "steering": 0.0,
+            "slip": 0.0019272671779617668,
+            "pitch": 0.35077980160713198,
+            "roll": -0.219451904296875,
+            "contacts": 4,
+            "position": {
+                "x": 0.009048552252352238,
+                "y": 199.96920776367188,
+                "z": -15.550582885742188
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 8.181577682495118,
+            "speed": 10.527961730957032,
+            "lateral": 0.0024110497906804086,
+            "yaw": 0.0002915728255175054,
+            "steering": 0.0,
+            "slip": 0.0003004816244356334,
+            "pitch": 0.4817477762699127,
+            "roll": -0.087646484375,
+            "contacts": 4,
+            "position": {
+                "x": 0.0033229351975023748,
+                "y": 199.97581481933595,
+                "z": -14.496323585510254
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 8.28157901763916,
+            "speed": 9.439615249633789,
+            "lateral": -0.054367441684007648,
+            "yaw": 0.013235142454504967,
+            "steering": 0.0,
+            "slip": 0.009962919168174267,
+            "pitch": 0.210567906498909,
+            "roll": 0.08286129683256149,
+            "contacts": 4,
+            "position": {
+                "x": -0.012443134561181069,
+                "y": 199.9618682861328,
+                "z": -13.735302925109864
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 8.381580352783204,
+            "speed": 9.390606880187989,
+            "lateral": -0.007658587768673897,
+            "yaw": 0.0012041046284139157,
+            "steering": 0.0,
+            "slip": 0.001244241720996797,
+            "pitch": 0.392715722322464,
+            "roll": 0.11286099255084992,
+            "contacts": 4,
+            "position": {
+                "x": -0.01552477478981018,
+                "y": 199.96913146972657,
+                "z": -12.795402526855469
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 8.481581687927246,
+            "speed": 9.343403816223145,
+            "lateral": -0.0011745530646294356,
+            "yaw": -0.00007646161247976124,
+            "steering": 0.0,
+            "slip": 0.0001562224206281826,
+            "pitch": 0.48104333877563479,
+            "roll": 0.0487334281206131,
+            "contacts": 4,
+            "position": {
+                "x": -0.017239881679415704,
+                "y": 199.97647094726563,
+                "z": -11.859485626220704
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 8.581583023071289,
+            "speed": 8.295695304870606,
+            "lateral": -0.1643560528755188,
+            "yaw": 0.0010738931596279145,
+            "steering": 0.0,
+            "slip": 0.03408601135015488,
+            "pitch": -1.6678466796875,
+            "roll": 0.13697901368141175,
+            "contacts": 4,
+            "position": {
+                "x": -0.039146680384874347,
+                "y": 199.88201904296876,
+                "z": -11.140082359313965
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 8.681584358215332,
+            "speed": 8.248427391052246,
+            "lateral": -0.010386188514530659,
+            "yaw": -0.0018564758356660605,
+            "steering": 0.0,
+            "slip": 0.0019539371132850649,
+            "pitch": -0.831451416015625,
+            "roll": 0.015559673309326172,
+            "contacts": 4,
+            "position": {
+                "x": -0.03839367255568504,
+                "y": 199.89804077148438,
+                "z": -10.319947242736817
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 8.781737327575684,
+            "speed": 8.141845703125,
+            "lateral": -0.0009930619271472097,
+            "yaw": -0.029854625463485719,
+            "steering": 0.0,
+            "slip": 0.00017843753448687494,
+            "pitch": 0.1494033932685852,
+            "roll": 0.1271490752696991,
+            "contacts": 4,
+            "position": {
+                "x": -0.03304694592952728,
+                "y": 199.95663452148438,
+                "z": -9.506026268005371
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 8.881738662719727,
+            "speed": 8.104636192321778,
+            "lateral": -0.012748872861266137,
+            "yaw": -0.009880900382995606,
+            "steering": 0.0,
+            "slip": 0.002930023707449436,
+            "pitch": 0.3499101400375366,
+            "roll": 0.3539629578590393,
+            "contacts": 4,
+            "position": {
+                "x": -0.029235120862722398,
+                "y": 199.987060546875,
+                "z": -8.695554733276368
+            }
+        },
+        {
+            "phase": "impact-chain",
+            "time": 8.98173999786377,
+            "speed": 8.05443286895752,
+            "lateral": 0.00096080731600523,
+            "yaw": -0.0012722882675006986,
+            "steering": 0.0,
+            "slip": 0.00026302150217816234,
+            "pitch": 0.30680370330810549,
+            "roll": -0.032867431640625,
+            "contacts": 4,
+            "position": {
+                "x": -0.027541836723685266,
+                "y": 199.99209594726563,
+                "z": -7.887604713439941
+            }
+        },
+        {
+            "phase": "impact-unbroken",
+            "time": 9.081747055053711,
+            "speed": 11.987488746643067,
+            "lateral": 0.0,
+            "yaw": 1.4678102289167328e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.001322388299740851,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -5.124732305183954e-10,
+                "y": 200.06752014160157,
+                "z": -19.846086502075197
+            }
+        },
+        {
+            "phase": "impact-unbroken",
+            "time": 9.181748390197754,
+            "speed": 11.926568031311036,
+            "lateral": -5.943704906030689e-8,
+            "yaw": 1.4629470967975068e-7,
+            "steering": 0.0,
+            "slip": 2.2082607742390793e-8,
+            "pitch": 0.1419348269701004,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.947573207734422e-8,
+                "y": 200.0254364013672,
+                "z": -18.651796340942384
+            }
+        },
+        {
+            "phase": "impact-unbroken",
+            "time": 9.281785011291504,
+            "speed": 11.867382049560547,
+            "lateral": -2.5225167732401134e-8,
+            "yaw": 5.655748758215395e-9,
+            "steering": 0.0,
+            "slip": 6.050252743250439e-9,
+            "pitch": 0.4173984229564667,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.398110948182875e-8,
+                "y": 199.98623657226563,
+                "z": -17.464309692382814
+            }
+        },
+        {
+            "phase": "impact-unbroken",
+            "time": 9.381786346435547,
+            "speed": -0.3049086332321167,
+            "lateral": 2.9394819023309539e-8,
+            "yaw": 0.12652285397052766,
+            "steering": 0.0,
+            "slip": 9.191336580727239e-9,
+            "pitch": 0.42247825860977175,
+            "roll": -0.03759765625,
+            "contacts": 4,
+            "position": {
+                "x": -0.004510418511927128,
+                "y": 199.9651336669922,
+                "z": -16.436935424804689
+            }
+        },
+        {
+            "phase": "impact-unbroken",
+            "time": 9.481789588928223,
+            "speed": -0.28420835733413699,
+            "lateral": -0.00012381897249724716,
+            "yaw": 0.0010567248100414873,
+            "steering": 0.0,
+            "slip": 0.0004679790872614831,
+            "pitch": 0.04961923882365227,
+            "roll": 0.0954781100153923,
+            "contacts": 4,
+            "position": {
+                "x": -0.0072007025592029099,
+                "y": 199.95025634765626,
+                "z": -16.581584930419923
+            }
+        },
+        {
+            "phase": "impact-unbroken",
+            "time": 9.581790924072266,
+            "speed": -0.26029670238494875,
+            "lateral": -0.0000349441688740626,
+            "yaw": -0.000049008976930053905,
+            "steering": 0.0,
+            "slip": 0.00003070864113396965,
+            "pitch": 0.33289751410484316,
+            "roll": 0.048305872827768329,
+            "contacts": 4,
+            "position": {
+                "x": -0.007741911336779594,
+                "y": 199.96792602539063,
+                "z": -16.611068725585939
+            }
+        },
+        {
+            "phase": "impact-unbroken",
+            "time": 9.681854248046875,
+            "speed": -0.23407770693302155,
+            "lateral": -0.000015985006029950455,
+            "yaw": -0.00005587236228166148,
+            "steering": 0.0,
+            "slip": 0.000025362398446304724,
+            "pitch": 0.4302794337272644,
+            "roll": 0.0142429294064641,
+            "contacts": 4,
+            "position": {
+                "x": -0.00813045259565115,
+                "y": 199.98031616210938,
+                "z": -16.63646697998047
+            }
+        },
+        {
+            "phase": "impact-unbroken",
+            "time": 9.781855583190918,
+            "speed": -0.20745664834976197,
+            "lateral": -0.000003910432496923022,
+            "yaw": -0.000017032707546604797,
+            "steering": 0.0,
+            "slip": 0.000007279848887264961,
+            "pitch": 0.4348512589931488,
+            "roll": 0.003610693383961916,
+            "contacts": 4,
+            "position": {
+                "x": -0.008299882523715496,
+                "y": 199.98387145996095,
+                "z": -16.65847396850586
+            }
+        },
+        {
+            "phase": "impact-low-speed",
+            "time": 9.881856918334961,
+            "speed": 1.7947670221328736,
+            "lateral": 0.0,
+            "yaw": 8.662803807624187e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.0007867844542488456,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.481093386297317e-10,
+                "y": 200.0675048828125,
+                "z": -19.976770401000978
+            }
+        },
+        {
+            "phase": "impact-low-speed",
+            "time": 9.981858253479004,
+            "speed": 1.770027995109558,
+            "lateral": 4.706114609120959e-9,
+            "yaw": 5.927181589981956e-8,
+            "steering": 0.0,
+            "slip": 1.6305573780073247e-8,
+            "pitch": 0.1343187838792801,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.0311603893551367e-8,
+                "y": 200.02545166015626,
+                "z": -19.799789428710939
+            }
+        },
+        {
+            "phase": "impact-low-speed",
+            "time": 10.081859588623047,
+            "speed": 1.74692702293396,
+            "lateral": 1.3994024827823637e-9,
+            "yaw": -1.52130290587138e-8,
+            "steering": 0.0,
+            "slip": 2.2711126312913167e-9,
+            "pitch": 0.4064674377441406,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -4.972684308768294e-8,
+                "y": 199.98715209960938,
+                "z": -19.6264591217041
+            }
+        },
+        {
+            "phase": "impact-low-speed",
+            "time": 10.18186092376709,
+            "speed": 0.006663613487035036,
+            "lateral": 0.00035142674460075796,
+            "yaw": -0.0015466460026800633,
+            "steering": 0.0,
+            "slip": 0.00042200094321742654,
+            "pitch": 0.0035003661178052427,
+            "roll": 0.004337097518146038,
+            "contacts": 4,
+            "position": {
+                "x": -0.0017602771986275912,
+                "y": 199.96173095703126,
+                "z": -19.570423126220704
+            }
+        },
+        {
+            "phase": "impact-low-speed",
+            "time": 10.281862258911133,
+            "speed": -0.02901463769376278,
+            "lateral": 0.00024885497987270355,
+            "yaw": -0.000419728021370247,
+            "steering": 0.0,
+            "slip": 0.0003354772343300283,
+            "pitch": 0.14716382324695588,
+            "roll": 0.0015444504097104073,
+            "contacts": 4,
+            "position": {
+                "x": -0.0016470958944410086,
+                "y": 199.96714782714845,
+                "z": -19.573078155517579
+            }
+        },
+        {
+            "phase": "impact-low-speed",
+            "time": 10.381863594055176,
+            "speed": -0.016993405297398568,
+            "lateral": 0.00003288244261057116,
+            "yaw": -0.000056963905080920085,
+            "steering": 0.0,
+            "slip": 0.00003932218533009291,
+            "pitch": 0.3699500560760498,
+            "roll": 0.001414042548276484,
+            "contacts": 4,
+            "position": {
+                "x": -0.001609795494005084,
+                "y": 199.976806640625,
+                "z": -19.57736587524414
+            }
+        },
+        {
+            "phase": "impact-low-speed",
+            "time": 10.481864929199219,
+            "speed": -0.005073521286249161,
+            "lateral": 0.00008309405529871583,
+            "yaw": -0.00017830544675234705,
+            "steering": 0.0,
+            "slip": 0.00010793624824145809,
+            "pitch": 0.45829394459724429,
+            "roll": 0.0005672251572832465,
+            "contacts": 4,
+            "position": {
+                "x": -0.0015846395399421454,
+                "y": 199.98123168945313,
+                "z": -19.57905387878418
+            }
+        },
+        {
+            "phase": "impact-low-speed",
+            "time": 10.581866264343262,
+            "speed": 0.00016049566329456866,
+            "lateral": 0.0,
+            "yaw": -0.0000234995659411652,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.47178155183792117,
+            "roll": 0.0006807655445300043,
+            "contacts": 4,
+            "position": {
+                "x": -0.0015613690484315158,
+                "y": 199.9817657470703,
+                "z": -19.57931137084961
+            }
+        },
+        {
+            "phase": "impact-low-speed",
+            "time": 10.681867599487305,
+            "speed": 0.00038439620402641594,
+            "lateral": 0.0,
+            "yaw": -0.000009808536560740322,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.46813610196113589,
+            "roll": 0.0005415122723206878,
+            "contacts": 4,
+            "position": {
+                "x": -0.0015599613543599845,
+                "y": 199.98147583007813,
+                "z": -19.579242706298829
+            }
+        },
+        {
+            "phase": "impact-low-speed",
+            "time": 10.781868934631348,
+            "speed": 0.00029857736080884933,
+            "lateral": 0.0,
+            "yaw": -0.000013652876987180207,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4653261601924896,
+            "roll": 0.0002963719016406685,
+            "contacts": 4,
+            "position": {
+                "x": -0.0015582230407744647,
+                "y": 199.98123168945313,
+                "z": -19.57918930053711
+            }
+        },
+        {
+            "phase": "impact-low-speed",
+            "time": 10.882798194885254,
+            "speed": 0.00020779012993443757,
+            "lateral": 0.0,
+            "yaw": -0.000015033208910608664,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4634399712085724,
+            "roll": 0.00013847608352079988,
+            "contacts": 4,
+            "position": {
+                "x": -0.0015547479270026088,
+                "y": 199.98110961914063,
+                "z": -19.579151153564454
+            }
+        },
+        {
+            "phase": "impact-low-speed",
+            "time": 10.982799530029297,
+            "speed": 0.00010921773355221376,
+            "lateral": 0.0,
+            "yaw": -0.000024320799639099278,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.46340420842170718,
+            "roll": 0.000141915341373533,
+            "contacts": 4,
+            "position": {
+                "x": -0.0015479001449421049,
+                "y": 199.9811248779297,
+                "z": -19.579151153564454
+            }
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "time": 11.08280086517334,
+            "speed": 11.987488746643067,
+            "lateral": 0.0,
+            "yaw": 1.4678102289167328e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.0014301949413493276,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -5.395253133144706e-10,
+                "y": 200.0673065185547,
+                "z": -19.833538055419923
+            }
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "time": 11.182802200317383,
+            "speed": 11.926589012145996,
+            "lateral": -5.943704906030689e-8,
+            "yaw": 1.4629470967975068e-7,
+            "steering": 0.0,
+            "slip": 2.2082607742390793e-8,
+            "pitch": 0.14458726346492768,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.9798938427916256e-8,
+                "y": 200.02493286132813,
+                "z": -18.63933563232422
+            }
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "time": 11.282803535461426,
+            "speed": 11.867390632629395,
+            "lateral": -2.5225167732401134e-8,
+            "yaw": 5.655748758215395e-9,
+            "steering": 0.0,
+            "slip": 6.050252743250439e-9,
+            "pitch": 0.4199199676513672,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.376058899107193e-8,
+                "y": 199.9859619140625,
+                "z": -17.452329635620118
+            }
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "time": 11.382804870605469,
+            "speed": 10.642497062683106,
+            "lateral": 2.9394819023309539e-8,
+            "yaw": -0.13203251361846925,
+            "steering": 0.0,
+            "slip": 9.191336580727239e-9,
+            "pitch": 0.44988754391670229,
+            "roll": -0.059783935546875,
+            "contacts": 4,
+            "position": {
+                "x": 0.0036336958874017,
+                "y": 199.9661102294922,
+                "z": -16.437328338623048
+            }
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "time": 11.482806205749512,
+            "speed": -0.21721820533275605,
+            "lateral": 0.05464297905564308,
+            "yaw": 0.002395991235971451,
+            "steering": 0.0,
+            "slip": 0.00813573319464922,
+            "pitch": 0.2710513770580292,
+            "roll": -0.297637939453125,
+            "contacts": 4,
+            "position": {
+                "x": 0.010898573324084282,
+                "y": 199.9574432373047,
+                "z": -15.59160041809082
+            }
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "time": 11.582807540893555,
+            "speed": -0.19263368844985963,
+            "lateral": 0.0000771545892348513,
+            "yaw": 0.00019328269991092384,
+            "steering": 0.0,
+            "slip": 0.00008025429997360334,
+            "pitch": 0.34902000427246096,
+            "roll": -0.134368896484375,
+            "contacts": 4,
+            "position": {
+                "x": 0.012362971901893616,
+                "y": 199.9647216796875,
+                "z": -15.612617492675782
+            }
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "time": 11.682808876037598,
+            "speed": -0.16667640209197999,
+            "lateral": 0.000043523261410882697,
+            "yaw": 0.0001595133653609082,
+            "steering": 0.0,
+            "slip": 0.00007095029286574572,
+            "pitch": 0.4311496913433075,
+            "roll": -0.038238525390625,
+            "contacts": 4,
+            "position": {
+                "x": 0.013307683169841767,
+                "y": 199.97674560546876,
+                "z": -15.631091117858887
+            }
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "time": 11.78281021118164,
+            "speed": -0.14015910029411317,
+            "lateral": 0.000011076814189436845,
+            "yaw": 0.000049440724978921935,
+            "steering": 0.0,
+            "slip": 0.000020606430553016253,
+            "pitch": 0.438030481338501,
+            "roll": -0.009490966796875,
+            "contacts": 4,
+            "position": {
+                "x": 0.013644001446664334,
+                "y": 199.982421875,
+                "z": -15.646343231201172
+            }
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "time": 11.882811546325684,
+            "speed": -0.11382704973220825,
+            "lateral": 0.0000024571081667090768,
+            "yaw": 0.000012808623068849556,
+            "steering": 0.0,
+            "slip": 0.000005114834493724629,
+            "pitch": 0.4354037940502167,
+            "roll": -0.002227783203125,
+            "contacts": 4,
+            "position": {
+                "x": 0.01377951167523861,
+                "y": 199.98309326171876,
+                "z": -15.65891170501709
+            }
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "time": 11.982812881469727,
+            "speed": -0.08765048533678055,
+            "lateral": 5.448550837172661e-7,
+            "yaw": 0.0000031120780477067457,
+            "steering": 0.0,
+            "slip": 0.0000011776753581216327,
+            "pitch": 0.44260743260383608,
+            "roll": -0.000518798828125,
+            "contacts": 4,
+            "position": {
+                "x": 0.013853003270924092,
+                "y": 199.9820556640625,
+                "z": -15.668951034545899
+            }
+        },
+        {
+            "phase": "impact-simultaneous-wall",
+            "time": 12.07170295715332,
+            "speed": 11.950477600097657,
+            "lateral": -3.8818924963379689e-8,
+            "yaw": 1.4496335154490226e-7,
+            "steering": 0.0,
+            "slip": 1.5832846145258374e-8,
+            "pitch": 0.050888221710920337,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -1.447370046037122e-8,
+                "y": 200.04608154296876,
+                "z": -19.156837463378908
+            }
+        },
+        {
+            "phase": "impact-simultaneous-wall",
+            "time": 12.240045547485352,
+            "speed": 11.891064643859864,
+            "lateral": -4.81530442186795e-8,
+            "yaw": 6.375795180701971e-8,
+            "steering": 0.0,
+            "slip": 1.4836474271362477e-8,
+            "pitch": 0.3054169714450836,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.893279298949892e-8,
+                "y": 199.99989318847657,
+                "z": -17.959190368652345
+            }
+        },
+        {
+            "phase": "impact-simultaneous-wall",
+            "time": 12.340046882629395,
+            "speed": 11.831761360168457,
+            "lateral": 1.1265330002174779e-8,
+            "yaw": -5.103743561107876e-8,
+            "steering": 0.0,
+            "slip": 4.9645607624881908e-9,
+            "pitch": 0.533281683921814,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -1.6070073272089759e-8,
+                "y": 199.97438049316407,
+                "z": -16.775157928466798
+            }
+        },
+        {
+            "phase": "impact-simultaneous-wall",
+            "time": 12.440048217773438,
+            "speed": -0.0026402052026242019,
+            "lateral": 0.006307009141892195,
+            "yaw": -0.002551051788032055,
+            "steering": 0.0,
+            "slip": 0.009210865944623948,
+            "pitch": -0.016510009765625,
+            "roll": -0.001312255859375,
+            "contacts": 4,
+            "position": {
+                "x": -0.00005005279672332108,
+                "y": 199.9480743408203,
+                "z": -16.566980361938478
+            }
+        },
+        {
+            "phase": "impact-simultaneous-wall",
+            "time": 12.54004955291748,
+            "speed": -0.03456249460577965,
+            "lateral": 0.00006327163282549009,
+            "yaw": 0.000014324990843306296,
+            "steering": 0.0,
+            "slip": 0.0000669873261358589,
+            "pitch": 0.2543516457080841,
+            "roll": -0.000335693359375,
+            "contacts": 4,
+            "position": {
+                "x": -0.000018793703929986805,
+                "y": 199.96029663085938,
+                "z": -16.574934005737306
+            }
+        },
+        {
+            "phase": "impact-simultaneous-wall",
+            "time": 12.640050888061524,
+            "speed": -0.009312648326158524,
+            "lateral": 1.6605309838269023e-7,
+            "yaw": 7.190213295871217e-7,
+            "steering": 0.0,
+            "slip": 3.600371769607591e-7,
+            "pitch": 0.43062955141067507,
+            "roll": -0.000091552734375,
+            "contacts": 4,
+            "position": {
+                "x": -0.00001568244624650106,
+                "y": 199.97573852539063,
+                "z": -16.57849884033203
+            }
+        },
+        {
+            "phase": "impact-simultaneous-wall",
+            "time": 12.740056037902832,
+            "speed": 0.0006811833009123802,
+            "lateral": 0.0,
+            "yaw": 7.849827454720071e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.45012366771698,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -0.000015243780580931343,
+                "y": 199.98277282714845,
+                "z": -16.57872200012207
+            }
+        },
+        {
+            "phase": "impact-simultaneous-wall",
+            "time": 12.840057373046875,
+            "speed": 0.00026113915373571217,
+            "lateral": 0.0,
+            "yaw": -0.000026709132725954987,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.44992995262145998,
+            "roll": -0.000091552734375,
+            "contacts": 4,
+            "position": {
+                "x": -0.000007341282980632968,
+                "y": 199.98348999023438,
+                "z": -16.578693389892579
+            }
+        },
+        {
+            "phase": "impact-glancing",
+            "time": 12.940058708190918,
+            "speed": 11.98748779296875,
+            "lateral": 0.0,
+            "yaw": 1.4678102289167328e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.0011472769547253848,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -4.4762391016028859e-10,
+                "y": 200.06784057617188,
+                "z": -19.866466522216798
+            }
+        },
+        {
+            "phase": "impact-glancing",
+            "time": 13.040189743041993,
+            "speed": 11.926534652709961,
+            "lateral": -5.943704906030689e-8,
+            "yaw": 1.4629470967975068e-7,
+            "steering": 0.0,
+            "slip": 2.2082607742390793e-8,
+            "pitch": 0.13795410096645356,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.8971559373758283e-8,
+                "y": 200.02621459960938,
+                "z": -18.67049789428711
+            }
+        },
+        {
+            "phase": "impact-glancing",
+            "time": 13.140191078186036,
+            "speed": 11.867366790771485,
+            "lateral": -2.5225167732401134e-8,
+            "yaw": 5.655748758215395e-9,
+            "steering": 0.0,
+            "slip": 6.050252743250439e-9,
+            "pitch": 0.4133949875831604,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.431085104921294e-8,
+                "y": 199.9866943359375,
+                "z": -17.48332977294922
+            }
+        },
+        {
+            "phase": "impact-glancing",
+            "time": 13.240192413330079,
+            "speed": 10.736263275146485,
+            "lateral": 2.9394819023309539e-8,
+            "yaw": 1.83036208152771,
+            "steering": 0.0,
+            "slip": 9.191336580727239e-9,
+            "pitch": 0.4795980155467987,
+            "roll": 0.23592668771743775,
+            "contacts": 4,
+            "position": {
+                "x": -0.0441356860101223,
+                "y": 199.96286010742188,
+                "z": -16.415529251098634
+            }
+        },
+        {
+            "phase": "impact-glancing",
+            "time": 13.340193748474121,
+            "speed": 10.305502891540528,
+            "lateral": -3.468729257583618,
+            "yaw": 0.47513121366500857,
+            "steering": 0.0,
+            "slip": 0.43350178003311159,
+            "pitch": 0.31864210963249209,
+            "roll": 1.5498119592666627,
+            "contacts": 4,
+            "position": {
+                "x": -0.3485857844352722,
+                "y": 199.93899536132813,
+                "z": -15.422231674194336
+            }
+        },
+        {
+            "phase": "impact-glancing",
+            "time": 13.440195083618164,
+            "speed": 10.16865348815918,
+            "lateral": -2.180384874343872,
+            "yaw": 0.12944109737873078,
+            "steering": 0.0,
+            "slip": 0.2523951232433319,
+            "pitch": 0.46356621384620669,
+            "roll": 1.9872397184371949,
+            "contacts": 4,
+            "position": {
+                "x": -0.49695128202438357,
+                "y": 199.95765686035157,
+                "z": -14.373503684997559
+            }
+        },
+        {
+            "phase": "impact-glancing",
+            "time": 13.540353775024414,
+            "speed": 10.106941223144532,
+            "lateral": -0.7333170771598816,
+            "yaw": 0.015772808343172075,
+            "steering": 0.0,
+            "slip": 0.09016436338424683,
+            "pitch": 0.4741964638233185,
+            "roll": 2.0953898429870607,
+            "contacts": 4,
+            "position": {
+                "x": -0.49465006589889529,
+                "y": 199.97561645507813,
+                "z": -13.348186492919922
+            }
+        },
+        {
+            "phase": "impact-glancing",
+            "time": 13.640355110168457,
+            "speed": 10.057212829589844,
+            "lateral": -0.11005672812461853,
+            "yaw": -0.0009109701495617628,
+            "steering": 0.0,
+            "slip": 0.01356426626443863,
+            "pitch": 0.446386456489563,
+            "roll": 1.5079070329666138,
+            "contacts": 4,
+            "position": {
+                "x": -0.3851785659790039,
+                "y": 199.98257446289063,
+                "z": -12.344948768615723
+            }
+        },
+        {
+            "phase": "impact-reverse",
+            "time": 13.7403564453125,
+            "speed": -11.962406158447266,
+            "lateral": 1.2962933837457058e-8,
+            "yaw": 9.133936629268647e-8,
+            "steering": 0.0,
+            "slip": 4.088675176205925e-9,
+            "pitch": 0.011299803853034974,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -6.129426743939348e-9,
+                "y": 200.05462646484376,
+                "z": -20.61614990234375
+            }
+        },
+        {
+            "phase": "impact-reverse",
+            "time": 13.840357780456543,
+            "speed": -11.897988319396973,
+            "lateral": 1.0816255269219255e-7,
+            "yaw": 1.0863819710493772e-7,
+            "steering": 0.0,
+            "slip": 2.0992326099644744e-8,
+            "pitch": 0.2045079916715622,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -4.641380968450903e-8,
+                "y": 200.00827026367188,
+                "z": -21.81080436706543
+            }
+        },
+        {
+            "phase": "impact-reverse",
+            "time": 13.940359115600586,
+            "speed": -11.833219528198243,
+            "lateral": -1.9324619415783673e-7,
+            "yaw": 7.704015558829269e-8,
+            "steering": 0.0,
+            "slip": 3.201396125973588e-8,
+            "pitch": 0.44483405351638796,
+            "roll": 0.000022708400138071738,
+            "contacts": 4,
+            "position": {
+                "x": 1.6947390690802423e-7,
+                "y": 199.98072814941407,
+                "z": -22.999467849731447
+            }
+        },
+        {
+            "phase": "impact-reverse",
+            "time": 14.040361404418946,
+            "speed": -10.60240364074707,
+            "lateral": 0.17253054678440095,
+            "yaw": 0.04757678508758545,
+            "steering": 0.0,
+            "slip": 0.026205619797110559,
+            "pitch": 0.7581977248191834,
+            "roll": -0.299835205078125,
+            "contacts": 4,
+            "position": {
+                "x": 0.007635105401277542,
+                "y": 199.96588134765626,
+                "z": -23.903953552246095
+            }
+        },
+        {
+            "phase": "impact-reverse",
+            "time": 14.140362739562989,
+            "speed": -10.542768478393555,
+            "lateral": 0.030498463660478593,
+            "yaw": 0.0038382166530936958,
+            "steering": 0.0,
+            "slip": 0.004078105092048645,
+            "pitch": 0.759747326374054,
+            "roll": -0.3260498046875,
+            "contacts": 4,
+            "position": {
+                "x": 0.009064989164471627,
+                "y": 199.96957397460938,
+                "z": -24.961219787597658
+            }
+        },
+        {
+            "phase": "impact-reverse",
+            "time": 14.240374565124512,
+            "speed": -10.482732772827149,
+            "lateral": 0.005607954226434231,
+            "yaw": 0.0008407766581512988,
+            "steering": 0.0,
+            "slip": 0.000738872739020735,
+            "pitch": 0.5742579102516174,
+            "roll": -0.147674560546875,
+            "contacts": 4,
+            "position": {
+                "x": 0.005487159360200167,
+                "y": 199.98092651367188,
+                "z": -26.010900497436525
+            }
+        },
+        {
+            "phase": "impact-reverse",
+            "time": 14.340375900268555,
+            "speed": -10.423882484436036,
+            "lateral": 0.0013772124657407404,
+            "yaw": 0.00045569674693979323,
+            "steering": 0.0,
+            "slip": 0.00020667948410846293,
+            "pitch": 0.44516557455062868,
+            "roll": -0.0496826171875,
+            "contacts": 4,
+            "position": {
+                "x": 0.00003306489088572562,
+                "y": 199.98684692382813,
+                "z": -27.055038452148439
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 14.440383911132813,
+            "speed": 12.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.0,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.1458390619955026e-12,
+                "y": 200.07000732421876,
+                "z": -20.0
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 14.440383911132813,
+            "speed": 12.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.0,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.1458390619955026e-12,
+                "y": 200.07000732421876,
+                "z": -20.0
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 14.440383911132813,
+            "speed": 12.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.0,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.1458390619955026e-12,
+                "y": 200.07000732421876,
+                "z": -20.0
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 14.47371768951416,
+            "speed": 11.975008964538575,
+            "lateral": -4.603641023948057e-9,
+            "yaw": 6.674557795349756e-8,
+            "steering": 0.0,
+            "slip": 1.9799470951653577e-9,
+            "pitch": 0.004528730642050505,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -1.660120929614095e-9,
+                "y": 200.06454467773438,
+                "z": -19.702880859375
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 14.573719024658204,
+            "speed": 11.914557456970215,
+            "lateral": -6.037646471668268e-8,
+            "yaw": 1.2589416087394057e-7,
+            "steering": 0.0,
+            "slip": 2.127388221140336e-8,
+            "pitch": 0.17342188954353333,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.290810823841639e-8,
+                "y": 200.01971435546876,
+                "z": -18.50956153869629
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 14.673720359802246,
+            "speed": 11.855454444885254,
+            "lateral": -1.248953918064899e-8,
+            "yaw": -1.7542593155894793e-8,
+            "steering": 0.0,
+            "slip": 1.841721553041964e-9,
+            "pitch": 0.4457632005214691,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -3.1183656545863417e-8,
+                "y": 199.98312377929688,
+                "z": -17.322845458984376
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 14.773750305175782,
+            "speed": 10.630130767822266,
+            "lateral": -0.22038497030735017,
+            "yaw": 0.07189583778381348,
+            "steering": 0.0,
+            "slip": 0.03966132551431656,
+            "pitch": 0.31284135580062868,
+            "roll": -0.0457763671875,
+            "contacts": 4,
+            "position": {
+                "x": -0.007796597201377153,
+                "y": 199.96054077148438,
+                "z": -16.38695526123047
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 14.873751640319825,
+            "speed": 10.573952674865723,
+            "lateral": -0.03640894219279289,
+            "yaw": 0.0054948581382632259,
+            "steering": 0.0,
+            "slip": 0.005145672243088484,
+            "pitch": 0.2426683008670807,
+            "roll": 0.1864209771156311,
+            "contacts": 4,
+            "position": {
+                "x": -0.01202142983675003,
+                "y": 199.95570373535157,
+                "z": -15.325885772705079
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 14.973752975463868,
+            "speed": 10.520258903503418,
+            "lateral": -0.006051940377801657,
+            "yaw": 0.0004041101492475718,
+            "steering": 0.0,
+            "slip": 0.0007842537015676498,
+            "pitch": 0.43071073293685915,
+            "roll": 0.12599311769008637,
+            "contacts": 4,
+            "position": {
+                "x": -0.008082275278866291,
+                "y": 199.9691619873047,
+                "z": -14.27238941192627
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 15.07375431060791,
+            "speed": 10.468405723571778,
+            "lateral": -0.0010392086114734412,
+            "yaw": -0.0002182728348998353,
+            "steering": 0.0,
+            "slip": 0.0001421389461029321,
+            "pitch": 0.4843449890613556,
+            "roll": 0.048136722296476367,
+            "contacts": 4,
+            "position": {
+                "x": -0.0026366685051470997,
+                "y": 199.9776611328125,
+                "z": -13.22304916381836
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 15.173757553100586,
+            "speed": 10.41693115234375,
+            "lateral": -0.00014776810712646693,
+            "yaw": -0.000143730198033154,
+            "steering": 0.0,
+            "slip": 0.00003448569623287767,
+            "pitch": 0.48401859402656557,
+            "roll": 0.014536483213305474,
+            "contacts": 4,
+            "position": {
+                "x": 0.0034170388244092466,
+                "y": 199.97955322265626,
+                "z": -12.17844009399414
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 15.273758888244629,
+            "speed": 9.128087043762207,
+            "lateral": 0.000007850117071939167,
+            "yaw": -0.00005959803456789814,
+            "steering": 0.0,
+            "slip": 0.000010415544238639995,
+            "pitch": 0.7996576428413391,
+            "roll": 0.0037606845144182445,
+            "contacts": 4,
+            "position": {
+                "x": 0.009384333156049252,
+                "y": 199.97982788085938,
+                "z": -11.184793472290039
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 15.373760223388672,
+            "speed": 7.539219379425049,
+            "lateral": 0.000022474303477793,
+            "yaw": -0.00002593346289359033,
+            "steering": 0.0,
+            "slip": 0.000008772934961598366,
+            "pitch": 1.3579522371292115,
+            "roll": 0.0008282950730063021,
+            "contacts": 4,
+            "position": {
+                "x": 0.014462783001363278,
+                "y": 199.97882080078126,
+                "z": -10.347860336303711
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 15.473761558532715,
+            "speed": 5.958804130554199,
+            "lateral": 0.002290104515850544,
+            "yaw": -0.000797162763774395,
+            "steering": 0.0,
+            "slip": 0.0019829883240163328,
+            "pitch": 1.5624228715896607,
+            "roll": 0.12305109202861786,
+            "contacts": 4,
+            "position": {
+                "x": 0.019664118066430093,
+                "y": 199.97789001464845,
+                "z": -9.666364669799805
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 15.573762893676758,
+            "speed": 4.385794639587402,
+            "lateral": -0.0011780598433688284,
+            "yaw": 0.0011825967812910677,
+            "steering": 0.0,
+            "slip": 0.0007885147351771593,
+            "pitch": 1.5731682777404786,
+            "roll": 0.1118672639131546,
+            "contacts": 4,
+            "position": {
+                "x": 0.02266560308635235,
+                "y": 199.97940063476563,
+                "z": -9.140901565551758
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 15.673771858215332,
+            "speed": 2.8171112537384035,
+            "lateral": -0.00014876305067446083,
+            "yaw": -0.00005877651710761711,
+            "steering": 0.0,
+            "slip": 0.0000946690488490276,
+            "pitch": 1.6062391996383668,
+            "roll": 0.036312051117420199,
+            "contacts": 4,
+            "position": {
+                "x": 0.024205856025218965,
+                "y": 199.98019409179688,
+                "z": -8.772785186767579
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 15.774097442626954,
+            "speed": 1.2522797584533692,
+            "lateral": 0.000006033991667209193,
+            "yaw": -0.00005645749479299411,
+            "steering": 0.0,
+            "slip": 0.000023631651856703684,
+            "pitch": 1.6238893270492554,
+            "roll": 0.00961392279714346,
+            "contacts": 4,
+            "position": {
+                "x": 0.02527843602001667,
+                "y": 199.98135375976563,
+                "z": -8.560900688171387
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 15.874098777770996,
+            "speed": 0.002373384078964591,
+            "lateral": 0.0,
+            "yaw": -0.000013126701560395304,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 1.6116046905517579,
+            "roll": 0.0022684363648295404,
+            "contacts": 4,
+            "position": {
+                "x": 0.025563949719071389,
+                "y": 199.98301696777345,
+                "z": -8.504453659057618
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 15.974100112915039,
+            "speed": 0.0014743705978617073,
+            "lateral": 0.0,
+            "yaw": -9.860715408649413e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 1.0579054355621338,
+            "roll": 0.0005680361646227539,
+            "contacts": 4,
+            "position": {
+                "x": 0.02557925321161747,
+                "y": 199.98165893554688,
+                "z": -8.499648094177246
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 16.074098587036134,
+            "speed": 0.0008694885764271021,
+            "lateral": 0.0,
+            "yaw": -0.0000016327800267390558,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.6144556999206543,
+            "roll": 0.00009790923650143668,
+            "contacts": 4,
+            "position": {
+                "x": 0.025598742067813875,
+                "y": 199.98126220703126,
+                "z": -8.495821952819825
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 16.174118041992189,
+            "speed": 0.0006451928638853133,
+            "lateral": 0.0,
+            "yaw": -2.7438769478749238e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4612506330013275,
+            "roll": 0.00003755454235943034,
+            "contacts": 4,
+            "position": {
+                "x": 0.025606580078601838,
+                "y": 199.9816131591797,
+                "z": -8.494461059570313
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 16.27414894104004,
+            "speed": 0.0006125055369921029,
+            "lateral": 0.0,
+            "yaw": -9.810534606913279e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4444790780544281,
+            "roll": 0.000002954945784949814,
+            "contacts": 4,
+            "position": {
+                "x": 0.025607528164982797,
+                "y": 199.9816131591797,
+                "z": -8.494257926940918
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 16.374147415161134,
+            "speed": 0.0006274585030041635,
+            "lateral": 0.0,
+            "yaw": 2.1557142737549386e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4590498208999634,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 0.025607110932469369,
+                "y": 199.98135375976563,
+                "z": -8.494321823120118
+            }
+        },
+        {
+            "phase": "impact-pause",
+            "time": 16.474143981933595,
+            "speed": 0.0006416842225007713,
+            "lateral": 0.0,
+            "yaw": 3.981270424446848e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.47021782398223879,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 0.0256069116294384,
+                "y": 199.98110961914063,
+                "z": -8.494352340698243
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 16.574140548706056,
+            "speed": 0.00009583812789060175,
+            "lateral": 0.0,
+            "yaw": 4.810202902660876e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.010407528840005398,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.08343505859377,
+                "y": 24.761253356933595,
+                "z": 919.4667358398438
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 16.674135208129884,
+            "speed": 0.00035299290902912617,
+            "lateral": 0.0,
+            "yaw": 1.7182684075578437e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.24485348165035249,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.08544921875,
+                "y": 24.681428909301759,
+                "z": 919.466796875
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 16.774133682250978,
+            "speed": 0.00037350403727032244,
+            "lateral": 0.0,
+            "yaw": 4.828257260669488e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5492412447929382,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.0882568359375,
+                "y": 24.638233184814454,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 16.874130249023439,
+            "speed": 0.0007205946603789926,
+            "lateral": 0.0,
+            "yaw": -3.475409471320745e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.6511036157608032,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.0891418457031,
+                "y": 24.630813598632814,
+                "z": 919.467041015625
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 16.974124908447267,
+            "speed": 0.0008613595273345709,
+            "lateral": 0.0,
+            "yaw": -5.193543302084436e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5949711203575134,
+            "roll": -0.00006103515625,
+            "contacts": 4,
+            "position": {
+                "x": -269.0885314941406,
+                "y": 24.637401580810548,
+                "z": 919.4669799804688
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 17.07412338256836,
+            "speed": 0.0007835281430743635,
+            "lateral": 0.0,
+            "yaw": -1.136866245587953e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5136334300041199,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.08770751953127,
+                "y": 24.643808364868165,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 17.174123764038087,
+            "speed": 0.0007012276910245419,
+            "lateral": 0.0,
+            "yaw": 2.4644697305120646e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.47156822681427,
+            "roll": 0.000003708704298333032,
+            "contacts": 4,
+            "position": {
+                "x": -269.08721923828127,
+                "y": 24.646320343017579,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 17.27412223815918,
+            "speed": 0.0006711001042276621,
+            "lateral": 0.0,
+            "yaw": 9.234251052703257e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4663500189781189,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.0871276855469,
+                "y": 24.646251678466798,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 17.374122619628908,
+            "speed": 0.0006730841705575585,
+            "lateral": 0.0,
+            "yaw": -2.085121195705142e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.47522029280662539,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.08721923828127,
+                "y": 24.6455078125,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 17.474252700805665,
+            "speed": 0.0006832508952356875,
+            "lateral": 0.0,
+            "yaw": -3.8272503388725456e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4829727113246918,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.645021438598634,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 17.57425308227539,
+            "speed": 0.0006891924422234297,
+            "lateral": 0.0,
+            "yaw": 5.495762778195967e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4858045279979706,
+            "roll": 0.00005597753988695331,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644893646240236,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 17.67424964904785,
+            "speed": 0.0006912352400831878,
+            "lateral": 0.0,
+            "yaw": -1.1740116656611122e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4855433702468872,
+            "roll": 0.00008658107981318608,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644947052001954,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 17.774250030517579,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48519790172576907,
+            "roll": 0.00009293125913245603,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644975662231447,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 17.874250411987306,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48519790172576907,
+            "roll": 0.00009293125913245603,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644975662231447,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 17.974246978759767,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48519790172576907,
+            "roll": 0.00009293125913245603,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644975662231447,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 18.074247360229493,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48519790172576907,
+            "roll": 0.00009293125913245603,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644975662231447,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 18.174522399902345,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48519790172576907,
+            "roll": 0.00009293125913245603,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644975662231447,
+                "z": 919.4669189453125
+            }
+        }
+    ],
+    "impacts": [
+        {
+            "phase": "impact-light-prop",
+            "obstacle": "Impact QA prop impact-light-prop",
+            "mass": 1350.0,
+            "speedAfterContact": 10.106389999389649,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -15543.703125
+            },
+            "velocityAfterContact": {
+                "x": 0.27180588245391848,
+                "y": -0.27805495262145998,
+                "z": 10.105443000793457
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-light-prop",
+            "obstacle": "Impact QA prop impact-light-prop",
+            "mass": 1350.0,
+            "speedAfterContact": 10.64207935333252,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -800.3427734375
+            },
+            "velocityAfterContact": {
+                "x": 0.27180588245391848,
+                "y": -0.27805495262145998,
+                "z": 10.64114761352539
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-lamp",
+            "obstacle": "Impact QA prop impact-lamp",
+            "mass": 1350.0,
+            "speedAfterContact": 8.687143325805664,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -15543.703125
+            },
+            "velocityAfterContact": {
+                "x": 0.2718049883842468,
+                "y": -0.27805566787719729,
+                "z": 8.686158180236817
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-lamp",
+            "obstacle": "Impact QA prop impact-lamp",
+            "mass": 1350.0,
+            "speedAfterContact": 9.149754524230957,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -800.3388671875
+            },
+            "velocityAfterContact": {
+                "x": 0.2718049883842468,
+                "y": -0.27805566787719729,
+                "z": 9.148781776428223
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-heavy-car",
+            "obstacle": "Impact QA prop impact-heavy-car",
+            "mass": 2700.0,
+            "speedAfterContact": 8.061025619506836,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -25770.078125
+            },
+            "velocityAfterContact": {
+                "x": -0.26808324456214907,
+                "y": -0.378556489944458,
+                "z": 8.059661865234375
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-heavy-car",
+            "obstacle": "Impact QA prop impact-heavy-car",
+            "mass": 2700.0,
+            "speedAfterContact": 10.314629554748536,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -6941.24609375
+            },
+            "velocityAfterContact": {
+                "x": -0.26808324456214907,
+                "y": -0.378556489944458,
+                "z": 10.313313484191895
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-authored-lamp",
+            "obstacle": "Mesh-2379",
+            "mass": 1350.0,
+            "speedAfterContact": 9.16911792755127,
+            "relativeVelocity": {
+                "x": -2.2009820099810896e-7,
+                "y": 0.14593783020973206,
+                "z": -11.830915451049805
+            },
+            "impulse": {
+                "x": -0.00048491355846636,
+                "y": 155.25439453125,
+                "z": -16270.28515625
+            },
+            "velocityAfterContact": {
+                "x": 0.4968646764755249,
+                "y": -0.18096855282783509,
+                "z": 9.17035961151123
+            },
+            "contacts": 3
+        },
+        {
+            "phase": "impact-authored-lamp",
+            "obstacle": "Mesh-2379",
+            "mass": 1350.0,
+            "speedAfterContact": 9.169136047363282,
+            "relativeVelocity": {
+                "x": -2.2009820099810896e-7,
+                "y": 0.14593783020973206,
+                "z": -11.830915451049805
+            },
+            "impulse": {
+                "x": -9.313211313255465e-10,
+                "y": 0.00029818035545758903,
+                "z": -0.031248576939105989
+            },
+            "velocityAfterContact": {
+                "x": 0.4968646764755249,
+                "y": -0.18096855282783509,
+                "z": 9.170377731323243
+            },
+            "contacts": 3
+        },
+        {
+            "phase": "impact-compound-prop",
+            "obstacle": "Cube",
+            "mass": 1350.0,
+            "speedAfterContact": 4.1449079513549809,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -6569.7783203125
+            },
+            "velocityAfterContact": {
+                "x": 0.028058258816599847,
+                "y": -0.35348594188690188,
+                "z": 4.142839431762695
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-compound-prop",
+            "obstacle": "Cube",
+            "mass": 1350.0,
+            "speedAfterContact": 4.1449079513549809,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "velocityAfterContact": {
+                "x": 0.028058258816599847,
+                "y": -0.35348594188690188,
+                "z": 4.142839431762695
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-compound-prop",
+            "obstacle": "Impact QA prop impact-compound-prop",
+            "mass": 1350.0,
+            "speedAfterContact": 4.1449079513549809,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "velocityAfterContact": {
+                "x": 0.028058258816599847,
+                "y": -0.35348594188690188,
+                "z": 4.142839431762695
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-compound-prop",
+            "obstacle": "Impact QA prop impact-compound-prop",
+            "mass": 1350.0,
+            "speedAfterContact": 10.647339820861817,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -9714.8134765625
+            },
+            "velocityAfterContact": {
+                "x": 0.028058258816599847,
+                "y": -0.35348594188690188,
+                "z": 10.645391464233399
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-chain",
+            "obstacle": "Impact QA prop impact-chain",
+            "mass": 1350.0,
+            "speedAfterContact": 10.119131088256836,
+            "relativeVelocity": {
+                "x": -1.9156013308929688e-7,
+                "y": 0.2903405427932739,
+                "z": -11.865581512451172
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -15582.7109375
+            },
+            "velocityAfterContact": {
+                "x": 0.29190438985824587,
+                "y": -0.3464774787425995,
+                "z": 10.118803024291993
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-chain",
+            "obstacle": "Impact QA prop impact-chain",
+            "mass": 1350.0,
+            "speedAfterContact": 10.681710243225098,
+            "relativeVelocity": {
+                "x": -1.9156013308929688e-7,
+                "y": 0.2903405427932739,
+                "z": -11.865581512451172
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -840.50390625
+            },
+            "velocityAfterContact": {
+                "x": 0.29190438985824587,
+                "y": -0.3464774787425995,
+                "z": 10.681388854980469
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-chain",
+            "obstacle": "Impact QA prop impact-chain",
+            "mass": 1350.0,
+            "speedAfterContact": 7.400501251220703,
+            "relativeVelocity": {
+                "x": 0.07230483740568161,
+                "y": -0.043943896889686587,
+                "z": -10.528454780578614
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -11460.5234375
+            },
+            "velocityAfterContact": {
+                "x": -0.2771722674369812,
+                "y": -0.28594326972961428,
+                "z": 7.397934436798096
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-chain",
+            "obstacle": "Impact QA prop impact-chain",
+            "mass": 1350.0,
+            "speedAfterContact": 9.480414390563965,
+            "relativeVelocity": {
+                "x": 0.07230483740568161,
+                "y": -0.043943896889686587,
+                "z": -10.528454780578614
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -3107.4658203125
+            },
+            "velocityAfterContact": {
+                "x": -0.2771722674369812,
+                "y": -0.28594326972961428,
+                "z": 9.477897644042969
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-chain",
+            "obstacle": "Impact QA prop impact-chain",
+            "mass": 1350.0,
+            "speedAfterContact": 8.43075180053711,
+            "relativeVelocity": {
+                "x": 0.009087891317903996,
+                "y": -0.03846827521920204,
+                "z": -9.33474349975586
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -12350.236328125
+            },
+            "velocityAfterContact": {
+                "x": -0.48948875069618227,
+                "y": -1.6530739068984986,
+                "z": 8.443602561950684
+            },
+            "contacts": 2
+        },
+        {
+            "phase": "impact-chain",
+            "obstacle": "Impact QA prop impact-chain",
+            "mass": 1350.0,
+            "speedAfterContact": 8.43075180053711,
+            "relativeVelocity": {
+                "x": 0.009087891317903996,
+                "y": -0.03846827521920204,
+                "z": -9.33474349975586
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "velocityAfterContact": {
+                "x": -0.48948875069618227,
+                "y": -1.6530739068984986,
+                "z": 8.443602561950684
+            },
+            "contacts": 2
+        },
+        {
+            "phase": "impact-chain",
+            "obstacle": "Vehicle impact QA floor · opt-in",
+            "mass": 1350.0,
+            "speedAfterContact": 8.294918060302735,
+            "relativeVelocity": {
+                "x": 0.1807619333267212,
+                "y": 1.0203148126602173,
+                "z": -8.417892456054688
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 154.01034545898438,
+                "z": 0.0
+            },
+            "velocityAfterContact": {
+                "x": -0.059101540595293048,
+                "y": -0.5903134346008301,
+                "z": 8.317063331604004
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-chain",
+            "obstacle": "Vehicle impact QA floor · opt-in",
+            "mass": 1350.0,
+            "speedAfterContact": 8.294918060302735,
+            "relativeVelocity": {
+                "x": 0.1807619333267212,
+                "y": 1.0203148126602173,
+                "z": -8.417892456054688
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "velocityAfterContact": {
+                "x": -0.059101540595293048,
+                "y": -0.5903134346008301,
+                "z": 8.317063331604004
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-chain",
+            "obstacle": "Vehicle impact QA floor · opt-in",
+            "mass": 1350.0,
+            "speedAfterContact": 8.28258991241455,
+            "relativeVelocity": {
+                "x": 0.059101540595293048,
+                "y": 0.5903134346008301,
+                "z": -8.317063331604004
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "velocityAfterContact": {
+                "x": -0.009682733565568924,
+                "y": -0.2577054500579834,
+                "z": 8.294232368469239
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-chain",
+            "obstacle": "Vehicle impact QA floor · opt-in",
+            "mass": 1350.0,
+            "speedAfterContact": 8.28258991241455,
+            "relativeVelocity": {
+                "x": 0.059101540595293048,
+                "y": 0.5903134346008301,
+                "z": -8.317063331604004
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "velocityAfterContact": {
+                "x": -0.009682733565568924,
+                "y": -0.2577054500579834,
+                "z": 8.294232368469239
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-chain",
+            "obstacle": "Vehicle impact QA floor · opt-in",
+            "mass": 1350.0,
+            "speedAfterContact": 8.277175903320313,
+            "relativeVelocity": {
+                "x": 0.009682733565568924,
+                "y": 0.2577054500579834,
+                "z": -8.294232368469239
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "velocityAfterContact": {
+                "x": 0.015796273946762086,
+                "y": 0.0525919646024704,
+                "z": 8.2788724899292
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-unbroken",
+            "obstacle": "Impact QA prop impact-unbroken",
+            "mass": 1350.0,
+            "speedAfterContact": -0.30570507049560549,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -12885.0400390625
+            },
+            "velocityAfterContact": {
+                "x": -0.268083393573761,
+                "y": -0.3785565495491028,
+                "z": -0.3072471618652344
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-unbroken",
+            "obstacle": "Impact QA prop impact-unbroken",
+            "mass": 1350.0,
+            "speedAfterContact": -0.30570507049560549,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -3470.623046875
+            },
+            "velocityAfterContact": {
+                "x": -0.268083393573761,
+                "y": -0.3785565495491028,
+                "z": -0.3072471618652344
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-low-speed",
+            "obstacle": "Impact QA prop impact-low-speed",
+            "mass": 1350.0,
+            "speedAfterContact": 0.14541949331760407,
+            "relativeVelocity": {
+                "x": 1.4728919195405866e-9,
+                "y": 0.22383801639080048,
+                "z": -1.740531325340271
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -2120.40966796875
+            },
+            "velocityAfterContact": {
+                "x": -0.08700847625732422,
+                "y": -0.40053850412368777,
+                "z": 0.14363229274749757
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-low-speed",
+            "obstacle": "Impact QA prop impact-low-speed",
+            "mass": 1350.0,
+            "speedAfterContact": 0.14541949331760407,
+            "relativeVelocity": {
+                "x": 1.4728919195405866e-9,
+                "y": 0.22383801639080048,
+                "z": -1.740531325340271
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -29.453125
+            },
+            "velocityAfterContact": {
+                "x": -0.08700847625732422,
+                "y": -0.40053850412368777,
+                "z": 0.14363229274749757
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "obstacle": "Impact QA prop impact-prop-before-wall",
+            "mass": 1350.0,
+            "speedAfterContact": 10.106389999389649,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -15543.703125
+            },
+            "velocityAfterContact": {
+                "x": 0.27180588245391848,
+                "y": -0.27805495262145998,
+                "z": 10.105443000793457
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "obstacle": "Impact QA prop impact-prop-before-wall",
+            "mass": 1350.0,
+            "speedAfterContact": 10.64207935333252,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -800.3427734375
+            },
+            "velocityAfterContact": {
+                "x": 0.27180588245391848,
+                "y": -0.27805495262145998,
+                "z": 10.64114761352539
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "obstacle": "Impact QA solid wall",
+            "mass": 1350.0,
+            "speedAfterContact": -0.2172277569770813,
+            "relativeVelocity": {
+                "x": -0.01469116099178791,
+                "y": -0.029443711042404176,
+                "z": -10.59764289855957
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -14576.068359375
+            },
+            "velocityAfterContact": {
+                "x": -0.004913340788334608,
+                "y": -0.05687885731458664,
+                "z": -0.21752262115478517
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-prop-before-wall",
+            "obstacle": "Impact QA solid wall",
+            "mass": 1350.0,
+            "speedAfterContact": -0.2172277569770813,
+            "relativeVelocity": {
+                "x": -0.01469116099178791,
+                "y": -0.029443711042404176,
+                "z": -10.59764289855957
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -9.7919921875
+            },
+            "velocityAfterContact": {
+                "x": -0.004913340788334608,
+                "y": -0.05687885731458664,
+                "z": -0.21752262115478517
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-simultaneous-wall",
+            "obstacle": "Impact QA solid wall",
+            "mass": 1350.0,
+            "speedAfterContact": -0.2792251706123352,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -5772.51611328125
+            },
+            "velocityAfterContact": {
+                "x": -0.02000521495938301,
+                "y": -0.3579404354095459,
+                "z": -0.2814350128173828
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-simultaneous-wall",
+            "obstacle": "Impact QA solid wall",
+            "mass": 1350.0,
+            "speedAfterContact": -0.2792251706123352,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -9599.978515625
+            },
+            "velocityAfterContact": {
+                "x": -0.02000521495938301,
+                "y": -0.3579404354095459,
+                "z": -0.2814350128173828
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-simultaneous-wall",
+            "obstacle": "Impact QA prop impact-simultaneous-wall",
+            "mass": 1350.0,
+            "speedAfterContact": -0.2792251706123352,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "velocityAfterContact": {
+                "x": -0.02000521495938301,
+                "y": -0.3579404354095459,
+                "z": -0.2814350128173828
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-simultaneous-wall",
+            "obstacle": "Impact QA prop impact-simultaneous-wall",
+            "mass": 1350.0,
+            "speedAfterContact": 0.35551851987838747,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -948.3251953125
+            },
+            "velocityAfterContact": {
+                "x": -0.02000521495938301,
+                "y": -0.3579404354095459,
+                "z": 0.35332077741622927
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-glancing",
+            "obstacle": "Impact QA prop impact-glancing",
+            "mass": 1350.0,
+            "speedAfterContact": 8.421329498291016,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -10615.4140625
+            },
+            "velocityAfterContact": {
+                "x": -3.7261834144592287,
+                "y": -0.6833248734474182,
+                "z": 8.55860710144043
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-glancing",
+            "obstacle": "Impact QA prop impact-glancing",
+            "mass": 1350.0,
+            "speedAfterContact": 10.671164512634278,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -3363.5859375
+            },
+            "velocityAfterContact": {
+                "x": -3.7261834144592287,
+                "y": -0.6833248734474182,
+                "z": 10.810003280639649
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-reverse",
+            "obstacle": "Impact QA prop impact-reverse",
+            "mass": 1350.0,
+            "speedAfterContact": -10.626522064208985,
+            "relativeVelocity": {
+                "x": 9.140930501416733e-8,
+                "y": 0.06489355862140656,
+                "z": 11.808490753173829
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 16306.9072265625
+            },
+            "velocityAfterContact": {
+                "x": 0.2923680543899536,
+                "y": -0.2829696834087372,
+                "z": -10.631082534790039
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-reverse",
+            "obstacle": "Impact QA prop impact-reverse",
+            "mass": 1350.0,
+            "speedAfterContact": -10.626522064208985,
+            "relativeVelocity": {
+                "x": 9.140930501416733e-8,
+                "y": 0.06489355862140656,
+                "z": 11.808490753173829
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "velocityAfterContact": {
+                "x": 0.2923680543899536,
+                "y": -0.2829696834087372,
+                "z": -10.631082534790039
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-pause",
+            "obstacle": "Impact QA prop impact-pause",
+            "mass": 1350.0,
+            "speedAfterContact": 8.318635940551758,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -12885.0400390625
+            },
+            "velocityAfterContact": {
+                "x": -0.268083393573761,
+                "y": -0.3785565495491028,
+                "z": 8.317276954650879
+            },
+            "contacts": 4
+        },
+        {
+            "phase": "impact-pause",
+            "obstacle": "Impact QA prop impact-pause",
+            "mass": 1350.0,
+            "speedAfterContact": 10.641627311706543,
+            "relativeVelocity": {
+                "x": -2.1985449905059796e-7,
+                "y": 0.1059940978884697,
+                "z": -11.819472312927246
+            },
+            "impulse": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -3470.623046875
+            },
+            "velocityAfterContact": {
+                "x": -0.268083393573761,
+                "y": -0.3785565495491028,
+                "z": 10.640317916870118
+            },
+            "contacts": 4
+        }
+    ],
+    "errors": []
+}

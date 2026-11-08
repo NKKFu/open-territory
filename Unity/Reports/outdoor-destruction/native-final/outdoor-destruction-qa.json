@@ -1,0 +1,280 @@
+{
+    "passed": false,
+    "unity": "6000.3.27f1",
+    "graphics": "Direct3D12",
+    "fences": 2964,
+    "trees": 7115,
+    "checks": [
+        {
+            "name": "native-scene-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "authored-fences-registered",
+            "detail": "2964",
+            "passed": true
+        },
+        {
+            "name": "all-fence-body-and-coping-faces-owned-together",
+            "detail": "24:2964",
+            "passed": true
+        },
+        {
+            "name": "forest-yard-and-cemetery-trees-registered",
+            "detail": "7115",
+            "passed": true
+        },
+        {
+            "name": "trees-have-solid-trunks-and-prepared-fall-meshes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "reused-tree-boxes-stay-whole",
+            "detail": "108:123",
+            "passed": true
+        },
+        {
+            "name": "fragment-pool-prepared-before-impact",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "authored-fence-has-testable-approach",
+            "detail": "Colisão-5470 (565.22, 10.32, 725.48)",
+            "passed": true
+        },
+        {
+            "name": "intact-fence-blocks-character",
+            "detail": "-0.6350071",
+            "passed": true
+        },
+        {
+            "name": "Esc-rejects-damage-and-freezes-clock",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "fence-takes-progressive-damage",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "broken-fence-removes-all-authored-faces-and-collisions",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "adjacent-fence-remains-intact",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "character-walks-through-destroyed-fence",
+            "detail": "-0.6350071 blockers=Colisão-5502@0.5999845 layer=9,Colisão-5503@0.6494164 layer=9,Estilhaço • 67@1.043161 layer=0,Estilhaço • 68@0.4416926 layer=0,Estilhaço • 70@1.18186 layer=0,Estilhaço • 69@1.334286 layer=0,Group-3970@0 layer=12",
+            "passed": false
+        },
+        {
+            "name": "reused-tree-clears-trunk-crown-and-batch-Colisão-231",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "reused-tree-clears-trunk-crown-and-batch-Colisão-235",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Álamo-natural-2-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Árvore jovem-natural-0-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Árvore jovem-natural-2-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Pinheiro-natural-0-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Árvore jovem-natural-1-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Pinheiro-natural-2-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Costeira-natural-1-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Cipreste-natural-2-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Cipreste-natural-1-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Costeira-natural-0-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Carvalho-natural-1-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Acácia-natural-1-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Cipreste-natural-0-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Carvalho-natural-0-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Costeira-natural-2-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Ipê-natural-0-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Pinheiro-natural-1-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Álamo-natural-1-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Acácia-natural-2-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Ipê-natural-2-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Carvalho-natural-2-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Ipê-natural-1-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Álamo-natural-0-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-tree-variant-falls-Acácia-natural-0-LOD0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual-firearm-destroys-fence",
+            "detail": "health=0",
+            "passed": true
+        },
+        {
+            "name": "actual-melee-destroys-fence",
+            "detail": "health=0",
+            "passed": true
+        },
+        {
+            "name": "actual-firearm-destroys-tree",
+            "detail": "health=0",
+            "passed": true
+        },
+        {
+            "name": "actual-melee-destroys-tree",
+            "detail": "health=0",
+            "passed": true
+        },
+        {
+            "name": "actual-vehicle-contact-destroys-fence",
+            "detail": "health=0 speed=4.131555",
+            "passed": true
+        },
+        {
+            "name": "actual-vehicle-contact-destroys-tree",
+            "detail": "health=0 speed=3.467352",
+            "passed": true
+        },
+        {
+            "name": "imported-shared-mesh-assets-remain-immutable",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "ordinary-walls-stay-solid",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "saturation-reuses-fixed-pool",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "tree-reuses-a-body-with-the-original-mesh",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-falling-tree-and-expiry",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "all-debris-returns-after-resume",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "reused-debris-resets-tree-mass-mesh-and-collider",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

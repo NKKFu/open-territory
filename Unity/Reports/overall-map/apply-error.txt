@@ -1,0 +1,4 @@
+System.InvalidOperationException: Agrupamento original ausente: s-building:Reused residential interior 95-795
+  at OpenTerritory.Editor.CityStreetReviewBuilder.ApplyPatch (System.String patchPath, System.String assetPath) [0x008de] in C:\Users\nelso\open-territory\Unity\OpenTerritory\Assets\Editor\CityStreetReviewBuilder.cs:153 
+  at OpenTerritory.Editor.CityOverallMapBuilder.Apply () [0x00112] in C:\Users\nelso\open-territory\Unity\OpenTerritory\Assets\Editor\CityOverallMapBuilder.cs:60 
+  at MCPDynamicCode.<Execute>m__0 () [0x00000] in <bfb6a68b4fa64e14b18461c140eb34f4>:0 

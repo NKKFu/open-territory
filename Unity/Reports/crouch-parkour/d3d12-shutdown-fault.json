@@ -1,0 +1,19 @@
+{
+  "recordedAtUtc": "2026-11-08T08:26:36.8970839Z",
+  "phase": "shutdown after all 50 seated-camera assertions passed",
+  "graphicsApi": "Direct3D 12 (default)",
+  "exitCode": -1073741819,
+  "module": "D3D12Core.dll",
+  "events": [
+    {
+      "occurredAtUtc": "2026-11-08T08:24:21.8552939Z",
+      "eventId": 1000,
+      "message": "Faulting application name: BaiaDoSol.exe, version: 6000.3.27.11606, time stamp: 0x6acec97c\r\nFaulting module name: D3D12Core.dll, version: 1.618.1.0, time stamp: 0x68d311e6\r\nException code: 0xc0000005\r\nFault offset: 0x0000000000264831\r\nFaulting process id: 0x138A0\r\nFaulting application start time: 0x1DD6F5A70AA8DC9\r\nFaulting application path: C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrouchParkour-Final-20261108\\BaiaDoSol.exe\r\nFaulting module path: C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrouchParkour-Final-20261108\\D3D12\\D3D12Core.dll\r\nReport Id: 5704b68c-0ccb-47ad-9f9e-21ccc3829dfa\r\nFaulting package full name: \r\nFaulting package-relative application ID: "
+    },
+    {
+      "occurredAtUtc": "2026-11-08T08:21:53.9307709Z",
+      "eventId": 1000,
+      "message": "Faulting application name: BaiaDoSol.exe, version: 6000.3.27.11606, time stamp: 0x6acec97c\r\nFaulting module name: D3D12Core.dll, version: 1.618.1.0, time stamp: 0x68d311e6\r\nException code: 0xc0000005\r\nFault offset: 0x0000000000264880\r\nFaulting process id: 0x1114C\r\nFaulting application start time: 0x1DD6F5A187F7353\r\nFaulting application path: C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrouchParkour-Final-20261108\\BaiaDoSol.exe\r\nFaulting module path: C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrouchParkour-Final-20261108\\D3D12\\D3D12Core.dll\r\nReport Id: 85615565-50f6-410a-b770-f35e057f7950\r\nFaulting package full name: \r\nFaulting package-relative application ID: "
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+    "passed": false,
+    "checks": [
+        {
+            "name": "two-real-resident-rigs-available",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "QA-storage-is-isolated",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "probe-is-opt-in",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "press-starts-punch-without-firearm",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "windup-does-not-deal-early-damage",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "punch-articulates-real-arm",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "contact-damages-one-resident-once",
+            "detail": "health=76",
+            "passed": true
+        },
+        {
+            "name": "hit-has-stagger-and-crime-consequence",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "recovery-cannot-repeat-contact",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "holding-fire-never-repeats-melee",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "miss-does-not-damage-or-alert-police",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "three-presses-chain-three-distinct-strikes",
+            "detail": "swings=3",
+            "passed": true
+        },
+        {
+            "name": "three-connected-hits-knock-down-same-target",
+            "detail": "hits=3",
+            "passed": true
+        },
+        {
+            "name": "finisher-preserves-damage-and-physical-fall",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "finisher-rejects-fourth-buffered-attack",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "fallen-actors-take-no-extra-melee-damage",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "knockdown-recovers-controller-and-upright-body",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "solid-wall-stops-damage-and-target-assistance",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "wall-impact-stays-on-near-side",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "cast-origin-inside-cover-cannot-bypass-wall",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "out-of-range-person-is-not-hit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "person-behind-player-is-not-targeted",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "person-outside-forward-cone-is-not-targeted",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "moving-away-during-windup-evades-contact",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "one-strike-hits-nearest-person-only",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "counterattack-has-visible-windup-before-damage",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "unarmed-aim-holds-guard-without-gun-reticle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "frontal-guard-reduces-melee-damage",
+            "detail": "health=97",
+            "passed": true
+        },
+        {
+            "name": "releasing-guard-lowers-arms",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "unblocked-counterattack-deals-full-damage",
+            "detail": "health=85",
+            "passed": true
+        },
+        {
+            "name": "guard-does-not-block-attacks-from-behind",
+            "detail": "health=85",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-clock-pose-and-contact",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "paused-attack-is-unavailable",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "resume-finishes-one-strike-without-replaying-input",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "vehicle-blocks-melee",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "seated-player-cannot-punch",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "swimming-blocks-melee",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "remote-control-blocks-melee",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "busy-transition-blocks-melee",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "airborne-player-cannot-punch",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "emoji-wheel-blocks-melee",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "guard-keeps-controllable-slow-footwork",
+            "detail": "speed=1.649994",
+            "passed": true
+        },
+        {
+            "name": "melee-does-not-change-ammunition",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selecting-weapon-cancels-melee-windup",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "armed-player-cannot-punch",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "armed-aim-and-fire-still-work",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "firearm-still-consumes-exactly-one-round",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "touch-labels-describe-unarmed-actions",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "touch-press-and-release-start-exactly-one-punch",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "touch-guard-button-raises-guard",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "touch-guard-release-lowers-guard",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "City sky shader missing or unsupported\n",
+            "passed": false
+        }
+    ],
+    "errors": [
+        "City sky shader missing or unsupported\n"
+    ]
+}

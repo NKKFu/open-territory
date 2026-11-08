@@ -1,0 +1,120 @@
+{
+    "passed": false,
+    "routeSamples": 637,
+    "checks": [
+        {
+            "name": "native-scene-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "48-graves-six-usable-benches-eight-cypresses",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "original-landscape-collisions-reserved",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "continuous-access-alamedas-chapel-and-exit",
+            "detail": "samples=637 unsupported=0 blocked=10",
+            "passed": false
+        },
+        {
+            "name": "every-headstone-blocks-the-body",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "walk-run-through-gate-around-graves-enter-chapel-and-leave",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "solid-perimeter-stops-running-player",
+            "detail": "localX=-21.11501",
+            "passed": true
+        },
+        {
+            "name": "jump-and-land-on-cemetery-path",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--91000",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--91001",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--91002",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--91003",
+            "detail": "selected=False sat=False",
+            "passed": false
+        },
+        {
+            "name": "E-sit-and-stand--91004",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--91005",
+            "detail": "selected=False sat=False",
+            "passed": false
+        },
+        {
+            "name": "cemetery-is-a-map-destination",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "map-keeps-city-running",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "night-lanterns-follow-city-cycle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-settings-pause-and-resume",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "settings-return-to-exploration",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "errors=0",
+            "passed": true
+        }
+    ],
+    "errors": [],
+    "obstacles": [
+        "route 1 (0.00, 0.11, -33.49)",
+        "route 1 (0.00, 0.10, -33.11)",
+        "route 1 (0.00, 0.10, -32.73)",
+        "route 2 (0.00, 0.07, -16.64)",
+        "route 2 (0.00, 0.07, -16.24)",
+        "route 11 (0.00, 0.07, -16.24)",
+        "route 11 (0.00, 0.07, -16.64)",
+        "route 12 (0.00, 0.10, -32.73)",
+        "route 12 (0.00, 0.10, -33.11)",
+        "route 12 (0.00, 0.11, -33.49)",
+        "walk target=(0.00, 0.07, -1.50) player=(-0.72, 0.05, -16.87)"
+    ]
+}

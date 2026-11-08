@@ -1,0 +1,254 @@
+{
+    "passed": true,
+    "graphicsApi": "Direct3D12",
+    "createdAtUtc": "2026-11-08T11:55:28.9225311Z",
+    "routeSamples": 648,
+    "checks": [
+        {
+            "name": "native-clothing-store-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "QA-wallet-is-isolated",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "only-marked-buildings-replaced",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "old-physical-solids-disabled-in-navigation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "English-signage-and-real-entrances",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "shared-floor-outside-store-preserved",
+            "detail": "samples=179 changes=0",
+            "passed": true
+        },
+        {
+            "name": "no-overlap-with-neighbours-or-public-furniture",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "continuous-sidewalk-both-sales-floors-ramp-and-fitting-room",
+            "detail": "samples=648 unsupported=0 blocked=0 ",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-0",
+            "detail": "gap=0.000 position=(11.00, 0.06, 10.40)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-1",
+            "detail": "gap=0.274 position=(11.00, 0.06, 8.97)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-2",
+            "detail": "gap=0.162 position=(11.00, 0.02, 5.16)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-3",
+            "detail": "gap=0.105 position=(11.00, 0.03, 0.71)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-4",
+            "detail": "gap=0.021 position=(4.52, 0.14, 0.59)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-5",
+            "detail": "gap=0.145 position=(-5.36, 2.31, 0.61)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-6",
+            "detail": "gap=0.092 position=(-8.91, 2.31, 0.60)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-7",
+            "detail": "gap=0.193 position=(-15.81, 2.31, 0.99)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-8",
+            "detail": "gap=0.071 position=(-14.34, 2.31, -3.34)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-9",
+            "detail": "gap=0.229 position=(-14.42, 2.31, -5.10)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-10",
+            "detail": "gap=0.114 position=(-14.31, 2.31, -1.51)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-11",
+            "detail": "gap=0.155 position=(-11.08, 2.31, 4.37)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-12",
+            "detail": "gap=0.115 position=(-10.97, 2.33, 8.39)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-13",
+            "detail": "gap=0.146 position=(-11.14, 1.93, 10.28)",
+            "passed": true
+        },
+        {
+            "name": "enter-explore-fitting-room-and-exit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "automatic-entrance-opens-for-protagonist",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-pauses-world-and-entrance",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "entrance-closes-after-safe-clearance",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "display-glazing-blocks-walking",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "rack-selected-by-real-world-visibility-and-range",
+            "detail": "clothing-0",
+            "passed": true
+        },
+        {
+            "name": "E-opens-compact-contextual-uGUI",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "preview-changes-protagonist-without-charging",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "shopping-panel-visible-in-native-render",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "cancel-restores-owned-outfit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "mouse-touch-button-buys-and-wears",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "owned-item-cannot-charge-twice",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "tops-trousers-and-sneakers-equip-independently",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "insufficient-funds-does-not-buy-or-charge",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "original-clothes-remain-free-and-restore-sleeves",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "owned-clothes-reusable-for-free",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "wallet-and-wardrobe-restore-from-same-persisted-checkpoint",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "shared-NPC-materials-skin-and-face-preserved",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "old-or-invalid-wardrobe-retains-default-clothes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "shopping-does-not-pause-city",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-closes-shopping-and-restores-controls",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "walking-closes-preview-without-blocking-controls",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "leaving-store-closes-preview",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "jump-and-grounding-still-work",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Tideline-is-a-single-Places-destination",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "store-lighting-follows-night-cycle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "errors=0",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

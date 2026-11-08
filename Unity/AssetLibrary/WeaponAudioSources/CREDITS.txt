@@ -1,0 +1,34 @@
+Baía do Sol — gravações de armas
+
+Todos os arquivos de terceiros nesta pasta foram publicados sob CC0 1.0.
+Licença: https://creativecommons.org/publicdomain/zero/1.0/
+As páginas originais, os arquivos selecionados e seus SHA-256 constam em
+sources.json; cópias das páginas de licença ficam em licenses/.
+
+The Free Firearm Sound Library
+Ben Jaszczak e equipe da Free Firearm Sound Library
+https://opengameart.org/content/the-free-firearm-sound-library
+Originais: Walther PPQ/X_39P.wav e AR-15/D_32P.wav (gravação próxima).
+Uso: dois disparos individuais de cada gravação, convertidos para mono,
+44,1 kHz PCM, com remoção do silêncio inicial, filtro de graves e cauda curta.
+Não há dependência da internet durante o jogo.
+
+Gun reload sounds — SpringySpringo
+https://opengameart.org/content/gun-reload-sounds
+Originais: gunreload1.wav e assaultriflereload1_0.wav.
+Uso: recargas da P-9 e da C-12, ajustadas à duração da animação.
+
+Gun Reload Sound Effects — Brian MacIntosh (BMacZero)
+https://opengameart.org/content/gun-reload-sound-effects
+Originais: clipload1.wav e singlebullet1.wav.
+Uso: encaixe do carregador, clique vazio e contato leve de cápsula.
+
+Pulsor Maré e impactos de superfície usam agora assets CC0 de estúdio e
+foley de artisticdude e rubberduck, listados no crédito geral em
+Assets/Resources/Audio/CREDITS.txt. Os modelos, partículas e shader
+continuam sendo criações de Open Territory. Não há geração procedural
+de sons no importador atual.
+
+Para obter os originais: python Unity/Tools/weapon_recordings.py --download
+Para reprocessar do cache: python Unity/Tools/weapon_recordings.py
+O rebuild completo de build-audio-bank.py também preserva essas gravações.

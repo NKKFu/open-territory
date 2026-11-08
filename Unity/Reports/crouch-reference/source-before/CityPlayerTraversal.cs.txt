@@ -1,0 +1,310 @@
+using UnityEngine;
+
+namespace OpenTerritory
+{
+    public partial class CityPlayer
+    {
+        const float JumpWindupTime = .065f, StandingHeight = 2.25f, CompactHeight = 1.72f, MaxMantle = 2.20f;
+        const float HandReleaseLimit = .78f;
+        float jumpWindup = -1, airTime, takeoffSpeed, jumpLead = -1, landingAt = -10, landingImpact;
+        bool compactRecovery;
+        VaultState vault;
+        sealed class VaultState
+        {
+            public Vector3 Start, Direction, Landing, ApproachTarget, SupportStart;
+            public float Face, Far, Top, End, Duration, Elapsed, Delay, Enter, Exit, EntrySpeed, ApproachAge;
+            public bool Climb, Approaching, MovingSupport;
+            public Transform Support;
+            public Quaternion SupportRotation;
+            public Vector3 LocalLanding;
+            public readonly Vector3[] Hands = new Vector3[2], LocalHands = new Vector3[2], Normals = new Vector3[2], LocalNormals = new Vector3[2];
+        }
+        public bool Traversing => vault != null && !vault.Approaching;
+        public bool ParkourApproaching => vault != null && vault.Approaching;
+        public float VaultProgress => Traversing ? Mathf.Clamp01(vault.Elapsed / vault.Duration) : 0;
+        public float VaultTuck => Traversing ? Tuck(vault, VaultProgress) : 0;
+        public readonly Vector3[] HandNormals = { Vector3.up, Vector3.up };
+        public float TraversalHandWeight(int arm)
+        {
+            if (!Traversing) return 0;
+            float t = VaultProgress, stagger = (arm == 0 ? -1 : 1) == jumpLead ? 0 : .035f;
+            float handDistance = Vector3.Dot(vault.Hands[arm] - vault.Start, vault.Direction);
+            // Transfer weight back to the feet before the traversal finishes.
+            float release = Mathf.Min(HandReleaseLimit, vault.Delay + (1 - vault.Delay) * InverseEase(Mathf.Clamp01((handDistance + .22f) / vault.End)));
+            return Mathf.SmoothStep(0, 1, (t - .025f - stagger) / .14f)
+                * (1 - Mathf.SmoothStep(0, 1, (t - release + .075f + stagger) / .16f));
+        }
+        public float JumpPreparation => jumpWindup < 0 ? 0 : Mathf.SmoothStep(0, 1, jumpWindup / JumpWindupTime);
+        public float AirTime => airTime;
+        public float TakeoffSpeed => takeoffSpeed;
+        public float JumpLead => jumpLead;
+        public float LandingImpact => landingImpact;
+        public float LandingAge => ctx ? ctx.Clock - landingAt : 100;
+        public float LandingBlend
+        {
+            get
+            {
+                float age = LandingAge;
+                if (age < 0 || age > .32f) return 0;
+                float strength = Mathf.Lerp(.25f, 1, Mathf.InverseLerp(2.5f, 10, landingImpact));
+                return strength * Mathf.SmoothStep(0, 1, age / .045f) * (1 - Mathf.SmoothStep(0, 1, (age - .055f) / .265f));
+            }
+        }
+        public float RecoveryCrouch => compactRecovery ? 1 : 0;
+        public float TraversalBodyHeight => Traversing ? BodyHeight(vault, VaultProgress) : controller ? controller.height : StandingHeight;
+
+        void LaunchJump()
+        {
+            jumpWindup = -1; jumpUntil = lastGround = -10; platform = null;
+            takeoffSpeed = planarVelocity.magnitude; airTime = 0;
+            var rig = ctx.Actors ? ctx.Actors.PlayerRig : null;
+            jumpLead = rig != null && Mathf.Cos(rig.Phase) > 0 ? -1 : 1;
+            vertical = Mathf.Sqrt(2 * 22 * Mathf.Lerp(.58f, .72f, Mathf.Clamp01(takeoffSpeed / SprintSpeed)));
+            Grounded = false; Mode = "jump"; ctx.Sound("jump", ctx.Player.position);
+        }
+        void RegisterLanding(float impact)
+        {
+            landingAt = ctx.Clock; landingImpact = impact;
+            if (impact > 3.5f) ctx.Sound("land", ctx.Player.position, Mathf.Clamp01(impact / 10));
+        }
+        void ResetTraversal()
+        {
+            bool restore = vault != null;
+            vault = null; jumpWindup = -1; jumpUntil = lastGround = -10; airTime = 0; landingAt = -10; landingImpact = 0;
+            compactRecovery = false;
+            if (controller)
+            {
+                SetCapsuleHeight(Crouched ? CrouchHeight : StandingHeight);
+                if (restore && !Riding && !Swimming && !seat.HasValue) controller.enabled = true;
+            }
+        }
+        void RestoreStandingCapsule()
+        {
+            if (!compactRecovery || !CityPhysics.StandClear(ctx.Player.position, ctx.Player, null, StandingHeight, .37f)) return;
+            compactRecovery = false;
+        }
+        bool Front(Vector3 start, Vector3 direction, float reach, out RaycastHit nearest)
+        {
+            nearest = default; float best = reach + 1;
+            for (int i = 0; i < 3; i++)
+            {
+                float height = i == 0 ? .43f : i == 1 ? .95f : 1.55f;
+                if (!CityPhysics.Cast(start + Vector3.up * height, .12f, direction, reach, out var hit, ctx.Player, null, ctx.SolidMask)) continue;
+                if (hit.normal.y > .55f || Vector3.Dot(-CityPhysics.Flat(hit.normal).normalized, direction) < .45f) continue;
+                if (hit.distance < best) { nearest = hit; best = hit.distance; }
+            }
+            return nearest.collider;
+        }
+        bool Top(Vector3 start, Vector3 direction, float distance, float lateral, out RaycastHit hit)
+        {
+            Vector3 right = Vector3.Cross(Vector3.up, direction);
+            Vector3 point = start + direction * distance + right * lateral + Vector3.up * (MaxMantle + .25f);
+            return CityPhysics.Cast(point, 0, Vector3.down, MaxMantle + 1.05f, out hit, ctx.Player, null, ctx.SolidMask)
+                && hit.normal.y >= .65f && hit.point.y - start.y >= .40f && hit.point.y - start.y <= MaxMantle;
+        }
+        static float FaceDistance(Vector3 start, Vector3 direction, RaycastHit hit)
+        {
+            Vector3 normal = CityPhysics.Flat(hit.normal).normalized;
+            return Vector3.Dot(normal, hit.point - start) / Vector3.Dot(normal, direction);
+        }
+        bool LandingClear(Vector3 point, Vector3 direction)
+        {
+            if (!CityPhysics.StandClear(point, ctx.Player, null, StandingHeight, .38f)) return false;
+            Vector3 right = Vector3.Cross(Vector3.up, direction);
+            for (int i = 0; i < 5; i++)
+            {
+                Vector3 offset = i == 0 ? Vector3.zero : i < 3 ? right * (i == 1 ? -.24f : .24f) : direction * (i == 3 ? -.24f : .24f);
+                if (!CityPhysics.Cast(point + offset + Vector3.up * .30f, 0, Vector3.down, .60f, out var hit, ctx.Player, null, ctx.SolidMask)
+                    || hit.normal.y < .65f || Mathf.Abs(hit.point.y - (point.y - .035f)) > .16f) return false;
+            }
+            return true;
+        }
+        bool TryParkour(Vector3 direction)
+        {
+            direction = CityPhysics.Flat(direction).normalized;
+            float entry = planarVelocity.magnitude, reach = Mathf.Lerp(1.10f, 1.75f, entry / SprintSpeed);
+            if (!Front(ctx.Player.position, direction, reach, out var front)) return false;
+            if (front.rigidbody && (front.rigidbody.linearVelocity.magnitude > 1.2f || front.rigidbody.angularVelocity.magnitude > .75f)) return false;
+            float face = FaceDistance(ctx.Player.position, direction, front);
+            Vector3 launch = ctx.Player.position + direction * Mathf.Max(0, face - .58f);
+            if (!CityPhysics.Ground(launch, out var floor, ctx.Player, null, 1) || Mathf.Abs(floor.point.y + .035f - launch.y) > .25f) return false;
+            launch.y = floor.point.y + .035f;
+            if (!CityPhysics.SweepClear(ctx.Player.position, launch, ctx.Player, null, StandingHeight)) return false;
+            if (!BuildTraversal(launch, direction, entry, out var plan)) return false;
+            plan.Approaching = CityPhysics.Flat(launch - ctx.Player.position).magnitude > .045f;
+            plan.ApproachTarget = launch; vault = plan; jumpWindup = -1; jumpUntil = -10;
+            if (!plan.Approaching) BeginTraversal(plan);
+            return true;
+        }
+        bool BuildTraversal(Vector3 start, Vector3 direction, float entry, out VaultState plan)
+        {
+            plan = null;
+            if (!Front(start, direction, 1.1f, out var front)) return false;
+            float face = FaceDistance(start, direction, front), first = face + .10f;
+            Vector3 normal = CityPhysics.Flat(front.normal).normalized;
+            float skew = -Vector3.Dot(normal, Vector3.Cross(Vector3.up, direction)) / Vector3.Dot(normal, direction);
+            if (!Top(start, direction, first, 0, out var top)) return false;
+            for (int side = -1; side <= 1; side += 2)
+                if (!Top(start, direction, first + side * .22f * skew, side * .22f, out var edge) || Mathf.Abs(edge.point.y - top.point.y) > .22f) return false;
+            float highest = top.point.y, far = first; bool foundFar = false;
+            for (float d = first + .12f; d < face + 3.2f; d += .12f)
+            {
+                if (!Top(start, direction, d, 0, out var sample)) { far = d - .04f; foundFar = true; break; }
+                highest = Mathf.Max(highest, sample.point.y); far = d;
+            }
+            float maximumWidth = Mathf.Lerp(1.35f, 2.15f, entry / SprintSpeed);
+            if (foundFar && far - face <= maximumWidth)
+            {
+                Vector3 landing = start + direction * (far + .38f + .55f);
+                if (CityPhysics.Cast(landing + Vector3.up * (highest - start.y + .7f), 0, Vector3.down, highest - start.y + 1.4f,
+                    out var ground, ctx.Player, null, ctx.SolidMask) && ground.normal.y >= .65f && Mathf.Abs(ground.point.y - start.y) <= .65f)
+                {
+                    landing.y = ground.point.y + .035f;
+                    var candidate = MakePlan(start, direction, landing, face, far, highest, entry, highest - start.y > 1.40f, top, skew);
+                    if (LandingClear(landing, direction) && ValidPath(candidate)) { plan = candidate; return true; }
+                }
+            }
+            // Wide roofs and higher ledges use a supported mantle, not a vault
+            // whose landing point is guessed beyond the last sampled surface.
+            float last = foundFar ? Mathf.Min(far - .32f, face + 2.25f) : face + 2.25f;
+            float pathTop = top.point.y;
+            for (float d = first; d <= last; d += .12f)
+            {
+                if (!Top(start, direction, d, 0, out var surface)) break;
+                pathTop = Mathf.Max(pathTop, surface.point.y);
+                if (d < face + .50f) continue;
+                Vector3 landing = start + direction * d; landing.y = surface.point.y + .035f;
+                if (!LandingClear(landing, direction)) continue;
+                var candidate = MakePlan(start, direction, landing, face, d, pathTop, entry, true, top, skew);
+                if (ValidPath(candidate)) { plan = candidate; return true; }
+            }
+            return false;
+        }
+        VaultState MakePlan(Vector3 start, Vector3 direction, Vector3 landing, float face, float far, float top, float entry, bool climb, RaycastHit support, float skew)
+        {
+            float end = Vector3.Dot(landing - start, direction);
+            float delay = climb ? .20f : .22f;
+            float enter = delay + (1 - delay) * InverseEase(Mathf.Clamp01((face - .38f - .06f) / end));
+            bool drop = top - landing.y > .40f;
+            float exit = climb ? drop ? .72f : .82f : delay + (1 - delay) * InverseEase(Mathf.Clamp01((far + .38f + .06f) / end));
+            var p = new VaultState { Start = start, Direction = direction, Landing = landing, Face = face, Far = far, Top = top, End = end,
+                EntrySpeed = entry, Climb = climb, Delay = delay, Enter = Mathf.Max(delay, enter - .025f), Exit = Mathf.Clamp(exit, enter + .12f, .94f),
+                Duration = climb ? 1.0f + (top - start.y) * .14f + (drop ? .20f : 0) : Mathf.Clamp(.48f + end / Mathf.Lerp(4.5f, 7.5f, entry / SprintSpeed) + (top - start.y) * .08f, .65f, 1.15f) };
+            for (int i = 0; i < 2; i++)
+            {
+                float lateral = i == 0 ? -.25f : .25f;
+                bool haveHand = Top(start, direction, face + .10f + lateral * skew, lateral, out var hand);
+                // A bonnet and its higher roof are different support heights.
+                // Plant on the surface the body clears instead of leaving the
+                // hands on the low front edge, far below their reachable range.
+                if (!haveHand || top - hand.point.y > .20f)
+                    for (float d = face + .10f; d <= end + .35f; d += .10f)
+                        if (Top(start, direction, d + lateral * skew, lateral, out var sample) &&
+                            top - sample.point.y <= .20f && sample.rigidbody == support.rigidbody)
+                        { hand = sample; haveHand = true; break; }
+                p.Hands[i] = haveHand ? hand.point + hand.normal * .085f
+                    : start + direction * (face + .10f) + Vector3.Cross(Vector3.up, direction) * lateral + Vector3.up * (top - start.y + .085f);
+                p.Normals[i] = hand.collider ? hand.normal : Vector3.up;
+            }
+            p.Support = support.rigidbody ? support.rigidbody.transform : null; p.MovingSupport = p.Support;
+            if (p.Support)
+            {
+                p.SupportStart = p.Support.position; p.SupportRotation = p.Support.rotation;
+                p.LocalLanding = p.Support.InverseTransformPoint(landing);
+                for (int i = 0; i < 2; i++) { p.LocalHands[i] = p.Support.InverseTransformPoint(p.Hands[i]); p.LocalNormals[i] = p.Support.InverseTransformDirection(p.Normals[i]); }
+            }
+            return p;
+        }
+        static float InverseEase(float value)
+        {
+            float lo = 0, hi = 1;
+            for (int i = 0; i < 12; i++) { float mid = (lo + hi) * .5f; if (CityPhysics.Ease(mid) < value) lo = mid; else hi = mid; }
+            return (lo + hi) * .5f;
+        }
+        static float Tuck(VaultState p, float t) => Mathf.SmoothStep(0, 1, t / p.Enter) * (1 - Mathf.SmoothStep(0, 1, (t - p.Exit) / (1 - p.Exit)));
+        static float BodyHeight(VaultState p, float t) => Mathf.Lerp(StandingHeight, CompactHeight, Tuck(p, t));
+        static Vector3 VaultPosition(VaultState p, float t)
+        {
+            float distance = p.End * CityPhysics.Ease(Mathf.Clamp01((t - p.Delay) / (1 - p.Delay))), clear = p.Top + .11f, y;
+            if (t < p.Enter) y = Mathf.Lerp(p.Start.y, clear, Mathf.Sin(t / p.Enter * Mathf.PI * .5f));
+            else if (t < p.Exit) y = clear + .06f * Mathf.Pow(Mathf.Sin((t - p.Enter) / (p.Exit - p.Enter) * Mathf.PI), 2);
+            else y = Mathf.Lerp(clear, p.Landing.y, CityPhysics.Ease((t - p.Exit) / (1 - p.Exit)));
+            return new Vector3(p.Start.x + p.Direction.x * distance, y, p.Start.z + p.Direction.z * distance);
+        }
+        bool ValidPath(VaultState p)
+        {
+            Vector3 previous = p.Start; float previousHeight = StandingHeight;
+            int count = Mathf.Clamp(Mathf.CeilToInt((p.End + (p.Top - p.Start.y) * 2) / .07f), 40, 96);
+            for (int i = 1; i <= count; i++)
+            {
+                float t = i / (float)count; Vector3 point = VaultPosition(p, t); float height = BodyHeight(p, t);
+                if (!CityPhysics.StandClear(point, ctx.Player, null, height, .34f) ||
+                    !CityPhysics.SweepClear(previous, point, ctx.Player, null, Mathf.Max(previousHeight, height))) return false;
+                previous = point; previousHeight = height;
+            }
+            return true;
+        }
+        void BeginTraversal(VaultState p)
+        {
+            p.Approaching = false; p.Elapsed = 0; vault = p; controller.enabled = false;
+            platform = null; vertical = 0; Grounded = false; airTime = 0; takeoffSpeed = p.EntrySpeed;
+            var rig = ctx.Actors ? ctx.Actors.PlayerRig : null; jumpLead = rig != null && Mathf.Cos(rig.Phase) > 0 ? -1 : 1;
+            Mode = p.Climb ? "climb" : "vault";
+            wantsCrouch = crouching = false; crouchBlend = 0;
+            for (int i = 0; i < 2; i++) { HandTargets[i] = p.Hands[i]; HandNormals[i] = p.Normals[i]; }
+            ctx.Sound("jump", ctx.Player.position, .55f);
+        }
+        void UpdateVault(float dt)
+        {
+            var p = vault;
+            if (p.Approaching)
+            {
+                p.ApproachAge += dt; Vector3 gap = CityPhysics.Flat(p.ApproachTarget - ctx.Player.position);
+                if (gap.magnitude <= .04f)
+                {
+                    if (BuildTraversal(ctx.Player.position, p.Direction, p.EntrySpeed, out var refreshed)) BeginTraversal(refreshed);
+                    else AbortTraversal();
+                    return;
+                }
+                Vector3 before = ctx.Player.position;
+                var flags = controller.Move(gap.normalized * Mathf.Min(gap.magnitude, Mathf.Max(2.4f, p.EntrySpeed) * dt) + Vector3.down * 2 * dt);
+                Speed = CityPhysics.Flat(ctx.Player.position - before).magnitude / dt; Grounded = (flags & CollisionFlags.Below) != 0;
+                Mode = Speed > 5 ? "run" : "walk";
+                ctx.Player.rotation = Quaternion.Slerp(ctx.Player.rotation, Quaternion.LookRotation(p.Direction), 1 - Mathf.Exp(-15 * dt));
+                if (!Grounded || p.ApproachAge > .65f || Speed < .05f) AbortTraversal();
+                return;
+            }
+            if (p.MovingSupport && (!p.Support || Vector3.Distance(p.Support.position, p.SupportStart) > .75f ||
+                Quaternion.Angle(p.SupportRotation, p.Support.rotation) > 15)) { AbortTraversal(); return; }
+            float previousT = p.Elapsed / p.Duration; p.Elapsed = Mathf.Min(p.Duration, p.Elapsed + dt); float t = p.Elapsed / p.Duration;
+            Vector3 next = VaultPosition(p, t);
+            if (p.Support)
+            {
+                next += (p.Support.TransformPoint(p.LocalLanding) - p.Landing) * CityPhysics.Ease(t);
+                for (int i = 0; i < 2; i++) { HandTargets[i] = p.Support.TransformPoint(p.LocalHands[i]); HandNormals[i] = p.Support.TransformDirection(p.LocalNormals[i]); }
+            }
+            float height = BodyHeight(p, t);
+            if (!CityPhysics.StandClear(next, ctx.Player, null, height, .34f) ||
+                !CityPhysics.SweepClear(ctx.Player.position, next, ctx.Player, null, Mathf.Max(BodyHeight(p, previousT), height)))
+            { AbortTraversal(); return; }
+            Vector3 motion = (next - ctx.Player.position) / dt;
+            planarVelocity = Vector3.ClampMagnitude(CityPhysics.Flat(motion), SprintSpeed); vertical = Mathf.Clamp(motion.y, -12, 7);
+            ctx.Player.position = next; Speed = CityPhysics.Flat(motion).magnitude;
+            ctx.Player.rotation = Quaternion.Slerp(ctx.Player.rotation, Quaternion.LookRotation(p.Direction), 1 - Mathf.Exp(-15 * dt));
+            if (t < 1) return;
+            vault = null; controller.height = StandingHeight; controller.center = Vector3.up * (StandingHeight * .5f); controller.enabled = true;
+            vertical = -2; Grounded = true; lastGround = ctx.Clock; lastSafe = ctx.Player.position;
+            float carry = ctx.Input.Move.sqrMagnitude > .01f ? p.Climb ? Mathf.Min(1.6f, p.EntrySpeed * .3f) : p.EntrySpeed * .85f : 0;
+            planarVelocity = p.Direction * carry; Speed = carry; Mode = carry > 5 ? "run" : carry > .1f ? "walk" : "idle";
+            RegisterLanding(p.Top - p.Landing.y > .35f ? 4.2f + (p.Top - p.Landing.y) * .9f : 3.5f);
+        }
+        void AbortTraversal()
+        {
+            vault = null; jumpWindup = -1; jumpUntil = -10;
+            compactRecovery = !CityPhysics.StandClear(ctx.Player.position, ctx.Player, null, StandingHeight, .37f);
+            float height = compactRecovery ? CompactHeight : StandingHeight;
+            controller.height = height; controller.center = Vector3.up * (height * .5f); controller.enabled = true;
+            Grounded = false; Mode = "fall"; vertical = Mathf.Min(vertical, 0); airTime = 0;
+        }
+    }
+}

@@ -1,0 +1,169 @@
+{
+    "passed": false,
+    "captures": true,
+    "checks": [
+        {
+            "name": "C-is-crouch-key",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "C-still-is-vehicle-right-signal",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crouch-poll-toggles-once",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crouch-shortens-real-capsule",
+            "passed": true,
+            "value": 2.0999999046325685
+        },
+        {
+            "name": "crouch-keeps-feet-origin",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crouch-pelvis-stays-above-heels",
+            "passed": true,
+            "value": 0.6395619511604309
+        },
+        {
+            "name": "crouch-lowers-head",
+            "passed": false,
+            "value": 2.106781005859375
+        },
+        {
+            "name": "crouch-head-fits-capsule",
+            "passed": true,
+            "value": 2.106781005859375
+        },
+        {
+            "name": "crouch-camera-follows-posture",
+            "passed": true,
+            "value": 0.3726043701171875
+        },
+        {
+            "name": "crouch-walk-alternates-support",
+            "passed": true,
+            "value": 4.0
+        },
+        {
+            "name": "crouch-can-walk",
+            "passed": true,
+            "value": 1.343282699584961
+        },
+        {
+            "name": "Shift-keeps-crouch-speed",
+            "passed": true,
+            "value": 1.349997878074646
+        },
+        {
+            "name": "map-C-does-not-toggle-crouch",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crouch-keeps-aim-available",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crouch-aim-head-clears-roof",
+            "passed": false,
+            "value": 2.1258544921875
+        },
+        {
+            "name": "Esc-freezes-crouch-and-camera",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "controls-explain-C-in-English",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "C-returns-to-standing",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "standing-posture-recovers",
+            "passed": true,
+            "value": 2.4915313720703127
+        },
+        {
+            "name": "crouch-enters-low-passage",
+            "passed": true,
+            "value": 2.2083868980407717
+        },
+        {
+            "name": "crouch-body-clears-roof",
+            "passed": true,
+            "value": 1.6156768798828126
+        },
+        {
+            "name": "crouch-compacts-only-under-low-roof",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "low-roof-blocks-standing",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "low-roof-blocks-jump",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "standing-check-includes-head-above-capsule",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "leaving-passage-restores-standing",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "Space-stands-and-jumps-in-clear-space",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "touch-crouch-button-exists",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "touch-button-crouches",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "touch-button-stands",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crouch-camera-lens-clear",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "trials": [],
+    "errors": [],
+    "cameraFrames": []
+}

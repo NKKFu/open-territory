@@ -1,0 +1,115 @@
+{
+    "passed": true,
+    "checks": [
+        {
+            "name": "unified-street-network-loaded",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sidewalks-have-continuous-physical-support",
+            "detail": "samples=1237 maxHeightError=0.06617165",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sidewalks-clear-of-static-obstacles",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "full-road-width-clear-of-static-obstacles",
+            "detail": "samples=1956",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vehicles-spawn-on-supported-surfaces",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "parked-vehicles-have-separate-bays",
+            "detail": "",
+            "passed": true,
+            "value": 14.0
+        },
+        {
+            "name": "crosswalks-have-two-clear-sidewalk-approaches",
+            "detail": "",
+            "passed": true,
+            "value": 114.0
+        },
+        {
+            "name": "crosswalk-ramp-0",
+            "detail": "falls=0 from=(345.33, 9.31, 562.13) to=(352.51, 9.28, 556.71)",
+            "passed": true,
+            "value": 0.05081798881292343
+        },
+        {
+            "name": "crosswalk-ramp-1",
+            "detail": "falls=0 from=(-652.65, 9.56, 746.90) to=(-647.23, 9.58, 753.32)",
+            "passed": true,
+            "value": 0.0711231678724289
+        },
+        {
+            "name": "crosswalk-ramp-2",
+            "detail": "falls=0 from=(-96.04, 9.21, 502.13) to=(-86.46, 9.21, 504.98)",
+            "passed": true,
+            "value": 0.091785728931427
+        },
+        {
+            "name": "crosswalk-ramp-3",
+            "detail": "falls=0 from=(672.99, 9.72, 713.73) to=(667.41, 9.75, 722.03)",
+            "passed": true,
+            "value": 0.07573683559894562
+        },
+        {
+            "name": "pier-to-land-0",
+            "detail": "falls=0 from=(980.00, 0.35, 865.96) to=(980.00, 1.00, 880.96)",
+            "passed": true,
+            "value": 0.0692138671875
+        },
+        {
+            "name": "pier-to-land-1",
+            "detail": "falls=0 from=(1234.00, 0.58, 860.30) to=(1234.00, 0.22, 875.30)",
+            "passed": true,
+            "value": 0.0872802734375
+        },
+        {
+            "name": "all-five-boats-reachable-from-the-piers",
+            "detail": "",
+            "passed": true,
+            "value": 5.0
+        },
+        {
+            "name": "bench-seat-heights-are-relative-to-the-floor",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "relocated-bench-can-be-sat-on-at-the-correct-height",
+            "detail": "",
+            "passed": true,
+            "value": 0.8199996948242188
+        },
+        {
+            "name": "relocated-bench-has-a-clear-exit",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "errors": [],
+    "obstacles": []
+}

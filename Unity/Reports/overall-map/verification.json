@@ -1,0 +1,179 @@
+{
+  "passed": true,
+  "allSuitesPassed": true,
+  "verifiedAtUtc": "2026-11-08T13:31:27.067145+00:00",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\OverallMap-20261108\\BaiaDoSol.exe",
+  "assemblySha256": "0C37F6338043717B826C7D831D04DCF8BFF82D3BB06352DD0911F96779C63A3D",
+  "sourceHash": "0312ce3740a2b1b962f60d39c041cae31e6004499073531699098030cb18d031",
+  "sceneSha256": "3E80C9D8712A956FCFABCCF70E3EA98D723F273ABBB767CC6ECBC04747B585D8",
+  "fullBuild": {
+    "passed": true,
+    "result": "Succeeded",
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\OverallMap-20261108\\BaiaDoSol.exe",
+    "snapshot": "C:\\Users\\nelso\\open-territory\\Unity\\ValidationProjects\\OverallMap-20261108",
+    "completedAtUtc": "2026-11-08T13:16:04.1638772Z",
+    "errors": 0,
+    "warnings": 3,
+    "bytes": 1804869766
+  },
+  "buildProcessExitCode": 0,
+  "snapshotCreatedAtUtc": "2026-11-08T13:14:32.2973526Z",
+  "currentSceneSha256": "9AAC5DCB071F083F3D99F2D91363D63E31A5EFF612E1658D077E9A0691132762",
+  "currentSceneChangedDuringValidation": true,
+  "requiredChecks": 2189,
+  "suites": [
+    {
+      "name": "overall",
+      "required": true,
+      "passed": true,
+      "checks": 26,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\overall\\verification.json",
+      "processExitCode": 0,
+      "graphics": "Direct3D12"
+    },
+    {
+      "name": "map",
+      "required": true,
+      "passed": true,
+      "checks": 24,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\map\\verification.json",
+      "processExitCode": 0,
+      "graphics": "Version:         Direct3D 12 [level 12.2]"
+    },
+    {
+      "name": "neighborhood",
+      "required": true,
+      "passed": true,
+      "checks": 21,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\neighborhood\\verification.json",
+      "processExitCode": 0,
+      "graphics": "Version:         Direct3D 12 [level 12.2]"
+    },
+    {
+      "name": "frontage",
+      "required": true,
+      "passed": true,
+      "checks": 19,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\frontage\\verification.json",
+      "processExitCode": 0,
+      "graphics": "Version:         Direct3D 12 [level 12.2]"
+    },
+    {
+      "name": "reference",
+      "required": true,
+      "passed": true,
+      "checks": 72,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\reference\\verification.json",
+      "processExitCode": 0,
+      "graphics": "Version:         Direct3D 12 [level 12.2]"
+    },
+    {
+      "name": "prop-grounding",
+      "required": true,
+      "passed": true,
+      "checks": 1781,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\prop-grounding\\verification.json",
+      "processExitCode": 0,
+      "graphics": "Direct3D12"
+    },
+    {
+      "name": "clothing",
+      "required": true,
+      "passed": true,
+      "checks": 49,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\clothing\\verification.json",
+      "processExitCode": 0,
+      "graphics": "Direct3D12"
+    },
+    {
+      "name": "bike-shop",
+      "required": true,
+      "passed": true,
+      "checks": 46,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\bike-shop\\verification.json",
+      "processExitCode": 0,
+      "graphics": "Direct3D 12"
+    },
+    {
+      "name": "blackthorn",
+      "required": true,
+      "passed": true,
+      "checks": 24,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\blackthorn\\verification.json",
+      "processExitCode": 0,
+      "graphics": "Direct3D11"
+    },
+    {
+      "name": "fire-station",
+      "required": true,
+      "passed": true,
+      "checks": 41,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\fire-station\\verification.json",
+      "processExitCode": null,
+      "graphics": "default"
+    },
+    {
+      "name": "default-session",
+      "required": true,
+      "passed": true,
+      "checks": 4,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\default-session\\verification.json",
+      "processExitCode": 0,
+      "graphics": null
+    },
+    {
+      "name": "outdoor-d3d11",
+      "required": true,
+      "passed": true,
+      "checks": 56,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\outdoor-d3d11\\verification.json",
+      "processExitCode": 0,
+      "graphics": "Direct3D11"
+    },
+    {
+      "name": "overall-d3d11",
+      "required": true,
+      "passed": true,
+      "checks": 26,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\overall-d3d11\\verification.json",
+      "processExitCode": 0,
+      "graphics": "Direct3D11"
+    },
+    {
+      "name": "outdoor-default",
+      "required": false,
+      "passed": true,
+      "checks": 56,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\outdoor-default\\verification.json",
+      "processExitCode": 0,
+      "graphics": "Direct3D12"
+    },
+    {
+      "name": "blackthorn-default",
+      "required": false,
+      "passed": true,
+      "checks": 24,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\blackthorn-default\\verification.json",
+      "processExitCode": 0,
+      "graphics": "Direct3D12"
+    }
+  ],
+  "coverage": {
+    "buildings": 217,
+    "windows": 1818,
+    "buildingGroundSamples": 20629,
+    "roadPaintSamples": 39483,
+    "parkingSamples": 528,
+    "openSlopeYards": 62,
+    "removedWallSections": 1364,
+    "retainedWalls": 1602,
+    "maximumWallHeight": 1.2926277204665717,
+    "protectedColliders": 28342
+  },
+  "visualCaptures": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\overall",
+  "snapshot": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\snapshot.json",
+  "historicalDx12Shutdown": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\outdoor-initial\\d3d12-exit-event.json",
+  "limitations": [
+    "The shared scene received concurrent police station changes after this isolated snapshot; those later changes were preserved and are not included in this player."
+  ]
+}

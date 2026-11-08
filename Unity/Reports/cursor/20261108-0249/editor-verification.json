@@ -1,0 +1,30 @@
+{
+  "verifiedAtUtc": "2026-11-08T05:48:40.460Z",
+  "checks": {
+    "passed": true,
+    "checks": {
+      "focused-game-ready": true,
+      "automatic-gameplay-capture": true,
+      "settings-release-cursor": true,
+      "paused-frames-keep-cursor-free": true,
+      "resume-recaptures-without-click": true,
+      "map-releases-cursor-with-simulation-running": true,
+      "closing-map-recaptures": true,
+      "disabled-context-releases-cursor": true,
+      "enabled-context-recaptures": true,
+      "restores-capture-cleared-by-system": true
+    },
+    "cursor": "Confined",
+    "focused": true
+  },
+  "focusLoss": {
+    "passed": true,
+    "focused": false,
+    "cursor": "None"
+  },
+  "focusReturn": {
+    "passed": true,
+    "focused": true,
+    "cursor": "Confined"
+  }
+}

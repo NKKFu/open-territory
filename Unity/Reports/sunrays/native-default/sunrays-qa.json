@@ -1,0 +1,144 @@
+{
+    "passed": true,
+    "completed": true,
+    "unity": "6000.3.27f1",
+    "graphicsApi": "Direct3D12",
+    "startedUtc": "2026-11-08T03:57:39.6271086Z",
+    "width": 1280,
+    "height": 720,
+    "quality": 1,
+    "msaa": 2,
+    "checks": [
+        {
+            "name": "native-city-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "effect-and-shader-in-native-player",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible-shafts-around-occluding-pillars",
+            "detail": "changed pixels=83947",
+            "passed": true
+        },
+        {
+            "name": "effect-preserves-most-of-the-image",
+            "detail": "changed pixels=83947",
+            "passed": true
+        },
+        {
+            "name": "bounded-low-resolution-buffers",
+            "detail": "width=320",
+            "passed": true
+        },
+        {
+            "name": "occlusion-alignment-with-msaa-0",
+            "detail": "changed pixels=84046",
+            "passed": true
+        },
+        {
+            "name": "occlusion-alignment-with-msaa-2",
+            "detail": "changed pixels=83947",
+            "passed": true
+        },
+        {
+            "name": "occlusion-alignment-with-msaa-4",
+            "detail": "changed pixels=83935",
+            "passed": true
+        },
+        {
+            "name": "solid-covered-view-has-no-light-leak",
+            "detail": "changed pixels=0",
+            "passed": true
+        },
+        {
+            "name": "transparent-cloud-volume-blocks-rays",
+            "detail": "changed pixels=0 cloud draws=1",
+            "passed": true
+        },
+        {
+            "name": "squall-reduces-sun-rays",
+            "detail": "clear=0.69228 squall=0.0262368",
+            "passed": true
+        },
+        {
+            "name": "night-and-moon-do-not-emit-sun-rays",
+            "detail": "changed pixels=0",
+            "passed": true
+        },
+        {
+            "name": "sun-behind-camera-is-a-clean-bypass",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "settings-toggle-disables-rays",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "settings-toggle-restores-rays",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "disabling-AO-keeps-ray-depth",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "both-disabled-release-owned-depth",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "AO-keeps-depth-with-rays-disabled",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "low-quality-disables-rays-and-toggle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "balanced-quality-restores-rays",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "high-quality-keeps-buffer-bounded",
+            "detail": "width=427",
+            "passed": true
+        },
+        {
+            "name": "new-control-does-not-overlap-footer",
+            "detail": "toggle bottom=162 footer top=139.5",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-sun-source-and-world-clock",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "closing-settings-resumes-sun-motion",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "only-explicit-QA-probe-installed",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

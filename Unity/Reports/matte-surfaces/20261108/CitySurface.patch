@@ -1,0 +1,18 @@
+--- CitySurface.before.shader
++++ CitySurface.shader
+@@ -94,7 +94,14 @@
+    float2 edge=_RoomSize.xy-abs(float2(dot(room,_RoomRight.xyz),dot(room,_RoomForward.xyz)));
+    float bounce=_RoomSize.w*smoothstep(.06,.19,min(edge.x,edge.y))*step(.02,room.y)*step(room.y,_RoomSize.z);
+    o.Emission+=c.rgb*_RoomLight.rgb*bounce*(1-_Unlit);
+-   o.Metallic=_Metallic;o.Smoothness=lerp(_Glossiness,.7,film*.72);o.Alpha=c.a;
++   // Dry asphalt and porous ground stay matte under headlights. Rain darkens
++   // soil rather than coating it with the same glossy film as hard surfaces.
++   float asphalt=kind>.5&&kind<1.5?1:0;
++   float porous=(kind>2.5&&kind<3.5)||(kind>4.5&&kind<6.5)?1:0;
++   float drySmoothness=asphalt>0?min(_Glossiness,.025):porous>0?min(_Glossiness,.01):_Glossiness;
++   float wetSmoothness=asphalt>0?.18:porous>0?.04:.7;
++   o.Metallic=asphalt+porous>0?0:_Metallic;
++   o.Smoothness=lerp(drySmoothness,wetSmoothness,film*.72);o.Alpha=c.a;
+   }
+   ENDCG
+  }

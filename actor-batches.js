@@ -3,8 +3,9 @@
 export function createActorBatches({THREE:T,scene}){
   const pools=new Map(),geometryKeys=new WeakMap(),bounds=new WeakMap(),local=new T.Matrix4(),world=new T.Matrix4(),tint=new T.Color(),instanceTint=new T.Color();
   const frustum=new T.Frustum(),viewProjection=new T.Matrix4(),viewSphere=new T.Sphere();
-  const batchable=object=>object.isMesh&&!Array.isArray(object.material)&&['BoxGeometry','CylinderGeometry','TorusGeometry'].includes(object.geometry.type);
+  const batchable=object=>object.isMesh&&!Array.isArray(object.material)&&(object.geometry.userData.cityBatch||['BoxGeometry','CylinderGeometry','TorusGeometry'].includes(object.geometry.type));
   function geometryKey(geometry){
+    if(geometry.userData.cityBatch)return geometry.uuid;
     if(!geometryKeys.has(geometry))geometryKeys.set(geometry,`${geometry.type}:${JSON.stringify(geometry.parameters)}`);
     return geometryKeys.get(geometry);
   }

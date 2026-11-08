@@ -1,0 +1,112 @@
+{
+  "passed": true,
+  "verifiedAtUtc": "2026-11-08T09:39:49.4877069Z",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\DriverSeat-20261108\\BaiaDoSol.exe",
+  "launcher": "C:\\Users\\nelso\\open-territory\\Unity\\Jogar.ps1",
+  "buildType": "Full",
+  "buildProcessExitCode": 0,
+  "graphics": "Direct3D12",
+  "assemblySha256": "17E5585CDAC0B9F3AE68C47C5637FBC33DD6FDAB9E348CC8D5CB0A5AB75712DA",
+  "taskSourcesMatchWorkspace": true,
+  "taskSourcesMatchSnapshot": true,
+  "sceneSnapshotSha256": "74BF7BCF701BFB567DED315D2B8D64FD18D7A974F5B3F72124C44B3528E67CD9",
+  "workspaceSceneSha256AtVerification": "9117DB4B6AE493FBDC09EFA6275CC5C3718345C5380B173182AD065F13D846B5",
+  "workspaceHasLaterSceneEdits": true,
+  "snapshot": {
+    "snapshot": "C:/Users/nelso/AppData/Local/Temp/OpenTerritory-DriverSeat-20261108-0918",
+    "createdAtUtc": "2026-11-08T09:30:29.1528838Z",
+    "sceneSha256": "74BF7BCF701BFB567DED315D2B8D64FD18D7A974F5B3F72124C44B3528E67CD9",
+    "sourceSceneSha256": "74BF7BCF701BFB567DED315D2B8D64FD18D7A974F5B3F72124C44B3528E67CD9"
+  },
+  "totalChecks": 301,
+  "seats": [
+    {
+      "model": "sedã",
+      "floorHeight": 0.8249994516372681,
+      "minimumFloorGap": 0.034985899925231934,
+      "minimumRoofGap": 0.05799984931945801,
+      "maximumHandGap": 0.0017032151808962226
+    },
+    {
+      "model": "compacto",
+      "floorHeight": 0.8250057697296143,
+      "minimumFloorGap": 0.025797128677368164,
+      "minimumRoofGap": 0.05831170082092285,
+      "maximumHandGap": 0.005198627710342407
+    },
+    {
+      "model": "perua",
+      "floorHeight": 0.8250055313110352,
+      "minimumFloorGap": 0.03497958183288574,
+      "minimumRoofGap": 0.0579075813293457,
+      "maximumHandGap": 2.4027400513659813E-07
+    },
+    {
+      "model": "picape",
+      "floorHeight": 0.8250007629394531,
+      "minimumFloorGap": 0.05336618423461914,
+      "minimumRoofGap": 0.056363582611083984,
+      "maximumHandGap": 2.384185791015625E-07
+    },
+    {
+      "model": "furgão",
+      "floorHeight": 0.825005292892456,
+      "minimumFloorGap": 0.25336194038391113,
+      "minimumRoofGap": 0.055231332778930664,
+      "maximumHandGap": 1.1920928955078125E-07
+    }
+  ],
+  "suites": [
+    {
+      "verifiedAtUtc": "2026-11-08T09:35:36.4873298Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\DriverSeat-20261108\\BaiaDoSol.exe",
+      "assemblySha256": "17E5585CDAC0B9F3AE68C47C5637FBC33DD6FDAB9E348CC8D5CB0A5AB75712DA",
+      "assemblyUnchanged": true,
+      "processExitCode": 0,
+      "captures": true,
+      "graphics": "Direct3D12",
+      "arguments": [
+        "-batchmode",
+        "-screen-fullscreen",
+        "0",
+        "-screen-width",
+        "1280",
+        "-screen-height",
+        "800",
+        "--city-driver-contact-qa",
+        "--city-report-dir",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\driver-seat\\native-r2\"",
+        "-logFile",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\driver-seat\\native-r2\\player.log\""
+      ],
+      "passed": true,
+      "checks": 97,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\driver-seat\\native-r2\\driver-contact-qa.json"
+    },
+    {
+      "verifiedAtUtc": "2026-11-08T09:37:55.8760326Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\DriverSeat-20261108\\BaiaDoSol.exe",
+      "assemblySha256": "17E5585CDAC0B9F3AE68C47C5637FBC33DD6FDAB9E348CC8D5CB0A5AB75712DA",
+      "assemblyUnchanged": true,
+      "processExitCode": 0,
+      "captures": true,
+      "arguments": [
+        "-batchmode",
+        "-screen-fullscreen",
+        "0",
+        "-screen-width",
+        "1280",
+        "-screen-height",
+        "800",
+        "--city-carjacking-qa",
+        "--city-report-dir",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\driver-seat\\carjacking-final\"",
+        "-logFile",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\driver-seat\\carjacking-final\\player.log\""
+      ],
+      "passed": true,
+      "checks": 204,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\driver-seat\\carjacking-final\\carjacking-qa.json"
+    }
+  ]
+}

@@ -1,8 +1,12 @@
 *{box-sizing:border-box}
 html,body{width:100%;height:100%;margin:0;overflow:hidden}
 body{background:#a8dbe2;color:#fff;font-family:ui-rounded,"Avenir Next",system-ui,sans-serif;touch-action:none}
-#world,#world canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+#world{position:fixed;inset:0}
+#world canvas{display:block;width:100%;height:100%;outline:0}
+#world.combat-aim canvas{cursor:crosshair}
 #world.post-fallback canvas{filter:saturate(1.14) contrast(1.025)}
+#world.camera-feed canvas{filter:saturate(.68) contrast(1.06)}
+#world.drone-feed canvas{filter:saturate(.92) contrast(1.035)}
 #world.post-fallback::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 52%,transparent 45%,rgba(13,24,35,.22) 100%)}
 .hidden{display:none!important}
 #touch{display:none}
@@ -12,6 +16,58 @@ body{background:#a8dbe2;color:#fff;font-family:ui-rounded,"Avenir Next",system-u
   .dpad button:first-child{grid-column:2}
   .dpad button:nth-child(2){grid-column:1}
   .touch-actions{display:flex;gap:8px}
+  #touchCombat{position:absolute;right:0;bottom:61px;display:flex;gap:5px}
+  #touchDroneFlight{position:absolute;right:0;bottom:61px;display:flex;gap:6px}
+  #touch #touchDroneFlight button{width:auto;min-width:57px;padding:0 8px;font-size:14px}
+  #touch #touchCombat button{width:auto;min-width:40px;padding:0 7px;height:39px;font-size:13px}
+  #touch #touchCombat [aria-pressed="true"]{background:#226d69ef;color:#fff2b9}
   #touch button{pointer-events:auto;width:46px;height:46px;border:0;border-radius:12px;background:#163f46a8;color:white;font-weight:700;font-size:18px;touch-action:none}
   .touch-actions button{width:52px;height:52px}
+  #touch .touch-settings{position:fixed;right:max(18px,env(safe-area-inset-right));top:max(14px,env(safe-area-inset-top));font-size:23px}
+  #touch .touch-fullscreen{position:fixed;right:calc(max(18px,env(safe-area-inset-right)) + 54px);top:max(14px,env(safe-area-inset-top));font-size:23px}
 }
+
+#settings{
+  --ink:#153741;--paper:#eff0df;--foam:#acd4c9;--sun:#ffcc67;
+  position:fixed;inset:0 auto 0 0;margin:0;width:min(560px,100%);height:100%;height:100dvh;max-width:none;max-height:none;
+  border:0;border-right:4px solid #82a99d;color:var(--paper);background:#12333cee;
+  padding:clamp(22px,5vh,54px) clamp(20px,4vw,54px) max(22px,env(safe-area-inset-bottom));
+  overflow:auto;overscroll-behavior:contain;touch-action:pan-y;color-scheme:dark;
+  font:500 16px/1.4 "Bahnschrift","Segoe UI",system-ui,sans-serif;
+}
+#settings[open]{display:flex;flex-direction:column}
+#settings::backdrop{background:linear-gradient(90deg,#102b3599,#112f3940 62%,#102b3529)}
+#settings :focus-visible{outline:3px solid var(--sun);outline-offset:4px}
+#settings button{font:inherit;cursor:pointer}
+.settings-heading{padding-bottom:clamp(18px,4vh,34px)}
+.settings-place{font:700 13px/1.3 Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--foam);display:flex;align-items:center;gap:12px}
+.settings-place i{display:inline-block;width:24px;height:17px;background:linear-gradient(0deg,var(--foam) 0 16%,transparent 16% 29%,var(--foam) 29% 41%,transparent 41%),radial-gradient(circle at 50% 70%,var(--sun) 0 48%,transparent 50%)}
+#settings h1{font:750 clamp(36px,5vw,62px)/1.04 "Bahnschrift SemiCondensed","Arial Narrow","Segoe UI",sans-serif;letter-spacing:-.055em;margin:12px 0 0}
+.settings-tabs{display:flex;gap:3px;border-bottom:1px solid #a8c9ba66;padding-bottom:9px;margin-bottom:clamp(18px,4vh,34px)}
+.settings-tabs button{border:0;background:transparent;color:var(--foam);padding:8px 14px}
+.settings-tabs button[aria-selected=true]{background:var(--foam);color:var(--ink);font-weight:700;box-shadow:inset 0 -3px 0 #648d84}
+#settings [role=tabpanel]{margin-bottom:24px}
+.fullscreen-setting{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.fullscreen-setting button{border:1px solid #79998e;background:#294b52;color:var(--paper);padding:8px 12px}
+.fullscreen-setting kbd{font:600 13px Consolas,monospace;color:var(--foam)}
+#fullscreenStatus:not(:empty){color:var(--sun);margin-bottom:14px}
+:fullscreen #world{width:100%;height:100%}
+#settings fieldset{margin:0 0 26px;padding:0;border:0}
+#settings legend,.settings-range>span,.settings-check>span{font-weight:650;letter-spacing:.005em}
+.settings-options{display:flex;gap:4px;margin-top:11px}
+.settings-options label{position:relative;cursor:pointer;flex:1}
+.settings-options input{position:absolute;opacity:0;width:1px;height:1px}
+.settings-options span{display:block;text-align:center;background:#294b52;color:var(--paper);border:1px solid #54746e;padding:10px 4px}
+.settings-options input:checked+span{color:var(--sun);border-color:var(--sun);box-shadow:inset 0 -2px var(--sun)}
+.settings-options input:focus-visible+span{outline:3px solid var(--sun);outline-offset:2px}
+.settings-range,.settings-check{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px}
+.settings-range output,.key-list dd{font:600 14px/1.25 Consolas,monospace;color:var(--foam)}
+.settings-range input{grid-column:1/-1;accent-color:var(--sun);width:100%;height:28px;margin:0;cursor:pointer;touch-action:none}
+.settings-check{margin-top:20px}.settings-check input{width:20px;height:20px;accent-color:var(--sun)}
+.key-list{margin:24px 0 0}.key-list div{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #a8c9ba45;padding:6px 0}.key-list dd{margin:0}
+.settings-footer{margin-top:auto;display:flex;justify-content:space-between;gap:8px;align-items:center;padding-top:16px;border-top:1px solid #a8c9ba66}
+#resumeGame{color:var(--ink);background:var(--sun);border:0;padding:10px 14px;font-weight:700!important}
+#resumeGame kbd{font:600 12px/1 monospace;border:1px solid #796938;padding:2px 4px;margin-right:3px}
+#resetSettings{background:transparent;color:var(--foam);border:0;text-decoration:underline;text-underline-offset:3px;padding:8px 2px;font-size:13px!important}
+@media(max-width:480px){#settings{border-right:0}.settings-tabs button{flex:1}.settings-footer{flex-wrap:wrap}}
+@media(prefers-reduced-motion:no-preference){#settings[open]{animation:settings-in .18s ease-out}@keyframes settings-in{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:translateX(0)}}}

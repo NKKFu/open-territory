@@ -1,0 +1,388 @@
+{
+    "passed": false,
+    "unity": "6000.3.27f1",
+    "graphics": "Direct3D12",
+    "checks": [
+        {
+            "name": "sedã-E-targets-car--1",
+            "detail": "action=vehicle-8908 player=(-1.98, 200.03, -0.28) car=(0.00, 200.10, 0.00) busy=False speed=0",
+            "passed": true
+        },
+        {
+            "name": "sedã-boards-visible-driver",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-driver-inherits-vehicle-render-pose",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-wheel-fit-is-idempotent",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-rim-clear-of-face-and-windscreen",
+            "detail": "back=0.3021307 front=0.5378692 top=1.55774",
+            "passed": true
+        },
+        {
+            "name": "sedã-driver-stays-inside-at-speed-and-in-turns",
+            "detail": "seatGap=7.701349E-06 angle=0",
+            "passed": true
+        },
+        {
+            "name": "sedã-both-hands-follow-the-wheel",
+            "detail": "maxGap=2.457562E-07",
+            "passed": true
+        },
+        {
+            "name": "sedã-Esc-freezes-driver-and-vehicle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-exit-restores-parent-capsule-and-scale",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-walks-after-exit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-E-targets-car-1",
+            "detail": "action=vehicle-9476 player=(1.86, 200.03, -0.28) car=(0.00, 200.10, 0.00) busy=False speed=0",
+            "passed": true
+        },
+        {
+            "name": "compacto-boards-visible-driver",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-driver-inherits-vehicle-render-pose",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-wheel-fit-is-idempotent",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-rim-clear-of-face-and-windscreen",
+            "detail": "back=0.3021306 front=0.5378693 top=1.507738",
+            "passed": true
+        },
+        {
+            "name": "compacto-driver-stays-inside-at-speed-and-in-turns",
+            "detail": "seatGap=7.66308E-06 angle=0",
+            "passed": true
+        },
+        {
+            "name": "compacto-both-hands-follow-the-wheel",
+            "detail": "maxGap=2.665601E-07",
+            "passed": true
+        },
+        {
+            "name": "compacto-Esc-freezes-driver-and-vehicle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-exit-restores-parent-capsule-and-scale",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-walks-after-exit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "perua-E-targets-car--1",
+            "detail": "action=vehicle-9088 player=(-1.97, 200.03, -0.28) car=(0.00, 200.10, 0.00) busy=False speed=0",
+            "passed": true
+        },
+        {
+            "name": "perua-boards-visible-driver",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "perua-driver-inherits-vehicle-render-pose",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "perua-wheel-fit-is-idempotent",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "perua-rim-clear-of-face-and-windscreen",
+            "detail": "back=0.3021307 front=0.5378693 top=1.707736",
+            "passed": true
+        },
+        {
+            "name": "perua-driver-stays-inside-at-speed-and-in-turns",
+            "detail": "seatGap=7.62241E-06 angle=0",
+            "passed": true
+        },
+        {
+            "name": "perua-both-hands-follow-the-wheel",
+            "detail": "maxGap=2.665601E-07",
+            "passed": true
+        },
+        {
+            "name": "perua-Esc-freezes-driver-and-vehicle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "perua-exit-restores-parent-capsule-and-scale",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "perua-walks-after-exit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "picape-E-targets-car-1",
+            "detail": "action=vehicle-9283 player=(2.03, 200.03, -0.10) car=(0.00, 199.97, 0.00) busy=False speed=0",
+            "passed": true
+        },
+        {
+            "name": "picape-boards-visible-driver",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "picape-driver-inherits-vehicle-render-pose",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "picape-wheel-fit-is-idempotent",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "picape-rim-clear-of-face-and-windscreen",
+            "detail": "back=0.4821307 front=0.7178692 top=1.777743",
+            "passed": true
+        },
+        {
+            "name": "picape-driver-stays-inside-at-speed-and-in-turns",
+            "detail": "seatGap=7.601221E-06 angle=0",
+            "passed": true
+        },
+        {
+            "name": "picape-both-hands-follow-the-wheel",
+            "detail": "maxGap=2.457562E-07",
+            "passed": true
+        },
+        {
+            "name": "picape-Esc-freezes-driver-and-vehicle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "picape-exit-restores-parent-capsule-and-scale",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "picape-walks-after-exit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "furgão-E-targets-car--1",
+            "detail": "action=vehicle-10428 player=(-1.96, 200.03, -0.10) car=(0.00, 200.10, 0.00) busy=False speed=0",
+            "passed": true
+        },
+        {
+            "name": "furgão-boards-visible-driver",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "furgão-driver-inherits-vehicle-render-pose",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "furgão-wheel-fit-is-idempotent",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "furgão-rim-clear-of-face-and-windscreen",
+            "detail": "back=0.4821308 front=0.7178692 top=1.977741",
+            "passed": true
+        },
+        {
+            "name": "furgão-driver-stays-inside-at-speed-and-in-turns",
+            "detail": "seatGap=7.579291E-06 angle=0",
+            "passed": true
+        },
+        {
+            "name": "furgão-both-hands-follow-the-wheel",
+            "detail": "maxGap=4.80548E-07",
+            "passed": true
+        },
+        {
+            "name": "furgão-Esc-freezes-driver-and-vehicle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "furgão-exit-restores-parent-capsule-and-scale",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "furgão-walks-after-exit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-E-targets-car--1",
+            "detail": "action=vehicle-8908 player=(-1.98, 200.03, -0.28) car=(0.00, 200.10, 0.00) busy=False speed=0",
+            "passed": true
+        },
+        {
+            "name": "sedã-boards-visible-driver",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "forward-actual-contact-damages-and-knocks-down",
+            "detail": "health=10 contactSpeed=11.86528 car=(0.00, 199.98, 2.86) person=(0.00, 200.04, 5.45)",
+            "passed": true
+        },
+        {
+            "name": "forward-physical-body-receives-impact-momentum",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-fallen-NPC",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "one-impact-does-not-repeat-damage-per-body-shape",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "forward-NPC-recovers-with-controller",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "player-run-over-reports-to-police",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "slow-contact-actual-contact-damages-and-knocks-down",
+            "detail": "health=90.54551 contactSpeed=2.550499 car=(0.00, 199.98, 2.73) person=(0.00, 200.04, 5.46)",
+            "passed": true
+        },
+        {
+            "name": "slow-contact-stays-between-2-and-4-metres-per-second",
+            "detail": "2.550499",
+            "passed": true
+        },
+        {
+            "name": "slow-contact-physical-body-receives-impact-momentum",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "slow-contact-NPC-recovers-with-controller",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "fast-contact-actual-contact-damages-and-knocks-down",
+            "detail": "health=10 contactSpeed=34.84493 car=(0.00, 200.06, 3.11) person=(0.00, 200.04, 5.79)",
+            "passed": true
+        },
+        {
+            "name": "fast-contact-physical-body-receives-impact-momentum",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "fast-contact-NPC-recovers-with-controller",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "reverse-actual-contact-damages-and-knocks-down",
+            "detail": "health=61.14473 contactSpeed=5.817252 car=(0.00, 199.98, -2.88) person=(0.00, 200.04, -5.50)",
+            "passed": true
+        },
+        {
+            "name": "reverse-physical-body-receives-impact-momentum",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "reverse-NPC-recovers-with-controller",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "crossing-actual-contact-damages-and-knocks-down",
+            "detail": "health=24.69855 contactSpeed=9.866828 car=(0.00, 199.97, 2.87) person=(-0.51, 200.04, 5.55)",
+            "passed": true
+        },
+        {
+            "name": "crossing-physical-body-receives-impact-momentum",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "crossing-NPC-recovers-with-controller",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "near-miss-does-not-damage-NPC",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "parked-car-does-not-knock-down-a-touching-NPC",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "solid-wall-prevents-predicted-actor-damage",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "same-step-contact-hits-both-NPCs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

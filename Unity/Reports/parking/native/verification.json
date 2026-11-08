@@ -1,0 +1,27 @@
+﻿{
+    "verifiedAtUtc":  "2026-11-08T13:49:58.8998832Z",
+    "executable":  "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\ParkingLot-20261108-Final\\BaiaDoSol.exe",
+    "assemblySha256":  "741CD1C3B9A3215A5E430984B3D97050B04E403AC0BFC4D6D5BE6EDFD1149728",
+    "assemblyChangedDuringRun":  false,
+    "processExitCode":  0,
+    "passed":  true,
+    "checks":  19,
+    "surfaceSamples":  578,
+    "drivewaySamples":  99,
+    "graphics":  "Direct3D12",
+    "arguments":  [
+                      "-batchmode",
+                      "-screen-fullscreen",
+                      "0",
+                      "-screen-width",
+                      "1280",
+                      "-screen-height",
+                      "800",
+                      "--city-parking-qa",
+                      "--city-report-dir",
+                      "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\parking\\native\"",
+                      "-logFile",
+                      "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\parking\\native\\player.log\""
+                  ],
+    "report":  "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\parking\\native\\parking-qa.json"
+}

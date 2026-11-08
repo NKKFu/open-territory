@@ -1,0 +1,368 @@
+{
+    "passed": true,
+    "unity": "6000.3.27f1",
+    "sourceHash": "db329f56d86ee1099dbbab7ef21ecc7cdddfe93a068ad0144aa600ea211ceef3",
+    "checks": [
+        {
+            "name": "native-context-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Z-F-Tab-and-signal-bindings",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "scanner-starts-off",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "public-phone-exists",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-phone-can-be-targeted",
+            "detail": "device-5",
+            "passed": true
+        },
+        {
+            "name": "preview-only-never-executes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "preview-identifies-target-and-action",
+            "detail": "TELEFONE\n[F] Tocar\n\n[Tab] 1/2   [Z]",
+            "passed": true
+        },
+        {
+            "name": "custom-hacking-card-is-visible",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Z-hides-preview-without-hacking",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "F-outside-mode-executes-once-while-held",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "release-does-not-hack",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Tab-changes-predicted-action",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "card-button-executes-exactly-one-hack",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "silence-stops-this-phone",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "card-button-cycles-actions",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-pauses-effects-and-rejects-input",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "resume-does-not-execute-buffered-hack",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "walls-block-target-selection",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "empty-sky-cannot-be-hacked",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "range-is-measured-from-character",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing-luminaires-are-hackable",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "luminaire-can-be-targeted",
+            "detail": "light-circuit-444",
+            "passed": true
+        },
+        {
+            "name": "blackout-disables-real-light",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "blackout-reduces-night-visibility",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "daylight-still-preserves-visibility",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "F-restores-the-selected-circuit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "blackout-recovers-automatically",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "electronic-door-can-be-targeted",
+            "detail": "device-8",
+            "passed": true
+        },
+        {
+            "name": "F-opens-real-door",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "locked-door-waits-for-occupied-threshold",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "locked-door-predicts-blocked-open",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "locked-door-closes-after-threshold-clears",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "unlock-restores-automatic-access",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "resident-with-real-controller-is-present",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "resident-phone-can-be-targeted",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "phone-hack-interrupts-routine-and-shows-prop",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "resident-resumes-after-distraction",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "city-investigation-uses-real-movement",
+            "detail": "reacting=1 moved=0.6566232",
+            "passed": true
+        },
+        {
+            "name": "witness-starts-a-real-police-call",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "caller-predicts-interrupting-the-report",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "F-cancels-call-before-dispatch",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "parked-car-has-real-physics",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "vehicle-can-be-targeted",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "vehicle-offers-six-distinct-actions",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "remote-horn-is-spatial-audio",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "alarm-is-temporary-and-flashes-vehicle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "F-starts-the-selected-remote-manoeuvre",
+            "detail": "action=vehicle-forward until=36.7653 clock=33.84312",
+            "passed": true
+        },
+        {
+            "name": "remote-manoeuvre-uses-rigidbody",
+            "detail": "moved=1.852495 speed=2.562306",
+            "passed": true
+        },
+        {
+            "name": "remote-manoeuvre-brakes-for-obstacle",
+            "detail": "reason=hack-obstaculo speed=0.002347901",
+            "passed": true
+        },
+        {
+            "name": "remote-manoeuvre-expires",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "alarm-expires",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "F-assumes-full-remote-vehicle-control",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "remote-driving-has-a-custom-connection-card",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "remote-W-drives-car-and-keeps-body-in-place",
+            "detail": "moved=2.791312",
+            "passed": true
+        },
+        {
+            "name": "remote-camera-follows-car",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "remote-A-D-steer-real-wheels",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-pauses-remotely-driven-car",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "E-restores-body-control-and-brakes-car",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "remote-control-never-boards-the-player",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-loss-disconnects-and-brakes-car",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-hack-accepts-stop",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-stops-both-directions",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-cycle-can-be-restored",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "fountain-switch-changes-water-state",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "fountain-pump-attracts-attention",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "radio-has-a-real-interference-action",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "cinema-switch-changes-projection",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "cinema-mechanism-attracts-attention",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "water-panel-offers-on-and-off",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "security-camera-can-be-targeted",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "F-enters-camera-without-held-scan",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "drone-preserves-hacker-mode",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

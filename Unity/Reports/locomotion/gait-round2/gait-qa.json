@@ -1,0 +1,263 @@
+{
+    "passed": false,
+    "checks": [
+        {
+            "name": "walk-actual-foot-reaches-target",
+            "passed": true,
+            "value": 2.3888378564151937e-7
+        },
+        {
+            "name": "walk-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 8.99791643860226e-7
+        },
+        {
+            "name": "walk-balanced-contacts",
+            "passed": true,
+            "value": -1.0
+        },
+        {
+            "name": "walk-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.14314383268356324
+        },
+        {
+            "name": "walk-bends-knees",
+            "passed": true,
+            "value": 72.30267333984375
+        },
+        {
+            "name": "walk-cadence",
+            "passed": true,
+            "value": 2.8974616527557375
+        },
+        {
+            "name": "walk-speed-preserved",
+            "passed": true,
+            "value": 2.6499993801116945
+        },
+        {
+            "name": "sprint-actual-foot-reaches-target",
+            "passed": true,
+            "value": 2.9802322387695315e-8
+        },
+        {
+            "name": "sprint-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 8.96261610705551e-7
+        },
+        {
+            "name": "sprint-balanced-contacts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sprint-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.18490374088287354
+        },
+        {
+            "name": "sprint-bends-knees",
+            "passed": true,
+            "value": 136.70272827148438
+        },
+        {
+            "name": "sprint-cadence",
+            "passed": true,
+            "value": 3.866844654083252
+        },
+        {
+            "name": "sprint-speed-preserved",
+            "passed": true,
+            "value": 7.400001049041748
+        },
+        {
+            "name": "sprint-turn-actual-foot-reaches-target",
+            "passed": false,
+            "value": 0.03232595697045326
+        },
+        {
+            "name": "sprint-turn-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 4.2425779156474166e-7
+        },
+        {
+            "name": "sprint-turn-balanced-contacts",
+            "passed": true,
+            "value": -1.0
+        },
+        {
+            "name": "sprint-turn-pelvis-remains-upright",
+            "passed": false,
+            "value": 0.3440536856651306
+        },
+        {
+            "name": "sprint-turn-bends-knees",
+            "passed": true,
+            "value": 136.81495666503907
+        },
+        {
+            "name": "idle-stops-gait",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "jump-preserved",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "landing-preserved",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "aim-strafe-actual-foot-reaches-target",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "aim-strafe-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "aim-strafe-balanced-contacts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "aim-strafe-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.1589503288269043
+        },
+        {
+            "name": "aim-strafe-bends-knees",
+            "passed": true,
+            "value": 72.91407775878906
+        },
+        {
+            "name": "blocked-does-not-run-in-place",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "slope-walk-actual-foot-reaches-target",
+            "passed": true,
+            "value": 0.0003352623316459358
+        },
+        {
+            "name": "slope-walk-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 0.0003577701572794467
+        },
+        {
+            "name": "slope-walk-balanced-contacts",
+            "passed": true,
+            "value": -1.0
+        },
+        {
+            "name": "slope-walk-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.1589970588684082
+        },
+        {
+            "name": "slope-walk-bends-knees",
+            "passed": true,
+            "value": 70.74565887451172
+        },
+        {
+            "name": "settings-freeze-animation",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "motions": [
+        {
+            "name": "walk",
+            "frames": 271,
+            "leftContacts": 4,
+            "rightContacts": 5,
+            "seconds": 3.1061670780181886,
+            "speed": 2.6499993801116945,
+            "footError": 2.3888378564151937e-7,
+            "plantedSlip": 8.99791643860226e-7,
+            "hipMin": 0.8308520317077637,
+            "hipMax": 0.9739958643913269,
+            "hipJump": 0.07618236541748047,
+            "kneeFlexion": 72.30267333984375,
+            "clearance": 0.14495849609375,
+            "contactsPerSecond": 2.8974616527557375
+        },
+        {
+            "name": "sprint",
+            "frames": 272,
+            "leftContacts": 6,
+            "rightContacts": 6,
+            "seconds": 3.1033053398132326,
+            "speed": 7.400001049041748,
+            "footError": 2.9802322387695315e-8,
+            "plantedSlip": 8.96261610705551e-7,
+            "hipMin": 0.7520264387130737,
+            "hipMax": 0.9369301795959473,
+            "hipJump": 0.1122967004776001,
+            "kneeFlexion": 136.70272827148438,
+            "clearance": 0.4895782470703125,
+            "contactsPerSecond": 3.866844654083252
+        },
+        {
+            "name": "sprint-turn",
+            "frames": 279,
+            "leftContacts": 5,
+            "rightContacts": 6,
+            "seconds": 3.1054656505584719,
+            "speed": 7.11831521987915,
+            "footError": 0.03232595697045326,
+            "plantedSlip": 4.2425779156474166e-7,
+            "hipMin": 0.5929388403892517,
+            "hipMax": 0.9369925260543823,
+            "hipJump": 0.07378959655761719,
+            "kneeFlexion": 136.81495666503907,
+            "clearance": 0.4897308349609375,
+            "contactsPerSecond": 3.542141914367676
+        },
+        {
+            "name": "aim-strafe",
+            "frames": 279,
+            "leftContacts": 3,
+            "rightContacts": 3,
+            "seconds": 3.1041007041931154,
+            "speed": 1.7499984502792359,
+            "footError": 0.0,
+            "plantedSlip": 0.0,
+            "hipMin": 0.8150495886802673,
+            "hipMax": 0.9739999175071716,
+            "hipJump": 0.030287623405456544,
+            "kneeFlexion": 72.91407775878906,
+            "clearance": 0.144989013671875,
+            "contactsPerSecond": 1.9329270124435425
+        },
+        {
+            "name": "slope-walk",
+            "frames": 279,
+            "leftContacts": 4,
+            "rightContacts": 5,
+            "seconds": 3.104268789291382,
+            "speed": 2.6499998569488527,
+            "footError": 0.0003352623316459358,
+            "plantedSlip": 0.0003577701572794467,
+            "hipMin": 0.81500244140625,
+            "hipMax": 0.9739995002746582,
+            "hipJump": 0.05103302001953125,
+            "kneeFlexion": 70.74565887451172,
+            "clearance": 0.12628173828125,
+            "contactsPerSecond": 2.89923357963562
+        }
+    ],
+    "errors": []
+}

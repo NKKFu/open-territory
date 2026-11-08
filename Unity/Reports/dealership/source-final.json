@@ -1,0 +1,50 @@
+{
+  "recordedAtUtc": "2026-11-08T09:34:08.4694712Z",
+  "build": {
+    "result": "Succeeded",
+    "output": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CarDealership-20261108-Final\\BaiaDoSol.exe",
+    "buildType": "Full",
+    "startedUtc": "2026-11-08T09:30:20.0716426Z",
+    "endedUtc": "2026-11-08T09:33:31.133352Z",
+    "errors": 0,
+    "warnings": 4,
+    "bytes": 1598457954,
+    "options": "StrictMode, DetailedBuildReport",
+    "sceneSha256": "9117DB4B6AE493FBDC09EFA6275CC5C3718345C5380B173182AD065F13D846B5",
+    "editorRuntimeAssemblySha256": "1717928A6E2452109915952E3CF1B32F911145D9E462E526351C422949A7431E",
+    "assemblySha256": "CF1E10AB40FCEE3AC3B861B95FE844DB3A9A42D081AC73CB520C0C6FAF50A111"
+  },
+  "currentSceneSha256": "9117DB4B6AE493FBDC09EFA6275CC5C3718345C5380B173182AD065F13D846B5",
+  "sources": [
+    {
+      "path": "Assets/Editor/CityCarDealershipBuilder.cs",
+      "sha256": "7D7F85A3C3D4184E2F0BA2756247A06C253709011B0D1CD8B0EFEDCD4E9F6D55",
+      "modifiedUtc": "2026-11-08T09:26:50.9564939Z"
+    },
+    {
+      "path": "Assets/Editor/CityCarDealershipBuildJob.cs",
+      "sha256": "F31D0DB433CDAF5025D31E477F30DF354ECF6416F36A5C3948CA1B74C07BD540",
+      "modifiedUtc": "2026-11-08T09:28:57.3545415Z"
+    },
+    {
+      "path": "Assets/Scripts/World/CityCarDealership.cs",
+      "sha256": "AB8C0F904EC6085FB0E5503D9092A9A7F5FEAF2D8B0831FD32224DA119AB92CC",
+      "modifiedUtc": "2026-11-08T09:26:50.9564939Z"
+    },
+    {
+      "path": "Assets/Scripts/World/CityCarDealershipProbe.cs",
+      "sha256": "562CE09819D36D1C835BD2B318060ECFDEFE92FDF1F70993B2F36B70A7990B51",
+      "modifiedUtc": "2026-11-08T09:26:50.9580547Z"
+    },
+    {
+      "path": "Assets/Scripts/Core/CityContext.cs",
+      "sha256": "5DD744EA2A50C521AC6DD93825CF9FEC14AFD4DF4A2A2B9662276F09B3C49C1D",
+      "modifiedUtc": "2026-11-08T09:15:09.8642197Z"
+    },
+    {
+      "path": "Assets/Scripts/UI/CityMapUI.cs",
+      "sha256": "442B06FE40E98F004E2B0D3AF9254F9F3D4954DDB13E3BC910448ED08FF373F7",
+      "modifiedUtc": "2026-11-08T09:17:02.0118989Z"
+    }
+  ]
+}

@@ -1,0 +1,1036 @@
+{
+    "unity": "6000.3.27f1",
+    "firstNextStop": "praca",
+    "playerExitStop": "praca",
+    "npcExitStop": "praca",
+    "playerExitTime": 35.79120635986328,
+    "npcExitTime": 36.03009033203125,
+    "passed": true,
+    "vehicles": 38,
+    "boats": 5,
+    "checks": [
+        {
+            "name": "native-fleet",
+            "passed": true,
+            "value": 38.0,
+            "detail": ""
+        },
+        {
+            "name": "native-road-height-acacias",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.04; authored 0.04"
+        },
+        {
+            "name": "native-sidewalk-height-acacias",
+            "passed": true,
+            "value": -1.4901161193847657e-8,
+            "detail": "m; native 0.23; authored 0.23"
+        },
+        {
+            "name": "native-road-height-praca",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.04; authored 0.04"
+        },
+        {
+            "name": "native-sidewalk-height-praca",
+            "passed": true,
+            "value": -1.4901161193847657e-8,
+            "detail": "m; native 0.24; authored 0.24"
+        },
+        {
+            "name": "native-road-height-hospital",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.04; authored 0.04"
+        },
+        {
+            "name": "native-sidewalk-height-hospital",
+            "passed": true,
+            "value": -1.4901161193847657e-8,
+            "detail": "m; native 0.23; authored 0.23"
+        },
+        {
+            "name": "native-road-height-livraria",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.04; authored 0.04"
+        },
+        {
+            "name": "native-sidewalk-height-livraria",
+            "passed": true,
+            "value": -1.4901161193847657e-8,
+            "detail": "m; native 0.23; authored 0.23"
+        },
+        {
+            "name": "native-road-grade--80",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 1.23; authored 1.23"
+        },
+        {
+            "name": "native-road-grade--70",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 1.6375; authored 1.6375"
+        },
+        {
+            "name": "native-road-grade-60",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.72; authored 0.72"
+        },
+        {
+            "name": "native-road-grade-80",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 3.62; authored 3.62"
+        },
+        {
+            "name": "native-road-grade-90",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 4.34; authored 4.34"
+        },
+        {
+            "name": "native-road-grade-120",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 4.34; authored 4.34"
+        },
+        {
+            "name": "native-commuter-has-waiting-routine",
+            "passed": true,
+            "value": 18427.0,
+            "detail": "Miguel"
+        },
+        {
+            "name": "circular-arrives-for-real-boarding",
+            "passed": true,
+            "value": 0.2933765649795532,
+            "detail": "stop acacias; reason embarque-acacias"
+        },
+        {
+            "name": "native-E-selects-circular",
+            "passed": true,
+            "value": 0.0,
+            "detail": "vehicle-18233"
+        },
+        {
+            "name": "native-player-boards-circular",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "native-commuter-walks-and-boards",
+            "passed": true,
+            "value": 1.0398958921432496,
+            "detail": "state riding; activity wait; dwell 3.705842"
+        },
+        {
+            "name": "native-commuter-rides-seated",
+            "passed": true,
+            "value": 0.0001678466796875,
+            "detail": "m from physical bus seat"
+        },
+        {
+            "name": "circular-departs-with-player",
+            "passed": true,
+            "value": 1.0189623832702637,
+            "detail": ""
+        },
+        {
+            "name": "native-E-offers-next-stop",
+            "passed": true,
+            "value": 0.0,
+            "detail": "Solicitar próxima parada"
+        },
+        {
+            "name": "native-E-requests-next-stop",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "native-circular-travels-between-real-stops",
+            "passed": true,
+            "value": 71.35147094726563,
+            "detail": "m; maximum frame step 0.08270884; first next stop praca; reason embarque-praca"
+        },
+        {
+            "name": "native-player-leaves-at-requested-stop",
+            "passed": true,
+            "value": 5.011775016784668,
+            "detail": "exit at praca time 35.79121"
+        },
+        {
+            "name": "native-player-bus-exit-is-clear",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "native-commuter-finishes-trip",
+            "passed": true,
+            "value": 73.1748046875,
+            "detail": "m traveled; exit at praca time 36.03009; state travel"
+        },
+        {
+            "name": "native-commuter-bus-exit-is-clear",
+            "passed": true,
+            "value": 4.5839362144470219,
+            "detail": ""
+        },
+        {
+            "name": "no-runtime-errors",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        }
+    ],
+    "errors": [],
+    "bus": [
+        {
+            "stop": "approach/",
+            "reason": "parada-acacias; NPC activity/wait (-62.90, 0.23, -33.80); dwell 0",
+            "position": {
+                "x": -68.69998931884766,
+                "y": 0.07985508441925049,
+                "z": -51.565269470214847
+            },
+            "elapsed": 1.2007672786712647,
+            "gap": 15.56610107421875,
+            "speed": 1.079017996788025,
+            "target": 2.074000358581543,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "approach/",
+            "reason": "parada-acacias; NPC activity/wait (-62.90, 0.23, -33.80); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08001232147216797,
+                "z": -50.83061981201172
+            },
+            "elapsed": 1.7049001455307007,
+            "gap": 14.83978271484375,
+            "speed": 1.8669157028198243,
+            "target": 2.9239983558654787,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "approach/",
+            "reason": "parada-acacias; NPC activity/wait (-62.90, 0.23, -33.80); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000274002552033,
+                "z": -49.67617416381836
+            },
+            "elapsed": 2.212606906890869,
+            "gap": 13.710052490234375,
+            "speed": 2.6874070167541506,
+            "target": 3.773996353149414,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "approach/",
+            "reason": "parada-acacias; NPC activity/wait (-62.90, 0.23, -33.80); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000010997056961,
+                "z": -48.12250518798828
+            },
+            "elapsed": 2.7127845287323,
+            "gap": 12.16748046875,
+            "speed": 3.5166189670562746,
+            "target": 4.62399435043335,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "approach/",
+            "reason": "parada-acacias; NPC activity/wait (-62.90, 0.23, -33.80); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -46.171836853027347
+            },
+            "elapsed": 3.2150681018829347,
+            "gap": 10.2340087890625,
+            "speed": 4.124754905700684,
+            "target": 4.396580219268799,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "approach/",
+            "reason": "parada-acacias; NPC activity/wait (-62.90, 0.23, -33.80); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -44.12045669555664
+            },
+            "elapsed": 3.715087890625,
+            "gap": 8.18060302734375,
+            "speed": 3.9855611324310304,
+            "target": 3.7850961685180666,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "approach/",
+            "reason": "parada-acacias; NPC activity/wait (-62.90, 0.23, -33.80); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -42.23031234741211
+            },
+            "elapsed": 4.215872764587402,
+            "gap": 6.286651611328125,
+            "speed": 3.5494496822357179,
+            "target": 3.1743040084838869,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "approach/",
+            "reason": "parada-acacias; NPC activity/wait (-62.90, 0.23, -33.80); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -40.566104888916019
+            },
+            "elapsed": 4.723568439483643,
+            "gap": 4.5767822265625,
+            "speed": 2.9947471618652345,
+            "target": 2.5342984199523927,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "approach/",
+            "reason": "parada-acacias; NPC activity/wait (-62.90, 0.23, -33.80); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -39.207916259765628
+            },
+            "elapsed": 5.223573207855225,
+            "gap": 3.216552734375,
+            "speed": 2.418632984161377,
+            "target": 1.9154551029205323,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "approach/",
+            "reason": "parada-acacias; NPC activity/wait (-62.90, 0.23, -33.80); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -38.14317321777344
+            },
+            "elapsed": 5.723577976226807,
+            "gap": 2.149688720703125,
+            "speed": 1.8226301670074463,
+            "target": 1.2929261922836304,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "approach/",
+            "reason": "parada-acacias; NPC activity/wait (-62.90, 0.23, -33.80); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -37.379234313964847
+            },
+            "elapsed": 6.223787784576416,
+            "gap": 1.38385009765625,
+            "speed": 1.2146873474121094,
+            "target": 0.6637066006660461,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "approach/",
+            "reason": "parada-acacias; NPC activity/wait (-62.90, 0.23, -33.80); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -36.91939163208008
+            },
+            "elapsed": 6.727678298950195,
+            "gap": 0.92388916015625,
+            "speed": 0.5861638188362122,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "waiting-to-board/acacias",
+            "reason": "embarque-acacias; NPC activity/wait (-63.47, 0.27, -33.91); dwell 5.286007",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -36.72898864746094
+            },
+            "elapsed": 7.486114978790283,
+            "gap": -999.0,
+            "speed": 0.0,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "waiting-to-board/acacias",
+            "reason": "embarque-acacias; NPC activity/wait (-64.09, 0.27, -34.01); dwell 4.785948",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -36.72898864746094
+            },
+            "elapsed": 7.986173629760742,
+            "gap": -999.0,
+            "speed": 0.0,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "waiting-to-board/acacias",
+            "reason": "embarque-acacias; NPC activity/wait (-64.71, 0.28, -34.12); dwell 4.284759",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -36.72898864746094
+            },
+            "elapsed": 8.487361907958985,
+            "gap": -999.0,
+            "speed": 0.0,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "waiting-to-board/acacias",
+            "reason": "embarque-acacias; NPC activity/wait (-65.32, 0.12, -34.23); dwell 3.78362",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -36.72898864746094
+            },
+            "elapsed": 8.988499641418457,
+            "gap": -999.0,
+            "speed": 0.0,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.62, -37.56); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -36.14427947998047
+            },
+            "elapsed": 14.12965202331543,
+            "gap": -999.0,
+            "speed": 1.2626079320907593,
+            "target": 2.2779998779296877,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.62, -36.74); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -35.31484603881836
+            },
+            "elapsed": 14.629756927490235,
+            "gap": -999.0,
+            "speed": 2.062204122543335,
+            "target": 3.127997875213623,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.62, -35.51); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -34.07752990722656
+            },
+            "elapsed": 15.13007640838623,
+            "gap": -999.0,
+            "speed": 2.886068820953369,
+            "target": 3.9779958724975588,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.62, -33.87); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -32.42703628540039
+            },
+            "elapsed": 15.630081176757813,
+            "gap": -999.0,
+            "speed": 3.7154483795166017,
+            "target": 4.827993869781494,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.62, -31.81); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -30.362319946289064
+            },
+            "elapsed": 16.130386352539064,
+            "gap": -999.0,
+            "speed": 4.534947872161865,
+            "target": 5.67799186706543,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.62, -29.35); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -27.892921447753908
+            },
+            "elapsed": 16.630441665649415,
+            "gap": -999.0,
+            "speed": 5.337162494659424,
+            "target": 6.527989864349365,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -26.50); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -25.02733612060547
+            },
+            "elapsed": 17.130447387695314,
+            "gap": -999.0,
+            "speed": 6.1203389167785648,
+            "target": 7.377987861633301,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -23.30); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -21.823875427246095
+            },
+            "elapsed": 17.632312774658204,
+            "gap": -999.0,
+            "speed": 6.456238269805908,
+            "target": 6.363570690155029,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -20.19); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -18.72720718383789
+            },
+            "elapsed": 18.13232421875,
+            "gap": -999.0,
+            "speed": 5.8554582595825199,
+            "target": 5.180483818054199,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -17.49); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -16.031280517578126
+            },
+            "elapsed": 18.63247299194336,
+            "gap": -999.0,
+            "speed": 4.888239860534668,
+            "target": 3.863424301147461,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -15.32); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -13.881178855895996
+            },
+            "elapsed": 19.13334083557129,
+            "gap": -999.0,
+            "speed": 3.6704647541046144,
+            "target": 2.3343758583068849,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -13.83); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -12.402667999267579
+            },
+            "elapsed": 19.63348388671875,
+            "gap": -999.0,
+            "speed": 2.235180377960205,
+            "target": 0.6843762397766113,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -13.06); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -11.649601936340332
+            },
+            "elapsed": 20.13371467590332,
+            "gap": -999.0,
+            "speed": 0.9101027846336365,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -12.77); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -11.370058059692383
+            },
+            "elapsed": 20.6339111328125,
+            "gap": -999.0,
+            "speed": 0.30355894565582278,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -12.71); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -11.305583000183106
+            },
+            "elapsed": 21.1339168548584,
+            "gap": -999.0,
+            "speed": 4.717497503747836e-10,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -12.71); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -11.305583000183106
+            },
+            "elapsed": 21.634017944335939,
+            "gap": -999.0,
+            "speed": 4.3752831913046466e-10,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -12.71); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -11.305583953857422
+            },
+            "elapsed": 22.134296417236329,
+            "gap": -999.0,
+            "speed": 4.0793257660709516e-10,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -12.71); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -11.305583000183106
+            },
+            "elapsed": 22.63534927368164,
+            "gap": -999.0,
+            "speed": 3.6074485065817898e-10,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -12.71); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -11.305583000183106
+            },
+            "elapsed": 23.13560676574707,
+            "gap": -999.0,
+            "speed": 3.4059996489865798e-10,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "semaforo; NPC riding/wait (-69.35, 0.62, -12.71); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -11.305582046508789
+            },
+            "elapsed": 23.636245727539064,
+            "gap": -999.0,
+            "speed": 2.97641800095505e-10,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.62, -12.71); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -11.305577278137207
+            },
+            "elapsed": 24.137081146240236,
+            "gap": -999.0,
+            "speed": 0.00027711200527846813,
+            "target": 0.23799988627433778,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.62, -12.65); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -11.248228073120118
+            },
+            "elapsed": 24.637205123901368,
+            "gap": -999.0,
+            "speed": 0.3061733543872833,
+            "target": 1.0879995822906495,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.62, -12.35); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -10.935026168823243
+            },
+            "elapsed": 25.13767433166504,
+            "gap": -999.0,
+            "speed": 0.9595690965652466,
+            "target": 1.9380005598068238,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.62, -11.68); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000007271766663,
+                "z": -10.257095336914063
+            },
+            "elapsed": 25.637903213500978,
+            "gap": -999.0,
+            "speed": 1.7376303672790528,
+            "target": 2.787998676300049,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.63, -10.61); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.09120763093233109,
+                "z": -9.176325798034668
+            },
+            "elapsed": 26.138120651245118,
+            "gap": -999.0,
+            "speed": 2.552992820739746,
+            "target": 3.6379966735839845,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.63, -9.12); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08904999494552612,
+                "z": -7.6831841468811039
+            },
+            "elapsed": 26.63936424255371,
+            "gap": -999.0,
+            "speed": 3.378221035003662,
+            "target": 4.48799467086792,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.63, -7.23); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08911067992448807,
+                "z": -5.77970027923584
+            },
+            "elapsed": 27.13960075378418,
+            "gap": -999.0,
+            "speed": 4.198505401611328,
+            "target": 5.3379926681518559,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.63, -4.92); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.09456539899110794,
+                "z": -3.46321964263916
+            },
+            "elapsed": 27.641298294067384,
+            "gap": -999.0,
+            "speed": 5.034756660461426,
+            "target": 6.221990585327148,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "; NPC riding/wait (-69.35, 0.64, -2.22); dwell 0",
+            "position": {
+                "x": -68.69998931884766,
+                "y": 0.09689813107252121,
+                "z": -0.7547497153282166
+            },
+            "elapsed": 28.14130973815918,
+            "gap": -999.0,
+            "speed": 5.825473785400391,
+            "target": 7.071988582611084,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.64, 0.87); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.09748894721269608,
+                "z": 2.3457837104797365
+            },
+            "elapsed": 28.64146614074707,
+            "gap": 33.66400146484375,
+            "speed": 6.596066474914551,
+            "target": 7.699999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.63, 4.32); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08728604763746262,
+                "z": 5.795671463012695
+            },
+            "elapsed": 29.142108917236329,
+            "gap": 30.219482421875,
+            "speed": 7.134761333465576,
+            "target": 7.699999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.63, 7.94); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.0884971171617508,
+                "z": 9.424870491027832
+            },
+            "elapsed": 29.64220428466797,
+            "gap": 26.5914306640625,
+            "speed": 7.3416643142700199,
+            "target": 7.523054599761963,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.62, 11.58); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07920336723327637,
+                "z": 13.055826187133789
+            },
+            "elapsed": 30.142343521118165,
+            "gap": 22.96087646484375,
+            "speed": 7.089720726013184,
+            "target": 6.912508010864258,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.62, 15.02); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07983081787824631,
+                "z": 16.49138641357422
+            },
+            "elapsed": 30.64251708984375,
+            "gap": 19.525360107421876,
+            "speed": 6.616919040679932,
+            "target": 6.302470684051514,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.62, 18.21); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07999808341264725,
+                "z": 19.673385620117189
+            },
+            "elapsed": 31.143075942993165,
+            "gap": 16.34539794921875,
+            "speed": 6.073980808258057,
+            "target": 5.690342426300049,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.62, 21.11); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000221103429795,
+                "z": 22.572036743164064
+            },
+            "elapsed": 31.64311408996582,
+            "gap": 13.445159912109375,
+            "speed": 5.500661849975586,
+            "target": 5.076758861541748,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.62, 23.73); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000024408102036,
+                "z": 25.18054962158203
+            },
+            "elapsed": 32.143226623535159,
+            "gap": 10.83538818359375,
+            "speed": 4.913402557373047,
+            "target": 4.461981773376465,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.62, 26.05); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000001311302185,
+                "z": 27.496248245239259
+            },
+            "elapsed": 32.644004821777347,
+            "gap": 8.5211181640625,
+            "speed": 4.318998336791992,
+            "target": 3.846045732498169,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.62, 28.07); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000001311302185,
+                "z": 29.51016616821289
+            },
+            "elapsed": 33.144107818603519,
+            "gap": 6.50518798828125,
+            "speed": 3.720221996307373,
+            "target": 3.2288851737976076,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.62, 29.79); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000001311302185,
+                "z": 31.224262237548829
+            },
+            "elapsed": 33.644378662109378,
+            "gap": 4.7894287109375,
+            "speed": 3.118112325668335,
+            "target": 2.61027455329895,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.62, 31.21); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000001311302185,
+                "z": 32.64154052734375
+            },
+            "elapsed": 34.14676284790039,
+            "gap": 3.37548828125,
+            "speed": 2.5129103660583498,
+            "target": 1.9898223876953126,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.62, 32.33); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000001311302185,
+                "z": 33.749122619628909
+            },
+            "elapsed": 34.647369384765628,
+            "gap": 2.26495361328125,
+            "speed": 1.9043099880218506,
+            "target": 1.3665884733200074,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.62, 33.14); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000001311302185,
+                "z": 34.54998016357422
+            },
+            "elapsed": 35.147491455078128,
+            "gap": 1.459716796875,
+            "speed": 1.291100025177002,
+            "target": 0.7376104593276978,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "journey/",
+            "reason": "parada-praca; NPC riding/wait (-69.35, 0.62, 33.64); dwell 0",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000001311302185,
+                "z": 35.04411315917969
+            },
+            "elapsed": 35.64860916137695,
+            "gap": 0.96160888671875,
+            "speed": 0.6644479036331177,
+            "target": 0.030130203813314439,
+            "obstacle": -1.0
+        }
+    ]
+}

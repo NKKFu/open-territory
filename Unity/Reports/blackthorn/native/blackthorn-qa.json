@@ -1,0 +1,113 @@
+{
+    "passed": false,
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\BlackthornHouse-20261108\\BaiaDoSol.exe",
+    "graphics": "Direct3D12",
+    "verifiedAtUtc": "2026-11-08T11:03:53.9675002Z",
+    "routeSamples": 192,
+    "checks": [
+        {
+            "name": "authored-native-scene-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "QA-storage-is-isolated",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact-house-from-user-picture",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "original-home-all-four-rooms-and-furniture-preserved",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "preserved-collision-audit-recorded",
+            "detail": "original=31986",
+            "passed": true
+        },
+        {
+            "name": "altar-crystal-eight-candles-five-lights",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "roof-spires-have-real-collision",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "all-building-materials-supported",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "English-signage",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sidewalk-door-hall-altar-living-room-clearance",
+            "detail": "samples=192 unsupported=0 blocked=0",
+            "passed": true
+        },
+        {
+            "name": "real-controller-enter-explore-rooms-and-leave",
+            "detail": "walk target=(-3.20, 0.24, 1.00) player=(-3.20, 0.20, 3.05)",
+            "passed": false
+        },
+        {
+            "name": "preserved-manual-front-door-opens-on-approach",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "altar-stops-the-body",
+            "detail": "localZ=-5.060032",
+            "passed": true
+        },
+        {
+            "name": "prepared-crystal-animates-in-world",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-crystal-and-candle-lights",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "settings-resume-world",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Blackthorn-House-is-a-map-place",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "map-keeps-city-running",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "night-lanterns-and-ritual-lighting",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "errors=0",
+            "passed": true
+        }
+    ],
+    "errors": [],
+    "obstacles": [
+        "walk target=(-3.20, 0.24, 1.00) player=(-3.20, 0.20, 3.05)"
+    ]
+}

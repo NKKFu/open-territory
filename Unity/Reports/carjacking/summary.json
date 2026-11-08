@@ -1,0 +1,41 @@
+{
+  "verifiedAtUtc": "2026-11-08T03:00:43.5863618Z",
+  "passed": true,
+  "checks": 111,
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\WindowsCarjacking\\BaiaDoSol.exe",
+  "assemblySha256": "D452064D0B0261F9FE4DC1230863551E4ECF9D21A80E434F95114303424FD887",
+  "sources": [
+    {
+      "path": "Assets/Scripts/Gameplay/CityVehicles.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Gameplay/CityVehicles.Carjacking.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Gameplay/CityFollowCamera.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Life/CityDriverIncidents.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Life/CityActors.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Gameplay/CityCarjackingProbe.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Gameplay/CityVehicleSafetyProbe.cs",
+      "matches": true
+    }
+  ],
+  "reports": [
+    "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\carjacking\\standalone-final\\carjacking-qa.json",
+    "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\carjacking\\regression-final\\vehicle-safety-qa.json"
+  ]
+}

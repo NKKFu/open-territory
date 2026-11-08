@@ -1,0 +1,768 @@
+{
+  "bankVersion": 3,
+  "total": 108,
+  "licensedRecordings": 22,
+  "localProcedural": 86,
+  "neuralAudioGenerationEvidence": false,
+  "evidence": "The archived Python importers generated placeholders with NumPy oscillators and noise. A source label of Open Territory original sound design was procedural, not a licensed recording. No model inference was present in those generators.",
+  "clips": [
+    {
+      "id": "sea",
+      "category": "ambience",
+      "origin": "licensed-recording",
+      "source": "beach",
+      "sha256": "d87a8e36a2afa31c653f39ee4d05031c19071734759179288fe01034c70c59a6"
+    },
+    {
+      "id": "wind",
+      "category": "ambience",
+      "origin": "licensed-recording",
+      "source": "park-wind",
+      "sha256": "30a7852dd1ec748d03ebefe71e1ff70623f2491ec68d6528a0029a6219e9c60e"
+    },
+    {
+      "id": "rain",
+      "category": "ambience",
+      "origin": "licensed-recording",
+      "source": "rain",
+      "sha256": "09f7e6f5d038633d8d72de20939359951ec5857385c32c438edb5eda72b60b17"
+    },
+    {
+      "id": "leaves",
+      "category": "ambience",
+      "origin": "licensed-recording",
+      "source": "leaves",
+      "sha256": "01ba8b0a2bf16a013ff882232f458499e6047ca032840c81b4dd2fde92a36351"
+    },
+    {
+      "id": "night",
+      "category": "ambience",
+      "origin": "licensed-recording",
+      "source": "crickets",
+      "sha256": "11ccdaec3e82388fd4cddf12ab9689ceb30a38983b0e1eab7a5456eb86fbac7b"
+    },
+    {
+      "id": "fountain",
+      "category": "ambience",
+      "origin": "licensed-recording",
+      "source": "fountain",
+      "sha256": "31f752c983ca4934120604416245097aceeab2e7d271e8e2728d892888e65ae8"
+    },
+    {
+      "id": "footstep-concrete-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "adf2f68fba3935da1d7d85be32a633a49500615cb8d332cd07698370c10ff9ac"
+    },
+    {
+      "id": "footstep-concrete-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "c8ed271d26f495aa8dc7f9a0aac50fd05ca81fb7bd1540f8038083b4ddbf44fb"
+    },
+    {
+      "id": "footstep-concrete-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "a3c353b25ed00a9209a4b1cc3778e9a248b30e1e93053771a62e241d42907f0c"
+    },
+    {
+      "id": "footstep-concrete-3",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "883c16a941a40299bd2b50859f14912fd176cb4bf02d0a19b4409275cee4e662"
+    },
+    {
+      "id": "footstep-gravel-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "28aaa49d11c4b11d141d39614266a9dbbf8aefda77b5128e9dc3565272569f8d"
+    },
+    {
+      "id": "footstep-gravel-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "ab328ea7e4ce456e12762326f3a8d4e071e200c627540e24e72d498d9457e99a"
+    },
+    {
+      "id": "footstep-gravel-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "21198a9dc139e145165e6e0c9e7831a8778ef251d60bc7d88556bd5f424d45c7"
+    },
+    {
+      "id": "footstep-gravel-3",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "5a21357718ffaedd51461db0164d8ddeaa3d3dd5150bd94ecf62749ca0ad0bf3"
+    },
+    {
+      "id": "footstep-grass-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "d9312ee41a2875a1ba57afd84e2972fd44c96162125dd84becd78f96eb5c263a"
+    },
+    {
+      "id": "footstep-grass-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "20ad73164aae754319abcac164790dbb22a68bfc79f4c9d6a78e14be92ec7ae8"
+    },
+    {
+      "id": "footstep-grass-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "053c779e19f6dcb3c92cc8056dedfabd0be1a73d58263b8a51fd2e094721be0d"
+    },
+    {
+      "id": "footstep-grass-3",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "753ac2e0d0697867a9421e176a30186cff3c9e51c38cd12d8e95e6ee4e60555e"
+    },
+    {
+      "id": "footstep-wood-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "0f0fa207ee9b89bb05571f243b993eed57383484310df2e781ce9ada795b6c18"
+    },
+    {
+      "id": "footstep-wood-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "c4976a55fd9052cfc41ba6547f55bb3b2224b3fae3341426058e140e3b88592c"
+    },
+    {
+      "id": "footstep-wood-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "685a22787c7e551b340187b5e8ca7cbf88c85412fa7a834e82944d45c9724516"
+    },
+    {
+      "id": "footstep-wood-3",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "f817cf83fac26f5ebc52da409096b16d031c7d41943463c8842f7c67ffd78125"
+    },
+    {
+      "id": "impact-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "b4e070e8ad1000b2ddd5b581dccc04bb9354ebf955c6795ad97097665b28fe1d"
+    },
+    {
+      "id": "impact-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "4ca9293369094b8585d208faf15dac10172ba7141e4c9a565e9b21878d053a28"
+    },
+    {
+      "id": "impact-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "a4e208d642ee9f94fc0f112d6647ee4cf5b8c15436647dea055cae7d1ed13f12"
+    },
+    {
+      "id": "engine-car",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "2bfacd9e1484cc42b2abab46999fc389981ac77bb6b55d511eac0197244b1ee0"
+    },
+    {
+      "id": "engine-bus",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "262132f3dcfd0b6b0843e3e6cf6a792eabd62886ba7e7c3eb802b2a0d2862bf3"
+    },
+    {
+      "id": "engine-boat",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "6e91f0cafefe462aa8394c416666e9f810cf08324474dc42636934147596d476"
+    },
+    {
+      "id": "engine-drone",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "5a0f9099789889abe3527af88c0c22758727a164ebddb7a25a185ad15861580f"
+    },
+    {
+      "id": "tire",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "08ad27333c7cc9013dcae2cdf6391b3847c70f5602ee1a9178616d22f7709734"
+    },
+    {
+      "id": "skid",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "20896cc2581138394f159ec106e0f0a2840c8a03f4895cd6894ba842f20ee9a5"
+    },
+    {
+      "id": "bicycle",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "54c2248b129ff7faff2ab4aa3c8f80fc39539a1fbab8907da2d266221c2607ce"
+    },
+    {
+      "id": "wake",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "f35634e753eb25d7ab3ca136393c45e697547df9e7ce453e02371d426cf29654"
+    },
+    {
+      "id": "siren",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "fb11b5c4e389ab48e5c04d1d2ef709709fdc0b987b91ad3a47559a097aa47d20"
+    },
+    {
+      "id": "projector",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "a98ed9a8ea8c4580d36ba8811743288d48668719c2b6bd779846e9a5bc066708"
+    },
+    {
+      "id": "winch",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "f928a27fec4294f5c6ac6fd05d1345f76c14769f33d223ff9ba32240c5cc08ed"
+    },
+    {
+      "id": "splash-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "da7d9ae378f3a056f433ec6e31fa6f1e2e357a85e45891299dcc7d4415e253a8"
+    },
+    {
+      "id": "splash-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "a347228b6de28e9c55c3e8284a429acb755e686af9c7968028c9e6e876d2cacf"
+    },
+    {
+      "id": "splash-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "9d76df5e48d9ee071da9be419a457125c269be60e35a98149763f9e62695c7e3"
+    },
+    {
+      "id": "stroke-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "bc843413dd466fd149e3696b0cbf5e723b65e5e4b8ac6d44f66974c798a14ebd"
+    },
+    {
+      "id": "stroke-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "9a0bc43f9254565f8b96a66424fc16bb33ee2e137aba5b52ee68eb9518d05b33"
+    },
+    {
+      "id": "stroke-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "783026cdbba185f339d70e805866af7c08e67a0388ac8711d40d870af9fa3af6"
+    },
+    {
+      "id": "water-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "a46f8a35d2cb875f563d01ccce4334114216f76a7195310a00fe714d2a8bc028"
+    },
+    {
+      "id": "water-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "feac80eef8054060fedf8185643b9b0373f7b8f85768001eddad78f318943ea1"
+    },
+    {
+      "id": "water-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "1bf17441a023ac5f214fc8eb2a4edfe6e5fad2f7ca78d107003ff1cf0f431612"
+    },
+    {
+      "id": "mooring-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "e3560a68faac09998262dd4d3095e582eee8eca80b4eeaa1e279adb93565202f"
+    },
+    {
+      "id": "mooring-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "9ae586de01ea0b84542c5f36cd40b086e26e6669994093cb0c878e4f0a3e8a2b"
+    },
+    {
+      "id": "mooring-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "b00b9a776f6305deddb9653cddf745c970eec3509f2d5c6deba6df0b31d97e76"
+    },
+    {
+      "id": "door",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "db2fe1f927ca7caeb323991533c584a27c9b902dc704584413052a4f405728b8"
+    },
+    {
+      "id": "door-close",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "11a18c3f16cf2c54419915c3d6038ec6bb9020b0e022855790de8f46af4d2ec3"
+    },
+    {
+      "id": "door-slide",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "62ca203bcaff09ebc6fa251fd670228debe1789139b41ec206d1c2c387ea8d9a"
+    },
+    {
+      "id": "bus-door",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "50bf98af321a3939fbfa32e0dacf6ab043b964ae8a99b686e5fee3a98d339c2f"
+    },
+    {
+      "id": "horn",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "7ec1d8ed01150393828a83fb8fe34dcd1f836e95d24aae9564dfadcbe9e59e0c"
+    },
+    {
+      "id": "bell",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "b9fb01c9c1ec914e89799ba4b7f1cabf893f55008021e84607b2b808e7eee967"
+    },
+    {
+      "id": "phone",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "14bcbcb4028f8fd01915b5d4ec4730e5e3538520e9076d5d8a2794a3fd64b9f5"
+    },
+    {
+      "id": "shot",
+      "category": "effects",
+      "origin": "licensed-recording",
+      "source": "free-firearms",
+      "sha256": "8a521a24a673149bb7c6ba2bb62d1706e7152e5b0f3f03e244733c16e9e98916"
+    },
+    {
+      "id": "carbine",
+      "category": "effects",
+      "origin": "licensed-recording",
+      "source": "free-firearms",
+      "sha256": "dbae3caaa27fa11e23f204b1185142d85e61a25ce10f2210909cf7945b5eeeaf"
+    },
+    {
+      "id": "pulse",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "883f26c725fb0e6e616fc747c3172d68c8ab2c083f4acecf0ef3fff38401c238"
+    },
+    {
+      "id": "metal",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "b6a17b9b2f00431af6b55f66b7c6abf20bf893531d5b1342defe994836219e52"
+    },
+    {
+      "id": "plate",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "ee9e2f7878ba2428a00191cb01ef34262ee4a5f928135dbb82511323a51c5fff"
+    },
+    {
+      "id": "empty",
+      "category": "effects",
+      "origin": "licensed-recording",
+      "source": "mechanism",
+      "sha256": "afe5744ec97fb5fe24b3bf2d523982d02b89acf6aa4fd790e5b88758c31b582e"
+    },
+    {
+      "id": "reload-ready",
+      "category": "effects",
+      "origin": "licensed-recording",
+      "source": "mechanism",
+      "sha256": "b2756dd68defea001bd62295195b56ba848ca2a2c8177e356671f893b9fc62ea"
+    },
+    {
+      "id": "reload",
+      "category": "effects",
+      "origin": "licensed-recording",
+      "source": "reloads",
+      "sha256": "94454d03d44761da33a0171ac385e4eaa41f415ffddb40a264ad6d92955a2057"
+    },
+    {
+      "id": "jump",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "2b26c85b22b141dcc35198b98c5634e580c1da2bac2e1665c69bdccf82dbc6fd"
+    },
+    {
+      "id": "land",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "d3869e96f36fad80486ae44d1b1e75b6a6da62e6d08539f3e7734104c55d3c45"
+    },
+    {
+      "id": "shove",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "08b3b30211b631b74ce77d3ec543ca77a5177e41e8d0b54c5b626086e6c78c57"
+    },
+    {
+      "id": "hurt",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "73cab71982153a5ca556b8a68161d3d49ef2d18127ee6752f4e7bf675d3ee946"
+    },
+    {
+      "id": "pet",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "937f9eb7b0e46e02f61337467bde79733362ae33f3c095c0652a8ccb4f7f5553"
+    },
+    {
+      "id": "brake",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "1cd2a88c90bc2110ce78e4d59576ff51baaf8aced539af8894704409a1d07bff"
+    },
+    {
+      "id": "drone-start",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "154e8b9e711dd8bff9967d5fe59bf36089ff4abca0d80c322d3119fc0758af8d"
+    },
+    {
+      "id": "film-reel",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "ef23cd00962f8def868a7b8d40e4a254bc378edf4809e3715f3a07a21f31de3f"
+    },
+    {
+      "id": "harbor-winch",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "686aa5313e3390d916fe0dc214c975363dab5972d090981ecbca3f6ebb726045"
+    },
+    {
+      "id": "register",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "3317bbd32fc7aa336b22d6c983cba894e5765da54c66a00fc06da7973ef12fca"
+    },
+    {
+      "id": "hack",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "8ee313ccadb3ddc4207737ba793fcc74b10f73737700e98a0382add1ab7da104"
+    },
+    {
+      "id": "applause",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "5b1163105d2b377ea7ca7c14e99bb76a02a81223ad0c24229e4b93cea7bbd7f8"
+    },
+    {
+      "id": "bird-0",
+      "category": "ambience",
+      "origin": "licensed-recording",
+      "source": "gulls",
+      "sha256": "ef4b5e434ecdd301e32751e7f98cc5ca87140ed111952aefd13efd7adf896c69"
+    },
+    {
+      "id": "bird-1",
+      "category": "ambience",
+      "origin": "licensed-recording",
+      "source": "gulls",
+      "sha256": "a8815f928b7b4bf1a46d04d646b2b147ad5fff947144849a80b265aa0228c1b2"
+    },
+    {
+      "id": "bird-2",
+      "category": "ambience",
+      "origin": "licensed-recording",
+      "source": "gulls",
+      "sha256": "82f8caf2a47cf8d75bee7bc806dd9eb8d47cb19d0fbc2ca0eef394207467e715"
+    },
+    {
+      "id": "bird-3",
+      "category": "ambience",
+      "origin": "licensed-recording",
+      "source": "gulls",
+      "sha256": "aada9865e5aa70dcbdfe898199482f1dbf4adba00727a145e4057bd2ad937b24"
+    },
+    {
+      "id": "radio",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "8b4aed36555154757215e02cb2112f36c95ddf81e51bf24778b2bc59a64d1a6c"
+    },
+    {
+      "id": "music-street",
+      "category": "music",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "12194513e644cb601dff0cadb1ea31aa04a8eb376e3cecbf13b2a7edfd7041df"
+    },
+    {
+      "id": "radio-0",
+      "category": "music",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "f4aef86bc400d0340f3f14ab720b3b3abf8fe893e580521da739a09e80a071d2"
+    },
+    {
+      "id": "radio-1",
+      "category": "music",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "ad28625a017a3397317dc0fafb11138c030790f14b887dd88cfbbfe4d4f63b44"
+    },
+    {
+      "id": "radio-2",
+      "category": "music",
+      "origin": "local-procedural-synthesis",
+      "source": null,
+      "sha256": "129d3699692776ebdc684c62d9dba9f3d6f08b0921bd55d2124b578f8436f2d2"
+    },
+    {
+      "id": "shot-0",
+      "category": "effects",
+      "origin": "licensed-recording",
+      "source": "free-firearms",
+      "sha256": "8a521a24a673149bb7c6ba2bb62d1706e7152e5b0f3f03e244733c16e9e98916"
+    },
+    {
+      "id": "shot-1",
+      "category": "effects",
+      "origin": "licensed-recording",
+      "source": "free-firearms",
+      "sha256": "619963e001d5664396f4f82736cc3df3bfc09691877c0e35d15f860b0e76262e"
+    },
+    {
+      "id": "carbine-0",
+      "category": "effects",
+      "origin": "licensed-recording",
+      "source": "free-firearms",
+      "sha256": "dbae3caaa27fa11e23f204b1185142d85e61a25ce10f2210909cf7945b5eeeaf"
+    },
+    {
+      "id": "carbine-1",
+      "category": "effects",
+      "origin": "licensed-recording",
+      "source": "free-firearms",
+      "sha256": "c1c30774dda23ee4e93afaea5e09f82902a3c2ddb09fc9bae1517a2fad983e83"
+    },
+    {
+      "id": "reload-sidearm",
+      "category": "effects",
+      "origin": "licensed-recording",
+      "source": "reloads",
+      "sha256": "94454d03d44761da33a0171ac385e4eaa41f415ffddb40a264ad6d92955a2057"
+    },
+    {
+      "id": "reload-carbine",
+      "category": "effects",
+      "origin": "licensed-recording",
+      "source": "reloads",
+      "sha256": "51106830194f9c04d3495b45facdf8fdcb999501c9ba14b83a08de57ce59ab0d"
+    },
+    {
+      "id": "case-drop",
+      "category": "effects",
+      "origin": "licensed-recording",
+      "source": "mechanism",
+      "sha256": "a8a9d4e8e82763f8200e99224751088535a4211b78237a62bf51bf9d96397a44"
+    },
+    {
+      "id": "pulse-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "b4060677dc28d16c09510efed419c7532c27ff9d01673d783e93d4662d752d2f"
+    },
+    {
+      "id": "pulse-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "88c84cf22076e31ce03fa79849e40c083af1f8e29abeea736551641a4e4a66df"
+    },
+    {
+      "id": "pulse-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "883f26c725fb0e6e616fc747c3172d68c8ab2c083f4acecf0ef3fff38401c238"
+    },
+    {
+      "id": "reload-pulse",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "905e279dc376acf27f1e12e92eaae20afb192d6e9e234c5474bcfa662f8b2e12"
+    },
+    {
+      "id": "pulse-impact",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "0c72b16781b4e7a4942312cb01fb1b70205769b19c6f8fb0ea66e9ff470a8872"
+    },
+    {
+      "id": "bullet-metal-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "f4a4c38719f967450f4e2c038eeb430d1af507c1400d1b4cccc1a2041b4f7015"
+    },
+    {
+      "id": "bullet-metal-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "4727b18d74858a46307ed8fdde60bc2945e7c56fe4d68b932397a877de7bc710"
+    },
+    {
+      "id": "bullet-metal-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "205e37b0621433c76997ef480e43cc7382a9ffa838734d43897889dd2f9c9269"
+    },
+    {
+      "id": "bullet-stone-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "f73494427d06e7526fdbd18257bc8926b76ae14acbf70f4ef846aba4ca7e566b"
+    },
+    {
+      "id": "bullet-stone-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "5181afd53b3cf59300070c9d3efc8009519c1673681d759f1b662f2fe869c5f0"
+    },
+    {
+      "id": "bullet-stone-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "313b1693b3794683c1a26d1df640639d9865dac40954608dd8056a8bc8c71fdd"
+    },
+    {
+      "id": "bullet-wood-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "624561ac8d07c69288396627750eecdcd07f28b633b84df309cdd142f237e6ab"
+    },
+    {
+      "id": "bullet-wood-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "ccb8956b2ed14930f31c64c7676ea3dbe118913e9f4085f97327c262f0b12af3"
+    },
+    {
+      "id": "bullet-wood-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "689a1a46d0c3f0ac2f592f99cda9f481535c9fd79de8f34e4b78dc41164b4920"
+    },
+    {
+      "id": "bullet-glass-0",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "b4aed60faa6d06530e200d8a16dc536c6eae270dee0311370ef66aa10212e6b0"
+    },
+    {
+      "id": "bullet-glass-1",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "be0ffb7912d4f44f03f0f7282b457cc1d7fc71f12278fc7474209e6ef22125c7"
+    },
+    {
+      "id": "bullet-glass-2",
+      "category": "effects",
+      "origin": "local-procedural-synthesis",
+      "source": "Open Territory original sound design",
+      "sha256": "e6e6ec326a90a1c010edad136815f10290d3fcd618970c2b0ee0d579dc71147b"
+    }
+  ],
+  "originalGeneratorArchive": "Unity\\AssetLibrary\\AudioSources\\legacy-procedural-generator.py.txt",
+  "originalGeneratorSha256": "bde0022996dffb660eeb4d1f01e0a161329b6977f22ece4278c81e67cfe46171"
+}

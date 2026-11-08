@@ -1,0 +1,381 @@
+{
+    "passed": false,
+    "checks": [
+        {
+            "name": "pulse-selected-through-input",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pulse-licensed-local-model",
+            "detail": "Kenney/blaster-b.obj",
+            "passed": true
+        },
+        {
+            "name": "pulse-emitter-enabled-in-player",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pulse-source-geometry-preserved",
+            "detail": "source=736 imported=760",
+            "passed": true
+        },
+        {
+            "name": "pulse-faceted-batched-model",
+            "detail": "triangles=760 renderers=3",
+            "passed": true
+        },
+        {
+            "name": "pulse-no-weapon-colliders",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pulse-one-press-one-shot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pulse-hits-reticle",
+            "detail": "error=4.7553E-05",
+            "passed": true
+        },
+        {
+            "name": "pulse-real-muzzle-origin",
+            "detail": "error=0.06806879",
+            "passed": true
+        },
+        {
+            "name": "pulse-flash-and-contact",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pulse-casing-type",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pulse-moving-action",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "muzzle-pulse-particles-simulate-and-render",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "Esc-freezes-live-particles",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pulse-recorded-or-designed-shot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pulse-reload-moves-cell-or-magazine",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pulse-Esc-pauses-reload-effects",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pulse-no-shot-in-settings",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pulse-reload-completes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pulse-reload-audio",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sidearm-selected-through-input",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sidearm-licensed-local-model",
+            "detail": "Quaternius/Pistol_4.obj",
+            "passed": true
+        },
+        {
+            "name": "sidearm-source-geometry-preserved",
+            "detail": "source=1320 imported=1344",
+            "passed": true
+        },
+        {
+            "name": "sidearm-faceted-batched-model",
+            "detail": "triangles=1344 renderers=6",
+            "passed": true
+        },
+        {
+            "name": "sidearm-no-weapon-colliders",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sidearm-one-press-one-shot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sidearm-hits-reticle",
+            "detail": "error=0.0004172496",
+            "passed": true
+        },
+        {
+            "name": "sidearm-real-muzzle-origin",
+            "detail": "error=0.06629995",
+            "passed": true
+        },
+        {
+            "name": "sidearm-flash-and-contact",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sidearm-casing-type",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sidearm-moving-action",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "muzzle-sidearm-particles-simulate-and-render",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "sidearm-recorded-or-designed-shot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sidearm-reload-moves-cell-or-magazine",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sidearm-Esc-pauses-reload-effects",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sidearm-no-shot-in-settings",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sidearm-reload-completes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sidearm-reload-audio",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "carbine-selected-through-input",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "carbine-licensed-local-model",
+            "detail": "Quaternius/AssaultRifle2_2.obj",
+            "passed": true
+        },
+        {
+            "name": "carbine-source-geometry-preserved",
+            "detail": "source=1796 imported=1796",
+            "passed": true
+        },
+        {
+            "name": "carbine-faceted-batched-model",
+            "detail": "triangles=1796 renderers=6",
+            "passed": true
+        },
+        {
+            "name": "carbine-no-weapon-colliders",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "carbine-one-press-one-shot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "carbine-hits-reticle",
+            "detail": "error=0.0008014942",
+            "passed": true
+        },
+        {
+            "name": "carbine-real-muzzle-origin",
+            "detail": "error=0.05260483",
+            "passed": true
+        },
+        {
+            "name": "carbine-flash-and-contact",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "carbine-casing-type",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "carbine-moving-action",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "muzzle-carbine-particles-simulate-and-render",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "carbine-recorded-or-designed-shot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "carbine-reload-moves-cell-or-magazine",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "carbine-Esc-pauses-reload-effects",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "carbine-no-shot-in-settings",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "carbine-reload-completes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "carbine-reload-audio",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "impact-stone",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "impact-wood",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "impact-glass",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bounded-surface-marks",
+            "detail": "marks=5",
+            "passed": true
+        },
+        {
+            "name": "miss-has-no-phantom-impact",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "cover-stops-shot-before-distant-target",
+            "detail": "surface-error=1.192093E-07 impact=(1.04, 201.73, 0.56) wall=(-0.09, 201.28, 0.27)",
+            "passed": true
+        },
+        {
+            "name": "carbine-held-trigger-keeps-cadence",
+            "detail": "shots=6",
+            "passed": true
+        },
+        {
+            "name": "release-stops-automatic-fire",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "X-hides-every-model",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "effects-pool-does-not-grow",
+            "detail": "pool=132",
+            "passed": true
+        },
+        {
+            "name": "short-traces-expire",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-DSP-output",
+            "detail": "frames=858112 peak=0.5539239",
+            "passed": true
+        },
+        {
+            "name": "all-audio-clips-imported",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": [],
+    "particles": [
+        "muzzle-pulse Clarões count=2 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True position=(0.27, 201.53, 0.81) size=0.156 color=RGBA(46, 255, 219, 204) lifetime=0.065 bounds=Center: (0.00, 0.00, 12.50), Extents: (12.28, 12.28, 13.21)",
+        "muzzle-pulse Fumaça count=0 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True bounds=Center: (0.00, 0.00, 12.50), Extents: (12.28, 12.28, 13.21)",
+        "muzzle-pulse Faíscas de metal count=0 renderer=True mode=Stretch scale=(1.00, 1.00, 1.00) opacity=1 supported=True bounds=Center: (0.00, 0.00, 12.50), Extents: (12.28, 12.28, 13.21)",
+        "muzzle-pulse Fragmentos e poeira count=0 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True bounds=Center: (0.00, 0.00, 12.50), Extents: (12.28, 12.28, 13.21)",
+        "muzzle-pulse Íons Maré count=14 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True position=(0.27, 201.54, 0.78) size=0.05884165 color=RGBA(31, 230, 194, 142) lifetime=0.26 bounds=Center: (0.00, 0.00, 12.50), Extents: (12.28, 12.28, 13.21)",
+        "muzzle-pulse Ondas Maré count=2 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True position=(0.27, 201.53, 0.82) size=0.13 color=RGBA(38, 255, 212, 132) lifetime=0.16 bounds=Center: (0.00, 0.00, 12.50), Extents: (12.28, 12.28, 13.21)",
+        "muzzle-pulse Blood droplets count=0 renderer=True mode=Stretch scale=(1.00, 1.00, 1.00) opacity=1 supported=True bounds=Center: (0.00, 0.00, 12.50), Extents: (12.28, 12.28, 13.21)",
+        "muzzle-sidearm Clarões count=2 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True position=(0.26, 201.56, 0.76) size=0.1495 color=RGBA(255, 168, 48, 204) lifetime=0.065 bounds=Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)",
+        "muzzle-sidearm Fumaça count=3 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True position=(0.25, 201.57, 0.73) size=0.05958133 color=RGBA(120, 122, 115, 52) lifetime=0.3106003 bounds=Center: (0.00, 0.00, 12.50), Extents: (12.28, 12.28, 13.21)",
+        "muzzle-sidearm Faíscas de metal count=12 renderer=True mode=Stretch scale=(1.00, 1.00, 1.00) opacity=1 supported=True position=(0.98, 200.48, 4.59) size=0.0156 color=RGBA(255, 194, 76, 204) lifetime=0.1960357 bounds=Center: (0.00, 0.00, 12.50), Extents: (12.28, 12.28, 13.21)",
+        "muzzle-sidearm Fragmentos e poeira count=2 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True position=(0.98, 200.48, 4.59) size=0.07559509 color=RGBA(148, 143, 130, 65) lifetime=0.507116 bounds=Center: (0.00, 0.00, 12.50), Extents: (12.28, 12.28, 13.21)",
+        "muzzle-sidearm Íons Maré count=0 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True bounds=Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)",
+        "muzzle-sidearm Ondas Maré count=0 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True bounds=Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)",
+        "muzzle-sidearm Blood droplets count=0 renderer=True mode=Stretch scale=(1.00, 1.00, 1.00) opacity=1 supported=True bounds=Center: (0.00, 0.00, 12.50), Extents: (12.28, 12.28, 13.21)",
+        "muzzle-carbine Clarões count=2 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True position=(0.23, 201.49, 0.87) size=0.2015 color=RGBA(255, 168, 48, 204) lifetime=0.065 bounds=Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)",
+        "muzzle-carbine Fumaça count=3 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True position=(0.23, 201.49, 0.85) size=0.03965732 color=RGBA(120, 122, 115, 52) lifetime=0.3899893 bounds=Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)",
+        "muzzle-carbine Faíscas de metal count=12 renderer=True mode=Stretch scale=(1.00, 1.00, 1.00) opacity=1 supported=True position=(0.98, 200.48, 4.59) size=0.0156 color=RGBA(255, 194, 76, 204) lifetime=0.2423627 bounds=Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)",
+        "muzzle-carbine Fragmentos e poeira count=2 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True position=(0.98, 200.48, 4.59) size=0.09881075 color=RGBA(148, 143, 130, 65) lifetime=0.3001421 bounds=Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)",
+        "muzzle-carbine Íons Maré count=0 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True bounds=Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)",
+        "muzzle-carbine Ondas Maré count=0 renderer=True mode=Billboard scale=(1.00, 1.00, 1.00) opacity=1 supported=True bounds=Center: (0.00, 0.00, 0.00), Extents: (0.00, 0.00, 0.00)",
+        "muzzle-carbine Blood droplets count=0 renderer=True mode=Stretch scale=(1.00, 1.00, 1.00) opacity=1 supported=True bounds=Center: (0.00, 0.00, 12.50), Extents: (12.28, 12.28, 13.21)"
+    ],
+    "audioPeak": 0.5539239048957825,
+    "audioFrames": 858112
+}

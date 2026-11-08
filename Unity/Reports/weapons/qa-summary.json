@@ -1,0 +1,26 @@
+{
+  "verification": {
+    "verifiedAtUtc": "2026-11-08T03:25:13.6337134Z",
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\WeaponsRelease\\BaiaDoSol.exe",
+    "assemblySha256": "85E78FA7DE0694ACCD28A36EFE03C7D13E52DFFC8D486B7AF59A50BBFCDA2D78",
+    "graphicsApi": "Direct3D11",
+    "exitCode": 0,
+    "passed": true,
+    "checks": 63,
+    "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\weapons\\verified-release\\weapons-qa.json",
+    "captures": true
+  },
+  "sourceSha256": {
+    "Assets/Scripts/Life/CityCombat.cs": "c0ef946f1fa6bdb6fe81cad41d29961c568fa622043293773380b4a38ccf6481",
+    "Assets/Scripts/Life/CityWeaponVisual.cs": "1cf39d185d5362a5c128f292b621a7a2bd223c1837e061f04b4fe95b79e50107",
+    "Assets/Scripts/Life/CityGunEffects.cs": "215aa0d833718ef67fcbbd465e91985358520d02f42317d4b6eb31d1b39100f0",
+    "Assets/Scripts/Life/CityWeaponProbe.cs": "d49cae74526843ed72d4a34ac5983978a06ee22aa4fdc6259740fb22b024d034",
+    "Assets/Resources/Shaders/CityGunParticle.shader": "c0bf94b26f5f8e9aecbe170baf38de806938f2ee72a8a6a73777ea86ea98d978"
+  },
+  "audioCredits": "Unity/AssetLibrary/WeaponAudioSources/CREDITS.txt",
+  "notes": [
+    "63 integration checks passed with Direct3D11, including rendered particle bounds, live particle pause, physical cover and native DSP capture.",
+    "The Direct3D12 run passed its gameplay checks, then crashed on shutdown in D3D12Core.dll at offset 0xa1f5. A pre-existing 20:15 crash dump has the same module and offset. Project graphics settings were not changed.",
+    "Verified build stored in WeaponsRelease to keep it separate from concurrent builds of WindowsRelease."
+  ]
+}

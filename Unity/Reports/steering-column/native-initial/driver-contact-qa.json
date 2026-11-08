@@ -1,0 +1,269 @@
+{
+    "passed": false,
+    "unity": "6000.3.27f1",
+    "graphics": "Direct3D12",
+    "checks": [
+        {
+            "name": "sedã-E-targets-car--1",
+            "detail": "action=vehicle-8908 player=(-1.98, 200.03, -0.28) car=(0.00, 200.10, 0.00) busy=False speed=0",
+            "passed": true
+        },
+        {
+            "name": "sedã-boards-visible-driver",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-legs-inside-before-door-closes",
+            "detail": "minimumFloorGap=0.02295399",
+            "passed": true
+        },
+        {
+            "name": "sedã-has-authored-cabin-floor-mesh",
+            "detail": "0.8249995",
+            "passed": true
+        },
+        {
+            "name": "sedã-driver-inherits-vehicle-render-pose",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-wheel-fit-is-idempotent",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-hub-overlaps-spoke-centre",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-column-penetrates-real-dashboard-mesh",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-column-shares-mesh-and-has-no-extra-collider",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-rim-clear-of-face-and-windscreen",
+            "detail": "back=0.3021307 front=0.5378692 top=1.55774",
+            "passed": true
+        },
+        {
+            "name": "sedã-driver-stays-inside-at-speed-and-in-turns",
+            "detail": "seatGap=7.620557E-06 angle=0",
+            "passed": true
+        },
+        {
+            "name": "sedã-both-hands-follow-the-wheel",
+            "detail": "maxGap=0.001450923",
+            "passed": true
+        },
+        {
+            "name": "sedã-column-remains-attached-in-motion-and-turns",
+            "detail": "maxGap=7.640795E-06",
+            "passed": true
+        },
+        {
+            "name": "sedã-entire-leg-and-shoe-meshes-above-floor",
+            "detail": "minimumFloorGap=0.03498638",
+            "passed": true
+        },
+        {
+            "name": "sedã-head-keeps-roof-clearance",
+            "detail": "minimumRoofGap=0.05803132",
+            "passed": true
+        },
+        {
+            "name": "sedã-Esc-freezes-driver-and-vehicle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-exit-restores-parent-capsule-and-scale",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-walks-after-exit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-E-targets-car-1",
+            "detail": "action=vehicle-9476 player=(1.86, 200.03, -0.28) car=(0.00, 200.10, 0.00) busy=False speed=0",
+            "passed": true
+        },
+        {
+            "name": "compacto-boards-visible-driver",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-legs-inside-before-door-closes",
+            "detail": "minimumFloorGap=0.02087539",
+            "passed": true
+        },
+        {
+            "name": "compacto-has-authored-cabin-floor-mesh",
+            "detail": "0.8250058",
+            "passed": true
+        },
+        {
+            "name": "compacto-driver-inherits-vehicle-render-pose",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-wheel-fit-is-idempotent",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-hub-overlaps-spoke-centre",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-column-penetrates-real-dashboard-mesh",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-column-shares-mesh-and-has-no-extra-collider",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-rim-clear-of-face-and-windscreen",
+            "detail": "back=0.3021306 front=0.5378693 top=1.507738",
+            "passed": true
+        },
+        {
+            "name": "compacto-driver-stays-inside-at-speed-and-in-turns",
+            "detail": "seatGap=7.722253E-06 angle=0",
+            "passed": true
+        },
+        {
+            "name": "compacto-both-hands-follow-the-wheel",
+            "detail": "maxGap=0.005462707",
+            "passed": true
+        },
+        {
+            "name": "compacto-column-remains-attached-in-motion-and-turns",
+            "detail": "maxGap=7.683452E-06",
+            "passed": true
+        },
+        {
+            "name": "compacto-entire-leg-and-shoe-meshes-above-floor",
+            "detail": "minimumFloorGap=0.02579737",
+            "passed": true
+        },
+        {
+            "name": "compacto-head-keeps-roof-clearance",
+            "detail": "minimumRoofGap=0.05831337",
+            "passed": true
+        },
+        {
+            "name": "compacto-Esc-freezes-driver-and-vehicle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-exit-restores-parent-capsule-and-scale",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-walks-after-exit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "perua-E-targets-car--1",
+            "detail": "action= player=(1.27, 200.00, -0.27) car=(-0.12, 199.97, 0.00) busy=True speed=0",
+            "passed": false
+        },
+        {
+            "name": "perua-boards-visible-driver",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "perua-legs-inside-before-door-closes",
+            "detail": "minimumFloorGap=Infinity",
+            "passed": false
+        },
+        {
+            "name": "picape-E-targets-car-1",
+            "detail": "action= player=(2.03, 200.03, -0.10) car=(0.04, 199.92, 0.04) busy=False speed=0.08391546",
+            "passed": false
+        },
+        {
+            "name": "picape-boards-visible-driver",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "picape-legs-inside-before-door-closes",
+            "detail": "minimumFloorGap=Infinity",
+            "passed": false
+        },
+        {
+            "name": "furgão-E-targets-car--1",
+            "detail": "action= player=(-1.66, 200.03, -0.60) car=(0.44, 202.81, -0.83) busy=False speed=-0.609556",
+            "passed": false
+        },
+        {
+            "name": "furgão-boards-visible-driver",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "furgão-legs-inside-before-door-closes",
+            "detail": "minimumFloorGap=Infinity",
+            "passed": false
+        },
+        {
+            "name": "sedã-E-targets-car--1",
+            "detail": "action= player=(-2.03, 200.03, -0.12) car=(-0.26, 202.26, 0.13) busy=False speed=0.7344471",
+            "passed": false
+        },
+        {
+            "name": "sedã-boards-visible-driver",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "sedã-legs-inside-before-door-closes",
+            "detail": "minimumFloorGap=Infinity",
+            "passed": false
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": [],
+    "seats": [
+        {
+            "model": "sedã",
+            "floorHeight": 0.8249994516372681,
+            "minimumFloorGap": 0.03498637676239014,
+            "minimumRoofGap": 0.058031320571899417,
+            "maximumHandGap": 0.001450922922231257
+        },
+        {
+            "model": "compacto",
+            "floorHeight": 0.8250057697296143,
+            "minimumFloorGap": 0.025797367095947267,
+            "minimumRoofGap": 0.05831336975097656,
+            "maximumHandGap": 0.005462706554681063
+        }
+    ]
+}

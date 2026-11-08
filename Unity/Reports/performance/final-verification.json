@@ -1,0 +1,34 @@
+{
+  "verifiedAtUtc": "2026-11-08T04:29:19.6010125Z",
+  "passed": true,
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\WindowsOptimized\\BaiaDoSol.exe",
+  "assemblySha256": "A2FD93FD3EE260A6E58D29AF2564CA2B66A9D65DF5F743739232EDBDD61B2219",
+  "checks": 115,
+  "suites": [
+    {
+      "suite": "delivered/run-1/verification.json",
+      "passed": true,
+      "assemblySha256": "A2FD93FD3EE260A6E58D29AF2564CA2B66A9D65DF5F743739232EDBDD61B2219",
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\performance\\delivered\\run-1\\performance-qa.json"
+    },
+    {
+      "suite": "delivered-circulation/verification.json",
+      "passed": true,
+      "assemblySha256": "A2FD93FD3EE260A6E58D29AF2564CA2B66A9D65DF5F743739232EDBDD61B2219",
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\performance\\delivered-circulation\\living-city-qa.json"
+    },
+    {
+      "suite": "delivered-default/verification.json",
+      "passed": true,
+      "assemblySha256": "A2FD93FD3EE260A6E58D29AF2564CA2B66A9D65DF5F743739232EDBDD61B2219",
+      "report": null
+    },
+    {
+      "suite": "delivered-general/verification.json",
+      "passed": true,
+      "assemblySha256": "A2FD93FD3EE260A6E58D29AF2564CA2B66A9D65DF5F743739232EDBDD61B2219",
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\performance\\delivered-general\\reference-qa.json"
+    }
+  ],
+  "comparison": "comparison.json"
+}

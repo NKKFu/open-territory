@@ -1,0 +1,51 @@
+{
+  "assemblySha256": "7785F5072B6786B116BB5D0ABDDC8B619A2081EF32C10461FBCC206A1093657F",
+  "checks": [
+    {
+      "name": "walk-through-grass",
+      "passed": true,
+      "distance": 5.263214111328125,
+      "grounded": true,
+      "start": {
+        "x": 217.3713836669922,
+        "y": 9.03115463256836,
+        "z": 376.3833923339844
+      },
+      "end": {
+        "x": 217.3713836669922,
+        "y": 9.03182601928711,
+        "z": 381.6466064453125
+      },
+      "fps": 226.01251220703125,
+      "errors": 0
+    },
+    {
+      "name": "walk-through-shrub",
+      "passed": true,
+      "distance": 5.269744873046875,
+      "grounded": true,
+      "start": {
+        "x": 166.81146240234375,
+        "y": 9.03069019317627,
+        "z": 371.375244140625
+      },
+      "end": {
+        "x": 166.81146240234375,
+        "y": 9.031293869018555,
+        "z": 376.6449890136719
+      },
+      "fps": 243.00404357910156,
+      "errors": 0
+    },
+    {
+      "name": "settings-pause-and-resume",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "assemblyUnchanged": true,
+  "optionalScreenCapture": {
+    "passed": false,
+    "detail": "ScreenCapture could not capture the hidden native window. Visual review used MCP captures and reference-qa native camera renders."
+  }
+}

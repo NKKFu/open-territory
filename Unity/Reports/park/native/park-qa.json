@@ -1,0 +1,149 @@
+{
+    "passed": true,
+    "routeSamples": 2496,
+    "graphicsApi": "Direct3D12",
+    "unityVersion": "6000.3.27f1",
+    "checks": [
+        {
+            "name": "native-park-and-city-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "park-features-authored-in-scene",
+            "detail": "paths=6 benches=10 trees=9 beds=7",
+            "passed": true
+        },
+        {
+            "name": "benches-bound-to-usual-E-actions",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "original-trees-retained",
+            "detail": "retained=17 missing=0",
+            "passed": true
+        },
+        {
+            "name": "continuous-wide-path-support-and-clearance",
+            "detail": "samples=2496 unsupported=0 blocked=0 ",
+            "passed": true
+        },
+        {
+            "name": "real-controller-walks-Meadow loop",
+            "detail": "position=(-37.58, 9.11, -2.49)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-walks-West sidewalk entrance",
+            "detail": "position=(-45.32, 9.33, 26.81)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-walks-East sidewalk entrance",
+            "detail": "position=(61.71, 9.31, 28.48)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-walks-Garden promenade",
+            "detail": "position=(33.84, 9.10, -0.27)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-walks-Picnic grove access",
+            "detail": "position=(-7.89, 9.10, -3.76)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-walks-South picnic connection",
+            "detail": "position=(0.87, 9.10, -24.07)",
+            "passed": true
+        },
+        {
+            "name": "jump-and-land-on-path",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--94000",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--94001",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--94002",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--94003",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--94004",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--94005",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--94006",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--94007",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--94008",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--94009",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "park-named-on-map",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "map-keeps-city-running",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "park-lanterns-light-at-night",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-settings-pause-world",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "resume-exploration",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-game-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

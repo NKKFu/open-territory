@@ -1,0 +1,211 @@
+{
+    "passed": true,
+    "checks": [
+        {
+            "name": "Q-talk-E-object-bindings",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "gaze-selects-person-over-nearer-priority-object",
+            "detail": "qa-person",
+            "passed": true
+        },
+        {
+            "name": "person-world-label-shows-Q",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "E-does-not-talk",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Q-talks-once",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Q-does-not-repeat",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "person-prompt-click-routes-Q",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "camera-turn-switches-target-without-moving",
+            "detail": "qa-object",
+            "passed": true
+        },
+        {
+            "name": "object-world-label-shows-E",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Q-does-not-use-object",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "E-uses-object-once",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "object-prompt-click-routes-E",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "looking-away-clears-target",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "looking-away-executes-nothing",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "camera-cannot-extend-character-reach",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "object-does-not-occlude-its-own-action",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "camera-wall-blocks-even-high-priority-object",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "foreground-person-blocks-object",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "character-cannot-reach-through-wall",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "disabled-object-is-not-selected",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-pauses-input-and-world",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "resume-does-not-replay-input",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "state-exit-survives-camera-orbit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Q-does-not-trigger-E-state-action",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "E-triggers-state-action",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-resident-selected-by-gaze",
+            "detail": "resident-4875",
+            "passed": true
+        },
+        {
+            "name": "real-resident-ignores-E",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-resident-Q-conversation-without-pause",
+            "detail": "Bia · The promenade and pier are towards the sea.",
+            "passed": true
+        },
+        {
+            "name": "real-bench-selected-by-gaze",
+            "detail": "seat-30614",
+            "passed": true
+        },
+        {
+            "name": "real-bench-ignores-Q",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-bench-E-sits",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-stand-offered-looking-away",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-stand-E-gets-up",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-car-selected-by-gaze",
+            "detail": "vehicle-8908",
+            "passed": true
+        },
+        {
+            "name": "real-car-ignores-Q",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-car-E-enters",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-car-exit-offered-looking-away",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-car-E-exits",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "all-resident-and-driver-dialogues-use-Q",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "vehicles-seats-and-fish-objects-use-E",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

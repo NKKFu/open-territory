@@ -1,0 +1,29 @@
+﻿{
+    "verifiedAtUtc":  "2026-11-08T04:18:43.9843678Z",
+    "startedAtUtc":  "2026-11-08T04:18:27.4631589Z",
+    "passed":  true,
+    "executable":  "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\WindowsRelease\\BaiaDoSol.exe",
+    "assemblySha256":  "80A121C3A6C8308545E9A71D1091FE5A8AE9D50DE2335F83941C491E4B259B98",
+    "exitCode":  0,
+    "checks":  [
+                   {
+                       "name":  "walking-through-real-input-poller",
+                       "passed":  true,
+                       "detail":  "distance=3.92404174804687"
+                   },
+                   {
+                       "name":  "pause-stops-city-clock",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "native-session-has-no-runtime-errors",
+                       "passed":  true,
+                       "detail":  "errors=0"
+                   },
+                   {
+                       "name":  "normal-exit-with-default-graphics-api",
+                       "passed":  true,
+                       "detail":  "exit=0"
+                   }
+               ]
+}

@@ -1,0 +1,114 @@
+{
+    "passed": false,
+    "unityVersion": "6000.3.27f1",
+    "graphicsApi": "Direct3D11",
+    "samples": 1923,
+    "checks": [
+        {
+            "name": "native-city-and-park-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "isolated-review-storage",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "five-selected-residences-retired",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "all-lot-solids-retired",
+            "detail": "solids=122",
+            "passed": true
+        },
+        {
+            "name": "neighboring-homes-and-waterfront-preserved",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "playground-pergola-gym-and-gardens-authored",
+            "detail": "trees=8 shrubs=5 stones=5 beds=9 seats=4",
+            "passed": true
+        },
+        {
+            "name": "benches-use-normal-city-actions",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pedestrian-graph-connects-to-five-existing-sidewalk-nodes",
+            "detail": "park nodes=50",
+            "passed": true
+        },
+        {
+            "name": "all-paths-supported-and-clear",
+            "detail": "samples=1923 unsupported=0 blocked=0 buried=5  terrain: Sidewalk connection 4:Piso-16,19@(548.6, 9.2, 621.0),Sidewalk connection 5:Piso-17,19@(569.3, 8.6, 626.3),Lawn connection 89:Piso-17,19@(570.8, 8.2, 611.2),Lawn connection 89:Piso-17,19@(571.5, 8.2, 611.3),Lawn connection 89:Piso-17,19@(572.1, 8.2, 611.4)",
+            "passed": false
+        },
+        {
+            "name": "controller-walks-Pedestrian path",
+            "detail": "position=(505.09, 8.18, 590.84) grounded=True target=10/(507.45, 8.45, 591.64) gap=2.49",
+            "passed": false
+        },
+        {
+            "name": "controller-walks-Cycle lane",
+            "detail": "position=(575.86, 8.25, 624.80) grounded=True",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Sidewalk connection 1",
+            "detail": "position=(490.18, 8.81, 598.76) grounded=True",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Sidewalk connection 2",
+            "detail": "position=(509.15, 9.00, 606.07) grounded=True",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Sidewalk connection 3",
+            "detail": "position=(527.56, 9.14, 614.08) grounded=True",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Sidewalk connection 4",
+            "detail": "position=(547.59, 9.31, 621.98) grounded=True",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Sidewalk connection 5",
+            "detail": "position=(568.42, 8.63, 627.27) grounded=True",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Lawn connection 8",
+            "detail": "position=(499.83, 2.74, 571.85) grounded=True",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Lawn connection 89",
+            "detail": "position=(571.39, 7.28, 611.91) grounded=True target=1/(573.42, 3.93, 600.54) gap=11.55",
+            "passed": false
+        },
+        {
+            "name": "bench-sit-and-stand",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "resident-walks-park-route",
+            "detail": "remaining=12.67",
+            "passed": false
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

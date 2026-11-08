@@ -1,0 +1,146 @@
+{
+    "passed": false,
+    "checks": [
+        {
+            "name": "current-exported-doors-have-reviewed-access",
+            "detail": "",
+            "passed": true,
+            "value": 213.0
+        },
+        {
+            "name": "all-entrances-have-continuous-physical-paving",
+            "detail": "samples=1707 maxHeightError=0.1209402",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "entrance-routes-clear-of-walls-and-furniture",
+            "detail": "",
+            "passed": false,
+            "value": 24.0
+        },
+        {
+            "name": "all-entrances-connected-to-pedestrian-navigation",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "most-door-setbacks-under-three-metres",
+            "detail": "",
+            "passed": true,
+            "value": 212.0
+        },
+        {
+            "name": "entrances-have-clear-interior-and-sidewalk-approaches",
+            "detail": "",
+            "passed": true,
+            "value": 212.0
+        },
+        {
+            "name": "walk-from-sidewalk-through-door-0",
+            "detail": "PADARIA PÃO & SOL player=(545.63, 9.88, 689.95) door=(546.40, 9.67, 691.22) grounded=True",
+            "passed": true,
+            "value": 0.01870555803179741
+        },
+        {
+            "name": "door-still-operates-0",
+            "detail": "PADARIA PÃO & SOL",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "walk-from-sidewalk-through-door-1",
+            "detail": "#2ECB72 player=(597.55, 11.24, 812.30) door=(598.55, 11.03, 811.22) grounded=True",
+            "passed": true,
+            "value": 0.026557868346571924
+        },
+        {
+            "name": "door-still-operates-1",
+            "detail": "#2ECB72",
+            "passed": true,
+            "value": 90.00000762939453
+        },
+        {
+            "name": "walk-from-sidewalk-through-door-2",
+            "detail": "#43CBAB player=(412.26, 9.58, 622.81) door=(412.76, 9.37, 621.42) grounded=True",
+            "passed": true,
+            "value": 0.0237163994461298
+        },
+        {
+            "name": "door-still-operates-2",
+            "detail": "#43CBAB",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "walk-from-sidewalk-through-door-3",
+            "detail": "#C675D7 player=(750.20, 13.80, 885.86) door=(750.53, 13.59, 887.30) grounded=True",
+            "passed": true,
+            "value": 0.017736462876200677
+        },
+        {
+            "name": "door-still-operates-3",
+            "detail": "#C675D7",
+            "passed": true,
+            "value": 90.00000762939453
+        },
+        {
+            "name": "walk-from-sidewalk-through-door-4",
+            "detail": "#79028A player=(348.88, 9.19, 394.74) door=(347.71, 8.98, 395.61) grounded=True",
+            "passed": true,
+            "value": 0.04401359707117081
+        },
+        {
+            "name": "door-still-operates-4",
+            "detail": "#79028A",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "walk-from-sidewalk-through-door-5",
+            "detail": "#0CD428 player=(244.46, 9.54, 601.08) door=(243.10, 9.34, 600.54) grounded=True",
+            "passed": true,
+            "value": 0.03570222854614258
+        },
+        {
+            "name": "door-still-operates-5",
+            "detail": "#0CD428",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "errors": [],
+    "obstacles": [
+        "blocked GALERIA SOL (524.83, 9.98, 705.91) Colisão-605",
+        "blocked GALERIA SOL (524.62, 9.99, 705.57) Colisão-605",
+        "blocked GALERIA SOL (524.41, 9.99, 705.24) Colisão-606",
+        "blocked GALERIA SOL (524.21, 9.98, 704.91) Colisão-606",
+        "blocked #713EE2 (490.03, 8.79, 599.20) Haste",
+        "blocked #713EE2 (490.16, 8.79, 598.83) Haste",
+        "blocked #F1C3A7 (646.72, 18.44, 870.00) Colisão-539",
+        "blocked #F1C3A7 (647.09, 18.43, 869.86) Colisão-539",
+        "blocked #F1C3A7 (647.45, 18.42, 869.72) Colisão-539",
+        "blocked #F1C3A7 (647.82, 18.39, 869.58) Colisão-539",
+        "blocked #053763 (409.86, 5.61, 525.30) Haste",
+        "blocked #053763 (409.55, 5.65, 525.53) Haste",
+        "blocked #DBDAE6 (997.37, 10.50, 929.11) Colisão-527",
+        "blocked #DBDAE6 (997.16, 10.48, 928.77) Colisão-527",
+        "blocked #DBDAE6 (996.96, 10.46, 928.44) Colisão-527",
+        "blocked #DBDAE6 (996.76, 10.43, 928.10) Colisão-527",
+        "blocked #07474D (236.15, 10.13, 694.31) Colisão-304",
+        "blocked #07474D (236.55, 10.13, 694.32) Colisão-304",
+        "blocked #07474D (236.94, 10.13, 694.33) Colisão-304",
+        "blocked #07474D (237.33, 10.13, 694.35) Colisão-304",
+        "blocked #F908F8 (224.61, 10.13, 693.94) Colisão-302",
+        "blocked #F908F8 (224.22, 10.14, 693.92) Colisão-302",
+        "blocked #F908F8 (223.83, 10.14, 693.91) Colisão-302",
+        "blocked #F908F8 (223.44, 10.13, 693.90) Colisão-302"
+    ]
+}

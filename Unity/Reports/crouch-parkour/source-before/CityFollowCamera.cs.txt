@@ -1,0 +1,151 @@
+using UnityEngine;
+
+namespace OpenTerritory
+{
+    [DefaultExecutionOrder(-100)]
+    public class CityFollowCamera : MonoBehaviour
+    {
+        public const float DefaultDistance=2.6f,DefaultPitch=18f,StandingHeight=2f,ShoulderOffset=.98f;
+        public const float AimDistance=2.15f,AimHeight=1.95f;
+        public static Vector3 DefaultOffset=>Vector3.up*StandingHeight+Vector3.right*ShoulderOffset-Quaternion.Euler(DefaultPitch,0,0)*Vector3.forward*DefaultDistance;
+        CityContext ctx;float yaw,pitch=DefaultPitch,targetYaw,targetPitch=DefaultPitch,length,side,chosenSide,holdSide,lastManual,pivotY;
+        Vector3 pivot,previousPivot,previousEye;bool initialized;Transform lastRide;
+        public float Sensitivity=1,FieldOfView=CityUI.FixedFieldOfView;
+        public bool InvertY;
+        public float Distance=DefaultDistance;
+        float aimBlend;
+        public float AimBlend=>aimBlend;
+        public Vector3 FlatForward=>ctx?CityPhysics.Flat(ctx.Camera.transform.forward).normalized:Vector3.forward;
+        public Ray AimRay=>ctx.Camera.ViewportPointToRay(new Vector3(.5f,.5f,0));
+        public float ObstructionDistance=>length;
+        public void Initialize(CityContext context){ctx=context;targetYaw=yaw=ctx.Player.eulerAngles.y+180;}
+        public void ResetTracking(){initialized=false;chosenSide=side=holdSide=0;}
+        public void Face(float heading){targetYaw=heading+180;targetPitch=DefaultPitch;lastManual=-10;}
+        Transform CameraRide => ctx.Motor.Riding ? ctx.Motor.Riding : ctx.Vehicles.RemoteVehicle?.Root;
+        void LateUpdate()
+        {
+            if(!ctx||!ctx.Ready||ctx.Paused)return;
+            if(ctx.Remote&&ctx.Remote.OverridesCamera){ctx.Remote.ApplyCamera(ctx.Camera);initialized=false;return;}
+            float dt=Mathf.Min(.05f,Time.deltaTime);if(dt<=0)return;
+            bool aiming=ctx.Combat&&ctx.Combat.Aiming;
+            aimBlend=CityVehicleMath.Damp(aimBlend,aiming?1:0,aiming?12:9,dt);
+            var motor=ctx.Motor;Transform ride=CameraRide;
+            float motionSpeed=ctx.Vehicles.RemoteVehicle!=null?Mathf.Abs(ctx.Vehicles.RemoteVehicle.Speed):motor.Speed;
+            Transform subject=ride?ride:ctx.Player;
+            if(lastRide!=ride){lastRide=ride;lastManual=ctx.Clock+.45f;}
+            Vector2 input=ctx.Input.Look;
+            if(input.sqrMagnitude>.00001f)
+            {
+                float precision=Mathf.Lerp(1,.58f,aimBlend);
+                targetYaw+=input.x*2.6f*Sensitivity*precision;targetPitch+=input.y*(InvertY?1:-1)*2.0f*Sensitivity*precision;
+                targetPitch=Mathf.Clamp(targetPitch,-13,68);lastManual=ctx.Clock;
+            }
+            if(Mathf.Abs(ctx.Input.Zoom)>.001f)Distance=Mathf.Clamp(Distance-ctx.Input.Zoom*.8f,2.4f,14);
+            if(ride&&motionSpeed>1.3f&&ctx.Clock-lastManual>.85f)
+            {
+                float followRate=2.1f;
+                var driven=ctx.Vehicles.RemoteVehicle??ctx.Vehicles.Active;
+                if(driven!=null&&driven.Data.kind=="car"&&driven.Body&&(driven.Controlled||driven==ctx.Vehicles.RemoteVehicle))
+                    followRate=Mathf.Lerp(3.2f,5.4f,Mathf.InverseLerp(.04f,.8f,Mathf.Abs(driven.Body.angularVelocity.y)));
+                targetYaw=Mathf.LerpAngle(targetYaw,subject.eulerAngles.y+180,1-Mathf.Exp(-followRate*dt));
+                targetPitch=Mathf.Lerp(targetPitch,15,1-Mathf.Exp(-.7f*dt));
+            }
+            // Foot locomotion never steers the orbit. Otherwise camera-relative
+            // lateral input and auto-centering form an endless turning loop.
+            yaw=Mathf.LerpAngle(yaw,targetYaw,1-Mathf.Exp(-18*dt));pitch=CityVehicleMath.Damp(pitch,targetPitch,18,dt);
+            // Keep the lens above the shoulder: lowering a close camera to chest
+            // height crops the head and puts the raised arm over the reticle.
+            float height=ride?1.25f:Mathf.Lerp(StandingHeight,AimHeight,aimBlend);
+            // Keep the seated orbit above the backrest even at low view angles.
+            // A fixed low pivot collapses the collision sweep into the character;
+            // taller seats still raise the framing with the seated pose.
+            if(!ride&&motor.SeatHeight.HasValue)
+                height=Mathf.Max(StandingHeight,height+motor.SeatHeight.Value+.10f-ctx.Actors.PlayerRig.HipHeight);
+            if(motor.Mode=="swim")height=1.50f;
+            float targetY=subject.position.y+height;
+            if(!initialized)pivotY=targetY;
+            else pivotY=CityVehicleMath.Damp(pivotY,targetY,!motor.Grounded&&!ride&&!motor.Swimming&&!motor.Traversing?3.3f:13,dt);
+            // A physical shoulder pivot remains inside the room under its roof.
+            pivot=new Vector3(subject.position.x,pivotY,subject.position.z);
+            if(!ride)
+            {
+                // Traversal locks locomotion, but keeps the exploration orbit.
+                // Collapsing the shoulder for Busy snaps sideways at both ends
+                // of a vault, including its grounded approach.
+                bool closeShoulder=motor.Busy&&!motor.Traversing&&!motor.ParkourApproaching&&!motor.SeatHeight.HasValue&&!ctx.Vehicles.RemovingDriver;
+                Vector3 shoulder=Quaternion.Euler(0,yaw+180,0)*Vector3.right*(closeShoulder?.12f:ShoulderOffset);
+                if(CityPhysics.Cast(pivot,.22f,shoulder.normalized,shoulder.magnitude,out var shoulderHit,ctx.Player))
+                    shoulder=shoulder.normalized*Mathf.Max(0,shoulderHit.distance-.04f);
+                pivot+=shoulder;
+            }
+            // Vehicle zoom keeps its existing 7 m baseline independently of the closer foot camera.
+            float distance=ride?7+(Distance-DefaultDistance)+Mathf.Min(2,motionSpeed*.07f):Mathf.Lerp(Distance+Mathf.SmoothStep(0,.45f,Mathf.InverseLerp(3,CityPlayer.SprintSpeed,motionSpeed)),AimDistance,aimBlend);
+            if(ctx.Vehicles.RemovingDriver)distance=Mathf.Max(distance,4.2f);
+            Vector3 velocity=initialized?(pivot-previousPivot)/dt:Vector3.zero;
+            // Foot jumps reverse vertical motion at the apex and landing.
+            // Extrapolating that motion puts the future pivot inside the floor
+            // or the cleared obstacle and retracts an otherwise clear orbit.
+            if(!ride)velocity.y=0;
+            velocity=Vector3.ClampMagnitude(velocity,14);
+            Vector3 predicted=pivot+velocity*.35f;
+            if(velocity.magnitude>.03f&&CityPhysics.Cast(pivot,.32f,velocity.normalized,velocity.magnitude*.35f,out var approach,ctx.Player,ride))
+                predicted=pivot+velocity.normalized*Mathf.Max(0,approach.distance-.05f);
+            float desired=Clear(pivot,Direction(yaw,pitch),distance),future=Clear(predicted,Direction(yaw,pitch),distance);
+            float best=Mathf.Min(desired,future),bestSide=0;
+            if(ride&&best<distance-1.05f)
+            {
+                float preferred=chosenSide==0?1:Mathf.Sign(chosenSide);
+                float[] options={chosenSide,preferred*23,-preferred*23,preferred*43,-preferred*43,preferred*66,-preferred*66,preferred*88};
+                float score=best;
+                foreach(float offset in options)
+                {
+                    Vector3 ray=Direction(yaw+offset,pitch);float clear=Mathf.Min(Clear(pivot,ray,distance),Clear(predicted,ray,distance));
+                    float candidate=clear-Mathf.Abs(offset)*.014f;
+                    if(chosenSide!=0&&offset*chosenSide<0)candidate-=holdSide>0?1.25f:.6f;
+                    if(Mathf.Abs(offset-chosenSide)<1)candidate+=.23f;
+                    if(candidate>score+.14f){score=candidate;best=clear;bestSide=offset;}
+                }
+                if(Mathf.Abs(bestSide-chosenSide)>1){chosenSide=bestSide;holdSide=.75f;}
+            }
+            else if(!ride||desired>=distance-.15f&&future>=distance-.15f){holdSide-=dt;if(holdSide<=0)chosenSide=0;}
+            holdSide=Mathf.Max(-1,holdSide-dt);
+            side=CityVehicleMath.Damp(side,chosenSide,chosenSide==0?3.3f:6,dt);
+            Vector3 direction=Direction(yaw+side,pitch);float clearance=Clear(pivot,direction,distance);
+            float expected=Clear(predicted,direction,distance);
+            float allowed=Mathf.Max(.18f,Mathf.Min(clearance,Mathf.Lerp(clearance,expected,.72f)));
+            if(!initialized)length=Mathf.Min(distance,allowed);
+            else length=Mathf.Min(clearance,CityVehicleMath.Damp(length,Mathf.Min(distance,allowed),allowed<length?15:3.6f,dt));
+            Vector3 eye=pivot+direction*Mathf.Max(.18f,length);
+            if(initialized&&(eye-previousEye).magnitude<3&&CityPhysics.Cast(previousEye,.16f,(eye-previousEye).normalized,(eye-previousEye).magnitude,out var travel,ctx.Player,ride))
+            {
+                Vector3 safe=previousEye+(eye-previousEye).normalized*Mathf.Max(0,travel.distance-.02f);
+                if(Clear(pivot,(safe-pivot).normalized,(safe-pivot).magnitude)>=(safe-pivot).magnitude-.04f)eye=safe;
+            }
+            ctx.Camera.transform.position=eye;
+            // Keep the reference pitch stable when zoom or obstructions change the orbit length.
+            float lookOffset=!ride&&motor.Mode!="swim"?0:length<2.5f?-.08f:.10f;
+            Vector3 look=pivot+Vector3.up*lookOffset;
+            if((look-eye).sqrMagnitude>.005f)ctx.Camera.transform.rotation=Quaternion.LookRotation(look-eye,Vector3.up);
+            float speedFov=!ride&&!motor.Busy&&!(ctx.Combat&&ctx.Combat.Aiming)?Mathf.SmoothStep(0,4,Mathf.InverseLerp(4,CityPlayer.SprintSpeed,motionSpeed)):0;
+            ctx.Camera.fieldOfView=CityVehicleMath.Damp(ctx.Camera.fieldOfView,Mathf.Lerp(ctx.UI.Fov+speedFov,64,aimBlend),12,dt);
+            ctx.Camera.nearClipPlane=length<1?.035f:.08f;
+            previousEye=eye;previousPivot=pivot;initialized=true;
+        }
+        static Vector3 Direction(float heading,float elevation)=>Quaternion.Euler(-elevation,heading,0)*Vector3.forward;
+        float Clear(Vector3 origin,Vector3 direction,float distance)
+        {
+            float limit=distance;
+            foreach(var hit in Physics.SphereCastAll(origin,.19f,direction,distance,ctx.SolidMask,QueryTriggerInteraction.Ignore))
+            {
+                if(!hit.collider||CityPhysics.Belongs(hit.collider,ctx.Player)||CityPhysics.Belongs(hit.collider,CameraRide))continue;
+                var size=hit.collider.bounds.size;bool post=Mathf.Max(size.x,size.z)<.76f&&size.y>1.45f;
+                // A pole in the foreground may cross the view. A pole at the
+                // lens, a door leaf or a broad wall still constrains the camera.
+                float oldDepth=Vector3.Dot(previousEye-origin,direction);
+                if(initialized&&post&&hit.distance+Mathf.Max(size.x,size.z)<distance-.55f&&oldDepth>hit.distance+.6f)continue;
+                limit=Mathf.Min(limit,Mathf.Max(.15f,hit.distance-.025f));
+            }
+            return limit;
+        }
+    }
+}

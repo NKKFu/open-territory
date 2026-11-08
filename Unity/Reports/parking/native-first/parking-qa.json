@@ -1,0 +1,95 @@
+{
+    "passed": false,
+    "unity": "6000.3.27f1",
+    "graphics": "Direct3D12",
+    "surfaceSamples": 578,
+    "drivewaySamples": 90,
+    "checks": [
+        {
+            "name": "city-and-parking-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "nine-marked-bays-and-nine-physical-stops",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "neighbouring-home-preserved",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bay-lines-face-upwards",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing-stop-mesh-remains-correct-in-all-lods",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "navigation-data-matches-wheel-stops",
+            "detail": "old=0 added=3",
+            "passed": true
+        },
+        {
+            "name": "continuous-physical-parking-surface",
+            "detail": "samples=578 missing=0 otherSurface=1",
+            "passed": false
+        },
+        {
+            "name": "driveway-and-sidewalk-are-open",
+            "detail": "samples=90 unsupported=0 blocked=0 ",
+            "passed": true
+        },
+        {
+            "name": "parked-vehicle-10045-uses-new-bay",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "parked-vehicle-10241-uses-new-bay",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pedestrian-crosses-driveway",
+            "detail": "remaining=0.39",
+            "passed": true
+        },
+        {
+            "name": "pedestrian-crosses-parking-aisle",
+            "detail": "remaining=0.38",
+            "passed": true
+        },
+        {
+            "name": "E-enters-parked-car",
+            "detail": "selected=True",
+            "passed": true
+        },
+        {
+            "name": "car-leaves-marked-bay",
+            "detail": "start=-3.3 end=0.93 lateral=0.00",
+            "passed": true
+        },
+        {
+            "name": "car-enters-from-road",
+            "detail": "start=11.6 end=4.16 lateral=0.00",
+            "passed": true
+        },
+        {
+            "name": "car-exits-to-road",
+            "detail": "start=4.5 end=12.08 lateral=0.00",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

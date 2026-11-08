@@ -1,0 +1,439 @@
+{
+    "passed": false,
+    "layout": "marin-reference-v2",
+    "checks": [
+        {
+            "name": "only-traced-map-active",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "reference-coast-and-44-traces",
+            "detail": "",
+            "passed": true,
+            "value": 44.0
+        },
+        {
+            "name": "donor-buildings-and-interiors-reused",
+            "detail": "",
+            "passed": true,
+            "value": 214.0
+        },
+        {
+            "name": "population-and-fleet-reused",
+            "detail": "",
+            "passed": false,
+            "value": 113.0
+        },
+        {
+            "name": "population-excludes-children",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "navigation-rebuilt-for-new-streets",
+            "detail": "",
+            "passed": true,
+            "value": 11318.0
+        },
+        {
+            "name": "vegetation-forest-with-three-lods",
+            "detail": "",
+            "passed": true,
+            "value": 6975.0
+        },
+        {
+            "name": "vegetation-24-shared-variants",
+            "detail": "",
+            "passed": true,
+            "value": 72.0
+        },
+        {
+            "name": "vegetation-each-lod-reduces-triangles",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vegetation-trunks-retain-collision",
+            "detail": "",
+            "passed": false,
+            "value": 0.0
+        },
+        {
+            "name": "nature-mixed-tree-ages",
+            "detail": "7000 trees, scale 0.427 to 1.9495",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-no-groves",
+            "detail": "all trees use dispersed placement",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-spread-shrubs",
+            "detail": "shrubs=36526 scattered supplements=9634",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-map-wide-distribution",
+            "detail": "occupied 120m areas=240",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-vegetation-keeps-trails-clear",
+            "detail": "samples=3258 nature obstacles=0 existing structural obstacles=12",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-rocks-baked-with-lod",
+            "detail": "rocks=561",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-rocks-share-36-meshes",
+            "detail": "meshes=36",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-rocks-follow-terrain",
+            "detail": "all rock bases checked against physical ground",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-boulders-have-real-collision",
+            "detail": "independent of visible LOD",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-rock-lods-reduce-triangles",
+            "detail": "54 -> 36 -> 24",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-character-respects-boulder-surface",
+            "detail": "contact=True penetrated=False",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "world-lod-manager",
+            "detail": "2838",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-all-residents",
+            "detail": "113",
+            "passed": false,
+            "value": 0.0
+        },
+        {
+            "name": "lod-all-vehicles",
+            "detail": "40",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-all-animals-and-boats",
+            "detail": "animals=18 boats=5",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-building-and-scenery-coverage",
+            "detail": "buildings=220",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-renderers-have-single-owner",
+            "detail": "39221",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-assets-valid-and-nonincreasing",
+            "detail": "shared immutable meshes",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-reduction-npc",
+            "detail": "108976 -> 75340",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-camera-near-far-npc",
+            "detail": "full detail nearby, culled beyond range",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-automatic-four-stages-npc",
+            "detail": "0,1,2,3",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-reduction-animal",
+            "detail": "1944 -> 1224",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-camera-near-far-animal",
+            "detail": "full detail nearby, culled beyond range",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-reduction-vehicle",
+            "detail": "118308 -> 73543",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-camera-near-far-vehicle",
+            "detail": "full detail nearby, culled beyond range",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-automatic-four-stages-vehicle",
+            "detail": "0,1,2,3",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-reduction-boat",
+            "detail": "2608 -> 2163",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-camera-near-far-boat",
+            "detail": "full detail nearby, culled beyond range",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-reduction-building",
+            "detail": "510764 -> 236181",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-camera-near-far-building",
+            "detail": "full detail nearby, culled beyond range",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-reduction-scenery",
+            "detail": "378160 -> 372740",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-camera-near-far-scenery",
+            "detail": "full detail nearby, culled beyond range",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-reduction-prop",
+            "detail": "86318 -> 79918",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-camera-near-far-prop",
+            "detail": "full detail nearby, culled beyond range",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-preserves-minimal-geometry-windows",
+            "detail": "138804 -> 138804",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-camera-near-far-windows",
+            "detail": "full detail nearby, culled beyond range",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-preserves-minimal-geometry-street-light",
+            "detail": "16740 -> 16740",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-camera-near-far-street-light",
+            "detail": "full detail nearby, culled beyond range",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-reduction-interior",
+            "detail": "840588 -> 36864",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-camera-near-far-interior",
+            "detail": "full detail nearby, culled beyond range",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-retains-visibility-materials-hierarchy-colliders",
+            "detail": "all levels and return to LOD0",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "lod-player-excluded",
+            "detail": "player keeps full detail",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "all-traced-roads-have-ground",
+            "detail": "samples=1686",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "coastal-streets-stay-above-water",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "road-lanes-clear-of-reused-assets",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "spawn-on-new-map",
+            "detail": "",
+            "passed": true,
+            "value": 9.120561599731446
+        },
+        {
+            "name": "native-walking",
+            "detail": "",
+            "passed": true,
+            "value": 3.0233452320098879
+        },
+        {
+            "name": "reused-door-pushes-open",
+            "detail": "",
+            "passed": true,
+            "value": 89.99998474121094
+        },
+        {
+            "name": "interior-collider-and-floor",
+            "detail": "",
+            "passed": true,
+            "value": 0.20499897003173829
+        },
+        {
+            "name": "reused-vehicle-enter",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "drive-on-new-road",
+            "detail": "",
+            "passed": true,
+            "value": 14.5277738571167
+        },
+        {
+            "name": "suspension-supported-on-new-road",
+            "detail": "",
+            "passed": true,
+            "value": -0.08666229248046875
+        },
+        {
+            "name": "vehicle-brake",
+            "detail": "",
+            "passed": true,
+            "value": 0.0017816751496866346
+        },
+        {
+            "name": "reused-vehicle-exit",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "swim-in-traced-bay",
+            "detail": "",
+            "passed": true,
+            "value": 2.0507898330688478
+        },
+        {
+            "name": "reused-boat-board",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "reused-boat-underway",
+            "detail": "",
+            "passed": true,
+            "value": 3.8907246589660646
+        },
+        {
+            "name": "Esc-settings-pause-retained",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "settings-resume-retained",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "resident-dialogue-retained",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "commerce-and-world-actions-retained",
+            "detail": "",
+            "passed": false,
+            "value": 528.0
+        },
+        {
+            "name": "no-runtime-errors-including-startup",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "errors": []
+}

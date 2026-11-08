@@ -1,0 +1,162 @@
+{
+  "models": [
+    {
+      "id": "sidearm",
+      "author": "Quaternius",
+      "model": "Pistol_4.obj",
+      "sourceUrl": "https://quaternius.com/packs/ultimategun.html",
+      "sourceSha256": "d3da98ad51a63a8b6f8b698e4091fd7341f844d2cbdf70ce02578af5ef50440b",
+      "sourceTriangles": 1320,
+      "triangles": 1344,
+      "preparedSha256": "dbc2dda63eb762348b7dbf2859707b49758338b24c08d82a6f3fa2779af8e7c3",
+      "prefabSha256": "b64d82cffa72b8a99551ea65f924867b29ddf7d420ebe89c960847ebbc0b600b",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "carbine",
+      "author": "Quaternius",
+      "model": "AssaultRifle2_2.obj",
+      "sourceUrl": "https://quaternius.com/packs/ultimategun.html",
+      "sourceSha256": "ea405c7c3de98e255bc7c8ca3876ff5e2f2c8bd67e1a0984e185354bbab6c7f2",
+      "sourceTriangles": 1796,
+      "triangles": 1796,
+      "preparedSha256": "b793c16fefe8b4010c12bb1b615041d9e47d17a2a51e050b44ba110e64097d1f",
+      "prefabSha256": "f24d01fc611003f950f41e96f47015e492a1294dd7cdbdb761cd2922ee596d86",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "pulse",
+      "author": "Kenney",
+      "model": "blaster-b.obj",
+      "sourceUrl": "https://kenney.nl/assets/blaster-kit",
+      "sourceSha256": "a12659c745e892e1f52186fd204701dae04e22fa3167494c6877679275f16041",
+      "sourceTriangles": 736,
+      "triangles": 760,
+      "preparedSha256": "317aa26995de9c0001ce6f184d6b14b59cfaf070f7f2b01238eb8597f7e925e9",
+      "prefabSha256": "fc3635dc993e6755e819fb02e63b8173b152388c4155281c4528d9635feeeaaa",
+      "license": "CC0-1.0"
+    }
+  ],
+  "files": [
+    {
+      "path": "Unity/OpenTerritory/Assets/Scripts/Life/CityWeaponVisual.cs",
+      "sha256": "00ca66b2878362107ff1b5f403d6e46ce27a75bbf2721604987135015aa1da2a"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Scripts/Life/CityWeaponAsset.cs",
+      "sha256": "66a9b12a6495bd60e3350823fa672e89c6d3cd3a45a36ef8231e57c8a781ff6f"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Scripts/Life/CityWeaponProbe.cs",
+      "sha256": "795cf58d63dfe89c003cba3861960e18b09caac7b28a777079311ef1bdaae641"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Editor/CityWeaponAssetBuilder.cs",
+      "sha256": "589b737f85307fce3799275341d17b993881001f8aa9f74e22681ad8df9cbf28"
+    },
+    {
+      "path": "Unity/Tools/prepare-weapon-models.py",
+      "sha256": "8631896a4d6e1332a7aa01552d1d8b64b2d118967e07ed37df806f9fda000193"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Materials/carbine-Main.mat",
+      "sha256": "76ede32d77970e4ab678a992ebf4ab6b677f7d098942d03e7c45b6af6d6fc8fc"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Materials/carbine-MainDark.mat",
+      "sha256": "4430fab19dd01032be5e78e18b0177566078fd458f0556f2b7c1f634e8e198d5"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Materials/carbine-MainLight.mat",
+      "sha256": "f73432fc1687726167cb3fcc2011d8a012228fbb405eb9fc55f0348c7aadca71"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Materials/pulse-colormap-emitter.mat",
+      "sha256": "7c95d9214a2d05bc2ad33b92a09c20a6c0a832b27e6dcb436188fbd2f6a7c08f"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Materials/pulse-colormap.mat",
+      "sha256": "f2d6fd80687f9f83d56bd3a85c7f6c1e479efd7c1b7353ee4e3876963166de2e"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Materials/pulse-ReloadInsert.mat",
+      "sha256": "ed7fa0219ff98597a8c7296b381bb30f2f8e611fa8e8c3fdb2d3a49faf8427ec"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Materials/sidearm-Black.mat",
+      "sha256": "09982f5577f59f8c660f21f47ef4e34a464e392afba8f6a01b55b7284d253bf1"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Materials/sidearm-LightMetal.mat",
+      "sha256": "ab4bccc8aaa12a018bde51a72797d4f4f4f7ae15141d637ba2baa989cc3bb648"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Materials/sidearm-Metal.mat",
+      "sha256": "9543ab39dfe68cccdd19ba219bce7d3e9e9d59a1081d8b101b0c0ba7eb323dd7"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Materials/sidearm-ReloadInsert.mat",
+      "sha256": "773b245ebbeaa0fd00123b1db51328f6dbe24ebe61d6286900beee6360fabd15"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/carbine-Action-Main.asset",
+      "sha256": "4c61d9a96bf05d8df7b1ce20f070835b4c0d69bdd03c96acd96460549bff67d8"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/carbine-Body-Main.asset",
+      "sha256": "10b5006308e6b61900ccba466c3b510a49d3b21b42155e12ce5d6eb83eef97d1"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/carbine-Body-MainDark.asset",
+      "sha256": "e68abb67755164f02e5f0fbf17d7c0b071f8bde8507980c8d527bdd9e0c1430e"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/carbine-Body-MainLight.asset",
+      "sha256": "2ed7e8d255cf51782eb2c3c1a6b779d61cc370c036ca855cbbaa16c52f819a2d"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/carbine-Magazine-Main.asset",
+      "sha256": "56ac8d228b9a4ead90fd2b52929539e99e636be2c8fc80d581cf5129a601d52e"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/carbine-Magazine-MainDark.asset",
+      "sha256": "7129fcf732076d7a3dea55e03475b1a7ca248e98612d746aeef6ef3bd7da5fbd"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/pulse-Action-colormap.asset",
+      "sha256": "56f3975d43aba9d37d5649e85f28fcdca8aeea9e3b2dd9ae2f78275f4e18cb69"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/pulse-Body-colormap.asset",
+      "sha256": "afaad78f757a1810602f825619a81359741d0d0903561468fa8ffe56c1fd2db4"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/pulse-Magazine-ReloadInsert.asset",
+      "sha256": "49249ecb7d94123ebc7ddb643d733b406824a202bb1dbea08dce024c506bd535"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/sidearm-Action-Black.asset",
+      "sha256": "7a89ea8594be4b89da67822a78df3f5b14939ce2478f9fa65c0de009a1312714"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/sidearm-Action-LightMetal.asset",
+      "sha256": "6326824d0c7d018791207b213ff6e8d2719da083d945cf29ba3ea1ed406a99fb"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/sidearm-Action-Metal.asset",
+      "sha256": "02a881d56dc646443c3989d7cd259077be9fc6ab07f5841e77e4d7bd4eea319d"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/sidearm-Body-Black.asset",
+      "sha256": "9cc93f975cfaec88103ade3a7e522fcb3d9a650c555ce2347fe89f574a1e2c8d"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/sidearm-Body-Metal.asset",
+      "sha256": "e83dd1ed057d6e5053851d4213218f6b206b7213dc584bf0d6fd2cb82e4d4b44"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Art/Weapons/Meshes/sidearm-Magazine-ReloadInsert.asset",
+      "sha256": "a32f4f5a593f97a4ae0d59f50d3c8dd2bf41174be1b07bc6bc6f48e8e20d41ae"
+    }
+  ]
+}

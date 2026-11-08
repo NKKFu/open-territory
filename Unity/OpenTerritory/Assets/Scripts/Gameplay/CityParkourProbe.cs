@@ -1,0 +1,700 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+
+namespace OpenTerritory
+{
+    // Opt-in: controls the real motor and visual rig in temporary test fixtures.
+    [DefaultExecutionOrder(600)]
+    public sealed class CityParkourProbe : MonoBehaviour
+    {
+        [Serializable] public class Check { public string name; public bool passed; public float value; }
+        [Serializable] public class Trial
+        {
+            public string name, mode;
+            public bool entered, complete, bodyClear = true;
+            public float peak, impact, compression, knee, asymmetry, armChange, hipStep, speed, finishY, finishZ;
+            public float minCameraDistance = 100, maxCameraLateralStep, maxCameraTurn, minHeadY = 1, maxHeadY;
+            public bool cameraClear = true;
+            public float[] handContactTime = new float[2], maxHandError = new float[2];
+        }
+        [Serializable] public class CameraFrame
+        {
+            public string trial, mode;
+            public float time, progress, distance, lateralStep, turn;
+            public Vector3 player, eye;
+        }
+        [Serializable] public class Report
+        {
+            public bool passed = true, captures;
+            public List<Check> checks = new List<Check>();
+            public List<Trial> trials = new List<Trial>();
+            public List<string> errors = new List<string>();
+            public List<CameraFrame> cameraFrames = new List<CameraFrame>();
+        }
+        readonly Report report = new Report();
+        readonly List<GameObject> fixtures = new List<GameObject>();
+        readonly HashSet<string> captures = new HashSet<string>();
+        CityContext ctx; GameObject floor; Camera preview; Material material;
+        Vector3 saved, fixedCameraPosition; Quaternion savedRotation, cameraRotation;
+        bool followEnabled, ready, running, allowCapture;
+        string dir, loadout, equipped, label; float baseY = 200, baselineHip, lastHip;
+        Trial trial; Quaternion riseArm; bool haveRiseArm;
+        CityVehicles.Vehicle testCar; Vector3 carHome; Quaternion carRotation; RigidbodyConstraints carConstraints;
+        public bool CameraOnly;
+        public bool CrouchOnly;
+        [NonSerialized] public bool CarOnly;
+        [NonSerialized] readonly List<string> handSamples = new List<string> { "trial,progress,arm,armLength,reach,grip,desired,targetX,targetY,targetZ,shoulderX,shoulderY,shoulderZ,playerX,playerY,playerZ" };
+        public string ReportDirectory;
+        bool testingCamera; Vector3 previousRelativeEye; Quaternion previousCameraRotation;
+        float savedDistance, savedSensitivity; bool savedInvert;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        static void Install()
+        {
+            if (Array.IndexOf(Environment.GetCommandLineArgs(), "--city-parkour-qa") >= 0 ||
+                Array.IndexOf(Environment.GetCommandLineArgs(), "--city-parkour-camera-qa") >= 0 ||
+                Array.IndexOf(Environment.GetCommandLineArgs(), "--city-crouch-qa") >= 0 ||
+                Array.IndexOf(Environment.GetCommandLineArgs(), "--city-parkour-car-qa") >= 0)
+                new GameObject("QA de salto e parkour • opt-in").AddComponent<CityParkourProbe>();
+        }
+        void Awake() { Application.logMessageReceived += Log; }
+        void Log(string message, string stack, LogType type)
+        { if (type == LogType.Error || type == LogType.Exception) report.errors.Add(message + "\n" + stack); }
+        void Test(string name, bool passed, float value = 0)
+        {
+            report.passed &= passed; report.checks.Add(new Check { name = name, passed = passed, value = value });
+            Debug.Log("PARKOUR_QA " + name + " " + passed + " " + value);
+        }
+        IEnumerator Hold(Vector2 input, float seconds, bool sprint = false)
+        {
+            float end = Time.realtimeSinceStartup + seconds;
+            while (Time.realtimeSinceStartup < end)
+            { ctx.Input.TouchMove = input; ctx.Input.TouchRun = sprint; yield return null; }
+        }
+        GameObject Box(string name, Vector3 centre, Vector3 size, float yaw = 0, int layer = CityContext.WorldLayer)
+        {
+            var go = GameObject.CreatePrimitive(PrimitiveType.Cube); go.name = name; go.layer = layer;
+            go.transform.SetPositionAndRotation(centre, Quaternion.Euler(0, yaw, 0)); go.transform.localScale = size;
+            go.GetComponent<Renderer>().sharedMaterial = material; fixtures.Add(go); return go;
+        }
+        IEnumerator Place(Vector3 point)
+        {
+            ctx.Input.TouchMove = Vector2.zero; ctx.Input.TouchRun = false; ctx.Motor.Warp(point); ctx.Player.rotation = Quaternion.identity;
+            ctx.Camera.transform.rotation = Quaternion.Euler(10, 0, 0);
+            ctx.Camera.transform.position = point + new Vector3(1, 2, -4);
+            Physics.SyncTransforms(); yield return Hold(Vector2.zero, .45f);
+        }
+        void Begin(string name)
+        {
+            label = name; captures.Clear(); haveRiseArm = false;
+            trial = new Trial { name = name }; baselineHip = lastHip = ctx.Actors.PlayerRig.Hips.localPosition.y; running = true;
+            previousRelativeEye = ctx.Camera.transform.position - ctx.Player.position;
+            previousCameraRotation = ctx.Camera.transform.rotation;
+        }
+        void End()
+        {
+            running = false; trial.finishY = ctx.Player.position.y; trial.finishZ = ctx.Player.position.z;
+            report.trials.Add(trial);
+        }
+        void LateUpdate()
+        {
+            if (!ready || !running || ctx.Paused) return;
+            var m = ctx.Motor; var rig = ctx.Actors.PlayerRig;
+            if (testingCamera)
+            {
+                var eye = ctx.Camera.transform.position; var relative = eye - ctx.Player.position;
+                float lateralStep = Mathf.Abs(Vector3.Dot(relative - previousRelativeEye, ctx.Camera.transform.right));
+                float turn = Quaternion.Angle(previousCameraRotation, ctx.Camera.transform.rotation);
+                trial.minCameraDistance = Mathf.Min(trial.minCameraDistance, ctx.Follow.ObstructionDistance);
+                trial.maxCameraLateralStep = Mathf.Max(trial.maxCameraLateralStep, lateralStep);
+                trial.maxCameraTurn = Mathf.Max(trial.maxCameraTurn, turn);
+                var head = ctx.Camera.WorldToViewportPoint(rig.Head.position);
+                trial.minHeadY = Mathf.Min(trial.minHeadY, head.y); trial.maxHeadY = Mathf.Max(trial.maxHeadY, head.y);
+                trial.cameraClear &= float.IsFinite(eye.x) && float.IsFinite(eye.y) && float.IsFinite(eye.z)
+                    && !Physics.CheckSphere(eye, .10f, ctx.SolidMask, QueryTriggerInteraction.Ignore);
+                report.cameraFrames.Add(new CameraFrame { trial = label, mode = m.Mode, time = ctx.Clock,
+                    progress = m.VaultProgress, distance = ctx.Follow.ObstructionDistance, lateralStep = lateralStep,
+                    turn = turn, player = ctx.Player.position, eye = eye });
+                previousRelativeEye = relative; previousCameraRotation = ctx.Camera.transform.rotation;
+            }
+            trial.peak = Mathf.Max(trial.peak, ctx.Player.position.y - baseY);
+            trial.impact = Mathf.Max(trial.impact, m.LandingImpact); trial.compression = Mathf.Max(trial.compression, m.LandingBlend);
+            trial.hipStep = Mathf.Max(trial.hipStep, Mathf.Abs(rig.Hips.localPosition.y - lastHip)); lastHip = rig.Hips.localPosition.y;
+            trial.speed = Mathf.Max(trial.speed, m.Speed);
+            for (int i = 0; i < 2; i++)
+                trial.knee = Mathf.Max(trial.knee, 180 - Vector3.Angle(rig.Legs[i].position - rig.Knees[i].position, rig.Feet[i].position - rig.Knees[i].position));
+            trial.asymmetry = Mathf.Max(trial.asymmetry, Mathf.Abs(ctx.Player.InverseTransformPoint(rig.Feet[0].position).z - ctx.Player.InverseTransformPoint(rig.Feet[1].position).z));
+            if (!m.Grounded && !m.Traversing && m.VerticalSpeed > 1 && !haveRiseArm) { riseArm = rig.Arms[0].localRotation; haveRiseArm = true; }
+            if (!m.Grounded && m.VerticalSpeed < -2 && haveRiseArm) trial.armChange = Mathf.Max(trial.armChange, Quaternion.Angle(riseArm, rig.Arms[0].localRotation));
+            if (m.Traversing)
+            {
+                trial.entered = true; trial.mode = m.Mode;
+                for (int i = 0; i < 2; i++)
+                {
+                    float reach = Vector3.Distance(rig.Arms[i].position, m.HandTargets[i]);
+                    var target = m.HandTargets[i]; var shoulder = rig.Arms[i].position; var player = ctx.Player.position;
+                    handSamples.Add(string.Format(System.Globalization.CultureInfo.InvariantCulture,
+                        "{0},{1:R},{2},{3:R},{4:R},{5:R},{6:R},{7:R},{8:R},{9:R},{10:R},{11:R},{12:R},{13:R},{14:R},{15:R}",
+                        label, m.VaultProgress, i, rig.Upper + rig.Lower, reach, rig.HandPlant[i], m.TraversalHandWeight(i),
+                        target.x, target.y, target.z, shoulder.x, shoulder.y, shoulder.z, player.x, player.y, player.z));
+                }
+                for (int i = 0; i < 2; i++)
+                    if (rig.HandPlant[i] > .85f)
+                    {
+                        trial.handContactTime[i] += Mathf.Min(Time.deltaTime, .05f);
+                        trial.maxHandError[i] = Mathf.Max(trial.maxHandError[i], Vector3.Distance(rig.Hands[i].position, m.HandTargets[i]));
+                    }
+                trial.bodyClear &= CityPhysics.StandClear(ctx.Player.position, ctx.Player, null, m.TraversalBodyHeight, .335f);
+                float t = m.VaultProgress;
+                if (t >= .14f && t < .28f) Capture(label + "-traverse-0");
+                else if (t >= .40f && t < .62f) Capture(label + "-traverse-1");
+                else if (t >= .78f) Capture(label + "-traverse-2");
+            }
+            else if (m.VerticalSpeed > 1 && !m.Grounded && m.AirTime > .10f) Capture(label + "-rise");
+            else if (m.VerticalSpeed < -2 && !m.Grounded) Capture(label + "-fall");
+            else if (m.LandingBlend > .15f && m.LandingAge > .045f) Capture(label + "-land");
+        }
+        void Capture(string name)
+        {
+            if (!allowCapture || !report.captures || !preview || !captures.Add(name)) return;
+            var camera = testingCamera ? ctx.Camera : preview;
+            if (!testingCamera)
+            {
+                preview.transform.position = ctx.Player.position + new Vector3(-4.5f, 1.65f, -2.6f);
+                preview.transform.LookAt(ctx.Player.position + Vector3.up * 1.10f);
+            }
+            RenderCapture(camera, name);
+        }
+        void RenderCapture(Camera camera, string name)
+        {
+            var rt = RenderTexture.GetTemporary(800, 600, 24, RenderTextureFormat.ARGB32); var active = RenderTexture.active;
+            var previousTarget = camera.targetTexture;
+            try
+            {
+                camera.targetTexture = rt; camera.Render(); RenderTexture.active = rt;
+                var texture = new Texture2D(800, 600, TextureFormat.RGB24, false);
+                texture.ReadPixels(new Rect(0, 0, 800, 600), 0, 0); texture.Apply();
+                File.WriteAllBytes(Path.Combine(dir, name + ".png"), texture.EncodeToPNG()); Destroy(texture);
+            }
+            finally { camera.targetTexture = previousTarget; RenderTexture.active = active; RenderTexture.ReleaseTemporary(rt); }
+        }
+        IEnumerator Jump(string name, Vector2 input, bool sprint)
+        {
+            yield return Place(new Vector3(0, baseY + .035f, -12));
+            yield return Hold(input, .65f, sprint); Begin(name); allowCapture = name == "jump-idle";
+            ctx.Input.TouchJump = true; bool prepared = false, flew = false, landed = false; float lowest = baselineHip;
+            float end = Time.realtimeSinceStartup + 1.5f;
+            while (Time.realtimeSinceStartup < end)
+            {
+                ctx.Input.TouchMove = input; ctx.Input.TouchRun = sprint;
+                prepared |= ctx.Motor.JumpPreparation > .2f; flew |= !ctx.Motor.Grounded && ctx.Motor.VerticalSpeed > 1;
+                landed |= flew && ctx.Motor.Grounded;
+                if (ctx.Motor.LandingBlend > .1f) lowest = Mathf.Min(lowest, ctx.Actors.PlayerRig.Hips.localPosition.y);
+                yield return null;
+            }
+            End(); allowCapture = false;
+            Test(name + "-anticipates", prepared); Test(name + "-takes-off-and-lands", flew && landed);
+            Test(name + "-height", trial.peak > .43f && trial.peak < .95f, trial.peak);
+            Test(name + "-knees-flex", trial.knee > 35, trial.knee);
+            Test(name + "-asymmetric-flight", trial.asymmetry > .12f, trial.asymmetry);
+            Test(name + "-arms-adapt-in-air", trial.armChange > 8, trial.armChange);
+            Test(name + "-records-real-impact", trial.impact > 4.3f, trial.impact);
+            Test(name + "-absorbs-impact", trial.compression > .25f && lowest < baselineHip - .025f, lowest);
+            Test(name + "-returns-to-control", ctx.Motor.Grounded && ctx.Motor.Controller.enabled && !ctx.Motor.Busy);
+            yield return Hold(Vector2.zero, .4f);
+        }
+        IEnumerator Obstacle(string name, float height, float depth, float yaw, float pressDistance, bool sprint, string expected, bool ceiling = false, bool blocked = false)
+        {
+            allowCapture = testingCamera || name == "vault-walk" || name == "mantle-wide" || name == "climb-high";
+            var box = Box(name, new Vector3(0, baseY + height * .5f, 3), new Vector3(4, height, depth), yaw);
+            GameObject roof = ceiling ? Box("QA low ceiling", new Vector3(0, baseY + 2.55f, 3), new Vector3(8, .2f, 7)) : null;
+            GameObject blocker = blocked ? Box("QA blocked landing", new Vector3(0, baseY + 1.3f, 3 + depth * .5f + .55f), new Vector3(5, 2.6f, .45f)) : null;
+            Physics.SyncTransforms();
+            Physics.Raycast(new Vector3(0, baseY + .30f, -15), Vector3.forward, out var face, 30, 1 << CityContext.WorldLayer, QueryTriggerInteraction.Ignore);
+            float front = face.point.z;
+            yield return Place(new Vector3(0, baseY + .035f, front - pressDistance - (sprint ? 5.7f : 1.5f)));
+            float deadline = Time.realtimeSinceStartup + 4;
+            while (front - ctx.Player.position.z > pressDistance && Time.realtimeSinceStartup < deadline)
+            { ctx.Input.TouchMove = Vector2.up; ctx.Input.TouchRun = sprint; yield return null; }
+            Begin(name); ctx.Input.TouchJump = true;
+            float stopInput = Time.realtimeSinceStartup + .10f, end = Time.realtimeSinceStartup + 2.9f;
+            while (Time.realtimeSinceStartup < end)
+            {
+                ctx.Input.TouchMove = Time.realtimeSinceStartup < stopInput ? Vector2.up : Vector2.zero; ctx.Input.TouchRun = sprint;
+                yield return null;
+            }
+            bool crossed = ctx.Player.position.z > 3 + depth * .5f + .30f;
+            bool onTop = ctx.Player.position.y > baseY + height - .10f;
+            trial.complete = trial.entered && !ctx.Motor.Busy && ctx.Motor.Controller.enabled && (crossed || onTop);
+            End();
+            if (expected == null) Test(name + "-rejects-unsafe-traversal", !trial.entered);
+            else
+            {
+                Test(name + "-starts", trial.entered); Test(name + "-chooses-action", trial.mode == expected);
+                Test(name + "-finishes-on-supported-side", trial.complete);
+                Test(name + "-body-clear-throughout", trial.bodyClear);
+                Test(name + "-full-capsule-restored", Mathf.Abs(ctx.Motor.Controller.height - 2.25f) < .001f && CityPhysics.StandClear(ctx.Player.position, ctx.Player, null, 2.25f, .37f));
+                Test(name + "-left-hand-supports-surface", trial.handContactTime[0] > .06f && trial.maxHandError[0] < .075f, trial.maxHandError[0]);
+                Test(name + "-right-hand-supports-surface", trial.handContactTime[1] > .06f && trial.maxHandError[1] < .075f, trial.maxHandError[1]);
+                if (testingCamera)
+                {
+                    Test(name + "-camera-does-not-snap-sideways", trial.maxCameraLateralStep < .16f, trial.maxCameraLateralStep);
+                    Test(name + "-camera-keeps-orbit-angle", trial.maxCameraTurn < 1, trial.maxCameraTurn);
+                    Test(name + "-camera-keeps-distance", trial.minCameraDistance > 2.2f, trial.minCameraDistance);
+                    Test(name + "-camera-lens-clear", trial.cameraClear);
+                    Test(name + "-camera-keeps-head-in-frame", trial.minHeadY > .05f && trial.maxHeadY < .96f, trial.maxHeadY);
+                }
+            }
+            Destroy(box); if (roof) Destroy(roof); if (blocker) Destroy(blocker); allowCapture = false;
+            yield return Hold(Vector2.zero, .1f);
+        }
+        IEnumerator PauseAndInterrupt()
+        {
+            var box = Box("QA pause barrier", new Vector3(0, baseY + .5f, 2), new Vector3(4, 1, .45f));
+            yield return Place(new Vector3(0, baseY + .035f, 1.0f));
+            ctx.Input.TouchMove = Vector2.up; ctx.Input.TouchJump = true;
+            float timeout = Time.realtimeSinceStartup + 1.2f;
+            while (!ctx.Motor.Traversing && Time.realtimeSinceStartup < timeout) { ctx.Input.TouchMove = Vector2.up; yield return null; }
+            Test("pause-case-traversal-starts", ctx.Motor.Traversing);
+            ctx.Input.TouchMove = Vector2.zero; yield return Hold(Vector2.zero, .15f);
+            ctx.UI.SetSettings(true); Vector3 paused = ctx.Player.position; float phase = ctx.Motor.VaultProgress;
+            Vector3 pausedEye = ctx.Camera.transform.position; Quaternion pausedRotation = ctx.Camera.transform.rotation;
+            yield return Hold(Vector2.zero, .22f);
+            Test("Esc-freezes-traversal", ctx.Player.position == paused && ctx.Motor.VaultProgress == phase);
+            if (testingCamera) Test("Esc-freezes-parkour-camera", ctx.Camera.transform.position == pausedEye && ctx.Camera.transform.rotation == pausedRotation);
+            ctx.UI.SetSettings(false); yield return Hold(Vector2.zero, 1.7f);
+            Test("Esc-resumes-traversal", !ctx.Motor.Busy && ctx.Motor.Controller.enabled);
+            yield return Place(new Vector3(0, baseY + .035f, 1.0f));
+            ctx.Input.TouchMove = Vector2.up; ctx.Input.TouchJump = true;
+            timeout = Time.realtimeSinceStartup + 1.2f;
+            while ((!ctx.Motor.Traversing || ctx.Motor.VaultProgress < .35f) && Time.realtimeSinceStartup < timeout) { ctx.Input.TouchMove = Vector2.up; yield return null; }
+            ctx.Input.TouchMove = Vector2.zero;
+            Vector3 obstruction = ctx.Player.position + Vector3.forward * 1.1f + Vector3.up * .9f;
+            var movingBlock = Box("QA obstacle enters path", obstruction, new Vector3(4, 2, .3f)); Physics.SyncTransforms();
+            yield return Hold(Vector2.zero, 1.5f);
+            Test("new-obstacle-releases-control", !ctx.Motor.Busy && ctx.Motor.Controller.enabled);
+            Test("new-obstacle-not-crossed", ctx.Player.position.z < movingBlock.transform.position.z - .30f, ctx.Player.position.z);
+            Test("new-obstacle-no-body-overlap", CityPhysics.StandClear(ctx.Player.position, ctx.Player, null, ctx.Motor.Controller.height, .34f));
+            Destroy(box); Destroy(movingBlock); yield return Hold(Vector2.zero, .1f);
+        }
+        IEnumerator CameraCases()
+        {
+            testingCamera = true; ctx.Follow.enabled = true; ctx.Follow.Sensitivity = 1; ctx.Follow.InvertY = false;
+            ctx.Follow.Distance = CityFollowCamera.DefaultDistance; ctx.Follow.Face(0);
+            yield return Hold(Vector2.zero, .8f);
+            yield return Obstacle("camera-vault-walk", 1, .45f, 0, .85f, false, "vault");
+            yield return Obstacle("camera-vault-sprint", 1, .70f, 0, 1.55f, true, "vault");
+            yield return Obstacle("camera-vault-diagonal", 1, .40f, 28, .80f, false, "vault");
+            yield return Obstacle("camera-climb-high", 2, .45f, 0, .75f, false, "climb");
+            yield return Obstacle("camera-mantle-wide", 1, 3.5f, 0, .75f, false, "climb");
+            yield return PauseAndInterrupt();
+            yield return ActualCar();
+            yield return CameraControls();
+            testingCamera = false;
+        }
+        float HeadTop()
+        {
+            float top = ctx.Player.position.y;
+            foreach (var renderer in ctx.Actors.PlayerRig.Head.GetComponentsInChildren<Renderer>()) top = Mathf.Max(top, renderer.bounds.max.y);
+            return top - ctx.Player.position.y;
+        }
+        void CaptureControls()
+        {
+            if (!report.captures) return;
+            // Overlay canvases are absent from batch-mode ScreenCapture. Render
+            // this same canvas through the camera only for the opt-in capture.
+            var canvas = ctx.UI.GetComponentInChildren<Canvas>(true);
+            if (!canvas) return;
+            var mode = canvas.renderMode; var canvasCamera = canvas.worldCamera; float plane = canvas.planeDistance;
+            var camera = ctx.Camera; var previousTarget = camera.targetTexture; var active = RenderTexture.active;
+            var rt = RenderTexture.GetTemporary(Screen.width, Screen.height, 24, RenderTextureFormat.ARGB32);
+            Texture2D texture = null;
+            try
+            {
+                camera.targetTexture = rt; canvas.renderMode = RenderMode.ScreenSpaceCamera; canvas.worldCamera = camera; canvas.planeDistance = 1;
+                Canvas.ForceUpdateCanvases(); camera.Render(); RenderTexture.active = rt;
+                texture = new Texture2D(rt.width, rt.height, TextureFormat.RGB24, false);
+                texture.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0); texture.Apply();
+                File.WriteAllBytes(Path.Combine(dir, "crouch-controls.png"), texture.EncodeToPNG());
+            }
+            finally
+            {
+                canvas.renderMode = mode; canvas.worldCamera = canvasCamera; canvas.planeDistance = plane;
+                camera.targetTexture = previousTarget; RenderTexture.active = active; RenderTexture.ReleaseTemporary(rt);
+                if (texture) Destroy(texture); Canvas.ForceUpdateCanvases();
+            }
+        }
+        IEnumerator CrouchCases()
+        {
+            ctx.Follow.enabled = true; ctx.Follow.Face(0); ctx.Follow.Distance = CityFollowCamera.DefaultDistance;
+            ctx.Follow.Sensitivity = 1; ctx.Follow.InvertY = false;
+            yield return Place(new Vector3(0, baseY + .035f, -8));
+            float head = HeadTop(), hips = ctx.Actors.PlayerRig.Hips.localPosition.y, eyeY = ctx.Camera.transform.position.y;
+            Vector3 feet = ctx.Player.position; allowCapture = true; Capture("crouch-00-standing");
+            Test("C-is-crouch-key", CityInput.CrouchKey == KeyCode.C);
+            Test("C-still-is-vehicle-right-signal", CityInput.RightSignalKey == KeyCode.C);
+            ctx.Input.TouchCrouch = true; yield return Hold(Vector2.zero, .4f);
+            Test("crouch-poll-toggles-once", ctx.Motor.Crouched && ctx.Motor.CrouchBlend > .99f && !ctx.Input.TouchCrouch);
+            Test("crouch-shortens-real-capsule", Mathf.Abs(ctx.Motor.Controller.height - CityPlayer.CrouchHeight) < .001f, ctx.Motor.Controller.height);
+            Test("crouch-keeps-feet-origin", Vector3.Distance(feet, ctx.Player.position) < .02f);
+            Test("crouch-pelvis-stays-above-heels", ctx.Actors.PlayerRig.Hips.localPosition.y > .57f && ctx.Actors.PlayerRig.Hips.localPosition.y < hips - .35f, ctx.Actors.PlayerRig.Hips.localPosition.y);
+            Test("crouch-lowers-head", head - HeadTop() > .4f, HeadTop());
+            Test("crouch-head-fits-capsule", HeadTop() < CityPlayer.CrouchHeight + .02f, HeadTop());
+            Test("crouch-camera-follows-posture", eyeY - ctx.Camera.transform.position.y > .28f && eyeY - ctx.Camera.transform.position.y < .55f, eyeY - ctx.Camera.transform.position.y);
+            Capture("crouch-01-idle");
+            CaptureCrouchViews("crouch-idle");
+            yield return CrouchMotionViews();
+            Vector3 from = ctx.Player.position; yield return Hold(Vector2.up, 1.0f);
+            float distance = CityPhysics.Flat(ctx.Player.position - from).magnitude;
+            Test("crouch-can-walk", distance > .9f && distance < 1.5f, distance);
+            yield return Hold(Vector2.up, .5f, true);
+            Test("Shift-keeps-crouch-speed", ctx.Motor.Crouched && ctx.Motor.Speed <= CityPlayer.CrouchSpeed + .05f, ctx.Motor.Speed);
+            Capture("crouch-02-walking"); yield return Hold(Vector2.zero, .2f);
+            ctx.UI.Map.SetOpen(true); ctx.Input.TouchCrouch = true; yield return Hold(Vector2.zero, .2f);
+            Test("map-C-does-not-toggle-crouch", ctx.Motor.Crouched);
+            ctx.UI.Map.SetOpen(false); yield return Hold(Vector2.zero, .15f);
+            ctx.Combat.Grant("sidearm"); ctx.Combat.Select("sidearm"); ctx.Input.TouchAim = true; yield return Hold(Vector2.zero, .45f);
+            Test("crouch-keeps-aim-available", ctx.Motor.Crouched && ctx.Combat.Aiming);
+            Test("crouch-aim-head-clears-roof", HeadTop() < CityPlayer.CrouchHeight + .02f, HeadTop());
+            ctx.Input.TouchAim = false; ctx.Combat.Holster(); yield return Hold(Vector2.zero, .3f);
+            ctx.UI.SetSettings(true); float phase = ctx.Motor.CrouchBlend; Vector3 paused = ctx.Player.position, pausedEye = ctx.Camera.transform.position;
+            yield return Hold(Vector2.zero, .2f);
+            Test("Esc-freezes-crouch-and-camera", ctx.Player.position == paused && ctx.Camera.transform.position == pausedEye && ctx.Motor.CrouchBlend == phase);
+            bool helpFound = false;
+            foreach (var text in ctx.UI.GetComponentsInChildren<UnityEngine.UI.Text>(true)) if (text.text.Contains("C · crouch or stand")) helpFound = true;
+            Test("controls-explain-C-in-English", helpFound);
+            foreach (var button in ctx.UI.GetComponentsInChildren<UnityEngine.UI.Button>(true)) if (button.name == "Controles") button.onClick.Invoke();
+            CaptureControls();
+            yield return Hold(Vector2.zero, .1f);
+            ctx.UI.SetSettings(false); ctx.Input.TouchCrouch = true; yield return Hold(Vector2.zero, .45f);
+            Test("C-returns-to-standing", !ctx.Motor.Crouched && ctx.Motor.CrouchBlend < .01f && Mathf.Abs(ctx.Motor.Controller.height - 2.25f) < .001f);
+            Test("standing-posture-recovers", HeadTop() > head - .08f, HeadTop());
+            var roof = Box("QA crouch low roof", new Vector3(0, baseY + CityPlayer.CompactCrouchHeight + .225f, 3), new Vector3(5, .25f, 4));
+            yield return Place(new Vector3(0, baseY + .035f, 0));
+            ctx.Input.TouchCrouch = true; yield return Hold(Vector2.zero, .3f);
+            yield return CrouchPassage(2.5f); yield return Hold(Vector2.zero, .2f);
+            Test("crouch-enters-low-passage", ctx.Player.position.z > 2 && ctx.Motor.Crouched, ctx.Player.position.z);
+            Test("crouch-body-clears-roof", CityPhysics.StandClear(ctx.Player.position, ctx.Player, null, ctx.Motor.Controller.height, .37f) && HeadTop() < CityPlayer.CompactCrouchHeight + .1f, HeadTop());
+            Test("crouch-compacts-only-under-low-roof", ctx.Motor.CompactCrouchBlend > .99f && ctx.Motor.Controller.height < CityPlayer.CompactCrouchHeight + .01f);
+            ctx.Input.TouchCrouch = true; yield return Hold(Vector2.zero, .35f);
+            Test("low-roof-blocks-standing", ctx.Motor.Crouched && ctx.Motor.Controller.height <= CityPlayer.CrouchHeight + .001f);
+            ctx.Input.TouchJump = true; yield return Hold(Vector2.zero, .3f);
+            Test("low-roof-blocks-jump", ctx.Motor.Grounded && ctx.Motor.Crouched && ctx.Motor.JumpPreparation == 0);
+            Capture("crouch-03-low-passage");
+            roof.transform.position += Vector3.up * .55f; Physics.SyncTransforms(); yield return Hold(Vector2.zero, .25f);
+            Test("standing-check-includes-head-above-capsule", ctx.Motor.Crouched && !ctx.Motor.CanStand);
+            yield return CrouchPassage(6.0f); yield return Hold(Vector2.zero, .45f);
+            Test("leaving-passage-restores-standing", !ctx.Motor.Crouched && ctx.Motor.Controller.height > 2.24f && ctx.Motor.Grounded);
+            Destroy(roof); yield return Hold(Vector2.zero, .1f);
+            yield return Place(new Vector3(0, baseY + .035f, -8));
+            ctx.Input.TouchCrouch = true; yield return Hold(Vector2.zero, .3f); ctx.Input.TouchJump = true;
+            yield return Hold(Vector2.zero, .18f);
+            Test("Space-stands-and-jumps-in-clear-space", !ctx.Motor.Crouched && !ctx.Motor.Grounded && ctx.Motor.VerticalSpeed > 1);
+            yield return Hold(Vector2.zero, 1.0f);
+            var buttons = ctx.UI.GetComponentsInChildren<UnityEngine.UI.Button>(true);
+            UnityEngine.UI.Button crouchButton = null;
+            foreach (var button in buttons) if (button.name == "Crouch") { crouchButton = button; break; }
+            Test("touch-crouch-button-exists", crouchButton);
+            if (crouchButton)
+            {
+                crouchButton.onClick.Invoke(); yield return Hold(Vector2.zero, .3f);
+                Test("touch-button-crouches", ctx.Motor.Crouched);
+                crouchButton.onClick.Invoke(); yield return Hold(Vector2.zero, .3f);
+                Test("touch-button-stands", !ctx.Motor.Crouched);
+            }
+            Test("crouch-camera-lens-clear", !Physics.CheckSphere(ctx.Camera.transform.position, .12f, ctx.SolidMask, QueryTriggerInteraction.Ignore));
+            allowCapture = false; ctx.Follow.enabled = false;
+        }
+        void CaptureCrouchViews(string name)
+        {
+            if (!allowCapture || !report.captures || !preview) return;
+            bool cameraMode = testingCamera; testingCamera = false;
+            Capture(name + "-three-quarter");
+            preview.transform.position = ctx.Player.TransformPoint(new Vector3(4.5f, 1.2f, 0));
+            preview.transform.LookAt(ctx.Player.position + Vector3.up * 1.05f);
+            RenderCapture(preview, name + "-profile");
+            preview.transform.position = ctx.Player.TransformPoint(new Vector3(0, 1.2f, 4.5f));
+            preview.transform.LookAt(ctx.Player.position + Vector3.up * 1.05f);
+            RenderCapture(preview, name + "-front");
+            testingCamera = cameraMode;
+        }
+        IEnumerator CrouchMotionViews()
+        {
+            // A complete cycle with actual motor movement, not staged bones.
+            // Side and front views reveal foot clearance and balance that the
+            // normal following camera conceals.
+            int contacts = ctx.Actors.PlayerRig.FootContacts;
+            for (int i = 0; i < 12; i++)
+            {
+                yield return Hold(Vector2.up, .075f);
+                yield return null;
+                CaptureCrouchViews("crouch-cycle-" + i.ToString("D2"));
+            }
+            Test("crouch-walk-alternates-support", ctx.Actors.PlayerRig.FootContacts - contacts >= 2, ctx.Actors.PlayerRig.FootContacts - contacts);
+            yield return Hold(Vector2.zero, .35f);
+        }
+        IEnumerator CrouchPassage(float targetZ)
+        {
+            float deadline = Time.realtimeSinceStartup + 7;
+            while (ctx.Player.position.z < targetZ && Time.realtimeSinceStartup < deadline)
+            {
+                ctx.Input.TouchMove = Vector2.up;
+                yield return null;
+            }
+            ctx.Input.TouchMove = Vector2.zero;
+        }
+        IEnumerator CameraControls()
+        {
+            ctx.Follow.Face(0); ctx.Follow.Distance = 2.4f;
+            var box = Box("QA camera controls barrier", new Vector3(0, baseY + .5f, 2), new Vector3(4, 1, .45f));
+            yield return Place(new Vector3(0, baseY + .035f, 1));
+            ctx.Input.TouchMove = Vector2.up; ctx.Input.TouchJump = true;
+            float until = Time.realtimeSinceStartup + 1.2f;
+            while ((!ctx.Motor.Traversing || ctx.Motor.VaultProgress < .25f) && Time.realtimeSinceStartup < until)
+            { ctx.Input.TouchMove = Vector2.up; yield return null; }
+            ctx.Input.TouchMove = Vector2.zero;
+            Test("camera-controls-start-during-traversal", ctx.Motor.Traversing);
+            float beforeYaw = ctx.Camera.transform.eulerAngles.y;
+            ctx.Input.TouchLook = new Vector2(20, 10);
+            yield return Hold(Vector2.zero, .15f);
+            Test("camera-orbit-responds-during-traversal", Mathf.Abs(Mathf.DeltaAngle(beforeYaw, ctx.Camera.transform.eulerAngles.y)) > 15);
+            ctx.Follow.Distance = 5.5f;
+            yield return Hold(Vector2.zero, 1.8f);
+            Test("camera-zoom-recovers-after-traversal", ctx.Follow.ObstructionDistance > 5.2f, ctx.Follow.ObstructionDistance);
+            Test("camera-controls-return-to-locomotion", ctx.Motor.Grounded && !ctx.Motor.Busy && ctx.Motor.Controller.enabled);
+            Destroy(box); yield return Hold(Vector2.zero, .1f);
+            ctx.Follow.Face(0); ctx.Follow.Distance = CityFollowCamera.DefaultDistance;
+            yield return Hold(Vector2.zero, .7f);
+            var back = -ctx.Camera.transform.forward;
+            var wall = Box("QA real camera wall", ctx.Player.position + Vector3.up * 2 + back * 1.5f, new Vector3(12, 5, .3f), ctx.Camera.transform.eulerAngles.y);
+            yield return Hold(Vector2.zero, .5f);
+            Test("parkour-camera-still-retracts-at-real-wall", ctx.Follow.ObstructionDistance < 1.5f && ctx.Follow.ObstructionDistance > .3f, ctx.Follow.ObstructionDistance);
+            Test("parkour-camera-does-not-enter-wall", !Physics.CheckSphere(ctx.Camera.transform.position, .12f, ctx.SolidMask, QueryTriggerInteraction.Ignore));
+            Destroy(wall); yield return Hold(Vector2.zero, 1.3f);
+            Test("parkour-camera-recovers-after-real-wall", ctx.Follow.ObstructionDistance > 2.4f, ctx.Follow.ObstructionDistance);
+            Capture("camera-restored-after-wall");
+        }
+        IEnumerator FallAndBuffer()
+        {
+            yield return Place(new Vector3(0, baseY + .035f, -8));
+            ctx.Motor.Warp(new Vector3(0, baseY + 2.0f, -8)); Begin("drop-two-metres");
+            yield return Hold(Vector2.zero, 1.5f); End();
+            Test("drop-detects-higher-impact", trial.impact > 8, trial.impact);
+            Test("drop-stronger-compression", trial.compression > .70f, trial.compression);
+            Test("drop-recovers-standing", ctx.Motor.Grounded && !ctx.Motor.Busy && ctx.Motor.Controller.enabled);
+            yield return Place(new Vector3(0, baseY + .035f, -8));
+            ctx.Motor.Warp(new Vector3(0, baseY + .38f, -8));
+            float until = Time.realtimeSinceStartup + 1;
+            while (ctx.Player.position.y > baseY + .16f && Time.realtimeSinceStartup < until) yield return Hold(Vector2.zero, .01f);
+            ctx.Input.TouchJump = true; bool buffered = false;
+            until = Time.realtimeSinceStartup + .65f;
+            while (Time.realtimeSinceStartup < until) { buffered |= ctx.Motor.VerticalSpeed > 3 && ctx.Player.position.y > baseY + .25f; yield return Hold(Vector2.zero, .01f); }
+            Test("jump-buffer-survives-landing", buffered);
+            yield return Hold(Vector2.zero, .5f);
+        }
+        IEnumerator ModeTransitions()
+        {
+            var ride = new GameObject("QA carried state"); fixtures.Add(ride);
+            for (int state = 0; state < 3; state++)
+            {
+                yield return Place(new Vector3(0, baseY + .035f, -12));
+                ctx.Input.TouchJump = true;
+                float until = Time.realtimeSinceStartup + .15f;
+                while (ctx.Motor.JumpPreparation <= 0 && Time.realtimeSinceStartup < until) yield return null;
+                bool preparing = ctx.Motor.JumpPreparation > 0;
+                if (state == 0) ctx.Motor.SetSeat(ctx.Player.position + Vector3.up * .6f);
+                else if (state == 1) ctx.Motor.SetRide(ride.transform, true);
+                else ctx.Motor.SetMarineState(true, "swim", 0, 0, 0);
+                yield return Hold(Vector2.zero, .10f);
+                if (state == 0) ctx.Motor.SetSeat(null);
+                else if (state == 1) ctx.Motor.SetRide(null);
+                else ctx.Motor.SetMarineState(false, "idle", 0, 0, 0);
+                bool unexpected = false; until = Time.realtimeSinceStartup + .45f;
+                while (Time.realtimeSinceStartup < until) { unexpected |= ctx.Motor.VerticalSpeed > 2; yield return null; }
+                Test((state == 0 ? "seat" : state == 1 ? "ride" : "swim") + "-cancels-pending-jump", preparing && !unexpected);
+            }
+            Destroy(ride);
+        }
+        IEnumerator CoyoteJump()
+        {
+            var ledge = Box("QA leave ledge", new Vector3(25, baseY + .5f, 0), new Vector3(4, 1, 3), 0, CityContext.GroundLayer);
+            yield return Place(new Vector3(25, baseY + 1.035f, 0));
+            float until = Time.realtimeSinceStartup + 2; bool left = false;
+            while (Time.realtimeSinceStartup < until)
+            {
+                ctx.Input.TouchMove = Vector2.up;
+                if (!ctx.Motor.Grounded && ctx.Player.position.z > 1.4f) { left = true; break; }
+                yield return null;
+            }
+            ctx.Input.TouchJump = true; bool launched = false; until = Time.realtimeSinceStartup + .5f;
+            while (Time.realtimeSinceStartup < until) { launched |= ctx.Motor.VerticalSpeed > 3; yield return Hold(Vector2.zero, .01f); }
+            Test("edge-grace-starts-jump", left && launched);
+            yield return Hold(Vector2.zero, .9f); Destroy(ledge);
+        }
+        IEnumerator MovingSupport()
+        {
+            var box = Box("QA slow movable platform", new Vector3(0, baseY + .5f, 3), new Vector3(4, 1, 3.5f));
+            var body = box.AddComponent<Rigidbody>(); body.isKinematic = true; body.useGravity = false;
+            yield return Place(new Vector3(0, baseY + .035f, .45f));
+            Begin("moving-support"); ctx.Input.TouchMove = Vector2.up; ctx.Input.TouchJump = true;
+            float until = Time.realtimeSinceStartup + 1.5f;
+            while ((!ctx.Motor.Traversing || ctx.Motor.VaultProgress < .40f) && Time.realtimeSinceStartup < until) { ctx.Input.TouchMove = Vector2.up; yield return null; }
+            bool began = ctx.Motor.Traversing; ctx.Input.TouchMove = Vector2.zero;
+            Vector3 hand = ctx.Motor.HandTargets[0]; box.transform.position += Vector3.right * .12f; Physics.SyncTransforms();
+            yield return Hold(Vector2.zero, .12f);
+            Test("moving-support-hand-follows", began && Vector3.Distance(hand, ctx.Motor.HandTargets[0]) > .10f, Vector3.Distance(hand, ctx.Motor.HandTargets[0]));
+            yield return Hold(Vector2.zero, 1.5f); End();
+            Test("moving-support-lands", began && !ctx.Motor.Busy && ctx.Motor.Controller.enabled && ctx.Player.position.y > baseY + .9f);
+            Test("moving-support-body-clear", trial.bodyClear);
+            Destroy(box); yield return Hold(Vector2.zero, .1f);
+            var fast = Box("QA fast crossing obstacle", new Vector3(0, baseY + .5f, 2), new Vector3(4, 1, .45f));
+            var fastBody = fast.AddComponent<Rigidbody>(); fastBody.useGravity = false; fastBody.mass = 1000;
+            fastBody.linearVelocity = Vector3.right * 3;
+            yield return Place(new Vector3(0, baseY + .035f, 1.0f));
+            Begin("fast-moving-object"); ctx.Input.TouchMove = Vector2.up; ctx.Input.TouchJump = true;
+            yield return Hold(Vector2.up, .08f); yield return Hold(Vector2.zero, 1.3f); End();
+            Test("fast-moving-object-not-locked-to", !trial.entered);
+            Destroy(fast); yield return Hold(Vector2.zero, .1f);
+        }
+        IEnumerator NarrowAndGap()
+        {
+            var pole = Box("QA narrow post", new Vector3(0, baseY + .55f, 2), new Vector3(.18f, 1.1f, .18f));
+            yield return Place(new Vector3(0, baseY + .035f, 1.2f));
+            Begin("narrow-post"); ctx.Input.TouchMove = Vector2.up; ctx.Input.TouchJump = true;
+            yield return Hold(Vector2.up, .08f); yield return Hold(Vector2.zero, 1.3f); End();
+            Test("narrow-post-does-not-fake-a-ledge", !trial.entered);
+            Destroy(pole); yield return Hold(Vector2.zero, .1f);
+            floor.SetActive(false);
+            var platform = Box("QA floor before gap", new Vector3(0, baseY - 1, -8), new Vector3(10, 2, 20), 0, CityContext.GroundLayer);
+            var wall = Box("QA barrier at gap", new Vector3(0, baseY + .5f, 1.85f), new Vector3(4, 1, .30f));
+            yield return Place(new Vector3(0, baseY + .035f, 1.0f));
+            Begin("unsupported-landing"); ctx.Input.TouchMove = Vector2.up; ctx.Input.TouchJump = true;
+            yield return Hold(Vector2.up, .08f); yield return Hold(Vector2.zero, 1.3f); End();
+            Test("gap-rejects-unsupported-landing", !trial.entered);
+            floor.SetActive(true); Destroy(wall); Destroy(platform); Physics.SyncTransforms();
+            yield return Hold(Vector2.zero, .1f);
+        }
+        IEnumerator ActualCar()
+        {
+            VehicleData chosen = null;
+            foreach (var data in ctx.Data.vehicles)
+            {
+                if (data.auto || data.kind != "car" || ctx.Vehicles.IsSpawned(data.id) || data.surfaces.Length == 0) continue;
+                float highest = 0; foreach (var surface in data.surfaces) highest = Mathf.Max(highest, surface.top);
+                if (highest < 2.16f) { chosen = data; break; }
+            }
+            if (chosen == null) { Test("real-car-available", false); yield break; }
+            var root = ctx.Node(chosen.id); carHome = root.position; carRotation = root.rotation;
+            testCar = ctx.Vehicles.Spawn(chosen, new Vector3(20, baseY + .035f, 0), Quaternion.Euler(0, 90, 0));
+            Test("real-car-available", testCar != null && testCar.Body);
+            if (testCar == null || !testCar.Body) yield break;
+            carConstraints = testCar.Body.constraints; testCar.Body.linearVelocity = testCar.Body.angularVelocity = Vector3.zero;
+            testCar.Body.constraints = RigidbodyConstraints.FreezeAll; testCar.Controlled = true; testCar.Body.Sleep();
+            Physics.SyncTransforms();
+            Physics.Raycast(new Vector3(20, baseY + .43f, -10), Vector3.forward, out var face, 20, 1 << CityContext.VehicleLayer, QueryTriggerInteraction.Ignore);
+            yield return Place(new Vector3(20, baseY + .035f, face.point.z - 2));
+            float until = Time.realtimeSinceStartup + 2;
+            while (face.point.z - ctx.Player.position.z > .70f && Time.realtimeSinceStartup < until) { ctx.Input.TouchMove = Vector2.up; yield return null; }
+            Begin(testingCamera ? "camera-actual-car" : "actual-car"); allowCapture = true; ctx.Input.TouchJump = true;
+            yield return Hold(Vector2.up, .08f); yield return Hold(Vector2.zero, 2.9f); End(); allowCapture = false;
+            Test("real-car-parkour-starts", trial.entered);
+            Test("real-car-parkour-finishes", trial.entered && !ctx.Motor.Busy && ctx.Motor.Controller.enabled && ctx.Motor.Grounded && ctx.Player.position.y > baseY + .8f, ctx.Player.position.y - baseY);
+            Test("real-car-body-clear", trial.bodyClear && CityPhysics.StandClear(ctx.Player.position, ctx.Player, null, 2.25f, .37f));
+            Test("real-car-hands-support-surface", trial.handContactTime[0] > .06f && trial.handContactTime[1] > .06f && Mathf.Max(trial.maxHandError[0], trial.maxHandError[1]) < .075f);
+            if (testingCamera)
+            {
+                Test("real-car-camera-does-not-snap-sideways", trial.maxCameraLateralStep < .16f, trial.maxCameraLateralStep);
+                Test("real-car-camera-lens-clear", trial.cameraClear);
+                Test("real-car-camera-keeps-head-in-frame", trial.minHeadY > .05f && trial.maxHeadY < .96f, trial.maxHeadY);
+            }
+            testCar.Body.constraints = carConstraints; testCar.Controlled = false; ctx.Vehicles.Despawn(testCar);
+            testCar.Body.position = carHome; testCar.Body.rotation = carRotation; testCar = null;
+        }
+        IEnumerator Start()
+        {
+            var args = Environment.GetCommandLineArgs(); int at = Array.IndexOf(args, "--city-report-dir");
+            CameraOnly |= Array.IndexOf(args, "--city-parkour-camera-qa") >= 0;
+            CrouchOnly |= Array.IndexOf(args, "--city-crouch-qa") >= 0;
+            CarOnly |= Array.IndexOf(args, "--city-parkour-car-qa") >= 0;
+            dir = !string.IsNullOrEmpty(ReportDirectory) ? ReportDirectory : at >= 0 && at + 1 < args.Length ? args[at + 1] : Path.GetFullPath(Path.Combine(Application.dataPath, "../../Reports/parkour"));
+            Directory.CreateDirectory(dir);
+            float timeout = Time.realtimeSinceStartup + 90;
+            while ((!CityContext.Instance || !CityContext.Instance.Ready) && Time.realtimeSinceStartup < timeout) yield return null;
+            ctx = CityContext.Instance;
+            if (!ctx || !ctx.Ready) { Test("scene-ready", false); Finish(); yield break; }
+            saved = ctx.Player.position; savedRotation = ctx.Player.rotation; fixedCameraPosition = ctx.Camera.transform.position; cameraRotation = ctx.Camera.transform.rotation;
+            followEnabled = ctx.Follow.enabled; ctx.Follow.enabled = false;
+            savedDistance = ctx.Follow.Distance; savedSensitivity = ctx.Follow.Sensitivity; savedInvert = ctx.Follow.InvertY;
+            loadout = ctx.Combat.ExportLoadoutJson(); equipped = ctx.Combat.Equipped; ctx.Combat.Holster();
+            material = new Material(Shader.Find("Standard")); material.color = new Color(.47f, .39f, .30f);
+            floor = Box("QA parkour floor", new Vector3(0, baseY - 1, 0), new Vector3(160, 2, 160), 0, CityContext.GroundLayer);
+            preview = new GameObject("QA traversal camera").AddComponent<Camera>(); preview.enabled = false; preview.fieldOfView = 48; preview.farClipPlane = 30;
+            preview.clearFlags = CameraClearFlags.SolidColor; preview.backgroundColor = new Color(.43f, .57f, .62f);
+            report.captures = SystemInfo.graphicsDeviceType != UnityEngine.Rendering.GraphicsDeviceType.Null; ready = true;
+            if (CarOnly) { yield return ActualCar(); Test("no-runtime-errors", report.errors.Count == 0, report.errors.Count); Finish(); yield break; }
+            if (!CameraOnly) yield return CrouchCases();
+            if (CrouchOnly) { Test("no-runtime-errors", report.errors.Count == 0, report.errors.Count); Finish(); yield break; }
+            if (CameraOnly)
+            {
+                yield return CameraCases();
+                Test("no-runtime-errors", report.errors.Count == 0, report.errors.Count); Finish(); yield break;
+            }
+            yield return Jump("jump-idle", Vector2.zero, false);
+            yield return Jump("jump-walk", Vector2.up, false);
+            yield return Jump("jump-sprint", Vector2.up, true);
+            yield return FallAndBuffer();
+            yield return ModeTransitions();
+            yield return CoyoteJump();
+            yield return Obstacle("vault-low", .60f, .30f, 0, .55f, false, "vault");
+            yield return Obstacle("vault-walk", 1.0f, .45f, 0, .85f, false, "vault");
+            yield return Obstacle("vault-close", 1.0f, .45f, 0, .48f, false, "vault");
+            yield return Obstacle("vault-sprint", 1.0f, .70f, 0, 1.55f, true, "vault");
+            yield return Obstacle("vault-diagonal", 1.0f, .40f, 28, .80f, false, "vault");
+            yield return Obstacle("mantle-wide", 1.0f, 3.5f, 0, .75f, false, "climb");
+            yield return Obstacle("climb-high", 2.0f, .45f, 0, .75f, false, "climb");
+            yield return Obstacle("mantle-high-wide", 2.0f, 3.5f, 0, .75f, false, "climb");
+            yield return Obstacle("too-high", 2.5f, .45f, 0, .75f, false, null);
+            yield return Obstacle("low-ceiling", 1.0f, .45f, 0, .75f, false, null, true);
+            yield return Obstacle("blocked-landing", 1.0f, .35f, 0, .75f, false, null, false, true);
+            yield return PauseAndInterrupt();
+            yield return MovingSupport();
+            yield return NarrowAndGap();
+            yield return ActualCar();
+            yield return CameraCases();
+            Test("no-runtime-errors", report.errors.Count == 0, report.errors.Count); Finish();
+        }
+        void Finish()
+        {
+            running = false; File.WriteAllText(Path.Combine(dir, "parkour-qa.json"), JsonUtility.ToJson(report, true));
+            File.WriteAllLines(Path.Combine(dir, "hand-support.csv"), handSamples);
+            Debug.Log("PARKOUR_QA_DONE " + report.passed);
+            if (!Application.isEditor && (Array.IndexOf(Environment.GetCommandLineArgs(), "--city-parkour-qa") >= 0 || CameraOnly || CrouchOnly || CarOnly)) Application.Quit(report.passed ? 0 : 1);
+            else Destroy(gameObject);
+        }
+        bool quitting;
+        void OnApplicationQuit() { quitting = true; }
+        void OnDestroy()
+        {
+            Application.logMessageReceived -= Log;
+            if (quitting) return;
+            if (ready && ctx && ctx.Player && ctx.Motor && ctx.Camera && ctx.Follow && ctx.UI && ctx.Combat)
+            {
+                ctx.UI.SetSettings(false); ctx.Input.TouchMove = Vector2.zero; ctx.Input.TouchRun = false;
+                ctx.Combat.RestoreLoadoutJson(loadout); if (!string.IsNullOrEmpty(equipped)) ctx.Combat.Select(equipped);
+                ctx.Motor.Warp(saved); ctx.Player.rotation = savedRotation; ctx.Follow.enabled = followEnabled; ctx.Follow.ResetTracking();
+                ctx.Follow.Distance = savedDistance; ctx.Follow.Sensitivity = savedSensitivity; ctx.Follow.InvertY = savedInvert;
+                ctx.Camera.transform.SetPositionAndRotation(fixedCameraPosition, cameraRotation);
+            }
+            if (testCar != null && testCar.Body && ctx && ctx.Vehicles)
+            {
+                testCar.Body.constraints = carConstraints; testCar.Controlled = false; ctx.Vehicles.Despawn(testCar);
+                testCar.Body.position = carHome; testCar.Body.rotation = carRotation;
+            }
+            foreach (var go in fixtures) if (go) Destroy(go);
+            if (preview) Destroy(preview.gameObject); if (material) Destroy(material);
+        }
+    }
+}

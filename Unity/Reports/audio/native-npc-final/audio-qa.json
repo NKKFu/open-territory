@@ -1,0 +1,279 @@
+{
+    "passed": true,
+    "sampleRate": 48000,
+    "captureFrames": 818176,
+    "outputPeak": 0.23285014927387238,
+    "checks": [
+        {
+            "name": "bank-loaded-with-no-missing-assets",
+            "detail": "",
+            "passed": true,
+            "value": 129.0
+        },
+        {
+            "name": "every-clip-has-licensed-source-provenance",
+            "detail": "",
+            "passed": true,
+            "value": 129.0
+        },
+        {
+            "name": "all-clips-native-44khz-finite-with-headroom",
+            "detail": "",
+            "passed": true,
+            "value": 0.819976806640625
+        },
+        {
+            "name": "built-audio-content-matches-imported-source-levels",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "stereo-long-ambience-loops",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "six-recorded-ambience-loops-with-smooth-joins",
+            "detail": "",
+            "passed": true,
+            "value": 6.0
+        },
+        {
+            "name": "older-settings-keep-new-audio-defaults",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "walking-emits-distance-driven-footsteps",
+            "detail": "",
+            "passed": true,
+            "value": 6.0
+        },
+        {
+            "name": "idle-does-not-emit-footsteps",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "four-surfaces-use-sixteen-distinct-recorded-steps",
+            "detail": "",
+            "passed": true,
+            "value": 4.0
+        },
+        {
+            "name": "human-pain-rotates-three-recorded-performances",
+            "detail": "",
+            "passed": true,
+            "value": 3.0
+        },
+        {
+            "name": "surface-follows-road-trail-and-pier",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "distant-one-shots-are-inaudible-and-culled",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "wall-muffles-and-attenuates-source",
+            "detail": "",
+            "passed": true,
+            "value": 1399.9998779296875
+        },
+        {
+            "name": "occlusion-recovers-after-wall-is-removed",
+            "detail": "",
+            "passed": true,
+            "value": 16090.45703125
+        },
+        {
+            "name": "native-car-entry-starts-engine-loop",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "engine-pitch-follows-actual-rpm",
+            "detail": "idle=0.6500002 idle-speed=0.001675425 rpm=3458.868",
+            "passed": true,
+            "value": 1.6056749820709229
+        },
+        {
+            "name": "siren-is-continuous-not-repeated-bursts",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "recorded-real-native-audio-output",
+            "detail": "frames=818176",
+            "passed": true,
+            "value": 0.21559980511665345
+        },
+        {
+            "name": "effects-can-be-muted-independently",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sea-follows-new-coast-not-old-z-coordinate",
+            "detail": "inland=0.004567152",
+            "passed": true,
+            "value": 0.019972680136561395
+        },
+        {
+            "name": "interiors-shelter-and-filter-the-rain",
+            "detail": "outside=0.412559",
+            "passed": true,
+            "value": 0.10349184274673462
+        },
+        {
+            "name": "downloaded-ambience-recorded-from-native-dsp",
+            "detail": "frames=197632",
+            "passed": true,
+            "value": 0.23285014927387238
+        },
+        {
+            "name": "radio-plays-continuous-licensed-performance",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "menu-theme-is-silent-during-exploration",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "settings-pause-freezes-audio-playhead",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "four-accessible-sound-sliders",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "licensed-menu-theme-is-loaded-and-streamed",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "menu-theme-plays-in-2d-while-city-audio-is-paused",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "menu-theme-advances-with-the-world-frozen",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "menu-theme-is-audible-in-native-dsp",
+            "detail": "",
+            "passed": true,
+            "value": 0.1672368049621582
+        },
+        {
+            "name": "music-slider-controls-menu-theme-during-pause",
+            "detail": "",
+            "passed": true,
+            "value": 0.11000000685453415
+        },
+        {
+            "name": "music-slider-mutes-menu-theme",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "master-slider-mutes-menu-theme",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "menu-theme-is-independent-of-effects-and-ambience",
+            "detail": "",
+            "passed": true,
+            "value": 0.4400000274181366
+        },
+        {
+            "name": "menu-theme-loops-at-the-end-of-the-track",
+            "detail": "",
+            "passed": true,
+            "value": 0.3279818594455719
+        },
+        {
+            "name": "closing-menu-freezes-theme-playhead",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "reopening-menu-resumes-the-same-music-voice",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "menu-shows-title-artist-and-license-links",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "offline-credits-include-source-license-and-adaptations",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "audio-resumes-after-settings",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "menu-theme-is-paused-after-closing-settings",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "master-volume-controls-listener",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "native-output-is-audible-and-unclipped",
+            "detail": "",
+            "passed": true,
+            "value": 0.23285014927387238
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "errors": []
+}

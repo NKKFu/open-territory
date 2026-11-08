@@ -1,0 +1,256 @@
+{
+    "passed": true,
+    "checks": [
+        {
+            "name": "three-open-real-benches-found",
+            "detail": "30614, 30340, 29216",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-E-selects-real-seat",
+            "detail": "seat-30614",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-E-sits",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-sitting-transition-keeps-view",
+            "detail": "min distance=2.6; max frame step=0.01924189",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-orbit-90",
+            "detail": "distance=2.6",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-orbit-180",
+            "detail": "distance=2.6",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-orbit-270",
+            "detail": "distance=2.6",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-orbit-360",
+            "detail": "distance=2.6",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-close-zoom",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-far-zoom",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-zoom-preserves-pitch",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-low-orbit-clears-backrest",
+            "detail": "distance=2.6",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-high-orbit-keeps-head",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-wall-still-retracts-camera",
+            "detail": "distance=1.25957",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-wall-removal-restores-view",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-Esc-pauses-seated-camera",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-E-stands",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-standing-transition-keeps-view",
+            "detail": "min distance=2.597878; max frame step=0.02945648",
+            "passed": true
+        },
+        {
+            "name": "bench-30614-walking-resumes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-E-selects-real-seat",
+            "detail": "seat-30340",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-E-sits",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-sitting-transition-keeps-view",
+            "detail": "min distance=2.6; max frame step=0.01923402",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-orbit-90",
+            "detail": "distance=2.6",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-orbit-180",
+            "detail": "distance=2.6",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-orbit-270",
+            "detail": "distance=2.6",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-orbit-360",
+            "detail": "distance=2.6",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-close-zoom",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-far-zoom",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-zoom-preserves-pitch",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-low-orbit-clears-backrest",
+            "detail": "distance=2.6",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-high-orbit-keeps-head",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-E-stands",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-standing-transition-keeps-view",
+            "detail": "min distance=2.6; max frame step=0.02948265",
+            "passed": true
+        },
+        {
+            "name": "bench-30340-walking-resumes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-E-selects-real-seat",
+            "detail": "seat-29216",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-E-sits",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-sitting-transition-keeps-view",
+            "detail": "min distance=2.6; max frame step=0.02113436",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-orbit-90",
+            "detail": "distance=2.598448",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-orbit-180",
+            "detail": "distance=2.599942",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-orbit-270",
+            "detail": "distance=2.599998",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-orbit-360",
+            "detail": "distance=2.586028",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-close-zoom",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-far-zoom",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-zoom-preserves-pitch",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-low-orbit-clears-backrest",
+            "detail": "distance=2.6",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-high-orbit-keeps-head",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-E-stands",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-standing-transition-keeps-view",
+            "detail": "min distance=2.6; max frame step=0.05097429",
+            "passed": true
+        },
+        {
+            "name": "bench-29216-walking-resumes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

@@ -1,0 +1,4433 @@
+{
+    "passed": false,
+    "controlsOnly": false,
+    "unity": "6000.3.27f1",
+    "layout": "marin-reference-v2",
+    "checks": [
+        {
+            "name": "native-context-ready",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sedã-1350/launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 1.9199999570846558
+        },
+        {
+            "name": "sedã-1350/stronger-arcade-launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 1.9199999570846558
+        },
+        {
+            "name": "sedã-1350/top-speed-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 46.1533088684082
+        },
+        {
+            "name": "sedã-1350/braking",
+            "detail": "metres from 72 km/h",
+            "passed": true,
+            "value": 12.575763702392579
+        },
+        {
+            "name": "sedã-1350/wet-road-has-less-grip",
+            "detail": "",
+            "passed": true,
+            "value": 18.99176597595215
+        },
+        {
+            "name": "sedã-1350/responsive-curve",
+            "detail": "",
+            "passed": true,
+            "value": 100.17620086669922
+        },
+        {
+            "name": "sedã-1350/left-right-symmetry",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sedã-1350/fixed-step-convergence",
+            "detail": "",
+            "passed": true,
+            "value": 2.384185791015625e-7
+        },
+        {
+            "name": "sedã-1350/powered-turn-in-at-least-50-percent-faster",
+            "detail": "degrees in 0.5 s at 54 km/h",
+            "passed": true,
+            "value": 21.422582626342775
+        },
+        {
+            "name": "sedã-1350/full-throttle-closes-curve",
+            "detail": "",
+            "passed": true,
+            "value": 84.03821563720703
+        },
+        {
+            "name": "sedã-1350/high-speed-steering-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 0.4630858898162842
+        },
+        {
+            "name": "sedã-1350/wet-corner-retains-weather-effect",
+            "detail": "radians/s at 108 km/h",
+            "passed": true,
+            "value": 0.34883636236190798
+        },
+        {
+            "name": "sedã-1350/handbrake-slide-recovers",
+            "detail": "",
+            "passed": true,
+            "value": 8.948892499829843e-16
+        },
+        {
+            "name": "sedã-1350/reverse-brakes-before-shifting",
+            "detail": "",
+            "passed": true,
+            "value": -6.749813079833984
+        },
+        {
+            "name": "sedã-1350/world-impulse-does-not-double-rotation",
+            "detail": "",
+            "passed": true,
+            "value": -0.0002369214198552072
+        },
+        {
+            "name": "perua-1539/launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 1.9199999570846558
+        },
+        {
+            "name": "perua-1539/stronger-arcade-launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 1.9199999570846558
+        },
+        {
+            "name": "perua-1539/top-speed-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 45.59162902832031
+        },
+        {
+            "name": "perua-1539/braking",
+            "detail": "metres from 72 km/h",
+            "passed": true,
+            "value": 12.766873359680176
+        },
+        {
+            "name": "perua-1539/wet-road-has-less-grip",
+            "detail": "",
+            "passed": true,
+            "value": 18.971820831298829
+        },
+        {
+            "name": "perua-1539/responsive-curve",
+            "detail": "",
+            "passed": true,
+            "value": 98.49820709228516
+        },
+        {
+            "name": "perua-1539/left-right-symmetry",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "perua-1539/fixed-step-convergence",
+            "detail": "",
+            "passed": true,
+            "value": 1.1920928955078126e-7
+        },
+        {
+            "name": "perua-1539/powered-turn-in-at-least-50-percent-faster",
+            "detail": "degrees in 0.5 s at 54 km/h",
+            "passed": true,
+            "value": 21.524288177490236
+        },
+        {
+            "name": "perua-1539/full-throttle-closes-curve",
+            "detail": "",
+            "passed": true,
+            "value": 82.7450180053711
+        },
+        {
+            "name": "perua-1539/high-speed-steering-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 0.46900588274002077
+        },
+        {
+            "name": "perua-1539/wet-corner-retains-weather-effect",
+            "detail": "radians/s at 108 km/h",
+            "passed": true,
+            "value": 0.3441128730773926
+        },
+        {
+            "name": "perua-1539/handbrake-slide-recovers",
+            "detail": "",
+            "passed": true,
+            "value": 8.948892499829843e-16
+        },
+        {
+            "name": "perua-1539/reverse-brakes-before-shifting",
+            "detail": "",
+            "passed": true,
+            "value": -6.7131147384643559
+        },
+        {
+            "name": "perua-1539/world-impulse-does-not-double-rotation",
+            "detail": "",
+            "passed": true,
+            "value": -0.0002369214198552072
+        },
+        {
+            "name": "picape-1768.5/launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 2.240000009536743
+        },
+        {
+            "name": "picape-1768.5/stronger-arcade-launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 2.240000009536743
+        },
+        {
+            "name": "picape-1768.5/top-speed-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 43.994022369384769
+        },
+        {
+            "name": "picape-1768.5/braking",
+            "detail": "metres from 72 km/h",
+            "passed": true,
+            "value": 12.97270679473877
+        },
+        {
+            "name": "picape-1768.5/wet-road-has-less-grip",
+            "detail": "",
+            "passed": true,
+            "value": 18.950422286987306
+        },
+        {
+            "name": "picape-1768.5/responsive-curve",
+            "detail": "",
+            "passed": true,
+            "value": 86.70416259765625
+        },
+        {
+            "name": "picape-1768.5/left-right-symmetry",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "picape-1768.5/fixed-step-convergence",
+            "detail": "",
+            "passed": true,
+            "value": 4.76837158203125e-7
+        },
+        {
+            "name": "picape-1768.5/powered-turn-in-at-least-50-percent-faster",
+            "detail": "degrees in 0.5 s at 54 km/h",
+            "passed": true,
+            "value": 21.78075408935547
+        },
+        {
+            "name": "picape-1768.5/full-throttle-closes-curve",
+            "detail": "",
+            "passed": true,
+            "value": 84.34362030029297
+        },
+        {
+            "name": "picape-1768.5/high-speed-steering-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 0.47731921076774599
+        },
+        {
+            "name": "picape-1768.5/wet-corner-retains-weather-effect",
+            "detail": "radians/s at 108 km/h",
+            "passed": true,
+            "value": 0.3388725221157074
+        },
+        {
+            "name": "picape-1768.5/handbrake-slide-recovers",
+            "detail": "",
+            "passed": true,
+            "value": 8.948892499829843e-16
+        },
+        {
+            "name": "picape-1768.5/reverse-brakes-before-shifting",
+            "detail": "",
+            "passed": true,
+            "value": -6.639704704284668
+        },
+        {
+            "name": "picape-1768.5/world-impulse-does-not-double-rotation",
+            "detail": "",
+            "passed": true,
+            "value": -0.0002369214198552072
+        },
+        {
+            "name": "compacto-1228.5/launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 2.0
+        },
+        {
+            "name": "compacto-1228.5/stronger-arcade-launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 2.0
+        },
+        {
+            "name": "compacto-1228.5/top-speed-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 46.17759704589844
+        },
+        {
+            "name": "compacto-1228.5/braking",
+            "detail": "metres from 72 km/h",
+            "passed": true,
+            "value": 12.83204174041748
+        },
+        {
+            "name": "compacto-1228.5/wet-road-has-less-grip",
+            "detail": "",
+            "passed": true,
+            "value": 19.02140998840332
+        },
+        {
+            "name": "compacto-1228.5/responsive-curve",
+            "detail": "",
+            "passed": true,
+            "value": 104.56070709228516
+        },
+        {
+            "name": "compacto-1228.5/left-right-symmetry",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "compacto-1228.5/fixed-step-convergence",
+            "detail": "",
+            "passed": true,
+            "value": 4.76837158203125e-7
+        },
+        {
+            "name": "compacto-1228.5/powered-turn-in-at-least-50-percent-faster",
+            "detail": "degrees in 0.5 s at 54 km/h",
+            "passed": true,
+            "value": 21.799863815307618
+        },
+        {
+            "name": "compacto-1228.5/full-throttle-closes-curve",
+            "detail": "",
+            "passed": true,
+            "value": 84.88011169433594
+        },
+        {
+            "name": "compacto-1228.5/high-speed-steering-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 0.4636887311935425
+        },
+        {
+            "name": "compacto-1228.5/wet-corner-retains-weather-effect",
+            "detail": "radians/s at 108 km/h",
+            "passed": true,
+            "value": 0.3507954180240631
+        },
+        {
+            "name": "compacto-1228.5/handbrake-slide-recovers",
+            "detail": "",
+            "passed": true,
+            "value": 8.325185083075059e-16
+        },
+        {
+            "name": "compacto-1228.5/reverse-brakes-before-shifting",
+            "detail": "",
+            "passed": true,
+            "value": -6.751568794250488
+        },
+        {
+            "name": "compacto-1228.5/world-impulse-does-not-double-rotation",
+            "detail": "",
+            "passed": true,
+            "value": -0.0002369214198552072
+        },
+        {
+            "name": "furgão-1741.5/launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 2.259999990463257
+        },
+        {
+            "name": "furgão-1741.5/stronger-arcade-launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 2.259999990463257
+        },
+        {
+            "name": "furgão-1741.5/top-speed-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 43.92367935180664
+        },
+        {
+            "name": "furgão-1741.5/braking",
+            "detail": "metres from 72 km/h",
+            "passed": true,
+            "value": 12.949752807617188
+        },
+        {
+            "name": "furgão-1741.5/wet-road-has-less-grip",
+            "detail": "",
+            "passed": true,
+            "value": 19.00162696838379
+        },
+        {
+            "name": "furgão-1741.5/responsive-curve",
+            "detail": "",
+            "passed": true,
+            "value": 101.16130828857422
+        },
+        {
+            "name": "furgão-1741.5/left-right-symmetry",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "furgão-1741.5/fixed-step-convergence",
+            "detail": "",
+            "passed": true,
+            "value": 1.1920928955078126e-7
+        },
+        {
+            "name": "furgão-1741.5/powered-turn-in-at-least-50-percent-faster",
+            "detail": "degrees in 0.5 s at 54 km/h",
+            "passed": true,
+            "value": 21.75056266784668
+        },
+        {
+            "name": "furgão-1741.5/full-throttle-closes-curve",
+            "detail": "",
+            "passed": true,
+            "value": 84.87450408935547
+        },
+        {
+            "name": "furgão-1741.5/high-speed-steering-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 0.4788917005062103
+        },
+        {
+            "name": "furgão-1741.5/wet-corner-retains-weather-effect",
+            "detail": "radians/s at 108 km/h",
+            "passed": true,
+            "value": 0.3473343849182129
+        },
+        {
+            "name": "furgão-1741.5/handbrake-slide-recovers",
+            "detail": "",
+            "passed": true,
+            "value": 8.70417303466505e-16
+        },
+        {
+            "name": "furgão-1741.5/reverse-brakes-before-shifting",
+            "detail": "",
+            "passed": true,
+            "value": -6.637598991394043
+        },
+        {
+            "name": "furgão-1741.5/world-impulse-does-not-double-rotation",
+            "detail": "",
+            "passed": true,
+            "value": -0.0002369214198552072
+        },
+        {
+            "name": "picape-4050/launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 3.2799999713897707
+        },
+        {
+            "name": "picape-4050/stronger-arcade-launch",
+            "detail": "seconds 0–60 km/h",
+            "passed": true,
+            "value": 3.2799999713897707
+        },
+        {
+            "name": "picape-4050/top-speed-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 37.2696533203125
+        },
+        {
+            "name": "picape-4050/braking",
+            "detail": "metres from 72 km/h",
+            "passed": true,
+            "value": 14.268234252929688
+        },
+        {
+            "name": "picape-4050/wet-road-has-less-grip",
+            "detail": "",
+            "passed": true,
+            "value": 18.875375747680665
+        },
+        {
+            "name": "picape-4050/responsive-curve",
+            "detail": "",
+            "passed": true,
+            "value": 79.9902572631836
+        },
+        {
+            "name": "picape-4050/left-right-symmetry",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "picape-4050/fixed-step-convergence",
+            "detail": "",
+            "passed": true,
+            "value": 2.384185791015625e-7
+        },
+        {
+            "name": "picape-4050/powered-turn-in-at-least-50-percent-faster",
+            "detail": "degrees in 0.5 s at 54 km/h",
+            "passed": true,
+            "value": 19.864124298095704
+        },
+        {
+            "name": "picape-4050/full-throttle-closes-curve",
+            "detail": "",
+            "passed": true,
+            "value": 92.43203735351563
+        },
+        {
+            "name": "picape-4050/high-speed-steering-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 0.49627241492271426
+        },
+        {
+            "name": "picape-4050/wet-corner-retains-weather-effect",
+            "detail": "radians/s at 108 km/h",
+            "passed": true,
+            "value": 0.35200828313827517
+        },
+        {
+            "name": "picape-4050/handbrake-slide-recovers",
+            "detail": "",
+            "passed": true,
+            "value": 8.948892499829843e-16
+        },
+        {
+            "name": "picape-4050/reverse-brakes-before-shifting",
+            "detail": "",
+            "passed": true,
+            "value": -6.282374858856201
+        },
+        {
+            "name": "picape-4050/world-impulse-does-not-double-rotation",
+            "detail": "",
+            "passed": true,
+            "value": -0.0002369214198552072
+        },
+        {
+            "name": "E-selects-vehicle",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "E-enters-driver-seat",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "QA-storage-is-isolated",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "all-body-contact-materials-slide",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sidewall--1-forward/real-side-contact",
+            "detail": "",
+            "passed": true,
+            "value": 7.0
+        },
+        {
+            "name": "sidewall--1-forward/keeps-sliding-across-seams",
+            "detail": "metres along the wall; speed=14.45714",
+            "passed": true,
+            "value": 16.819557189941408
+        },
+        {
+            "name": "sidewall--1-forward/wall-stays-solid",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sidewall--1-forward/steers-away-without-sticking",
+            "detail": "",
+            "passed": true,
+            "value": 7.854656219482422
+        },
+        {
+            "name": "sidewall--1-reverse/real-side-contact",
+            "detail": "",
+            "passed": true,
+            "value": 5.0
+        },
+        {
+            "name": "sidewall--1-reverse/keeps-sliding-across-seams",
+            "detail": "metres along the wall; speed=-5.821143",
+            "passed": true,
+            "value": 7.167928695678711
+        },
+        {
+            "name": "sidewall--1-reverse/wall-stays-solid",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sidewall--1-reverse/steers-away-without-sticking",
+            "detail": "",
+            "passed": true,
+            "value": 0.9352303743362427
+        },
+        {
+            "name": "sidewall-1-forward/real-side-contact",
+            "detail": "",
+            "passed": false,
+            "value": 0.0
+        },
+        {
+            "name": "sidewall-1-forward/keeps-sliding-across-seams",
+            "detail": "metres along the wall; speed=12.52979",
+            "passed": true,
+            "value": 14.01842975616455
+        },
+        {
+            "name": "sidewall-1-forward/wall-stays-solid",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sidewall-1-forward/steers-away-without-sticking",
+            "detail": "",
+            "passed": true,
+            "value": 8.77484130859375
+        },
+        {
+            "name": "sidewall-1-reverse/real-side-contact",
+            "detail": "",
+            "passed": true,
+            "value": 5.0
+        },
+        {
+            "name": "sidewall-1-reverse/keeps-sliding-across-seams",
+            "detail": "metres along the wall; speed=-5.78293",
+            "passed": true,
+            "value": 7.255611419677734
+        },
+        {
+            "name": "sidewall-1-reverse/wall-stays-solid",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sidewall-1-reverse/steers-away-without-sticking",
+            "detail": "",
+            "passed": true,
+            "value": 0.9288068413734436
+        },
+        {
+            "name": "head-on-wall-still-stops-the-car",
+            "detail": "",
+            "passed": true,
+            "value": 0.0003342330746818334
+        },
+        {
+            "name": "side-slide-does-not-bypass-corner-wall",
+            "detail": "",
+            "passed": true,
+            "value": -0.0001290973596042022
+        },
+        {
+            "name": "service-brake-retains-tyre-grip",
+            "detail": "",
+            "passed": true,
+            "value": 0.0006249386933632195
+        },
+        {
+            "name": "entrance-plants-registered",
+            "detail": "expected=410",
+            "passed": true,
+            "value": 410.0
+        },
+        {
+            "name": "pot-and-foliage-owned-together",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "relocated-fire-station-plant-is-covered",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "pictured-house-has-two-breakable-plants",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "visible-plant-resolves-from-real-raycast",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "Esc-freezes-plant-damage",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "bullet-damages-pot-without-premature-removal",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "bullets-break-pot-and-foliage",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "broken-plant-hidden-in-every-LOD",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "other-entrance-plant-is-preserved",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "facade-behind-broken-plant-remains-solid",
+            "detail": "",
+            "passed": true,
+            "value": 2.8500213623046877
+        },
+        {
+            "name": "melee-breaks-entrance-plant",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "car-breaks-the-pictured-entrance-plant",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "broken-plants-leave-no-invisible-blockers",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "fragment-pool-remains-bounded",
+            "detail": "",
+            "passed": true,
+            "value": 12.0
+        },
+        {
+            "name": "shared-building-source-meshes-unchanged",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "E-exits-after-driving",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "models": [
+        {
+            "model": "sedã-1350",
+            "mass": 1350.0,
+            "speedAt2": 17.41975975036621,
+            "speedAt4": 31.859636306762697,
+            "zeroTo60": 1.9199999570846558,
+            "brakeDistance": 12.575763702392579,
+            "wetBrakeDistance": 18.99176597595215,
+            "turnDegrees": 100.17620086669922,
+            "turnSpeed": 16.82242202758789,
+            "handbrakeSlip": 1.3197389841079713,
+            "recoveredSlip": 8.948892499829843e-16,
+            "poweredTurnDegrees": 84.03821563720703,
+            "poweredTurnSpeed": 23.59541130065918,
+            "turnInDegrees": 21.422582626342775,
+            "unassistedTurnInDegrees": 11.025469779968262,
+            "highSpeedYaw": 0.4630858898162842
+        },
+        {
+            "model": "perua-1539",
+            "mass": 1539.0,
+            "speedAt2": 17.446678161621095,
+            "speedAt4": 30.981609344482423,
+            "zeroTo60": 1.9199999570846558,
+            "brakeDistance": 12.766873359680176,
+            "wetBrakeDistance": 18.971820831298829,
+            "turnDegrees": 98.49820709228516,
+            "turnSpeed": 16.56086540222168,
+            "handbrakeSlip": 1.1608245372772217,
+            "recoveredSlip": 8.948892499829843e-16,
+            "poweredTurnDegrees": 82.7450180053711,
+            "poweredTurnSpeed": 25.358421325683595,
+            "turnInDegrees": 21.524288177490236,
+            "unassistedTurnInDegrees": 11.076704978942871,
+            "highSpeedYaw": 0.46900588274002077
+        },
+        {
+            "model": "picape-1768.5",
+            "mass": 1768.5,
+            "speedAt2": 14.890220642089844,
+            "speedAt4": 27.760818481445314,
+            "zeroTo60": 2.240000009536743,
+            "brakeDistance": 12.97270679473877,
+            "wetBrakeDistance": 18.950422286987306,
+            "turnDegrees": 86.70416259765625,
+            "turnSpeed": 16.410221099853517,
+            "handbrakeSlip": 0.9442670345306397,
+            "recoveredSlip": 8.948892499829843e-16,
+            "poweredTurnDegrees": 84.34362030029297,
+            "poweredTurnSpeed": 24.7801570892334,
+            "turnInDegrees": 21.78075408935547,
+            "unassistedTurnInDegrees": 13.213761329650879,
+            "highSpeedYaw": 0.47731921076774599
+        },
+        {
+            "model": "compacto-1228.5",
+            "mass": 1228.5,
+            "speedAt2": 16.81015396118164,
+            "speedAt4": 31.367103576660158,
+            "zeroTo60": 2.0,
+            "brakeDistance": 12.83204174041748,
+            "wetBrakeDistance": 19.02140998840332,
+            "turnDegrees": 104.56070709228516,
+            "turnSpeed": 16.418073654174806,
+            "handbrakeSlip": 2.0309677124023439,
+            "recoveredSlip": 8.325185083075059e-16,
+            "poweredTurnDegrees": 84.88011169433594,
+            "poweredTurnSpeed": 22.62405776977539,
+            "turnInDegrees": 21.799863815307618,
+            "unassistedTurnInDegrees": 11.711307525634766,
+            "highSpeedYaw": 0.4636887311935425
+        },
+        {
+            "model": "furgão-1741.5",
+            "mass": 1741.5,
+            "speedAt2": 14.833785057067871,
+            "speedAt4": 27.684436798095704,
+            "zeroTo60": 2.259999990463257,
+            "brakeDistance": 12.949752807617188,
+            "wetBrakeDistance": 19.00162696838379,
+            "turnDegrees": 101.16130828857422,
+            "turnSpeed": 15.589509010314942,
+            "handbrakeSlip": 1.1566162109375,
+            "recoveredSlip": 8.70417303466505e-16,
+            "poweredTurnDegrees": 84.87450408935547,
+            "poweredTurnSpeed": 24.29361343383789,
+            "turnInDegrees": 21.75056266784668,
+            "unassistedTurnInDegrees": 12.036905288696289,
+            "highSpeedYaw": 0.4788917005062103
+        },
+        {
+            "model": "picape-4050",
+            "mass": 4050.0,
+            "speedAt2": 10.192645072937012,
+            "speedAt4": 20.16626739501953,
+            "zeroTo60": 3.2799999713897707,
+            "brakeDistance": 14.268234252929688,
+            "wetBrakeDistance": 18.875375747680665,
+            "turnDegrees": 79.9902572631836,
+            "turnSpeed": 15.113525390625,
+            "handbrakeSlip": 0.4453907907009125,
+            "recoveredSlip": 8.948892499829843e-16,
+            "poweredTurnDegrees": 92.43203735351563,
+            "poweredTurnSpeed": 20.078821182250978,
+            "turnInDegrees": 19.864124298095704,
+            "unassistedTurnInDegrees": 10.563132286071778,
+            "highSpeedYaw": 0.49627241492271426
+        }
+    ],
+    "samples": [
+        {
+            "phase": "enter",
+            "time": 0.0,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 3.097510514749047e-8,
+            "roll": 3.304168316731193e-8,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.803800582885743,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.019999992102384568,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 3.097510514749047e-8,
+            "roll": 3.304168316731193e-8,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.803800582885743,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.13204637169837953,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 3.097510514749047e-8,
+            "roll": 3.304168316731193e-8,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.803800582885743,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.2320476919412613,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 3.097510514749047e-8,
+            "roll": 3.304168316731193e-8,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.803800582885743,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.33204853534698489,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 3.097510514749047e-8,
+            "roll": 3.304168316731193e-8,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.803800582885743,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.432049423456192,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 3.097510514749047e-8,
+            "roll": 3.304168316731193e-8,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.803800582885743,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.5320505499839783,
+            "speed": 1.0603730393743405e-10,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 3.097510514749047e-8,
+            "roll": 3.304168316731193e-8,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833435058594,
+                "y": 24.802078247070314,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.6376717686653137,
+            "speed": 0.00027949109789915383,
+            "lateral": 0.0,
+            "yaw": -2.7182167627870515e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.0382344014942646,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.0836486816406,
+                "y": 24.741302490234376,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.7376723885536194,
+            "speed": 0.0004536698688752949,
+            "lateral": 0.0,
+            "yaw": 5.767390689470631e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.326055109500885,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.0862121582031,
+                "y": 24.667030334472658,
+                "z": 919.4668579101563
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.8376737833023071,
+            "speed": 0.0004462168726604432,
+            "lateral": 0.0,
+            "yaw": -3.3561479995114498e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.593789279460907,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.08868408203127,
+                "y": 24.63390350341797,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 0.9376745223999023,
+            "speed": 0.0007770160445943475,
+            "lateral": 0.0,
+            "yaw": -1.0568833630486552e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.6468870043754578,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.08905029296877,
+                "y": 24.63164520263672,
+                "z": 919.467041015625
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.0383561849594117,
+            "speed": 0.0008608996286056936,
+            "lateral": 0.0,
+            "yaw": -2.0117516896789312e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5738920569419861,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.08831787109377,
+                "y": 24.639057159423829,
+                "z": 919.467041015625
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.138357400894165,
+            "speed": 0.0007660980918444693,
+            "lateral": 0.0,
+            "yaw": -8.367709938283952e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4994772672653198,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.0875549316406,
+                "y": 24.644569396972658,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.238358736038208,
+            "speed": 0.0006919774459674954,
+            "lateral": 0.0,
+            "yaw": -1.601116679239567e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.46804970502853396,
+            "roll": 0.00000936514243221609,
+            "contacts": 4,
+            "position": {
+                "x": -269.087158203125,
+                "y": 24.646263122558595,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.3383599519729615,
+            "speed": 0.000670836481731385,
+            "lateral": 0.0,
+            "yaw": -1.2916073899305048e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.468264102935791,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.0871276855469,
+                "y": 24.645885467529298,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.43837308883667,
+            "speed": 0.0006761538097634912,
+            "lateral": 0.0,
+            "yaw": -8.27420265636647e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.47775134444236758,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.08721923828127,
+                "y": 24.645156860351564,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.5394874811172486,
+            "speed": 0.0006859091226942837,
+            "lateral": 0.0,
+            "yaw": -4.3424299178695949e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.484373539686203,
+            "roll": 0.000019744222299777903,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644765853881837,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.6394885778427125,
+            "speed": 0.000690536864567548,
+            "lateral": 0.0,
+            "yaw": -1.6577233452608199e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4861716330051422,
+            "roll": 0.00007796299905749038,
+            "contacts": 4,
+            "position": {
+                "x": -269.0873107910156,
+                "y": 24.64470672607422,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.7395790815353394,
+            "speed": 0.0006913066026754677,
+            "lateral": 0.0,
+            "yaw": -2.1084888146560844e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48557326197624209,
+            "roll": 0.00010274999658577144,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644771575927736,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.8395800590515137,
+            "speed": 0.0006909213843755424,
+            "lateral": 0.0,
+            "yaw": -2.6968950805894567e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4846212565898895,
+            "roll": 0.00010797954018926248,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.64483642578125,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 1.939581036567688,
+            "speed": 0.000689776090439409,
+            "lateral": 0.0,
+            "yaw": -1.8965528170156177e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48415008187294009,
+            "roll": 0.00011131470091640949,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644859313964845,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 2.039581775665283,
+            "speed": 0.000689334818162024,
+            "lateral": 0.0,
+            "yaw": -3.545362687873421e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48411208391189577,
+            "roll": 0.00011190168152097613,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644859313964845,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 2.139582633972168,
+            "speed": 0.000689572945702821,
+            "lateral": 0.0,
+            "yaw": -2.726335424085846e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48421984910964968,
+            "roll": 0.00012022628652630374,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644847869873048,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "enter",
+            "time": 2.239583730697632,
+            "speed": 0.0006898959400132299,
+            "lateral": 0.0,
+            "yaw": -2.267112080289735e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48430392146110537,
+            "roll": 0.0001180384133476764,
+            "contacts": 4,
+            "position": {
+                "x": -269.0872802734375,
+                "y": 24.644845962524415,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "sidewall-warmup",
+            "time": 2.339719295501709,
+            "speed": 5.072607223155501e-7,
+            "lateral": 0.0,
+            "yaw": 1.961248052850806e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.0001498204655945301,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -2.986075742228422e-8,
+                "y": 200.06790161132813,
+                "z": -20.000001907348634
+            }
+        },
+        {
+            "phase": "sidewall-warmup",
+            "time": 2.439720630645752,
+            "speed": 0.0003466654452495277,
+            "lateral": 0.0,
+            "yaw": 5.233419742012302e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.12035025656223297,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -5.824720261671246e-8,
+                "y": 200.0264892578125,
+                "z": -20.001026153564454
+            }
+        },
+        {
+            "phase": "sidewall-warmup",
+            "time": 2.5397212505340578,
+            "speed": 0.00041765643982216716,
+            "lateral": 0.0,
+            "yaw": -1.4342819376622629e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.3874637484550476,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -8.405282159174021e-8,
+                "y": 199.98785400390626,
+                "z": -20.003387451171876
+            }
+        },
+        {
+            "phase": "sidewall-warmup",
+            "time": 2.6397440433502199,
+            "speed": 0.0005546315805986524,
+            "lateral": 0.0,
+            "yaw": -2.5637445943971217e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5518493056297302,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -7.727032880211482e-8,
+                "y": 199.973388671875,
+                "z": -20.004833221435548
+            }
+        },
+        {
+            "phase": "sidewall-warmup",
+            "time": 2.739746570587158,
+            "speed": 0.0007317699491977692,
+            "lateral": 0.0,
+            "yaw": -6.449185185886108e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5663714408874512,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -6.541934283177398e-8,
+                "y": 199.97410583496095,
+                "z": -20.0048828125
+            }
+        },
+        {
+            "phase": "sidewall-warmup",
+            "time": 2.839747667312622,
+            "speed": 0.0007407180964946747,
+            "lateral": 0.0,
+            "yaw": 6.6022458611314509e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5176830291748047,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -6.513489836379449e-8,
+                "y": 199.978515625,
+                "z": -20.004356384277345
+            }
+        },
+        {
+            "phase": "sidewall-warmup",
+            "time": 2.9399209022521974,
+            "speed": 0.0006828252226114273,
+            "lateral": 0.0,
+            "yaw": 1.1271851008132217e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.47690990567207339,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -7.188086215137446e-8,
+                "y": 199.98126220703126,
+                "z": -20.003917694091798
+            }
+        },
+        {
+            "phase": "sidewall-warmup",
+            "time": 3.039921760559082,
+            "speed": 0.000645252934191376,
+            "lateral": 0.0,
+            "yaw": -9.161262255474867e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4626767039299011,
+            "roll": 0.000003883881618094165,
+            "contacts": 4,
+            "position": {
+                "x": 2.0634232100746887e-9,
+                "y": 199.98193359375,
+                "z": -20.00372886657715
+            }
+        },
+        {
+            "phase": "sidewall-warmup",
+            "time": 3.139922618865967,
+            "speed": 0.0006367702735587955,
+            "lateral": 0.0,
+            "yaw": -2.0732498384745669e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4646560549736023,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -7.929984491283904e-8,
+                "y": 199.98162841796876,
+                "z": -20.003684997558595
+            }
+        },
+        {
+            "phase": "sidewall-warmup",
+            "time": 3.2399232387542726,
+            "speed": 0.0006412770017050207,
+            "lateral": 0.0,
+            "yaw": 5.376351808195068e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4702187776565552,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -8.852576627305098e-8,
+                "y": 199.98121643066407,
+                "z": -20.003673553466798
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 3.3399245738983156,
+            "speed": 12.000371932983399,
+            "lateral": 0.0,
+            "yaw": -3.6871465880494726e-9,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": -0.000274658203125,
+            "roll": 8.531417350354787e-9,
+            "contacts": 4,
+            "position": {
+                "x": -0.018434004858136178,
+                "y": 200.06787109375,
+                "z": -19.86883544921875
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 3.4402101039886476,
+            "speed": 12.157187461853028,
+            "lateral": -3.475794301266433e-7,
+            "yaw": 8.011733854118575e-8,
+            "steering": 0.0,
+            "slip": 4.399861452952791e-8,
+            "pitch": 0.07036306709051132,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -0.1867489367723465,
+                "y": 200.0260772705078,
+                "z": -18.671215057373048
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 3.5402421951293947,
+            "speed": 12.032208442687989,
+            "lateral": 1.4130836725234986,
+            "yaw": 0.15532682836055757,
+            "steering": 0.0,
+            "slip": 0.14923764765262605,
+            "pitch": 0.28656139969825747,
+            "roll": -0.05517578125,
+            "contacts": 4,
+            "position": {
+                "x": -0.2126230001449585,
+                "y": 199.987060546875,
+                "z": -17.462617874145509
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 3.6402430534362795,
+            "speed": 12.308769226074219,
+            "lateral": 0.4992603063583374,
+            "yaw": 0.07890675961971283,
+            "steering": 0.0,
+            "slip": 0.05848400294780731,
+            "pitch": 0.4051227569580078,
+            "roll": -0.826080322265625,
+            "contacts": 4,
+            "position": {
+                "x": -0.2405940592288971,
+                "y": 199.97134399414063,
+                "z": -16.242860794067384
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 3.7402443885803224,
+            "speed": 12.418458938598633,
+            "lateral": 1.1634312868118287,
+            "yaw": 0.14032326638698579,
+            "steering": 0.0,
+            "slip": 0.12299413233995438,
+            "pitch": 0.3730646073818207,
+            "roll": -0.738555908203125,
+            "contacts": 4,
+            "position": {
+                "x": -0.2990691661834717,
+                "y": 199.97100830078126,
+                "z": -15.00159740447998
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 3.840245008468628,
+            "speed": 12.684221267700196,
+            "lateral": 0.7619704604148865,
+            "yaw": 0.09558963775634766,
+            "steering": 0.0,
+            "slip": 0.08147569000720978,
+            "pitch": 0.32423603534698489,
+            "roll": -0.554595947265625,
+            "contacts": 4,
+            "position": {
+                "x": -0.282916396856308,
+                "y": 199.975341796875,
+                "z": -13.73946475982666
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 3.9402689933776857,
+            "speed": 12.87560749053955,
+            "lateral": 1.0054638385772706,
+            "yaw": 0.037135884165763858,
+            "steering": 0.0,
+            "slip": 0.09390184283256531,
+            "pitch": 0.2620672285556793,
+            "roll": -0.866851806640625,
+            "contacts": 4,
+            "position": {
+                "x": -0.3413369953632355,
+                "y": 199.97842407226563,
+                "z": -12.456207275390625
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 4.040269374847412,
+            "speed": 13.113011360168457,
+            "lateral": 0.6883351802825928,
+            "yaw": 0.06777868419885636,
+            "steering": 0.0,
+            "slip": 0.06891145557165146,
+            "pitch": 0.2606780529022217,
+            "roll": -0.643829345703125,
+            "contacts": 4,
+            "position": {
+                "x": -0.32300448417663576,
+                "y": 199.9798126220703,
+                "z": -11.152600288391114
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 4.140270709991455,
+            "speed": 13.304876327514649,
+            "lateral": 0.9076047539710999,
+            "yaw": 0.04301542788743973,
+            "steering": 0.0,
+            "slip": 0.08404141664505005,
+            "pitch": 0.2504543662071228,
+            "roll": -0.7852783203125,
+            "contacts": 4,
+            "position": {
+                "x": -0.3527824878692627,
+                "y": 199.97976684570313,
+                "z": -9.827461242675782
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 4.240272045135498,
+            "speed": 13.56889820098877,
+            "lateral": 0.4416109025478363,
+            "yaw": 0.05279684066772461,
+            "steering": 0.0,
+            "slip": 0.04440882056951523,
+            "pitch": 0.261991024017334,
+            "roll": -0.77166748046875,
+            "contacts": 4,
+            "position": {
+                "x": -0.34841710329055788,
+                "y": 199.9794921875,
+                "z": -8.481374740600586
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 4.340273380279541,
+            "speed": 13.773552894592286,
+            "lateral": 0.8303296566009522,
+            "yaw": 0.03730567917227745,
+            "steering": 0.0,
+            "slip": 0.07395335286855698,
+            "pitch": 0.25297877192497256,
+            "roll": -0.681671142578125,
+            "contacts": 4,
+            "position": {
+                "x": -0.37905019521713259,
+                "y": 199.97901916503907,
+                "z": -7.110931396484375
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 4.440274715423584,
+            "speed": 14.02497673034668,
+            "lateral": 0.5651935338973999,
+            "yaw": 0.05870525911450386,
+            "steering": 0.0,
+            "slip": 0.0532965362071991,
+            "pitch": 0.2671683430671692,
+            "roll": -0.505950927734375,
+            "contacts": 4,
+            "position": {
+                "x": -0.35976332426071169,
+                "y": 199.97889709472657,
+                "z": -5.718312740325928
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 4.5403151512146,
+            "speed": 14.273298263549805,
+            "lateral": 0.09905862808227539,
+            "yaw": 0.014609146863222123,
+            "steering": 0.0,
+            "slip": 0.00990940723568201,
+            "pitch": 0.2521834671497345,
+            "roll": -0.697967529296875,
+            "contacts": 4,
+            "position": {
+                "x": -0.40974733233451846,
+                "y": 199.9786376953125,
+                "z": -4.300474643707275
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 4.640316486358643,
+            "speed": 14.504209518432618,
+            "lateral": 0.7316817045211792,
+            "yaw": 0.046119239181280139,
+            "steering": 0.0,
+            "slip": 0.063229039311409,
+            "pitch": 0.25949546694755556,
+            "roll": -0.27740478515625,
+            "contacts": 4,
+            "position": {
+                "x": -0.3848039507865906,
+                "y": 199.9786376953125,
+                "z": -2.857923746109009
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 4.7403178215026859,
+            "speed": 14.89183235168457,
+            "lateral": 0.364736407995224,
+            "yaw": 0.7305669188499451,
+            "steering": 0.30646562576293948,
+            "slip": 0.22298531234264375,
+            "pitch": 0.2357717603445053,
+            "roll": -0.06768798828125,
+            "contacts": 4,
+            "position": {
+                "x": -0.3660796284675598,
+                "y": 199.97833251953126,
+                "z": -1.3867295980453492
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 4.840327739715576,
+            "speed": 15.340272903442383,
+            "lateral": -0.042926475405693057,
+            "yaw": 0.888733446598053,
+            "steering": 0.3323361575603485,
+            "slip": 0.265953928232193,
+            "pitch": 0.16021433472633363,
+            "roll": 0.6971445083618164,
+            "contacts": 4,
+            "position": {
+                "x": -0.2985602915287018,
+                "y": 199.978271484375,
+                "z": 0.12422604858875275
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 4.940329074859619,
+            "speed": 15.798700332641602,
+            "lateral": -0.26272884011268618,
+            "yaw": 0.8973418474197388,
+            "steering": 0.3262948989868164,
+            "slip": 0.2762623131275177,
+            "pitch": 0.07855017483234406,
+            "roll": 1.3354887962341309,
+            "contacts": 4,
+            "position": {
+                "x": -0.12407824397087097,
+                "y": 199.97967529296876,
+                "z": 1.6716694831848145
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 5.040332317352295,
+            "speed": 16.255111694335939,
+            "lateral": -0.3718884587287903,
+            "yaw": 0.87422776222229,
+            "steering": 0.3179376721382141,
+            "slip": 0.27858448028564455,
+            "pitch": 0.026696503162384034,
+            "roll": 1.6858023405075074,
+            "contacts": 4,
+            "position": {
+                "x": 0.18027840554714204,
+                "y": 199.9818572998047,
+                "z": 3.2451634407043459
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 5.14033317565918,
+            "speed": 16.709991455078126,
+            "lateral": -0.4259037673473358,
+            "yaw": 0.8478063344955444,
+            "steering": 0.30966219305992129,
+            "slip": 0.2769262194633484,
+            "pitch": 0.0033692042343318464,
+            "roll": 1.8521127700805665,
+            "contacts": 4,
+            "position": {
+                "x": 0.6257610321044922,
+                "y": 199.983642578125,
+                "z": 4.831736087799072
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 5.240334510803223,
+            "speed": 17.164941787719728,
+            "lateral": -0.4569438099861145,
+            "yaw": 0.8240218758583069,
+            "steering": 0.3015701472759247,
+            "slip": 0.27330687642097475,
+            "pitch": -0.003448486328125,
+            "roll": 1.9240628480911255,
+            "contacts": 4,
+            "position": {
+                "x": 1.2169854640960694,
+                "y": 199.98452758789063,
+                "z": 6.418516159057617
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 5.340336322784424,
+            "speed": 17.620655059814454,
+            "lateral": -0.4800621569156647,
+            "yaw": 0.8031133413314819,
+            "steering": 0.2936565577983856,
+            "slip": 0.26885586977005007,
+            "pitch": -0.00311279296875,
+            "roll": 1.9533897638320923,
+            "contacts": 4,
+            "position": {
+                "x": 1.9550435543060303,
+                "y": 199.98472595214845,
+                "z": 7.992987155914307
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 5.4405646324157719,
+            "speed": 18.07716178894043,
+            "lateral": -0.5011570453643799,
+            "yaw": 0.7842953205108643,
+            "steering": 0.28592154383659365,
+            "slip": 0.2641003131866455,
+            "pitch": -0.00103759765625,
+            "roll": 1.9657350778579713,
+            "contacts": 4,
+            "position": {
+                "x": 2.8413238525390627,
+                "y": 199.98463439941407,
+                "z": 9.546615600585938
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 5.5405659675598148,
+            "speed": 18.5344295501709,
+            "lateral": -0.5220646858215332,
+            "yaw": 0.7669191956520081,
+            "steering": 0.2783697247505188,
+            "slip": 0.2592540681362152,
+            "pitch": 0.0004600239044521004,
+            "roll": 1.972548246383667,
+            "contacts": 4,
+            "position": {
+                "x": 3.869858741760254,
+                "y": 199.98448181152345,
+                "z": 11.060726165771485
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 5.6406331062316898,
+            "speed": 18.992168426513673,
+            "lateral": -0.5431071519851685,
+            "yaw": 0.7505994439125061,
+            "steering": 0.2710060179233551,
+            "slip": 0.25439563393592837,
+            "pitch": 0.0008705289801582694,
+            "roll": 1.978164792060852,
+            "contacts": 4,
+            "position": {
+                "x": 5.040445327758789,
+                "y": 199.98443603515626,
+                "z": 12.528615951538086
+            }
+        },
+        {
+            "phase": "sidewall--1-forward",
+            "time": 5.740999698638916,
+            "speed": 19.450101852416993,
+            "lateral": -0.5642025470733643,
+            "yaw": 0.7351276874542236,
+            "steering": 0.26383426785469057,
+            "slip": 0.24955616891384126,
+            "pitch": 0.0005392114399001002,
+            "roll": 1.983829379081726,
+            "contacts": 4,
+            "position": {
+                "x": 6.352929592132568,
+                "y": 199.9844207763672,
+                "z": 13.942602157592774
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 5.829890727996826,
+            "speed": -4.835931777954102,
+            "lateral": -0.27062031626701357,
+            "yaw": -0.25850892066955569,
+            "steering": 0.4592406749725342,
+            "slip": 0.3666132986545563,
+            "pitch": -0.264495849609375,
+            "roll": -0.125274658203125,
+            "contacts": 4,
+            "position": {
+                "x": -0.06961999833583832,
+                "y": 200.03834533691407,
+                "z": -20.449214935302736
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 6.01579475402832,
+            "speed": -4.922852516174316,
+            "lateral": -0.21785373985767365,
+            "yaw": -0.12097557634115219,
+            "steering": 0.030338434502482415,
+            "slip": 0.062393561005592349,
+            "pitch": -0.037841796875,
+            "roll": -0.02740478515625,
+            "contacts": 4,
+            "position": {
+                "x": -0.15617483854293824,
+                "y": 199.99478149414063,
+                "z": -20.938465118408204
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 6.115796089172363,
+            "speed": -5.167899131774902,
+            "lateral": -0.020073620602488519,
+            "yaw": -0.005835440009832382,
+            "steering": 0.00151046400424093,
+            "slip": 0.005723634734749794,
+            "pitch": 0.49569517374038699,
+            "roll": 0.29094773530960085,
+            "contacts": 4,
+            "position": {
+                "x": -0.2105957567691803,
+                "y": 199.97579956054688,
+                "z": -21.44373893737793
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 6.215797424316406,
+            "speed": -5.396090984344482,
+            "lateral": -0.001656410051509738,
+            "yaw": -0.00047971936874091625,
+            "steering": 0.0000752016858314164,
+            "slip": 0.0004391128313727677,
+            "pitch": 0.7246312499046326,
+            "roll": 0.14805610477924348,
+            "contacts": 4,
+            "position": {
+                "x": -0.26290714740753176,
+                "y": 199.9748992919922,
+                "z": -21.970890045166017
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 6.315798759460449,
+            "speed": -5.460011005401611,
+            "lateral": 0.5266139507293701,
+            "yaw": -0.003333726665005088,
+            "steering": 0.000003744077048395411,
+            "slip": 0.12327223271131516,
+            "pitch": 0.7067769765853882,
+            "roll": 0.04777751863002777,
+            "contacts": 4,
+            "position": {
+                "x": -0.2936592698097229,
+                "y": 199.97998046875,
+                "z": -22.51619529724121
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 6.415800094604492,
+            "speed": -5.567112922668457,
+            "lateral": 0.3108680248260498,
+            "yaw": 0.006818063091486692,
+            "steering": 1.8640685084392317e-7,
+            "slip": 0.07480128109455109,
+            "pitch": 0.5979415774345398,
+            "roll": -0.233917236328125,
+            "contacts": 4,
+            "position": {
+                "x": -0.27540123462677,
+                "y": 199.98373413085938,
+                "z": -23.068960189819337
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 6.515800952911377,
+            "speed": -5.606789588928223,
+            "lateral": 0.5391812324523926,
+            "yaw": -0.007064314093440771,
+            "steering": 9.280664237110159e-9,
+            "slip": 0.12339715659618378,
+            "pitch": 0.5655576586723328,
+            "roll": -0.549163818359375,
+            "contacts": 4,
+            "position": {
+                "x": -0.29839977622032168,
+                "y": 199.98507690429688,
+                "z": -23.630842208862306
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 6.61580228805542,
+            "speed": -5.662347316741943,
+            "lateral": 0.5416688323020935,
+            "yaw": 0.007164413575083017,
+            "steering": 4.620576699032597e-10,
+            "slip": 0.12250704318284989,
+            "pitch": 0.521992027759552,
+            "roll": -0.260284423828125,
+            "contacts": 4,
+            "position": {
+                "x": -0.2676452100276947,
+                "y": 199.98492431640626,
+                "z": -24.198150634765626
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 6.715972900390625,
+            "speed": -5.732825756072998,
+            "lateral": 0.030940907076001169,
+            "yaw": -0.0026265298947691919,
+            "steering": 2.300452536796449e-11,
+            "slip": 0.007476035505533218,
+            "pitch": 0.5448735356330872,
+            "roll": -0.67864990234375,
+            "contacts": 4,
+            "position": {
+                "x": -0.30500006675720217,
+                "y": 199.98443603515626,
+                "z": -24.771778106689454
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 6.815974712371826,
+            "speed": -5.738436698913574,
+            "lateral": 0.5510447025299072,
+            "yaw": -0.0013743324670940638,
+            "steering": 1.1453294909702372e-12,
+            "slip": 0.12152859568595886,
+            "pitch": 0.5314931273460388,
+            "roll": -0.290985107421875,
+            "contacts": 4,
+            "position": {
+                "x": -0.28209853172302248,
+                "y": 199.98402404785157,
+                "z": -25.350994110107423
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 6.915976047515869,
+            "speed": -5.797875881195068,
+            "lateral": 0.05899224802851677,
+            "yaw": -0.001325447577983141,
+            "steering": 5.702267136123776e-14,
+            "slip": 0.013901952654123307,
+            "pitch": 0.5367276668548584,
+            "roll": -0.7156982421875,
+            "contacts": 4,
+            "position": {
+                "x": -0.3058582544326782,
+                "y": 199.98406982421876,
+                "z": -25.931804656982423
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 7.015976905822754,
+            "speed": -5.792171478271484,
+            "lateral": 0.5573172569274902,
+            "yaw": -0.0013757802080363036,
+            "steering": 2.838995247114555e-15,
+            "slip": 0.12158823013305664,
+            "pitch": 0.5192777514457703,
+            "roll": -0.35101318359375,
+            "contacts": 4,
+            "position": {
+                "x": -0.2828543484210968,
+                "y": 199.984130859375,
+                "z": -26.516963958740236
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 7.115977764129639,
+            "speed": -5.821113586425781,
+            "lateral": 0.5604531764984131,
+            "yaw": -0.0034315225202590229,
+            "steering": 1.4134544669950917e-16,
+            "slip": 0.12106949836015701,
+            "pitch": 0.5238210558891296,
+            "roll": -0.7291259765625,
+            "contacts": 4,
+            "position": {
+                "x": -0.3006948232650757,
+                "y": 199.98428344726563,
+                "z": -27.10261344909668
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 7.215979099273682,
+            "speed": -5.768388748168945,
+            "lateral": 0.9546005129814148,
+            "yaw": 0.44871002435684206,
+            "steering": -0.40857937932014468,
+            "slip": 0.14560510218143464,
+            "pitch": 0.5003227591514587,
+            "roll": -0.307525634765625,
+            "contacts": 4,
+            "position": {
+                "x": -0.2702697217464447,
+                "y": 199.98414611816407,
+                "z": -27.689729690551759
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 7.315980434417725,
+            "speed": -5.39050817489624,
+            "lateral": 1.777551531791687,
+            "yaw": 0.5175517201423645,
+            "steering": -0.5156687498092651,
+            "slip": 0.16114090383052827,
+            "pitch": 0.4171346426010132,
+            "roll": 0.03178190439939499,
+            "contacts": 4,
+            "position": {
+                "x": -0.19413501024246217,
+                "y": 199.98338317871095,
+                "z": -28.263423919677736
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 7.415981769561768,
+            "speed": -5.143074035644531,
+            "lateral": 2.501222610473633,
+            "yaw": 0.7256624102592468,
+            "steering": -0.529865026473999,
+            "slip": 0.2629229724407196,
+            "pitch": 0.4074149429798126,
+            "roll": 0.07354193925857544,
+            "contacts": 4,
+            "position": {
+                "x": -0.06130850687623024,
+                "y": 199.9830322265625,
+                "z": -28.822223663330079
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 7.515982627868652,
+            "speed": -5.029741287231445,
+            "lateral": 3.1280393600463869,
+            "yaw": 0.8450589776039124,
+            "steering": -0.5330597758293152,
+            "slip": 0.3567158281803131,
+            "pitch": 0.5106435418128967,
+            "roll": 0.14560075104236604,
+            "contacts": 4,
+            "position": {
+                "x": 0.09580746293067932,
+                "y": 199.983154296875,
+                "z": -29.38990020751953
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 7.616060256958008,
+            "speed": -4.712148666381836,
+            "lateral": 3.658810615539551,
+            "yaw": 0.9480239152908325,
+            "steering": -0.5365957021713257,
+            "slip": 0.45758357644081118,
+            "pitch": 0.5324416756629944,
+            "roll": 0.1690351665019989,
+            "contacts": 4,
+            "position": {
+                "x": 0.261567622423172,
+                "y": 199.98318481445313,
+                "z": -29.966468811035158
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 7.716131687164307,
+            "speed": -4.171499729156494,
+            "lateral": 3.968143939971924,
+            "yaw": 0.9893009066581726,
+            "steering": -0.5423005223274231,
+            "slip": 0.5719525218009949,
+            "pitch": 0.473522812128067,
+            "roll": 0.049247708171606067,
+            "contacts": 4,
+            "position": {
+                "x": 0.4277331829071045,
+                "y": 199.98321533203126,
+                "z": -30.536060333251954
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 7.81613302230835,
+            "speed": -2.7739174365997316,
+            "lateral": 3.376567840576172,
+            "yaw": 0.8373289704322815,
+            "steering": -0.553122341632843,
+            "slip": 0.7365241050720215,
+            "pitch": 0.1913391351699829,
+            "roll": -0.372314453125,
+            "contacts": 4,
+            "position": {
+                "x": 0.5943505167961121,
+                "y": 199.98248291015626,
+                "z": -31.047325134277345
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 7.916133880615234,
+            "speed": -2.5022964477539064,
+            "lateral": 1.5627855062484742,
+            "yaw": 0.054025471210479739,
+            "steering": -0.5603458881378174,
+            "slip": 0.4989311993122101,
+            "pitch": 0.2577621042728424,
+            "roll": -2.240264892578125,
+            "contacts": 4,
+            "position": {
+                "x": 0.6250978112220764,
+                "y": 199.98590087890626,
+                "z": -31.40471649169922
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 8.016135215759278,
+            "speed": -1.9560081958770753,
+            "lateral": 1.1441041231155396,
+            "yaw": 0.009782776236534119,
+            "steering": -0.5649976134300232,
+            "slip": 0.4214550852775574,
+            "pitch": 0.3063463866710663,
+            "roll": -1.380645751953125,
+            "contacts": 4,
+            "position": {
+                "x": 0.6293329000473023,
+                "y": 199.9871826171875,
+                "z": -31.685380935668947
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 8.11613655090332,
+            "speed": -1.5284006595611573,
+            "lateral": 0.9008105397224426,
+            "yaw": 0.01238296926021576,
+            "steering": -0.5682398676872253,
+            "slip": 0.32628965377807619,
+            "pitch": 0.2854873538017273,
+            "roll": -0.617401123046875,
+            "contacts": 4,
+            "position": {
+                "x": 0.63330078125,
+                "y": 199.98519897460938,
+                "z": -31.90386390686035
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 8.216137886047364,
+            "speed": -1.2217025756835938,
+            "lateral": 0.724104642868042,
+            "yaw": 0.012693196535110474,
+            "steering": -0.5701656341552734,
+            "slip": 0.2583335041999817,
+            "pitch": 0.30662769079208376,
+            "roll": -0.261199951171875,
+            "contacts": 4,
+            "position": {
+                "x": 0.6358899474143982,
+                "y": 199.98300170898438,
+                "z": -32.0765266418457
+            }
+        },
+        {
+            "phase": "sidewall--1-reverse",
+            "time": 8.316139221191407,
+            "speed": -0.9985028505325317,
+            "lateral": 0.5920602083206177,
+            "yaw": 0.013732701539993286,
+            "steering": -0.5712915062904358,
+            "slip": 0.20663033425807954,
+            "pitch": 0.35421058535575869,
+            "roll": -0.106109619140625,
+            "contacts": 4,
+            "position": {
+                "x": 0.6378635168075562,
+                "y": 199.9817657470703,
+                "z": -32.21629333496094
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 8.338361740112305,
+            "speed": 9.244282722473145,
+            "lateral": 0.359024316072464,
+            "yaw": -0.9213690757751465,
+            "steering": -0.42912328243255618,
+            "slip": 0.35804975032806399,
+            "pitch": 1.0887973308563233,
+            "roll": -0.353240966796875,
+            "contacts": 4,
+            "position": {
+                "x": 0.19737085700035096,
+                "y": 200.00927734375,
+                "z": -18.4503116607666
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 8.581562042236329,
+            "speed": 9.292749404907227,
+            "lateral": 0.154166117310524,
+            "yaw": -0.37804824113845827,
+            "steering": -0.02918906882405281,
+            "slip": 0.09947843849658966,
+            "pitch": 1.1135047674179078,
+            "roll": -0.909454345703125,
+            "contacts": 4,
+            "position": {
+                "x": 0.24345505237579347,
+                "y": 199.97305297851563,
+                "z": -17.49477195739746
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 8.681638717651368,
+            "speed": 9.56045913696289,
+            "lateral": 0.03222261369228363,
+            "yaw": -0.03667450323700905,
+            "steering": -0.0014532399363815785,
+            "slip": 0.012238102033734322,
+            "pitch": 0.661348283290863,
+            "roll": -0.617431640625,
+            "contacts": 4,
+            "position": {
+                "x": 0.23389829695224763,
+                "y": 199.96377563476563,
+                "z": -16.547588348388673
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 8.781726837158204,
+            "speed": 9.865734100341797,
+            "lateral": 0.005849971901625395,
+            "yaw": -0.0015650637215003372,
+            "steering": -0.00007235265366034582,
+            "slip": 0.0011660817544907332,
+            "pitch": 0.3678770661354065,
+            "roll": -0.24609375,
+            "contacts": 4,
+            "position": {
+                "x": 0.21132498979568482,
+                "y": 199.9694061279297,
+                "z": -15.572412490844727
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 8.881728172302246,
+            "speed": 10.178627967834473,
+            "lateral": 0.0010491638677194715,
+            "yaw": 0.0006028672796674073,
+            "steering": -0.000003602231117838528,
+            "slip": 0.00019319134298712015,
+            "pitch": 0.23831923305988313,
+            "roll": -0.0758056640625,
+            "contacts": 4,
+            "position": {
+                "x": 0.18455657362937928,
+                "y": 199.9766082763672,
+                "z": -14.568536758422852
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 8.981953620910645,
+            "speed": 10.49215316772461,
+            "lateral": 0.00014593832020182163,
+            "yaw": 0.0002983528538607061,
+            "steering": -1.7934476659320354e-7,
+            "slip": 0.00005386183693190105,
+            "pitch": 0.2005699723958969,
+            "roll": -0.020111083984375,
+            "contacts": 4,
+            "position": {
+                "x": 0.15568521618843079,
+                "y": 199.98019409179688,
+                "z": -13.53181266784668
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 9.082123756408692,
+            "speed": 10.804787635803223,
+            "lateral": 0.000002482316631358117,
+            "yaw": 0.00009659848728915676,
+            "steering": -8.92906104610347e-9,
+            "slip": 0.000014006723176862579,
+            "pitch": 0.20305727422237397,
+            "roll": -0.004791259765625,
+            "contacts": 4,
+            "position": {
+                "x": 0.12559874355793,
+                "y": 199.9806671142578,
+                "z": -12.464597702026368
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 9.182125091552735,
+            "speed": 11.116174697875977,
+            "lateral": -0.000007914894922578242,
+            "yaw": 0.000025772062144824304,
+            "steering": -4.4455228387363379e-10,
+            "slip": 0.000004769706720253453,
+            "pitch": 0.21589292585849763,
+            "roll": -0.001007080078125,
+            "contacts": 4,
+            "position": {
+                "x": 0.09459161013364792,
+                "y": 199.9799346923828,
+                "z": -11.36806583404541
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 9.282126426696778,
+            "speed": 11.426182746887207,
+            "lateral": -0.00000410599341194029,
+            "yaw": 0.000006617445706069702,
+            "steering": -2.213298468112246e-11,
+            "slip": 0.0000014386052953341278,
+            "pitch": 0.22593185305595399,
+            "roll": -0.000213623046875,
+            "contacts": 4,
+            "position": {
+                "x": 0.06268317997455597,
+                "y": 199.97921752929688,
+                "z": -10.240456581115723
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 9.38212776184082,
+            "speed": 11.73473834991455,
+            "lateral": -0.000001099254973269126,
+            "yaw": 0.0000014363253058036208,
+            "steering": -1.1019379853038913e-12,
+            "slip": 2.48671199187811e-7,
+            "pitch": 0.23049092292785645,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": 0.029894553124904634,
+                "y": 199.9788818359375,
+                "z": -9.081887245178223
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 9.482129096984864,
+            "speed": 12.041779518127442,
+            "lateral": -8.610341950543443e-8,
+            "yaw": 1.566143907894002e-7,
+            "steering": -5.486233076992461e-14,
+            "slip": 4.81483510839098e-8,
+            "pitch": 0.2314881831407547,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -0.0037665818817913534,
+                "y": 199.978759765625,
+                "z": -7.892516613006592
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 9.582130432128907,
+            "speed": 12.347261428833008,
+            "lateral": -1.7103526772643819e-7,
+            "yaw": 1.1516742404182878e-7,
+            "steering": -2.7314385799557304e-15,
+            "slip": 3.3846550451244187e-8,
+            "pitch": 0.23126156628131867,
+            "roll": 0.000009867670087260194,
+            "contacts": 4,
+            "position": {
+                "x": -0.03829450160264969,
+                "y": 199.978759765625,
+                "z": -6.672525405883789
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 9.68213176727295,
+            "speed": 12.670124053955079,
+            "lateral": -0.11016426235437393,
+            "yaw": -0.23446419835090638,
+            "steering": -0.18930572271347047,
+            "slip": 0.16910985112190247,
+            "pitch": 0.22759978473186494,
+            "roll": -0.092864990234375,
+            "contacts": 4,
+            "position": {
+                "x": -0.07696753740310669,
+                "y": 199.978759765625,
+                "z": -5.421745777130127
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 9.782133102416993,
+            "speed": 13.060032844543457,
+            "lateral": -0.11168222874403,
+            "yaw": -0.8140967488288879,
+            "steering": -0.3628060519695282,
+            "slip": 0.28468337655067446,
+            "pitch": 0.1901492327451706,
+            "roll": -0.72772216796875,
+            "contacts": 4,
+            "position": {
+                "x": -0.16490699350833894,
+                "y": 199.9788818359375,
+                "z": -4.137640953063965
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 9.882133483886719,
+            "speed": 13.50330924987793,
+            "lateral": 0.049398429691791537,
+            "yaw": -0.963451623916626,
+            "steering": -0.37038788199424746,
+            "slip": 0.29062047600746157,
+            "pitch": 0.11972499638795853,
+            "roll": -1.246734619140625,
+            "contacts": 4,
+            "position": {
+                "x": -0.34633344411849978,
+                "y": 199.9798583984375,
+                "z": -2.8212366104125978
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 9.982145309448243,
+            "speed": 13.957453727722168,
+            "lateral": 0.18909582495689393,
+            "yaw": -0.9835447072982788,
+            "steering": -0.3622712790966034,
+            "slip": 0.29334473609924319,
+            "pitch": 0.0583842433989048,
+            "roll": -1.5567626953125,
+            "contacts": 4,
+            "position": {
+                "x": -0.6461500525474548,
+                "y": 199.98147583007813,
+                "z": -1.480679988861084
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 10.082146644592286,
+            "speed": 14.409780502319336,
+            "lateral": 0.2776586711406708,
+            "yaw": -0.9662954211235046,
+            "steering": -0.35326507687568667,
+            "slip": 0.2946406602859497,
+            "pitch": 0.022954478859901429,
+            "roll": -1.741302490234375,
+            "contacts": 4,
+            "position": {
+                "x": -1.0792922973632813,
+                "y": 199.9830322265625,
+                "z": -0.12979038059711457
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 10.182147979736329,
+            "speed": 14.860328674316407,
+            "lateral": 0.3303864300251007,
+            "yaw": -0.9402084350585938,
+            "steering": -0.3443841338157654,
+            "slip": 0.29362618923187258,
+            "pitch": 0.007752024568617344,
+            "roll": -1.84625244140625,
+            "contacts": 4,
+            "position": {
+                "x": -1.6529650688171387,
+                "y": 199.98403930664063,
+                "z": 1.2167387008666993
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 10.282149314880371,
+            "speed": 15.310775756835938,
+            "lateral": 0.36433473229408266,
+            "yaw": -0.9135921597480774,
+            "steering": -0.3356626033782959,
+            "slip": 0.29093921184539797,
+            "pitch": 0.003337774658575654,
+            "roll": -1.9014892578125,
+            "contacts": 4,
+            "position": {
+                "x": -2.369356870651245,
+                "y": 199.9844512939453,
+                "z": 2.5444631576538088
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 10.382150650024414,
+            "speed": 15.76211166381836,
+            "lateral": 0.3898467421531677,
+            "yaw": -0.8883563280105591,
+            "steering": -0.327090322971344,
+            "slip": 0.28729337453842165,
+            "pitch": 0.0031510652042925359,
+            "roll": -1.9288330078125,
+            "contacts": 4,
+            "position": {
+                "x": -3.2276418209075929,
+                "y": 199.98452758789063,
+                "z": 3.8396952152252199
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 10.48218822479248,
+            "speed": 16.214685440063478,
+            "lateral": 0.41216886043548586,
+            "yaw": -0.864926278591156,
+            "steering": -0.3186665177345276,
+            "slip": 0.28311797976493838,
+            "pitch": 0.0037412894889712335,
+            "roll": -1.942230224609375,
+            "contacts": 4,
+            "position": {
+                "x": -4.225477695465088,
+                "y": 199.9844970703125,
+                "z": 5.089986801147461
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 10.582189559936524,
+            "speed": 16.66852378845215,
+            "lateral": 0.43360403180122378,
+            "yaw": -0.8431456089019775,
+            "steering": -0.31039735674858096,
+            "slip": 0.27865132689476015,
+            "pitch": 0.0039461953565478329,
+            "roll": -1.949676513671875,
+            "contacts": 4,
+            "position": {
+                "x": -5.358097076416016,
+                "y": 199.98440551757813,
+                "z": 6.282262802124023
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 10.682190895080567,
+            "speed": 17.12348747253418,
+            "lateral": 0.4549696147441864,
+            "yaw": -0.822774350643158,
+            "steering": -0.30229148268699648,
+            "slip": 0.2740170359611511,
+            "pitch": 0.0035495106130838396,
+            "roll": -1.955047607421875,
+            "contacts": 4,
+            "position": {
+                "x": -6.620797157287598,
+                "y": 199.98440551757813,
+                "z": 7.4055352210998539
+            }
+        },
+        {
+            "phase": "sidewall-1-forward",
+            "time": 10.78219985961914,
+            "speed": 17.579408645629884,
+            "lateral": 0.4764446020126343,
+            "yaw": -0.8036041259765625,
+            "steering": -0.29435721039772036,
+            "slip": 0.26928088068962099,
+            "pitch": 0.0028121168725192549,
+            "roll": -1.960052490234375,
+            "contacts": 4,
+            "position": {
+                "x": -8.007818222045899,
+                "y": 199.9844207763672,
+                "z": 8.449117660522461
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 10.849067687988282,
+            "speed": -5.070752143859863,
+            "lateral": 0.19877594709396363,
+            "yaw": 0.2134513556957245,
+            "steering": -0.41289687156677248,
+            "slip": 0.34811705350875857,
+            "pitch": -0.2109375,
+            "roll": 0.0949273481965065,
+            "contacts": 4,
+            "position": {
+                "x": 0.05588872730731964,
+                "y": 200.04649353027345,
+                "z": -20.36716079711914
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 11.023533821105957,
+            "speed": -5.149256229400635,
+            "lateral": 0.1844138205051422,
+            "yaw": 0.10362659394741059,
+            "steering": -0.024814702570438386,
+            "slip": 0.05041034519672394,
+            "pitch": 0.00446471618488431,
+            "roll": -0.006317138671875,
+            "contacts": 4,
+            "position": {
+                "x": 0.14554858207702638,
+                "y": 199.99896240234376,
+                "z": -20.903438568115236
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 11.12353515625,
+            "speed": -5.3553900718688969,
+            "lateral": 0.01797778718173504,
+            "yaw": 0.00531381880864501,
+            "steering": -0.0012354530626907945,
+            "slip": 0.004995537456125021,
+            "pitch": 0.497916042804718,
+            "roll": -0.23516845703125,
+            "contacts": 4,
+            "position": {
+                "x": 0.20518681406974793,
+                "y": 199.9769287109375,
+                "z": -21.430421829223634
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 11.223536491394043,
+            "speed": -5.549211025238037,
+            "lateral": 0.0014901708345860243,
+            "yaw": 0.00040959351463243365,
+            "steering": -0.00006150965782580897,
+            "slip": 0.00038473689346574247,
+            "pitch": 0.706595242023468,
+            "roll": -0.114898681640625,
+            "contacts": 4,
+            "position": {
+                "x": 0.26380404829978945,
+                "y": 199.974609375,
+                "z": -21.97543716430664
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 11.323556900024414,
+            "speed": -5.540496349334717,
+            "lateral": -0.5781400799751282,
+            "yaw": 0.004112944006919861,
+            "steering": -0.000003062390078412136,
+            "slip": 0.13225361704826356,
+            "pitch": 0.6710887551307678,
+            "roll": -0.036865234375,
+            "contacts": 4,
+            "position": {
+                "x": 0.27445346117019656,
+                "y": 199.97946166992188,
+                "z": -22.533405303955079
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 11.423558235168457,
+            "speed": -5.59417724609375,
+            "lateral": -0.5776397585868836,
+            "yaw": -0.00495153060182929,
+            "steering": -1.5246763496179484e-7,
+            "slip": 0.13216741383075715,
+            "pitch": 0.5587313175201416,
+            "roll": 0.12209659814834595,
+            "contacts": 4,
+            "position": {
+                "x": 0.2500520348548889,
+                "y": 199.98338317871095,
+                "z": -23.093753814697267
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 11.5235595703125,
+            "speed": -5.638686656951904,
+            "lateral": -0.5866068601608276,
+            "yaw": 0.0067830923944711689,
+            "steering": -7.590927886269583e-9,
+            "slip": 0.1313292682170868,
+            "pitch": 0.5449212789535523,
+            "roll": 0.629840075969696,
+            "contacts": 4,
+            "position": {
+                "x": 0.2828822433948517,
+                "y": 199.98492431640626,
+                "z": -23.659971237182618
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 11.623560905456543,
+            "speed": -5.645400047302246,
+            "lateral": -0.5867697596549988,
+            "yaw": 0.004693419206887484,
+            "steering": -3.779305757234397e-10,
+            "slip": 0.13190296292304994,
+            "pitch": 0.5089377760887146,
+            "roll": 0.24995115399360658,
+            "contacts": 4,
+            "position": {
+                "x": 0.24928933382034303,
+                "y": 199.98486328125,
+                "z": -24.230445861816408
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 11.723562240600586,
+            "speed": -5.796116828918457,
+            "lateral": -0.06213837489485741,
+            "yaw": 0.0018775020726025105,
+            "steering": -1.881608237275234e-11,
+            "slip": 0.014759913086891175,
+            "pitch": 0.5321192741394043,
+            "roll": 0.7395265698432922,
+            "contacts": 4,
+            "position": {
+                "x": 0.2819690704345703,
+                "y": 199.98446655273438,
+                "z": -24.803359985351564
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 11.823563575744629,
+            "speed": -5.725836277008057,
+            "lateral": -0.59378981590271,
+            "yaw": 0.0034148867707699539,
+            "steering": -9.367988156039342e-13,
+            "slip": 0.13091157376766206,
+            "pitch": 0.5292675495147705,
+            "roll": 0.3596557080745697,
+            "contacts": 4,
+            "position": {
+                "x": 0.27038323879241946,
+                "y": 199.98406982421876,
+                "z": -25.382774353027345
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 11.923564910888672,
+            "speed": -5.807965278625488,
+            "lateral": -0.20610398054122926,
+            "yaw": -0.0062384516932070259,
+            "steering": -4.6640534316633178e-14,
+            "slip": 0.049165256321430209,
+            "pitch": 0.516456663608551,
+            "roll": 0.6302543878555298,
+            "contacts": 4,
+            "position": {
+                "x": 0.269505113363266,
+                "y": 199.98402404785157,
+                "z": -25.961156845092775
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 12.023566246032715,
+            "speed": -5.763102054595947,
+            "lateral": -0.5974739193916321,
+            "yaw": 0.005112103186547756,
+            "steering": -2.3220984732503018e-15,
+            "slip": 0.1310926079750061,
+            "pitch": 0.5251002907752991,
+            "roll": 0.5122655630111694,
+            "contacts": 4,
+            "position": {
+                "x": 0.27466270327568056,
+                "y": 199.98406982421876,
+                "z": -26.543947219848634
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 12.123567581176758,
+            "speed": -5.838972568511963,
+            "lateral": -0.2083846777677536,
+            "yaw": -0.006377215497195721,
+            "steering": -1.15610626998233e-16,
+            "slip": 0.049348846077919009,
+            "pitch": 0.5136568546295166,
+            "roll": 0.6916185617446899,
+            "contacts": 4,
+            "position": {
+                "x": 0.2730391025543213,
+                "y": 199.9842529296875,
+                "z": -27.125808715820314
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 12.2235689163208,
+            "speed": -5.760774612426758,
+            "lateral": -0.8813529014587402,
+            "yaw": -0.40247657895088198,
+            "steering": 0.33893030881881716,
+            "slip": 0.11985534429550171,
+            "pitch": 0.5120946764945984,
+            "roll": 0.4838966131210327,
+            "contacts": 4,
+            "position": {
+                "x": 0.2631756663322449,
+                "y": 199.98422241210938,
+                "z": -27.709936141967775
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 12.323570251464844,
+            "speed": -5.406489372253418,
+            "lateral": -1.6795839071273804,
+            "yaw": -0.47871133685112,
+            "steering": 0.5090110898017883,
+            "slip": 0.1523352861404419,
+            "pitch": 0.42685171961784365,
+            "roll": -0.034423828125,
+            "contacts": 4,
+            "position": {
+                "x": 0.19002044200897218,
+                "y": 199.98348999023438,
+                "z": -28.282804489135743
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 12.423571586608887,
+            "speed": -5.129095554351807,
+            "lateral": -2.4184350967407228,
+            "yaw": -0.7024402022361755,
+            "steering": 0.5291310548782349,
+            "slip": 0.25348594784736636,
+            "pitch": 0.4091205596923828,
+            "roll": -0.07354736328125,
+            "contacts": 4,
+            "position": {
+                "x": 0.06029924750328064,
+                "y": 199.98309326171876,
+                "z": -28.840381622314454
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 12.52357292175293,
+            "speed": -4.947293281555176,
+            "lateral": -3.0522186756134035,
+            "yaw": -0.8335002660751343,
+            "steering": 0.5335971713066101,
+            "slip": 0.3500435948371887,
+            "pitch": 0.4840392768383026,
+            "roll": -0.138336181640625,
+            "contacts": 4,
+            "position": {
+                "x": -0.0954563096165657,
+                "y": 199.98309326171876,
+                "z": -29.402767181396486
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 12.623574256896973,
+            "speed": -4.647409915924072,
+            "lateral": -3.581998586654663,
+            "yaw": -0.935876190662384,
+            "steering": 0.5372341871261597,
+            "slip": 0.449423223733902,
+            "pitch": 0.5118639469146729,
+            "roll": -0.161468505859375,
+            "contacts": 4,
+            "position": {
+                "x": -0.26040393114089968,
+                "y": 199.98312377929688,
+                "z": -29.970897674560548
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 12.723575592041016,
+            "speed": -4.119446277618408,
+            "lateral": -3.8842289447784426,
+            "yaw": -0.9812482595443726,
+            "steering": 0.5426555871963501,
+            "slip": 0.5592628717422485,
+            "pitch": 0.4631885290145874,
+            "roll": -0.040374755859375,
+            "contacts": 4,
+            "position": {
+                "x": -0.4256616532802582,
+                "y": 199.98313903808595,
+                "z": -30.53196144104004
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 12.823576927185059,
+            "speed": -2.7677595615386965,
+            "lateral": -3.3318896293640138,
+            "yaw": -0.8349776864051819,
+            "steering": 0.5531817674636841,
+            "slip": 0.7200729250907898,
+            "pitch": 0.16321708261966706,
+            "roll": 0.4064866900444031,
+            "contacts": 4,
+            "position": {
+                "x": -0.5915994644165039,
+                "y": 199.98240661621095,
+                "z": -31.029205322265626
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 12.923578262329102,
+            "speed": -2.3418331146240236,
+            "lateral": -1.2778403759002686,
+            "yaw": -0.16234558820724488,
+            "steering": 0.5620582103729248,
+            "slip": 0.16558142006397248,
+            "pitch": 0.16677159070968629,
+            "roll": 2.580130100250244,
+            "contacts": 4,
+            "position": {
+                "x": -0.6307049989700317,
+                "y": 199.98687744140626,
+                "z": -31.35407257080078
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 13.024666786193848,
+            "speed": -1.8137929439544678,
+            "lateral": -1.0639050006866456,
+            "yaw": -0.012495264410972596,
+            "steering": 0.5661308169364929,
+            "slip": 0.38984745740890505,
+            "pitch": 0.30855727195739748,
+            "roll": 1.5057215690612794,
+            "contacts": 4,
+            "position": {
+                "x": -0.6351293921470642,
+                "y": 199.98948669433595,
+                "z": -31.614627838134767
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 13.124669075012207,
+            "speed": -1.4213709831237794,
+            "lateral": -0.8419221043586731,
+            "yaw": -0.013395428657531739,
+            "steering": 0.5689371824264526,
+            "slip": 0.3035718500614166,
+            "pitch": 0.31411686539649966,
+            "roll": 0.635559618473053,
+            "contacts": 4,
+            "position": {
+                "x": -0.6396307945251465,
+                "y": 199.9862823486328,
+                "z": -31.815059661865236
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 13.22467041015625,
+            "speed": -1.1375035047531129,
+            "lateral": -0.6774635910987854,
+            "yaw": -0.012707933783531189,
+            "steering": 0.5705958604812622,
+            "slip": 0.24077384173870088,
+            "pitch": 0.33736851811408999,
+            "roll": 0.25437456369400027,
+            "contacts": 4,
+            "position": {
+                "x": -0.6423261165618897,
+                "y": 199.98306274414063,
+                "z": -31.973630905151368
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 13.325472831726075,
+            "speed": -0.9308789968490601,
+            "lateral": -0.5545411705970764,
+            "yaw": -0.013459205627441407,
+            "steering": 0.5715687870979309,
+            "slip": 0.19261129200458527,
+            "pitch": 0.3790951371192932,
+            "roll": 0.09651637077331543,
+            "contacts": 4,
+            "position": {
+                "x": -0.644305408000946,
+                "y": 199.98150634765626,
+                "z": -32.10319137573242
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 13.358806610107422,
+            "speed": 10.645964622497559,
+            "lateral": -0.019058767706155778,
+            "yaw": 0.5129673480987549,
+            "steering": 0.3372798264026642,
+            "slip": 0.2928904592990875,
+            "pitch": 0.4795326888561249,
+            "roll": 0.1834610402584076,
+            "contacts": 4,
+            "position": {
+                "x": 0.007296876050531864,
+                "y": 200.04342651367188,
+                "z": -19.131431579589845
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 13.528019905090332,
+            "speed": 11.05665111541748,
+            "lateral": 0.005011345259845257,
+            "yaw": 0.23742932081222535,
+            "steering": 0.019414644688367845,
+            "slip": 0.04177691414952278,
+            "pitch": 0.5920044779777527,
+            "roll": 0.5332896709442139,
+            "contacts": 4,
+            "position": {
+                "x": 0.06141083687543869,
+                "y": 199.99423217773438,
+                "z": -18.041715621948243
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 13.628021240234375,
+            "speed": 11.892905235290528,
+            "lateral": -0.00177676510065794,
+            "yaw": 0.03389515355229378,
+            "steering": 0.0009665995021350682,
+            "slip": 0.005990274250507355,
+            "pitch": 0.24550120532512666,
+            "roll": 0.2969641387462616,
+            "contacts": 4,
+            "position": {
+                "x": 0.1419035643339157,
+                "y": 199.9695281982422,
+                "z": -16.88799285888672
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 13.728022575378418,
+            "speed": 12.767190933227539,
+            "lateral": -0.001437442027963698,
+            "yaw": 0.0035397845786064865,
+            "steering": 0.00004812422412214801,
+            "slip": 0.0007360142772085965,
+            "pitch": -0.015472412109375,
+            "roll": 0.10563575476408005,
+            "contacts": 4,
+            "position": {
+                "x": 0.23401197791099549,
+                "y": 199.9690399169922,
+                "z": -15.648146629333496
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 13.828023910522461,
+            "speed": 13.631440162658692,
+            "lateral": -0.000560496118851006,
+            "yaw": -0.000026317826268495992,
+            "steering": 0.000002395967612756067,
+            "slip": 0.00006221635703695938,
+            "pitch": -0.14630126953125,
+            "roll": 0.03061520867049694,
+            "contacts": 4,
+            "position": {
+                "x": 0.3342622220516205,
+                "y": 199.97674560546876,
+                "z": -14.32296371459961
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 13.928025245666504,
+            "speed": 14.488808631896973,
+            "lateral": -0.00012328357843216509,
+            "yaw": -0.0001666006282903254,
+            "steering": 1.1928835874641664e-7,
+            "slip": 0.000024966098862932995,
+            "pitch": -0.199554443359375,
+            "roll": 0.0078608812764287,
+            "contacts": 4,
+            "position": {
+                "x": 0.44152596592903139,
+                "y": 199.98260498046876,
+                "z": -12.912712097167969
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 14.028026580810547,
+            "speed": -0.008798433467745781,
+            "lateral": 0.11943011730909348,
+            "yaw": 0.006668861955404282,
+            "steering": 5.939026159751393e-9,
+            "slip": 0.11289235204458237,
+            "pitch": -0.491668701171875,
+            "roll": -0.647216796875,
+            "contacts": 4,
+            "position": {
+                "x": 0.5091557502746582,
+                "y": 199.98452758789063,
+                "z": -12.671847343444825
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 14.12802791595459,
+            "speed": 0.13799361884593965,
+            "lateral": -0.027423180639743806,
+            "yaw": -0.11242687702178955,
+            "steering": 2.956870859271987e-10,
+            "slip": 0.034521959722042087,
+            "pitch": -0.191650390625,
+            "roll": -0.474609375,
+            "contacts": 4,
+            "position": {
+                "x": 0.5131893754005432,
+                "y": 199.9849090576172,
+                "z": -12.665349006652832
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 14.228029251098633,
+            "speed": 0.15239618718624116,
+            "lateral": -0.05343075841665268,
+            "yaw": -0.138498455286026,
+            "steering": 1.4721411589757595e-11,
+            "slip": 0.060118239372968677,
+            "pitch": 0.011037707328796387,
+            "roll": -0.0460205078125,
+            "contacts": 4,
+            "position": {
+                "x": 0.5162128806114197,
+                "y": 199.98233032226563,
+                "z": -12.65199089050293
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 14.328052520751954,
+            "speed": 0.16436786949634553,
+            "lateral": -0.05884075164794922,
+            "yaw": -0.14334149658679963,
+            "steering": 7.329370400530055e-13,
+            "slip": 0.06478273868560791,
+            "pitch": 0.005927647929638624,
+            "roll": 0.13673219084739686,
+            "contacts": 4,
+            "position": {
+                "x": 0.5158326029777527,
+                "y": 199.98056030273438,
+                "z": -12.636087417602539
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 14.428053855895996,
+            "speed": 0.096199631690979,
+            "lateral": -0.06288043409585953,
+            "yaw": -0.08117562532424927,
+            "steering": 3.649083666528233e-14,
+            "slip": 0.06853224337100983,
+            "pitch": 0.0040526981465518478,
+            "roll": 0.19096530973911286,
+            "contacts": 4,
+            "position": {
+                "x": 0.5132482647895813,
+                "y": 199.98036193847657,
+                "z": -12.620650291442871
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 14.528055191040039,
+            "speed": 0.0009341267286799848,
+            "lateral": -0.0012293008621782065,
+            "yaw": 0.00006226875120773911,
+            "steering": 1.816774498786147e-15,
+            "slip": 0.001078000757843256,
+            "pitch": -0.000885009765625,
+            "roll": 0.12484219670295716,
+            "contacts": 4,
+            "position": {
+                "x": 0.5111411213874817,
+                "y": 199.98072814941407,
+                "z": -12.620010375976563
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 14.628091812133789,
+            "speed": 12.182404518127442,
+            "lateral": 5.928002089206075e-9,
+            "yaw": -4.2493109475572058e-8,
+            "steering": 0.0,
+            "slip": 5.508213885008217e-9,
+            "pitch": -0.026123046875,
+            "roll": 8.052070370467845e-7,
+            "contacts": 4,
+            "position": {
+                "x": -0.09966312348842621,
+                "y": 200.05120849609376,
+                "z": -19.29085922241211
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 14.728119850158692,
+            "speed": 12.613755226135254,
+            "lateral": 1.5616439580917359,
+            "yaw": 0.35643234848976138,
+            "steering": 0.0,
+            "slip": 0.17732857167720796,
+            "pitch": -0.060791015625,
+            "roll": -0.048583984375,
+            "contacts": 4,
+            "position": {
+                "x": -0.23067213594913484,
+                "y": 200.00453186035157,
+                "z": -18.044580459594728
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 14.828121185302735,
+            "speed": 13.40190601348877,
+            "lateral": 1.2231642007827759,
+            "yaw": 0.31052783131599429,
+            "steering": 0.0,
+            "slip": 0.13583561778068543,
+            "pitch": -0.006500244140625,
+            "roll": -0.14312744140625,
+            "contacts": 4,
+            "position": {
+                "x": -0.21450817584991456,
+                "y": 199.97830200195313,
+                "z": -16.72920036315918
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 14.928122520446778,
+            "speed": 14.279568672180176,
+            "lateral": 0.23004640638828278,
+            "yaw": 0.12171263992786408,
+            "steering": 0.0,
+            "slip": 0.03200458735227585,
+            "pitch": -0.038604736328125,
+            "roll": -0.74957275390625,
+            "contacts": 4,
+            "position": {
+                "x": -0.2816486656665802,
+                "y": 199.9732208251953,
+                "z": -15.337198257446289
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 15.02812385559082,
+            "speed": 15.135223388671875,
+            "lateral": 0.03828937187790871,
+            "yaw": 0.03115508146584034,
+            "steering": 0.0,
+            "slip": 0.0061696297489106659,
+            "pitch": -0.112274169921875,
+            "roll": -0.417877197265625,
+            "contacts": 4,
+            "position": {
+                "x": -0.3716568648815155,
+                "y": 199.97706604003907,
+                "z": -13.860540390014649
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 15.128125190734864,
+            "speed": -0.35871466994285586,
+            "lateral": 0.8458821773529053,
+            "yaw": -0.002275988459587097,
+            "steering": 0.0,
+            "slip": 0.07699419558048248,
+            "pitch": -0.319122314453125,
+            "roll": -0.00311279296875,
+            "contacts": 4,
+            "position": {
+                "x": -0.36544591188430788,
+                "y": 199.98092651367188,
+                "z": -12.613462448120118
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 15.228126525878907,
+            "speed": 0.1310620754957199,
+            "lateral": 0.03745042532682419,
+            "yaw": 0.10902412980794907,
+            "steering": 0.0,
+            "slip": 0.04428256303071976,
+            "pitch": -0.17852783203125,
+            "roll": -0.343963623046875,
+            "contacts": 4,
+            "position": {
+                "x": -0.3585110604763031,
+                "y": 199.9835205078125,
+                "z": -12.64759349822998
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 15.32812786102295,
+            "speed": 0.1651523858308792,
+            "lateral": 0.05579107627272606,
+            "yaw": 0.14301764965057374,
+            "steering": 0.0,
+            "slip": 0.06236557289958,
+            "pitch": -0.0306396484375,
+            "roll": -0.279815673828125,
+            "contacts": 4,
+            "position": {
+                "x": -0.35673758387565615,
+                "y": 199.98269653320313,
+                "z": -12.633280754089356
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 15.428129196166993,
+            "speed": 0.02854796312749386,
+            "lateral": 0.0521000437438488,
+            "yaw": 0.02117719128727913,
+            "steering": 0.0,
+            "slip": 0.05435902625322342,
+            "pitch": -0.014129638671875,
+            "roll": -0.208587646484375,
+            "contacts": 4,
+            "position": {
+                "x": -0.35284239053726199,
+                "y": 199.98123168945313,
+                "z": -12.620105743408204
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 15.528130531311036,
+            "speed": 0.0008295489242300391,
+            "lateral": 0.0005776099860668182,
+            "yaw": 0.000017550773918628693,
+            "steering": 0.0,
+            "slip": 0.0004943808889947832,
+            "pitch": -0.000762939453125,
+            "roll": -0.1141357421875,
+            "contacts": 4,
+            "position": {
+                "x": -0.351203978061676,
+                "y": 199.9806671142578,
+                "z": -12.620013236999512
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 15.628131866455079,
+            "speed": -0.000167833553859964,
+            "lateral": 0.00005587020859820768,
+            "yaw": -0.00011235781130380929,
+            "steering": 0.0,
+            "slip": 0.000050101651140721515,
+            "pitch": -0.00506591796875,
+            "roll": -0.036224365234375,
+            "contacts": 4,
+            "position": {
+                "x": -0.35052773356437685,
+                "y": 199.98068237304688,
+                "z": -12.619989395141602
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 15.728133201599121,
+            "speed": 0.0008211859385482967,
+            "lateral": 0.000012791596418537665,
+            "yaw": 0.00003065596683882177,
+            "steering": 0.0,
+            "slip": 0.000013760461115452927,
+            "pitch": -0.000823974609375,
+            "roll": -0.00921630859375,
+            "contacts": 4,
+            "position": {
+                "x": -0.3502970039844513,
+                "y": 199.98092651367188,
+                "z": -12.620012283325196
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 15.828134536743164,
+            "speed": 12.182404518127442,
+            "lateral": 1.568499641280141e-8,
+            "yaw": -4.379392493092382e-8,
+            "steering": 0.0,
+            "slip": 6.762450155406441e-9,
+            "pitch": -0.026153564453125,
+            "roll": 7.743044534436194e-7,
+            "contacts": 4,
+            "position": {
+                "x": 6.705887400926258e-9,
+                "y": 200.0511932373047,
+                "z": -19.283374786376954
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 15.928135871887207,
+            "speed": 12.91420841217041,
+            "lateral": -2.942150079121575e-9,
+            "yaw": 1.614159472751453e-8,
+            "steering": 0.0,
+            "slip": 1.5345561488189219e-9,
+            "pitch": -0.071624755859375,
+            "roll": 7.833957624825416e-7,
+            "contacts": 4,
+            "position": {
+                "x": 3.746821963801494e-9,
+                "y": 200.0044708251953,
+                "z": -18.023874282836915
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 16.028135299682618,
+            "speed": 13.784996032714844,
+            "lateral": -6.887805437116867e-9,
+            "yaw": 7.61311813590737e-9,
+            "steering": 0.0,
+            "slip": 1.8192596318300503e-9,
+            "pitch": -0.07806396484375,
+            "roll": 3.8852942907396939e-7,
+            "contacts": 4,
+            "position": {
+                "x": -2.7696538396071448e-9,
+                "y": 199.97833251953126,
+                "z": -16.680692672729493
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 16.12813377380371,
+            "speed": 13.157115936279297,
+            "lateral": -5.561022362599033e-7,
+            "yaw": 8.027409990063461e-7,
+            "steering": 0.0,
+            "slip": 1.3191389314215486e-7,
+            "pitch": 0.3544825613498688,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -1.1793282794769766e-7,
+                "y": 199.97491455078126,
+                "z": -15.313185691833496
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 16.22813606262207,
+            "speed": 11.5457763671875,
+            "lateral": -3.475202845493186e-7,
+            "yaw": -1.735230092947404e-8,
+            "steering": 0.0,
+            "slip": 4.5977227358662279e-8,
+            "pitch": 1.2156283855438233,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -1.1498135421561529e-7,
+                "y": 199.97650146484376,
+                "z": -14.100053787231446
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 16.328134536743165,
+            "speed": 9.948047637939454,
+            "lateral": 8.120645134113147e-8,
+            "yaw": -1.6688761661498575e-7,
+            "steering": 0.0,
+            "slip": 3.128862857693093e-8,
+            "pitch": 1.6022571325302125,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 4.916755891315461e-9,
+                "y": 199.97438049316407,
+                "z": -13.043127059936524
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 16.428136825561525,
+            "speed": 8.359987258911133,
+            "lateral": 2.206655835834681e-7,
+            "yaw": 1.346127049828283e-7,
+            "steering": 0.0,
+            "slip": 3.278785598581635e-8,
+            "pitch": 1.6834605932235718,
+            "roll": 0.000024011413188418373,
+            "contacts": 4,
+            "position": {
+                "x": 3.5569550504988e-7,
+                "y": 199.97274780273438,
+                "z": -12.142780303955079
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 16.528135299682618,
+            "speed": 6.778994083404541,
+            "lateral": -3.5760982086685546e-7,
+            "yaw": 2.4209223070670306e-8,
+            "steering": 0.0,
+            "slip": 1.3482916472185026e-7,
+            "pitch": 1.6692615747451783,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 1.321610056947975e-7,
+                "y": 199.9736328125,
+                "z": -11.400001525878907
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 16.62813377380371,
+            "speed": 5.203769683837891,
+            "lateral": 9.047621318813981e-9,
+            "yaw": -1.9346691360055958e-8,
+            "steering": 0.0,
+            "slip": 1.1716988268517526e-8,
+            "pitch": 1.6445882320404053,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 1.250263181873379e-7,
+                "y": 199.9760284423828,
+                "z": -10.81491756439209
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 16.728137969970704,
+            "speed": 3.633375644683838,
+            "lateral": 1.1247518472146112e-8,
+            "yaw": 2.1132729344230939e-8,
+            "steering": 0.0,
+            "slip": 8.866082090719374e-9,
+            "pitch": 1.6290894746780396,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 1.4580693630250608e-7,
+                "y": 199.97862243652345,
+                "z": -10.387205123901368
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 16.82813835144043,
+            "speed": 2.0669925212860109,
+            "lateral": 3.5877774084980276e-9,
+            "yaw": 1.6649066125751234e-8,
+            "steering": 0.0,
+            "slip": 7.982434269138139e-9,
+            "pitch": 1.6226627826690674,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 1.56633262804462e-7,
+                "y": 199.98085021972657,
+                "z": -10.116446495056153
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 16.928136825561525,
+            "speed": 0.5038892030715942,
+            "lateral": -7.803183166288363e-8,
+            "yaw": 1.876506416920165e-7,
+            "steering": 0.0,
+            "slip": 1.42994338148128e-7,
+            "pitch": 1.6214077472686768,
+            "roll": 0.00001924690332089085,
+            "contacts": 4,
+            "position": {
+                "x": 4.244276965437166e-7,
+                "y": 199.9827880859375,
+                "z": -10.00224494934082
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 17.02826499938965,
+            "speed": 0.0019462347263470293,
+            "lateral": 0.0,
+            "yaw": -1.842918067040955e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 1.2914856672286988,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 2.3136406923640608e-7,
+                "y": 199.9824981689453,
+                "z": -9.995089530944825
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 17.128263473510743,
+            "speed": 0.0011402105446904898,
+            "lateral": 0.0,
+            "yaw": 6.94598583095285e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.7415175437927246,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 2.2447868275321526e-7,
+                "y": 199.9813232421875,
+                "z": -9.990361213684082
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 17.228261947631837,
+            "speed": 0.0007280257996171713,
+            "lateral": 0.0,
+            "yaw": 4.04736049119947e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.49510660767555239,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 1.917248795280102e-7,
+                "y": 199.9814910888672,
+                "z": -9.98820972442627
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 17.328266143798829,
+            "speed": 0.0006176852039061487,
+            "lateral": 0.0,
+            "yaw": 1.792633952391043e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4438742995262146,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": 1.7502479465747457e-7,
+                "y": 199.98162841796876,
+                "z": -9.987713813781739
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 17.428266525268556,
+            "speed": 0.0006186376558616757,
+            "lateral": 0.0,
+            "yaw": 4.2612992956492237e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4534023106098175,
+            "roll": 0.000013459355614031665,
+            "contacts": 4,
+            "position": {
+                "x": 3.8169199001458767e-7,
+                "y": 199.98146057128907,
+                "z": -9.987733840942383
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 17.537137985229493,
+            "speed": 0.000035642537113744766,
+            "lateral": 0.0,
+            "yaw": 8.217526215048565e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.0023416648618876936,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.0833740234375,
+                "y": 24.774139404296876,
+                "z": 919.4666748046875
+            }
+        },
+        {
+            "phase": "sidewall-1-reverse",
+            "time": 17.63714027404785,
+            "speed": 0.00048586411867290735,
+            "lateral": 0.0,
+            "yaw": -0.0000012882446753792465,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.18843713402748109,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.0849609375,
+                "y": 24.69306182861328,
+                "z": 919.466796875
+            }
+        },
+        {
+            "phase": "pictured-plants-intact",
+            "time": 17.714914321899415,
+            "speed": 0.0005738564650528133,
+            "lateral": 0.0,
+            "yaw": -8.166624070327089e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.41296714544296267,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.0870056152344,
+                "y": 24.65416717529297,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "pictured-plants-intact",
+            "time": 17.714914321899415,
+            "speed": 0.0005738564650528133,
+            "lateral": 0.0,
+            "yaw": -8.166624070327089e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.41296714544296267,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.0870056152344,
+                "y": 24.65416717529297,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "pictured-plants-intact",
+            "time": 17.714914321899415,
+            "speed": 0.0005738564650528133,
+            "lateral": 0.0,
+            "yaw": -8.166624070327089e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.41296714544296267,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.0870056152344,
+                "y": 24.65416717529297,
+                "z": 919.4669189453125
+            }
+        },
+        {
+            "phase": "pictured-plant-vehicle-impact",
+            "time": 17.714914321899415,
+            "speed": 5.941074848175049,
+            "lateral": 0.002650532405823469,
+            "yaw": 0.0027523869648575784,
+            "steering": 0.0,
+            "slip": 0.0012604676885530353,
+            "pitch": -0.5068359375,
+            "roll": -0.842193603515625,
+            "contacts": 4,
+            "position": {
+                "x": 935.8450317382813,
+                "y": 11.004952430725098,
+                "z": 946.6995239257813
+            }
+        },
+        {
+            "phase": "pictured-plant-vehicle-impact",
+            "time": 17.904178619384767,
+            "speed": 6.027035236358643,
+            "lateral": 0.006219109985977411,
+            "yaw": -0.000719256408046931,
+            "steering": 0.0,
+            "slip": 0.0014749334659427405,
+            "pitch": -1.00177001953125,
+            "roll": -1.49627685546875,
+            "contacts": 4,
+            "position": {
+                "x": 935.7647705078125,
+                "y": 10.990817070007325,
+                "z": 947.3050537109375
+            }
+        },
+        {
+            "phase": "pictured-plant-vehicle-impact",
+            "time": 18.006954193115236,
+            "speed": 6.232417106628418,
+            "lateral": 0.00671766884624958,
+            "yaw": -0.006410297937691212,
+            "steering": 0.0,
+            "slip": 0.0015200545312836767,
+            "pitch": -1.267791748046875,
+            "roll": -1.501953125,
+            "contacts": 4,
+            "position": {
+                "x": 935.6879272460938,
+                "y": 11.000654220581055,
+                "z": 947.9334716796875
+            }
+        },
+        {
+            "phase": "pictured-plant-vehicle-impact",
+            "time": 18.10695457458496,
+            "speed": 6.473859786987305,
+            "lateral": 0.007142786867916584,
+            "yaw": 0.002689026528969407,
+            "steering": 0.0,
+            "slip": 0.0020475322380661966,
+            "pitch": -2.494873046875,
+            "roll": -1.5677490234375,
+            "contacts": 4,
+            "position": {
+                "x": 935.6100463867188,
+                "y": 11.051794052124024,
+                "z": 948.5746459960938
+            }
+        },
+        {
+            "phase": "pictured-plant-vehicle-impact",
+            "time": 18.206953048706056,
+            "speed": 6.7117743492126469,
+            "lateral": 0.0077647799625992779,
+            "yaw": 0.0003097286680713296,
+            "steering": 0.0,
+            "slip": 0.0016371984966099263,
+            "pitch": -3.626251220703125,
+            "roll": -1.822052001953125,
+            "contacts": 4,
+            "position": {
+                "x": 935.5279541015625,
+                "y": 11.113253593444825,
+                "z": 949.2380981445313
+            }
+        },
+        {
+            "phase": "pictured-plant-vehicle-impact",
+            "time": 18.30695152282715,
+            "speed": 6.935909271240234,
+            "lateral": 0.0085536427795887,
+            "yaw": 0.0003615872410591692,
+            "steering": 0.0,
+            "slip": 0.001702364650554955,
+            "pitch": -4.107391357421875,
+            "roll": -1.968963623046875,
+            "contacts": 4,
+            "position": {
+                "x": 935.4439697265625,
+                "y": 11.156546592712403,
+                "z": 949.9198608398438
+            }
+        },
+        {
+            "phase": "pictured-plant-vehicle-impact",
+            "time": 18.406949996948243,
+            "speed": 6.538198471069336,
+            "lateral": 0.00918369647115469,
+            "yaw": -0.16456171870231629,
+            "steering": 0.0,
+            "slip": 0.002226712414994836,
+            "pitch": -4.355072021484375,
+            "roll": -1.95428466796875,
+            "contacts": 4,
+            "position": {
+                "x": 935.3759155273438,
+                "y": 11.191593170166016,
+                "z": 950.4893798828125
+            }
+        },
+        {
+            "phase": "pictured-plant-vehicle-impact",
+            "time": 18.507131576538087,
+            "speed": 6.739878177642822,
+            "lateral": 0.011586964130401612,
+            "yaw": -0.004497363232076168,
+            "steering": 0.0,
+            "slip": 0.0035985209979116918,
+            "pitch": -4.491241455078125,
+            "roll": -1.424072265625,
+            "contacts": 4,
+            "position": {
+                "x": 935.298828125,
+                "y": 11.241206169128418,
+                "z": 951.1375122070313
+            }
+        },
+        {
+            "phase": "pictured-plant-vehicle-impact",
+            "time": 18.60713005065918,
+            "speed": -0.10929539054632187,
+            "lateral": 0.007302823476493359,
+            "yaw": 0.002249651588499546,
+            "steering": 0.0,
+            "slip": 0.0016545020043849946,
+            "pitch": -4.109619140625,
+            "roll": -1.234161376953125,
+            "contacts": 4,
+            "position": {
+                "x": 935.2299194335938,
+                "y": 11.31887149810791,
+                "z": 951.6826171875
+            }
+        },
+        {
+            "phase": "pictured-plant-vehicle-impact",
+            "time": 18.70713233947754,
+            "speed": 0.003230069996789098,
+            "lateral": 0.0012012668885290623,
+            "yaw": 0.00016572873573750257,
+            "steering": 0.0,
+            "slip": 0.0011663089971989394,
+            "pitch": -3.787567138671875,
+            "roll": -1.179840087890625,
+            "contacts": 4,
+            "position": {
+                "x": 935.2407836914063,
+                "y": 11.352672576904297,
+                "z": 951.596923828125
+            }
+        },
+        {
+            "phase": "pictured-plant-vehicle-impact",
+            "time": 18.807130813598634,
+            "speed": -0.0091608427464962,
+            "lateral": 0.0012528104707598687,
+            "yaw": -0.00013854287681169808,
+            "steering": 0.0,
+            "slip": 0.0011852429015561939,
+            "pitch": -3.798095703125,
+            "roll": -1.268096923828125,
+            "contacts": 4,
+            "position": {
+                "x": 935.2404174804688,
+                "y": 11.343700408935547,
+                "z": 951.596923828125
+            }
+        },
+        {
+            "phase": "pictured-plant-vehicle-impact",
+            "time": 18.907129287719728,
+            "speed": -0.005531440023332834,
+            "lateral": 0.0012313142651692033,
+            "yaw": -0.00023428245913237333,
+            "steering": 0.0,
+            "slip": 0.0011220393935218454,
+            "pitch": -3.714019775390625,
+            "roll": -1.304168701171875,
+            "contacts": 4,
+            "position": {
+                "x": 935.2405395507813,
+                "y": 11.329315185546875,
+                "z": 951.596435546875
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 18.91823959350586,
+            "speed": 0.1709442287683487,
+            "lateral": 2.934751286431947e-8,
+            "yaw": 3.675238247069501e-7,
+            "steering": 0.0,
+            "slip": 8.143290131101821e-8,
+            "pitch": -0.006011962890625,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.07427978515627,
+                "y": 24.73332977294922,
+                "z": 919.466064453125
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 19.13751792907715,
+            "speed": 0.25385990738868716,
+            "lateral": -6.234333227439493e-8,
+            "yaw": -9.73989699559752e-7,
+            "steering": 0.0,
+            "slip": 1.0666730787534107e-7,
+            "pitch": 0.3081088364124298,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.05120849609377,
+                "y": 24.65700912475586,
+                "z": 919.4645385742188
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 19.239580154418947,
+            "speed": 0.24377600848674775,
+            "lateral": -6.741367997165071e-8,
+            "yaw": -7.880087764533528e-7,
+            "steering": 0.0,
+            "slip": 1.047596853709365e-7,
+            "pitch": 0.5874869227409363,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.0282287597656,
+                "y": 24.63169288635254,
+                "z": 919.463134765625
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 19.339580535888673,
+            "speed": 0.0007851234404370189,
+            "lateral": 0.0,
+            "yaw": -0.0000015167231595114573,
+            "steering": 0.0,
+            "slip": 1.0879940504082697e-7,
+            "pitch": 0.6615913510322571,
+            "roll": -0.00006103515625,
+            "contacts": 4,
+            "position": {
+                "x": -269.0078125,
+                "y": 24.63311767578125,
+                "z": 919.4618530273438
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 19.439666748046876,
+            "speed": 0.0009911170927807689,
+            "lateral": 0.0,
+            "yaw": 2.8007588070977365e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.6521757245063782,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.007568359375,
+                "y": 24.64060401916504,
+                "z": 919.4618530273438
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 19.539669036865236,
+            "speed": 0.000823133799713105,
+            "lateral": 0.0,
+            "yaw": 3.596242663661542e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.5365052819252014,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.0064697265625,
+                "y": 24.64500617980957,
+                "z": 919.4617919921875
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 19.639671325683595,
+            "speed": 0.0007044661324471235,
+            "lateral": 0.0,
+            "yaw": -1.0751853096735431e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.47773629426956179,
+            "roll": -0.000030517578125,
+            "contacts": 4,
+            "position": {
+                "x": -269.005859375,
+                "y": 24.646160125732423,
+                "z": 919.4617309570313
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 19.73967170715332,
+            "speed": 0.0006712171598337591,
+            "lateral": 0.0,
+            "yaw": -4.8322849721671449e-8,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4691275358200073,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.0057678222656,
+                "y": 24.645729064941408,
+                "z": 919.4617309570313
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 19.839672088623048,
+            "speed": 0.0006756972870789468,
+            "lateral": 0.0,
+            "yaw": -3.3586877634661507e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4770872890949249,
+            "roll": 0.0,
+            "contacts": 4,
+            "position": {
+                "x": -269.0058288574219,
+                "y": 24.64508819580078,
+                "z": 919.4617309570313
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 19.939672470092775,
+            "speed": 0.000685080187395215,
+            "lateral": 0.0,
+            "yaw": -4.8298085175702e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48378822207450869,
+            "roll": 0.000009338481504528318,
+            "contacts": 4,
+            "position": {
+                "x": -269.0058898925781,
+                "y": 24.644756317138673,
+                "z": 919.4617309570313
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 20.039670944213868,
+            "speed": 0.0006905695190653205,
+            "lateral": 0.0,
+            "yaw": -1.0079142498398142e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48590511083602908,
+            "roll": 0.00007043885852908716,
+            "contacts": 4,
+            "position": {
+                "x": -269.0058898925781,
+                "y": 24.644702911376954,
+                "z": 919.4617309570313
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 20.139671325683595,
+            "speed": 0.0006918389699421823,
+            "lateral": 0.0,
+            "yaw": -3.1148280754678128e-7,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.4854987561702728,
+            "roll": 0.0000815116218291223,
+            "contacts": 4,
+            "position": {
+                "x": -269.0058898925781,
+                "y": 24.64476203918457,
+                "z": 919.4617309570313
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 20.239675521850587,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48541975021362307,
+            "roll": 0.00008260556205641478,
+            "contacts": 4,
+            "position": {
+                "x": -269.0058898925781,
+                "y": 24.64476776123047,
+                "z": 919.4617309570313
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 20.341154098510743,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48541975021362307,
+            "roll": 0.00008260556205641478,
+            "contacts": 4,
+            "position": {
+                "x": -269.0058898925781,
+                "y": 24.64476776123047,
+                "z": 919.4617309570313
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 20.441158294677736,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48541975021362307,
+            "roll": 0.00008260556205641478,
+            "contacts": 4,
+            "position": {
+                "x": -269.0058898925781,
+                "y": 24.64476776123047,
+                "z": 919.4617309570313
+            }
+        },
+        {
+            "phase": "exit",
+            "time": 20.541196823120118,
+            "speed": 0.0,
+            "lateral": 0.0,
+            "yaw": 0.0,
+            "steering": 0.0,
+            "slip": 0.0,
+            "pitch": 0.48541975021362307,
+            "roll": 0.00008260556205641478,
+            "contacts": 4,
+            "position": {
+                "x": -269.0058898925781,
+                "y": 24.64476776123047,
+                "z": 919.4617309570313
+            }
+        }
+    ],
+    "impacts": [],
+    "errors": []
+}

@@ -1,0 +1,167 @@
+{
+    "passed": false,
+    "createdAtUtc": "2026-11-08T13:23:11.6183820Z",
+    "graphicsApi": "Direct3D12",
+    "assemblySha256": "815e510e93745346b5d7f44b02f4832e8d5413303e4e63de21ed5dce4f78ac9a",
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\PoliceStation-20261108\\BaiaDoSol.exe",
+    "resolution": "1600x1000",
+    "quality": "Ultra",
+    "checks": [
+        {
+            "name": "native-station-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "isolated-qa-storage",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "same-site-and-original-entrance",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "old-solid-upper-volume-retired",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "three-solid-cell-gates",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "reception-officer-and-information-remain",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "station-sign-is-english",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "ground-height-remains-on-lower-storey",
+            "detail": "local height=0.18",
+            "passed": true
+        },
+        {
+            "name": "cell-1-closed-gate-blocks-passage",
+            "detail": "Holding cell 1 • gate",
+            "passed": true
+        },
+        {
+            "name": "cell-2-closed-gate-blocks-passage",
+            "detail": "Holding cell 2 • gate",
+            "passed": true
+        },
+        {
+            "name": "cell-3-closed-gate-blocks-passage",
+            "detail": "Holding cell 3 • gate",
+            "passed": true
+        },
+        {
+            "name": "walk-through-original-street-entrance",
+            "detail": "local=(0.00, 0.20, 8.80)",
+            "passed": true
+        },
+        {
+            "name": "walk-through-reception-to-cell-corridor",
+            "detail": "local=(0.00, 0.20, -3.15)",
+            "passed": true
+        },
+        {
+            "name": "cell-1-contextual-open-action",
+            "detail": "action=police-cell-0",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-opening-cell-gate",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "cell-1-gate-opens",
+            "detail": "1.00",
+            "passed": true
+        },
+        {
+            "name": "cell-1-walk-in-and-out",
+            "detail": "local=(-9.05, 0.20, -3.64)",
+            "passed": true
+        },
+        {
+            "name": "cell-1-gate-closes",
+            "detail": "0.00",
+            "passed": true
+        },
+        {
+            "name": "cell-2-contextual-open-action",
+            "detail": "action=police-cell-1",
+            "passed": true
+        },
+        {
+            "name": "cell-2-gate-opens",
+            "detail": "1.00",
+            "passed": true
+        },
+        {
+            "name": "cell-2-walk-in-and-out",
+            "detail": "local=(-5.85, 0.20, -3.64)",
+            "passed": true
+        },
+        {
+            "name": "cell-2-gate-closes",
+            "detail": "0.00",
+            "passed": true
+        },
+        {
+            "name": "cell-3-contextual-open-action",
+            "detail": "action=police-cell-2",
+            "passed": true
+        },
+        {
+            "name": "cell-3-gate-opens",
+            "detail": "1.00",
+            "passed": true
+        },
+        {
+            "name": "cell-3-walk-in-and-out",
+            "detail": "local=(-2.65, 0.20, -3.65)",
+            "passed": true
+        },
+        {
+            "name": "cell-3-gate-closes",
+            "detail": "0.00",
+            "passed": true
+        },
+        {
+            "name": "walk-up-both-flights-to-second-floor",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "walk-down-stairs-and-return-to-entrance",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "walk-back-out-to-sidewalk",
+            "detail": "local=(0.01, 0.22, 12.84)",
+            "passed": true
+        },
+        {
+            "name": "both-storeys-lit-at-night",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "errors=0",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

@@ -1,0 +1,18 @@
+var source = UnityEngine.JsonUtility.FromJson<OpenTerritory.VisualData>(System.IO.File.ReadAllText("../Reports/linear-waterfront-park/authoring/LinearParkYards.json"));
+var targets = new System.Collections.Generic.Dictionary<string, System.Collections.Generic.HashSet<string>>();
+System.Func<UnityEngine.Vector3,string> vertex = p => UnityEngine.Mathf.RoundToInt(p.x*1000)+","+UnityEngine.Mathf.RoundToInt(p.y*1000)+","+UnityEngine.Mathf.RoundToInt(p.z*1000);
+System.Func<UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,string> triangle = (a,b,c) => { var p=new[]{vertex(a),vertex(b),vertex(c)};System.Array.Sort(p,System.StringComparer.Ordinal);return string.Join("|",p); };
+foreach(var node in source.nodes) {
+ var g=source.geometries[node.geometry]; var transforms=node.instances.Length>0?node.instances:new[]{new OpenTerritory.InstanceData{matrix=new float[]{1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1}}};
+ foreach(var instance in transforms) {
+  var m=new UnityEngine.Matrix4x4();for(int c=0;c<4;c++)m.SetColumn(c,new UnityEngine.Vector4(instance.matrix[c*4],instance.matrix[c*4+1],instance.matrix[c*4+2],instance.matrix[c*4+3]));m=UnityEngine.Matrix4x4.TRS(node.position,node.rotation,node.scale)*m;
+  var point=m.MultiplyPoint3x4(UnityEngine.Vector3.zero);var groups=node.materials.Length>1&&g.groups.Length>0?g.groups:new[]{new OpenTerritory.GeometryGroup{start=0,count=g.indices.Length,materialIndex=0}};
+  foreach(var group in groups){int mat=node.materials[UnityEngine.Mathf.Min(node.materials.Length-1,group.materialIndex)];string batch=node.name=="Árvore reaproveitada da praça" || node.name=="Jardins e muros • Flores dos jardins" || node.name.StartsWith("Doorway fixed part-source-") ? "s-scenery:"+UnityEngine.Mathf.FloorToInt(point.x/24)+":"+UnityEngine.Mathf.FloorToInt(point.z/24)+"-"+mat : "s-surface:0:0-"+mat;
+   System.Collections.Generic.HashSet<string> set;if(!targets.TryGetValue(batch,out set)){set=new System.Collections.Generic.HashSet<string>();targets.Add(batch,set);}
+   for(int i=group.start;i+2<UnityEngine.Mathf.Min(g.indices.Length,group.start+group.count);i+=3){var p=new UnityEngine.Vector3[3];for(int j=0;j<3;j++){int k=g.indices[i+j]*3;p[j]=m.MultiplyPoint3x4(new UnityEngine.Vector3(g.positions[k],g.positions[k+1],g.positions[k+2]));}set.Add(triangle(p[0],p[1],p[2]));}
+  }
+ }
+}
+var report=new System.Text.StringBuilder();
+foreach(var kv in targets){var go=UnityEngine.GameObject.Find(kv.Key);if(!go){report.AppendLine(kv.Key+" MISSING target="+kv.Value.Count);continue;}var f=go.GetComponent<UnityEngine.MeshFilter>();var mesh=f.sharedMesh;var pts=mesh.vertices;var ts=mesh.triangles;int matches=0;for(int i=0;i<ts.Length;i+=3){var a=go.transform.TransformPoint(pts[ts[i]]);var b=go.transform.TransformPoint(pts[ts[i+1]]);var c=go.transform.TransformPoint(pts[ts[i+2]]);if(kv.Value.Contains(triangle(a,b,c)))matches++;}report.AppendLine(kv.Key+" target="+kv.Value.Count+" matched="+matches+" tris="+ts.Length/3);}
+return report.ToString();

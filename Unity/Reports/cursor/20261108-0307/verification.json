@@ -1,0 +1,41 @@
+{
+  "verifiedAtUtc": "2026-11-08T06:13:30.0114837Z",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\MouseLook-20261108-0307\\BaiaDoSol.exe",
+  "assemblySha256": "5ECD6C3179ED7BE727904D3B3450A27588D08E8474C6522DDD55BC68E9A052A2",
+  "unityVersion": "6000.3.27f1",
+  "configuration": "Full Windows x64 release build; project graphics/fullscreen defaults",
+  "buildResult": "Succeeded",
+  "buildErrors": 0,
+  "buildWarnings": 3,
+  "buildCompletedAtUtc": "2026-11-08T06:07:23.3056638Z",
+  "nativeSmokePassed": true,
+  "nativeExitCode": 0,
+  "nativeReport": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\cursor\\20261108-0307\\native-cursor\\verification.json",
+  "editorCursorStates": "8 focused checks passed: hidden lock, settings release, paused release, resume, map release/close, disable/enable",
+  "cameraPipeline": {
+    "sampledLookX": 3,
+    "sampledLookY": 1,
+    "yawDelta": 7.800003,
+    "mouseButtonsHeld": false,
+    "hardwareMouseMovementVerified": false,
+    "note": "Queued Editor GUI MouseMove events did not populate legacy hardware axes. Camera pipeline verified using sampled look input."
+  },
+  "emoteSuite": {
+    "passedChecks": 45,
+    "totalChecks": 46,
+    "runtimeErrors": [],
+    "failedChecks": [
+      "sadness-receives-comfort"
+    ],
+    "sameFailureInPriorBuild": [
+      "sadness-receives-comfort"
+    ],
+    "diagnosis": "Existing test expected Portuguese fragment conversar although game displays English. Source assertion corrected to translated speech; correction is QA-only."
+  },
+  "laterRebuild": {
+    "result": "Failed",
+    "reason": "Concurrent CityPolice changes reference methods not yet present in other source files. Preserved other work and delivered earlier complete isolated build containing all cursor, camera, emote cursor, Alt pointer, and help changes."
+  },
+  "scene": "Assets/Scenes/BaiaDoSol.unity",
+  "sceneSavedByTask": false
+}

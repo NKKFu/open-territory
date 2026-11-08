@@ -1,0 +1,147 @@
+{
+  "generatedAtUtc": "2026-11-08T03:14:36.540295+00:00",
+  "passed": true,
+  "checks": 22,
+  "render": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "contact-occlusion-MSAA-1",
+        "passed": true,
+        "darkened": 15417,
+        "brightened": 0,
+        "skyPixels": 156489,
+        "skyChanged": 0,
+        "shimmer": 0,
+        "excessive": 0
+      },
+      {
+        "name": "contact-occlusion-MSAA-2",
+        "passed": true,
+        "darkened": 15914,
+        "brightened": 0,
+        "skyPixels": 156244,
+        "skyChanged": 0,
+        "shimmer": 0,
+        "excessive": 0
+      },
+      {
+        "name": "contact-occlusion-MSAA-4",
+        "passed": true,
+        "darkened": 16188,
+        "brightened": 0,
+        "skyPixels": 156095,
+        "skyChanged": 0,
+        "shimmer": 0,
+        "excessive": 0
+      },
+      {
+        "name": "flat-surfaces-unchanged",
+        "passed": true,
+        "changed": 0
+      },
+      {
+        "name": "transparent-pass-unaffected",
+        "passed": true,
+        "changed": 0
+      },
+      {
+        "name": "4K-buffer-capped-at-960x540",
+        "passed": true,
+        "width": 960,
+        "height": 540
+      },
+      {
+        "name": "disable-releases-owned-depth-and-preserves-other-flags",
+        "passed": true
+      },
+      {
+        "name": "preexisting-depth-request-retained",
+        "passed": true
+      }
+    ],
+    "graphicsAPI": "Direct3D12",
+    "gpu": "AMD Radeon RX 9070"
+  },
+  "city": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "balanced-enables-SSAO-on-game-camera",
+        "passed": true
+      },
+      {
+        "name": "pointer-disables-SSAO-immediately",
+        "passed": true
+      },
+      {
+        "name": "keyboard-submit-reenables-SSAO",
+        "passed": true
+      },
+      {
+        "name": "light-quality-disables-effect-and-toggle",
+        "passed": true
+      },
+      {
+        "name": "light-quality-releases-depth-request",
+        "passed": true
+      },
+      {
+        "name": "high-quality-restores-SSAO-preference",
+        "passed": true
+      },
+      {
+        "name": "quality-change-retains-disabled-preference",
+        "passed": true
+      },
+      {
+        "name": "SSAO-preference-serializes",
+        "passed": true
+      },
+      {
+        "name": "older-options-default-to-enabled",
+        "passed": true
+      },
+      {
+        "name": "SSAO-row-fits-image-page-above-footer",
+        "passed": true
+      },
+      {
+        "name": "settings-pause-city-with-SSAO-active",
+        "passed": true
+      },
+      {
+        "name": "image-toggle-label-is-readable",
+        "passed": true
+      },
+      {
+        "name": "native-city-contact-shading-visible",
+        "passed": true,
+        "darkened": 112227,
+        "brightened": 41,
+        "brightenedInterior": 0,
+        "uniformNeighborhoodPixels": 861047
+      },
+      {
+        "name": "no-automatic-SSAO-probe-in-normal-play",
+        "passed": true
+      }
+    ],
+    "screenWidth": 1334,
+    "screenHeight": 683,
+    "fieldOfView": 73.2
+  },
+  "sha256": {
+    "Unity/OpenTerritory/Assets/Scripts/Core/CityAmbientOcclusion.cs": "aac3feeaa23530c61cfd457855c10c538b2962c7abc05a6743a94394a992a855",
+    "Unity/OpenTerritory/Assets/Resources/Shaders/CityAmbientOcclusion.shader": "d0a1f1389e959658e760142ab7929f270ccddb8b66e48439ae8f8b69d216e939",
+    "Unity/OpenTerritory/Assets/Scripts/UI/CityUI.cs": "9375a739bf9be9e2b0fa75f07d1bb6f0724184dfa7310496693b514552f9d009",
+    "Unity/OpenTerritory/Assets/Scripts/UI/CityCanvasUI.cs": "473ae62583d071021d5bad563d2a9cbbe9da5e795a2cae7f6819fafabca40151"
+  },
+  "notes": [
+    "Native images were captured in Unity Play Mode on Direct3D12 / RX 9070.",
+    "The original raw city result is retained. Its zero-brightening assertion counted 41 MSAA silhouette pixels. Analysis of 3x3 uniform neighborhoods found no interior brightening. The reproducible city check now excludes mixed silhouette pixels.",
+    "PlayerPrefs were protected by the existing reviewRun guard while testing the settings controls, then the original option values were restored.",
+    "Concurrent Editor builds/domain reloads interrupted several MCP calls. Earlier CityAudio/CityWind null references were also observed; this report does not claim a clean full-game run.",
+    "No GPU frame-time benchmark or Windows player build was validated by this task."
+  ]
+}

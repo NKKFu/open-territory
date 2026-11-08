@@ -1,0 +1,146 @@
+{
+    "passed": false,
+    "checks": [
+        {
+            "name": "compact-neighborhood-has-an-access-for-every-door",
+            "detail": "",
+            "passed": true,
+            "value": 217.0
+        },
+        {
+            "name": "all-entrances-have-continuous-physical-paving",
+            "detail": "samples=1739 maxHeightError=0.12292",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "entrance-routes-clear-of-walls-and-furniture",
+            "detail": "",
+            "passed": false,
+            "value": 24.0
+        },
+        {
+            "name": "all-entrances-connected-to-pedestrian-navigation",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "most-door-setbacks-under-three-metres",
+            "detail": "",
+            "passed": true,
+            "value": 216.0
+        },
+        {
+            "name": "entrances-have-clear-interior-and-sidewalk-approaches",
+            "detail": "",
+            "passed": true,
+            "value": 216.0
+        },
+        {
+            "name": "walk-from-sidewalk-through-door-0",
+            "detail": "FLOR DO MAR player=(564.60, 9.86, 699.21) door=(563.66, 9.65, 698.10) grounded=True",
+            "passed": true,
+            "value": 0.03819942846894264
+        },
+        {
+            "name": "door-still-operates-0",
+            "detail": "FLOR DO MAR",
+            "passed": true,
+            "value": 90.00000762939453
+        },
+        {
+            "name": "walk-from-sidewalk-through-door-1",
+            "detail": "#706CF4 player=(528.99, 8.86, 610.92) door=(528.41, 8.66, 612.27) grounded=True",
+            "passed": true,
+            "value": 0.03463797643780708
+        },
+        {
+            "name": "door-still-operates-1",
+            "detail": "#706CF4",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "walk-from-sidewalk-through-door-2",
+            "detail": "#43CBAB player=(412.27, 9.58, 622.78) door=(412.76, 9.37, 621.42) grounded=True",
+            "passed": true,
+            "value": 0.0568450428545475
+        },
+        {
+            "name": "door-still-operates-2",
+            "detail": "#43CBAB",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "walk-from-sidewalk-through-door-3",
+            "detail": "#E41947 player=(406.54, 6.14, 500.27) door=(405.58, 5.93, 501.43) grounded=True",
+            "passed": true,
+            "value": 0.0038370925467461349
+        },
+        {
+            "name": "door-still-operates-3",
+            "detail": "#E41947",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "walk-from-sidewalk-through-door-4",
+            "detail": "#1862D2 player=(930.83, 5.41, 902.90) door=(929.75, 5.21, 903.92) grounded=True",
+            "passed": true,
+            "value": 0.008504937402904034
+        },
+        {
+            "name": "door-still-operates-4",
+            "detail": "#1862D2",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "walk-from-sidewalk-through-door-5",
+            "detail": "#A71860 player=(249.27, 9.49, 579.11) door=(247.82, 9.28, 578.96) grounded=True",
+            "passed": true,
+            "value": 0.040459875017404559
+        },
+        {
+            "name": "door-still-operates-5",
+            "detail": "#A71860",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "errors": [],
+    "obstacles": [
+        "blocked GALERIA SOL (524.83, 9.98, 705.91) Colisão-605",
+        "blocked GALERIA SOL (524.62, 9.97, 705.57) Colisão-605",
+        "blocked GALERIA SOL (524.41, 9.96, 705.24) Colisão-605",
+        "blocked GALERIA SOL (524.21, 9.95, 704.91) Colisão-605",
+        "blocked #713EE2 (490.03, 8.79, 599.20) Haste",
+        "blocked #713EE2 (490.16, 8.75, 598.83) Haste",
+        "blocked #F1C3A7 (646.72, 18.42, 870.00) Colisão-539",
+        "blocked #F1C3A7 (647.09, 18.39, 869.86) Colisão-539",
+        "blocked #F1C3A7 (647.45, 18.37, 869.72) Colisão-540",
+        "blocked #F1C3A7 (647.82, 18.34, 869.58) Colisão-540",
+        "blocked #053763 (409.86, 5.61, 525.30) Haste",
+        "blocked #053763 (409.55, 5.67, 525.53) Haste",
+        "blocked #DBDAE6 (997.37, 10.48, 929.11) Colisão-527",
+        "blocked #DBDAE6 (997.16, 10.44, 928.77) Colisão-527",
+        "blocked #DBDAE6 (996.96, 10.41, 928.44) Colisão-527",
+        "blocked #DBDAE6 (996.76, 10.38, 928.10) Colisão-527",
+        "blocked #07474D (236.15, 10.12, 694.31) Colisão-304",
+        "blocked #07474D (236.55, 10.11, 694.32) Colisão-304",
+        "blocked #07474D (236.94, 10.11, 694.33) Colisão-305",
+        "blocked #07474D (237.33, 10.10, 694.35) Colisão-305",
+        "blocked #F908F8 (224.61, 10.12, 693.94) Colisão-302",
+        "blocked #F908F8 (224.22, 10.12, 693.92) Colisão-302",
+        "blocked #F908F8 (223.83, 10.11, 693.91) Colisão-303",
+        "blocked #F908F8 (223.44, 10.10, 693.90) Colisão-303"
+    ]
+}

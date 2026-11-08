@@ -1,0 +1,14 @@
+{
+    "passed": false,
+    "routeSamples": 0,
+    "checks": [
+        {
+            "name": "native-dealership-ready",
+            "detail": "",
+            "passed": false
+        }
+    ],
+    "errors": [
+        "InvalidOperationException: Missing local weapon asset: pulse\nOpenTerritory.CityWeaponVisual..ctor (OpenTerritory.CityWeaponDefinition definition, UnityEngine.Transform hand) (at <01bed2ef0faa47b28490d599e7e6e74f>:0)\nOpenTerritory.CityCombat.BuildWeapons () (at <01bed2ef0faa47b28490d599e7e6e74f>:0)\nOpenTerritory.CityCombat.Initialize (OpenTerritory.CityContext context) (at <01bed2ef0faa47b28490d599e7e6e74f>:0)\nOpenTerritory.CityContext.Awake () (at <01bed2ef0faa47b28490d599e7e6e74f>:0)\n"
+    ]
+}

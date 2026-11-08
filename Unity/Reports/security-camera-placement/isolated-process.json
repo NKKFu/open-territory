@@ -1,0 +1,22 @@
+{
+  "processId": 79416,
+  "startedAtUtc": "2026-11-08T07:43:32.3800160Z",
+  "snapshot": "C:\\Users\\nelso\\AppData\\Local\\Temp\\open-territory-camera-mounts-20261108-0736",
+  "output": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\SecurityCameraMounts-Isolated-20261108\\BaiaDoSol.exe",
+  "log": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\security-camera-placement\\isolated\\editor.log",
+  "arguments": [
+    "-batchmode",
+    "-projectPath",
+    "\"C:\\Users\\nelso\\AppData\\Local\\Temp\\open-territory-camera-mounts-20261108-0736\"",
+    "-executeMethod",
+    "CameraMountsBatch.Run",
+    "--security-camera-isolated-validation",
+    "--camera-report",
+    "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\security-camera-placement\\isolated\"",
+    "--camera-build-path",
+    "\"C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\SecurityCameraMounts-Isolated-20261108\\BaiaDoSol.exe\"",
+    "-logFile",
+    "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\security-camera-placement\\isolated\\editor.log\"",
+    "--city-camera-mount-qa"
+  ]
+}

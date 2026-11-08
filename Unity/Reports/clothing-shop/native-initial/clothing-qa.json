@@ -1,0 +1,204 @@
+{
+    "passed": false,
+    "graphicsApi": "Direct3D12",
+    "createdAtUtc": "2026-11-08T11:22:46.8143174Z",
+    "routeSamples": 648,
+    "checks": [
+        {
+            "name": "native-clothing-store-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "QA-wallet-is-isolated",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "only-marked-buildings-replaced",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "old-physical-solids-disabled-in-navigation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "English-signage-and-real-entrances",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-overlap-with-neighbours-or-public-furniture",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "continuous-sidewalk-both-sales-floors-ramp-and-fitting-room",
+            "detail": "samples=648 unsupported=0 blocked=0 ",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-0",
+            "detail": "gap=0.000",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-1",
+            "detail": "gap=0.206",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-2",
+            "detail": "gap=0.194",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-3",
+            "detail": "gap=0.181",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-4",
+            "detail": "gap=0.201",
+            "passed": true
+        },
+        {
+            "name": "real-controller-route-5",
+            "detail": "gap=5.207",
+            "passed": false
+        },
+        {
+            "name": "enter-explore-fitting-room-and-exit",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "automatic-entrance-opens-for-protagonist",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-pauses-world-and-entrance",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "entrance-closes-after-safe-clearance",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "display-glazing-blocks-walking",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "rack-selected-by-real-world-visibility-and-range",
+            "detail": "clothing-0",
+            "passed": true
+        },
+        {
+            "name": "E-opens-compact-contextual-uGUI",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "preview-changes-protagonist-without-charging",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "cancel-restores-owned-outfit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "mouse-touch-button-buys-and-wears",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "owned-item-cannot-charge-twice",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "tops-trousers-and-sneakers-equip-independently",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "insufficient-funds-does-not-buy-or-charge",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "original-clothes-remain-free-and-restore-sleeves",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "owned-clothes-reusable-for-free",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "wallet-and-wardrobe-restore-from-same-persisted-checkpoint",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "shared-NPC-materials-skin-and-face-preserved",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "old-or-invalid-wardrobe-retains-default-clothes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "shopping-does-not-pause-city",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-closes-shopping-and-restores-controls",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "walking-closes-preview-without-blocking-controls",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "leaving-store-closes-preview",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "jump-and-grounding-still-work",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Tideline-is-a-single-Places-destination",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "store-lighting-follows-night-cycle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "errors=0",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

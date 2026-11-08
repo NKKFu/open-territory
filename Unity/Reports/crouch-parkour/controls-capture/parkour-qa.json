@@ -1,0 +1,159 @@
+{
+    "passed": true,
+    "captures": true,
+    "checks": [
+        {
+            "name": "C-is-crouch-key",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "C-still-is-vehicle-right-signal",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crouch-poll-toggles-once",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crouch-shortens-real-capsule",
+            "passed": true,
+            "value": 1.7000000476837159
+        },
+        {
+            "name": "crouch-keeps-feet-origin",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crouch-lowers-hips",
+            "passed": true,
+            "value": 0.38934454321861269
+        },
+        {
+            "name": "crouch-lowers-head",
+            "passed": true,
+            "value": 1.6570281982421876
+        },
+        {
+            "name": "crouch-head-fits-capsule",
+            "passed": true,
+            "value": 1.6570281982421876
+        },
+        {
+            "name": "crouch-camera-follows-posture",
+            "passed": true,
+            "value": 0.74200439453125
+        },
+        {
+            "name": "crouch-can-walk",
+            "passed": true,
+            "value": 1.3805384635925294
+        },
+        {
+            "name": "Shift-keeps-crouch-speed",
+            "passed": true,
+            "value": 1.3500196933746338
+        },
+        {
+            "name": "map-C-does-not-toggle-crouch",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crouch-keeps-aim-available",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crouch-aim-head-clears-roof",
+            "passed": true,
+            "value": 1.61370849609375
+        },
+        {
+            "name": "Esc-freezes-crouch-and-camera",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "controls-explain-C-in-English",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "C-returns-to-standing",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "standing-posture-recovers",
+            "passed": true,
+            "value": 2.4936370849609377
+        },
+        {
+            "name": "crouch-enters-low-passage",
+            "passed": true,
+            "value": 2.215405225753784
+        },
+        {
+            "name": "crouch-body-clears-roof",
+            "passed": true,
+            "value": 1.545257568359375
+        },
+        {
+            "name": "low-roof-blocks-standing",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "low-roof-blocks-jump",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "standing-check-includes-head-above-capsule",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "leaving-passage-restores-standing",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "Space-stands-and-jumps-in-clear-space",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "touch-crouch-button-exists",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "touch-button-crouches",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "touch-button-stands",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crouch-camera-lens-clear",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "trials": [],
+    "errors": [],
+    "cameraFrames": []
+}

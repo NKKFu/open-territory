@@ -1,0 +1,49 @@
+{
+  "verifiedAtUtc": "2026-11-08T03:10:42.3207082Z",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\WindowsRelease\\BaiaDoSol.exe",
+  "passed": true,
+  "assemblySha256": "3813C228D554E1F31EE96B224FAB16BFAB5EF9E41C9E6539E349BFA32599952E",
+  "testedCurrentExecutable": true,
+  "checks": 172,
+  "metrics": [
+    {
+      "name": "hard-launch-produces-tyre-smoke",
+      "detail": "",
+      "passed": true,
+      "value": 62.0
+    },
+    {
+      "name": "W-accelerates-native-body",
+      "detail": "m/s after 3 s",
+      "passed": true,
+      "value": 25.20139503479004
+    },
+    {
+      "name": "hard-braking-produces-smoke-and-rubber",
+      "detail": "",
+      "passed": true,
+      "value": 44.0
+    },
+    {
+      "name": "hard-braking-produces-tyre-sound",
+      "detail": "",
+      "passed": true,
+      "value": 0.1008710116147995
+    },
+    {
+      "name": "six-second-straight-is-substantially-faster",
+      "detail": "m/s after 6 s",
+      "passed": true,
+      "value": 38.52479553222656
+    },
+    {
+      "name": "Esc-freezes-smoke-and-mark-fading",
+      "detail": "",
+      "passed": true,
+      "value": 0.0
+    }
+  ],
+  "runtimeErrors": [],
+  "drivingReport": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\vehicles\\native\\driving-qa.json",
+  "trafficReport": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\living-city\\native\\living-city-qa.json"
+}

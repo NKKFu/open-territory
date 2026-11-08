@@ -1,0 +1,23 @@
+var registry=UnityEngine.Object.FindFirstObjectByType<OpenTerritory.WorldRegistry>();
+var world=JsonUtility.FromJson<OpenTerritory.WorldData>(registry.manifest.text);
+var nodes=new System.Collections.Generic.Dictionary<int,Transform>();foreach(var n in registry.nodes)if(n.transform)nodes[n.id]=n.transform;
+var shop=UnityEngine.Object.FindFirstObjectByType<OpenTerritory.CityCarDealership>();
+var results=new System.Collections.Generic.List<object>();bool passed=true;
+for(int i=0;i<shop.displayCars.Length;i++) {
+    var display=shop.displayCars[i];string model=display.name.Contains("COMPACT")?"compacto":display.name.Contains("PICKUP")?"picape":display.name.Contains("ESTATE")?"perua":"sedã";
+    OpenTerritory.VehicleData data=null;foreach(var c in world.vehicles)if(c.kind=="car"&&c.model==model){data=c;break;}
+    var donor=nodes[data.id];var column=nodes[data.steeringWheel].parent.Find(OpenTerritory.CitySteeringWheel.ColumnName);
+    var hub=column.Find("Hub");var shroud=column.Find("Shroud");
+    var samples=new[]{donor.InverseTransformPoint(hub.TransformPoint(Vector3.zero)),donor.InverseTransformPoint(hub.TransformPoint(Vector3.forward)),donor.InverseTransformPoint(shroud.TransformPoint(Vector3.forward))};
+    var nearest=new[]{float.PositiveInfinity,float.PositiveInfinity,float.PositiveInfinity};
+    foreach(var f in shop.GetComponentsInChildren<MeshFilter>()) {
+        if(!f.name.StartsWith("Car "+i+" • "))continue;
+        foreach(var v in f.sharedMesh.vertices) {
+            var local=display.InverseTransformPoint(f.transform.TransformPoint(v));
+            for(int s=0;s<samples.Length;s++)nearest[s]=Mathf.Min(nearest[s],Vector3.Distance(samples[s],local));
+        }
+    }
+    bool ok=nearest[0]<.001f&&nearest[1]<.001f&&nearest[2]<.001f;passed&=ok;
+    results.Add(new{car=display.name,passed=ok,hubStartGap=nearest[0],hubEndGap=nearest[1],dashboardEndGap=nearest[2]});
+}
+return Newtonsoft.Json.JsonConvert.SerializeObject(new{passed=passed,cars=results});

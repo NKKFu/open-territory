@@ -1,0 +1,304 @@
+"""Rebuild the game's sound bank offline, preserving its CC0 field recordings.
+
+Deterministic 44.1 kHz PCM, layered transients and periodic, click-free beds.
+Run with Python + NumPy, SciPy and SoundFile; the player has no Python dependency.
+"""
+from pathlib import Path
+import hashlib
+import json
+import math
+import os
+import sys
+import wave
+
+sys.path.append(str(Path(os.environ.get('TEMP', '.')) / 'open-territory-map-trace-deps'))
+import numpy as np
+from ambient_recordings import prepare_recordings, metadata as recording_metadata
+from weapon_recordings import prepare_recordings as prepare_weapon_recordings, metadata as weapon_metadata
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / 'OpenTerritory/Assets/Resources/Audio'
+RATE = 44100
+TAU = 2 * np.pi
+entries = []
+recorded_entries = {}
+
+
+def clock(seconds):
+    return np.arange(round(seconds * RATE), dtype=np.float64) / RATE
+
+
+def rng(key):
+    return np.random.default_rng(int.from_bytes(hashlib.sha256(key.encode()).digest()[:8], 'little'))
+
+
+def noise(t, key, low=80, high=5000):
+    """Band-limited periodic noise, generated in the frequency domain."""
+    f = np.fft.rfftfreq(len(t), 1 / RATE)
+    random = rng(key)
+    shape = (f / np.maximum(f + low, 1)) ** 2 / (1 + (f / high) ** 4)
+    spectrum = (random.normal(size=len(f)) + 1j * random.normal(size=len(f))) * shape
+    spectrum[0] = 0
+    result = np.fft.irfft(spectrum, n=len(t))
+    return result / max(1e-9, np.sqrt(np.mean(result * result)))
+
+
+def tone(t, freq, decay=8):
+    return np.sin(TAU * freq * t) * np.exp(-t * decay)
+
+
+def pulse(t, start, length=.07):
+    return np.where(t >= start, np.exp(-np.maximum(0, t - start) / length), 0)
+
+
+def add(dst, value, at, gain=1):
+    start = round(at * RATE)
+    if start >= len(dst):
+        return
+    n = min(len(value), len(dst) - start)
+    dst[start:start + n] += value[:n] * gain
+
+
+def save(key, samples, category='effects', loop=False):
+    if key in recorded_entries:
+        entries.append(recorded_entries[key])
+        return
+    x = np.asarray(samples, dtype=np.float64)
+    x -= np.mean(x, axis=0)
+    if not loop:
+        fade_in = min(round(.002 * RATE), len(x) // 3)
+        fade_out = min(round(.025 * RATE), len(x) // 3)
+        ramp = np.ones(len(x))
+        ramp[:fade_in] = np.linspace(0, 1, fade_in)
+        ramp[-fade_out:] = np.linspace(1, 0, fade_out)
+        x *= ramp if x.ndim == 1 else ramp[:, None]
+    peak = float(np.max(np.abs(x)))
+    if peak > .86:
+        x *= .86 / peak
+    pcm = np.round(x * 32767).astype('<i2')
+    OUT.mkdir(parents=True, exist_ok=True)
+    with wave.open(str(OUT / (key + '.wav')), 'wb') as w:
+        w.setnchannels(1 if x.ndim == 1 else x.shape[1])
+        w.setsampwidth(2)
+        w.setframerate(RATE)
+        w.writeframes(pcm.tobytes())
+    entries.append(dict(id=key, category=category, loop=loop, seconds=len(x) / RATE,
+                        channels=1 if x.ndim == 1 else x.shape[1],
+                        peak=round(float(np.max(np.abs(x))), 6),
+                        rms=round(float(np.sqrt(np.mean(x * x))), 6),
+                        seam=round(float(np.max(np.abs(x[-1] - x[0]))), 6)))
+
+
+def ambience():
+    t = clock(18)
+    for kind, lo, hi in [('sea', 65, 1800), ('wind', 100, 1100), ('rain', 320, 8500), ('leaves', 1800, 7500)]:
+        channels = []
+        for side in range(2):
+            n = noise(t, kind + str(side), lo, hi)
+            if kind == 'sea':
+                swell = (.5 + .5 * np.sin(TAU * 3 * t / 18 + side * .6)) ** 2
+                foam = noise(t, 'foam' + str(side), 1500, 6000)
+                value = n * (.06 + .15 * swell) + foam * .035 * swell ** 2
+            elif kind == 'wind':
+                gust = .5 + .23 * np.sin(TAU * t / 18) + .22 * np.sin(TAU * 4 * t / 18 + side)
+                value = n * .12 * gust
+            elif kind == 'rain':
+                value = n * (.13 + .025 * np.sin(TAU * 5 * t / 18 + side))
+                for at in rng(kind + str(side)).uniform(0, 17.8, 115):
+                    dt = t - at
+                    value += .035 * np.sin(TAU * 1900 * dt) * pulse(t, at, .009)
+            else:
+                value = n * (.04 + .04 * np.sin(TAU * 2 * t / 18 + side) ** 4)
+            channels.append(value)
+        save(kind, np.column_stack(channels), 'ambience', True)
+    t = clock(12)
+    night = noise(t, 'night', 2400, 6500) * .055 * (.5 + .5 * np.sin(TAU * 43 * t / 12)) ** 12
+    save('night', np.column_stack((night, np.roll(night, 6247))), 'ambience', True)
+    t = clock(8)
+    water = noise(t, 'fountain', 450, 5200) * .15
+    water += np.sin(TAU * (740 * t + 28 * np.sin(TAU * 3 * t / 8))) * .012
+    save('fountain', water, 'ambience', True)
+
+
+def steps():
+    for surface in ('concrete', 'gravel', 'grass', 'wood'):
+        for variant in range(4):
+            key = f'footstep-{surface}-{variant}'
+            t = clock(.32)
+            random = rng(key)
+            f = random.uniform(74, 108)
+            heel = tone(t, f, 38) * .43 + tone(t, f * 2.4, 65) * .12
+            contact = noise(t, key, 500, 5800) * (pulse(t, .006, .022) + pulse(t, .052, .029) * .35)
+            if surface == 'concrete':
+                value = heel + contact * .11
+            elif surface == 'grass':
+                value = heel * .52 + contact * .07 + noise(t, key + 'brush', 1100, 4000) * pulse(t, .038, .065) * .13
+            elif surface == 'gravel':
+                crunch = sum(pulse(t, float(at), .006) for at in random.uniform(.025, .15, 11))
+                value = heel * .68 + contact * .07 + noise(t, key + 'stones', 900, 7000) * crunch * .065
+            else:
+                value = heel * .72 + tone(t, f * 1.9, 17) * .24 + tone(t, f * 3.7, 31) * .12 + contact * .08
+            save(key, value)
+    for variant in range(3):
+        t = clock(.6)
+        save('impact-' + str(variant), tone(t, 58 + variant * 11, 17) * .48 + noise(t, 'impact' + str(variant), 250, 3700) * np.exp(-t * 29) * .26)
+
+
+def machines():
+    t = clock(4)
+    for kind, fundamental in [('engine-car', 40), ('engine-bus', 26), ('engine-boat', 34), ('engine-drone', 160)]:
+        motor = np.zeros(len(t))
+        for harmonic in range(1, 15):
+            motor += np.sin(TAU * fundamental * harmonic * t + .32 * np.sin(TAU * 7 * t)) * (.21 / harmonic ** .85)
+        exhaust = noise(t, kind, 50, 1100 if kind != 'engine-drone' else 6000)
+        motor += exhaust * (.035 if kind != 'engine-drone' else .065) * (.65 + .35 * np.sin(TAU * fundamental * t))
+        save(kind, motor, 'effects', True)
+    t = clock(4)
+    save('tire', noise(t, 'tire', 200, 2400) * .14, loop=True)
+    save('skid', noise(t, 'skid', 1600, 5800) * .11 + np.sin(TAU * (890 * t + 4 * np.sin(TAU * 11 * t))) * .075, loop=True)
+    save('bicycle', noise(t, 'chain', 1200, 5600) * (.035 + .045 * np.sin(TAU * 12 * t) ** 14), loop=True)
+    save('wake', noise(t, 'wake', 400, 5000) * (.1 + .025 * np.sin(TAU * 3 * t / 4)), loop=True)
+    t = clock(6)
+    # Integrating the frequency keeps phase continuous throughout each wail.
+    phase = TAU * (660 * t - 210 * 6 / TAU * np.cos(TAU * t / 6))
+    save('siren', .25 * np.sin(phase) + .065 * np.sin(phase * 3), loop=True)
+    t = clock(3)
+    save('projector', noise(t, 'projector', 180, 2200) * .06 + .07 * np.sin(TAU * 96 * t) * np.sin(TAU * 24 * t) ** 8, loop=True)
+    save('winch', noise(t, 'winch', 140, 2600) * .1 + .10 * np.sin(TAU * 112 * t) + .035 * np.sin(TAU * 224 * t), loop=True)
+
+
+def effects():
+    for kind in ('splash', 'stroke', 'water', 'mooring'):
+        for variant in range(3):
+            t = clock(.8 if kind != 'stroke' else .5)
+            key = kind + '-' + str(variant)
+            liquid = noise(t, key, 250, 6200) * np.exp(-t * (6 if kind != 'stroke' else 10)) * .24
+            liquid += np.sin(TAU * (350 * t - 100 * t * t)) * np.exp(-t * 12) * .08
+            if kind == 'mooring':
+                liquid = tone(t, 140, 22) * .3 + noise(t, key, 1000, 5000) * pulse(t, .08, .09) * .09
+            save(key, liquid)
+    t = clock(.7)
+    hinge = .09 * np.sin(TAU * (310 * t + 8 * np.sin(t * 17))) * pulse(t, .03, .24)
+    save('door', tone(t, 115, 29) * .33 + noise(t, 'door', 800, 4000) * np.exp(-t * 58) * .12 + hinge)
+    save('door-close', tone(t, 84, 22) * .48 + noise(t, 'latch', 1500, 6000) * (pulse(t, .02, .012) * .14 + pulse(t, .11, .012) * .1))
+    save('door-slide', noise(t, 'slide', 300, 2600) * .11 * np.sin(np.pi * t / .7) ** 2 + tone(t, 130, 40) * .17)
+    save('bus-door', noise(t, 'air', 1000, 6700) * pulse(t, .06, .16) * .22 + tone(t, 105, 40) * .25)
+    t = clock(.55)
+    save('horn', (.22 * np.sin(TAU * 350 * t) + .19 * np.sin(TAU * 440 * t) + .07 * np.sin(TAU * 700 * t)) * np.minimum(1, t * 80) * np.minimum(1, (.55 - t) * 30))
+    t = clock(1.2)
+    bell = sum(tone(t, f, d) * g for f, d, g in [(1480, 4, .3), (2220, 7, .12), (3500, 11, .07)])
+    save('bell', bell)
+    t = clock(1.6)
+    ring = (np.sin(TAU * 660 * t) + np.sin(TAU * 880 * t)) * .17
+    gate = (np.sin(TAU * 25 * t) ** 2) * ((t < .35) | ((t > .52) & (t < .88)))
+    save('phone', ring * gate)
+    for kind in ('shot', 'carbine', 'pulse'):
+        t = clock(.85)
+        body = noise(t, kind, 160, 11000) * np.exp(-t * 48) * .57 + tone(t, 65, 22) * .3
+        if kind == 'pulse':
+            body = np.sin(TAU * (950 * t - 800 * t * t)) * np.exp(-t * 15) * .32 + body * .3
+        elif kind == 'carbine':
+            body *= 1.15
+        result = body.copy()
+        add(result, body, .069, .15)
+        add(result, body, .137, .07)
+        save(kind, result)
+    t = clock(.55)
+    for key, freq in [('metal', 1630), ('plate', 920), ('empty', 2200), ('reload-ready', 1300)]:
+        save(key, tone(t, freq, 17) * .22 + tone(t, freq * 1.417, 23) * .12 + noise(t, key, 1800, 6500) * np.exp(-t * 120) * .1)
+    reload = noise(t, 'reload', 1100, 6500) * (pulse(t, .015, .018) * .14 + pulse(t, .19, .04) * .11 + pulse(t, .38, .016) * .2)
+    save('reload', reload)
+    for key in ('jump', 'land', 'shove', 'hurt', 'pet', 'brake', 'drone-start', 'film-reel', 'harbor-winch'):
+        if key in ('land', 'hurt', 'shove'):
+            val = tone(t, 76 if key == 'land' else 110, 22) * .38 + noise(t, key, 400, 4000) * np.exp(-t * 30) * .11
+        elif key == 'jump':
+            val = noise(t, key, 700, 4200) * pulse(t, .01, .06) * .09
+        else:
+            val = noise(t, key, 500, 4200) * np.exp(-t * 12) * .12 + tone(t, 145, 15) * .1
+        save(key, val)
+    for key, frequencies in [('register', [880, 1320]), ('hack', [1100, 1650])]:
+        result = np.zeros(len(t))
+        for i, f in enumerate(frequencies):
+            add(result, tone(t, f, 18) * .17 + tone(t, f * 2, 28) * .035, i * .09)
+        save(key, result)
+    t = clock(1.5)
+    applause = np.zeros(len(t))
+    for i, at in enumerate(rng('claps').uniform(0, 1.3, 30)):
+        applause += noise(t, 'clap' + str(i), 700, 7500) * pulse(t, at, .014) * .075
+    save('applause', applause)
+    for variant in range(4):
+        t = clock(1.15)
+        syllable = np.sin(np.pi * np.clip((t - .04) / .45, 0, 1)) ** 2 + .6 * np.sin(np.pi * np.clip((t - .55) / .3, 0, 1)) ** 2
+        freq = 1850 + variant * 180
+        gull = np.sin(TAU * (freq * t - 390 * t * t) + .8 * np.sin(TAU * 29 * t)) * syllable
+        save('bird-' + str(variant), gull * .19 + noise(t, 'gull' + str(variant), 1700, 5000) * syllable * .035, 'ambience')
+    t = clock(2)
+    save('radio', noise(t, 'radio-click', 900, 3800) * pulse(t, .02, .045) * .12)
+
+
+def pluck(freq, seconds=1.4, soft=False):
+    t = clock(seconds)
+    value = np.zeros(len(t))
+    for h in range(1, 17):
+        # Inharmonic strings, fast decay of high partials and a soft pick transient.
+        value += np.sin(TAU * freq * h * (1 + .000035 * h * h) * t) * np.exp(-t * (2.5 + h * .54)) * (np.sin(h * 1.12) / h ** (1.6 if soft else 1.2))
+    return value * .36 * np.minimum(1, t * 600)
+
+
+def music():
+    beat = .54
+    seconds = beat * 32
+    chords = [[146.83, 220, 293.66, 369.99, 440], [196, 246.94, 293.66, 392, 493.88], [164.81, 246.94, 329.63, 392, 493.88], [130.81, 196, 261.63, 329.63, 392]]
+    for track in range(4):
+        x = np.zeros(len(clock(seconds)))
+        for b in range(32):
+            chord = chords[(b // 4) % 4]
+            if track in (0, 1):
+                if b % 2 == 0:
+                    for s, f in enumerate(chord):
+                        add(x, pluck(f), b * beat + s * .012, .66 if b % 4 == 0 else .4)
+                add(x, pluck(chord[0] / 2, 1, True), b * beat, .42)
+                if b % 2:
+                    add(x, pluck(chord[(b * 3) % len(chord)] * 2, .8, True), b * beat + beat * .5, .23)
+            elif track == 2:
+                add(x, pluck(chord[b % 5], 1.8, True), b * beat, .8)
+                add(x, pluck(chord[0] / 2, 1.4, True), b * beat, .45)
+            else:
+                add(x, pluck(chord[(b * 2) % 5] * 2, 1.8, True), b * beat, .6)
+                add(x, pluck(chord[b % 5], 1.8, True), b * beat + .27, .3)
+            if track != 0:
+                t = clock(.22)
+                percussion = tone(t, 62, 35) * .15 if b % 2 == 0 else noise(t, 'snare' + str(b), 1800, 6500) * np.exp(-t * 45) * .045
+                add(x, percussion, b * beat)
+        # Fold natural string and room tails back over the loop boundary.
+        tail = pluck(chords[-1][-1] * (2 if track == 3 else 1)) * .12
+        add(x, tail, 0)
+        delay = np.roll(x, round(.071 * RATE)) * .075 + np.roll(x, round(.113 * RATE)) * .045
+        x += delay
+        # Distribute a boundary correction only over a short quiet join, avoiding clicks.
+        count = round(.018 * RATE)
+        seam = x[-1] - x[0]
+        x[-count:] -= np.linspace(0, seam, count)
+        save('music-street' if track == 0 else 'radio-' + str(track - 1), x, 'music', True)
+
+
+if __name__ == '__main__':
+    # Validate and prepare all cached recordings before writing any bank assets.
+    # Missing sources fail explicitly instead of restoring synthetic ambience.
+    recorded_entries = prepare_recordings()
+    recorded_entries.update(prepare_weapon_recordings())
+    ambience()
+    steps()
+    machines()
+    effects()
+    music()
+    authored = {entry['id'] for entry in entries}
+    entries.extend(entry for key, entry in recorded_entries.items() if key not in authored)
+    manifest = dict(**recording_metadata(), clips=entries)
+    manifest.update(weapon_metadata())
+    manifest['authorship'] = 'Environmental ambience and firearm recordings: third-party CC0. Music, Pulsor and other sound design: original Open Territory.'
+    (OUT / 'bank.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
+    report = ROOT / 'Reports/audio'
+    report.mkdir(parents=True, exist_ok=True)
+    (report / 'bank-analysis.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
+    print(f'Authored {len(entries)} clips; {sum((OUT / (e["id"] + ".wav")).stat().st_size for e in entries) / 1048576:.1f} MiB PCM.')

@@ -1,0 +1,16 @@
+{
+    "passed": false,
+    "routeSamples": 0,
+    "graphicsApi": "Direct3D12",
+    "unityVersion": "6000.3.27f1",
+    "checks": [
+        {
+            "name": "native-park-and-city-ready",
+            "detail": "",
+            "passed": false
+        }
+    ],
+    "errors": [
+        "InvalidOperationException: Missing local weapon asset: pulse\nOpenTerritory.CityWeaponVisual..ctor (OpenTerritory.CityWeaponDefinition definition, UnityEngine.Transform hand) (at <9af98ac668cf41439e33257342ef6938>:0)\nOpenTerritory.CityCombat.BuildWeapons () (at <9af98ac668cf41439e33257342ef6938>:0)\nOpenTerritory.CityCombat.Initialize (OpenTerritory.CityContext context) (at <9af98ac668cf41439e33257342ef6938>:0)\nOpenTerritory.CityContext.Awake () (at <9af98ac668cf41439e33257342ef6938>:0)\n"
+    ]
+}

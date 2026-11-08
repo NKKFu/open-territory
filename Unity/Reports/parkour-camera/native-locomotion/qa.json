@@ -1,0 +1,165 @@
+{
+    "passed": true,
+    "checks": [
+        {
+            "name": "walk-speed",
+            "passed": true,
+            "value": 2.649989604949951
+        },
+        {
+            "name": "diagonal-normalized",
+            "passed": true,
+            "value": 2.650010108947754
+        },
+        {
+            "name": "sprint-speed",
+            "passed": true,
+            "value": 9.199947357177735
+        },
+        {
+            "name": "braking-stops",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "strafe-does-not-steer-camera",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "reverse-follows-camera",
+            "passed": true,
+            "value": 2.467160224914551
+        },
+        {
+            "name": "manual-orbit",
+            "passed": true,
+            "value": 64.95661163330078
+        },
+        {
+            "name": "move-uses-new-orbit",
+            "passed": true,
+            "value": 1.9862663745880128
+        },
+        {
+            "name": "jump-leaves-ground",
+            "passed": true,
+            "value": 0.4642333984375
+        },
+        {
+            "name": "jump-lands",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "articulated-pose-valid",
+            "passed": true,
+            "value": 201.0089111328125
+        },
+        {
+            "name": "camera-wall-retracts",
+            "passed": true,
+            "value": 1.6941272020339966
+        },
+        {
+            "name": "camera-restores-distance",
+            "passed": true,
+            "value": 2.595900774002075
+        },
+        {
+            "name": "exploration-offset-shoulder",
+            "passed": true,
+            "value": 0.3592953681945801
+        },
+        {
+            "name": "drawing-weapon-preserves-camera",
+            "passed": true,
+            "value": 2.5997304916381838
+        },
+        {
+            "name": "aim-closes-over-shoulder",
+            "passed": true,
+            "value": 0.2997215986251831
+        },
+        {
+            "name": "aim-keeps-entire-head-visible",
+            "passed": true,
+            "value": 0.7346645593643189
+        },
+        {
+            "name": "aim-hand-clears-reticle",
+            "passed": true,
+            "value": 0.41278091073036196
+        },
+        {
+            "name": "aim-does-not-tilt-view",
+            "passed": true,
+            "value": 0.00018310546875
+        },
+        {
+            "name": "stationary-aim-aligns-body",
+            "passed": true,
+            "value": 0.000030517578125
+        },
+        {
+            "name": "reticle-and-target-aligned",
+            "passed": true,
+            "value": 0.000005369713562686229
+        },
+        {
+            "name": "aim-strafe-speed-limited",
+            "passed": true,
+            "value": 1.7499994039535523
+        },
+        {
+            "name": "aim-strafe-retains-facing",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "aim-backstep",
+            "passed": true,
+            "value": 1.3500008583068848
+        },
+        {
+            "name": "aim-fire",
+            "passed": true,
+            "value": 1.0
+        },
+        {
+            "name": "shot-hits-reticle-target",
+            "passed": true,
+            "value": 0.000001922192041092785
+        },
+        {
+            "name": "reload-preserves-aim-camera",
+            "passed": true,
+            "value": 2.1500000953674318
+        },
+        {
+            "name": "aim-camera-stays-in-front-of-wall",
+            "passed": true,
+            "value": 1.0912173986434937
+        },
+        {
+            "name": "aim-camera-recovers-after-wall",
+            "passed": true,
+            "value": 2.140069007873535
+        },
+        {
+            "name": "rapid-aim-toggle-settles",
+            "passed": true,
+            "value": 0.9997968077659607
+        },
+        {
+            "name": "aim-exit-restores-framing",
+            "passed": true,
+            "value": 2.5598952770233156
+        },
+        {
+            "name": "settings-pause-preserved",
+            "passed": true,
+            "value": 0.0
+        }
+    ]
+}

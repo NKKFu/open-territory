@@ -1,0 +1,103 @@
+{
+  "completedUtc": "2026-11-08T07:58:03.049746+00:00",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\MatteSurfaces-Clean-20261108-0752\\BaiaDoSol.exe",
+  "build": {
+    "result": "Succeeded",
+    "fullBuild": true,
+    "assemblySha256": "080107d824d68208f24d13765d25173af93055973d497896bbe42c843f6c17aa",
+    "shaderSha256": "4c19647ef8f365893a922769e81e98061879b8203ed73d368c3fbc00c40df937",
+    "sceneSha256": "7db32db20f468fe717cb790c24c5babe47696fbfd58598349e9638aeb8f3e4c3"
+  },
+  "change": {
+    "file": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Assets\\Shaders\\CitySurface.shader",
+    "asphalt": {
+      "drySmoothnessCap": 0.025,
+      "wetTarget": 0.18
+    },
+    "soilGravelSand": {
+      "drySmoothnessCap": 0.01,
+      "wetTarget": 0.04
+    },
+    "metallic": 0,
+    "rainDarkeningPreserved": true
+  },
+  "validation": {
+    "materialComparison": {
+      "captures": 8,
+      "processExitCode": 0,
+      "headlights": 2,
+      "headlightIntensity": 2.5,
+      "baselineSmoothness": 0.15,
+      "wetness": [
+        0,
+        1
+      ]
+    },
+    "nativeRender": {
+      "passed": true,
+      "screenshots": 8,
+      "errors": 0
+    },
+    "nativeRenderExitCode": 0,
+    "nativeLighting": {
+      "passed": false,
+      "checks": 26,
+      "passedChecks": 19,
+      "failedChecks": [
+        {
+          "name": "all-interiors-use-authored-ceiling-panels",
+          "detail": "sources=964",
+          "passed": false
+        },
+        {
+          "name": "sources-clear-of-solid-walls-and-ceilings",
+          "detail": "failures=942",
+          "passed": false
+        },
+        {
+          "name": "interior-sources-within-rotated-floorplan",
+          "detail": "failures=168",
+          "passed": false
+        },
+        {
+          "name": "every-occupied-interior-lit-by-day",
+          "detail": "failures=1",
+          "passed": false
+        },
+        {
+          "name": "nearby-unoccupied-houses-stay-lit-by-day",
+          "detail": "failures=1",
+          "passed": false
+        },
+        {
+          "name": "window-glazing-uses-transparent-native-shader",
+          "detail": "",
+          "passed": false
+        },
+        {
+          "name": "windows-are-openings-through-rendered-walls",
+          "detail": "sealed=204",
+          "passed": false
+        }
+      ],
+      "runtimeErrors": [],
+      "processExitCode": 2
+    },
+    "nativeNightAndDayCaptures": 11,
+    "limitations": "The general lighting suite reports interior fixture and window geometry failures. These checks do not measure ground reflectivity. The material preview is a controlled shader scene, not a city frame. The legacy render probe uses old map coordinates; its car and rain screenshots show water and do not validate ground in those cases. Wet ground was visually compared in the controlled material scene. The actual city ground was reviewed in the lighting day/night captures.",
+    "nativeCityRainRuntime": {
+      "ready": true,
+      "runtimeErrors": 0,
+      "rain": 0.6200000047683716,
+      "exitCode": 0,
+      "screenshotProduced": false,
+      "note": "Native debug state confirmed rain in the actual spawn district, but ScreenCapture did not create an image in batch mode. This run is runtime evidence only."
+    },
+    "materialFixVerified": true
+  },
+  "isolatedBuildNotes": [
+    "Source and scene snapshot in a temporary project; main scene was not rebuilt.",
+    "Two int-to-uint casts in an unrelated Editor-only CitySidewalkBuilder were fixed in the temporary copy so it could compile; the original file was not edited.",
+    "The first cached build missed unity_builtin_extra and was rejected after native startup failed. A full CleanBuildCache build was generated and tested. See the retained build and native-default logs."
+  ]
+}

@@ -1,0 +1,162 @@
+using System;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+namespace OpenTerritory
+{
+    public sealed class CityUI : MonoBehaviour
+    {
+        [Serializable] public class Options
+        {
+            public int quality = 1;
+            public float fov = FixedFieldOfView, volume = 1, sensitivity = 1;
+            public float effects = 1, ambience = 1, music = .8f;
+            public bool invertY, touch;
+            public bool vignette = true;
+            public bool ambientOcclusion = true;
+            public bool sunRays = true;
+        }
+        public const float FixedFieldOfView = 73.2f;
+        CityContext ctx;
+        Options options = new Options();
+        CityCanvasUI view;
+        CityMenuMusic menuMusic;
+        public CityMapUI Map { get; private set; }
+        public bool MapOpen => Map && Map.IsOpen;
+        bool reviewRun;
+        int lookFinger = -1;
+        Vector2 lookPrevious;
+        static readonly string[] TouchEquipment = { "pulse", "sidearm", "carbine" };
+        public float Fov => FixedFieldOfView;
+        public float Sensitivity => options.sensitivity;
+        public bool InvertY => options.invertY;
+        public float Volume => options.volume;
+        public float EffectsVolume => options.effects;
+        public float AmbienceVolume => options.ambience;
+        public float MusicVolume => options.music;
+        public int Quality => options.quality;
+        public bool TouchEnabled => options.touch || Application.isMobilePlatform;
+        public bool PointerBlocked => Open || MapOpen || ctx && (ctx.Clothing && ctx.Clothing.IsOpen || ctx.FreePointerHeld || ctx.Emotes && ctx.Emotes.WheelOpen) || TouchEnabled && UnityEngine.Input.touchCount > 0 ||
+            Cursor.lockState != CursorLockMode.Locked && EventSystem.current && EventSystem.current.IsPointerOverGameObject();
+        public bool Open => ctx && ctx.Paused;
+
+        public void Initialize(CityContext context)
+        {
+            ctx = context; reviewRun = CityCommerce.IsReviewRun;
+            try { if (!reviewRun && PlayerPrefs.HasKey("baia.options")) JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString("baia.options"), options); }
+            catch { options = new Options(); }
+            options.fov = FixedFieldOfView;
+            options.volume = Mathf.Clamp01(options.volume);
+            options.effects = Mathf.Clamp01(options.effects); options.ambience = Mathf.Clamp01(options.ambience); options.music = Mathf.Clamp01(options.music);
+            options.sensitivity = Mathf.Clamp(options.sensitivity, .4f, 1.8f);
+            options.quality = Mathf.Clamp(options.quality, 0, 2);
+            menuMusic = gameObject.AddComponent<CityMenuMusic>();
+            menuMusic.Initialize(this);
+            view = gameObject.AddComponent<CityCanvasUI>();
+            view.Initialize(this, ctx, options);
+            Map = gameObject.AddComponent<CityMapUI>(); Map.Initialize(this, ctx);
+            Apply();
+        }
+        void Apply()
+        {
+            options.fov = FixedFieldOfView;
+            AudioListener.volume = options.volume;
+            QualitySettings.shadows = options.quality == 0 ? ShadowQuality.Disable : ShadowQuality.All;
+            QualitySettings.shadowDistance = options.quality == 0 ? 28 : options.quality == 1 ? 85 : 145;
+            QualitySettings.shadowResolution = options.quality == 2 ? ShadowResolution.High : ShadowResolution.Medium;
+            QualitySettings.antiAliasing = options.quality == 0 ? 0 : options.quality == 1 ? 2 : 4;
+            QualitySettings.pixelLightCount = options.quality == 2 ? 8 : 4;
+            if (ctx.Camera)
+            {
+                ctx.Camera.fieldOfView = Fov;
+                var ao = ctx.Camera.GetComponent<CityAmbientOcclusion>();
+                if (!ao) ao = ctx.Camera.gameObject.AddComponent<CityAmbientOcclusion>();
+                ao.enabled = options.ambientOcclusion && options.quality > 0;
+                var rays = ctx.Camera.GetComponent<CitySunRays>();
+                if (!rays) rays = ctx.Camera.gameObject.AddComponent<CitySunRays>();
+                rays.enabled = options.sunRays && options.quality > 0;
+            }
+            if (ctx.Follow) { ctx.Follow.FieldOfView = Fov; ctx.Follow.Sensitivity = Sensitivity; ctx.Follow.InvertY = InvertY; }
+        }
+        internal void Save()
+        {
+            Apply();
+            if (!reviewRun) { PlayerPrefs.SetString("baia.options", JsonUtility.ToJson(options)); PlayerPrefs.Save(); }
+        }
+        public void SetAudioMix(float master, float effects, float ambience, float music)
+        {
+            options.volume = Mathf.Clamp01(master); options.effects = Mathf.Clamp01(effects);
+            options.ambience = Mathf.Clamp01(ambience); options.music = Mathf.Clamp01(music); Save();
+            if (view) view.Bind(options);
+        }
+        internal void RestoreDefaults()
+        {
+            options = new Options(); Save(); view.Bind(options);
+        }
+        public void ToggleSettings() { if (ctx) SetSettings(!ctx.Paused); }
+        public void SetSettings(bool value)
+        {
+            if (!ctx) return;
+            if (value && MapOpen) Map.SetOpen(false);
+            if (value && ctx.Clothing) ctx.Clothing.Close();
+            ctx.Pause(value); ClearTouch();
+            if (menuMusic) menuMusic.SetOpen(value);
+            if (view) view.ShowSettings(value);
+        }
+        public void ToggleFullscreen()
+        {
+            Screen.fullScreenMode = Screen.fullScreen ? FullScreenMode.Windowed : FullScreenMode.FullScreenWindow;
+            if (view) view.RefreshFullscreen();
+        }
+        public void CycleTouchEquipment()
+        {
+            if (!ctx || !ctx.Combat) return;
+            ctx.Input.TouchWeapon = 0; ctx.Input.TouchHolster = false;
+            int current = Array.IndexOf(TouchEquipment, ctx.Combat.Equipped);
+            for (int next = current + 1; next < TouchEquipment.Length; next++)
+            {
+                if (!ctx.Combat.Owns(TouchEquipment[next])) continue;
+                ctx.Input.TouchWeapon = next + 1; return;
+            }
+            ctx.Input.TouchHolster = true;
+        }
+        internal void ClearTouch()
+        {
+            lookFinger = -1;
+            if (view) view.ReleaseControls();
+            var input = ctx.Input;
+            input.TouchMove = input.TouchLook = Vector2.zero;
+            input.TouchRun = input.TouchBrake = input.TouchHandbrake = input.TouchHack = input.TouchAim = input.TouchFire = false;
+            input.TouchJump = input.TouchInteract = input.TouchTalk = input.TouchDrone = input.TouchHorn = input.TouchReload = input.TouchHolster = input.TouchHackerToggle = input.TouchHackNext = false;
+            input.TouchHackPulse = false; input.TouchWeapon = 0;
+            input.TouchEmoteHeld = false; input.TouchEmotePointer = null;
+            input.TouchMap = false;
+            input.TouchCrouch = false;
+        }
+        void Update()
+        {
+            if (!ctx || !ctx.Ready) return;
+            if (ctx.Input.Pause) ToggleSettings();
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Return) && (UnityEngine.Input.GetKey(KeyCode.LeftAlt) || UnityEngine.Input.GetKey(KeyCode.RightAlt))) ToggleFullscreen();
+            if (view) view.SetTouchVisible(TouchEnabled && !Open && !MapOpen);
+            if (Open || MapOpen || !TouchEnabled) return;
+            foreach (Touch touch in UnityEngine.Input.touches)
+            {
+                bool ended = touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled;
+                if (touch.fingerId == lookFinger)
+                {
+                    if (ended) lookFinger = -1;
+                    else { ctx.Input.TouchLook += (touch.position - lookPrevious) * .15f; lookPrevious = touch.position; }
+                }
+                else if (!ended && touch.phase == TouchPhase.Began && lookFinger < 0 && touch.position.x > Screen.width * .36f &&
+                    !(EventSystem.current && EventSystem.current.IsPointerOverGameObject(touch.fingerId)))
+                { lookFinger = touch.fingerId; lookPrevious = touch.position; }
+            }
+        }
+        void OnApplicationFocus(bool focused)
+        {
+            // Losing focus must never open or close settings, or retain held touch actions.
+            if (!focused && ctx) ClearTouch();
+        }
+    }
+}

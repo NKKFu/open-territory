@@ -1,0 +1,67 @@
+{
+  "recordedAtUtc": "2026-11-08T09:46:03.9012105Z",
+  "build": {
+    "result": "Succeeded",
+    "output": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CarDealership-20261108-Release\\BaiaDoSol.exe",
+    "buildType": "Full",
+    "startedUtc": "2026-11-08T09:44:26.7454121Z",
+    "endedUtc": "2026-11-08T09:45:06.5377124Z",
+    "errors": 0,
+    "warnings": 0,
+    "bytes": 1599068934,
+    "options": "StrictMode, DetailedBuildReport",
+    "sceneSha256": "9117DB4B6AE493FBDC09EFA6275CC5C3718345C5380B173182AD065F13D846B5",
+    "editorRuntimeAssemblySha256": "42AF14FA1D44A81E2032B59970D660F6444185AA9E786878476637087ED633E6",
+    "assemblySha256": "D8550DD8C0E4EFF21078E91A2435CE2CB4378B8BE1B7A409440E1A45D8FA043E"
+  },
+  "currentSceneSha256": "9117DB4B6AE493FBDC09EFA6275CC5C3718345C5380B173182AD065F13D846B5",
+  "sources": [
+    {
+      "path": "Assets/Editor/CityCarDealershipBuilder.cs",
+      "sha256": "7D7F85A3C3D4184E2F0BA2756247A06C253709011B0D1CD8B0EFEDCD4E9F6D55",
+      "modifiedUtc": "2026-11-08T09:26:50.9564939Z"
+    },
+    {
+      "path": "Assets/Editor/CityCarDealershipBuildJob.cs",
+      "sha256": "F31D0DB433CDAF5025D31E477F30DF354ECF6416F36A5C3948CA1B74C07BD540",
+      "modifiedUtc": "2026-11-08T09:28:57.3545415Z"
+    },
+    {
+      "path": "Assets/Scripts/World/CityCarDealership.cs",
+      "sha256": "AB8C0F904EC6085FB0E5503D9092A9A7F5FEAF2D8B0831FD32224DA119AB92CC",
+      "modifiedUtc": "2026-11-08T09:26:50.9564939Z"
+    },
+    {
+      "path": "Assets/Scripts/World/CityCarDealershipProbe.cs",
+      "sha256": "4DFFE6FC6E77A92D8C8310D3C8D8500D9993C01A3D3592020287E85344717E2C",
+      "modifiedUtc": "2026-11-08T09:41:33.3292917Z"
+    },
+    {
+      "path": "Assets/Scripts/Core/CityContext.cs",
+      "sha256": "5DD744EA2A50C521AC6DD93825CF9FEC14AFD4DF4A2A2B9662276F09B3C49C1D",
+      "modifiedUtc": "2026-11-08T09:15:09.8642197Z"
+    },
+    {
+      "path": "Assets/Scripts/UI/CityMapUI.cs",
+      "sha256": "442B06FE40E98F004E2B0D3AF9254F9F3D4954DDB13E3BC910448ED08FF373F7",
+      "modifiedUtc": "2026-11-08T09:17:02.0118989Z"
+    }
+  ],
+  "resourcePrefabs": [
+    {
+      "path": "Unity/OpenTerritory/Assets/Resources/Weapons/pulse.prefab",
+      "sha256": "81BCDF505D70CDC4C695E5E19777721E6EB185FA14AA72F76B160F1F75138135",
+      "modifiedUtc": "2026-11-08T09:33:56.7514098Z"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Resources/Weapons/sidearm.prefab",
+      "sha256": "02B88F568863873908380B313E56EFBABD5E861C9490F110B373E818126FEA55",
+      "modifiedUtc": "2026-11-08T09:33:56.3796665Z"
+    },
+    {
+      "path": "Unity/OpenTerritory/Assets/Resources/Weapons/carbine.prefab",
+      "sha256": "949E74976CAE98794915ECCACA174945897E2F7199A9A7C14D422CDCEB86E0A4",
+      "modifiedUtc": "2026-11-08T09:33:56.5642576Z"
+    }
+  ]
+}

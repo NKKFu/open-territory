@@ -1,0 +1,880 @@
+{
+    "passed": false,
+    "completed": true,
+    "development": true,
+    "optimizedExpected": true,
+    "allocationCounterAvailable": false,
+    "label": "optimized",
+    "unity": "6000.3.27f1",
+    "layout": "marin-reference-v2",
+    "cpu": "AMD Ryzen 9 7900X 12-Core Processor ",
+    "gpu": "AMD Radeon RX 9070",
+    "graphicsApi": "Direct3D11",
+    "operatingSystem": "Windows 11  (10.0.26300)",
+    "startedUtc": "2026-11-08T03:38:40.4933417Z",
+    "width": 1280,
+    "height": 720,
+    "quality": 1,
+    "msaa": 2,
+    "vSync": 0,
+    "targetFrameRate": -1,
+    "navigationNodes": 11316,
+    "poolBefore": 72,
+    "poolAfter": 72,
+    "phases": [
+        {
+            "name": "city-street",
+            "frames": 1173,
+            "residents": 24,
+            "vehicles": 10,
+            "frameMs": {
+                "available": true,
+                "samples": 1173,
+                "mean": 8.52343495311168,
+                "median": 8.2193,
+                "p95": 11.6194,
+                "p99": 16.673,
+                "maximum": 23.8425,
+                "total": 9997.9892
+            },
+            "mainThreadMs": {
+                "available": true,
+                "samples": 1173,
+                "mean": 8.514733140664962,
+                "median": 8.337299999999999,
+                "p95": 11.489799999999999,
+                "p99": 16.485799999999999,
+                "maximum": 22.566399999999999,
+                "total": 9987.781974
+            },
+            "renderThreadMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gpuMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gcBytes": {
+                "available": true,
+                "samples": 1173,
+                "mean": 7374.426257459506,
+                "median": 3696.0,
+                "p95": 56640.0,
+                "p99": 58420.0,
+                "maximum": 60580.0,
+                "total": 8650202.0
+            },
+            "usedMemoryMiB": {
+                "available": true,
+                "samples": 1173,
+                "mean": 2910.8535569273095,
+                "median": 2910.5009336471558,
+                "p95": 2914.131724357605,
+                "p99": 2914.4805936813354,
+                "maximum": 2914.5296964645386,
+                "total": 3414431.222275734
+            },
+            "drawCalls": {
+                "available": true,
+                "samples": 1173,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        },
+        {
+            "name": "destruction-stress",
+            "frames": 16,
+            "residents": 24,
+            "vehicles": 10,
+            "frameMs": {
+                "available": true,
+                "samples": 16,
+                "mean": 14.10119375,
+                "median": 13.5141,
+                "p95": 19.949,
+                "p99": 19.949,
+                "maximum": 19.949,
+                "total": 225.6191
+            },
+            "mainThreadMs": {
+                "available": true,
+                "samples": 16,
+                "mean": 13.034637499999999,
+                "median": 12.908199999999999,
+                "p95": 18.2001,
+                "p99": 18.2001,
+                "maximum": 18.2001,
+                "total": 208.55419999999999
+            },
+            "renderThreadMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gpuMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gcBytes": {
+                "available": true,
+                "samples": 16,
+                "mean": 17960.5,
+                "median": 23892.0,
+                "p95": 26712.0,
+                "p99": 26712.0,
+                "maximum": 26712.0,
+                "total": 287368.0
+            },
+            "usedMemoryMiB": {
+                "available": true,
+                "samples": 16,
+                "mean": 2938.683144927025,
+                "median": 2938.858344078064,
+                "p95": 2939.069540977478,
+                "p99": 2939.069540977478,
+                "maximum": 2939.069540977478,
+                "total": 47018.9303188324
+            },
+            "drawCalls": {
+                "available": true,
+                "samples": 16,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        },
+        {
+            "name": "destruction-stress-tail",
+            "frames": 48,
+            "residents": 24,
+            "vehicles": 10,
+            "frameMs": {
+                "available": true,
+                "samples": 48,
+                "mean": 13.155668750000004,
+                "median": 12.8092,
+                "p95": 18.4346,
+                "p99": 19.9779,
+                "maximum": 19.9779,
+                "total": 631.4721000000002
+            },
+            "mainThreadMs": {
+                "available": true,
+                "samples": 48,
+                "mean": 13.259014583333335,
+                "median": 12.3567,
+                "p95": 18.0093,
+                "p99": 20.3016,
+                "maximum": 20.3016,
+                "total": 636.4327000000001
+            },
+            "renderThreadMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gpuMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gcBytes": {
+                "available": true,
+                "samples": 48,
+                "mean": 17476.416666666668,
+                "median": 23320.0,
+                "p95": 25908.0,
+                "p99": 25964.0,
+                "maximum": 25964.0,
+                "total": 838868.0
+            },
+            "usedMemoryMiB": {
+                "available": true,
+                "samples": 48,
+                "mean": 2940.069333513578,
+                "median": 2940.0680799484253,
+                "p95": 2940.5492811203003,
+                "p99": 2940.580538749695,
+                "maximum": 2940.580538749695,
+                "total": 141123.32800865174
+            },
+            "drawCalls": {
+                "available": true,
+                "samples": 48,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        }
+    ],
+    "operations": [
+        {
+            "name": "resident-routes",
+            "count": 144,
+            "succeeded": 141,
+            "milliseconds": {
+                "available": true,
+                "samples": 144,
+                "mean": 1.8194527777777776,
+                "median": 1.3223,
+                "p95": 4.1809,
+                "p99": 5.7199,
+                "maximum": 6.4207,
+                "total": 262.0012
+            },
+            "allocatedBytes": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        },
+        {
+            "name": "prop-destruction",
+            "count": 64,
+            "succeeded": 64,
+            "milliseconds": {
+                "available": true,
+                "samples": 64,
+                "mean": 2.46175625,
+                "median": 2.7025,
+                "p95": 4.6445,
+                "p99": 5.1248,
+                "maximum": 5.1248,
+                "total": 157.5524
+            },
+            "allocatedBytes": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        }
+    ],
+    "routes": [
+        {
+            "start": 17,
+            "goal": 503,
+            "count": 305,
+            "found": true,
+            "valid": true,
+            "signature": "B0100EAB"
+        },
+        {
+            "start": 1014,
+            "goal": 3222,
+            "count": 172,
+            "found": true,
+            "valid": true,
+            "signature": "216677D6"
+        },
+        {
+            "start": 2011,
+            "goal": 5941,
+            "count": 212,
+            "found": true,
+            "valid": true,
+            "signature": "A2DF7502"
+        },
+        {
+            "start": 3008,
+            "goal": 8660,
+            "count": 114,
+            "found": true,
+            "valid": true,
+            "signature": "E35D95A2"
+        },
+        {
+            "start": 4005,
+            "goal": 63,
+            "count": 465,
+            "found": true,
+            "valid": true,
+            "signature": "91348800"
+        },
+        {
+            "start": 5002,
+            "goal": 2782,
+            "count": 289,
+            "found": true,
+            "valid": true,
+            "signature": "E9B93349"
+        },
+        {
+            "start": 5999,
+            "goal": 5501,
+            "count": 185,
+            "found": true,
+            "valid": true,
+            "signature": "4B7E31D7"
+        },
+        {
+            "start": 6996,
+            "goal": 8220,
+            "count": 87,
+            "found": true,
+            "valid": true,
+            "signature": "EBB5475F"
+        },
+        {
+            "start": 7993,
+            "goal": 10939,
+            "count": 218,
+            "found": true,
+            "valid": true,
+            "signature": "E4C8EA49"
+        },
+        {
+            "start": 8990,
+            "goal": 2342,
+            "count": 112,
+            "found": true,
+            "valid": true,
+            "signature": "DC7318EA"
+        },
+        {
+            "start": 9987,
+            "goal": 5061,
+            "count": 0,
+            "found": false,
+            "valid": true,
+            "signature": "811C9DC5"
+        },
+        {
+            "start": 10984,
+            "goal": 7780,
+            "count": 83,
+            "found": true,
+            "valid": true,
+            "signature": "F6A4EEAB"
+        },
+        {
+            "start": 665,
+            "goal": 10499,
+            "count": 179,
+            "found": true,
+            "valid": true,
+            "signature": "1AFE2177"
+        },
+        {
+            "start": 1662,
+            "goal": 1902,
+            "count": 33,
+            "found": true,
+            "valid": true,
+            "signature": "091759F1"
+        },
+        {
+            "start": 2659,
+            "goal": 4621,
+            "count": 298,
+            "found": true,
+            "valid": true,
+            "signature": "688D4C10"
+        },
+        {
+            "start": 3656,
+            "goal": 7340,
+            "count": 322,
+            "found": true,
+            "valid": true,
+            "signature": "B43B845D"
+        },
+        {
+            "start": 4653,
+            "goal": 10059,
+            "count": 132,
+            "found": true,
+            "valid": true,
+            "signature": "DDECD5AA"
+        },
+        {
+            "start": 5650,
+            "goal": 1462,
+            "count": 189,
+            "found": true,
+            "valid": true,
+            "signature": "EAA8CFAD"
+        },
+        {
+            "start": 6647,
+            "goal": 4181,
+            "count": 298,
+            "found": true,
+            "valid": true,
+            "signature": "BF70A9B4"
+        },
+        {
+            "start": 7644,
+            "goal": 6900,
+            "count": 60,
+            "found": true,
+            "valid": true,
+            "signature": "A9CBA623"
+        },
+        {
+            "start": 8641,
+            "goal": 9619,
+            "count": 119,
+            "found": true,
+            "valid": true,
+            "signature": "370511D7"
+        },
+        {
+            "start": 9638,
+            "goal": 1022,
+            "count": 152,
+            "found": true,
+            "valid": true,
+            "signature": "8BCA0477"
+        },
+        {
+            "start": 10635,
+            "goal": 3741,
+            "count": 253,
+            "found": true,
+            "valid": true,
+            "signature": "201EA097"
+        },
+        {
+            "start": 316,
+            "goal": 6460,
+            "count": 261,
+            "found": true,
+            "valid": true,
+            "signature": "9CE64A9F"
+        },
+        {
+            "start": 1313,
+            "goal": 9179,
+            "count": 235,
+            "found": true,
+            "valid": true,
+            "signature": "CBD7C654"
+        },
+        {
+            "start": 2310,
+            "goal": 582,
+            "count": 257,
+            "found": true,
+            "valid": true,
+            "signature": "FA4096D6"
+        },
+        {
+            "start": 3307,
+            "goal": 3301,
+            "count": 7,
+            "found": true,
+            "valid": true,
+            "signature": "2CE0E0C3"
+        },
+        {
+            "start": 4304,
+            "goal": 6020,
+            "count": 421,
+            "found": true,
+            "valid": true,
+            "signature": "B7AB5929"
+        },
+        {
+            "start": 5301,
+            "goal": 8739,
+            "count": 61,
+            "found": true,
+            "valid": true,
+            "signature": "324555CD"
+        },
+        {
+            "start": 6298,
+            "goal": 142,
+            "count": 137,
+            "found": true,
+            "valid": true,
+            "signature": "1C24147C"
+        },
+        {
+            "start": 7295,
+            "goal": 2861,
+            "count": 82,
+            "found": true,
+            "valid": true,
+            "signature": "2F3F9D1C"
+        },
+        {
+            "start": 8292,
+            "goal": 5580,
+            "count": 25,
+            "found": true,
+            "valid": true,
+            "signature": "E77CD7F5"
+        },
+        {
+            "start": 9289,
+            "goal": 8299,
+            "count": 89,
+            "found": true,
+            "valid": true,
+            "signature": "614A7718"
+        },
+        {
+            "start": 10286,
+            "goal": 11018,
+            "count": 123,
+            "found": true,
+            "valid": true,
+            "signature": "47226C98"
+        },
+        {
+            "start": 11283,
+            "goal": 2421,
+            "count": 26,
+            "found": true,
+            "valid": true,
+            "signature": "9A0DAED1"
+        },
+        {
+            "start": 964,
+            "goal": 5140,
+            "count": 322,
+            "found": true,
+            "valid": true,
+            "signature": "2E37F92F"
+        },
+        {
+            "start": 1961,
+            "goal": 7859,
+            "count": 96,
+            "found": true,
+            "valid": true,
+            "signature": "E1A7FA59"
+        },
+        {
+            "start": 2958,
+            "goal": 10578,
+            "count": 35,
+            "found": true,
+            "valid": true,
+            "signature": "5F3D7640"
+        },
+        {
+            "start": 3955,
+            "goal": 1981,
+            "count": 185,
+            "found": true,
+            "valid": true,
+            "signature": "1D6EEE36"
+        },
+        {
+            "start": 4952,
+            "goal": 4700,
+            "count": 74,
+            "found": true,
+            "valid": true,
+            "signature": "25C03000"
+        },
+        {
+            "start": 5949,
+            "goal": 7419,
+            "count": 81,
+            "found": true,
+            "valid": true,
+            "signature": "D229E981"
+        },
+        {
+            "start": 6946,
+            "goal": 10138,
+            "count": 201,
+            "found": true,
+            "valid": true,
+            "signature": "32F1788B"
+        },
+        {
+            "start": 7943,
+            "goal": 1541,
+            "count": 72,
+            "found": true,
+            "valid": true,
+            "signature": "3021083C"
+        },
+        {
+            "start": 8940,
+            "goal": 4260,
+            "count": 417,
+            "found": true,
+            "valid": true,
+            "signature": "26292248"
+        },
+        {
+            "start": 9937,
+            "goal": 6979,
+            "count": 84,
+            "found": true,
+            "valid": true,
+            "signature": "A419857B"
+        },
+        {
+            "start": 10934,
+            "goal": 9698,
+            "count": 248,
+            "found": true,
+            "valid": true,
+            "signature": "5A354792"
+        },
+        {
+            "start": 615,
+            "goal": 1101,
+            "count": 121,
+            "found": true,
+            "valid": true,
+            "signature": "6C68946F"
+        },
+        {
+            "start": 1612,
+            "goal": 3820,
+            "count": 195,
+            "found": true,
+            "valid": true,
+            "signature": "7F6CE8D7"
+        }
+    ],
+    "checks": [
+        {
+            "name": "isolated-QA-storage",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "routes-follow-unblocked-real-edges",
+            "detail": "successes=141/144",
+            "passed": true
+        },
+        {
+            "name": "unreachable-goal-clears-old-path",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "valid-search-recovers-after-failure",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "city-population-is-running",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bullet-melee-vehicle-damage-still-break-props",
+            "detail": "broken=64",
+            "passed": true
+        },
+        {
+            "name": "debris-budget-is-bounded",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "debris-keeps-collision-filter-and-source-color",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "fixed-pool-reused-under-saturation",
+            "detail": "before=72 after=72",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-debris-and-expiry",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "debris-expires-after-resume",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "returned-pool-has-no-live-physics",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "only-explicit-performance-probe",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "errors=114",
+            "passed": false
+        }
+    ],
+    "errors": [
+        "Error: Cannot create FMOD::Sound instance for clip \"night\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"footstep-grass-0\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"footstep-grass-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"footstep-gravel-0\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"footstep-gravel-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"footstep-gravel-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"stroke-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"water-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"mooring-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"door-slide\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"horn\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"phone\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"plate\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"jump\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"hurt-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"land\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"register\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"radio\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"radio-0\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"pulse-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"bullet-wood-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"bullet-stone-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"shot\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"carbine-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"reload-sidearm\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"reload-carbine\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"reload-ready\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"empty\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"case-drop\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.Resources:Load<UnityEngine.AudioClip> (string)\nOpenTerritory.CityAudio:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:63)\nOpenTerritory.CitySystems:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:133)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Menu music missing: Music/bossa-antigua\nUnityEngine.Debug:LogError (object)\nOpenTerritory.CityMenuMusic:Initialize (OpenTerritory.CityUI) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/UI/CityMenuMusic.cs:31)\nOpenTerritory.CityUI:Initialize (OpenTerritory.CityContext) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/UI/CityUI.cs:53)\nOpenTerritory.CityContext:Awake () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:87)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-1\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n",
+        "Error: Cannot create FMOD::Sound instance for clip \"impact-2\" (FMOD error: Unsupported file or audio format. )\nUnityEngine.AudioSource:Play ()\nOpenTerritory.CityAudio:Play (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityAudio.cs:311)\nOpenTerritory.CitySystems:PlaySound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CitySystems.cs:442)\nOpenTerritory.CityContext:Sound (string,UnityEngine.Vector3,single) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityContext.cs:134)\nOpenTerritory.CityDestruction:Shatter (OpenTerritory.CityDestructible,UnityEngine.Vector3,UnityEngine.Vector3,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:161)\nOpenTerritory.CityDestructible:Apply (single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestructible.cs:29)\nOpenTerritory.CityDestruction:Hit (UnityEngine.Collider,single,UnityEngine.Vector3,UnityEngine.Vector3,OpenTerritory.CityPropDamageKind,bool) (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/World/CityDestruction.cs:118)\nOpenTerritory.CityPerformanceProbe/<MeasureDestruction>d__48:MoveNext () (at C:/Users/nelso/open-territory/Unity/OpenTerritory/Assets/Scripts/Core/CityPerformanceProbe.cs:282)\nUnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)\n"
+    ]
+}

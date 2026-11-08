@@ -1,0 +1,60 @@
+{
+  "verifiedAtUtc": "2026-11-07T20:52:04.1400086Z",
+  "passed": true,
+  "mode": "Unity 6000.3.27f1 Editor Play Mode, invoked via unityMCP",
+  "method": "Invoked the actual click handler and focus callbacks, settings API and component lifecycle. Observed Cursor.lockState, visibility, pause and audio state. No OS mouse or keyboard input was synthesized.",
+  "checks": [
+    {
+      "name": "focus-loss-releases-visible-cursor",
+      "passed": true
+    },
+    {
+      "name": "focus-return-waits-for-click",
+      "passed": true
+    },
+    {
+      "name": "click-handler-confines-visible-cursor",
+      "passed": true
+    },
+    {
+      "name": "settings-release-cursor-and-pause",
+      "passed": true
+    },
+    {
+      "name": "settings-click-does-not-capture",
+      "passed": true
+    },
+    {
+      "name": "resume-restores-simulation",
+      "passed": true
+    },
+    {
+      "name": "resume-restores-capture",
+      "passed": true
+    },
+    {
+      "name": "focus-loss-during-settings-requires-new-click",
+      "passed": true
+    },
+    {
+      "name": "next-click-captures-again",
+      "passed": true
+    },
+    {
+      "name": "disable-releases-cursor",
+      "passed": true
+    },
+    {
+      "name": "re-enable-waits-for-click",
+      "passed": true
+    }
+  ],
+  "consoleErrors": 0,
+  "playModeStopped": true,
+  "sceneDirtyAfter": false,
+  "executable": "Unity/OpenTerritory/Builds/WindowsRelease/BaiaDoSol.exe",
+  "assemblySha256": "7785F5072B6786B116BB5D0ABDDC8B619A2081EF32C10461FBCC206A1093657F",
+  "assemblyModifiedUtc": "2026-11-07T20:49:17.9431907Z",
+  "sourceSha256": "8647CB9EF681E87FEE66D266A9EDE6419E0C2199C8E37BD0D57C228F39B67336",
+  "limitations": "Checks ran in the Editor. A physical mouse click and Windows desktop confinement rectangle were not separately measured in the standalone executable."
+}

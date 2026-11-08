@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "verifiedAtUtc": "2026-11-08T11:14:35.5153159Z",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\BlackthornHouse-20261108\\BaiaDoSol.exe",
+  "assemblySha256": "22FD3FB98FD8EF8F42AE88306E58ED487DE1A34EDDDD4CDF7BC6D79D05F9E4A3",
+  "assemblyChangedDuringRun": false,
+  "processExitCode": 0,
+  "graphics": "Direct3D12",
+  "resolution": "1280x800; captures 1600x1000",
+  "checks": 20,
+  "routeSamples": 184,
+  "arguments": [
+    "-batchmode",
+    "-screen-fullscreen",
+    "0",
+    "-screen-width",
+    "1280",
+    "-screen-height",
+    "800",
+    "--city-blackthorn-qa",
+    "--city-report-dir",
+    "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\blackthorn\\native-verified\"",
+    "-logFile",
+    "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\blackthorn\\native-verified\\player.log\""
+  ],
+  "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\blackthorn\\native-verified\\blackthorn-qa.json"
+}

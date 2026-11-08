@@ -1,0 +1,2505 @@
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=0">
+    <meta name="theme-color" content="#000000">
+    <title>Freesound - NoisyRedFox</title>
+    <meta name="description" content="Freesound: collaborative database of creative-commons licensed sound for musicians and sound lovers. Have you freed your sound today?">
+    <meta name="keywords" content="free, sound">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fd5b65">
+    <meta name="theme-color" content="#fd5b65">
+    <meta name="msapplication-config" content="none" />
+    
+    
+    
+    
+    <link id="style" rel="stylesheet" href="/static/bw-frontend/dist/index.d2ba5ddf55c7.css">
+    
+    
+</head>
+<body>
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+    
+
+<div class="modal " id="loginModal" tabindex="-1" role="dialog" aria-label="Login modal" aria-hidden="true">
+    <div class="modal-wrapper">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="bw-icon-close ">
+    
+</span>
+                    </span>
+                </div>
+                <div class="modal-body">
+                    
+<div class="col-12">
+    <div class="text-center">
+        <h4 class="v-spacing-5">Log in to Freesound</h4>
+        <form id="loginForm" class="bw-form bw-form-less-spacing" method="post" action="/home/login/"><input type="hidden" name="csrfmiddlewaretoken" value="cLyLsij3pKp7vsZ1XMFqMYQJNVEr4E1H3GKRb8bbVVywtFk7eqFkbOpo5c8IwTAf">
+            <p>
+    <label for="id_username">Username:</label>
+    <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" placeholder="Enter your email or username" required id="id_username">
+    
+    
+  </p>
+
+  
+  <p>
+    <label for="id_password">Password:</label>
+    <input type="password" name="password" autocomplete="current-password" placeholder="Enter your password" required id="id_password">
+    
+    
+      
+    
+  </p>
+            <input type="hidden" name="next" value="/people/NoisyRedFox/" />
+            <button type="submit" class="btn-primary v-spacing-top-2">Log in</button>
+        </form>
+    </div>
+</div>
+
+                </div>
+                <div class="modal-footer">
+                    
+    <a class="v-spacing-top-3" data-toggle="problems-logging-in-modal">Problems logging in?</a>
+
+                </div>
+                <div class="modal-extra-info">
+                    
+    <a data-toggle="registration-modal">Don't have an account? Join now</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+<div class="modal " id="problemsLoggingInModal" tabindex="-1" role="dialog" aria-label="Problems logging in modal" aria-hidden="true">
+    <div class="modal-wrapper">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="bw-icon-close ">
+    
+</span>
+                    </span>
+                </div>
+                <div class="modal-body">
+                    
+<div class="col-12">
+    <div class="text-center">
+        <h4 class="v-spacing-5">Problems logging in?</h4>
+        <div class="text-grey v-spacing-top-negative-1 v-spacing-4">
+            Enter your email or username below and we'll send you a link to help you login into your account.
+        </div>
+        <form id="problemsLoggingInModalForm" class="bw-form bw-form-less-spacing" method="post" action="/home/problems/"><input type="hidden" name="csrfmiddlewaretoken" value="cLyLsij3pKp7vsZ1XMFqMYQJNVEr4E1H3GKRb8bbVVywtFk7eqFkbOpo5c8IwTAf">
+            <p>
+    
+    <input type="text" name="username_or_email" maxlength="254" placeholder="Your email or username" required id="id_username_or_email">
+    
+    
+      
+    
+  </p>
+            <button id="recovery-account" type="submit" class="btn-primary v-spacing-top-2">Send me a link</button>
+        </form>
+    </div>
+</div>
+
+                </div>
+                <div class="modal-footer">
+                    
+    <a class="v-spacing-top-3" data-link="loginModal"><span class="bw-icon-chevron bw-icon__chevron_left">
+    
+</span> Back to log in</a>
+
+                </div>
+                <div class="modal-extra-info">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+<div class="modal " id="feedbackRegistration" tabindex="-1" role="dialog" aria-label="Registration complete modal" aria-hidden="true">
+    <div class="modal-wrapper">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="bw-icon-close ">
+    
+</span>
+                    </span>
+                </div>
+                <div class="modal-body">
+                    
+<div class="col-12">
+    <div class="text-center">
+        <h4 class="v-spacing-5">Almost there!</h4>
+        <p class="main-text">We've sent a verification link by email</p>
+        <p class="secondary-text">Didn't receive the email? Check your Spam folder, it may have been caught by a filter. If you still don't see it, you can <a href="/home/reactivate/">resend the verification email</a>.</p>
+    </div>
+</div>
+
+                </div>
+                <div class="modal-footer">
+                    
+                </div>
+                <div class="modal-extra-info">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+<div class="modal zindex2000" id="confirmationModal" tabindex="-1" role="dialog" aria-label="Confirmation modal" aria-hidden="true">
+    <div class="modal-wrapper">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="bw-icon-close ">
+    
+</span>
+                    </span>
+                </div>
+                <div class="modal-body">
+                    
+    <div class="text-center">
+        <h4 id="confirmationModalTitle">Default title</h4>
+        <div id="confirmationModalHelpText" class="v-spacing-top-2"></div>
+        <div class="row v-spacing-top-4 v-spacing-3">
+            <div class="col-4 offset-2">
+                <form id="confirmationModalAcceptSubmitForm" method="post" action=""><input type="hidden" name="csrfmiddlewaretoken" value="cLyLsij3pKp7vsZ1XMFqMYQJNVEr4E1H3GKRb8bbVVywtFk7eqFkbOpo5c8IwTAf">
+                    <button type="submit" class="btn-primary">Yes</button>
+                </form>
+            </div>
+            <div class="col-4">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+                </div>
+                <div class="modal-footer">
+                    
+                </div>
+                <div class="modal-extra-info">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="genericModalWrapper"></div>
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body"></div>
+</div>
+    <div class="notifications-wrapper"></div>
+    
+    <div class="bw-page" aria-hidden="false">
+        
+        
+        
+<nav class="bw-nav">
+    <div class="container bw-nav__container">
+        <form method="get" action="/search/">
+        <div class="bw-nav__logo-search-container">
+            <div class="bw-nav__logo">
+                <a href="/" class="no-hover"></a>
+            </div>
+            <div class="input-wrapper">
+                <input name="q" type="search" placeholder="Search sounds..." autocomplete="off" />
+            </div>
+        </div>
+        </form>
+        <ul class="bw-nav__actions" role="menu">
+            <li class="bw-nav__action d-none d-lg-flex">
+    <a class="bw-link--grey font-weight-bold" href="/browse/" role="menuitem">Sounds</a>
+</li>
+<li class="bw-nav__action d-none d-lg-flex">
+    <a class="bw-link--grey font-weight-bold" href="/browse/tags/" role="menuitem">Tags</a>
+</li>
+<li class="bw-nav__action d-none d-lg-flex">
+    <a class="bw-link--grey font-weight-bold" href="/forum/" role="menuitem">Forum</a>
+</li>
+<li class="bw-nav__action d-none d-lg-flex">
+    <a class="bw-link--grey font-weight-bold" href="/browse/geotags/" role="menuitem">Map</a>
+</li>
+<li class="bw-nav__action dropdown">
+    <a class="bw-link--grey bw-nav__menu dropdown-toggle no-hover bw-icon-ellipsis" id="three-dots-menu" aria-label="Menu"
+       data-toggle="dropdown" tabindex="0"></a>
+    <ul class="dropdown-menu" aria-labelledby="three-dots-menu">
+        <li class="bw-nav__action dropdown-item d-lg-none">
+            <a class="bw-link--black" href="/browse/">Sounds</a>
+        </li>
+        <li class="bw-nav__action dropdown-item">
+            <a class="bw-link--black" href="/browse/packs/">Packs</a>
+        </li>
+        
+        <li class="bw-nav__action dropdown-item">
+            <a class="bw-link--black" href="/collections/">Collections</a>
+        </li>
+        
+        <li class="bw-nav__action dropdown-item d-lg-none">
+            <a class="bw-link--black" href="/forum/">Forum</a>
+        </li>
+        <li class="bw-nav__action dropdown-item d-lg-none">
+            <a class="bw-link--black" href="/browse/geotags/">Map</a>
+        </li>
+        <li class="bw-nav__action dropdown-item d-lg-none">
+            <a class="bw-link--black" href="/browse/tags/">Tags</a>
+        </li>
+        <li class="bw-nav__action dropdown-item">
+            <a class="bw-link--black" href="/browse/random/">Random sound</a>
+        </li>
+        <li class="bw-nav__action dropdown-item">
+            <a class="bw-link--black" href="/charts/">Charts</a>
+        </li>
+        <li class="bw-nav__action dropdown-item d-lg-none">
+            <a class="bw-link--black" href="/donations/donate/">Donate</a>
+        </li>
+        <li class="bw-nav__action dropdown-item">
+            <a class="bw-link--grey" href="/help/faq/">Help</a>
+        </li>
+                
+    </ul>
+</li>
+
+            
+
+
+
+    <li class="bw-nav__action">
+        <button class="btn-secondary" data-toggle="login-modal" data-target="#loginModal" role="menuitem">Log in</button>
+    </li>
+    <li class="bw-nav__action d-none d-lg-flex">
+        <button class="btn-primary" data-toggle="registration-modal" data-target="#registerModal" role="menuitem">Join</button>
+    </li>
+
+
+        </ul>
+    </div>
+</nav>
+        
+        
+    <div class="container">
+        <div class="row navbar-space-filler v-spacing-top-6 v-spacing-2 bw-profile__hero">
+            <div>
+                
+    <div class="avatar" style="width:100px;height:100px;">
+        <img src="/data/avatars/14357/14357801_XL.jpg"  class="avatar " style="width:100px;height:100px;" />
+    </div>
+
+            </div>
+            <div class="bw-profile__username v-spacing-top-2 ">
+                <h1>NoisyRedFox</h1>
+            </div>
+            
+            <div class="v-spacing-top-4 v-spacing-2 middle padding-left-2 padding-right-2 center wrap">
+                
+                    
+                        <a class="no-hover text-center btn-inverse btn-profile-adapt v-spacing-2" href="/follow/follow_user/NoisyRedFox/?next=/people/NoisyRedFox/">Follow</a>
+                    
+                    <a class="no-hover text-center btn-inverse h-spacing-left-2 btn-profile-adapt v-spacing-2" href="/home/messages/new/NoisyRedFox/">Message</a>
+                
+                
+            </div>
+            <div class="v-spacing-2">
+                <div class="bw-profile__stats padding-left-4 padding-right-4">
+                    <div class="text-grey">Has been a user for 4 years</div>
+                    <div><a id="user-followers-button" data-modal-activation-param="followers" data-modal-content-url="/people/NoisyRedFox/followers/?ajax=1&page=1" href="javascript:void(0);">27 followers</a></div>
+                    <div><a id="user-following-users-button" data-modal-activation-param="following" data-modal-content-url="/people/NoisyRedFox/following_users/?ajax=1&page=1" href="javascript:void(0);">0 following</a></div>
+                    <div><a id="user-following-tags-button" data-modal-activation-param="followingTags" data-modal-content-url="/people/NoisyRedFox/following_tags/?ajax=1&page=1" href="javascript:void(0);">0 tags following</a></div>
+                </div>
+                
+                
+                <div class="bw-profile__stats v-spacing-top-1 padding-left-4 padding-right-4">
+                    <div><a data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/downloaded_sounds/?ajax=1" data-modal-activation-param="downloaded_sounds" href="javascript:void(0);" >52 sounds downloaded</a></div>
+                    <div><a data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/downloaded_packs/?ajax=1" data-modal-activation-param="downloaded_packs" href="javascript:void(0);" >1 pack downloaded</a></div>
+                </div>
+            </div>
+            
+            <div class="bw-profile__description v-spacing-top-2 v-spacing-2">
+                
+                    <div class="col-md-8 offset-md-2">
+                        <p>I've been given a microphone for my birthday and nobody gonna stop me</p>
+
+<p>I decided to set "Creative Commons 0" license to all my sounds so everyone can use them without any restrictions. I will be happy if someone will use my sounds in their game :)</p>
+                    </div>
+                
+                
+            </div>
+            
+            
+            
+        </div>
+        <div class="divider-light"></div>
+        <div class="row bw-profile__taps_nav">
+            <ol>
+                <li class="active" data-toggle="tap" data-target="#sounds">Latest sounds</li>
+                <li data-toggle="tap" data-target="#packs">Latest packs</li>
+                
+            </ol>
+        </div>
+        <div class="divider-light"></div>
+        <div class="row">
+            <div class="col-md-8 v-spacing-top-4">
+                <div class="bw-profile__tap_container bw-profile__tap_container__active" id="sounds">
+                    
+                        <div class="row">
+                            
+                                <div class="col-6 col-lg-4">
+                                    
+
+
+
+
+    
+        
+        
+        <div class="v-spacing-3 overflow-hidden " aria-label="Sound WaterSplash5 by NoisyRedFox">
+            <div
+    class="bw-player"
+    data-sound-id="868245"
+    data-username="NoisyRedFox"
+    data-user-id="14357801"
+    data-size="small"
+    data-collection="true"
+    data-collection-modal-content-url="/collections/868245/add/?ajax=1"
+    data-bookmark="false"
+    data-bookmark-modal-url=""
+    data-add-bookmark-url=""
+    data-similar-sounds="true"
+    data-similar-sounds-modal-url="/people/NoisyRedFox/sounds/868245/similar/?ajax=1"
+    data-remix-group="false"
+    data-remix-group-modal-url="/people/NoisyRedFox/sounds/868245/remixes/?ajax=1"
+    data-mp3="https://cdn.freesound.org/previews/868/868245_14357801-lq.mp3"
+    data-ogg="https://cdn.freesound.org/previews/868/868245_14357801-lq.ogg"
+    data-waveform="https://cdn.freesound.org/displays/868/868245_14357801_wave_bw_M.png"
+    data-spectrum="https://cdn.freesound.org/displays/868/868245_14357801_spec_bw_M.jpg"
+    data-title="WaterSplash5"
+    data-duration="0.504014"
+    data-samplerate="44100.0"
+    data-show-milliseconds="true"
+    data-favorite="false"
+    data-num-comments="0" 
+    data-num-downloads="55" 
+    
+    tabindex="0">  
+</div>
+            <div class="display-none bw-player__rate__widget">
+<div class="bw-rating__container" 
+    data-show-added-rating-on-save="false" 
+    
+    aria-label="Average rating of 5.0">
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868245" data-rate-url="/people/NoisyRedFox/sounds/868245/rate/5/" id="rate-868245-5" value="5">
+            <label for="rate-868245-5" data-value="5" aria-label="Rate sound 5 stars">
+        
+            
+                <span class="bw-icon-star text-red">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868245" data-rate-url="/people/NoisyRedFox/sounds/868245/rate/4/" id="rate-868245-4" value="4">
+            <label for="rate-868245-4" data-value="4" aria-label="Rate sound 4 stars">
+        
+            
+                <span class="bw-icon-star text-red">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868245" data-rate-url="/people/NoisyRedFox/sounds/868245/rate/3/" id="rate-868245-3" value="3">
+            <label for="rate-868245-3" data-value="3" aria-label="Rate sound 3 stars">
+        
+            
+                <span class="bw-icon-star text-red">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868245" data-rate-url="/people/NoisyRedFox/sounds/868245/rate/2/" id="rate-868245-2" value="2">
+            <label for="rate-868245-2" data-value="2" aria-label="Rate sound 2 stars">
+        
+            
+                <span class="bw-icon-star text-red">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868245" data-rate-url="/people/NoisyRedFox/sounds/868245/rate/1/" id="rate-868245-1" value="1">
+            <label for="rate-868245-1" data-value="1" aria-label="Rate sound 1 star">
+        
+            
+                <span class="bw-icon-star text-red">
+    
+</span>
+            
+        
+            </label>
+        
+    
+</div></div>
+            
+            <div class="between line-height-percentage-150 v-spacing-top-1">
+                <h5 class="ellipsis">
+                    <a class="bw-link--black" href="/people/NoisyRedFox/sounds/868245/" title="WaterSplash5">WaterSplash5</a>
+                </h5>
+                
+
+<div class="right text-light-grey col-auto" style="max-height: 22px;overflow: hidden;padding-right:0px!important;padding-left:0px!important;">                    
+    
+    <div class="h-spacing-left-1" title="55 downloads">
+        <a href="javascript:void(0)" data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/sounds/868245/downloaders/?ajax=1" class="bw-link--grey-light">
+            <span class="bw-icon-download" style="font-size:90%;"></span> 55
+        </a>
+    </div>
+    
+    
+    
+    <div class="h-spacing-left-1" title="Pack: Simple Short Sounds">
+        <a href="/people/NoisyRedFox/packs/40960/" class="bw-link--grey-light">
+            <span class="bw-icon-stack"></span>
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="License: Creative Commons 0">
+        <span class="bw-icon-zero"></span>
+    </div>
+    
+    <div class="h-spacing-left-1" title="Overall rating (4 ratings)">
+        <span class="bw-icon-star"></span><span class="bw-rating__avg"> 5.0</span>
+    </div>
+    
+</div>
+            </div>
+            <div class="between">
+                <div class="ellipsis">
+                    <a href="/people/NoisyRedFox/" title="Username: NoisyRedFox">NoisyRedFox</a>
+                </div>
+                
+            </div>
+            <div>
+                <span class="text-grey timesince-target">August 30th, 2026</span>
+            </div>
+            
+                
+                <div class="v-spacing-top-1 bw-player__description-height" title="The said not to play with your food but they said nothing about playing with water. Because playing with water is too fun">
+                    The said not to play with your food but they said noth…
+                </div>
+                
+            
+            
+        </div>
+        
+        
+        
+        
+
+    
+
+                                </div>
+                            
+                                <div class="col-6 col-lg-4">
+                                    
+
+
+
+
+    
+        
+        
+        <div class="v-spacing-3 overflow-hidden " aria-label="Sound WaterSplash4 by NoisyRedFox">
+            <div
+    class="bw-player"
+    data-sound-id="868244"
+    data-username="NoisyRedFox"
+    data-user-id="14357801"
+    data-size="small"
+    data-collection="true"
+    data-collection-modal-content-url="/collections/868244/add/?ajax=1"
+    data-bookmark="false"
+    data-bookmark-modal-url=""
+    data-add-bookmark-url=""
+    data-similar-sounds="true"
+    data-similar-sounds-modal-url="/people/NoisyRedFox/sounds/868244/similar/?ajax=1"
+    data-remix-group="false"
+    data-remix-group-modal-url="/people/NoisyRedFox/sounds/868244/remixes/?ajax=1"
+    data-mp3="https://cdn.freesound.org/previews/868/868244_14357801-lq.mp3"
+    data-ogg="https://cdn.freesound.org/previews/868/868244_14357801-lq.ogg"
+    data-waveform="https://cdn.freesound.org/displays/868/868244_14357801_wave_bw_M.png"
+    data-spectrum="https://cdn.freesound.org/displays/868/868244_14357801_spec_bw_M.jpg"
+    data-title="WaterSplash4"
+    data-duration="0.59551"
+    data-samplerate="44100.0"
+    data-show-milliseconds="true"
+    data-favorite="false"
+    data-num-comments="0" 
+    data-num-downloads="62" 
+    
+    tabindex="0">  
+</div>
+            <div class="display-none bw-player__rate__widget">
+<div class="bw-rating__container" 
+    data-show-added-rating-on-save="false" 
+    
+    title="Average rating not shown as there are not enough ratings" aria-label="Not enough ratings to show average">
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868244" data-rate-url="/people/NoisyRedFox/sounds/868244/rate/5/" id="rate-868244-5" value="5">
+            <label for="rate-868244-5" data-value="5" aria-label="Rate sound 5 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868244" data-rate-url="/people/NoisyRedFox/sounds/868244/rate/4/" id="rate-868244-4" value="4">
+            <label for="rate-868244-4" data-value="4" aria-label="Rate sound 4 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868244" data-rate-url="/people/NoisyRedFox/sounds/868244/rate/3/" id="rate-868244-3" value="3">
+            <label for="rate-868244-3" data-value="3" aria-label="Rate sound 3 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868244" data-rate-url="/people/NoisyRedFox/sounds/868244/rate/2/" id="rate-868244-2" value="2">
+            <label for="rate-868244-2" data-value="2" aria-label="Rate sound 2 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868244" data-rate-url="/people/NoisyRedFox/sounds/868244/rate/1/" id="rate-868244-1" value="1">
+            <label for="rate-868244-1" data-value="1" aria-label="Rate sound 1 star">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+</div></div>
+            
+            <div class="between line-height-percentage-150 v-spacing-top-1">
+                <h5 class="ellipsis">
+                    <a class="bw-link--black" href="/people/NoisyRedFox/sounds/868244/" title="WaterSplash4">WaterSplash4</a>
+                </h5>
+                
+
+<div class="right text-light-grey col-auto" style="max-height: 22px;overflow: hidden;padding-right:0px!important;padding-left:0px!important;">                    
+    
+    <div class="h-spacing-left-1" title="62 downloads">
+        <a href="javascript:void(0)" data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/sounds/868244/downloaders/?ajax=1" class="bw-link--grey-light">
+            <span class="bw-icon-download" style="font-size:90%;"></span> 62
+        </a>
+    </div>
+    
+    
+    
+    <div class="h-spacing-left-1" title="Pack: Simple Short Sounds">
+        <a href="/people/NoisyRedFox/packs/40960/" class="bw-link--grey-light">
+            <span class="bw-icon-stack"></span>
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="License: Creative Commons 0">
+        <span class="bw-icon-zero"></span>
+    </div>
+    
+</div>
+            </div>
+            <div class="between">
+                <div class="ellipsis">
+                    <a href="/people/NoisyRedFox/" title="Username: NoisyRedFox">NoisyRedFox</a>
+                </div>
+                
+            </div>
+            <div>
+                <span class="text-grey timesince-target">August 30th, 2026</span>
+            </div>
+            
+                
+                <div class="v-spacing-top-1 bw-player__description-height" >
+                    Water looks good and sounds good
+                </div>
+                
+            
+            
+        </div>
+        
+        
+        
+        
+
+    
+
+                                </div>
+                            
+                                <div class="col-6 col-lg-4">
+                                    
+
+
+
+
+    
+        
+        
+        <div class="v-spacing-3 overflow-hidden " aria-label="Sound WaterSplash3 by NoisyRedFox">
+            <div
+    class="bw-player"
+    data-sound-id="868243"
+    data-username="NoisyRedFox"
+    data-user-id="14357801"
+    data-size="small"
+    data-collection="true"
+    data-collection-modal-content-url="/collections/868243/add/?ajax=1"
+    data-bookmark="false"
+    data-bookmark-modal-url=""
+    data-add-bookmark-url=""
+    data-similar-sounds="true"
+    data-similar-sounds-modal-url="/people/NoisyRedFox/sounds/868243/similar/?ajax=1"
+    data-remix-group="false"
+    data-remix-group-modal-url="/people/NoisyRedFox/sounds/868243/remixes/?ajax=1"
+    data-mp3="https://cdn.freesound.org/previews/868/868243_14357801-lq.mp3"
+    data-ogg="https://cdn.freesound.org/previews/868/868243_14357801-lq.ogg"
+    data-waveform="https://cdn.freesound.org/displays/868/868243_14357801_wave_bw_M.png"
+    data-spectrum="https://cdn.freesound.org/displays/868/868243_14357801_spec_bw_M.jpg"
+    data-title="WaterSplash3"
+    data-duration="0.693152"
+    data-samplerate="44100.0"
+    data-show-milliseconds="true"
+    data-favorite="false"
+    data-num-comments="0" 
+    data-num-downloads="4" 
+    
+    tabindex="0">  
+</div>
+            <div class="display-none bw-player__rate__widget">
+<div class="bw-rating__container" 
+    data-show-added-rating-on-save="false" 
+    
+    title="Average rating not shown as there are not enough ratings" aria-label="Not enough ratings to show average">
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868243" data-rate-url="/people/NoisyRedFox/sounds/868243/rate/5/" id="rate-868243-5" value="5">
+            <label for="rate-868243-5" data-value="5" aria-label="Rate sound 5 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868243" data-rate-url="/people/NoisyRedFox/sounds/868243/rate/4/" id="rate-868243-4" value="4">
+            <label for="rate-868243-4" data-value="4" aria-label="Rate sound 4 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868243" data-rate-url="/people/NoisyRedFox/sounds/868243/rate/3/" id="rate-868243-3" value="3">
+            <label for="rate-868243-3" data-value="3" aria-label="Rate sound 3 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868243" data-rate-url="/people/NoisyRedFox/sounds/868243/rate/2/" id="rate-868243-2" value="2">
+            <label for="rate-868243-2" data-value="2" aria-label="Rate sound 2 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868243" data-rate-url="/people/NoisyRedFox/sounds/868243/rate/1/" id="rate-868243-1" value="1">
+            <label for="rate-868243-1" data-value="1" aria-label="Rate sound 1 star">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+</div></div>
+            
+            <div class="between line-height-percentage-150 v-spacing-top-1">
+                <h5 class="ellipsis">
+                    <a class="bw-link--black" href="/people/NoisyRedFox/sounds/868243/" title="WaterSplash3">WaterSplash3</a>
+                </h5>
+                
+
+<div class="right text-light-grey col-auto" style="max-height: 22px;overflow: hidden;padding-right:0px!important;padding-left:0px!important;">                    
+    
+    <div class="h-spacing-left-1" title="4 downloads">
+        <a href="javascript:void(0)" data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/sounds/868243/downloaders/?ajax=1" class="bw-link--grey-light">
+            <span class="bw-icon-download" style="font-size:90%;"></span> 4
+        </a>
+    </div>
+    
+    
+    
+    <div class="h-spacing-left-1" title="Pack: Simple Short Sounds">
+        <a href="/people/NoisyRedFox/packs/40960/" class="bw-link--grey-light">
+            <span class="bw-icon-stack"></span>
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="License: Creative Commons 0">
+        <span class="bw-icon-zero"></span>
+    </div>
+    
+</div>
+            </div>
+            <div class="between">
+                <div class="ellipsis">
+                    <a href="/people/NoisyRedFox/" title="Username: NoisyRedFox">NoisyRedFox</a>
+                </div>
+                
+            </div>
+            <div>
+                <span class="text-grey timesince-target">August 30th, 2026</span>
+            </div>
+            
+                
+                <div class="v-spacing-top-1 bw-player__description-height" >
+                    I love water
+                </div>
+                
+            
+            
+        </div>
+        
+        
+        
+        
+
+    
+
+                                </div>
+                            
+                                <div class="col-6 col-lg-4">
+                                    
+
+
+
+
+    
+        
+        
+        <div class="v-spacing-3 overflow-hidden " aria-label="Sound WaterSplash2 by NoisyRedFox">
+            <div
+    class="bw-player"
+    data-sound-id="868242"
+    data-username="NoisyRedFox"
+    data-user-id="14357801"
+    data-size="small"
+    data-collection="true"
+    data-collection-modal-content-url="/collections/868242/add/?ajax=1"
+    data-bookmark="false"
+    data-bookmark-modal-url=""
+    data-add-bookmark-url=""
+    data-similar-sounds="true"
+    data-similar-sounds-modal-url="/people/NoisyRedFox/sounds/868242/similar/?ajax=1"
+    data-remix-group="false"
+    data-remix-group-modal-url="/people/NoisyRedFox/sounds/868242/remixes/?ajax=1"
+    data-mp3="https://cdn.freesound.org/previews/868/868242_14357801-lq.mp3"
+    data-ogg="https://cdn.freesound.org/previews/868/868242_14357801-lq.ogg"
+    data-waveform="https://cdn.freesound.org/displays/868/868242_14357801_wave_bw_M.png"
+    data-spectrum="https://cdn.freesound.org/displays/868/868242_14357801_spec_bw_M.jpg"
+    data-title="WaterSplash2"
+    data-duration="0.673628"
+    data-samplerate="44100.0"
+    data-show-milliseconds="true"
+    data-favorite="false"
+    data-num-comments="0" 
+    data-num-downloads="3" 
+    
+    tabindex="0">  
+</div>
+            <div class="display-none bw-player__rate__widget">
+<div class="bw-rating__container" 
+    data-show-added-rating-on-save="false" 
+    
+    title="Average rating not shown as there are not enough ratings" aria-label="Not enough ratings to show average">
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868242" data-rate-url="/people/NoisyRedFox/sounds/868242/rate/5/" id="rate-868242-5" value="5">
+            <label for="rate-868242-5" data-value="5" aria-label="Rate sound 5 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868242" data-rate-url="/people/NoisyRedFox/sounds/868242/rate/4/" id="rate-868242-4" value="4">
+            <label for="rate-868242-4" data-value="4" aria-label="Rate sound 4 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868242" data-rate-url="/people/NoisyRedFox/sounds/868242/rate/3/" id="rate-868242-3" value="3">
+            <label for="rate-868242-3" data-value="3" aria-label="Rate sound 3 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868242" data-rate-url="/people/NoisyRedFox/sounds/868242/rate/2/" id="rate-868242-2" value="2">
+            <label for="rate-868242-2" data-value="2" aria-label="Rate sound 2 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868242" data-rate-url="/people/NoisyRedFox/sounds/868242/rate/1/" id="rate-868242-1" value="1">
+            <label for="rate-868242-1" data-value="1" aria-label="Rate sound 1 star">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+</div></div>
+            
+            <div class="between line-height-percentage-150 v-spacing-top-1">
+                <h5 class="ellipsis">
+                    <a class="bw-link--black" href="/people/NoisyRedFox/sounds/868242/" title="WaterSplash2">WaterSplash2</a>
+                </h5>
+                
+
+<div class="right text-light-grey col-auto" style="max-height: 22px;overflow: hidden;padding-right:0px!important;padding-left:0px!important;">                    
+    
+    <div class="h-spacing-left-1" title="3 downloads">
+        <a href="javascript:void(0)" data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/sounds/868242/downloaders/?ajax=1" class="bw-link--grey-light">
+            <span class="bw-icon-download" style="font-size:90%;"></span> 3
+        </a>
+    </div>
+    
+    
+    
+    <div class="h-spacing-left-1" title="Pack: Simple Short Sounds">
+        <a href="/people/NoisyRedFox/packs/40960/" class="bw-link--grey-light">
+            <span class="bw-icon-stack"></span>
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="License: Creative Commons 0">
+        <span class="bw-icon-zero"></span>
+    </div>
+    
+</div>
+            </div>
+            <div class="between">
+                <div class="ellipsis">
+                    <a href="/people/NoisyRedFox/" title="Username: NoisyRedFox">NoisyRedFox</a>
+                </div>
+                
+            </div>
+            <div>
+                <span class="text-grey timesince-target">August 30th, 2026</span>
+            </div>
+            
+                
+                <div class="v-spacing-top-1 bw-player__description-height" title="Imagine me leaning over the pool with the microphone and striking the water with a serious expression for 10 minutes straight">
+                    Imagine me leaning over the pool with the microphone a…
+                </div>
+                
+            
+            
+        </div>
+        
+        
+        
+        
+
+    
+
+                                </div>
+                            
+                                <div class="col-6 col-lg-4">
+                                    
+
+
+
+
+    
+        
+        
+        <div class="v-spacing-3 overflow-hidden " aria-label="Sound WaterSplash1 by NoisyRedFox">
+            <div
+    class="bw-player"
+    data-sound-id="868241"
+    data-username="NoisyRedFox"
+    data-user-id="14357801"
+    data-size="small"
+    data-collection="true"
+    data-collection-modal-content-url="/collections/868241/add/?ajax=1"
+    data-bookmark="false"
+    data-bookmark-modal-url=""
+    data-add-bookmark-url=""
+    data-similar-sounds="true"
+    data-similar-sounds-modal-url="/people/NoisyRedFox/sounds/868241/similar/?ajax=1"
+    data-remix-group="false"
+    data-remix-group-modal-url="/people/NoisyRedFox/sounds/868241/remixes/?ajax=1"
+    data-mp3="https://cdn.freesound.org/previews/868/868241_14357801-lq.mp3"
+    data-ogg="https://cdn.freesound.org/previews/868/868241_14357801-lq.ogg"
+    data-waveform="https://cdn.freesound.org/displays/868/868241_14357801_wave_bw_M.png"
+    data-spectrum="https://cdn.freesound.org/displays/868/868241_14357801_spec_bw_M.jpg"
+    data-title="WaterSplash1"
+    data-duration="0.868889"
+    data-samplerate="44100.0"
+    data-show-milliseconds="true"
+    data-favorite="false"
+    data-num-comments="0" 
+    data-num-downloads="4" 
+    
+    tabindex="0">  
+</div>
+            <div class="display-none bw-player__rate__widget">
+<div class="bw-rating__container" 
+    data-show-added-rating-on-save="false" 
+    
+    title="Average rating not shown as there are not enough ratings" aria-label="Not enough ratings to show average">
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868241" data-rate-url="/people/NoisyRedFox/sounds/868241/rate/5/" id="rate-868241-5" value="5">
+            <label for="rate-868241-5" data-value="5" aria-label="Rate sound 5 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868241" data-rate-url="/people/NoisyRedFox/sounds/868241/rate/4/" id="rate-868241-4" value="4">
+            <label for="rate-868241-4" data-value="4" aria-label="Rate sound 4 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868241" data-rate-url="/people/NoisyRedFox/sounds/868241/rate/3/" id="rate-868241-3" value="3">
+            <label for="rate-868241-3" data-value="3" aria-label="Rate sound 3 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868241" data-rate-url="/people/NoisyRedFox/sounds/868241/rate/2/" id="rate-868241-2" value="2">
+            <label for="rate-868241-2" data-value="2" aria-label="Rate sound 2 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868241" data-rate-url="/people/NoisyRedFox/sounds/868241/rate/1/" id="rate-868241-1" value="1">
+            <label for="rate-868241-1" data-value="1" aria-label="Rate sound 1 star">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+</div></div>
+            
+            <div class="between line-height-percentage-150 v-spacing-top-1">
+                <h5 class="ellipsis">
+                    <a class="bw-link--black" href="/people/NoisyRedFox/sounds/868241/" title="WaterSplash1">WaterSplash1</a>
+                </h5>
+                
+
+<div class="right text-light-grey col-auto" style="max-height: 22px;overflow: hidden;padding-right:0px!important;padding-left:0px!important;">                    
+    
+    <div class="h-spacing-left-1" title="4 downloads">
+        <a href="javascript:void(0)" data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/sounds/868241/downloaders/?ajax=1" class="bw-link--grey-light">
+            <span class="bw-icon-download" style="font-size:90%;"></span> 4
+        </a>
+    </div>
+    
+    
+    
+    <div class="h-spacing-left-1" title="Pack: Simple Short Sounds">
+        <a href="/people/NoisyRedFox/packs/40960/" class="bw-link--grey-light">
+            <span class="bw-icon-stack"></span>
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="License: Creative Commons 0">
+        <span class="bw-icon-zero"></span>
+    </div>
+    
+</div>
+            </div>
+            <div class="between">
+                <div class="ellipsis">
+                    <a href="/people/NoisyRedFox/" title="Username: NoisyRedFox">NoisyRedFox</a>
+                </div>
+                
+            </div>
+            <div>
+                <span class="text-grey timesince-target">August 30th, 2026</span>
+            </div>
+            
+                
+                <div class="v-spacing-top-1 bw-player__description-height" title="I made various recordings of water splashes, decided to upload them all. I think they are nice">
+                    I made various recordings of water splashes, decided t…
+                </div>
+                
+            
+            
+        </div>
+        
+        
+        
+        
+
+    
+
+                                </div>
+                            
+                                <div class="col-6 col-lg-4">
+                                    
+
+
+
+
+    
+        
+        
+        <div class="v-spacing-3 overflow-hidden " aria-label="Sound WaterDrop by NoisyRedFox">
+            <div
+    class="bw-player"
+    data-sound-id="868240"
+    data-username="NoisyRedFox"
+    data-user-id="14357801"
+    data-size="small"
+    data-collection="true"
+    data-collection-modal-content-url="/collections/868240/add/?ajax=1"
+    data-bookmark="false"
+    data-bookmark-modal-url=""
+    data-add-bookmark-url=""
+    data-similar-sounds="true"
+    data-similar-sounds-modal-url="/people/NoisyRedFox/sounds/868240/similar/?ajax=1"
+    data-remix-group="false"
+    data-remix-group-modal-url="/people/NoisyRedFox/sounds/868240/remixes/?ajax=1"
+    data-mp3="https://cdn.freesound.org/previews/868/868240_14357801-lq.mp3"
+    data-ogg="https://cdn.freesound.org/previews/868/868240_14357801-lq.ogg"
+    data-waveform="https://cdn.freesound.org/displays/868/868240_14357801_wave_bw_M.png"
+    data-spectrum="https://cdn.freesound.org/displays/868/868240_14357801_spec_bw_M.jpg"
+    data-title="WaterDrop"
+    data-duration="0.212268"
+    data-samplerate="44100.0"
+    data-show-milliseconds="true"
+    data-favorite="false"
+    data-num-comments="1" 
+    data-num-downloads="88" 
+    
+    tabindex="0">  
+</div>
+            <div class="display-none bw-player__rate__widget">
+<div class="bw-rating__container" 
+    data-show-added-rating-on-save="false" 
+    
+    title="Average rating not shown as there are not enough ratings" aria-label="Not enough ratings to show average">
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868240" data-rate-url="/people/NoisyRedFox/sounds/868240/rate/5/" id="rate-868240-5" value="5">
+            <label for="rate-868240-5" data-value="5" aria-label="Rate sound 5 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868240" data-rate-url="/people/NoisyRedFox/sounds/868240/rate/4/" id="rate-868240-4" value="4">
+            <label for="rate-868240-4" data-value="4" aria-label="Rate sound 4 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868240" data-rate-url="/people/NoisyRedFox/sounds/868240/rate/3/" id="rate-868240-3" value="3">
+            <label for="rate-868240-3" data-value="3" aria-label="Rate sound 3 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868240" data-rate-url="/people/NoisyRedFox/sounds/868240/rate/2/" id="rate-868240-2" value="2">
+            <label for="rate-868240-2" data-value="2" aria-label="Rate sound 2 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868240" data-rate-url="/people/NoisyRedFox/sounds/868240/rate/1/" id="rate-868240-1" value="1">
+            <label for="rate-868240-1" data-value="1" aria-label="Rate sound 1 star">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+</div></div>
+            
+            <div class="between line-height-percentage-150 v-spacing-top-1">
+                <h5 class="ellipsis">
+                    <a class="bw-link--black" href="/people/NoisyRedFox/sounds/868240/" title="WaterDrop">WaterDrop</a>
+                </h5>
+                
+
+<div class="right text-light-grey col-auto" style="max-height: 22px;overflow: hidden;padding-right:0px!important;padding-left:0px!important;">                    
+    
+    <div class="h-spacing-left-1" title="88 downloads">
+        <a href="javascript:void(0)" data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/sounds/868240/downloaders/?ajax=1" class="bw-link--grey-light">
+            <span class="bw-icon-download" style="font-size:90%;"></span> 88
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="1 comments">
+        <a href="javascript:void(0)" data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/sounds/868240/comments/?ajax=1" class="bw-link--grey-light">
+            <span class="bw-icon-comments" style="font-size:90%;"></span> 1
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="Pack: Simple Short Sounds">
+        <a href="/people/NoisyRedFox/packs/40960/" class="bw-link--grey-light">
+            <span class="bw-icon-stack"></span>
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="License: Creative Commons 0">
+        <span class="bw-icon-zero"></span>
+    </div>
+    
+</div>
+            </div>
+            <div class="between">
+                <div class="ellipsis">
+                    <a href="/people/NoisyRedFox/" title="Username: NoisyRedFox">NoisyRedFox</a>
+                </div>
+                
+            </div>
+            <div>
+                <span class="text-grey timesince-target">August 30th, 2026</span>
+            </div>
+            
+                
+                <div class="v-spacing-top-1 bw-player__description-height" title="One of my favorite sounds. I had a lot of fun recording water sounds in the pool">
+                    One of my favorite sounds. I had a lot of fun recordin…
+                </div>
+                
+            
+            
+        </div>
+        
+        
+        
+        
+
+    
+
+                                </div>
+                            
+                                <div class="col-6 col-lg-4">
+                                    
+
+
+
+
+    
+        
+        
+        <div class="v-spacing-3 overflow-hidden " aria-label="Sound WaterStreamLooped2 by NoisyRedFox">
+            <div
+    class="bw-player"
+    data-sound-id="868237"
+    data-username="NoisyRedFox"
+    data-user-id="14357801"
+    data-size="small"
+    data-collection="true"
+    data-collection-modal-content-url="/collections/868237/add/?ajax=1"
+    data-bookmark="false"
+    data-bookmark-modal-url=""
+    data-add-bookmark-url=""
+    data-similar-sounds="true"
+    data-similar-sounds-modal-url="/people/NoisyRedFox/sounds/868237/similar/?ajax=1"
+    data-remix-group="false"
+    data-remix-group-modal-url="/people/NoisyRedFox/sounds/868237/remixes/?ajax=1"
+    data-mp3="https://cdn.freesound.org/previews/868/868237_14357801-lq.mp3"
+    data-ogg="https://cdn.freesound.org/previews/868/868237_14357801-lq.ogg"
+    data-waveform="https://cdn.freesound.org/displays/868/868237_14357801_wave_bw_M.png"
+    data-spectrum="https://cdn.freesound.org/displays/868/868237_14357801_spec_bw_M.jpg"
+    data-title="WaterStreamLooped2"
+    data-duration="9.62771"
+    data-samplerate="44100.0"
+    data-show-milliseconds="true"
+    data-favorite="false"
+    data-num-comments="0" 
+    data-num-downloads="18" 
+    
+    tabindex="0">  
+</div>
+            <div class="display-none bw-player__rate__widget">
+<div class="bw-rating__container" 
+    data-show-added-rating-on-save="false" 
+    
+    title="Average rating not shown as there are not enough ratings" aria-label="Not enough ratings to show average">
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868237" data-rate-url="/people/NoisyRedFox/sounds/868237/rate/5/" id="rate-868237-5" value="5">
+            <label for="rate-868237-5" data-value="5" aria-label="Rate sound 5 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868237" data-rate-url="/people/NoisyRedFox/sounds/868237/rate/4/" id="rate-868237-4" value="4">
+            <label for="rate-868237-4" data-value="4" aria-label="Rate sound 4 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868237" data-rate-url="/people/NoisyRedFox/sounds/868237/rate/3/" id="rate-868237-3" value="3">
+            <label for="rate-868237-3" data-value="3" aria-label="Rate sound 3 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868237" data-rate-url="/people/NoisyRedFox/sounds/868237/rate/2/" id="rate-868237-2" value="2">
+            <label for="rate-868237-2" data-value="2" aria-label="Rate sound 2 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868237" data-rate-url="/people/NoisyRedFox/sounds/868237/rate/1/" id="rate-868237-1" value="1">
+            <label for="rate-868237-1" data-value="1" aria-label="Rate sound 1 star">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+</div></div>
+            
+            <div class="between line-height-percentage-150 v-spacing-top-1">
+                <h5 class="ellipsis">
+                    <a class="bw-link--black" href="/people/NoisyRedFox/sounds/868237/" title="WaterStreamLooped2">WaterStreamLooped2</a>
+                </h5>
+                
+
+<div class="right text-light-grey col-auto" style="max-height: 22px;overflow: hidden;padding-right:0px!important;padding-left:0px!important;">                    
+    
+    <div class="h-spacing-left-1" title="18 downloads">
+        <a href="javascript:void(0)" data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/sounds/868237/downloaders/?ajax=1" class="bw-link--grey-light">
+            <span class="bw-icon-download" style="font-size:90%;"></span> 18
+        </a>
+    </div>
+    
+    
+    
+    <div class="h-spacing-left-1" title="Pack: Looped sounds">
+        <a href="/people/NoisyRedFox/packs/40962/" class="bw-link--grey-light">
+            <span class="bw-icon-stack"></span>
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="License: Creative Commons 0">
+        <span class="bw-icon-zero"></span>
+    </div>
+    
+</div>
+            </div>
+            <div class="between">
+                <div class="ellipsis">
+                    <a href="/people/NoisyRedFox/" title="Username: NoisyRedFox">NoisyRedFox</a>
+                </div>
+                
+            </div>
+            <div>
+                <span class="text-grey timesince-target">August 30th, 2026</span>
+            </div>
+            
+                
+                <div class="v-spacing-top-1 bw-player__description-height" >
+                    The longer and calmer version of WaterStreamLooped1
+                </div>
+                
+            
+            
+        </div>
+        
+        
+        
+        
+
+    
+
+                                </div>
+                            
+                                <div class="col-6 col-lg-4">
+                                    
+
+
+
+
+    
+        
+        
+        <div class="v-spacing-3 overflow-hidden " aria-label="Sound WaterStreamLooped1 by NoisyRedFox">
+            <div
+    class="bw-player"
+    data-sound-id="868236"
+    data-username="NoisyRedFox"
+    data-user-id="14357801"
+    data-size="small"
+    data-collection="true"
+    data-collection-modal-content-url="/collections/868236/add/?ajax=1"
+    data-bookmark="false"
+    data-bookmark-modal-url=""
+    data-add-bookmark-url=""
+    data-similar-sounds="true"
+    data-similar-sounds-modal-url="/people/NoisyRedFox/sounds/868236/similar/?ajax=1"
+    data-remix-group="false"
+    data-remix-group-modal-url="/people/NoisyRedFox/sounds/868236/remixes/?ajax=1"
+    data-mp3="https://cdn.freesound.org/previews/868/868236_14357801-lq.mp3"
+    data-ogg="https://cdn.freesound.org/previews/868/868236_14357801-lq.ogg"
+    data-waveform="https://cdn.freesound.org/displays/868/868236_14357801_wave_bw_M.png"
+    data-spectrum="https://cdn.freesound.org/displays/868/868236_14357801_spec_bw_M.jpg"
+    data-title="WaterStreamLooped1"
+    data-duration="2.89088"
+    data-samplerate="44100.0"
+    data-show-milliseconds="true"
+    data-favorite="false"
+    data-num-comments="0" 
+    data-num-downloads="3" 
+    
+    tabindex="0">  
+</div>
+            <div class="display-none bw-player__rate__widget">
+<div class="bw-rating__container" 
+    data-show-added-rating-on-save="false" 
+    
+    title="Average rating not shown as there are not enough ratings" aria-label="Not enough ratings to show average">
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868236" data-rate-url="/people/NoisyRedFox/sounds/868236/rate/5/" id="rate-868236-5" value="5">
+            <label for="rate-868236-5" data-value="5" aria-label="Rate sound 5 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868236" data-rate-url="/people/NoisyRedFox/sounds/868236/rate/4/" id="rate-868236-4" value="4">
+            <label for="rate-868236-4" data-value="4" aria-label="Rate sound 4 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868236" data-rate-url="/people/NoisyRedFox/sounds/868236/rate/3/" id="rate-868236-3" value="3">
+            <label for="rate-868236-3" data-value="3" aria-label="Rate sound 3 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868236" data-rate-url="/people/NoisyRedFox/sounds/868236/rate/2/" id="rate-868236-2" value="2">
+            <label for="rate-868236-2" data-value="2" aria-label="Rate sound 2 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-868236" data-rate-url="/people/NoisyRedFox/sounds/868236/rate/1/" id="rate-868236-1" value="1">
+            <label for="rate-868236-1" data-value="1" aria-label="Rate sound 1 star">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+</div></div>
+            
+            <div class="between line-height-percentage-150 v-spacing-top-1">
+                <h5 class="ellipsis">
+                    <a class="bw-link--black" href="/people/NoisyRedFox/sounds/868236/" title="WaterStreamLooped1">WaterStreamLooped1</a>
+                </h5>
+                
+
+<div class="right text-light-grey col-auto" style="max-height: 22px;overflow: hidden;padding-right:0px!important;padding-left:0px!important;">                    
+    
+    <div class="h-spacing-left-1" title="3 downloads">
+        <a href="javascript:void(0)" data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/sounds/868236/downloaders/?ajax=1" class="bw-link--grey-light">
+            <span class="bw-icon-download" style="font-size:90%;"></span> 3
+        </a>
+    </div>
+    
+    
+    
+    <div class="h-spacing-left-1" title="Pack: Looped sounds">
+        <a href="/people/NoisyRedFox/packs/40962/" class="bw-link--grey-light">
+            <span class="bw-icon-stack"></span>
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="License: Creative Commons 0">
+        <span class="bw-icon-zero"></span>
+    </div>
+    
+</div>
+            </div>
+            <div class="between">
+                <div class="ellipsis">
+                    <a href="/people/NoisyRedFox/" title="Username: NoisyRedFox">NoisyRedFox</a>
+                </div>
+                
+            </div>
+            <div>
+                <span class="text-grey timesince-target">August 30th, 2026</span>
+            </div>
+            
+                
+                <div class="v-spacing-top-1 bw-player__description-height" title="The sound was recorded outdoors, but it is not a river tbh) I was filling a small pool in the backyard. Maybe two years ago. We haven&#x27;t filled the pool since that day. Sometimes I ask myself if the career is worth the summer days I&#x27;ve missed">
+                    The sound was recorded outdoors, but it is not a river…
+                </div>
+                
+            
+            
+        </div>
+        
+        
+        
+        
+
+    
+
+                                </div>
+                            
+                                <div class="col-6 col-lg-4">
+                                    
+
+
+
+
+    
+        
+        
+        <div class="v-spacing-3 overflow-hidden " aria-label="Sound AggressiveTyping by NoisyRedFox">
+            <div
+    class="bw-player"
+    data-sound-id="760572"
+    data-username="NoisyRedFox"
+    data-user-id="14357801"
+    data-size="small"
+    data-collection="true"
+    data-collection-modal-content-url="/collections/760572/add/?ajax=1"
+    data-bookmark="false"
+    data-bookmark-modal-url=""
+    data-add-bookmark-url=""
+    data-similar-sounds="true"
+    data-similar-sounds-modal-url="/people/NoisyRedFox/sounds/760572/similar/?ajax=1"
+    data-remix-group="false"
+    data-remix-group-modal-url="/people/NoisyRedFox/sounds/760572/remixes/?ajax=1"
+    data-mp3="https://cdn.freesound.org/previews/760/760572_14357801-lq.mp3"
+    data-ogg="https://cdn.freesound.org/previews/760/760572_14357801-lq.ogg"
+    data-waveform="https://cdn.freesound.org/displays/760/760572_14357801_wave_bw_M.png"
+    data-spectrum="https://cdn.freesound.org/displays/760/760572_14357801_spec_bw_M.jpg"
+    data-title="AggressiveTyping"
+    data-duration="6.91859"
+    data-samplerate="44100.0"
+    data-show-milliseconds="true"
+    data-favorite="false"
+    data-num-comments="0" 
+    data-num-downloads="56" 
+    
+    tabindex="0">  
+</div>
+            <div class="display-none bw-player__rate__widget">
+<div class="bw-rating__container" 
+    data-show-added-rating-on-save="false" 
+    
+    title="Average rating not shown as there are not enough ratings" aria-label="Not enough ratings to show average">
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760572" data-rate-url="/people/NoisyRedFox/sounds/760572/rate/5/" id="rate-760572-5" value="5">
+            <label for="rate-760572-5" data-value="5" aria-label="Rate sound 5 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760572" data-rate-url="/people/NoisyRedFox/sounds/760572/rate/4/" id="rate-760572-4" value="4">
+            <label for="rate-760572-4" data-value="4" aria-label="Rate sound 4 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760572" data-rate-url="/people/NoisyRedFox/sounds/760572/rate/3/" id="rate-760572-3" value="3">
+            <label for="rate-760572-3" data-value="3" aria-label="Rate sound 3 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760572" data-rate-url="/people/NoisyRedFox/sounds/760572/rate/2/" id="rate-760572-2" value="2">
+            <label for="rate-760572-2" data-value="2" aria-label="Rate sound 2 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760572" data-rate-url="/people/NoisyRedFox/sounds/760572/rate/1/" id="rate-760572-1" value="1">
+            <label for="rate-760572-1" data-value="1" aria-label="Rate sound 1 star">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+</div></div>
+            
+            <div class="between line-height-percentage-150 v-spacing-top-1">
+                <h5 class="ellipsis">
+                    <a class="bw-link--black" href="/people/NoisyRedFox/sounds/760572/" title="AggressiveTyping">AggressiveTyping</a>
+                </h5>
+                
+
+<div class="right text-light-grey col-auto" style="max-height: 22px;overflow: hidden;padding-right:0px!important;padding-left:0px!important;">                    
+    
+    <div class="h-spacing-left-1" title="56 downloads">
+        <a href="javascript:void(0)" data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/sounds/760572/downloaders/?ajax=1" class="bw-link--grey-light">
+            <span class="bw-icon-download" style="font-size:90%;"></span> 56
+        </a>
+    </div>
+    
+    
+    
+    <div class="h-spacing-left-1" title="Pack: Looped sounds">
+        <a href="/people/NoisyRedFox/packs/40962/" class="bw-link--grey-light">
+            <span class="bw-icon-stack"></span>
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="License: Creative Commons 0">
+        <span class="bw-icon-zero"></span>
+    </div>
+    
+</div>
+            </div>
+            <div class="between">
+                <div class="ellipsis">
+                    <a href="/people/NoisyRedFox/" title="Username: NoisyRedFox">NoisyRedFox</a>
+                </div>
+                
+            </div>
+            <div>
+                <span class="text-grey timesince-target">October 19th, 2024</span>
+            </div>
+            
+                
+                <div class="v-spacing-top-1 bw-player__description-height" >
+                    Infinite aggressive typing, office ambient
+                </div>
+                
+            
+            
+        </div>
+        
+        
+        
+        
+
+    
+
+                                </div>
+                            
+                                <div class="col-6 col-lg-4">
+                                    
+
+
+
+
+    
+        
+        
+        <div class="v-spacing-3 overflow-hidden " aria-label="Sound SipSound3 by NoisyRedFox">
+            <div
+    class="bw-player"
+    data-sound-id="760570"
+    data-username="NoisyRedFox"
+    data-user-id="14357801"
+    data-size="small"
+    data-collection="true"
+    data-collection-modal-content-url="/collections/760570/add/?ajax=1"
+    data-bookmark="false"
+    data-bookmark-modal-url=""
+    data-add-bookmark-url=""
+    data-similar-sounds="true"
+    data-similar-sounds-modal-url="/people/NoisyRedFox/sounds/760570/similar/?ajax=1"
+    data-remix-group="false"
+    data-remix-group-modal-url="/people/NoisyRedFox/sounds/760570/remixes/?ajax=1"
+    data-mp3="https://cdn.freesound.org/previews/760/760570_14357801-lq.mp3"
+    data-ogg="https://cdn.freesound.org/previews/760/760570_14357801-lq.ogg"
+    data-waveform="https://cdn.freesound.org/displays/760/760570_14357801_wave_bw_M.png"
+    data-spectrum="https://cdn.freesound.org/displays/760/760570_14357801_spec_bw_M.jpg"
+    data-title="SipSound3"
+    data-duration="0.696599"
+    data-samplerate="44100.0"
+    data-show-milliseconds="true"
+    data-favorite="false"
+    data-num-comments="0" 
+    data-num-downloads="47" 
+    
+    tabindex="0">  
+</div>
+            <div class="display-none bw-player__rate__widget">
+<div class="bw-rating__container" 
+    data-show-added-rating-on-save="false" 
+    
+    title="Average rating not shown as there are not enough ratings" aria-label="Not enough ratings to show average">
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760570" data-rate-url="/people/NoisyRedFox/sounds/760570/rate/5/" id="rate-760570-5" value="5">
+            <label for="rate-760570-5" data-value="5" aria-label="Rate sound 5 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760570" data-rate-url="/people/NoisyRedFox/sounds/760570/rate/4/" id="rate-760570-4" value="4">
+            <label for="rate-760570-4" data-value="4" aria-label="Rate sound 4 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760570" data-rate-url="/people/NoisyRedFox/sounds/760570/rate/3/" id="rate-760570-3" value="3">
+            <label for="rate-760570-3" data-value="3" aria-label="Rate sound 3 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760570" data-rate-url="/people/NoisyRedFox/sounds/760570/rate/2/" id="rate-760570-2" value="2">
+            <label for="rate-760570-2" data-value="2" aria-label="Rate sound 2 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760570" data-rate-url="/people/NoisyRedFox/sounds/760570/rate/1/" id="rate-760570-1" value="1">
+            <label for="rate-760570-1" data-value="1" aria-label="Rate sound 1 star">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+</div></div>
+            
+            <div class="between line-height-percentage-150 v-spacing-top-1">
+                <h5 class="ellipsis">
+                    <a class="bw-link--black" href="/people/NoisyRedFox/sounds/760570/" title="SipSound3">SipSound3</a>
+                </h5>
+                
+
+<div class="right text-light-grey col-auto" style="max-height: 22px;overflow: hidden;padding-right:0px!important;padding-left:0px!important;">                    
+    
+    <div class="h-spacing-left-1" title="47 downloads">
+        <a href="javascript:void(0)" data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/sounds/760570/downloaders/?ajax=1" class="bw-link--grey-light">
+            <span class="bw-icon-download" style="font-size:90%;"></span> 47
+        </a>
+    </div>
+    
+    
+    
+    <div class="h-spacing-left-1" title="Pack: Simple Short Sounds">
+        <a href="/people/NoisyRedFox/packs/40960/" class="bw-link--grey-light">
+            <span class="bw-icon-stack"></span>
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="License: Creative Commons 0">
+        <span class="bw-icon-zero"></span>
+    </div>
+    
+</div>
+            </div>
+            <div class="between">
+                <div class="ellipsis">
+                    <a href="/people/NoisyRedFox/" title="Username: NoisyRedFox">NoisyRedFox</a>
+                </div>
+                
+            </div>
+            <div>
+                <span class="text-grey timesince-target">October 19th, 2024</span>
+            </div>
+            
+                
+                <div class="v-spacing-top-1 bw-player__description-height" >
+                    Drinking tea (Earl Grey)
+                </div>
+                
+            
+            
+        </div>
+        
+        
+        
+        
+
+    
+
+                                </div>
+                            
+                                <div class="col-6 col-lg-4">
+                                    
+
+
+
+
+    
+        
+        
+        <div class="v-spacing-3 overflow-hidden " aria-label="Sound SipSound2 by NoisyRedFox">
+            <div
+    class="bw-player"
+    data-sound-id="760569"
+    data-username="NoisyRedFox"
+    data-user-id="14357801"
+    data-size="small"
+    data-collection="true"
+    data-collection-modal-content-url="/collections/760569/add/?ajax=1"
+    data-bookmark="false"
+    data-bookmark-modal-url=""
+    data-add-bookmark-url=""
+    data-similar-sounds="true"
+    data-similar-sounds-modal-url="/people/NoisyRedFox/sounds/760569/similar/?ajax=1"
+    data-remix-group="false"
+    data-remix-group-modal-url="/people/NoisyRedFox/sounds/760569/remixes/?ajax=1"
+    data-mp3="https://cdn.freesound.org/previews/760/760569_14357801-lq.mp3"
+    data-ogg="https://cdn.freesound.org/previews/760/760569_14357801-lq.ogg"
+    data-waveform="https://cdn.freesound.org/displays/760/760569_14357801_wave_bw_M.png"
+    data-spectrum="https://cdn.freesound.org/displays/760/760569_14357801_spec_bw_M.jpg"
+    data-title="SipSound2"
+    data-duration="0.429569"
+    data-samplerate="44100.0"
+    data-show-milliseconds="true"
+    data-favorite="false"
+    data-num-comments="0" 
+    data-num-downloads="15" 
+    
+    tabindex="0">  
+</div>
+            <div class="display-none bw-player__rate__widget">
+<div class="bw-rating__container" 
+    data-show-added-rating-on-save="false" 
+    
+    title="Average rating not shown as there are not enough ratings" aria-label="Not enough ratings to show average">
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760569" data-rate-url="/people/NoisyRedFox/sounds/760569/rate/5/" id="rate-760569-5" value="5">
+            <label for="rate-760569-5" data-value="5" aria-label="Rate sound 5 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760569" data-rate-url="/people/NoisyRedFox/sounds/760569/rate/4/" id="rate-760569-4" value="4">
+            <label for="rate-760569-4" data-value="4" aria-label="Rate sound 4 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760569" data-rate-url="/people/NoisyRedFox/sounds/760569/rate/3/" id="rate-760569-3" value="3">
+            <label for="rate-760569-3" data-value="3" aria-label="Rate sound 3 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760569" data-rate-url="/people/NoisyRedFox/sounds/760569/rate/2/" id="rate-760569-2" value="2">
+            <label for="rate-760569-2" data-value="2" aria-label="Rate sound 2 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760569" data-rate-url="/people/NoisyRedFox/sounds/760569/rate/1/" id="rate-760569-1" value="1">
+            <label for="rate-760569-1" data-value="1" aria-label="Rate sound 1 star">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+</div></div>
+            
+            <div class="between line-height-percentage-150 v-spacing-top-1">
+                <h5 class="ellipsis">
+                    <a class="bw-link--black" href="/people/NoisyRedFox/sounds/760569/" title="SipSound2">SipSound2</a>
+                </h5>
+                
+
+<div class="right text-light-grey col-auto" style="max-height: 22px;overflow: hidden;padding-right:0px!important;padding-left:0px!important;">                    
+    
+    <div class="h-spacing-left-1" title="15 downloads">
+        <a href="javascript:void(0)" data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/sounds/760569/downloaders/?ajax=1" class="bw-link--grey-light">
+            <span class="bw-icon-download" style="font-size:90%;"></span> 15
+        </a>
+    </div>
+    
+    
+    
+    <div class="h-spacing-left-1" title="Pack: Simple Short Sounds">
+        <a href="/people/NoisyRedFox/packs/40960/" class="bw-link--grey-light">
+            <span class="bw-icon-stack"></span>
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="License: Creative Commons 0">
+        <span class="bw-icon-zero"></span>
+    </div>
+    
+</div>
+            </div>
+            <div class="between">
+                <div class="ellipsis">
+                    <a href="/people/NoisyRedFox/" title="Username: NoisyRedFox">NoisyRedFox</a>
+                </div>
+                
+            </div>
+            <div>
+                <span class="text-grey timesince-target">October 19th, 2024</span>
+            </div>
+            
+                
+                <div class="v-spacing-top-1 bw-player__description-height" >
+                    Drinking tea (Earl Grey)
+                </div>
+                
+            
+            
+        </div>
+        
+        
+        
+        
+
+    
+
+                                </div>
+                            
+                                <div class="col-6 col-lg-4">
+                                    
+
+
+
+
+    
+        
+        
+        <div class="v-spacing-3 overflow-hidden " aria-label="Sound SipSound1 by NoisyRedFox">
+            <div
+    class="bw-player"
+    data-sound-id="760568"
+    data-username="NoisyRedFox"
+    data-user-id="14357801"
+    data-size="small"
+    data-collection="true"
+    data-collection-modal-content-url="/collections/760568/add/?ajax=1"
+    data-bookmark="false"
+    data-bookmark-modal-url=""
+    data-add-bookmark-url=""
+    data-similar-sounds="true"
+    data-similar-sounds-modal-url="/people/NoisyRedFox/sounds/760568/similar/?ajax=1"
+    data-remix-group="false"
+    data-remix-group-modal-url="/people/NoisyRedFox/sounds/760568/remixes/?ajax=1"
+    data-mp3="https://cdn.freesound.org/previews/760/760568_14357801-lq.mp3"
+    data-ogg="https://cdn.freesound.org/previews/760/760568_14357801-lq.ogg"
+    data-waveform="https://cdn.freesound.org/displays/760/760568_14357801_wave_bw_M.png"
+    data-spectrum="https://cdn.freesound.org/displays/760/760568_14357801_spec_bw_M.jpg"
+    data-title="SipSound1"
+    data-duration="0.406349"
+    data-samplerate="44100.0"
+    data-show-milliseconds="true"
+    data-favorite="false"
+    data-num-comments="0" 
+    data-num-downloads="35" 
+    
+    tabindex="0">  
+</div>
+            <div class="display-none bw-player__rate__widget">
+<div class="bw-rating__container" 
+    data-show-added-rating-on-save="false" 
+    
+    title="Average rating not shown as there are not enough ratings" aria-label="Not enough ratings to show average">
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760568" data-rate-url="/people/NoisyRedFox/sounds/760568/rate/5/" id="rate-760568-5" value="5">
+            <label for="rate-760568-5" data-value="5" aria-label="Rate sound 5 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760568" data-rate-url="/people/NoisyRedFox/sounds/760568/rate/4/" id="rate-760568-4" value="4">
+            <label for="rate-760568-4" data-value="4" aria-label="Rate sound 4 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760568" data-rate-url="/people/NoisyRedFox/sounds/760568/rate/3/" id="rate-760568-3" value="3">
+            <label for="rate-760568-3" data-value="3" aria-label="Rate sound 3 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760568" data-rate-url="/people/NoisyRedFox/sounds/760568/rate/2/" id="rate-760568-2" value="2">
+            <label for="rate-760568-2" data-value="2" aria-label="Rate sound 2 stars">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+        
+            <input class="bw-rating__input" type="radio" name="rate-760568" data-rate-url="/people/NoisyRedFox/sounds/760568/rate/1/" id="rate-760568-1" value="1">
+            <label for="rate-760568-1" data-value="1" aria-label="Rate sound 1 star">
+        
+            
+                <span class="bw-icon-star text-light-grey">
+    
+</span>
+            
+        
+            </label>
+        
+    
+</div></div>
+            
+            <div class="between line-height-percentage-150 v-spacing-top-1">
+                <h5 class="ellipsis">
+                    <a class="bw-link--black" href="/people/NoisyRedFox/sounds/760568/" title="SipSound1">SipSound1</a>
+                </h5>
+                
+
+<div class="right text-light-grey col-auto" style="max-height: 22px;overflow: hidden;padding-right:0px!important;padding-left:0px!important;">                    
+    
+    <div class="h-spacing-left-1" title="35 downloads">
+        <a href="javascript:void(0)" data-toggle="modal-default" data-modal-content-url="/people/NoisyRedFox/sounds/760568/downloaders/?ajax=1" class="bw-link--grey-light">
+            <span class="bw-icon-download" style="font-size:90%;"></span> 35
+        </a>
+    </div>
+    
+    
+    
+    <div class="h-spacing-left-1" title="Pack: Simple Short Sounds">
+        <a href="/people/NoisyRedFox/packs/40960/" class="bw-link--grey-light">
+            <span class="bw-icon-stack"></span>
+        </a>
+    </div>
+    
+    
+    <div class="h-spacing-left-1" title="License: Creative Commons 0">
+        <span class="bw-icon-zero"></span>
+    </div>
+    
+</div>
+            </div>
+            <div class="between">
+                <div class="ellipsis">
+                    <a href="/people/NoisyRedFox/" title="Username: NoisyRedFox">NoisyRedFox</a>
+                </div>
+                
+            </div>
+            <div>
+                <span class="text-grey timesince-target">October 19th, 2024</span>
+            </div>
+            
+                
+                <div class="v-spacing-top-1 bw-player__description-height" >
+                    Drinking tea (Earl Grey)
+                </div>
+                
+            
+            
+        </div>
+        
+        
+        
+        
+
+    
+
+                                </div>
+                            
+                        </div>
+                        <div class="v-spacing-top-4 text-center">
+                            <a class="no-hover btn-primary" href="/search/?f=username:&quot;NoisyRedFox&quot;&amp;s=Date+added+(newest+first)&amp;g=0">See all sounds by NoisyRedFox</a>
+                        </div>
+                    
+                </div>
+                <div class="bw-profile__tap_container" id="packs">
+                    <div class="async-section"
+                        data-async-section-content-url="/people/NoisyRedFox/section/latest_packs/?ajax=1">
+                        <img width="12px" height="12px" src="/static/bw-frontend/public/bw_indicator.a51c5608d01a.gif">
+                    </div>
+                </div>
+                <div class="bw-profile__tap_container" id="tapDownloaded">
+                    downloaded
+                </div>
+            </div>
+            <aside class="col-md-4 col-extra-left-padding-middle-md bw-profile__sections">
+                <div class="divider-light v-spacing-top-6 v-spacing-5 d-md-none"></div>
+                <section class="bw-profile__section_stats v-spacing-top-4 async-section"
+                    data-async-section-content-url="/people/NoisyRedFox/section/stats/?ajax=1">
+                    <img width="12px" height="12px" src="/static/bw-frontend/public/bw_indicator.a51c5608d01a.gif">
+                </section>
+                
+                
+                
+                
+                
+                
+            </aside>
+        </div>
+    </div>
+
+        
+
+<footer class="bw-footer padding-7 v-spacing-top-6">
+  <div class="center">
+    <div class="footer-logo-container">
+        <div class="row">
+            <div class="col-sm-8">
+                <a href="https://www.upf.edu/web/mtg" class="no-hover">
+                    <img class="w-100" src="/static/bw-frontend/public/upf_logo.06e9f326ce68.png" />
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="https://www.upf.edu/web/phonos/" class="no-hover">
+                    <img class="w-100" src="/static/bw-frontend/public/phonos_logo.7c586cfd83d2.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="row v-spacing-top-3 center">
+    <a class="bw-link--grey h-spacing-1" href="/help/faq/#about-freesound">About Freesound</a>
+    <a class="bw-link--grey h-spacing-1" href="/help/tos_web/">Terms of use</a>
+    <a class="bw-link--grey h-spacing-1" href="/help/privacy/">Privacy</a>
+    <a class="bw-link--grey h-spacing-1" href="/help/cookies_policy/">Cookies</a>
+    <a class="bw-link--grey h-spacing-1" href="/help/developers/">Developers</a>
+    <a class="bw-link--grey h-spacing-1" href="/help/faq/">Help</a>
+    <a class="bw-link--grey h-spacing-1" href="/donations/donors/">Donations</a>
+    <a class="bw-link--grey h-spacing-1" href="https://blog.freesound.org">Blog</a>
+    <a class="bw-link--grey h-spacing-1" href="https://labs.freesound.org">Freesound Labs</a>
+    <a class="bw-link--grey h-spacing-1" href="/help/tshirt/">Get your t-shirt!</a>
+  </div>
+  <div class="center v-spacing-top-3">
+    <span>© 2026 Universitat Pompeu Fabra</span>
+  </div>
+</footer>
+    </div>
+    
+<script defer data-domain="freesound.org" src="https://analytics.freesound.org/js/plausible.manual.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+<script>
+    let redactedUrl = window.location.href.replace(/\/\d+\//g, "/_ID_/"); // Replace numberic IDs
+    redactedUrl = redactedUrl.replace(/people\/([^/]+)\//ig, "people/_USERNAME_/");  // Replace usernames
+    redactedUrl = redactedUrl.replace(/browse\/geotags\/(\w+)\//ig, "browse/geotags/_TAG_/");  // Replace tag from geotags
+    redactedUrl = redactedUrl.replace(/browse\/tags\/.*/ig, "browse/tags/_TAGS_/");  // Replace multiple tags from tags page
+    if (redactedUrl.includes("/forum/")){  // Replace forum names, be careful with some hard coded URLs
+        if (!(redactedUrl.includes("/moderate/") || redactedUrl.includes("/forums-search/") || redactedUrl.includes("/hot-treads/"))){
+            redactedUrl = redactedUrl.replace(/forum\/([^/]+)\//ig, "forum/_FORUM_NAME_/");  // Replace forum name
+        }
+    }
+    redactedUrl = redactedUrl.replace(/activate\/([^/]+)\/([^/]+)\//ig, "activate/_USERNAME_/_CODE_/");  // Replace activation urls
+    redactedUrl = redactedUrl.replace(/reset\/([^/]+)\//ig, "reset/_CODE_/");  // Replace password reset
+    redactedUrl = redactedUrl.replace(/tickets\/([^/]+)\//ig, "tickets/_ID_/");  // Replace moderation tickets
+    plausible('pageview', { u: redactedUrl });
+</script>
+
+    
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css' type='text/css' />
+<script type="text/javascript">
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZXNvdW5kIiwiYSI6ImNtdzNoZWJ2ZDAxamcyeHMzdjFyeXhwbHoifQ.VDehmddbkFHnVq5tMilZFA';
+</script>
+    <script>
+        
+        document.cookie = "preferSpectrogram=no;path=/";
+        document.cookie = "disallowSimultaneousAudioPlayback=no;path=/"
+        
+        const userIsAuthenticated = false;
+    </script>
+    <script src="/static/bw-frontend/dist/index.31307efc4d8b.js"></script>
+    
+    <script src="/static/bw-frontend/dist/pages/profile.a824dc4b8de6.js"></script>
+
+</body>
+</html>

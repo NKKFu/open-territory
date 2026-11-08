@@ -1,0 +1,55 @@
+{
+  "utc": "2026-11-08",
+  "unity": "6000.3.27f1",
+  "scenario": "Same camera, two 2.5-intensity headlights, same material pigment, baseline smoothness 0.15, wetness 0 or 1. Separate material preview, not a city frame or performance test.",
+  "samples": [
+    {
+      "surface": "asphalt",
+      "condition": "dry",
+      "before": {
+        "whiteHighlightPixels": 1980,
+        "maxAverageRgb": 255.0
+      },
+      "after": {
+        "whiteHighlightPixels": 0,
+        "maxAverageRgb": 245.0
+      }
+    },
+    {
+      "surface": "asphalt",
+      "condition": "wet",
+      "before": {
+        "whiteHighlightPixels": 22286,
+        "maxAverageRgb": 255.0
+      },
+      "after": {
+        "whiteHighlightPixels": 1251,
+        "maxAverageRgb": 255.0
+      }
+    },
+    {
+      "surface": "soil",
+      "condition": "dry",
+      "before": {
+        "whiteHighlightPixels": 1809,
+        "maxAverageRgb": 255.0
+      },
+      "after": {
+        "whiteHighlightPixels": 0,
+        "maxAverageRgb": 242.33333333333334
+      }
+    },
+    {
+      "surface": "soil",
+      "condition": "wet",
+      "before": {
+        "whiteHighlightPixels": 22232,
+        "maxAverageRgb": 255.0
+      },
+      "after": {
+        "whiteHighlightPixels": 0,
+        "maxAverageRgb": 243.66666666666666
+      }
+    }
+  ]
+}

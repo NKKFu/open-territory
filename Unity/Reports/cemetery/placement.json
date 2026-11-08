@@ -1,0 +1,56 @@
+{
+  "center": {
+    "x": 126.112,
+    "z": 412.534
+  },
+  "yawDegrees": 169.677,
+  "width": 44,
+  "depth": 58,
+  "worldSha256": "3acd9231b4545a4273b8564f2daa41d4c645d17ff3fa8487cef60076ecc9cb71",
+  "passed": true,
+  "checks": {
+    "buildings_and_lots": {
+      "passed": true,
+      "overlaps": []
+    },
+    "existing_non_natural_solids": {
+      "passed": true,
+      "overlaps": []
+    },
+    "roads_and_sidewalks": {
+      "passed": true,
+      "overlaps": []
+    },
+    "usable_benches": {
+      "passed": true,
+      "overlaps": []
+    },
+    "existing_services": {
+      "passed": true,
+      "overlaps": []
+    }
+  },
+  "nearest": {
+    "buildings_and_lots": {
+      "id": "#1F3C10",
+      "clearanceMeters": 68.316
+    },
+    "existing_non_natural_solids": {
+      "id": "483",
+      "clearanceMeters": 8.519
+    },
+    "roads_and_sidewalks": {
+      "id": "bay-front-cut",
+      "clearanceMeters": 7.998
+    },
+    "usable_benches": {
+      "id": "3144",
+      "clearanceMeters": 37.464
+    },
+    "existing_services": {
+      "id": "service-0",
+      "clearanceMeters": 82.593
+    }
+  },
+  "note": "Offline footprint audit; native physical and visual validation is recorded separately in native/cemetery-qa.json."
+}

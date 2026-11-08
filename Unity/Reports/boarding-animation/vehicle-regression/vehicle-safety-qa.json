@@ -1,0 +1,3970 @@
+{
+    "passed": false,
+    "unity": "6000.3.27f1",
+    "checks": [
+        {
+            "name": "occupied-car-selectable-side--1",
+            "detail": "width=2.55",
+            "passed": true
+        },
+        {
+            "name": "E-takes-control-once-side--1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "takeover-clears-remote-brakes-side--1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "stolen-car-drives-side--1",
+            "detail": "4.40",
+            "passed": true
+        },
+        {
+            "name": "E-brakes-and-exits-side--1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "reentry-does-not-report-theft-again-side--1",
+            "detail": "selected=vehicle-11171; active=11171; crimes=1->1",
+            "passed": true
+        },
+        {
+            "name": "occupied-car-selectable-side-1",
+            "detail": "width=2.55",
+            "passed": true
+        },
+        {
+            "name": "E-takes-control-once-side-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "takeover-clears-remote-brakes-side-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "stolen-car-drives-side-1",
+            "detail": "4.40",
+            "passed": true
+        },
+        {
+            "name": "E-brakes-and-exits-side-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "reentry-does-not-report-theft-again-side-1",
+            "detail": "selected=vehicle-11171; active=11171; crimes=2->2",
+            "passed": true
+        },
+        {
+            "name": "sliding-car-cannot-be-entered",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "fast-car-cannot-be-entered",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "wall-blocks-entry",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "entry-requires-character-reach",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "player-centre-brakes-before-contact",
+            "detail": "minimum gap=3.00; speed=0.00; crossed clear=False",
+            "passed": true
+        },
+        {
+            "name": "player-centre-resumes-after-clear",
+            "detail": "0.26",
+            "passed": false
+        },
+        {
+            "name": "player-bumper-edge-brakes-before-contact",
+            "detail": "minimum gap=3.00; speed=0.12; crossed clear=False",
+            "passed": true
+        },
+        {
+            "name": "player-bumper-edge-resumes-after-clear",
+            "detail": "2.26",
+            "passed": true
+        },
+        {
+            "name": "resident-centre-brakes-before-contact",
+            "detail": "minimum gap=2.96; speed=0.12; crossed clear=False",
+            "passed": true
+        },
+        {
+            "name": "resident-centre-resumes-after-clear",
+            "detail": "2.26",
+            "passed": true
+        },
+        {
+            "name": "resident-crossing-brakes-before-contact",
+            "detail": "minimum gap=4.64; speed=2.27; crossed clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-brakes-before-person-enters-lane",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "resident-crossing-resumes-after-clear",
+            "detail": "4.41",
+            "passed": true
+        },
+        {
+            "name": "wet-road-brakes-before-contact",
+            "detail": "minimum gap=2.99; speed=0.00; crossed clear=False",
+            "passed": true
+        },
+        {
+            "name": "wet-road-resumes-after-clear",
+            "detail": "0.26",
+            "passed": false
+        },
+        {
+            "name": "fallen-resident-brakes-before-contact",
+            "detail": "minimum gap=3.25; speed=0.12; crossed clear=False",
+            "passed": true
+        },
+        {
+            "name": "fallen-resident-resumes-after-clear",
+            "detail": "2.26",
+            "passed": true
+        },
+        {
+            "name": "curve-swept-body-stops-before-person",
+            "detail": "minimum body clearance=2.58; speed=0.12",
+            "passed": true
+        },
+        {
+            "name": "person-on-pavement-does-not-stop-traffic",
+            "detail": "7.23",
+            "passed": true
+        },
+        {
+            "name": "person-on-another-level-is-not-in-lane",
+            "detail": "6.85",
+            "passed": true
+        },
+        {
+            "name": "Esc-still-pauses-traffic",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "patient-driver-waits-for-person-beyond-patience",
+            "detail": "minimum=2.954467 creep=0.006398678 speed=8.773655E-05",
+            "passed": true
+        },
+        {
+            "name": "pedestrian-clearance-delay-prevents-early-restart",
+            "detail": "8.773217E-05",
+            "passed": true
+        },
+        {
+            "name": "person-reentering-lane-restarts-clearance-delay",
+            "detail": "8.774644E-05",
+            "passed": true
+        },
+        {
+            "name": "patient-driver-resumes-when-person-stays-clear",
+            "detail": "0.9954154",
+            "passed": true
+        },
+        {
+            "name": "follows-slower-vehicle-with-space",
+            "detail": "gap=9.474504 speed=3.821644",
+            "passed": true
+        },
+        {
+            "name": "queue-brakes-without-rear-ending",
+            "detail": "gap=2.553009 speed=0.01140259",
+            "passed": true
+        },
+        {
+            "name": "patience-never-bypasses-stopped-traffic-queue",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "queue-restarts-in-order",
+            "detail": "leader=3.010724 follower=2.135274 gap=5.245738",
+            "passed": true
+        },
+        {
+            "name": "full-width-sensor-stops-for-offset-car",
+            "detail": "gap=2.654297 speed=0.08919729",
+            "passed": true
+        },
+        {
+            "name": "offset-obstacle-clearance-resumes-traffic",
+            "detail": "3.173507",
+            "passed": true
+        },
+        {
+            "name": "real-street-has-a-safe-passing-corridor",
+            "detail": "50",
+            "passed": true
+        },
+        {
+            "name": "waits-before-attempting-to-pass-parked-car",
+            "detail": "wait=0",
+            "passed": true
+        },
+        {
+            "name": "patient-driver-does-not-pass-into-person",
+            "detail": "obstaculo-Group-8908",
+            "passed": true
+        },
+        {
+            "name": "fallen-person-also-blocks-passing-corridor",
+            "detail": "obstaculo-Group-8908",
+            "passed": true
+        },
+        {
+            "name": "parked-car-is-passed-and-own-lane-recovered",
+            "detail": "side=0.4382629 phase=out denied=obstaculo-Group-8908 progress=-7.69728",
+            "passed": false
+        },
+        {
+            "name": "passing-signals-before-steering",
+            "detail": "signal lead=-117.8927",
+            "passed": false
+        },
+        {
+            "name": "passing-stays-on-real-asphalt",
+            "detail": "minimum road clearance=1.672752",
+            "passed": true
+        },
+        {
+            "name": "passing-has-no-vehicle-contact",
+            "detail": "contacts=0",
+            "passed": true
+        },
+        {
+            "name": "incident-driver-can-leave-car",
+            "detail": "walking; wait=clear-exit",
+            "passed": true
+        },
+        {
+            "name": "car-with-driver-outside-can-be-taken",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "takeover-releases-incident-and-keeps-owner",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "former-owner-does-not-reclaim-controlled-car",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "samples": [
+        {
+            "scenario": "player-centre",
+            "reason": "",
+            "time": 0.0,
+            "speed": 8.0,
+            "target": 8.0,
+            "gap": 24.020000457763673,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "",
+            "time": 0.15652084350585938,
+            "speed": 7.979286193847656,
+            "target": 8.191062927246094,
+            "gap": 22.813692092895509,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "",
+            "time": 0.31207847595214846,
+            "speed": 8.052240371704102,
+            "target": 8.193269729614258,
+            "gap": 21.567089080810548,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "",
+            "time": 0.4676342010498047,
+            "speed": 8.100611686706543,
+            "target": 8.195307731628418,
+            "gap": 20.310285568237306,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "",
+            "time": 0.6231937408447266,
+            "speed": 8.088521957397461,
+            "target": 8.197183609008789,
+            "gap": 19.051795959472658,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "",
+            "time": 0.7787513732910156,
+            "speed": 8.093329429626465,
+            "target": 8.199183464050293,
+            "gap": 17.792377471923829,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 0.9345130920410156,
+            "speed": 7.9956793785095219,
+            "target": 8.019279479980469,
+            "gap": 16.532508850097658,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 1.0900707244873047,
+            "speed": 7.592910289764404,
+            "target": 7.586493015289307,
+            "gap": 15.32010269165039,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 1.2456283569335938,
+            "speed": 7.122004508972168,
+            "target": 7.157164096832275,
+            "gap": 14.171847343444825,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 1.4011859893798829,
+            "speed": 6.75106143951416,
+            "target": 6.784559726715088,
+            "gap": 13.087652206420899,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 1.5567436218261719,
+            "speed": 6.383129596710205,
+            "target": 6.3636155128479,
+            "gap": 12.067601203918457,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 1.712301254272461,
+            "speed": 5.957090854644775,
+            "target": 5.947505474090576,
+            "gap": 11.111310005187989,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 1.8684749603271485,
+            "speed": 5.548416614532471,
+            "target": 5.536600589752197,
+            "gap": 10.21320915222168,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 2.0240325927734377,
+            "speed": 5.1648077964782719,
+            "target": 5.181281089782715,
+            "gap": 9.379199981689454,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 2.179759979248047,
+            "speed": 4.791843891143799,
+            "target": 4.781655788421631,
+            "gap": 8.60472583770752,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 2.335317611694336,
+            "speed": 4.381294250488281,
+            "target": 4.38994836807251,
+            "gap": 7.8925652503967289,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 2.4908885955810549,
+            "speed": 3.9964141845703127,
+            "target": 4.005654335021973,
+            "gap": 7.237095355987549,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 2.6464462280273439,
+            "speed": 3.6384854316711427,
+            "target": 3.630704879760742,
+            "gap": 6.639172554016113,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 2.802003860473633,
+            "speed": 3.31278133392334,
+            "target": 3.3110508918762209,
+            "gap": 6.097492694854736,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 2.957561492919922,
+            "speed": 2.989835262298584,
+            "target": 2.956702709197998,
+            "gap": 5.609675884246826,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 3.113128662109375,
+            "speed": 2.6227118968963625,
+            "target": 2.6149306297302248,
+            "gap": 5.174526691436768,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 3.268686294555664,
+            "speed": 2.3032095432281496,
+            "target": 2.288248062133789,
+            "gap": 4.78999662399292,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 3.4242420196533205,
+            "speed": 2.036332130432129,
+            "target": 2.0160346031188967,
+            "gap": 4.45365571975708,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 3.5804271697998049,
+            "speed": 1.719361662864685,
+            "target": 1.722413182258606,
+            "gap": 4.162630081176758,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 3.7359848022460939,
+            "speed": 1.4495002031326295,
+            "target": 1.4500035047531129,
+            "gap": 3.915544033050537,
+            "braking": true
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 3.891542434692383,
+            "speed": 1.2265467643737794,
+            "target": 1.2006839513778687,
+            "gap": 3.707918167114258,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 4.0474395751953129,
+            "speed": 1.0042691230773926,
+            "target": 0.9741407632827759,
+            "gap": 3.5345211029052736,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 4.202997207641602,
+            "speed": 0.8333311676979065,
+            "target": 0.7986117601394653,
+            "gap": 3.394284725189209,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 4.358552932739258,
+            "speed": 0.6581268310546875,
+            "target": 0.6231352090835571,
+            "gap": 3.2823843955993654,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 4.514110565185547,
+            "speed": 0.48329028487205508,
+            "target": 0.4755723476409912,
+            "gap": 3.1951494216918947,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 4.669670104980469,
+            "speed": 0.3547482192516327,
+            "target": 0.3560279607772827,
+            "gap": 3.128535270690918,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 4.827629089355469,
+            "speed": 0.2723773419857025,
+            "target": 0.26172566413879397,
+            "gap": 3.0779080390930177,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 4.983266830444336,
+            "speed": 0.19461509585380555,
+            "target": 0.1956806182861328,
+            "gap": 3.04061222076416,
+            "braking": false
+        },
+        {
+            "scenario": "player-centre",
+            "reason": "jogador",
+            "time": 5.138824462890625,
+            "speed": 0.15842464566230775,
+            "target": 0.13850080966949464,
+            "gap": 3.01322603225708,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "",
+            "time": 0.0,
+            "speed": 8.0,
+            "target": 8.0,
+            "gap": 24.020000457763673,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "",
+            "time": 0.1569366455078125,
+            "speed": 7.981831073760986,
+            "target": 8.260170936584473,
+            "gap": 22.841678619384767,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "",
+            "time": 0.31249237060546877,
+            "speed": 8.080445289611817,
+            "target": 8.26120376586914,
+            "gap": 21.59311294555664,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "",
+            "time": 0.4680519104003906,
+            "speed": 8.145729064941407,
+            "target": 8.262139320373536,
+            "gap": 20.330528259277345,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "",
+            "time": 0.6236095428466797,
+            "speed": 8.160512924194336,
+            "target": 8.263120651245118,
+            "gap": 19.06120491027832,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "",
+            "time": 0.7791671752929688,
+            "speed": 8.163671493530274,
+            "target": 8.264142990112305,
+            "gap": 17.791494369506837,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 0.9347248077392578,
+            "speed": 7.964448928833008,
+            "target": 8.007404327392579,
+            "gap": 16.527353286743165,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 1.0944976806640626,
+            "speed": 7.561307430267334,
+            "target": 7.5746073722839359,
+            "gap": 15.282999992370606,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 1.2500553131103516,
+            "speed": 7.169122219085693,
+            "target": 7.145934581756592,
+            "gap": 14.138103485107422,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 1.4056510925292969,
+            "speed": 6.797512531280518,
+            "target": 6.773863315582275,
+            "gap": 13.055706024169922,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 1.561208724975586,
+            "speed": 6.355341911315918,
+            "target": 6.352967739105225,
+            "gap": 12.038580894470215,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 1.7167720794677735,
+            "speed": 5.93032169342041,
+            "target": 5.936880588531494,
+            "gap": 11.083783149719239,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 1.8723297119140626,
+            "speed": 5.522629737854004,
+            "target": 5.526004314422607,
+            "gap": 10.19061279296875,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 2.0278873443603517,
+            "speed": 5.141430854797363,
+            "target": 5.171847343444824,
+            "gap": 9.360523223876954,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 2.185239791870117,
+            "speed": 4.770752906799316,
+            "target": 4.773444652557373,
+            "gap": 8.581686973571778,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 2.342723846435547,
+            "speed": 4.361332893371582,
+            "target": 4.381692409515381,
+            "gap": 7.862588882446289,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 2.5027637481689455,
+            "speed": 4.031229496002197,
+            "target": 3.9979987144470217,
+            "gap": 7.191808700561523,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 2.652769088745117,
+            "speed": 3.621389389038086,
+            "target": 3.622988700866699,
+            "gap": 6.618312358856201,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 2.8125057220458986,
+            "speed": 3.2906758785247804,
+            "target": 3.2590746879577638,
+            "gap": 6.065285682678223,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 2.9681434631347658,
+            "speed": 2.9737167358398439,
+            "target": 2.949308395385742,
+            "gap": 5.579941749572754,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 3.1237010955810549,
+            "speed": 2.606642961502075,
+            "target": 2.60825252532959,
+            "gap": 5.148890018463135,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 3.2792587280273439,
+            "speed": 2.2871532440185549,
+            "target": 2.281602382659912,
+            "gap": 4.767126560211182,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 3.434816360473633,
+            "speed": 1.9691401720046998,
+            "target": 1.9724377393722535,
+            "gap": 4.43446683883667,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 3.590373992919922,
+            "speed": 1.6982967853546143,
+            "target": 1.680960774421692,
+            "gap": 4.14598274230957,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 3.7461414337158205,
+            "speed": 1.433470606803894,
+            "target": 1.4434903860092164,
+            "gap": 3.9009389877319338,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 3.9022789001464845,
+            "speed": 1.21054208278656,
+            "target": 1.194449782371521,
+            "gap": 3.6946425437927248,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 4.053112030029297,
+            "speed": 0.9883699417114258,
+            "target": 0.9707232713699341,
+            "gap": 3.5302577018737795,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 4.211727142333984,
+            "speed": 0.766735851764679,
+            "target": 0.771833062171936,
+            "gap": 3.3885445594787599,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 4.367286682128906,
+            "speed": 0.6422027945518494,
+            "target": 0.6207774877548218,
+            "gap": 3.278006076812744,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 4.528045654296875,
+            "speed": 0.46738752722740176,
+            "target": 0.47415637969970705,
+            "gap": 3.189793109893799,
+            "braking": true
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 4.6792449951171879,
+            "speed": 0.384847491979599,
+            "target": 0.3557908535003662,
+            "gap": 3.126068592071533,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 4.835731506347656,
+            "speed": 0.25646084547042849,
+            "target": 0.2611042261123657,
+            "gap": 3.0765509605407717,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 4.9912872314453129,
+            "speed": 0.22016850113868714,
+            "target": 0.18682706356048585,
+            "gap": 3.0391225814819338,
+            "braking": false
+        },
+        {
+            "scenario": "player-bumper-edge",
+            "reason": "jogador",
+            "time": 5.146846771240234,
+            "speed": 0.1425430327653885,
+            "target": 0.14019930362701417,
+            "gap": 3.013700008392334,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "",
+            "time": 0.0,
+            "speed": 8.0,
+            "target": 8.0,
+            "gap": 24.020000457763673,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "",
+            "time": 0.15555572509765626,
+            "speed": 7.981975078582764,
+            "target": 8.272003173828125,
+            "gap": 22.858369827270509,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "",
+            "time": 0.31111907958984377,
+            "speed": 8.087016105651856,
+            "target": 8.279324531555176,
+            "gap": 21.60955810546875,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "",
+            "time": 0.4666748046875,
+            "speed": 8.157383918762207,
+            "target": 8.279129981994629,
+            "gap": 20.34566307067871,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "",
+            "time": 0.6222305297851563,
+            "speed": 8.171435356140137,
+            "target": 8.278892517089844,
+            "gap": 19.073986053466798,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "",
+            "time": 0.7777900695800781,
+            "speed": 8.178842544555664,
+            "target": 8.278606414794922,
+            "gap": 17.802757263183595,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 0.9333457946777344,
+            "speed": 7.968935489654541,
+            "target": 8.018176078796387,
+            "gap": 16.535274505615236,
+            "braking": true
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 1.0889053344726563,
+            "speed": 7.655752182006836,
+            "target": 7.639790058135986,
+            "gap": 15.32144832611084,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 1.2444610595703126,
+            "speed": 7.182700157165527,
+            "target": 7.210023403167725,
+            "gap": 14.17186450958252,
+            "braking": true
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 1.4000167846679688,
+            "speed": 6.801048755645752,
+            "target": 6.7843403816223148,
+            "gap": 13.085246086120606,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 1.5555763244628907,
+            "speed": 6.357814788818359,
+            "target": 6.362555027008057,
+            "gap": 12.061769485473633,
+            "braking": true
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 1.7111701965332032,
+            "speed": 5.9325432777404789,
+            "target": 5.946263790130615,
+            "gap": 11.10237979888916,
+            "braking": true
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 1.8667259216308594,
+            "speed": 5.600063323974609,
+            "target": 5.5863800048828129,
+            "gap": 10.205219268798829,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 2.0222854614257814,
+            "speed": 5.207241058349609,
+            "target": 5.180710315704346,
+            "gap": 9.369937896728516,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 2.1778411865234377,
+            "speed": 4.770974636077881,
+            "target": 4.780865669250488,
+            "gap": 8.594308853149414,
+            "braking": true
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 2.3334007263183595,
+            "speed": 4.418570518493652,
+            "target": 4.388981819152832,
+            "gap": 7.878906726837158,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 2.489013671875,
+            "speed": 4.037967681884766,
+            "target": 4.05236291885376,
+            "gap": 7.221774101257324,
+            "braking": true
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 2.6445693969726564,
+            "speed": 3.676978588104248,
+            "target": 3.676137924194336,
+            "gap": 6.621383190155029,
+            "braking": true
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 2.800128936767578,
+            "speed": 3.342790126800537,
+            "target": 3.3105249404907228,
+            "gap": 6.077464580535889,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 2.9558143615722658,
+            "speed": 2.973811388015747,
+            "target": 2.955249786376953,
+            "gap": 5.586401462554932,
+            "braking": true
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 3.1116676330566408,
+            "speed": 2.6067121028900148,
+            "target": 2.6139779090881349,
+            "gap": 5.148858070373535,
+            "braking": true
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 3.267223358154297,
+            "speed": 2.3385555744171144,
+            "target": 2.3269519805908205,
+            "gap": 4.762202739715576,
+            "braking": true
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 3.4227828979492189,
+            "speed": 2.020292282104492,
+            "target": 2.0142531394958498,
+            "gap": 4.423885822296143,
+            "braking": true
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 3.578338623046875,
+            "speed": 1.74935781955719,
+            "target": 1.7212103605270386,
+            "gap": 4.1322245597839359,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 3.733898162841797,
+            "speed": 1.4794851541519166,
+            "target": 1.4484421014785767,
+            "gap": 3.883251667022705,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 3.889453887939453,
+            "speed": 1.2613335847854615,
+            "target": 1.2280508279800416,
+            "gap": 3.673125743865967,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 4.045009613037109,
+            "speed": 0.9930697083473206,
+            "target": 1.0004161596298218,
+            "gap": 3.501142978668213,
+            "braking": true
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 4.200569152832031,
+            "speed": 0.8173924684524536,
+            "target": 0.799169659614563,
+            "gap": 3.3602547645568849,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 4.3561248779296879,
+            "speed": 0.64218670129776,
+            "target": 0.6248794794082642,
+            "gap": 3.247770309448242,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 4.511684417724609,
+            "speed": 0.46733447909355166,
+            "target": 0.47707533836364748,
+            "gap": 3.1589813232421877,
+            "braking": true
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 4.667240142822266,
+            "speed": 0.38933518528938296,
+            "target": 0.3711063861846924,
+            "gap": 3.091306686401367,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 4.8227996826171879,
+            "speed": 0.30692654848098757,
+            "target": 0.2724193334579468,
+            "gap": 3.039750576019287,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 4.978355407714844,
+            "speed": 0.22463227808475495,
+            "target": 0.19559335708618165,
+            "gap": 3.0016283988952638,
+            "braking": false
+        },
+        {
+            "scenario": "resident-centre",
+            "reason": "pedestre-4225",
+            "time": 5.133914947509766,
+            "speed": 0.14247648417949677,
+            "target": 0.14010131359100343,
+            "gap": 2.9750866889953615,
+            "braking": false
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "",
+            "time": 0.0,
+            "speed": 8.0,
+            "target": 8.0,
+            "gap": 24.020000457763673,
+            "braking": false
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "",
+            "time": 0.3333320617675781,
+            "speed": 8.086318016052246,
+            "target": 8.247326850891114,
+            "gap": 21.455368041992189,
+            "braking": false
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "",
+            "time": 0.48345947265625,
+            "speed": 8.141841888427735,
+            "target": 8.243181228637696,
+            "gap": 20.237051010131837,
+            "braking": false
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "",
+            "time": 0.6398735046386719,
+            "speed": 8.134400367736817,
+            "target": 8.2417573928833,
+            "gap": 18.963863372802736,
+            "braking": false
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "",
+            "time": 0.7954330444335938,
+            "speed": 8.135522842407227,
+            "target": 8.240316390991211,
+            "gap": 17.697750091552736,
+            "braking": false
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 0.9542350769042969,
+            "speed": 7.939980983734131,
+            "target": 7.969992160797119,
+            "gap": 16.41028594970703,
+            "braking": true
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 1.1102180480957032,
+            "speed": 7.5475287437438969,
+            "target": 7.590983867645264,
+            "gap": 15.198450088500977,
+            "braking": true
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 1.2657737731933594,
+            "speed": 7.154778480529785,
+            "target": 7.161614894866943,
+            "gap": 14.054035186767579,
+            "braking": true
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 1.4213333129882813,
+            "speed": 6.699216842651367,
+            "target": 6.736316204071045,
+            "gap": 12.97474193572998,
+            "braking": true
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 1.5772972106933594,
+            "speed": 6.333178997039795,
+            "target": 6.316112995147705,
+            "gap": 11.957282066345215,
+            "braking": false
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 1.7399559020996094,
+            "speed": 5.909302711486816,
+            "target": 5.900718688964844,
+            "gap": 10.963582992553711,
+            "braking": false
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 1.89141845703125,
+            "speed": 5.510531425476074,
+            "target": 5.5411810874938969,
+            "gap": 10.098711967468262,
+            "braking": true
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 2.0429344177246095,
+            "speed": 5.121098041534424,
+            "target": 5.135745525360107,
+            "gap": 9.290526390075684,
+            "braking": true
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 2.198974609375,
+            "speed": 4.750101566314697,
+            "target": 4.73673152923584,
+            "gap": 8.517965316772461,
+            "braking": true
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 2.355926513671875,
+            "speed": 4.3417744636535648,
+            "target": 4.345589637756348,
+            "gap": 7.8026041984558109,
+            "braking": true
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 2.511486053466797,
+            "speed": 4.019874572753906,
+            "target": 4.010470867156982,
+            "gap": 7.152678966522217,
+            "braking": true
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 2.6670455932617189,
+            "speed": 3.6609079837799074,
+            "target": 3.636160373687744,
+            "gap": 6.559936046600342,
+            "braking": false
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 2.817401885986328,
+            "speed": 3.281623125076294,
+            "target": 3.271000385284424,
+            "gap": 6.038562297821045,
+            "braking": true
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 2.9763336181640627,
+            "speed": 2.9129257202148439,
+            "target": 2.9183950424194338,
+            "gap": 5.543668270111084,
+            "braking": true
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 3.135906219482422,
+            "speed": 2.591952085494995,
+            "target": 2.5780258178710939,
+            "gap": 5.1003947257995609,
+            "braking": true
+        },
+        {
+            "scenario": "resident-crossing",
+            "reason": "pedestre-4225",
+            "time": 3.2938232421875,
+            "speed": 2.2726237773895265,
+            "target": 2.253143310546875,
+            "gap": 4.714650630950928,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "",
+            "time": 0.0,
+            "speed": 8.0,
+            "target": 8.0,
+            "gap": 24.020000457763673,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "",
+            "time": 0.16184616088867188,
+            "speed": 7.987504959106445,
+            "target": 8.192758560180664,
+            "gap": 22.73796844482422,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "",
+            "time": 0.32057952880859377,
+            "speed": 8.05245304107666,
+            "target": 8.190777778625489,
+            "gap": 21.46505355834961,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "",
+            "time": 0.4806861877441406,
+            "speed": 8.091779708862305,
+            "target": 8.188630104064942,
+            "gap": 20.17111587524414,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "",
+            "time": 0.6365776062011719,
+            "speed": 8.087129592895508,
+            "target": 8.18649959564209,
+            "gap": 18.91116714477539,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "",
+            "time": 0.7921485900878906,
+            "speed": 8.084105491638184,
+            "target": 8.184211730957032,
+            "gap": 17.6539363861084,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 0.944305419921875,
+            "speed": 7.977997779846191,
+            "target": 7.966935634613037,
+            "gap": 16.426578521728517,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 1.1038436889648438,
+            "speed": 7.495345115661621,
+            "target": 7.534367084503174,
+            "gap": 15.189455032348633,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 1.2555351257324219,
+            "speed": 7.114088535308838,
+            "target": 7.1589274406433109,
+            "gap": 14.076530456542969,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 1.4160079956054688,
+            "speed": 6.734928607940674,
+            "target": 6.734227657318115,
+            "gap": 12.965712547302246,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 1.5765228271484376,
+            "speed": 6.294712543487549,
+            "target": 6.313383102416992,
+            "gap": 11.921732902526856,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 1.7303504943847657,
+            "speed": 5.871608734130859,
+            "target": 5.897389888763428,
+            "gap": 10.983642578125,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 1.8872261047363282,
+            "speed": 5.4665913581848148,
+            "target": 5.487173557281494,
+            "gap": 10.090165138244629,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 2.0428390502929689,
+            "speed": 5.079771518707275,
+            "target": 5.083052635192871,
+            "gap": 9.265548706054688,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 2.198394775390625,
+            "speed": 4.719010829925537,
+            "target": 4.73499059677124,
+            "gap": 8.502214431762696,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 2.3543624877929689,
+            "speed": 4.369117736816406,
+            "target": 4.343835830688477,
+            "gap": 7.794958114624023,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 2.516338348388672,
+            "speed": 3.9856326580047609,
+            "target": 3.961291790008545,
+            "gap": 7.123618125915527,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 2.6722564697265627,
+            "speed": 3.5798087120056154,
+            "target": 3.587329387664795,
+            "gap": 6.535124778747559,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 2.8303146362304689,
+            "speed": 3.2509751319885256,
+            "target": 3.223771095275879,
+            "gap": 5.994571208953857,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 2.9875106811523439,
+            "speed": 2.88250470161438,
+            "target": 2.8722763061523439,
+            "gap": 5.513106346130371,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 3.147899627685547,
+            "speed": 2.561821937561035,
+            "target": 2.5348706245422365,
+            "gap": 5.077273368835449,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 3.3045730590820314,
+            "speed": 2.242668628692627,
+            "target": 2.2119436264038088,
+            "gap": 4.702098369598389,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 3.462841033935547,
+            "speed": 1.9248950481414796,
+            "target": 1.9057334661483765,
+            "gap": 4.371747016906738,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 3.6173477172851564,
+            "speed": 1.6593865156173707,
+            "target": 1.6546770334243775,
+            "gap": 4.095505714416504,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 3.7702369689941408,
+            "speed": 1.3897148370742798,
+            "target": 1.3865572214126588,
+            "gap": 3.861722469329834,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 3.9315528869628908,
+            "speed": 1.1669648885726929,
+            "target": 1.1429823637008668,
+            "gap": 3.656322956085205,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 4.084293365478516,
+            "speed": 0.9448922276496887,
+            "target": 0.9238098859786987,
+            "gap": 3.4961180686950685,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 4.241550445556641,
+            "speed": 0.7234276533126831,
+            "target": 0.7322477102279663,
+            "gap": 3.363043785095215,
+            "braking": true
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 4.401195526123047,
+            "speed": 0.5943797826766968,
+            "target": 0.568790078163147,
+            "gap": 3.2565269470214845,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 4.561565399169922,
+            "speed": 0.46562737226486208,
+            "target": 0.43118083477020266,
+            "gap": 3.1729369163513185,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 4.720607757568359,
+            "speed": 0.3416864573955536,
+            "target": 0.3329606056213379,
+            "gap": 3.1105523109436037,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 4.879451751708984,
+            "speed": 0.2593429684638977,
+            "target": 0.24307870864868165,
+            "gap": 3.063906669616699,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 5.039028167724609,
+            "speed": 0.17710387706756593,
+            "target": 0.1745384931564331,
+            "gap": 3.030186653137207,
+            "braking": false
+        },
+        {
+            "scenario": "wet-road",
+            "reason": "jogador",
+            "time": 5.1969757080078129,
+            "speed": 0.14091052114963532,
+            "target": 0.12228691577911377,
+            "gap": 3.0051798820495607,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "",
+            "time": 0.0,
+            "speed": 8.0,
+            "target": 8.0,
+            "gap": 24.020000457763673,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "",
+            "time": 0.3333320617675781,
+            "speed": 7.985809803009033,
+            "target": 8.089911460876465,
+            "gap": 21.386152267456056,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "",
+            "time": 0.4842643737792969,
+            "speed": 7.982382297515869,
+            "target": 8.081714630126954,
+            "gap": 20.181711196899415,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "",
+            "time": 0.641632080078125,
+            "speed": 7.980134010314941,
+            "target": 8.079164505004883,
+            "gap": 18.926239013671876,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "",
+            "time": 0.7996177673339844,
+            "speed": 7.977266311645508,
+            "target": 8.07640266418457,
+            "gap": 17.666399002075197,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 0.9586753845214844,
+            "speed": 7.860754013061523,
+            "target": 7.905921459197998,
+            "gap": 16.401060104370118,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 1.1147041320800782,
+            "speed": 7.460793972015381,
+            "target": 7.474095821380615,
+            "gap": 15.205070495605469,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 1.2704887390136719,
+            "speed": 7.071469783782959,
+            "target": 7.04635763168335,
+            "gap": 14.0764741897583,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 1.4260635375976563,
+            "speed": 6.618488788604736,
+            "target": 6.621987819671631,
+            "gap": 13.01185417175293,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 1.5817222595214844,
+            "speed": 6.263609409332275,
+            "target": 6.2549519538879398,
+            "gap": 12.011175155639649,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 1.7373428344726563,
+            "speed": 5.841716766357422,
+            "target": 5.839615345001221,
+            "gap": 11.072851181030274,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 1.8929023742675782,
+            "speed": 5.437831401824951,
+            "target": 5.4300408363342289,
+            "gap": 10.197247505187989,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 2.0500411987304689,
+            "speed": 5.052102088928223,
+            "target": 5.026540279388428,
+            "gap": 9.37466812133789,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 2.205669403076172,
+            "speed": 4.624731540679932,
+            "target": 4.6292829513549809,
+            "gap": 8.61976432800293,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 2.3619728088378908,
+            "speed": 4.286967754364014,
+            "target": 4.288516998291016,
+            "gap": 7.922587871551514,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 2.517993927001953,
+            "speed": 3.908930540084839,
+            "target": 3.907010078430176,
+            "gap": 7.285068035125732,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 2.6739044189453127,
+            "speed": 3.557382822036743,
+            "target": 3.5346550941467287,
+            "gap": 6.704331398010254,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 2.834209442138672,
+            "speed": 3.1838459968566896,
+            "target": 3.1725854873657228,
+            "gap": 6.165037631988525,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 2.991039276123047,
+            "speed": 2.815627098083496,
+            "target": 2.8228659629821779,
+            "gap": 5.693105220794678,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 3.1515159606933595,
+            "speed": 2.495164632797241,
+            "target": 2.4868788719177248,
+            "gap": 5.264512538909912,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 3.3131370544433595,
+            "speed": 2.1762051582336427,
+            "target": 2.1658411026000978,
+            "gap": 4.88582181930542,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 3.464061737060547,
+            "speed": 1.8586573600769044,
+            "target": 1.8630410432815552,
+            "gap": 4.579008102416992,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 3.6196517944335939,
+            "speed": 1.6392667293548585,
+            "target": 1.6143027544021607,
+            "gap": 4.306554794311523,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 3.7752113342285158,
+            "speed": 1.3697662353515626,
+            "target": 1.3502143621444703,
+            "gap": 4.075952053070068,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 3.9316673278808595,
+            "speed": 1.1011056900024415,
+            "target": 1.1094497442245484,
+            "gap": 3.882265567779541,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 4.087245941162109,
+            "speed": 0.9251614212989807,
+            "target": 0.8952227830886841,
+            "gap": 3.7243332862854006,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 4.245399475097656,
+            "speed": 0.7037380337715149,
+            "target": 0.7072452306747437,
+            "gap": 3.5949082374572756,
+            "braking": true
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 4.402580261230469,
+            "speed": 0.5793336033821106,
+            "target": 0.5653866529464722,
+            "gap": 3.4931774139404299,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 4.558147430419922,
+            "speed": 0.4506007134914398,
+            "target": 0.42854249477386477,
+            "gap": 3.4148402214050295,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 4.717800140380859,
+            "speed": 0.3220934569835663,
+            "target": 0.3170222043991089,
+            "gap": 3.3537306785583498,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 4.877391815185547,
+            "speed": 0.23977231979370118,
+            "target": 0.2306194305419922,
+            "gap": 3.3087453842163088,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 5.040199279785156,
+            "speed": 0.15753556787967683,
+            "target": 0.16408216953277589,
+            "gap": 3.2754478454589845,
+            "braking": false
+        },
+        {
+            "scenario": "fallen-resident",
+            "reason": "pedestre-4225",
+            "time": 5.191616058349609,
+            "speed": 0.12143119424581528,
+            "target": 0.11798644065856934,
+            "gap": 3.2543091773986818,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908//obstaculo-Group-8908",
+            "time": 116.35387420654297,
+            "speed": 0.006086974870413542,
+            "target": 0.10246992111206055,
+            "gap": 2.5710227489471437,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908//obstaculo-Group-8908",
+            "time": 116.56354522705078,
+            "speed": 0.005413998384028673,
+            "target": 0.10216236114501953,
+            "gap": 2.5705454349517824,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908//obstaculo-Group-8908",
+            "time": 116.7725830078125,
+            "speed": 0.0005811429000459611,
+            "target": 0.10187101364135742,
+            "gap": 2.5700204372406008,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "sinalizando/indicate/obstaculo-Group-8908",
+            "time": 116.98026275634766,
+            "speed": 0.0005815492477267981,
+            "target": 0.0,
+            "gap": 2.569716691970825,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "sinalizando/indicate/obstaculo-Group-8908",
+            "time": 117.18236541748047,
+            "speed": 0.0005806341650895774,
+            "target": 0.0,
+            "gap": 2.5697181224823,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "sinalizando/indicate/obstaculo-Group-8908",
+            "time": 117.38838958740235,
+            "speed": 0.0005805398686788976,
+            "target": 0.0,
+            "gap": 2.5697176456451418,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "recuo/reverse/obstaculo-Group-8908",
+            "time": 117.5990219116211,
+            "speed": -0.019123118370771409,
+            "target": 0.0,
+            "gap": 2.569932699203491,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "recuo/reverse/obstaculo-Group-8908",
+            "time": 117.80391693115235,
+            "speed": -0.38237810134887698,
+            "target": 0.0,
+            "gap": 2.6085822582244875,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "recuo/reverse/obstaculo-Group-8908",
+            "time": 118.00672912597656,
+            "speed": -0.7127219438552856,
+            "target": 0.0,
+            "gap": 2.7228362560272219,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "recuo/reverse/obstaculo-Group-8908",
+            "time": 118.2076644897461,
+            "speed": -0.9306699633598328,
+            "target": 0.0,
+            "gap": 2.890190362930298,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "recuo/reverse/obstaculo-Group-8908",
+            "time": 118.41312408447266,
+            "speed": -1.0829010009765626,
+            "target": 0.0,
+            "gap": 3.0980966091156008,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "recuo/reverse/obstaculo-Group-8908",
+            "time": 118.6171875,
+            "speed": -1.1704397201538087,
+            "target": 0.0,
+            "gap": 3.327829122543335,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "recuo/reverse/obstaculo-Group-8908",
+            "time": 118.8189468383789,
+            "speed": -1.2271676063537598,
+            "target": 0.0,
+            "gap": 3.569775342941284,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "recuo/reverse/obstaculo-Group-8908",
+            "time": 119.02039337158203,
+            "speed": -1.2638835906982422,
+            "target": 0.0,
+            "gap": 3.8208024501800539,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "recuo/reverse/obstaculo-Group-8908",
+            "time": 119.2298583984375,
+            "speed": -1.28765869140625,
+            "target": 0.0,
+            "gap": 4.088228225708008,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "recuo/reverse/obstaculo-Group-8908",
+            "time": 119.43968200683594,
+            "speed": -1.304263710975647,
+            "target": 0.0,
+            "gap": 4.360256195068359,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "recuo/reverse/obstaculo-Group-8908",
+            "time": 119.64411163330078,
+            "speed": -1.3138279914855958,
+            "target": 0.0,
+            "gap": 4.6279449462890629,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "manobra/reverse/obstaculo-Group-8908",
+            "time": 119.85054779052735,
+            "speed": -0.21593520045280457,
+            "target": 0.0,
+            "gap": 4.799994468688965,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 120.0518569946289,
+            "speed": 0.035923514515161517,
+            "target": 0.27199986577033999,
+            "gap": 4.801935195922852,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 120.2626953125,
+            "speed": 0.28210166096687319,
+            "target": 0.6459996700286865,
+            "gap": 4.769736289978027,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 120.4675064086914,
+            "speed": 0.5904533863067627,
+            "target": 0.9859994649887085,
+            "gap": 4.677640914916992,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 120.67056274414063,
+            "speed": 0.9134654998779297,
+            "target": 1.181187629699707,
+            "gap": 4.5165300369262699,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 120.8762435913086,
+            "speed": 1.0414416790008546,
+            "target": 1.055527687072754,
+            "gap": 4.297873497009277,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 121.08145141601563,
+            "speed": 0.9572169184684753,
+            "target": 0.9384560585021973,
+            "gap": 4.077816009521484,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 121.30027770996094,
+            "speed": 0.8189196586608887,
+            "target": 0.8218536376953125,
+            "gap": 3.8676345348358156,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 121.501953125,
+            "speed": 0.7302342057228088,
+            "target": 0.7270221710205078,
+            "gap": 3.695941686630249,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 121.7081069946289,
+            "speed": 0.6416012644767761,
+            "target": 0.6417794227600098,
+            "gap": 3.54011607170105,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 121.91514587402344,
+            "speed": 0.5488069653511047,
+            "target": 0.5577068328857422,
+            "gap": 3.4006755352020265,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 122.12681579589844,
+            "speed": 0.5058783292770386,
+            "target": 0.49169063568115237,
+            "gap": 3.2785842418670656,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 122.33207702636719,
+            "speed": 0.46305856108665469,
+            "target": 0.4430885314941406,
+            "gap": 3.1704022884368898,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 122.54143524169922,
+            "speed": 0.4161311686038971,
+            "target": 0.41846179962158205,
+            "gap": 3.070214033126831,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 122.74658203125,
+            "speed": 0.3736013174057007,
+            "target": 0.3700690269470215,
+            "gap": 2.9815356731414797,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 122.9571533203125,
+            "speed": 0.32693129777908327,
+            "target": 0.32233524322509768,
+            "gap": 2.900843858718872,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 123.15997314453125,
+            "speed": 0.28462934494018557,
+            "target": 0.2839322090148926,
+            "gap": 2.8325722217559816,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 123.37089538574219,
+            "speed": 0.2424449473619461,
+            "target": 0.2505168914794922,
+            "gap": 2.771764039993286,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 123.5768051147461,
+            "speed": 0.19617360830307008,
+            "target": 0.21973133087158204,
+            "gap": 2.7223126888275148,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 123.78688049316406,
+            "speed": 0.15424278378486634,
+            "target": 0.19709539413452149,
+            "gap": 2.681882619857788,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 123.99608612060547,
+            "speed": 0.10826185345649719,
+            "target": 0.17840337753295899,
+            "gap": 2.6517961025238039,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 124.20553588867188,
+            "speed": 0.06659777462482453,
+            "target": 0.16684675216674806,
+            "gap": 2.63163161277771,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 124.41403198242188,
+            "speed": 0.05505150556564331,
+            "target": 0.15769672393798829,
+            "gap": 2.6169397830963136,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 124.61743927001953,
+            "speed": 0.05368269234895706,
+            "target": 0.15076589584350587,
+            "gap": 2.604984998703003,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 124.81912231445313,
+            "speed": 0.04350125417113304,
+            "target": 0.14458465576171876,
+            "gap": 2.594482660293579,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 125.02186584472656,
+            "speed": 0.04077683761715889,
+            "target": 0.13908720016479493,
+            "gap": 2.5850231647491457,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 125.23081970214844,
+            "speed": 0.03120986744761467,
+            "target": 0.1342763900756836,
+            "gap": 2.576683759689331,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 125.43939971923828,
+            "speed": 0.028228815644979478,
+            "target": 0.1294245719909668,
+            "gap": 2.568955183029175,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 125.64569091796875,
+            "speed": 0.027277817949652673,
+            "target": 0.12552165985107423,
+            "gap": 2.5621488094329836,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 125.85636901855469,
+            "speed": 0.022718537598848344,
+            "target": 0.1220860481262207,
+            "gap": 2.556688070297241,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 126.05863189697266,
+            "speed": 0.017826447263360025,
+            "target": 0.11930227279663086,
+            "gap": 2.5519826412200929,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 126.25881958007813,
+            "speed": 0.01915198378264904,
+            "target": 0.11683893203735352,
+            "gap": 2.547802686691284,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 126.46086883544922,
+            "speed": 0.015703842043876649,
+            "target": 0.11474847793579102,
+            "gap": 2.5442206859588625,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 126.66857147216797,
+            "speed": 0.010814838111400605,
+            "target": 0.11282587051391602,
+            "gap": 2.5409324169158937,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 126.87572479248047,
+            "speed": 0.010646656155586243,
+            "target": 0.11114883422851563,
+            "gap": 2.5382907390594484,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 127.08417510986328,
+            "speed": 0.007207936141639948,
+            "target": 0.10973167419433594,
+            "gap": 2.535827398300171,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 127.29480743408203,
+            "speed": 0.007814054377377034,
+            "target": 0.10825872421264649,
+            "gap": 2.533419370651245,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 127.50584411621094,
+            "speed": 0.010450653731822968,
+            "target": 0.10703134536743164,
+            "gap": 2.531201124191284,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 127.70958709716797,
+            "speed": 0.011456509120762349,
+            "target": 0.10590171813964844,
+            "gap": 2.5291430950164797,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 127.91654968261719,
+            "speed": 0.009355067275464535,
+            "target": 0.10473012924194336,
+            "gap": 2.5274455547332765,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 128.12765502929688,
+            "speed": 0.006095748394727707,
+            "target": 0.10394048690795899,
+            "gap": 2.5261237621307375,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 128.33119201660157,
+            "speed": 0.0076908026821911339,
+            "target": 0.10354471206665039,
+            "gap": 2.5252578258514406,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 128.5320587158203,
+            "speed": 0.001275980961509049,
+            "target": 0.10273265838623047,
+            "gap": 2.524113416671753,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 128.73464965820313,
+            "speed": 0.004312991630285978,
+            "target": 0.10235786437988281,
+            "gap": 2.5234873294830324,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 128.93923950195313,
+            "speed": 0.003420845838263631,
+            "target": 0.10205364227294922,
+            "gap": 2.522963285446167,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 129.1414337158203,
+            "speed": 0.0005862780380994082,
+            "target": 0.10165882110595703,
+            "gap": 2.5223028659820558,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 129.34329223632813,
+            "speed": 0.0018430296331644059,
+            "target": 0.10129833221435547,
+            "gap": 2.5216987133026125,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 129.5470733642578,
+            "speed": 0.00403648242354393,
+            "target": 0.10109329223632813,
+            "gap": 2.521275281906128,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 129.7501678466797,
+            "speed": 0.0005864024278707802,
+            "target": 0.10081100463867188,
+            "gap": 2.520890951156616,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 129.9519500732422,
+            "speed": 0.0005858493968844414,
+            "target": 0.10047149658203125,
+            "gap": 2.5203282833099367,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 130.15211486816407,
+            "speed": 0.0005865525454282761,
+            "target": 0.10047149658203125,
+            "gap": 2.520329236984253,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 130.3575439453125,
+            "speed": 0.0005861010868102312,
+            "target": 0.10047149658203125,
+            "gap": 2.5203311443328859,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 130.5662841796875,
+            "speed": 0.0005860932287760079,
+            "target": 0.10047149658203125,
+            "gap": 2.5203311443328859,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 130.77232360839845,
+            "speed": 0.0005861003301106393,
+            "target": 0.10047149658203125,
+            "gap": 2.520334005355835,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 130.980224609375,
+            "speed": 0.0005861005047336221,
+            "target": 0.10047149658203125,
+            "gap": 2.520334005355835,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 131.1829833984375,
+            "speed": 0.0005861007375642657,
+            "target": 0.10047149658203125,
+            "gap": 2.5203359127044679,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 131.39407348632813,
+            "speed": 0.0005860993987880647,
+            "target": 0.10047149658203125,
+            "gap": 2.5203349590301515,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 131.5968017578125,
+            "speed": 0.0005861138924956322,
+            "target": 0.10047149658203125,
+            "gap": 2.5203373432159426,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 131.80490112304688,
+            "speed": 0.0005861319950781763,
+            "target": 0.10047149658203125,
+            "gap": 2.5203378200531008,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 132.01068115234376,
+            "speed": 0.0005861351964995265,
+            "target": 0.10047101974487305,
+            "gap": 2.52042555809021,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 132.2174835205078,
+            "speed": 0.0005861344397999346,
+            "target": 0.10047101974487305,
+            "gap": 2.520338773727417,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 132.42376708984376,
+            "speed": 0.0005861349636688829,
+            "target": 0.10047101974487305,
+            "gap": 2.5203425884246828,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 132.62850952148438,
+            "speed": 0.000586134847253561,
+            "target": 0.10047101974487305,
+            "gap": 2.520343542098999,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 132.83055114746095,
+            "speed": 0.000586134847253561,
+            "target": 0.10047101974487305,
+            "gap": 2.520343542098999,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 133.03359985351563,
+            "speed": 0.0005861354875378311,
+            "target": 0.10047101974487305,
+            "gap": 2.520345449447632,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 133.23655700683595,
+            "speed": 0.0005861345562152565,
+            "target": 0.10047149658203125,
+            "gap": 2.5203449726104738,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 133.44342041015626,
+            "speed": 0.0005861357203684747,
+            "target": 0.10047101974487305,
+            "gap": 2.5203464031219484,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 133.65054321289063,
+            "speed": 0.0005861284444108605,
+            "target": 0.10047101974487305,
+            "gap": 2.5203473567962648,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 133.852294921875,
+            "speed": 0.0005861096433363855,
+            "target": 0.10047101974487305,
+            "gap": 2.5203492641448976,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 134.06063842773438,
+            "speed": 0.0005861028330400586,
+            "target": 0.10047101974487305,
+            "gap": 2.5203492641448976,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 134.2617645263672,
+            "speed": 0.0005860995734110475,
+            "target": 0.10047101974487305,
+            "gap": 2.520350217819214,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 134.46559143066407,
+            "speed": 0.0005860993987880647,
+            "target": 0.10047101974487305,
+            "gap": 2.5203535556793215,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 134.66754150390626,
+            "speed": 0.0005860998062416911,
+            "target": 0.10047054290771485,
+            "gap": 2.520353078842163,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 134.87030029296876,
+            "speed": 0.0005860991077497602,
+            "target": 0.10047054290771485,
+            "gap": 2.520354986190796,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 135.0725860595703,
+            "speed": 0.0005860996898263693,
+            "target": 0.10046958923339844,
+            "gap": 2.5203540325164797,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 135.27713012695313,
+            "speed": 0.0005861010868102312,
+            "target": 0.10046958923339844,
+            "gap": 2.5203559398651125,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 135.47755432128907,
+            "speed": 0.0005860991077497602,
+            "target": 0.10046911239624024,
+            "gap": 2.5203568935394289,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 135.68865966796876,
+            "speed": 0.0005860996898263693,
+            "target": 0.10046863555908203,
+            "gap": 2.5203588008880617,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 135.89044189453126,
+            "speed": 0.0005861005047336221,
+            "target": 0.10046815872192383,
+            "gap": 2.520360231399536,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 136.0914306640625,
+            "speed": 0.0005860995152033865,
+            "target": 0.10046768188476563,
+            "gap": 2.5203616619110109,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 136.29148864746095,
+            "speed": 0.0005860809469595552,
+            "target": 0.10046720504760742,
+            "gap": 2.520362615585327,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 136.50254821777345,
+            "speed": 0.0005860748351551592,
+            "target": 0.10046625137329102,
+            "gap": 2.5203630924224855,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 136.7074432373047,
+            "speed": 0.0005860726232640445,
+            "target": 0.10046577453613281,
+            "gap": 2.5203630924224855,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 136.9080047607422,
+            "speed": 0.0005860726232640445,
+            "target": 0.10046529769897461,
+            "gap": 2.52036452293396,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 137.10816955566407,
+            "speed": 0.0005860732053406537,
+            "target": 0.1004643440246582,
+            "gap": 2.5203659534454347,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 137.3112030029297,
+            "speed": 0.0005860718665644527,
+            "target": 0.1004638671875,
+            "gap": 2.520367383956909,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 137.5113525390625,
+            "speed": 0.0005860733799636364,
+            "target": 0.1004629135131836,
+            "gap": 2.5203683376312258,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 137.7140350341797,
+            "speed": 0.0005860734381712973,
+            "target": 0.10046195983886719,
+            "gap": 2.5203697681427,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 137.9171600341797,
+            "speed": 0.0005860747187398374,
+            "target": 0.10046100616455078,
+            "gap": 2.5203697681427,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 138.11965942382813,
+            "speed": 0.000586093810852617,
+            "target": 0.10046005249023438,
+            "gap": 2.5203731060028078,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 138.32327270507813,
+            "speed": 0.000586099224165082,
+            "target": 0.10045909881591797,
+            "gap": 2.5203731060028078,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 138.52490234375,
+            "speed": 0.0005861004465259612,
+            "target": 0.10045814514160156,
+            "gap": 2.520374059677124,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 138.72691345214845,
+            "speed": 0.0005860994569957256,
+            "target": 0.10045671463012696,
+            "gap": 2.520375967025757,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 138.93479919433595,
+            "speed": 0.0005860987002961338,
+            "target": 0.10045576095581055,
+            "gap": 2.5203750133514406,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 139.13778686523438,
+            "speed": 0.0005861000972799957,
+            "target": 0.10045480728149414,
+            "gap": 2.5203769207000734,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 139.33843994140626,
+            "speed": 0.0005861008539795876,
+            "target": 0.10045337677001953,
+            "gap": 2.520378828048706,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 139.5399932861328,
+            "speed": 0.000586100562941283,
+            "target": 0.10045194625854492,
+            "gap": 2.5203797817230226,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 139.74671936035157,
+            "speed": 0.0005860986420884728,
+            "target": 0.10045099258422852,
+            "gap": 2.520380735397339,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 139.94866943359376,
+            "speed": 0.0005861000972799957,
+            "target": 0.10045003890991211,
+            "gap": 2.5203821659088136,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 140.1536407470703,
+            "speed": 0.0005861002719029784,
+            "target": 0.1004481315612793,
+            "gap": 2.5203826427459719,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 140.35533142089845,
+            "speed": 0.000586099224165082,
+            "target": 0.10044670104980469,
+            "gap": 2.5203826427459719,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 140.560302734375,
+            "speed": 0.0005861000972799957,
+            "target": 0.10044527053833008,
+            "gap": 2.5203845500946047,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 140.76052856445313,
+            "speed": 0.0005860988167114556,
+            "target": 0.10044384002685547,
+            "gap": 2.5203850269317629,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 140.96240234375,
+            "speed": 0.0005860984674654901,
+            "target": 0.10044240951538086,
+            "gap": 2.5203864574432375,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 141.1664276123047,
+            "speed": 0.0005861000390723348,
+            "target": 0.10044050216674805,
+            "gap": 2.5203874111175539,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 141.37034606933595,
+            "speed": 0.0005860998062416911,
+            "target": 0.10043907165527344,
+            "gap": 2.5203888416290285,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 141.5745391845703,
+            "speed": 0.0005860989913344383,
+            "target": 0.10043764114379883,
+            "gap": 2.5203888416290285,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 141.77891540527345,
+            "speed": 0.0005860998062416911,
+            "target": 0.10043573379516602,
+            "gap": 2.5203921794891359,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 141.98342895507813,
+            "speed": 0.0005860987585037947,
+            "target": 0.1004343032836914,
+            "gap": 2.5203936100006105,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 142.19180297851563,
+            "speed": 0.000586099224165082,
+            "target": 0.1004323959350586,
+            "gap": 2.520347833633423,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 142.402099609375,
+            "speed": 0.0005860984674654901,
+            "target": 0.10043048858642578,
+            "gap": 2.520395040512085,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 142.61012268066407,
+            "speed": 0.0005860998062416911,
+            "target": 0.10042858123779297,
+            "gap": 2.520353078842163,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 142.81622314453126,
+            "speed": 0.0005861013196408749,
+            "target": 0.10042667388916016,
+            "gap": 2.5203959941864015,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 143.01699829101563,
+            "speed": 0.0005861322279088199,
+            "target": 0.10042476654052735,
+            "gap": 2.5203969478607179,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 143.2181396484375,
+            "speed": 0.0005861337995156646,
+            "target": 0.10042262077331543,
+            "gap": 2.5203988552093508,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 143.4250030517578,
+            "speed": 0.0005861349636688829,
+            "target": 0.10042071342468262,
+            "gap": 2.520399808883667,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 143.63143920898438,
+            "speed": 0.0005861350218765438,
+            "target": 0.1004185676574707,
+            "gap": 2.520402193069458,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 143.8319091796875,
+            "speed": 0.0005861352547071874,
+            "target": 0.10041666030883789,
+            "gap": 2.520402669906616,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 144.03475952148438,
+            "speed": 0.0005861353129148483,
+            "target": 0.10041427612304688,
+            "gap": 2.520402669906616,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 144.2360382080078,
+            "speed": 0.0005861357203684747,
+            "target": 0.10041236877441406,
+            "gap": 2.520404100418091,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 144.44757080078126,
+            "speed": 0.0005861352547071874,
+            "target": 0.10041046142578125,
+            "gap": 2.5204036235809328,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 144.6590118408203,
+            "speed": 0.0005861356621608138,
+            "target": 0.10040783882141113,
+            "gap": 2.520406484603882,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 144.862060546875,
+            "speed": 0.0005861353711225092,
+            "target": 0.10040569305419922,
+            "gap": 2.520406484603882,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 145.06729125976563,
+            "speed": 0.0005861189565621316,
+            "target": 0.1004035472869873,
+            "gap": 2.5204074382781984,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 145.2685546875,
+            "speed": 0.0005861017853021622,
+            "target": 0.10040140151977539,
+            "gap": 2.5204102993011476,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 145.47752380371095,
+            "speed": 0.0005861030658707023,
+            "target": 0.10039901733398438,
+            "gap": 2.5204098224639894,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 145.68511962890626,
+            "speed": 0.0005861032987013459,
+            "target": 0.10039663314819336,
+            "gap": 2.5204122066497804,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 145.8894500732422,
+            "speed": 0.0005861030076630414,
+            "target": 0.10039377212524414,
+            "gap": 2.5204546451568605,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 146.0922393798828,
+            "speed": 0.0005861037061549723,
+            "target": 0.10039162635803223,
+            "gap": 2.520414113998413,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 146.2938690185547,
+            "speed": 0.0005861048121005297,
+            "target": 0.10038924217224121,
+            "gap": 2.520414113998413,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 146.503662109375,
+            "speed": 0.000586105277761817,
+            "target": 0.1003870964050293,
+            "gap": 2.520416498184204,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 146.70587158203126,
+            "speed": 0.0005861062672920525,
+            "target": 0.10038399696350098,
+            "gap": 2.520416498184204,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 146.91656494140626,
+            "speed": 0.0005861058598384261,
+            "target": 0.10038137435913086,
+            "gap": 2.5204179286956789,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 147.1234588623047,
+            "speed": 0.0005860992823727429,
+            "target": 0.10037899017333985,
+            "gap": 2.520418882369995,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 147.32357788085938,
+            "speed": 0.0005860725650563836,
+            "target": 0.10037660598754883,
+            "gap": 2.5204198360443117,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 147.53013610839845,
+            "speed": 0.0005860752426087856,
+            "target": 0.10037398338317871,
+            "gap": 2.5204217433929445,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 147.73822021484376,
+            "speed": 0.0005860793171450496,
+            "target": 0.1003713607788086,
+            "gap": 2.520423650741577,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 147.94577026367188,
+            "speed": 0.0005860818782821298,
+            "target": 0.10036897659301758,
+            "gap": 2.5204246044158937,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 148.1551055908203,
+            "speed": 0.0005860831588506699,
+            "target": 0.10036635398864746,
+            "gap": 2.520426034927368,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 148.3633270263672,
+            "speed": 0.0005860836827196181,
+            "target": 0.10036396980285645,
+            "gap": 2.52042555809021,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 148.5782470703125,
+            "speed": 0.0005860837991349399,
+            "target": 0.10036110877990723,
+            "gap": 2.5204274654388429,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 148.78367614746095,
+            "speed": 0.0005860832752659917,
+            "target": 0.10035896301269531,
+            "gap": 2.5204274654388429,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 148.98941040039063,
+            "speed": 0.000586083740927279,
+            "target": 0.1003561019897461,
+            "gap": 2.5204684734344484,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 149.19488525390626,
+            "speed": 0.0005861000972799957,
+            "target": 0.10035371780395508,
+            "gap": 2.520429849624634,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 149.40103149414063,
+            "speed": 0.0005861062090843916,
+            "target": 0.10035109519958496,
+            "gap": 2.5204312801361086,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 149.61434936523438,
+            "speed": 0.0005861177924089134,
+            "target": 0.10034847259521485,
+            "gap": 2.520432233810425,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 149.8240966796875,
+            "speed": 0.0005861204699613154,
+            "target": 0.10034608840942383,
+            "gap": 2.520433187484741,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 150.02511596679688,
+            "speed": 0.0005861117388121784,
+            "target": 0.10034370422363281,
+            "gap": 2.520434617996216,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 150.23458862304688,
+            "speed": 0.0005861138342879713,
+            "target": 0.1003410816192627,
+            "gap": 2.520437002182007,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 150.4419708251953,
+            "speed": 0.0005861172685399652,
+            "target": 0.10033869743347168,
+            "gap": 2.5204360485076906,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 150.6441650390625,
+            "speed": 0.0005861262907274067,
+            "target": 0.10033631324768067,
+            "gap": 2.520439863204956,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 150.8456268310547,
+            "speed": 0.0005861265817657113,
+            "target": 0.10033392906188965,
+            "gap": 2.5204389095306398,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 151.04920959472657,
+            "speed": 0.0005861303652636707,
+            "target": 0.10033130645751953,
+            "gap": 2.5203940868377687,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 151.26025390625,
+            "speed": 0.0005861263489350677,
+            "target": 0.10032916069030762,
+            "gap": 2.5204408168792726,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 151.46441650390626,
+            "speed": 0.0005861334502696991,
+            "target": 0.1003267765045166,
+            "gap": 2.520441770553589,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 151.66796875,
+            "speed": 0.0005861346726305783,
+            "target": 0.10032439231872559,
+            "gap": 2.5204436779022219,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 151.87521362304688,
+            "speed": 0.0005861349054612219,
+            "target": 0.10032200813293457,
+            "gap": 2.520444631576538,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 152.0769805908203,
+            "speed": 0.0005861347890459001,
+            "target": 0.10031962394714356,
+            "gap": 2.5204460620880129,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 152.28736877441407,
+            "speed": 0.0005861352547071874,
+            "target": 0.10031747817993164,
+            "gap": 2.5204474925994875,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 152.49449157714845,
+            "speed": 0.000586134847253561,
+            "target": 0.10031509399414063,
+            "gap": 2.5204484462738039,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 152.70350646972657,
+            "speed": 0.0005861354875378311,
+            "target": 0.10031294822692871,
+            "gap": 2.5204484462738039,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 152.91542053222657,
+            "speed": 0.0005861352547071874,
+            "target": 0.1003105640411377,
+            "gap": 2.5204498767852785,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 153.1294403076172,
+            "speed": 0.0005861347308382392,
+            "target": 0.10030817985534668,
+            "gap": 2.5204951763153078,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 153.33828735351563,
+            "speed": 0.000586134847253561,
+            "target": 0.10030603408813477,
+            "gap": 2.5204522609710695,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 153.54469299316407,
+            "speed": 0.0005861349636688829,
+            "target": 0.10030388832092285,
+            "gap": 2.5204522609710695,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 153.75308227539063,
+            "speed": 0.0005861344980075955,
+            "target": 0.10030150413513184,
+            "gap": 2.520454168319702,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 153.95384216308595,
+            "speed": 0.0005861349054612219,
+            "target": 0.10029935836791992,
+            "gap": 2.520456075668335,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 154.155517578125,
+            "speed": 0.0005861494573764503,
+            "target": 0.10029721260070801,
+            "gap": 2.5204570293426515,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 154.35769653320313,
+            "speed": 0.0005861690151505172,
+            "target": 0.1002953052520752,
+            "gap": 2.520456075668335,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 154.55795288085938,
+            "speed": 0.0005861673853360117,
+            "target": 0.10029315948486328,
+            "gap": 2.5204598903656008,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 154.767333984375,
+            "speed": 0.0005861691897735,
+            "target": 0.10029101371765137,
+            "gap": 2.520414113998413,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 154.9715576171875,
+            "speed": 0.0005861675017513335,
+            "target": 0.10028886795043946,
+            "gap": 2.5204598903656008,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 155.1788330078125,
+            "speed": 0.000586167792789638,
+            "target": 0.10028696060180664,
+            "gap": 2.5204617977142336,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 155.3846893310547,
+            "speed": 0.0005861690733581781,
+            "target": 0.10028481483459473,
+            "gap": 2.5204622745513918,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 155.5888671875,
+            "speed": 0.0005861695390194655,
+            "target": 0.10028266906738281,
+            "gap": 2.520463705062866,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 155.79434204101563,
+            "speed": 0.0005861687241122127,
+            "target": 0.10028076171875,
+            "gap": 2.5204646587371828,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 156.00091552734376,
+            "speed": 0.0005861690151505172,
+            "target": 0.10027885437011719,
+            "gap": 2.5204660892486574,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 156.2104034423828,
+            "speed": 0.0005861591780558229,
+            "target": 0.10027670860290528,
+            "gap": 2.5204684734344484,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 156.41372680664063,
+            "speed": 0.0005861341487616301,
+            "target": 0.10027480125427246,
+            "gap": 2.5204694271087648,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 156.62045288085938,
+            "speed": 0.0005861363024450839,
+            "target": 0.10027289390563965,
+            "gap": 2.520470380783081,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 156.82664489746095,
+            "speed": 0.000586137524805963,
+            "target": 0.10027074813842774,
+            "gap": 2.520472288131714,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 157.0370635986328,
+            "speed": 0.0005861379322595894,
+            "target": 0.10026884078979492,
+            "gap": 2.5204718112945558,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 157.25311279296876,
+            "speed": 0.0005861388053745031,
+            "target": 0.10026693344116211,
+            "gap": 2.5204732418060304,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 157.46975708007813,
+            "speed": 0.0005861401441507041,
+            "target": 0.1002650260925293,
+            "gap": 2.5204732418060304,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 157.67161560058595,
+            "speed": 0.0005861410754732788,
+            "target": 0.10026311874389649,
+            "gap": 2.5204732418060304,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 157.87371826171876,
+            "speed": 0.0005861404933966696,
+            "target": 0.10026121139526367,
+            "gap": 2.5204761028289797,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 158.08285522460938,
+            "speed": 0.0005861410172656179,
+            "target": 0.10025930404663086,
+            "gap": 2.520477056503296,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 158.29275512695313,
+            "speed": 0.000586106616538018,
+            "target": 0.10025715827941895,
+            "gap": 2.5204789638519289,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 158.51861572265626,
+            "speed": 0.0005861036479473114,
+            "target": 0.10025525093078613,
+            "gap": 2.5204789638519289,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 158.72775268554688,
+            "speed": 0.0005861051031388342,
+            "target": 0.10025334358215332,
+            "gap": 2.5204813480377199,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 158.9358367919922,
+            "speed": 0.000586105277761817,
+            "target": 0.10025167465209961,
+            "gap": 2.5204827785491945,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 159.14273071289063,
+            "speed": 0.000586106616538018,
+            "target": 0.1002497673034668,
+            "gap": 2.5204827785491945,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 159.35047912597657,
+            "speed": 0.0005861078388988972,
+            "target": 0.10024809837341309,
+            "gap": 2.520484685897827,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 159.5520782470703,
+            "speed": 0.000586107256822288,
+            "target": 0.10024619102478028,
+            "gap": 2.5204856395721437,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 159.7581329345703,
+            "speed": 0.0005861085373908281,
+            "target": 0.10024452209472656,
+            "gap": 2.52048659324646,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 159.97195434570313,
+            "speed": 0.0005861059762537479,
+            "target": 0.10024285316467285,
+            "gap": 2.52048659324646,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 160.1773681640625,
+            "speed": 0.0005861078971065581,
+            "target": 0.10024094581604004,
+            "gap": 2.520488977432251,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 160.388671875,
+            "speed": 0.0005861353711225092,
+            "target": 0.10023927688598633,
+            "gap": 2.5204885005950929,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 160.59510803222657,
+            "speed": 0.0005861396202817559,
+            "target": 0.10023760795593262,
+            "gap": 2.5204904079437258,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 160.79757690429688,
+            "speed": 0.000586139562074095,
+            "target": 0.1002359390258789,
+            "gap": 2.5204923152923586,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 161.00738525390626,
+            "speed": 0.0005861389799974859,
+            "target": 0.1002342700958252,
+            "gap": 2.520538091659546,
+            "braking": false
+        },
+        {
+            "scenario": "real-street-pass",
+            "reason": "obstaculo-Group-8908/out/obstaculo-Group-8908",
+            "time": 161.21475219726563,
+            "speed": 0.0005861384561285377,
+            "target": 0.10023260116577149,
+            "gap": 2.5204927921295168,
+            "braking": false
+        }
+    ],
+    "errors": []
+}

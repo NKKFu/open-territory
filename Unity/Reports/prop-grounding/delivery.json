@@ -1,0 +1,63 @@
+{
+  "verifiedAtUtc": "2026-11-08T08:06:47.899961+00:00",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\PropsGrounded-20261108-Verified\\BaiaDoSol.exe",
+  "fullBuild": {
+    "passed": true,
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\PropsGrounded-20261108-Verified\\BaiaDoSol.exe",
+    "verifiedAtUtc": "2026-11-08T08:03:24.5359406Z",
+    "result": "Succeeded",
+    "error": "",
+    "errors": 0,
+    "warnings": 3
+  },
+  "verification": {
+    "verifiedAtUtc": "2026-11-08T08:04:18.0171820Z",
+    "startedAtUtc": "2026-11-08T08:04:01.4791441Z",
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\PropsGrounded-20261108-Verified\\BaiaDoSol.exe",
+    "assemblySha256": "C81CC0F9050E3494AFD35E737B331613FD8042540768F27E49E4C4EB9415C3A5",
+    "sourceHash": "97b910e2bee3dfd4794898f79a02c6dc71d984bd7bb23c00e478167dd81eea9f",
+    "requestedGraphicsApi": "default",
+    "graphicsApi": "Direct3D12",
+    "exitCode": 0,
+    "passed": true,
+    "reportWritten": true,
+    "props": 591,
+    "samples": 43252,
+    "checks": 1781,
+    "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\prop-grounding\\native-verified\\prop-grounding-qa.json"
+  },
+  "propCounts": {
+    "bin": 219,
+    "planter": 252,
+    "lamp": 120
+  },
+  "horizontalRelocations": 1,
+  "runtimeErrors": [],
+  "bakedSourceHash": "2f3808acfbb75d52467f079549df91ae04aa9c4efdf6430dce696d236a425c61",
+  "validatedCurrentWorldHash": "97b910e2bee3dfd4794898f79a02c6dc71d984bd7bb23c00e478167dd81eea9f",
+  "playerContentSha256": {
+    "BaiaDoSol.exe": "f083b0e879a9298cdcf9933a8f3b4f2b013e13f7d3e51221fc0d756b79e28807",
+    "BaiaDoSol_Data/Managed/Assembly-CSharp.dll": "c81cc0f9050e3494afd35e737b331613fd8042540768f27e49e4c4eb9415c3a5",
+    "BaiaDoSol_Data/level0": "35dc3b35e1b9ee9d72d8cd7a124a70473189ba484503198e7b99baec4d6d4629",
+    "BaiaDoSol_Data/globalgamemanagers": "7a1dae28b9fb32f647493a661bcab4f4bffb9d8b7651a41d43b3ce45e4a407e1",
+    "BaiaDoSol_Data/resources.assets": "c7ae8d0f5ef8b2719aa1b8c0cc64ef1154edf206e17cdcdfda0bdf94500d0f29"
+  },
+  "sourceSha256": {
+    "Assets/Editor/CityPropGroundingBuilder.cs": "9a06339905d03a918126f27c1e99c9c5a7158f45d69e84ab9d867e3006fefd94",
+    "Assets/Editor/CityPropGroundingBuildJob.cs": "e1ea871dd68034a9b37000c9a9ab170e85566f2fa80a630f7ed6081b917c907e",
+    "Assets/Scripts/World/CityPropGrounding.cs": "32514976f59383415894e351f888e25e2f48fcfa7554b224ac9ddedf765e8b4e",
+    "Assets/Scripts/World/CityPropGroundingProbe.cs": "cb00c6a939f47c0346ba898b4510588b5128c8d763f4559db8b94f99434dda53",
+    "Assets/Scripts/Core/CityContext.cs": "ff6c3a1bd2215892b07913588554593cda35183ee7767e8ae5dfc90723e9814f",
+    "Assets/Editor/CityBuilder.cs": "d9a298fc38a0e00bbbe18c93f8f4f405c46b292c4bcb1360e32f79765d1b0da9",
+    "Assets/Editor/CitySidewalkBuilder.cs": "47cbcfabc4394be3d8989bd78ef3434aeabc6a899f88bdb317fe4e135d3de25a"
+  },
+  "visualReview": {
+    "confirmed": [
+      "prop-2690.png",
+      "prop-2914.png",
+      "prop-3549.png"
+    ],
+    "limited": "The capture of prop 29278 is partially occluded; its complete footprint and collider were checked by the native probe."
+  },
+  "scope": "Ground street bins, planters and lamps. Retain existing buildings and scenery. The pier bin now rests on the clear deck edge."
+}

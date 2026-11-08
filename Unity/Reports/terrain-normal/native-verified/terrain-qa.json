@@ -1,0 +1,37 @@
+{
+    "passed": true,
+    "graphicsApi": "Direct3D12",
+    "errors": 0,
+    "checks": [
+        {
+            "name": "grass-textures-bound",
+            "detail": "color=GrassColor, normal=GrassNormal",
+            "passed": true
+        },
+        {
+            "name": "repeating-mipmapped-textures",
+            "detail": "color=1254x1254, mips=11, normal=1254x1254, mips=11",
+            "passed": true
+        },
+        {
+            "name": "existing-terrain-and-shader",
+            "detail": "mesh=s-surface:0:0-843 • Tideline interior cut, material=Reference terrain",
+            "passed": true
+        },
+        {
+            "name": "flower-bed-soil-preserved",
+            "detail": "pixels changed=0",
+            "passed": true
+        },
+        {
+            "name": "grass-image-affects-render",
+            "detail": "pixels changed=576000",
+            "passed": true
+        },
+        {
+            "name": "normal-map-affects-lighting",
+            "detail": "pixels changed=64418",
+            "passed": true
+        }
+    ]
+}

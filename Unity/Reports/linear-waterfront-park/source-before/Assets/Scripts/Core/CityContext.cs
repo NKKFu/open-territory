@@ -1,0 +1,176 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace OpenTerritory {
+[Serializable] public class NodeReference {public int id;public Transform transform;}
+public class CityAction {
+ public string id;public Func<Vector3> Point;public Func<string> Label;public Action Execute;public Func<bool> Enabled;
+ public float range;public int priority;public bool conversation,requiresLook=true;
+ public Func<Transform> Target;public Func<Vector3> Focus;
+ public Vector3 Position=>Point();public Vector3 LookPoint=>Focus!=null?Focus():Position;public string Text=>CityEnglish.Text(Label());
+ public string KeyLabel=>conversation?"Q":"E";
+}
+// All controls are sampled once, before simulation. Touch writes into the same state.
+public class CityInput {
+ public Vector2 Move,Drive,Look,TouchMove,TouchLook;public float Zoom;
+ public const KeyCode InteractKey=KeyCode.E,TalkKey=KeyCode.Q;
+ public const KeyCode MeleeKey=KeyCode.B;
+ public const KeyCode CrouchKey=KeyCode.C;
+ public bool CrouchPressed,TouchCrouch;
+ public bool MeleePressed;
+ public const KeyCode MapKey=KeyCode.M;
+ public bool MapToggle,TouchMap;
+ public const KeyCode HackerKey=KeyCode.Z,HackKey=KeyCode.F,HackNextKey=KeyCode.Tab,RightSignalKey=KeyCode.C;
+ public bool Run,Jump,Interact,Talk,HackPressed,HackHeld,HackReleased,Drone,Brake,Handbrake,Horn,AimHeld,AimToggle,Fire,FireHeld,Reload,Holster,Fall,LeftSignal,RightSignal,Emergency,Pause;
+ public bool TouchRun,TouchJump,TouchInteract,TouchTalk,TouchHack,TouchDrone,TouchBrake,TouchHandbrake,TouchHorn,TouchAim,TouchFire,TouchReload,TouchHolster;
+ public bool HackerToggle,HackNext,TouchHackerToggle,TouchHackNext,TouchHackPulse;
+ public bool TalkPressed,TalkHeld,TalkReleased,TouchEmoteHeld;
+ public Vector2? TouchEmotePointer;
+ public int Weapon,TouchWeapon;bool lastTouchHack,lastTouchEmote;
+ public void Poll(){
+  bool blocked=UnityEngine.Input.touchCount>0||(CityContext.Instance&&CityContext.Instance.UI&&CityContext.Instance.UI.PointerBlocked);
+  var axes=new Vector2((Key(KeyCode.D,KeyCode.RightArrow)?1:0)-(Key(KeyCode.A,KeyCode.LeftArrow)?1:0),(Key(KeyCode.W,KeyCode.UpArrow)?1:0)-(Key(KeyCode.S,KeyCode.DownArrow)?1:0))+TouchMove;
+  Move=Vector2.ClampMagnitude(axes,1);
+  // Steering and pedals are independent axes. Normalising W+D like a walking
+  // direction would silently remove 29% of both throttle and steering.
+  Drive=new Vector2(Mathf.Clamp(axes.x,-1,1),Mathf.Clamp(axes.y,-1,1));
+  Look=(!blocked&&Application.isFocused&&Cursor.lockState==CursorLockMode.Locked?new Vector2(Input.GetAxisRaw("Mouse X"),Input.GetAxisRaw("Mouse Y")):Vector2.zero)+TouchLook;TouchLook=Vector2.zero;
+  Zoom=Input.mouseScrollDelta.y;Run=Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.RightShift)||TouchRun;
+  Jump=Input.GetKeyDown(KeyCode.Space)||TouchJump;Interact=Input.GetKeyDown(InteractKey)||TouchInteract;Talk=TouchTalk;
+  TalkPressed=Input.GetKeyDown(TalkKey)||TouchEmoteHeld&&!lastTouchEmote;TalkHeld=Input.GetKey(TalkKey)||TouchEmoteHeld;
+  TalkReleased=Input.GetKeyUp(TalkKey)||!TouchEmoteHeld&&lastTouchEmote;lastTouchEmote=TouchEmoteHeld;
+  HackPressed=Input.GetKeyDown(HackKey)||TouchHack&&!lastTouchHack||TouchHackPulse;HackReleased=Input.GetKeyUp(HackKey)||!TouchHack&&lastTouchHack;HackHeld=Input.GetKey(HackKey)||TouchHack;lastTouchHack=TouchHack;TouchHackPulse=false;
+  HackerToggle=Input.GetKeyDown(HackerKey)||TouchHackerToggle;HackNext=Input.GetKeyDown(HackNextKey)||TouchHackNext;
+  Drone=Input.GetKeyDown(KeyCode.V)||TouchDrone;Brake=Input.GetKey(KeyCode.Space)||TouchBrake;Handbrake=Run||TouchHandbrake;
+  Horn=Input.GetKeyDown(KeyCode.H)||TouchHorn;AimHeld=(!blocked&&Input.GetMouseButton(1))||TouchAim;AimToggle=Input.GetKeyDown(KeyCode.G);
+  Fire=(!blocked&&Input.GetMouseButtonDown(0))||TouchFire;FireHeld=(!blocked&&Input.GetMouseButton(0))||TouchFire;Reload=Input.GetKeyDown(KeyCode.R)||TouchReload;Fall=Input.GetKeyDown(KeyCode.R);
+  MeleePressed=Input.GetKeyDown(MeleeKey);
+  CrouchPressed=Input.GetKeyDown(CrouchKey)||TouchCrouch;TouchCrouch=false;
+  MapToggle=Input.GetKeyDown(MapKey)||TouchMap;TouchMap=false;
+  Holster=Input.GetKeyDown(KeyCode.X)||TouchHolster;LeftSignal=Input.GetKeyDown(KeyCode.Q);RightSignal=Input.GetKeyDown(RightSignalKey);Emergency=Input.GetKeyDown(KeyCode.L);Pause=Input.GetKeyDown(KeyCode.Escape);
+  Weapon=TouchWeapon;for(int i=1;i<=3;i++)if(Input.GetKeyDown((KeyCode)((int)KeyCode.Alpha0+i)))Weapon=i;
+  TouchJump=TouchInteract=TouchTalk=TouchDrone=TouchHorn=TouchFire=TouchReload=TouchHolster=TouchHackerToggle=TouchHackNext=false;TouchWeapon=0;
+ }
+ static bool Key(KeyCode a,KeyCode b)=>Input.GetKey(a)||Input.GetKey(b);
+}
+[DefaultExecutionOrder(-1000)]
+public class CityContext:MonoBehaviour {
+ public static CityContext Instance;
+ public WorldData Data;public Dictionary<int,Transform> Nodes=new Dictionary<int,Transform>();
+ public Transform Player;public Camera Camera;public CityInput InputState=new CityInput();public CityInput Input=>InputState;
+ public CityPlayer Motor;public CityVehicles Vehicles;public CityMarine Marine;public CityFollowCamera Follow;
+ public CityResidents Residents;public CityActors Actors;public CityCombat Combat;public CityPolice Police;
+ public CityDriverIncidents Incidents;
+ public CityPopulation Population;
+ public CityEmotes Emotes;
+ public CityLifeNavigation LifeNavigation;
+ public CitySystems Systems;public CityRemote Remote;public CityCommerce Commerce;public CityUI UI;
+ public CityWardrobe Wardrobe;public CityClothingUI Clothing;
+ public bool Paused;public float Clock;public float Wetness;public float Rain;public float Night;public bool Ready;
+ public bool FreePointerHeld=>UnityEngine.Input.GetKey(KeyCode.LeftAlt)||UnityEngine.Input.GetKey(KeyCode.RightAlt);
+ public List<CityAction> Actions=new List<CityAction>();public CityAction CurrentAction;
+ public string Speech="";public Vector3 SpeechPosition;public float SpeechUntil;
+ public const int GroundLayer=8,WorldLayer=9,VehicleLayer=10,ActorLayer=11,PlayerLayer=12;
+ public int SolidMask= (1<<8)|(1<<9)|(1<<10);public int AllMask=(1<<8)|(1<<9)|(1<<10)|(1<<11);
+ void Awake(){
+  Instance=this;var registry=GetComponent<WorldRegistry>();if(!registry||!registry.manifest){Debug.LogError("City manifest missing");return;}
+  Data=JsonUtility.FromJson<WorldData>(registry.manifest.text);foreach(var r in registry.nodes)if(r.transform)Nodes[r.id]=r.transform;
+  CityCemetery.Bind(this);
+  CityPark.Bind(this);
+  CityWaterfront.Bind(this);
+  CityCarDealership.Bind(this);
+  CityClothingShop.Bind(this);
+  CityBikeShop.Bind(this);
+  CityBlackthornHouse.Bind(this);
+  CityFireStationSite.Bind(this);
+  CityPoliceStation.Bind(this);
+  Player=Node(Data.playerId);if(!Player){Debug.LogError("City player missing");return;}
+  Camera=UnityEngine.Camera.main;if(!Camera){var c=new GameObject("Camera de exploração");Camera=c.AddComponent<Camera>();c.tag="MainCamera";c.AddComponent<AudioListener>();}
+  var homes=FindFirstObjectByType<CityHomeCatalog>();if(homes)homes.Apply(Data);
+  CityFireGarage.Bind(this);
+  CityParkingLot.Bind(this);
+  CityPropGrounding.Bind(this);
+  ReferenceMap.Bind(Data);
+  LifeNavigation=new CityLifeNavigation(Data);
+  Population=gameObject.AddComponent<CityPopulation>();Population.Initialize(this);
+  Motor=gameObject.AddComponent<CityPlayer>();Vehicles=gameObject.AddComponent<CityVehicles>();Marine=gameObject.AddComponent<CityMarine>();Follow=gameObject.AddComponent<CityFollowCamera>();
+  Residents=gameObject.AddComponent<CityResidents>();Actors=gameObject.AddComponent<CityActors>();Combat=gameObject.AddComponent<CityCombat>();Police=gameObject.AddComponent<CityPolice>();
+  Incidents=gameObject.AddComponent<CityDriverIncidents>();
+  Systems=gameObject.AddComponent<CitySystems>();Remote=gameObject.AddComponent<CityRemote>();Commerce=gameObject.AddComponent<CityCommerce>();UI=gameObject.AddComponent<CityUI>();
+  Motor.Initialize(this);Vehicles.Initialize(this);Marine.Initialize(this);Follow.Initialize(this);Actors.Initialize(this);Residents.Initialize(this);Combat.Initialize(this);Police.Initialize(this);
+  Wardrobe=gameObject.AddComponent<CityWardrobe>();Wardrobe.Initialize(this);
+  Systems.Initialize(this);Remote.Initialize(this);Commerce.Initialize(this);UI.Initialize(this);Incidents.Initialize(this);
+  Clothing=gameObject.AddComponent<CityClothingUI>();Clothing.Initialize(this);
+  Emotes=gameObject.AddComponent<CityEmotes>();Emotes.Initialize(this);
+  var water=new GameObject("Água da baía");water.AddComponent<CityWater>().Initialize(this);
+  var atmosphere=new GameObject("Vento e nuvens");atmosphere.AddComponent<CityAtmosphere>().Initialize(this);CityEnglish.TranslateSceneLabels();Ready=true;
+  Application.targetFrameRate=90;QualitySettings.vSyncCount=1;Camera.nearClipPlane=.08f;Camera.farClipPlane=4000;ApplyCursor();
+ }
+ public Transform Node(int id)=>Nodes.TryGetValue(id,out var t)?t:null;
+ public void AddAction(string id,Func<Vector3> point,Func<string> label,Action act,Func<bool> enabled=null,float range=2.8f,int priority=0,bool conversation=false,bool requiresLook=true,Func<Transform> target=null,Func<Vector3> focus=null){
+  Actions.Add(new CityAction{id=id,Point=point,Label=label,Execute=act,Enabled=enabled,range=range,priority=priority,conversation=conversation,requiresLook=requiresLook,Target=target,Focus=focus});
+ }
+ // Range belongs to the character; selection belongs to the center of the visible camera.
+ // State actions (stand/exit/return) remain available regardless of the camera orbit.
+ public void RefreshAction(){
+  CurrentAction=null;if(Paused||UI&&UI.MapOpen||Clothing&&Clothing.IsOpen||!Player||!Camera)return;
+  float best=float.MaxValue,bestDistance=float.MaxValue;
+  foreach(var a in Actions){
+   if(a.Enabled!=null&&!a.Enabled())continue;
+   float distance=Vector3.Distance(Player.position+Vector3.up,a.Position);if(distance>a.range)continue;
+   if(!a.requiresLook){
+    if(CurrentAction==null||CurrentAction.requiresLook||a.priority>CurrentAction.priority){CurrentAction=a;bestDistance=distance;}
+    continue;
+   }
+   if(CurrentAction!=null&&!CurrentAction.requiresLook)continue;
+   var screen=Camera.WorldToViewportPoint(a.LookPoint);
+   if(screen.z<=0||screen.x<0||screen.x>1||screen.y<0||screen.y>1)continue;
+   float score=new Vector2((screen.x-.5f)*Camera.aspect,screen.y-.5f).sqrMagnitude;
+   if(score>.34f*.34f)continue;
+   if(CurrentAction!=null&&(score>best+.0005f||Mathf.Abs(score-best)<=.0005f&&
+    (a.priority<CurrentAction.priority||a.priority==CurrentAction.priority&&distance>=bestDistance)))continue;
+   if(!ActionVisible(a,Camera.transform.position,a.LookPoint)||!ActionVisible(a,Player.position+Vector3.up*1.5f,a.Position))continue;
+   CurrentAction=a;best=score;bestDistance=distance;
+  }
+ }
+ bool ActionVisible(CityAction action,Vector3 from,Vector3 to){
+  var delta=to-from;
+  return delta.magnitude<.08f||!CityPhysics.Cast(from,0,delta.normalized,delta.magnitude-.08f,out _,Player,action.Target!=null?action.Target():null,SolidMask|(1<<ActorLayer));
+ }
+ public void QueueCurrentAction(){
+  if(Paused||UI&&UI.MapOpen||CurrentAction==null)return;
+  if(CurrentAction.conversation)InputState.TouchTalk=true;else InputState.TouchInteract=true;
+ }
+ public bool UseCurrentAction(bool conversation){
+  RefreshAction();var action=CurrentAction;
+  if(action==null||action.conversation!=conversation)return false;
+  action.Execute();return true;
+ }
+ public void Say(string text,Vector3 at,float duration=4){Speech=CityEnglish.Text(text);SpeechPosition=at;SpeechUntil=Clock+duration;}
+ public void Sound(string kind,Vector3 at,float strength=1){if(Systems)Systems.PlaySound(kind,at,strength);}
+ public bool Visible(Vector3 from,Vector3 to){var d=to-from;return !Physics.Raycast(from,d.normalized,d.magnitude-.08f,SolidMask,QueryTriggerInteraction.Ignore);}
+ public float Ground(float x,float z){
+  if(Physics.Raycast(new Vector3(x,400,z),Vector3.down,out var hit,600,1<<GroundLayer,QueryTriggerInteraction.Ignore))return hit.point.y;
+  var g=Data.ground;if(g==null||g.heights.Length==0)return 0;int ix=Mathf.Clamp(Mathf.RoundToInt((x-g.x)/g.step),0,g.width-1),iz=Mathf.Clamp(Mathf.RoundToInt((z-g.z)/g.step),0,g.height-1);return g.heights[iz*g.width+ix];
+ }
+ public bool Free(Vector3 feet,float radius=.43f,float height=2.25f){return !Physics.CheckCapsule(feet+Vector3.up*(radius+.05f),feet+Vector3.up*(height-radius),radius,SolidMask|(1<<ActorLayer),QueryTriggerInteraction.Ignore);}
+ void Update(){
+  if(!Ready)return;
+  ApplyCursor();InputState.Poll();if(Clothing)Clothing.SampleInput();UI.Map.SampleInput();Emotes.SampleInput();if(Paused)return;Clock+=Time.deltaTime;
+  RefreshAction();
+  if(CurrentAction!=null&&(CurrentAction.conversation?InputState.Talk:InputState.Interact))UseCurrentAction(CurrentAction.conversation);
+ }
+ void ApplyCursor(){
+  // Capture follows gameplay, including startup and returning from settings or another app.
+  var mode=isActiveAndEnabled&&Ready&&!Paused&&!(UI&&UI.MapOpen)&&!(Clothing&&Clothing.IsOpen)&&!(Emotes&&Emotes.WheelOpen)&&!FreePointerHeld&&Application.isFocused&&
+   !Application.isMobilePlatform&&UnityEngine.Input.touchCount==0?CursorLockMode.Locked:CursorLockMode.None;
+  if(Cursor.lockState!=mode)Cursor.lockState=mode;Cursor.visible=mode!=CursorLockMode.Locked;
+ }
+ public void RefreshCursor(){ApplyCursor();}
+ void OnApplicationFocus(bool focused){if(!focused){if(Emotes)Emotes.CancelInput();if(Combat)Combat.ReleaseMeleeInput();}ApplyCursor();}
+ void OnDisable(){Cursor.lockState=CursorLockMode.None;Cursor.visible=true;}
+ public void Pause(bool paused){Paused=paused;if(paused&&Emotes)Emotes.CancelInput();if(paused&&Combat)Combat.ReleaseMeleeInput();Time.timeScale=paused?0:1;AudioListener.pause=paused;if(Vehicles&&Vehicles.Effects)Vehicles.Effects.SetPaused(paused);ApplyCursor();}
+ void OnDestroy(){Time.timeScale=1;AudioListener.pause=false;}
+}
+}

@@ -1,0 +1,43 @@
+using System;
+using System.IO;
+using UnityEditor;
+using UnityEditor.Build.Reporting;
+using UnityEngine;
+
+public static class SteeringSnapshotBuild
+{
+    [Serializable] public sealed class Result
+    {
+        public string result, startedUtc, finishedUtc, snapshot, executable, error;
+        public ulong bytes;
+        public int errors, warnings;
+    }
+
+    public static void BuildWindows()
+    {
+        var args = Environment.GetCommandLineArgs();
+        string output = args[Array.IndexOf(args, "-steering-output") + 1];
+        string evidence = args[Array.IndexOf(args, "-steering-evidence") + 1];
+        var result = new Result { startedUtc = DateTime.UtcNow.ToString("o"),
+            snapshot = Path.GetFullPath("."), executable = output };
+        int exit = 1;
+        try
+        {
+            var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {
+                scenes = new[] { "Assets/Scenes/BaiaDoSol.unity" },
+                locationPathName = output, target = BuildTarget.StandaloneWindows64,
+                options = BuildOptions.None
+            });
+            result.result = report.summary.result.ToString();
+            result.bytes = report.summary.totalSize;
+            result.errors = (int)report.summary.totalErrors;
+            result.warnings = (int)report.summary.totalWarnings;
+            exit = report.summary.result == BuildResult.Succeeded ? 0 : 1;
+        }
+        catch (Exception ex) { result.result = "Exception"; result.error = ex.ToString(); }
+        result.finishedUtc = DateTime.UtcNow.ToString("o");
+        File.WriteAllText(evidence, JsonUtility.ToJson(result, true));
+        Debug.Log("STEERING_SNAPSHOT_BUILD_" + result.result);
+        EditorApplication.Exit(exit);
+    }
+}

@@ -1,0 +1,67 @@
+var registry = UnityEngine.Object.FindFirstObjectByType<OpenTerritory.WorldRegistry>();
+var world = JsonUtility.FromJson<OpenTerritory.WorldData>(registry.manifest.text);
+var nodes = new System.Collections.Generic.Dictionary<int, Transform>();
+foreach(var n in registry.nodes) if(n.transform) nodes[n.id] = n.transform;
+var rows = new System.Collections.Generic.List<object>();
+bool passed = true;
+foreach(var car in world.vehicles) {
+    if(car.kind != "car") continue;
+    var root = nodes[car.id]; var wheel = nodes[car.steeringWheel];
+    var windshield = new System.Collections.Generic.List<Plane>();
+    var panels = new System.Collections.Generic.List<Bounds>();
+    Transform driver = nodes.ContainsKey(car.driver) ? nodes[car.driver] : null;
+    foreach(var mf in root.GetComponentsInChildren<MeshFilter>(true)) {
+        if(mf.transform.IsChildOf(wheel) || driver && mf.transform.IsChildOf(driver)) continue;
+        var mesh = mf.sharedMesh; var vertices = mesh.vertices;
+        var matrix = root.worldToLocalMatrix * mf.transform.localToWorldMatrix;
+        var renderer = mf.GetComponent<Renderer>();
+        if(renderer.sharedMaterial.shader.name.Contains("Glass")) {
+            var indices = mesh.triangles;
+            for(int i = 0; i < indices.Length; i += 3) {
+                var a = matrix.MultiplyPoint3x4(vertices[indices[i]]);
+                var b = matrix.MultiplyPoint3x4(vertices[indices[i+1]]);
+                var c = matrix.MultiplyPoint3x4(vertices[indices[i+2]]);
+                var normal = Vector3.Cross(b-a,c-a).normalized;
+                var center = (a+b+c)/3;
+                if(normal.z > .7f && normal.y > .1f && Mathf.Abs(normal.x) < .02f && center.z > .3f && center.y > 1)
+                    windshield.Add(new Plane(normal,a));
+            }
+        }
+        if(vertices.Length % 24 != 0) continue;
+        for(int i = 0; i < vertices.Length; i += 24) {
+            var bounds = new Bounds(matrix.MultiplyPoint3x4(vertices[i]),Vector3.zero);
+            for(int v = 1; v < 24; v++) bounds.Encapsulate(matrix.MultiplyPoint3x4(vertices[i+v]));
+            var center = bounds.center; var size = bounds.size;
+            if(Mathf.Abs(center.x) < .65f && center.z > .45f && center.z < 1.4f && center.y > 1 && center.y < 1.6f
+                && size.x > .2f && size.y < .4f && size.z < .8f) panels.Add(bounds);
+        }
+    }
+    var rim = new System.Collections.Generic.List<Vector3>();
+    foreach(var mf in wheel.GetComponentsInChildren<MeshFilter>(true)) {
+        var matrix = wheel.worldToLocalMatrix * mf.transform.localToWorldMatrix;
+        foreach(var v in mf.sharedMesh.vertices) rim.Add(matrix.MultiplyPoint3x4(v));
+    }
+    float glassClearance = float.MaxValue, panelClearance = float.MaxValue, worstHandGap = 0;
+    var neutral = wheel.localRotation;
+    var parentToCar = root.worldToLocalMatrix * wheel.parent.localToWorldMatrix;
+    foreach(float steer in new[]{-car.maxSteering,-.30f,0,.30f,car.maxSteering}) {
+        float turn = -steer * 4.15f;
+        var pose = parentToCar * Matrix4x4.TRS(wheel.localPosition,neutral * Quaternion.Euler(0,0,turn * Mathf.Rad2Deg),wheel.localScale);
+        foreach(var v in rim) {
+            var point = pose.MultiplyPoint3x4(v);
+            foreach(var plane in windshield) glassClearance = Mathf.Min(glassClearance,-plane.GetDistanceToPoint(point));
+            foreach(var panel in panels) panelClearance = Mathf.Min(panelClearance,Mathf.Sqrt(panel.SqrDistance(point)));
+        }
+        for(int hand=0; hand<2; hand++) {
+            var point = root.InverseTransformPoint(OpenTerritory.CitySteeringWheel.GripPoint(wheel,neutral,turn,hand));
+            float nearest = float.MaxValue;
+            foreach(var v in rim) nearest = Mathf.Min(nearest,Vector3.Distance(point,pose.MultiplyPoint3x4(v)));
+            worstHandGap = Mathf.Max(worstHandGap,nearest);
+        }
+    }
+    bool ok = windshield.Count >= 2 && panels.Count >= 2 && glassClearance > .05f && panelClearance > .03f && worstHandGap < .09f;
+    passed &= ok;
+    rows.Add(new{id=car.id,model=car.model,role=car.role,passed=ok,windshieldTriangles=windshield.Count,panelBoxes=panels.Count,
+        vertices=rim.Count,poses=5,glassClearance=glassClearance,panelClearance=panelClearance,handGap=worstHandGap});
+}
+return new{passed=passed,scene=UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene().path,playing=UnityEditor.EditorApplication.isPlaying,vehicles=rows.Count,results=rows};

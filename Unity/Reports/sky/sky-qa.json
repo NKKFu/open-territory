@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "unity": "6000.3.27f1",
+  "checks": [
+    {
+      "name": "native-sky-shader-supported",
+      "passed": true,
+      "detail": "OpenTerritory/CitySky"
+    },
+    {
+      "name": "camera-draws-skybox",
+      "passed": true,
+      "detail": "Skybox"
+    },
+    {
+      "name": "normal-play-has-no-opt-in-probes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "01-sunrise-visible-with-current-camera",
+      "passed": true,
+      "detail": "(0.50, 0.38, 98.47)"
+    },
+    {
+      "name": "01-sunrise-shadow-alignment",
+      "passed": true,
+      "detail": "dot=1"
+    },
+    {
+      "name": "01-sunrise-disc-renders",
+      "passed": true,
+      "detail": "changed center pixels=2304"
+    },
+    {
+      "name": "02-day-visible-with-current-camera",
+      "passed": true,
+      "detail": "(0.50, 0.83, 89.60)"
+    },
+    {
+      "name": "02-day-shadow-alignment",
+      "passed": true,
+      "detail": "dot=1"
+    },
+    {
+      "name": "02-day-disc-renders",
+      "passed": true,
+      "detail": "changed center pixels=2302"
+    },
+    {
+      "name": "03-sunset-visible-with-current-camera",
+      "passed": true,
+      "detail": "(0.50, 0.38, 98.47)"
+    },
+    {
+      "name": "03-sunset-shadow-alignment",
+      "passed": true,
+      "detail": "dot=1"
+    },
+    {
+      "name": "03-sunset-disc-renders",
+      "passed": true,
+      "detail": "changed center pixels=2304"
+    },
+    {
+      "name": "04-moon-visible-with-current-camera",
+      "passed": true,
+      "detail": "(0.50, 0.83, 89.60)"
+    },
+    {
+      "name": "04-moon-shadow-alignment",
+      "passed": true,
+      "detail": "dot=1"
+    },
+    {
+      "name": "04-moon-disc-renders",
+      "passed": true,
+      "detail": "changed center pixels=880"
+    },
+    {
+      "name": "sun-has-no-opposite-side-ghost",
+      "passed": true,
+      "detail": "changed center pixels=0"
+    },
+    {
+      "name": "sky-has-no-parallax-when-player-moves",
+      "passed": true,
+      "detail": "changed center pixels=0"
+    },
+    {
+      "name": "street-fog-does-not-erase-sun",
+      "passed": true,
+      "detail": "changed center pixels=0"
+    },
+    {
+      "name": "storm-veils-celestial-disc",
+      "passed": true,
+      "detail": "sun opacity=0.12"
+    },
+    {
+      "name": "solid-geometry-occludes-sun",
+      "passed": true,
+      "detail": "changed center pixels=0"
+    },
+    {
+      "name": "real-cloud-mesh-occludes-sun",
+      "passed": true,
+      "detail": "changed center pixels=0"
+    }
+  ],
+  "folder": "C:/Users/nelso/open-territory/Unity/Reports/sky",
+  "code": "verify-editor.cs.txt",
+  "captures": [
+    "01-sunrise.png",
+    "02-day.png",
+    "03-sunset.png",
+    "04-moon.png"
+  ]
+}

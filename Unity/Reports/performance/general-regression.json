@@ -1,0 +1,16 @@
+{
+  "comparedAtUtc": "2026-11-08T04:18:26.8134041Z",
+  "sameFailures": true,
+  "failures": [
+    "lod-building-and-scenery-coverage",
+    "lod-assets-valid-and-nonincreasing",
+    "lod-reduction-windows",
+    "lod-reduction-street-light",
+    "reused-vehicle-enter",
+    "commerce-and-world-actions-retained"
+  ],
+  "baselineChecks": 68,
+  "releaseChecks": 68,
+  "baselineReport": "before-reference/reference-qa.json",
+  "releaseReport": "release-reference/reference-qa.json"
+}

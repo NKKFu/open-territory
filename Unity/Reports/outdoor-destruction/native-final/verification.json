@@ -1,0 +1,30 @@
+{
+  "startedAtUtc": "2026-11-08T09:37:08.3937411Z",
+  "verifiedAtUtc": "2026-11-08T09:37:54.3571853Z",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\OutdoorDestruction-20261108\\BaiaDoSol.exe",
+  "assemblySha256": "A0EFE5996FD41B49B6532AEBE768A92714C595F8F9D4CAAC329E154BD0E11878",
+  "assemblyUnchanged": true,
+  "processExitCode": -1073741819,
+  "graphicsApi": "Direct3D12",
+  "resolution": "1280x800",
+  "arguments": [
+    "-batchmode",
+    "-screen-fullscreen",
+    "0",
+    "-screen-width",
+    "1280",
+    "-screen-height",
+    "800",
+    "--city-outdoor-destruction-qa",
+    "--city-report-dir",
+    "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\outdoor-destruction\\native-final\"",
+    "-logFile",
+    "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\outdoor-destruction\\native-final\\player.log\""
+  ],
+  "fresh": true,
+  "passed": false,
+  "fences": 2964,
+  "trees": 7115,
+  "checks": 54,
+  "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\outdoor-destruction\\native-final\\outdoor-destruction-qa.json"
+}

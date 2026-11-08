@@ -1,0 +1,29 @@
+{
+  "verifiedAtUtc": "2026-11-08T11:52:04.9167038Z",
+  "startedAtUtc": "2026-11-08T11:51:47.4793236Z",
+  "passed": true,
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\WallPlanters-20261108\\BaiaDoSol.exe",
+  "assemblySha256": "C83D64EA54EC9CDF6D0CA535A2163DA6B827F4FEB76876FAE6C235F732FF1CB2",
+  "exitCode": 0,
+  "checks": [
+    {
+      "name": "walking-through-real-input-poller",
+      "passed": true,
+      "detail": "distance=3.92962646484375"
+    },
+    {
+      "name": "pause-stops-city-clock",
+      "passed": true
+    },
+    {
+      "name": "native-session-has-no-runtime-errors",
+      "passed": true,
+      "detail": "errors=0"
+    },
+    {
+      "name": "normal-exit-with-default-graphics-api",
+      "passed": true,
+      "detail": "exit=0"
+    }
+  ]
+}

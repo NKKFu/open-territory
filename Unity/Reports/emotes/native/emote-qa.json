@@ -1,0 +1,236 @@
+{
+    "passed": true,
+    "checks": [
+        {
+            "name": "test-uses-real-resident-rigs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "talk-target-visible-before-Q",
+            "detail": "qa-emote-talk",
+            "passed": true
+        },
+        {
+            "name": "normal-play-has-no-other-emote-probe",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Q-down-does-not-start-conversation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "quick-Q-release-talks-once",
+            "detail": "talks=1 action=qa-emote-talk",
+            "passed": true
+        },
+        {
+            "name": "Q-tap-never-repeats",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hold-Q-opens-without-talking-or-pausing",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "wheel-blocks-pointer-from-gameplay",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "wheel-starts-with-no-selection",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "mouse-selects-Feliz",
+            "detail": "Happy",
+            "passed": true
+        },
+        {
+            "name": "mouse-selects-Triste",
+            "detail": "Sad",
+            "passed": true
+        },
+        {
+            "name": "mouse-selects-Dançar",
+            "detail": "Dance",
+            "passed": true
+        },
+        {
+            "name": "mouse-selects-Acenar",
+            "detail": "Wave",
+            "passed": true
+        },
+        {
+            "name": "mouse-selects-Rir",
+            "detail": "Laugh",
+            "passed": true
+        },
+        {
+            "name": "mouse-selects-Aplaudir",
+            "detail": "Clap",
+            "passed": true
+        },
+        {
+            "name": "release-in-center-cancels",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Q-release-performs-Feliz",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPCs-react-to-Feliz",
+            "detail": "responders=3",
+            "passed": true
+        },
+        {
+            "name": "far-NPC-ignores-Feliz",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Q-release-performs-Triste",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPCs-react-to-Triste",
+            "detail": "responders=3",
+            "passed": true
+        },
+        {
+            "name": "far-NPC-ignores-Triste",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sadness-receives-comfort",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Q-release-performs-Dançar",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPCs-react-to-Dançar",
+            "detail": "responders=3",
+            "passed": true
+        },
+        {
+            "name": "far-NPC-ignores-Dançar",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "dance-animates-body-without-moving-capsule",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Q-release-performs-Acenar",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPCs-react-to-Acenar",
+            "detail": "responders=3",
+            "passed": true
+        },
+        {
+            "name": "far-NPC-ignores-Acenar",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Q-release-performs-Rir",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPCs-react-to-Rir",
+            "detail": "responders=3",
+            "passed": true
+        },
+        {
+            "name": "far-NPC-ignores-Rir",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Q-release-performs-Aplaudir",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPCs-react-to-Aplaudir",
+            "detail": "responders=3",
+            "passed": true
+        },
+        {
+            "name": "far-NPC-ignores-Aplaudir",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "NPCs-behind-wall-ignore-emote",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "crossing-pedestrians-keep-crossing",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-cancels-wheel-without-gesture-or-talk",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "resume-does-not-replay-Q",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-pauses-gesture-and-clock",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "movement-cancels-gesture-immediately",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "focus-cancel-does-not-replay-Q",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "vehicle-Q-does-not-open-wheel",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "emote-and-NPC-reactions-expire",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

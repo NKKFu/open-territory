@@ -1,0 +1,856 @@
+{
+    "passed": true,
+    "captures": false,
+    "checks": [
+        {
+            "name": "walk-actual-foot-reaches-target",
+            "passed": true,
+            "value": 2.3888378564151937e-7
+        },
+        {
+            "name": "walk-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 8.464633083349327e-7
+        },
+        {
+            "name": "walk-balanced-contacts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "walk-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.06344187259674072
+        },
+        {
+            "name": "walk-pelvis-does-not-snap",
+            "passed": true,
+            "value": 2.057811975479126
+        },
+        {
+            "name": "walk-bends-knees",
+            "passed": true,
+            "value": 83.31024932861328
+        },
+        {
+            "name": "walk-sounds-match-foot-contacts",
+            "passed": true,
+            "value": 10.0
+        },
+        {
+            "name": "walk-arms-oppose-legs",
+            "passed": true,
+            "value": 0.9935041069984436
+        },
+        {
+            "name": "walk-cadence",
+            "passed": true,
+            "value": 3.220325231552124
+        },
+        {
+            "name": "walk-speed-preserved",
+            "passed": true,
+            "value": 2.6499998569488527
+        },
+        {
+            "name": "sprint-actual-foot-reaches-target",
+            "passed": true,
+            "value": 2.9802322387695315e-8
+        },
+        {
+            "name": "sprint-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 9.385506132275623e-7
+        },
+        {
+            "name": "sprint-balanced-contacts",
+            "passed": true,
+            "value": -1.0
+        },
+        {
+            "name": "sprint-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.03635883331298828
+        },
+        {
+            "name": "sprint-pelvis-does-not-snap",
+            "passed": true,
+            "value": 0.669533908367157
+        },
+        {
+            "name": "sprint-bends-knees",
+            "passed": true,
+            "value": 142.73541259765626
+        },
+        {
+            "name": "sprint-sounds-match-foot-contacts",
+            "passed": true,
+            "value": 13.0
+        },
+        {
+            "name": "sprint-arms-oppose-legs",
+            "passed": true,
+            "value": 0.5280867218971252
+        },
+        {
+            "name": "sprint-cadence",
+            "passed": true,
+            "value": 4.182671546936035
+        },
+        {
+            "name": "sprint-speed-preserved",
+            "passed": true,
+            "value": 9.199993133544922
+        },
+        {
+            "name": "sprint-faster-than-previous-version",
+            "passed": true,
+            "value": 9.199993133544922
+        },
+        {
+            "name": "sprint-travel-matches-longer-steps",
+            "passed": true,
+            "value": 4.399098873138428
+        },
+        {
+            "name": "sprint-turn-actual-foot-reaches-target",
+            "passed": true,
+            "value": 2.384185791015625e-7
+        },
+        {
+            "name": "sprint-turn-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 3.8152037973304689e-7
+        },
+        {
+            "name": "sprint-turn-balanced-contacts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sprint-turn-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.03936856985092163
+        },
+        {
+            "name": "sprint-turn-pelvis-does-not-snap",
+            "passed": true,
+            "value": 1.291063666343689
+        },
+        {
+            "name": "sprint-turn-bends-knees",
+            "passed": true,
+            "value": 142.37615966796876
+        },
+        {
+            "name": "sprint-turn-sounds-match-foot-contacts",
+            "passed": true,
+            "value": 14.0
+        },
+        {
+            "name": "sprint-turn-arms-oppose-legs",
+            "passed": true,
+            "value": 0.5507567524909973
+        },
+        {
+            "name": "idle-stops-gait",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "jump-preserved",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "landing-preserved",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "aim-strafe-actual-foot-reaches-target",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "aim-strafe-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "aim-strafe-balanced-contacts",
+            "passed": true,
+            "value": 1.0
+        },
+        {
+            "name": "aim-strafe-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.04415076971054077
+        },
+        {
+            "name": "aim-strafe-pelvis-does-not-snap",
+            "passed": true,
+            "value": 0.3742823600769043
+        },
+        {
+            "name": "aim-strafe-bends-knees",
+            "passed": true,
+            "value": 83.8626937866211
+        },
+        {
+            "name": "aim-strafe-sounds-match-foot-contacts",
+            "passed": true,
+            "value": 7.0
+        },
+        {
+            "name": "blocked-does-not-run-in-place",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "slope-walk-actual-foot-reaches-target",
+            "passed": true,
+            "value": 2.384185791015625e-7
+        },
+        {
+            "name": "slope-walk-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 2.384184938364342e-7
+        },
+        {
+            "name": "slope-walk-balanced-contacts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "slope-walk-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.0631401538848877
+        },
+        {
+            "name": "slope-walk-pelvis-does-not-snap",
+            "passed": true,
+            "value": 1.8562616109848023
+        },
+        {
+            "name": "slope-walk-bends-knees",
+            "passed": true,
+            "value": 80.80181121826172
+        },
+        {
+            "name": "slope-walk-sounds-match-foot-contacts",
+            "passed": true,
+            "value": 10.0
+        },
+        {
+            "name": "slope-walk-arms-oppose-legs",
+            "passed": true,
+            "value": 0.9934110641479492
+        },
+        {
+            "name": "settings-freeze-animation",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-0-real-rig-spawned",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-small-slow-walk-actual-foot-reaches-target",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-small-slow-walk-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-small-slow-walk-balanced-contacts",
+            "passed": true,
+            "value": -1.0
+        },
+        {
+            "name": "npc-small-slow-walk-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.04016244411468506
+        },
+        {
+            "name": "npc-small-slow-walk-pelvis-does-not-snap",
+            "passed": true,
+            "value": 0.2062656581401825
+        },
+        {
+            "name": "npc-small-slow-walk-bends-knees",
+            "passed": true,
+            "value": 72.78556823730469
+        },
+        {
+            "name": "npc-small-slow-walk-sounds-match-foot-contacts",
+            "passed": true,
+            "value": 5.0
+        },
+        {
+            "name": "npc-small-slow-walk-arms-oppose-legs",
+            "passed": true,
+            "value": 0.9932786822319031
+        },
+        {
+            "name": "npc-small-slow-walk-real-controller-speed",
+            "passed": true,
+            "value": 0.6500005722045898
+        },
+        {
+            "name": "npc-small-slow-walk-cadence",
+            "passed": true,
+            "value": 1.6094868183135987
+        },
+        {
+            "name": "npc-small-walk-actual-foot-reaches-target",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-small-walk-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-small-walk-balanced-contacts",
+            "passed": true,
+            "value": 1.0
+        },
+        {
+            "name": "npc-small-walk-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.04669922590255737
+        },
+        {
+            "name": "npc-small-walk-pelvis-does-not-snap",
+            "passed": true,
+            "value": 0.746536135673523
+        },
+        {
+            "name": "npc-small-walk-bends-knees",
+            "passed": true,
+            "value": 73.62480163574219
+        },
+        {
+            "name": "npc-small-walk-sounds-match-foot-contacts",
+            "passed": true,
+            "value": 7.0
+        },
+        {
+            "name": "npc-small-walk-arms-oppose-legs",
+            "passed": true,
+            "value": 0.9932795763015747
+        },
+        {
+            "name": "npc-small-walk-real-controller-speed",
+            "passed": true,
+            "value": 1.1500000953674317
+        },
+        {
+            "name": "npc-small-walk-cadence",
+            "passed": true,
+            "value": 2.245368719100952
+        },
+        {
+            "name": "npc-small-jog-actual-foot-reaches-target",
+            "passed": true,
+            "value": 1.7881393432617188e-7
+        },
+        {
+            "name": "npc-small-jog-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 4.775558863912011e-7
+        },
+        {
+            "name": "npc-small-jog-balanced-contacts",
+            "passed": true,
+            "value": 1.0
+        },
+        {
+            "name": "npc-small-jog-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.03682154417037964
+        },
+        {
+            "name": "npc-small-jog-pelvis-does-not-snap",
+            "passed": true,
+            "value": 1.2201331853866578
+        },
+        {
+            "name": "npc-small-jog-bends-knees",
+            "passed": true,
+            "value": 115.34494018554688
+        },
+        {
+            "name": "npc-small-jog-sounds-match-foot-contacts",
+            "passed": true,
+            "value": 9.0
+        },
+        {
+            "name": "npc-small-jog-arms-oppose-legs",
+            "passed": true,
+            "value": 0.8318296074867249
+        },
+        {
+            "name": "npc-small-jog-real-controller-speed",
+            "passed": true,
+            "value": 2.799997091293335
+        },
+        {
+            "name": "npc-small-jog-cadence",
+            "passed": true,
+            "value": 2.9028027057647707
+        },
+        {
+            "name": "npc-run-turn-actual-foot-reaches-target",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-run-turn-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-run-turn-balanced-contacts",
+            "passed": true,
+            "value": -1.0
+        },
+        {
+            "name": "npc-run-turn-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.03686302900314331
+        },
+        {
+            "name": "npc-run-turn-pelvis-does-not-snap",
+            "passed": true,
+            "value": 1.4947131872177125
+        },
+        {
+            "name": "npc-run-turn-bends-knees",
+            "passed": true,
+            "value": 118.65956115722656
+        },
+        {
+            "name": "npc-run-turn-sounds-match-foot-contacts",
+            "passed": true,
+            "value": 9.0
+        },
+        {
+            "name": "npc-run-turn-arms-oppose-legs",
+            "passed": true,
+            "value": 0.8052136898040772
+        },
+        {
+            "name": "npc-run-turn-real-controller-speed",
+            "passed": true,
+            "value": 3.1000030040740969
+        },
+        {
+            "name": "npc-run-turn-cadence",
+            "passed": true,
+            "value": 2.8978729248046877
+        },
+        {
+            "name": "npc-0-idle-stops-gait",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-0-settings-freeze-animation",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-1-real-rig-spawned",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-tall-walk-actual-foot-reaches-target",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-tall-walk-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-tall-walk-balanced-contacts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-tall-walk-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.039009273052215579
+        },
+        {
+            "name": "npc-tall-walk-pelvis-does-not-snap",
+            "passed": true,
+            "value": 0.2608480155467987
+        },
+        {
+            "name": "npc-tall-walk-bends-knees",
+            "passed": true,
+            "value": 75.60871124267578
+        },
+        {
+            "name": "npc-tall-walk-sounds-match-foot-contacts",
+            "passed": true,
+            "value": 6.0
+        },
+        {
+            "name": "npc-tall-walk-arms-oppose-legs",
+            "passed": true,
+            "value": 0.9932632446289063
+        },
+        {
+            "name": "npc-tall-walk-real-controller-speed",
+            "passed": true,
+            "value": 1.1500000953674317
+        },
+        {
+            "name": "npc-tall-walk-cadence",
+            "passed": true,
+            "value": 1.9300925731658936
+        },
+        {
+            "name": "npc-tall-jog-actual-foot-reaches-target",
+            "passed": true,
+            "value": 2.384185791015625e-7
+        },
+        {
+            "name": "npc-tall-jog-planted-foot-stays-in-world",
+            "passed": true,
+            "value": 0.000001644074131945672
+        },
+        {
+            "name": "npc-tall-jog-balanced-contacts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-tall-jog-pelvis-remains-upright",
+            "passed": true,
+            "value": 0.033592402935028079
+        },
+        {
+            "name": "npc-tall-jog-pelvis-does-not-snap",
+            "passed": true,
+            "value": 0.6322240233421326
+        },
+        {
+            "name": "npc-tall-jog-bends-knees",
+            "passed": true,
+            "value": 113.66102600097656
+        },
+        {
+            "name": "npc-tall-jog-sounds-match-foot-contacts",
+            "passed": true,
+            "value": 9.0
+        },
+        {
+            "name": "npc-tall-jog-arms-oppose-legs",
+            "passed": true,
+            "value": 0.8467640280723572
+        },
+        {
+            "name": "npc-tall-jog-real-controller-speed",
+            "passed": true,
+            "value": 2.7999966144561769
+        },
+        {
+            "name": "npc-tall-jog-cadence",
+            "passed": true,
+            "value": 2.5722248554229738
+        },
+        {
+            "name": "npc-1-idle-stops-gait",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-1-settings-freeze-animation",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-seated-0-real-rig-spawned",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-seated-0-pose-preserved",
+            "passed": true,
+            "value": 0.9200000166893005
+        },
+        {
+            "name": "npc-seated-1-real-rig-spawned",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-seated-1-pose-preserved",
+            "passed": true,
+            "value": 0.9200000166893005
+        },
+        {
+            "name": "no-runtime-errors",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "motions": [
+        {
+            "name": "walk",
+            "frames": 276,
+            "leftContacts": 5,
+            "rightContacts": 5,
+            "sounds": 10,
+            "seconds": 3.105276346206665,
+            "speed": 2.6499998569488527,
+            "footError": 2.3888378564151937e-7,
+            "plantedSlip": 8.464633083349327e-7,
+            "hipMin": 0.8673040270805359,
+            "hipMax": 0.9307458996772766,
+            "hipJump": 0.0228651762008667,
+            "kneeFlexion": 83.31024932861328,
+            "clearance": 0.1450653076171875,
+            "contactsPerSecond": 3.220325231552124,
+            "hipSpeed": 2.057811975479126,
+            "armOpposition": 0.9935041069984436,
+            "anatomy": 1.0,
+            "rootScale": 1.0,
+            "residentId": 0
+        },
+        {
+            "name": "sprint",
+            "frames": 276,
+            "leftContacts": 6,
+            "rightContacts": 7,
+            "sounds": 13,
+            "seconds": 3.1080615520477297,
+            "speed": 9.199993133544922,
+            "footError": 2.9802322387695315e-8,
+            "plantedSlip": 9.385506132275623e-7,
+            "hipMin": 0.8540006875991821,
+            "hipMax": 0.8903595209121704,
+            "hipJump": 0.008466362953186036,
+            "kneeFlexion": 142.73541259765626,
+            "clearance": 0.4895172119140625,
+            "contactsPerSecond": 4.182671546936035,
+            "hipSpeed": 0.669533908367157,
+            "armOpposition": 0.5280867218971252,
+            "anatomy": 1.0,
+            "rootScale": 1.0,
+            "residentId": 0
+        },
+        {
+            "name": "sprint-turn",
+            "frames": 275,
+            "leftContacts": 7,
+            "rightContacts": 7,
+            "sounds": 14,
+            "seconds": 3.1004695892333986,
+            "speed": 8.764847755432129,
+            "footError": 2.384185791015625e-7,
+            "plantedSlip": 3.8152037973304689e-7,
+            "hipMin": 0.8540063500404358,
+            "hipMax": 0.8933749198913574,
+            "hipJump": 0.014345526695251465,
+            "kneeFlexion": 142.37615966796876,
+            "clearance": 0.4893951416015625,
+            "contactsPerSecond": 4.515445232391357,
+            "hipSpeed": 1.291063666343689,
+            "armOpposition": 0.5507567524909973,
+            "anatomy": 1.0,
+            "rootScale": 1.0,
+            "residentId": 0
+        },
+        {
+            "name": "aim-strafe",
+            "frames": 276,
+            "leftContacts": 4,
+            "rightContacts": 3,
+            "sounds": 7,
+            "seconds": 3.1107137203216554,
+            "speed": 1.7500009536743165,
+            "footError": 0.0,
+            "plantedSlip": 0.0,
+            "hipMin": 0.8890002369880676,
+            "hipMax": 0.9331510066986084,
+            "hipJump": 0.005927383899688721,
+            "kneeFlexion": 83.8626937866211,
+            "clearance": 0.1450347900390625,
+            "contactsPerSecond": 2.2502875328063967,
+            "hipSpeed": 0.3742823600769043,
+            "armOpposition": 0.8678638339042664,
+            "anatomy": 1.0,
+            "rootScale": 1.0,
+            "residentId": 0
+        },
+        {
+            "name": "slope-walk",
+            "frames": 276,
+            "leftContacts": 5,
+            "rightContacts": 5,
+            "sounds": 10,
+            "seconds": 3.1118292808532717,
+            "speed": 2.65000057220459,
+            "footError": 2.384185791015625e-7,
+            "plantedSlip": 2.384184938364342e-7,
+            "hipMin": 0.8671062588691711,
+            "hipMax": 0.9302464127540588,
+            "hipJump": 0.02062547206878662,
+            "kneeFlexion": 80.80181121826172,
+            "clearance": 0.1263427734375,
+            "contactsPerSecond": 3.2135438919067385,
+            "hipSpeed": 1.8562616109848023,
+            "armOpposition": 0.9934110641479492,
+            "anatomy": 1.0,
+            "rootScale": 1.0,
+            "residentId": 0
+        },
+        {
+            "name": "npc-small-slow-walk",
+            "frames": 274,
+            "leftContacts": 2,
+            "rightContacts": 3,
+            "sounds": 5,
+            "seconds": 3.1065802574157717,
+            "speed": 0.6500005722045898,
+            "footError": 0.0,
+            "plantedSlip": 0.0,
+            "hipMin": 0.7546067833900452,
+            "hipMax": 0.7947692275047302,
+            "hipJump": 0.004316449165344238,
+            "kneeFlexion": 72.78556823730469,
+            "clearance": 0.10463030636310578,
+            "contactsPerSecond": 1.6094868183135987,
+            "hipSpeed": 0.2062656581401825,
+            "armOpposition": 0.9932786822319031,
+            "anatomy": 0.8539325594902039,
+            "rootScale": 0.8629800081253052,
+            "residentId": 17416
+        },
+        {
+            "name": "npc-small-walk",
+            "frames": 275,
+            "leftContacts": 4,
+            "rightContacts": 3,
+            "sounds": 7,
+            "seconds": 3.117528200149536,
+            "speed": 1.1500000953674317,
+            "footError": 0.0,
+            "plantedSlip": 0.0,
+            "hipMin": 0.7460153102874756,
+            "hipMax": 0.792714536190033,
+            "hipJump": 0.008294761180877686,
+            "kneeFlexion": 73.62480163574219,
+            "clearance": 0.10463030636310578,
+            "contactsPerSecond": 2.245368719100952,
+            "hipSpeed": 0.746536135673523,
+            "armOpposition": 0.9932795763015747,
+            "anatomy": 0.8539325594902039,
+            "rootScale": 0.8629800081253052,
+            "residentId": 17416
+        },
+        {
+            "name": "npc-small-jog",
+            "frames": 276,
+            "leftContacts": 5,
+            "rightContacts": 4,
+            "sounds": 9,
+            "seconds": 3.100451946258545,
+            "speed": 2.799997091293335,
+            "footError": 1.7881393432617188e-7,
+            "plantedSlip": 4.775558863912011e-7,
+            "hipMin": 0.7177461981773377,
+            "hipMax": 0.7545677423477173,
+            "hipJump": 0.013556897640228272,
+            "kneeFlexion": 115.34494018554688,
+            "clearance": 0.27538061141967776,
+            "contactsPerSecond": 2.9028027057647707,
+            "hipSpeed": 1.2201331853866578,
+            "armOpposition": 0.8318296074867249,
+            "anatomy": 0.8539325594902039,
+            "rootScale": 0.8629800081253052,
+            "residentId": 17416
+        },
+        {
+            "name": "npc-run-turn",
+            "frames": 276,
+            "leftContacts": 4,
+            "rightContacts": 5,
+            "sounds": 9,
+            "seconds": 3.1057262420654299,
+            "speed": 3.1000030040740969,
+            "footError": 0.0,
+            "plantedSlip": 0.0,
+            "hipMin": 0.7173806428909302,
+            "hipMax": 0.7542436718940735,
+            "hipJump": 0.01660865545272827,
+            "kneeFlexion": 118.65956115722656,
+            "clearance": 0.2847871780395508,
+            "contactsPerSecond": 2.8978729248046877,
+            "hipSpeed": 1.4947131872177125,
+            "armOpposition": 0.8052136898040772,
+            "anatomy": 0.8539325594902039,
+            "rootScale": 0.8629800081253052,
+            "residentId": 17416
+        },
+        {
+            "name": "npc-tall-walk",
+            "frames": 277,
+            "leftContacts": 3,
+            "rightContacts": 3,
+            "sounds": 6,
+            "seconds": 3.108659267425537,
+            "speed": 1.1500000953674317,
+            "footError": 0.0,
+            "plantedSlip": 0.0,
+            "hipMin": 0.7546068429946899,
+            "hipMax": 0.7936161160469055,
+            "hipJump": 0.0034664273262023927,
+            "kneeFlexion": 75.60871124267578,
+            "clearance": 0.11275376379489899,
+            "contactsPerSecond": 1.9300925731658936,
+            "hipSpeed": 0.2608480155467987,
+            "armOpposition": 0.9932632446289063,
+            "anatomy": 0.8539325594902039,
+            "rootScale": 1.0798499584197999,
+            "residentId": 4683
+        },
+        {
+            "name": "npc-tall-jog",
+            "frames": 277,
+            "leftContacts": 4,
+            "rightContacts": 4,
+            "sounds": 9,
+            "seconds": 3.1101479530334474,
+            "speed": 2.7999966144561769,
+            "footError": 2.384185791015625e-7,
+            "plantedSlip": 0.000001644074131945672,
+            "hipMin": 0.7251158952713013,
+            "hipMax": 0.7587082982063294,
+            "hipJump": 0.0070247650146484379,
+            "kneeFlexion": 113.66102600097656,
+            "clearance": 0.2652497887611389,
+            "contactsPerSecond": 2.5722248554229738,
+            "hipSpeed": 0.6322240233421326,
+            "armOpposition": 0.8467640280723572,
+            "anatomy": 0.8539325594902039,
+            "rootScale": 1.0798499584197999,
+            "residentId": 4683
+        }
+    ],
+    "errors": []
+}

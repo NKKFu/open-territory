@@ -1,0 +1,101 @@
+{
+    "passed": true,
+    "checks": [
+        {
+            "name": "cloud-field-has-no-gameplay-colliders",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "wind-covers-all-three-tree-lods",
+            "detail": "renderers=3750",
+            "passed": true
+        },
+        {
+            "name": "cloud-shader-included-in-native-player",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "street-wind-active-in-clear-weather",
+            "detail": "leaves=14 gusts=6",
+            "passed": true
+        },
+        {
+            "name": "wind-visible-from-normal-player-camera",
+            "detail": "changed pixels=262",
+            "passed": true
+        },
+        {
+            "name": "roof-blocks-new-wind-emission",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "clouds-actually-render-in-sky",
+            "detail": "changed pixels=12426",
+            "passed": true
+        },
+        {
+            "name": "clouds-drift-with-weather-wind",
+            "detail": "travel=(12.42, 0.00, 10.75)",
+            "passed": true
+        },
+        {
+            "name": "squall-darkens-clouds-and-strengthens-wind",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-clouds-wind-and-clock",
+            "detail": "clock delta=0 shader delta=0 drift=0",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-street-gusts-and-leaves",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "closing-settings-resumes-atmosphere",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "GPU-wind-visibly-bends-foliage",
+            "detail": "changed pixels=5690",
+            "passed": true
+        },
+        {
+            "name": "GPU-wind-sways-over-time",
+            "detail": "changed pixels=6653",
+            "passed": true
+        },
+        {
+            "name": "tree-trunk-collision-stays-fixed",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "clouds-follow-night-lighting",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "camera-orbit-remains-responsive",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "only-explicit-QA-probe-installed",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

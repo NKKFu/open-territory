@@ -1,0 +1,151 @@
+{
+    "passed": true,
+    "checks": [
+        {
+            "name": "unified-street-network-loaded",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sidewalks-have-continuous-physical-support",
+            "detail": "samples=3956 maxHeightError=0.06617165",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "sidewalks-clear-of-static-obstacles",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "widened-sidewalk-outer-lanes-supported",
+            "detail": "",
+            "passed": true,
+            "value": 2719.0
+        },
+        {
+            "name": "widened-sidewalk-0",
+            "detail": "falls=0 from=(-1278.75, 9.21, 468.02) to=(-1269.23, 9.21, 475.47)",
+            "passed": true,
+            "value": 0.06914952397346497
+        },
+        {
+            "name": "widened-sidewalk-1",
+            "detail": "falls=0 from=(-1220.90, 9.21, 508.44) to=(-1210.72, 9.21, 512.18)",
+            "passed": true,
+            "value": 0.09259065240621567
+        },
+        {
+            "name": "widened-sidewalk-2",
+            "detail": "falls=0 from=(-1152.64, 9.21, 508.48) to=(-1141.80, 9.21, 503.88)",
+            "passed": true,
+            "value": 0.0908387303352356
+        },
+        {
+            "name": "widened-sidewalk-3",
+            "detail": "falls=0 from=(-1090.60, 9.21, 470.53) to=(-1078.87, 9.21, 466.62)",
+            "passed": true,
+            "value": 0.07834282517433167
+        },
+        {
+            "name": "four-widened-sidewalk-sections-walked",
+            "detail": "",
+            "passed": true,
+            "value": 4.0
+        },
+        {
+            "name": "full-road-width-clear-of-static-obstacles",
+            "detail": "samples=1956",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vehicles-spawn-on-supported-surfaces",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "parked-vehicles-have-separate-bays",
+            "detail": "",
+            "passed": true,
+            "value": 14.0
+        },
+        {
+            "name": "crosswalks-have-two-clear-sidewalk-approaches",
+            "detail": "",
+            "passed": true,
+            "value": 114.0
+        },
+        {
+            "name": "crosswalk-ramp-0",
+            "detail": "falls=0 from=(345.33, 9.31, 562.13) to=(352.51, 9.28, 556.71)",
+            "passed": true,
+            "value": 0.0042724609375
+        },
+        {
+            "name": "crosswalk-ramp-1",
+            "detail": "falls=0 from=(-652.65, 9.56, 746.90) to=(-647.23, 9.58, 753.32)",
+            "passed": true,
+            "value": 0.09134826064109802
+        },
+        {
+            "name": "crosswalk-ramp-2",
+            "detail": "falls=0 from=(-96.04, 9.21, 502.13) to=(-86.46, 9.21, 504.98)",
+            "passed": true,
+            "value": 0.0866733118891716
+        },
+        {
+            "name": "crosswalk-ramp-3",
+            "detail": "falls=0 from=(672.99, 9.72, 713.73) to=(667.41, 9.75, 722.03)",
+            "passed": true,
+            "value": 0.07240184396505356
+        },
+        {
+            "name": "pier-to-land-0",
+            "detail": "falls=0 from=(980.00, 0.35, 865.96) to=(980.00, 1.00, 880.96)",
+            "passed": true,
+            "value": 0.08258056640625
+        },
+        {
+            "name": "pier-to-land-1",
+            "detail": "falls=0 from=(1234.00, 0.58, 860.30) to=(1234.00, 0.22, 875.30)",
+            "passed": true,
+            "value": 0.084716796875
+        },
+        {
+            "name": "all-five-boats-reachable-from-the-piers",
+            "detail": "",
+            "passed": true,
+            "value": 5.0
+        },
+        {
+            "name": "bench-seat-heights-are-relative-to-the-floor",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "relocated-bench-can-be-sat-on-at-the-correct-height",
+            "detail": "",
+            "passed": true,
+            "value": 0.8199996948242188
+        },
+        {
+            "name": "relocated-bench-has-a-clear-exit",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "errors": [],
+    "obstacles": []
+}

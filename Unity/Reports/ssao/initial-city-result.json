@@ -1,0 +1,66 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "balanced-enables-SSAO-on-game-camera",
+      "passed": true
+    },
+    {
+      "name": "pointer-disables-SSAO-immediately",
+      "passed": true
+    },
+    {
+      "name": "keyboard-submit-reenables-SSAO",
+      "passed": true
+    },
+    {
+      "name": "light-quality-disables-effect-and-toggle",
+      "passed": true
+    },
+    {
+      "name": "light-quality-releases-depth-request",
+      "passed": true
+    },
+    {
+      "name": "high-quality-restores-SSAO-preference",
+      "passed": true
+    },
+    {
+      "name": "quality-change-retains-disabled-preference",
+      "passed": true
+    },
+    {
+      "name": "SSAO-preference-serializes",
+      "passed": true
+    },
+    {
+      "name": "older-options-default-to-enabled",
+      "passed": true
+    },
+    {
+      "name": "SSAO-row-fits-image-page-above-footer",
+      "passed": true
+    },
+    {
+      "name": "settings-pause-city-with-SSAO-active",
+      "passed": true
+    },
+    {
+      "name": "image-toggle-label-is-readable",
+      "passed": true
+    },
+    {
+      "name": "native-city-contact-shading-visible",
+      "passed": false,
+      "darkened": 112227,
+      "brightened": 41
+    },
+    {
+      "name": "no-automatic-SSAO-probe-in-normal-play",
+      "passed": true
+    }
+  ],
+  "screenWidth": 1334,
+  "screenHeight": 683,
+  "fieldOfView": 73.2
+}

@@ -1,0 +1,36 @@
+{
+  "verifiedAtUtc": "2026-11-08T08:05:31.307179+00:00",
+  "sidewalkAcceptancePassed": true,
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\WideSidewalks-20261108\\BaiaDoSol.exe",
+  "assemblySha256": "8E9A6D0A84B35888DBDA341FE16F187BD3B9F3B9661325502CA43FF6BE47A19E",
+  "configuration": {
+    "unity": "6000.3.27f1",
+    "target": "Windows x64",
+    "developmentBuild": false,
+    "buildOptions": "None",
+    "graphicsApi": "default",
+    "renderer": [
+      "Version:         Direct3D 12 [level 12.2]",
+      "Renderer:        AMD Radeon RX 9070 (ID=0x7550)"
+    ]
+  },
+  "widthBefore": 2.2,
+  "widthAfterMaximum": 3.6,
+  "addedPavingSquareMetres": 23287.99,
+  "reservedParkingBays": 14,
+  "geometryTestsPassed": 22,
+  "nativeChecksPassed": 24,
+  "nativeExitCode": 0,
+  "nativeReport": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\sidewalks\\native-default\\map-qa.json",
+  "geometryReport": "Unity\\Reports\\sidewalks\\geometry-validation.json",
+  "preservationReport": "Unity\\Reports\\sidewalks\\preservation-validation.json",
+  "additionalFrontageAudit": {
+    "passed": false,
+    "existingBlockedEntrances": 7,
+    "blockedSamplesBefore": 24,
+    "blockedSamplesAfter": 24,
+    "newBlockedPointsDetected": 0,
+    "comparisonReport": "Unity\\Reports\\sidewalks\\frontage-comparison.json"
+  },
+  "note": "As calçadas passaram na aceitação nativa. A auditoria adicional encontrou os mesmos 24 pontos obstruídos em sete entradas no build anterior e no atual; nenhuma obstrução nova foi detectada nesses acessos."
+}

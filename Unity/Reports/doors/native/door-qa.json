@@ -1,0 +1,438 @@
+{
+    "passed": true,
+    "checks": [
+        {
+            "name": "all-manual-leaves-have-human-scale-width",
+            "detail": "manual=215",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "all-leaf-colliders-match-visual-width",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "all-fixed-sidelights-have-solid-contact",
+            "detail": "panels=430",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "clear-test-approaches-home",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "clear-test-approaches-residence",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "clear-test-approaches-bakery",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "clear-test-approaches-gallery",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "clear-test-approaches-hospital",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "clear-test-approaches-station",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "closes-when-clear-home",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-home-in-walk",
+            "detail": "yaw=-0.3673435 elapsed=1.711626",
+            "passed": true,
+            "value": -1.6797492504119874
+        },
+        {
+            "name": "opens-home-in-walk",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-sticking-home-in-walk",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-home-out-walk",
+            "detail": "yaw=-0.3673435 elapsed=1.443487",
+            "passed": true,
+            "value": 1.6696267127990723
+        },
+        {
+            "name": "opens-home-out-walk",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-sticking-home-out-walk",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-home-in-run",
+            "detail": "yaw=-0.3673435 elapsed=0.9340076",
+            "passed": true,
+            "value": -2.4800362586975099
+        },
+        {
+            "name": "opens-home-in-run",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-sticking-home-in-run",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "closes-when-clear-residence",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-residence-in-walk",
+            "detail": "yaw=-2.351789 elapsed=1.711546",
+            "passed": true,
+            "value": -1.6799664497375489
+        },
+        {
+            "name": "opens-residence-in-walk",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-sticking-residence-in-walk",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-residence-out-walk",
+            "detail": "yaw=-2.351789 elapsed=1.44446",
+            "passed": true,
+            "value": 1.6723706722259522
+        },
+        {
+            "name": "opens-residence-out-walk",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-sticking-residence-out-walk",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-residence-in-run",
+            "detail": "yaw=-2.351789 elapsed=0.9333668",
+            "passed": true,
+            "value": -2.474120616912842
+        },
+        {
+            "name": "opens-residence-in-run",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-sticking-residence-in-run",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "closes-when-clear-bakery",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-bakery-in-walk",
+            "detail": "yaw=0.5450404 elapsed=1.711485",
+            "passed": true,
+            "value": -1.6797802448272706
+        },
+        {
+            "name": "opens-bakery-in-walk",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-sticking-bakery-in-walk",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-bakery-out-walk",
+            "detail": "yaw=0.5450404 elapsed=1.444931",
+            "passed": true,
+            "value": 1.6730705499649048
+        },
+        {
+            "name": "opens-bakery-out-walk",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-sticking-bakery-out-walk",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-bakery-in-run",
+            "detail": "yaw=0.5450404 elapsed=0.9356728",
+            "passed": true,
+            "value": -2.494931221008301
+        },
+        {
+            "name": "opens-bakery-in-run",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-sticking-bakery-in-run",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "closes-when-clear-gallery",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-gallery-in-walk",
+            "detail": "yaw=0.5580487 elapsed=1.711983",
+            "passed": true,
+            "value": -1.680830478668213
+        },
+        {
+            "name": "opens-gallery-in-walk",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-sticking-gallery-in-walk",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-gallery-out-walk",
+            "detail": "yaw=0.5580487 elapsed=1.446304",
+            "passed": true,
+            "value": 1.6768839359283448
+        },
+        {
+            "name": "opens-gallery-out-walk",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-sticking-gallery-out-walk",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-gallery-in-run",
+            "detail": "yaw=0.5580487 elapsed=0.9335289",
+            "passed": true,
+            "value": -2.4748663902282717
+        },
+        {
+            "name": "opens-gallery-in-run",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-sticking-gallery-in-run",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "closes-when-clear-hospital",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-hospital-in-walk",
+            "detail": "yaw=0.3496286 elapsed=1.71154",
+            "passed": true,
+            "value": -1.6797109842300416
+        },
+        {
+            "name": "opens-hospital-in-walk",
+            "detail": "",
+            "passed": true,
+            "value": 2.9183855056762697
+        },
+        {
+            "name": "no-sticking-hospital-in-walk",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-hospital-out-walk",
+            "detail": "yaw=0.3496286 elapsed=1.445278",
+            "passed": true,
+            "value": 1.6741887331008912
+        },
+        {
+            "name": "opens-hospital-out-walk",
+            "detail": "",
+            "passed": true,
+            "value": 2.9183855056762697
+        },
+        {
+            "name": "no-sticking-hospital-out-walk",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "closes-when-clear-station",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-station-in-walk",
+            "detail": "yaw=-0.4082906 elapsed=1.711617",
+            "passed": true,
+            "value": -1.6799299716949463
+        },
+        {
+            "name": "opens-station-in-walk",
+            "detail": "",
+            "passed": true,
+            "value": 2.9184274673461916
+        },
+        {
+            "name": "no-sticking-station-in-walk",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "crosses-station-out-walk",
+            "detail": "yaw=-0.4082906 elapsed=1.445652",
+            "passed": true,
+            "value": 1.675473928451538
+        },
+        {
+            "name": "opens-station-out-walk",
+            "detail": "",
+            "passed": true,
+            "value": 2.9184274673461916
+        },
+        {
+            "name": "no-sticking-station-out-walk",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "can-close-from-inside",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "cold-push-from-inside-opens-away",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "holds-open-with-player-in-threshold",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "settings-pause-freezes-door",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "npc-opens-away-from-outside",
+            "detail": "",
+            "passed": true,
+            "value": -90.0
+        },
+        {
+            "name": "holds-open-with-npc-in-threshold",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "closes-after-pedestrian-leaves",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "remote-activation-opens-without-pusher",
+            "detail": "",
+            "passed": true,
+            "value": 90.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "errors": []
+}

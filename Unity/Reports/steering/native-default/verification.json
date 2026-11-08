@@ -1,0 +1,78 @@
+{
+  "verifiedAtUtc": "2026-11-08T07:42:46.5742341Z",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\SteeringWheels-20261108-A\\BaiaDoSol.exe",
+  "assemblySha256": "66099A03A48CFE02C908124F3E9221CADAC68BAB71FAD3BBEEC57E5F575A2429",
+  "assemblyUnchanged": true,
+  "startedUtc": "2026-11-08T07:41:36.2950083Z",
+  "exitCode": 1,
+  "graphicsApi": "default",
+  "arguments": [
+    "-batchmode",
+    "-screen-fullscreen",
+    "0",
+    "-screen-width",
+    "1280",
+    "-screen-height",
+    "720",
+    "--city-driving-qa",
+    "--city-report-dir",
+    "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\steering\\native-default\"",
+    "-logFile",
+    "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\steering\\native-default\\player.log\""
+  ],
+  "reportFresh": true,
+  "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\steering\\native-default\\driving-qa.json",
+  "passed": false,
+  "checks": 161,
+  "failures": [
+    {
+      "name": "broken-light-prop-preserves-momentum",
+      "detail": "",
+      "passed": false,
+      "value": -0.18466776609420776
+    },
+    {
+      "name": "resistant-prop-costs-more-momentum",
+      "detail": "",
+      "passed": false,
+      "value": -0.18993933498859406
+    },
+    {
+      "name": "heavier-car-loses-less-speed",
+      "detail": "",
+      "passed": false,
+      "value": -0.19444631040096283
+    },
+    {
+      "name": "compound-prop-does-not-stop-car",
+      "detail": "",
+      "passed": false,
+      "value": -0.12490694969892502
+    },
+    {
+      "name": "successive-props-cost-speed-without-freezing",
+      "detail": "",
+      "passed": false,
+      "value": -0.01103384979069233
+    },
+    {
+      "name": "glancing-prop-preserves-travel",
+      "detail": "",
+      "passed": false,
+      "value": 1.0845870971679688
+    },
+    {
+      "name": "reverse-impact-retains-reverse-momentum",
+      "detail": "",
+      "passed": false,
+      "value": 0.1829463243484497
+    },
+    {
+      "name": "resume-keeps-impact-momentum",
+      "detail": "",
+      "passed": false,
+      "value": -0.19444632530212402
+    }
+  ],
+  "errors": []
+}

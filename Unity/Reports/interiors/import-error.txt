@@ -1,0 +1,4 @@
+System.InvalidOperationException: Fachada ausente: Reused residential interior 95
+  at OpenTerritory.Editor.CityWindowsBuilder.Build (OpenTerritory.VisualData visual, OpenTerritory.WorldData world) [0x00c36] in C:\Users\nelso\open-territory\Unity\OpenTerritory\Assets\Editor\CityWindowsBuilder.cs:182 
+  at OpenTerritory.Editor.CityBuilder.Import () [0x01149] in C:\Users\nelso\open-territory\Unity\OpenTerritory\Assets\Editor\CityBuilder.cs:87 
+  at OpenTerritory.Editor.CityHomeBuildJob.Tick () [0x0009b] in C:\Users\nelso\open-territory\Unity\OpenTerritory\Assets\Editor\CityHomeBuildJob.cs:29 

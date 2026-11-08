@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\SunmeadowPark-20261108-Verified\\BaiaDoSol.exe",
+  "assemblySha256": "381F7498F48E3A6C96AD97D7CDE8FD59D8B3EDE8EAB507AC836164C7B9F62D7A",
+  "build": {
+    "passed": true,
+    "result": "Succeeded",
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\SunmeadowPark-20261108-Verified\\BaiaDoSol.exe",
+    "snapshot": "C:\\Users\\nelso\\open-territory\\Unity\\ValidationProjects\\SunmeadowPark-20261108",
+    "completedAtUtc": "2026-11-08T09:53:36.7343034Z",
+    "errors": 0,
+    "warnings": 0,
+    "bytes": 1599062326
+  },
+  "buildProcessExitCode": 0,
+  "native": {
+    "verifiedAtUtc": "2026-11-08T09:55:51.9417733Z",
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\SunmeadowPark-20261108-Verified\\BaiaDoSol.exe",
+    "assemblySha256": "381F7498F48E3A6C96AD97D7CDE8FD59D8B3EDE8EAB507AC836164C7B9F62D7A",
+    "assemblyChangedDuringRun": false,
+    "processExitCode": 0,
+    "passed": true,
+    "checks": 28,
+    "routeSamples": 2496,
+    "graphics": "Direct3D12",
+    "arguments": [
+      "-batchmode",
+      "-screen-fullscreen",
+      "0",
+      "-screen-width",
+      "1280",
+      "-screen-height",
+      "800",
+      "--city-park-qa",
+      "--city-report-dir",
+      "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\park\\native\"",
+      "-logFile",
+      "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\park\\native\\player.log\""
+    ],
+    "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\park\\native\\park-qa.json"
+  },
+  "preservedColliders": 31639,
+  "sceneSnapshot": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\park\\snapshot.json",
+  "capture": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\park\\native\\04-garden-promenade.png",
+  "beforeCleanup": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\park\\native-before-cleanup\\verification.json",
+  "initialFailure": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\park\\native-initial-failure\\park-qa.json"
+}

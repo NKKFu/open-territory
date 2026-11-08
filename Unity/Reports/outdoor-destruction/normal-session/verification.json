@@ -1,0 +1,29 @@
+{
+  "verifiedAtUtc": "2026-11-08T09:57:31.0025193Z",
+  "startedAtUtc": "2026-11-08T09:57:16.6537508Z",
+  "passed": true,
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\OutdoorDestruction-20261108\\BaiaDoSol.exe",
+  "assemblySha256": "A9641C35BFB694E9C8ECDCAD5096FA0DC9508DF05F1529E5E46D6806380F11F7",
+  "exitCode": 0,
+  "checks": [
+    {
+      "name": "walking-through-real-input-poller",
+      "passed": true,
+      "detail": "distance=3.88922119140625"
+    },
+    {
+      "name": "pause-stops-city-clock",
+      "passed": true
+    },
+    {
+      "name": "native-session-has-no-runtime-errors",
+      "passed": true,
+      "detail": "errors=0"
+    },
+    {
+      "name": "normal-exit-with-default-graphics-api",
+      "passed": true,
+      "detail": "exit=0"
+    }
+  ]
+}

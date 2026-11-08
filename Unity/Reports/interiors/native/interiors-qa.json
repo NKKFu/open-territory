@@ -1,0 +1,342 @@
+{
+    "passed": true,
+    "captures": true,
+    "homes": 192,
+    "apartmentBuildings": 12,
+    "apartments": 48,
+    "rooms": 912,
+    "props": 9558,
+    "checks": [
+        {
+            "name": "catalog-is-baked",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "all-204-residential-buildings-furnished",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "twelve-four-unit-apartment-buildings",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "physical-rooms-in-every-home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "independent-doors",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "all-props-have-collisions-and-no-idle-bodies",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "old-interior-solids-removed",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "every-house-has-tv",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "every-house-has-bed",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "every-house-has-radio",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "every-house-has-phone",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "every-house-has-hangers",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "every-house-has-magazine-a",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "every-house-has-magazine-b",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "every-house-has-wardrobe",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "every-house-has-counter",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "every-house-has-sink",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing-props-destructible-bench",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing-props-destructible-bin",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing-props-destructible-lamp",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing-props-destructible-signal",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing-props-destructible-planter",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing-props-destructible-door",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing-props-destructible-light",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "room-lights-belong-to-visible-fixtures",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "upper-floors-do-not-replace-street-height",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "all-room-doorways-clear-for-player-capsule",
+            "detail": "blocked=0 ",
+            "passed": true
+        },
+        {
+            "name": "walk-through-house-front-door-164",
+            "detail": "(262.32, 6.84, 332.68)",
+            "passed": true
+        },
+        {
+            "name": "walk-house-room-164--1-3.25",
+            "detail": "(-2.29, 0.20, 3.26)",
+            "passed": true
+        },
+        {
+            "name": "walk-house-room-164-1-3.25",
+            "detail": "(2.30, 0.20, 3.25)",
+            "passed": true
+        },
+        {
+            "name": "walk-house-room-164--1--3.25",
+            "detail": "(-2.29, 0.20, -3.24)",
+            "passed": true
+        },
+        {
+            "name": "walk-house-room-164-1--3.25",
+            "detail": "(2.30, 0.20, -3.25)",
+            "passed": true
+        },
+        {
+            "name": "walk-through-house-front-door-158",
+            "detail": "(280.78, 7.22, 341.81)",
+            "passed": true
+        },
+        {
+            "name": "walk-house-room-158--1-3.25",
+            "detail": "(-2.29, 0.20, 3.26)",
+            "passed": true
+        },
+        {
+            "name": "walk-house-room-158-1-3.25",
+            "detail": "(2.30, 0.20, 3.25)",
+            "passed": true
+        },
+        {
+            "name": "walk-house-room-158--1--3.25",
+            "detail": "(-2.29, 0.20, -3.24)",
+            "passed": true
+        },
+        {
+            "name": "walk-house-room-158-1--3.25",
+            "detail": "(2.29, 0.20, -3.25)",
+            "passed": true
+        },
+        {
+            "name": "walk-up-real-stairs-112",
+            "detail": "(0.07, 4.53, 1.86)",
+            "passed": true
+        },
+        {
+            "name": "walk-into-upper-apartment-112",
+            "detail": "(-2.95, 4.53, 3.29)",
+            "passed": true
+        },
+        {
+            "name": "walk-up-real-stairs-151",
+            "detail": "(0.06, 4.53, 1.86)",
+            "passed": true
+        },
+        {
+            "name": "walk-into-upper-apartment-151",
+            "detail": "(-2.95, 4.53, 3.29)",
+            "passed": true
+        },
+        {
+            "name": "real-fire-control-breaks-TV",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "broken-prop-removes-visual-and-solid",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "solid-furniture-survives-first-shot",
+            "detail": "health=49",
+            "passed": true
+        },
+        {
+            "name": "repeat-shots-break-bed",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pulse-also-damages-props",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "repeated-pulse-breaks-electronics",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-melee-control-breaks-radio",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "descending-punch-reaches-low-magazine",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "wall-stops-punch-and-nearby-prop-is-safe",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "solid-hit-has-no-radius-fallback",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "broken-light-stays-off-after-lighting-tick",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "destroyed-bench-cannot-be-used",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "destroyed-door-stays-open-and-non-solid",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-pauses-damage-and-debris-lifetime",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-car-impact-breaks-bench",
+            "detail": "health=0 car=(-0.01, 199.80, -0.88)",
+            "passed": true
+        },
+        {
+            "name": "real-car-impact-breaks-bin",
+            "detail": "health=0 car=(-0.02, 199.80, -0.51)",
+            "passed": true
+        },
+        {
+            "name": "real-car-impact-breaks-lamp",
+            "detail": "health=0 car=(-0.01, 199.80, -0.51)",
+            "passed": true
+        },
+        {
+            "name": "real-car-impact-breaks-door",
+            "detail": "health=0 car=(0.00, 199.80, -0.50)",
+            "passed": true
+        },
+        {
+            "name": "real-car-impact-breaks-tv",
+            "detail": "health=0 car=(-0.01, 199.80, -0.51)",
+            "passed": true
+        },
+        {
+            "name": "real-car-impact-breaks-bed",
+            "detail": "health=0 car=(0.00, 199.80, -1.62)",
+            "passed": true
+        },
+        {
+            "name": "real-car-impact-breaks-phone",
+            "detail": "health=0 car=(-0.01, 199.80, -0.50)",
+            "passed": true
+        },
+        {
+            "name": "debris-budget-is-global",
+            "detail": "fragments=72",
+            "passed": true
+        },
+        {
+            "name": "debris-is-cleaned-up",
+            "detail": "remaining=0",
+            "passed": true
+        },
+        {
+            "name": "normal-scenes-have-no-other-interior-probe",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

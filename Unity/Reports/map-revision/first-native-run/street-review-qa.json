@@ -1,0 +1,2518 @@
+{
+    "passed": false,
+    "sourceHash": "afe751011a0a4ea738521f5b6392494b8367482624e9bd5760fa329b4571ba81",
+    "graphicsApi": "Direct3D12",
+    "checks": [
+        {
+            "name": "junction-has-real-approaches-0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-51",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-51",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-51",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-68",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-68",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-68",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-85",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-85",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-85",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-102",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-102",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-102",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-119",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-119",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-119",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "conflicting-streets-never-green-together-0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "junction-has-real-approaches-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-136",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-136",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-136",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-153",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-153",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-153",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-170",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-170",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-170",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "conflicting-streets-never-green-together-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "junction-has-real-approaches-2",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-187",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-187",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-187",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-204",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-204",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-204",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-221",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-221",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-221",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "conflicting-streets-never-green-together-2",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "junction-has-real-approaches-3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-238",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-238",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-238",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-255",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-255",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-255",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-272",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-272",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-272",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "conflicting-streets-never-green-together-3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "junction-has-real-approaches-4",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-289",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-289",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-289",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-306",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-306",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-306",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-323",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-323",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-323",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "conflicting-streets-never-green-together-4",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "junction-has-real-approaches-5",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-340",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-340",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-340",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-357",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-357",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-357",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-374",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-374",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-374",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "signal-facing-and-stop-line-391",
+            "detail": "incoming=True outgoing=True committed=True",
+            "passed": true
+        },
+        {
+            "name": "signal-on-supported-verge-391",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "approach-has-green-amber-red-391",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "conflicting-streets-never-green-together-5",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-orphan-signal-devices",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hack-stops-every-arm-0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hack-stops-every-arm-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hack-stops-every-arm-2",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hack-stops-every-arm-3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hack-stops-every-arm-4",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hack-stops-every-arm-5",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-2162",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2162",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-2173",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2173",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-2184",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2184",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-2195",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2195",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-2207",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2207",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-2218",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2218",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-2300",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2300",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "bench-visible-and-reachable-2315",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2315",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "bench-visible-and-reachable-2330",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2330",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "bench-visible-and-reachable-2345",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2345",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "bench-visible-and-reachable-2409",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2409",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "bench-visible-and-reachable-2420",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2420",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-2431",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2431",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-2442",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2442",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "bench-visible-and-reachable-2563",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2563",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-2574",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-2574",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3054",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3054",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3069",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3069",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3084",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3084",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3099",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3099",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3114",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3114",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3129",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3129",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3144",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3144",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3159",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3159",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3174",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3174",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3189",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3189",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3418",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3418",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3433",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3433",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3448",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3448",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3463",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3463",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3478",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3478",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3493",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3493",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3508",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3508",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3523",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3523",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3538",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3538",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3553",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3553",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3568",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3568",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3583",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3583",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3598",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3598",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3613",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3613",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3628",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3628",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3643",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3643",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3658",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3658",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-3742",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-3742",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26262",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26262",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26298",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26298",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26349",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26349",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26428",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26428",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26465",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26465",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26506",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26506",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26543",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26543",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26602",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26602",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26643",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26643",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26680",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26680",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26717",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26717",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26776",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26776",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26804",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26804",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26841",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26841",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26878",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26878",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26919",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26919",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-26981",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-26981",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27017",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27017",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27050",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27050",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27087",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27087",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27124",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27124",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27161",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27161",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27202",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27202",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27265",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27265",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27301",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27301",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27342",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27342",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27379",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27379",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27442",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27442",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27507",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27507",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27544",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27544",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27581",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27581",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27621",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27621",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27658",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27658",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27695",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27695",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27732",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27732",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27773",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27773",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27809",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27809",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27872",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27872",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27913",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27913",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27934",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27934",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-27970",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-27970",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28006",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28006",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28047",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28047",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28084",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28084",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28121",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28121",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28158",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28158",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28223",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28223",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28260",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28260",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28289",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28289",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28330",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28330",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28366",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28366",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28402",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28402",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28439",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28439",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28479",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28479",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28516",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28516",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28553",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28553",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28590",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28590",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28639",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28639",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28676",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28676",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28768",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28768",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28805",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28805",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28841",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28841",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28864",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28864",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28901",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28901",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-28938",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-28938",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29003",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29003",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29040",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29040",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29077",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29077",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29114",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29114",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29154",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29154",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29216",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29216",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29251",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29251",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29287",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29287",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29324",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29324",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29361",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29361",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29428",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29428",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29463",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29463",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29499",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29499",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29536",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29536",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29577",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29577",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29613",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29613",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29676",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29676",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29717",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29717",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29754",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29754",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29790",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29790",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29857",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29857",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29919",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29919",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-29985",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-29985",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-30022",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-30022",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-30059",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-30059",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-30096",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-30096",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-30137",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-30137",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-30199",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-30199",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-30266",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-30266",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-30303",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-30303",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-30340",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-30340",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-30407",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-30407",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-30470",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-30470",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-30563",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-30563",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-visible-and-reachable-30614",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bench-feet-reach-local-ground-30614",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-inland-to-bay-0",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-1",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-2",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-3",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-center-cross-4",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-5",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-6",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-center-cross-7",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-8",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-9",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-marina-street-10",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-11",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-12",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-bridge-loop-13",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-14",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-15",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-short-16",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-17",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-18",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-headlands-access-19",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-headlands-access-20",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-hill-outer-21",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-headlands-access-22",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-hill-inner-23",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-headlands-access-24",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-headlands-access-25",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-hill-inner-26",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-hill-outer-27",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-hill-outer-28",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-shop-loop-29",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-hill-outer-30",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-hill-outer-31",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-shop-loop-32",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-shop-loop-33",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-west-loop-34",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-shop-loop-35",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-shop-loop-36",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-cross-37",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-hill-outer-38",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-hill-outer-39",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-west-descent-40",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-west-descent-41",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-west-loop-42",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-west-loop-43",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-west-descent-44",
+            "detail": "support=False clear=True",
+            "passed": false
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-cross-45",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-cross-46",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-west-descent-47",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-west-descent-48",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-west-hill-outer-49",
+            "detail": "support=False clear=True",
+            "passed": false
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-front-west-50",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-front-west-51",
+            "detail": "support=False clear=True",
+            "passed": false
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-west-loop-52",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-front-west-53",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-front-west-54",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-front-west-55",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-56",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-inland-to-bay-57",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-inland-to-bay-58",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-front-cut-59",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-front-cut-60",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-61",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-62",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-front-cut-63",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-front-west-64",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-front-west-65",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-mid-link-66",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-inland-to-bay-67",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-inland-to-bay-68",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-mid-link-69",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-bay-mid-link-70",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-71",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-bridge-loop-72",
+            "detail": "support=False clear=True",
+            "passed": false
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-inland-to-bay-73",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-inland-to-bay-74",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-75",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-76",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-west-cross-77",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-west-cross-78",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-79",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-west-cross-80",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-81",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-82",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-low-cross-83",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-84",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-85",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-low-cross-86",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-west-cross-87",
+            "detail": "support=False clear=True",
+            "passed": false
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-west-cross-88",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-center-cross-89",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-center-cross-90",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-91",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-92",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-upper-cross-93",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-94",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-95",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-96",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-97",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-diagonal-98",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-99",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-100",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-101",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-102",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-short-103",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-104",
+            "detail": "support=False clear=True",
+            "passed": false
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-105",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-upper-block-106",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-107",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-spine-108",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-town-bridge-loop-109",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-110",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-111",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-marina-street-112",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-113",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-waterfront-114",
+            "detail": "support=True clear=True",
+            "passed": true
+        },
+        {
+            "name": "crossing-has-two-clear-supported-sides-east-port-street-115",
+            "detail": "support=False clear=True",
+            "passed": false
+        },
+        {
+            "name": "traffic-route-reaches-a-reviewed-stop-line",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-car-stops-before-the-zebra",
+            "detail": "speed=0.3434232 gap=-0.2722428 reason=semaforo",
+            "passed": false
+        },
+        {
+            "name": "native-car-resumes-on-its-own-green",
+            "detail": "distance=7.807979 reason=",
+            "passed": true
+        },
+        {
+            "name": "walk-across-zebra-0",
+            "detail": "(352.40, 9.27, 556.80)",
+            "passed": true
+        },
+        {
+            "name": "walk-across-zebra-1",
+            "detail": "(-869.29, 9.25, 684.55)",
+            "passed": true
+        },
+        {
+            "name": "walk-across-zebra-2",
+            "detail": "(-515.57, 9.24, 577.86)",
+            "passed": true
+        },
+        {
+            "name": "walk-across-zebra-3",
+            "detail": "(-16.59, 9.18, 415.79)",
+            "passed": true
+        },
+        {
+            "name": "walk-across-zebra-4",
+            "detail": "(354.96, 9.21, 492.29)",
+            "passed": true
+        },
+        {
+            "name": "walk-across-zebra-5",
+            "detail": "(566.71, 9.60, 673.36)",
+            "passed": true
+        },
+        {
+            "name": "E-sits-at-visible-seat-and-stands-2162",
+            "detail": "selected=True sat=True height=True",
+            "passed": true
+        },
+        {
+            "name": "E-sits-at-visible-seat-and-stands-2173",
+            "detail": "selected=True sat=True height=True",
+            "passed": true
+        },
+        {
+            "name": "E-sits-at-visible-seat-and-stands-2184",
+            "detail": "selected=True sat=True height=True",
+            "passed": true
+        },
+        {
+            "name": "E-sits-at-visible-seat-and-stands-2195",
+            "detail": "selected=True sat=True height=True",
+            "passed": true
+        },
+        {
+            "name": "E-sits-at-visible-seat-and-stands-2207",
+            "detail": "selected=True sat=True height=True",
+            "passed": true
+        },
+        {
+            "name": "Esc-still-pauses-the-city",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

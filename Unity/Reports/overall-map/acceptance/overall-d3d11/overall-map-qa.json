@@ -1,0 +1,169 @@
+{
+    "passed": true,
+    "verifiedAtUtc": "2026-11-08T13:27:46.3661077Z",
+    "sourceHash": "0312ce3740a2b1b962f60d39c041cae31e6004499073531699098030cb18d031",
+    "graphicsApi": "Direct3D11",
+    "paintSamples": 39483,
+    "buildingSamples": 20629,
+    "parkingSamples": 528,
+    "checks": [
+        {
+            "name": "scene-ready",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "QA-storage-is-isolated",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "authored-review-matches-current-map",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "all-217-building-perimeters-audited",
+            "detail": "",
+            "passed": true,
+            "value": 20629.0
+        },
+        {
+            "name": "building-perimeters-have-physical-ground",
+            "detail": "maximumExteriorRise=1.127163",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "all-real-window-sills-clear-of-terrain",
+            "detail": "windows=1818",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "road-markings-stay-above-the-real-asphalt",
+            "detail": "samples=39483 min=0.01365852 max=0.01402473",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "hillside-parking-follows-its-physical-apron",
+            "detail": "samples=528",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "steep-private-gardens-remain-open",
+            "detail": "",
+            "passed": true,
+            "value": 62.0
+        },
+        {
+            "name": "remaining-garden-walls-are-low",
+            "detail": "",
+            "passed": true,
+            "value": 1.2926276922225953
+        },
+        {
+            "name": "retained-low-walls-keep-their-collision",
+            "detail": "sections=1602",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "six-active-exported-entrances-selected",
+            "detail": "",
+            "passed": true,
+            "value": 6.0
+        },
+        {
+            "name": "building-entrance-1",
+            "detail": "falls=0 from=(547.49, 9.89, 693.02) to=(545.31, 9.91, 689.42) actual=(545.33, 9.88, 689.46)",
+            "passed": true,
+            "value": 0.0416296012699604
+        },
+        {
+            "name": "building-entrance-2",
+            "detail": "falls=0 from=(541.04, 9.96, 709.84) to=(543.07, 10.00, 713.52) actual=(543.05, 9.97, 713.49)",
+            "passed": true,
+            "value": 0.03190615400671959
+        },
+        {
+            "name": "building-entrance-4",
+            "detail": "falls=0 from=(524.85, 10.04, 705.94) to=(522.62, 10.03, 702.37) actual=(522.64, 10.00, 702.40)",
+            "passed": true,
+            "value": 0.034904107451438907
+        },
+        {
+            "name": "building-entrance-51",
+            "detail": "falls=0 from=(646.21, 11.76, 815.22) to=(645.40, 11.78, 819.34) actual=(645.40, 11.75, 819.33)",
+            "passed": true,
+            "value": 0.01811058260500431
+        },
+        {
+            "name": "building-entrance-118",
+            "detail": "falls=0 from=(822.53, 5.80, 884.97) to=(823.00, 6.21, 889.15) actual=(823.00, 6.18, 889.11)",
+            "passed": true,
+            "value": 0.03310795873403549
+        },
+        {
+            "name": "building-entrance-161",
+            "detail": "falls=0 from=(1015.26, 9.67, 931.97) to=(1017.34, 10.16, 935.62) actual=(1017.34, 10.13, 935.61)",
+            "passed": true,
+            "value": 0.014626167714595795
+        },
+        {
+            "name": "parking-through-path",
+            "detail": "falls=0 from=(1053.00, 14.95, 943.00) to=(1053.00, 16.71, 977.00) actual=(1053.00, 16.70, 976.97)",
+            "passed": true,
+            "value": 0.03302204981446266
+        },
+        {
+            "name": "parking-apron",
+            "detail": "falls=0 from=(1040.00, 15.92, 960.00) to=(1066.00, 15.96, 960.00) actual=(1065.99, 15.93, 960.00)",
+            "passed": true,
+            "value": 0.009765625
+        },
+        {
+            "name": "open-yard-access-yard-7",
+            "detail": "falls=0 from=(624.83, 9.47, 668.53) to=(626.72, 9.32, 665.54) actual=(626.04, 9.25, 665.16)",
+            "passed": true,
+            "value": 0.7768287062644959
+        },
+        {
+            "name": "open-yard-access-yard-17",
+            "detail": "falls=0 from=(612.48, 7.69, 647.52) to=(615.88, 7.30, 646.72) actual=(616.04, 7.36, 647.47)",
+            "passed": true,
+            "value": 0.7617487907409668
+        },
+        {
+            "name": "open-yard-access-yard-19",
+            "detail": "falls=0 from=(580.20, 7.88, 628.76) to=(579.36, 7.92, 625.34) actual=(578.62, 8.03, 625.55)",
+            "passed": true,
+            "value": 0.7637891173362732
+        },
+        {
+            "name": "Esc-keeps-settings-and-pauses-simulation",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "resume-exploration",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "errors": [],
+    "problems": []
+}

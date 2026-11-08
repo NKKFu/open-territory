@@ -1,0 +1,96 @@
+{
+    "suite": "native-life",
+    "unity": "6000.3.27f1",
+    "startedUtc": "2026-11-07T15:19:35.1191859Z",
+    "passed": true,
+    "seconds": 28.078411102294923,
+    "residents": 113,
+    "animals": 18,
+    "checks": [
+        {
+            "name": "native-rigs-and-capsules",
+            "passed": true,
+            "detail": "113 residents, 18 animals; articulated transforms and CharacterControllers bound."
+        },
+        {
+            "name": "ordinary-routines-progress",
+            "passed": true,
+            "detail": "21 travelled; 29 reached an activity; invalid roots 0."
+        },
+        {
+            "name": "collision-test-free-space",
+            "passed": true,
+            "detail": "(-58.00, 0.12, 20.00)"
+        },
+        {
+            "name": "opposing-pedestrians-collide-and-pass",
+            "passed": true,
+            "detail": "minimum separation 0.759m; total travelled 5.63m."
+        },
+        {
+            "name": "physical-cover-stops-shot",
+            "passed": true,
+            "detail": "pulse reached cover; civilian behind wall down=False"
+        },
+        {
+            "name": "authorized-practice-no-police",
+            "passed": true,
+            "detail": "range rounds=1; plate hits=1; police=livre"
+        },
+        {
+            "name": "native-reload-transfers-round",
+            "passed": true,
+            "detail": "chamber=1; reserve=7"
+        },
+        {
+            "name": "nonlethal-physical-incapacitation",
+            "passed": true,
+            "detail": "actual pulse hit; down=True, health=100"
+        },
+        {
+            "name": "eyewitness-starts-call",
+            "passed": true,
+            "detail": "witness faces the assault; stage=chamada"
+        },
+        {
+            "name": "F-interrupts-untransmitted-call",
+            "passed": true,
+            "detail": "call observed=True; F touch state; stage=livre"
+        },
+        {
+            "name": "stun-recovers-on-city-ground",
+            "passed": true,
+            "detail": "down=False; root=(54.02, 4.54, 100.65)"
+        },
+        {
+            "name": "witnessed-police-car-theft",
+            "passed": true,
+            "detail": "occupied patrol theft recognized; level=3; stage=abordagem"
+        },
+        {
+            "name": "police-visible-approach",
+            "passed": true,
+            "detail": "stage=abordagem; distance=1.89"
+        },
+        {
+            "name": "E-surrender-and-playable-release",
+            "passed": true,
+            "detail": "custody observed=True; fine=75; stage=livre"
+        },
+        {
+            "name": "lost-sight-enters-search",
+            "passed": true,
+            "detail": "player out of sight; stage=busca"
+        },
+        {
+            "name": "player-physical-fall-and-recovery",
+            "passed": true,
+            "detail": "fallen=True; recovered=True; controller=True"
+        },
+        {
+            "name": "clinic-restores-health",
+            "passed": true,
+            "detail": "restored=46.0; health=100"
+        }
+    ]
+}

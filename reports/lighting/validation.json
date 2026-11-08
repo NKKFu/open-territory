@@ -1,0 +1,32 @@
+{
+  "editor": "Unity 6000.3.27f1",
+  "build": {
+    "result": "succeeded",
+    "errors": 0,
+    "warnings": 0,
+    "completedUtc": "2026-11-07T19:52:49.9911173Z"
+  },
+  "interiors": {
+    "buildings": 217,
+    "fixtures": 434,
+    "nightNearbyEnabled": 12,
+    "dayOccupiedEnabled": 2
+  },
+  "headlights": {
+    "total": 68,
+    "inactiveObjects": 0,
+    "incorrectAim": 0,
+    "sampleNightEnabled": 2,
+    "sampleGroundRayHits": 2,
+    "sampleDayEnabled": 0,
+    "sampleRainEnabled": 2,
+    "sampleDistantEnabled": 0
+  },
+  "consoleErrors": 0,
+  "screenshots": [
+    "interior.png",
+    "headlights.png"
+  ],
+  "scope": "Runtime checks and screenshots in Editor; Windows player built successfully. Interior visual inspection sampled one residence; all fixtures and headlight object activations counted.",
+  "supersededBy": "placement/lighting-qa.json"
+}

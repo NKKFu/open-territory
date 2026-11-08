@@ -25,7 +25,8 @@ export function vehicleGroundPose({x,z,yaw,wheels,heightAt,previous=null,dt=1/60
   const cy=Math.cos(yaw),sy=Math.sin(yaw),clearance=.008;
   const supports=wheels.map(w=>({x:w.x,z:w.z,h:heightAt(x+cy*w.x+sy*w.z,z-sy*w.x+cy*w.z)+w.radius-w.y}));
   const plane=fitPlane(supports);
-  const targetPitch=clamp(-Math.atan(plane.z)+pitchBias,-.35,.35),targetRoll=clamp(Math.atan2(plane.x,Math.hypot(1,plane.z))+rollBias,-.28,.28);
+  const slopePitch=-Math.atan(plane.z);
+  const targetPitch=clamp(slopePitch+pitchBias,-.35,.35),targetRoll=clamp(Math.atan2(plane.x,Math.hypot(1,plane.z))+rollBias,-.28,.28);
   const pitch=previous?damp(previous.pitch,targetPitch,12,dt):targetPitch,roll=previous?damp(previous.roll,targetRoll,12,dt):targetRoll;
   const vertical=Math.cos(pitch)*Math.cos(roll),up=.16,down=.18;
   function support(w,offset=0){
@@ -64,5 +65,5 @@ export function vehicleGroundPose({x,z,yaw,wheels,heightAt,previous=null,dt=1/60
     offset=clamp(offset+Math.max(0,correction)/vertical,-down,up);
     return offset;
   });
-  return {height,pitch,roll,offsets};
+  return {height,pitch,roll,offsets,slopePitch};
 }

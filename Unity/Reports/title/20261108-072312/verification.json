@@ -1,0 +1,42 @@
+{
+  "verifiedAtUtc": "2026-11-08T07:40:50.2270662Z",
+  "passed": true,
+  "windowTitle": "Open Territory",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\TitleFixNative-20261108-0731\\BaiaDoSol.exe",
+  "assemblySha256": "77236C9DCAD563CBEEB3B1FEC97BD91F7DC4E8CCAF1A0CB40D9E800D027999BC",
+  "configuration": {
+    "unity": "6000.3.27f1",
+    "platform": "Windows x64",
+    "backend": "Mono",
+    "development": false,
+    "graphicsApi": "Direct3D 12",
+    "validationResolution": "1280x720",
+    "probe": "--city-debug"
+  },
+  "fullBuild": true,
+  "copiedFromCompletedBuild": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\SecurityCameraMounts-20261108",
+  "nativeExitCode": 0,
+  "gameOptionsMatchLegacy": true,
+  "temporaryCopyCleanup": "Automatic approval review blocked recursive deletion; retained.",
+  "checks": [
+    {
+      "name": "walking-through-real-input-poller",
+      "passed": true,
+      "detail": "distance=3.94381713867188"
+    },
+    {
+      "name": "pause-stops-city-clock",
+      "passed": true
+    },
+    {
+      "name": "native-session-has-no-runtime-errors",
+      "passed": true,
+      "detail": "errors=0"
+    },
+    {
+      "name": "normal-exit-with-default-graphics-api",
+      "passed": true,
+      "detail": "exit=0"
+    }
+  ]
+}

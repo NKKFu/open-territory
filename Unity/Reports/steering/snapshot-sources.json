@@ -1,0 +1,980 @@
+{
+  "recordedUtc": "2026-11-08T07:32:43.5208961Z",
+  "snapshot": "C:\\Users\\nelso\\AppData\\Local\\Temp\\OpenTerritory-Steering-20261108-A",
+  "scripts": [
+    {
+      "path": "Assets\\Editor\\CityApartmentEntranceBuilder.cs",
+      "sha256": "E6FE5670D69C7E47EB1215AF8CD8D9DED5EA0B76E4C9E47CD50111837157B36E",
+      "bytes": 8840,
+      "modifiedUtc": "2026-11-08T06:16:15.0873903Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityAssetLibrary.cs",
+      "sha256": "7836A98F34600F2140037018DA6766EEEB0A18996C56A2B88F83FD652E8F1888",
+      "bytes": 155,
+      "modifiedUtc": "2026-11-07T03:12:14.7288386Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityAudioImporter.cs",
+      "sha256": "5B73254AF24FAE0D3D0AAB5B8143746E835C4F69CF90F3761DA8FA44BE305CE8",
+      "bytes": 1123,
+      "modifiedUtc": "2026-11-08T03:26:58.2209506Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityBuilder.cs",
+      "sha256": "D9A298FC38A0E00BBBE18C93F8F4F405C46B292C4BCB1360E32F79765D1B0DA9",
+      "bytes": 19898,
+      "modifiedUtc": "2026-11-08T07:26:14.1865420Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityCemeteryBuilder.cs",
+      "sha256": "FB439F29D0A096DE3BCC62698E62ABE99F1857F06FBE2409C0DDDEF9A0E59188",
+      "bytes": 29484,
+      "modifiedUtc": "2026-11-08T03:09:56.6115662Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityDenseGroves.cs",
+      "sha256": "C28490EF98429279F167DD398342AD37AF80D0828F0D8E614EE6874A89152E24",
+      "bytes": 4057,
+      "modifiedUtc": "2026-11-07T21:22:14.0207216Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityDoorwayBuilder.cs",
+      "sha256": "0AB20EE9FDC3D5D07903A07955EA57BE18E471CCC458158EAA0E463593EDA3C2",
+      "bytes": 3856,
+      "modifiedUtc": "2026-11-07T22:26:09.9970599Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityFireGarageBuilder.cs",
+      "sha256": "7681EABC49EA951D8998297B1665BDB1DA0FA5A658C3A85C1DE0B1535002C3AE",
+      "bytes": 24278,
+      "modifiedUtc": "2026-11-08T04:42:54.2030595Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityFixtureDestructionBuilder.cs",
+      "sha256": "7ACABD9E86AF34FCCAF5402C436616EE48DBDFA93780887AEE47F7D627F89C3B",
+      "bytes": 11659,
+      "modifiedUtc": "2026-11-08T04:12:10.9265012Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityFoundationBuilder.cs",
+      "sha256": "17ECD90171FE72D4264AC5BBA77ECD2D9F24A87C34578FEC16376AFE95F8F3DD",
+      "bytes": 10300,
+      "modifiedUtc": "2026-11-08T06:13:39.3099929Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityGroundCoverBuilder.cs",
+      "sha256": "359B1E17212A1C06ED121CBD2FF5EAFDCFC8158CD08C88557AFE6D91097AF3A5",
+      "bytes": 31635,
+      "modifiedUtc": "2026-11-08T02:48:54.2527367Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityHomeBuilder.cs",
+      "sha256": "E9C2698AEB1F86F3A2426A28238F8C9DC285CE4BA6F2AFA9D27635712F200DDD",
+      "bytes": 52974,
+      "modifiedUtc": "2026-11-08T06:39:58.6672814Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityHomeBuildJob.cs",
+      "sha256": "9AE8EDFFAD9D08F2546C9C04C5687CEE1BB99211622EE092959EE48B60BB8963",
+      "bytes": 1874,
+      "modifiedUtc": "2026-11-08T03:05:51.1766929Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityHomeDecorBuilder.cs",
+      "sha256": "16CD1C59427E7859F09369D5EADBE5DE118A745570B329B343165C60810F0FF2",
+      "bytes": 14999,
+      "modifiedUtc": "2026-11-08T06:41:25.8800629Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityHomeLayoutBuilder.cs",
+      "sha256": "EC0240A9AC2FF79499AFF113D42EF96CE2388A3349658101720B18158C5475E3",
+      "bytes": 3232,
+      "modifiedUtc": "2026-11-08T06:34:58.5617031Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityInteriorGroundBuilder.cs",
+      "sha256": "225B86C8CFED1EE43327A2AD6622252B6272265D6894B2C8FC900D5A6684689C",
+      "bytes": 7634,
+      "modifiedUtc": "2026-11-08T03:49:03.2961032Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityLightingBuilder.cs",
+      "sha256": "71171771C6E4BF47A215C95AA5C318E3153F1E3BDDBC52762CA13EF2CE778805",
+      "bytes": 9785,
+      "modifiedUtc": "2026-11-08T03:51:34.9575127Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityLodBuilder.cs",
+      "sha256": "4C7E47EC254758223960E2CECEFE30CE4B2ACF4D5EE2461D43755EDA351A3282",
+      "bytes": 18002,
+      "modifiedUtc": "2026-11-07T19:37:47.1998148Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityPerformanceBuild.cs",
+      "sha256": "7627D8186B78AFDCDE77AA8C49294D7033370AE63D75DFCBDD0D79C9E63F762A",
+      "bytes": 2281,
+      "modifiedUtc": "2026-11-08T03:46:52.2137692Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityPropGroundingBuilder.cs",
+      "sha256": "9A06339905D03A918126F27C1E99C9C5A7158F45D69E84AB9D867E3006FEFD94",
+      "bytes": 13211,
+      "modifiedUtc": "2026-11-08T07:26:45.6329236Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityRoadLightingBuilder.cs",
+      "sha256": "A83E58226152C1C8925B0A5BC74E1B8DA0FB155AE10053AE172D3E7465CF247E",
+      "bytes": 7387,
+      "modifiedUtc": "2026-11-07T21:38:49.1341251Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityRockBuilder.cs",
+      "sha256": "77D3B39843AB30C446C2877C26C5961C3307626F1385120C23E6F12412D5434E",
+      "bytes": 4507,
+      "modifiedUtc": "2026-11-08T02:48:54.2542524Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityScatteredNature.cs",
+      "sha256": "3AA4950DF4F87E61A6D794BE7C55905BB23BB741D0167308D19CF72CCD6B8142",
+      "bytes": 3694,
+      "modifiedUtc": "2026-11-08T02:59:33.9401533Z"
+    },
+    {
+      "path": "Assets\\Editor\\CitySidewalkBuilder.cs",
+      "sha256": "66A0FEB7E83B52CF6EA83922AEBEFE8D8B95B3B0A9B8F29CB871B60FF74085C7",
+      "bytes": 2917,
+      "modifiedUtc": "2026-11-08T07:23:57.3040000Z"
+    },
+    {
+      "path": "Assets\\Editor\\CitySteeringWheelBuilder.cs",
+      "sha256": "5CA9D412CC21C2D475950781177A9D55C233F6498363872888C474DA663DEB79",
+      "bytes": 1932,
+      "modifiedUtc": "2026-11-08T07:22:45.6286867Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityStreetReviewBuilder.cs",
+      "sha256": "4DB56DBD39A527A40D37259B8EABCA5D03A8C202D4D68C156FE7F7B29FA5E1C4",
+      "bytes": 14985,
+      "modifiedUtc": "2026-11-08T07:10:50.8830632Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityTreeModels.cs",
+      "sha256": "677F6A43F3052140D46B0B9C6C9A0EE8AB74F13AE04B440E29752332ECAD53C7",
+      "bytes": 9955,
+      "modifiedUtc": "2026-11-07T20:53:53.6953187Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityTreePreview.cs",
+      "sha256": "1D9EAFA8F4492C3C3E1598214C8AD622A2DC8F0C7F44D6F3C95721F376688230",
+      "bytes": 2417,
+      "modifiedUtc": "2026-11-07T20:52:23.2349327Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityUIValidation.cs",
+      "sha256": "BE6FE30E5EE60E311676382D69611D4595EEFCD41658DF25821AF953D478D4BA",
+      "bytes": 1871,
+      "modifiedUtc": "2026-11-07T16:01:35.6632332Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityVegetation.cs",
+      "sha256": "01AF83135D032FFC6AAD38FD685FB2CD4C669212E7ACBB9DE71686293653C8E1",
+      "bytes": 6409,
+      "modifiedUtc": "2026-11-08T02:48:54.2527367Z"
+    },
+    {
+      "path": "Assets\\Editor\\CityWindowsBuilder.cs",
+      "sha256": "FCBEC6599D104DB099D4C84F384BD6EA65A66EEDA1040E8C1893D95D479D2C93",
+      "bytes": 17319,
+      "modifiedUtc": "2026-11-08T03:51:34.9580184Z"
+    },
+    {
+      "path": "Assets\\Editor\\OpenTerritoryMcpBootstrap.cs",
+      "sha256": "B96CD0B9C536364E23FB49DBA94F4C95AF13ED55E035FDDF7DA92A577F9DFC7A",
+      "bytes": 2460,
+      "modifiedUtc": "2026-11-07T14:45:18.4363396Z"
+    },
+    {
+      "path": "Assets\\Editor\\SteeringSnapshotBuild.cs",
+      "sha256": "029A36A9B2D06C458F90E613987CD51F12A2E0407C00892205093CD2219EA7A2",
+      "bytes": 1746,
+      "modifiedUtc": "2026-11-08T07:30:49.1799002Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\CityAmbientOcclusion.cs",
+      "sha256": "EF5AD8EAFBD946FA8E670AC0AE7F760DC025AE5157CA95FDBA8FCA722345593E",
+      "bytes": 3329,
+      "modifiedUtc": "2026-11-08T03:43:19.6177461Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\CityCameraDepth.cs",
+      "sha256": "A7DB2600AC36FAB060EF1BF5F67C80635199DA04E7BB53AB2C43CEAE603F5AB1",
+      "bytes": 1218,
+      "modifiedUtc": "2026-11-08T03:43:19.6136812Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\CityContext.cs",
+      "sha256": "FF6C3A1BD2215892B07913588554593CDA35183EE7767E8AE5DFC90723E9814F",
+      "bytes": 13240,
+      "modifiedUtc": "2026-11-08T07:24:20.2219993Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\CityDebugBridge.cs",
+      "sha256": "8F3D7C21FF4D0D196B0B5564009EC227092F9CD500374EAE3BEEEE711CD56DAF",
+      "bytes": 4435,
+      "modifiedUtc": "2026-11-07T22:43:19.4350000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\CityEnglish.cs",
+      "sha256": "090B91CF356A849CB8F06CF54547FE94403AF0E70F103EA444C4015E3E76A49B",
+      "bytes": 3242,
+      "modifiedUtc": "2026-11-08T04:24:59.7907057Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\CityPerformanceProbe.cs",
+      "sha256": "A49F2694BC09348916B14B721226097DBF45521FF358E51A227E2512914AC318",
+      "bytes": 23800,
+      "modifiedUtc": "2026-11-08T03:46:52.2122635Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\CityPerformanceReference.cs",
+      "sha256": "A6DDE0B79E6A1BC2CD103BFB9533AE472B29C35452EB05EB2D10804235981987",
+      "bytes": 6450,
+      "modifiedUtc": "2026-11-08T03:46:52.8425516Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\CityRenderProbe.cs",
+      "sha256": "DEC2D1F95F7567E50595A02454281F95C8E7B4A5179B72746E01BD2ED62DE46D",
+      "bytes": 3441,
+      "modifiedUtc": "2026-11-07T22:43:19.4350000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\CitySunRays.cs",
+      "sha256": "7B457AAF7DB3C2EB05CC0FF70E904477B31E326573A2D6B0E746747395DC15EE",
+      "bytes": 5928,
+      "modifiedUtc": "2026-11-08T03:54:48.3496497Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\WorldData.cs",
+      "sha256": "8797E7A1B83F93D72936A2873D52AF998AA47C5B048D1CEA9779C365B45B09A5",
+      "bytes": 8857,
+      "modifiedUtc": "2026-11-08T04:32:55.5080708Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Core\\WorldRegistry.cs",
+      "sha256": "BD2986FC0B70EE2EACEA39759179F817019963E082127CC38C43E9DEF0D9A6C0",
+      "bytes": 146,
+      "modifiedUtc": "2026-11-07T22:43:19.4370000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityCarjackingProbe.cs",
+      "sha256": "D756D3A6BCC978A646063EF51572B015E03AE96F5964415EC293B693BEC34A15",
+      "bytes": 22446,
+      "modifiedUtc": "2026-11-08T07:25:36.8356640Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityDrivingProbe.cs",
+      "sha256": "AB8332CC3AE1D55ADCD4CC17332F477ADA9CDDC118EFA5B1695808593CA0F969",
+      "bytes": 30213,
+      "modifiedUtc": "2026-11-08T07:25:53.1518502Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityDrivingProbe.Impacts.cs",
+      "sha256": "C4C3827CF8A3FF9572F48D157FBE44D6FDC36D418C0BE47B00AA7D41651EF690",
+      "bytes": 9072,
+      "modifiedUtc": "2026-11-08T07:26:25.8249487Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityEmoteProbe.cs",
+      "sha256": "AD6EB6E76AD5B08361127BB91372358498E685BB7101B409647B3FF20FED16BD",
+      "bytes": 14206,
+      "modifiedUtc": "2026-11-08T06:09:22.8520819Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityEmotes.cs",
+      "sha256": "0930FEB9AE1786DF449916E8913F2586AE520EC858184D7E55F2FC39A635D60D",
+      "bytes": 6108,
+      "modifiedUtc": "2026-11-08T07:23:33.1566122Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityFollowCamera.cs",
+      "sha256": "7C8F1FE9D3C241D071EBBA7D6F7FB228BFF0AFBA078E27B66B8DB01CAE7A352A",
+      "bytes": 11175,
+      "modifiedUtc": "2026-11-08T07:23:33.1535136Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityGaitProbe.cs",
+      "sha256": "E7A116BFF4D65B5E2536BB18F3D1EB3C34511E799BFED9127E74B862FE3E6466",
+      "bytes": 22569,
+      "modifiedUtc": "2026-11-07T23:13:18.6313348Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityInteractionProbe.cs",
+      "sha256": "219022F93F41E5F3283148DB6D5A01DF15CDD0B31D2401D257A468BD5978E07B",
+      "bytes": 17378,
+      "modifiedUtc": "2026-11-07T22:48:45.8773600Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityLocomotionProbe.cs",
+      "sha256": "0B785DD38C0DC0C20C97FF63D72BE7EB308CF310DA00C0F6D346A92313934764",
+      "bytes": 12282,
+      "modifiedUtc": "2026-11-07T23:13:18.6333339Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityMarine.cs",
+      "sha256": "8D581FA8FE0F21639798129120903A90259BB99CA1944D223E2EA6CBEEE36C9E",
+      "bytes": 15107,
+      "modifiedUtc": "2026-11-07T23:34:11.3956357Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityParkourProbe.cs",
+      "sha256": "F890E02153E04F7BC053DA68C8D322FA54403DFCD24DDAAF583F16D3100C0D1F",
+      "bytes": 43576,
+      "modifiedUtc": "2026-11-08T07:29:05.5578398Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityPhysics.cs",
+      "sha256": "2AF57CDE80B3527CB34B94490F98327EC6817B4E2DAD38A810F2FF465EE08E2B",
+      "bytes": 3065,
+      "modifiedUtc": "2026-11-07T22:43:19.4380000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityPlayer.cs",
+      "sha256": "3641FF4FEF7B3391958FE040FDDE09270ACE93DCA8A07771350379049B950FAD",
+      "bytes": 13464,
+      "modifiedUtc": "2026-11-08T07:23:33.1519981Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityPlayerStance.cs",
+      "sha256": "432FB883DF38CA8AC1F73E7CD00FC55A81CF38158E2AC4B58B0967595FACA11C",
+      "bytes": 1851,
+      "modifiedUtc": "2026-11-08T07:23:33.1494660Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityPlayerTraversal.cs",
+      "sha256": "C3CB4FBA3B989C7E61ABC21B01408C787D7E5CEDFDAD565A7868342926538451",
+      "bytes": 19166,
+      "modifiedUtc": "2026-11-08T07:25:58.1716979Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CitySeatCameraProbe.cs",
+      "sha256": "766376BC1BA23A74C659737AC97BEDE02346AEB4F2706923A4E368F5485F9E47",
+      "bytes": 13603,
+      "modifiedUtc": "2026-11-07T23:11:59.0435329Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CitySignalRules.cs",
+      "sha256": "651579B51F048FF04F99EDCC64606D5E368E9C2B9390E5AAF06293AA1D40ABC5",
+      "bytes": 1879,
+      "modifiedUtc": "2026-11-08T05:25:54.6455113Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CitySteeringWheel.cs",
+      "sha256": "B3D4B05D8DE9039141FB0E76D9503D94185AE9A8F00A5AAE7AB919F58DC82829",
+      "bytes": 1297,
+      "modifiedUtc": "2026-11-08T07:18:30.5570000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityTrafficPolicy.cs",
+      "sha256": "F116456E682574B97596DD2E1CF05BAD1A5E21811453084C5DE977D29F22DAD3",
+      "bytes": 24066,
+      "modifiedUtc": "2026-11-08T07:26:59.0621382Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityVehicleEffects.cs",
+      "sha256": "B6E5F842E77CDA4B1B8039ABCD77147FF5AC46CE95D9536A5050F0D3C1F1C0C0",
+      "bytes": 13460,
+      "modifiedUtc": "2026-11-08T02:55:02.9636059Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityVehicleMath.cs",
+      "sha256": "493713408490DF39CB2004280B6E401F46C86AEBB08F2B9C74B661EF2EFC9000",
+      "bytes": 12998,
+      "modifiedUtc": "2026-11-08T02:38:23.6571596Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityVehicles.Boarding.cs",
+      "sha256": "5B085A099A297CAC291CCD7C467B24FF202DF51ABBFA3251AADB931BA7112266",
+      "bytes": 8813,
+      "modifiedUtc": "2026-11-08T07:23:29.3672415Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityVehicles.Carjacking.cs",
+      "sha256": "846F8D6EB368DAFC57737684CE38B36F324E9E1C9F9B029DA6C4C53848166911",
+      "bytes": 16700,
+      "modifiedUtc": "2026-11-08T07:17:29.7908708Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityVehicles.cs",
+      "sha256": "B469D229A9307969F1EC4F09061681CDCEF321D115002DC49FA01C8F2AC0E295",
+      "bytes": 52184,
+      "modifiedUtc": "2026-11-08T07:26:59.0611381Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityVehicles.Hacking.cs",
+      "sha256": "59EC74609CD71B1C59AA1599D35F635846B33401336CA32AC05FB78238364064",
+      "bytes": 6309,
+      "modifiedUtc": "2026-11-07T23:34:11.3976463Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityVehicleSafetyProbe.cs",
+      "sha256": "1345DB60FD29835AB46EC624201CAAB4BAE657949AF0021BC551AB93F692E871",
+      "bytes": 21064,
+      "modifiedUtc": "2026-11-08T07:29:41.1391039Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\CityVehicleSafetyProbe.Traffic.cs",
+      "sha256": "D3DF8844E96DA6997F7D5683665D9A44D02A35F67C3075C1DE80BDF87367FA09",
+      "bytes": 13177,
+      "modifiedUtc": "2026-11-08T07:29:41.1406080Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Gameplay\\UnityCityGameplayProbe.cs",
+      "sha256": "D64981A0BA1744417CB24950F7E8627A98DC12BF6F6DC8DF4E26BB11F603A377",
+      "bytes": 35476,
+      "modifiedUtc": "2026-11-07T22:43:19.4400000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityActors.cs",
+      "sha256": "D763F775FA079F87D1951DCE4F69AC0A467F53947FFC506092CF49DE28210DBA",
+      "bytes": 40431,
+      "modifiedUtc": "2026-11-08T07:24:43.8871620Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityCombat.cs",
+      "sha256": "EF56DB42362B48AA57938A5DE1FA9F2A887B2E5173AA1F55B11B6B6053EE6D22",
+      "bytes": 26019,
+      "modifiedUtc": "2026-11-08T06:32:17.5201416Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityCombat.Melee.cs",
+      "sha256": "284F517DEB026D485E2612877A3CDBF0B6020E6E6A00ABDBA3F1196BDE6E0C87",
+      "bytes": 19446,
+      "modifiedUtc": "2026-11-08T06:44:20.9886097Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityCrimeResponseProbe.cs",
+      "sha256": "51993B5EBE81F3D6333C5A8E14F27EDA5C4D0814139FEBD3E213FFF0F4B07A6E",
+      "bytes": 25876,
+      "modifiedUtc": "2026-11-08T06:51:02.2762995Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityDriverIncidentProbe.cs",
+      "sha256": "75EF7CF4E3BFD9D73FB27D81F8AC289945697E766933A7061029CF2312D88C9D",
+      "bytes": 13290,
+      "modifiedUtc": "2026-11-07T22:43:19.4410000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityDriverIncidents.cs",
+      "sha256": "EB606354FC7804798432FD2EE01844E1989B0A6528A54A51FD52792773E82B7F",
+      "bytes": 27234,
+      "modifiedUtc": "2026-11-08T02:42:12.5931338Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityEmoteAnimation.cs",
+      "sha256": "2A06C8B8F29766C1CF56B8B26B5C3470E22F4872E8C8B75DEB0690B0974F2EB6",
+      "bytes": 3779,
+      "modifiedUtc": "2026-11-07T22:43:19.4410000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityGunEffects.cs",
+      "sha256": "215AA0D833718EF67FCBBD465E91985358520D02F42317D4B6EB31D1B39100F0",
+      "bytes": 18056,
+      "modifiedUtc": "2026-11-08T03:19:28.1568420Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityLifeNavigation.cs",
+      "sha256": "07B571B58C8C95E6DAB4931F2BF11608C2AB2323181DE812C465ED177B57833C",
+      "bytes": 4182,
+      "modifiedUtc": "2026-11-07T22:43:19.4410000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityLifeProbe.cs",
+      "sha256": "C6AFD27AEB8F5816F13DD4279BB57426F5237A5AE8008703216C32513DA2950B",
+      "bytes": 13609,
+      "modifiedUtc": "2026-11-07T22:43:19.4410000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityLivingCityProbe.cs",
+      "sha256": "187E7C4D199F40C7FD6AFD27F2AA1D9639E248EA97C1A1B307D6036EEB486749",
+      "bytes": 16728,
+      "modifiedUtc": "2026-11-07T22:43:19.4410000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityMeleeProbe.cs",
+      "sha256": "814E4CD89836A33923CB911C14CB3230D2C042E385558FA1BCC7F4DFF2E002E2",
+      "bytes": 17970,
+      "modifiedUtc": "2026-11-08T06:44:20.9865834Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityPolice.cs",
+      "sha256": "3106B662273AD96E2ABB982348BFE579D2DAA09C3BA114295AE840AD567C5345",
+      "bytes": 21242,
+      "modifiedUtc": "2026-11-08T06:44:20.9876059Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityPopulation.cs",
+      "sha256": "68376E5B49C6B4C1D107B26B60F9089C6AB5299FF7B675FC1A1DFFB3E07A2A65",
+      "bytes": 21100,
+      "modifiedUtc": "2026-11-08T06:11:08.9491892Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityPopulationProbe.cs",
+      "sha256": "4CDA3EB3BDE2E01BB9A5BE6D1E969F8022DC582EA3DFA8CED96B253507B197C8",
+      "bytes": 11684,
+      "modifiedUtc": "2026-11-07T22:43:19.4430000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityReactionProbe.cs",
+      "sha256": "EE759D1CF8798FF203169F000B55064CA5DE86D50A0A3BF9A267A5F5A26701FC",
+      "bytes": 18728,
+      "modifiedUtc": "2026-11-08T06:16:26.6054318Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityResidentReactions.cs",
+      "sha256": "AC7597AC073D6B74EA45A1B97C1B43775BAF6A14CBBE25A5CAE68FDB314614DE",
+      "bytes": 13650,
+      "modifiedUtc": "2026-11-08T06:26:59.6331082Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityResidentRoutines.cs",
+      "sha256": "74C3EE8068688CD1F38E49BC06458B598A6C75B36766542312EFB0C42DD82779",
+      "bytes": 13102,
+      "modifiedUtc": "2026-11-08T03:46:52.2086200Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityResidents.Crime.cs",
+      "sha256": "E26563588A5D275F2DDFBB0A61187F87A2B27DC306873141A5A6BE72859E8319",
+      "bytes": 8705,
+      "modifiedUtc": "2026-11-08T06:35:13.8245548Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityResidents.cs",
+      "sha256": "5C0BB23612BD9AF6E3EC16E15DC55B9163728516306B0F2CE18CAF94E1597414",
+      "bytes": 47224,
+      "modifiedUtc": "2026-11-08T06:35:13.8255720Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityResidents.Emotes.cs",
+      "sha256": "2387C022A76621DFBDAA79FB682E0E5E476BFF2757FD6956E738EE851E362988",
+      "bytes": 3902,
+      "modifiedUtc": "2026-11-08T03:59:58.6008207Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityResidents.Hacking.cs",
+      "sha256": "44A826423FB770C6CADB7F4296CC36402D4783465811B3C73A0B4E82EE65299C",
+      "bytes": 5812,
+      "modifiedUtc": "2026-11-07T23:34:11.3966406Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityResidents.Routing.cs",
+      "sha256": "A8AE3347FD271A0ED820EBA0A46AFC95578D5A4D395EE9D07890BBD00CD3FB77",
+      "bytes": 6023,
+      "modifiedUtc": "2026-11-08T03:33:06.2822859Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityResidents.Voices.cs",
+      "sha256": "45C7EC3454FB823829BE9B6102B03D1B62115641E007AFF6A4EE661BE1EF7063",
+      "bytes": 1090,
+      "modifiedUtc": "2026-11-08T03:59:58.5988109Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityWeaponProbe.cs",
+      "sha256": "E14C16F47769486FE952776276F2E890512B5D5C12A195B475A974E8E8A3AB7A",
+      "bytes": 17252,
+      "modifiedUtc": "2026-11-08T03:32:02.2781639Z"
+    },
+    {
+      "path": "Assets\\Scripts\\Life\\CityWeaponVisual.cs",
+      "sha256": "1CF39D185D5362A5C128F292B621A7A2BD223C1837E061F04B4FE95B79E50107",
+      "bytes": 18151,
+      "modifiedUtc": "2026-11-08T02:53:32.0989747Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityCanvasUI.cs",
+      "sha256": "8E123769CC2D562857BC0DC9D25AC9B7D97D9231D6476BA6220AE91288841CFD",
+      "bytes": 25662,
+      "modifiedUtc": "2026-11-08T07:24:43.9038600Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityCanvasUI.Hacking.cs",
+      "sha256": "BF96C15FFD65C026287DC7F7B0E08E676BD18B17743DB657255B330134A9D1D0",
+      "bytes": 9332,
+      "modifiedUtc": "2026-11-07T23:42:11.4108690Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityCanvasUI.Hud.cs",
+      "sha256": "FDDF43B6C1F53D62D9ED4D278FB99E326127B4F7C50A33D391C2E09CF767A82F",
+      "bytes": 6230,
+      "modifiedUtc": "2026-11-08T02:34:12.3326986Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityEmojiGraphic.cs",
+      "sha256": "CE4C19D151FDF5566BC720A04CA4F323675E04086F4F443F0A51C100CE13EC01",
+      "bytes": 7187,
+      "modifiedUtc": "2026-11-07T22:43:19.4440000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityEmoteWheel.cs",
+      "sha256": "FCE3D07B4BBA3A1CD7DA6538444A93F4ADE703BD1AA512EEF9CD8E70E6000470",
+      "bytes": 9273,
+      "modifiedUtc": "2026-11-08T04:24:59.7953337Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityEnglishProbe.cs",
+      "sha256": "EE76746B7B7E8508B2C29211D768114F2486B150716F8BEE54D6F30DD45D0115",
+      "bytes": 12260,
+      "modifiedUtc": "2026-11-08T04:46:28.7961705Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityEnglishText.cs",
+      "sha256": "64E6587F4F297F099A8ED204C0DBD43B7F8C28DB471B4C09E9DDA3A37D70BA52",
+      "bytes": 514,
+      "modifiedUtc": "2026-11-08T04:24:59.7887051Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityHudGraphic.cs",
+      "sha256": "5E1C14FDAFF5FC631F6C5EDD8C2AE2F3A6474E15D7A28C715A7CF36909A78D46",
+      "bytes": 3771,
+      "modifiedUtc": "2026-11-08T02:34:33.9672804Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityHudProbe.cs",
+      "sha256": "F3629925B75D642162B15E74A58FF1F4057C0433CD6200E683BBA56AAF5B055E",
+      "bytes": 12770,
+      "modifiedUtc": "2026-11-08T04:37:49.6809167Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityInteractiveMapProbe.cs",
+      "sha256": "F78C0D302982DB55079A85EA1F09C2979F295F3575B822FCB028C4DB57C7D242",
+      "bytes": 21338,
+      "modifiedUtc": "2026-11-08T04:37:49.6819162Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityMapGraphic.cs",
+      "sha256": "DD28A6A15F862A378177E87C82C371B593F2650C5AE2492F3A56CAB4991FD907",
+      "bytes": 8631,
+      "modifiedUtc": "2026-11-07T23:36:58.1003557Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityMapSurface.cs",
+      "sha256": "7508D65E17CD6537979C2963408573FFB92EF7129E9CF7B8874772C545518EBE",
+      "bytes": 1930,
+      "modifiedUtc": "2026-11-07T23:31:34.6880131Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityMapUI.cs",
+      "sha256": "DEE8560842275D2E0320FE12930699027177B209CB502A1EFB5F38BECDCA02D4",
+      "bytes": 31383,
+      "modifiedUtc": "2026-11-08T07:23:33.1556067Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityMenuMusic.cs",
+      "sha256": "91BF19CF241174181A4CD4470C31192673C8F007AC3C99A2B62A2702AC4EE7E8",
+      "bytes": 2208,
+      "modifiedUtc": "2026-11-08T03:26:58.2172875Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityPointerControl.cs",
+      "sha256": "24E28EBE312EBA080ED15C2554A60BC34A4312AED785382F1795B1F8D223A3F7",
+      "bytes": 849,
+      "modifiedUtc": "2026-11-07T22:43:19.4440000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityUI.cs",
+      "sha256": "A6DD08EE615172746C55A27D845E2B1D81A23B3106EE8AECFC62A1FA15B9FF4B",
+      "bytes": 8246,
+      "modifiedUtc": "2026-11-08T07:23:33.1566122Z"
+    },
+    {
+      "path": "Assets\\Scripts\\UI\\CityVignetteGraphic.cs",
+      "sha256": "3F7350812C7296EEFA1EA22F08E2D68832682E2596A55A407FC227EF3AA6E373",
+      "bytes": 1458,
+      "modifiedUtc": "2026-11-08T02:34:33.9662755Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityAtmosphere.cs",
+      "sha256": "3831E4DF04C7E5099D5FAAF0A493F9F5ED932FEB41C67B27507C4DAD1B128B88",
+      "bytes": 10760,
+      "modifiedUtc": "2026-11-08T03:54:48.3516594Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityAtmosphereProbe.cs",
+      "sha256": "43B161E66C8F9EDA0415DA82D8CC5F2333D227D47DE049384E30B37A42A3B1F0",
+      "bytes": 16903,
+      "modifiedUtc": "2026-11-07T22:43:19.4450000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityAudio.cs",
+      "sha256": "DAFF13C45E3753E3BC5A8760926C070C3A6528D3CE376F91B4D0F8EEA5996955",
+      "bytes": 24881,
+      "modifiedUtc": "2026-11-08T03:59:58.5922769Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityAudio.Npcs.cs",
+      "sha256": "F0A037DB488E6B807E9EDDDF5A9B3C2A27698CD4B08D5DC057AA24EAD9069B12",
+      "bytes": 7795,
+      "modifiedUtc": "2026-11-08T04:10:30.1416278Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityAudioProbe.cs",
+      "sha256": "9ABEB62BB051D67ACFE91EAF2F6678C3C0B62B46DE3DEFC77A6A4BABF39B0AE6",
+      "bytes": 23681,
+      "modifiedUtc": "2026-11-08T03:59:58.6029167Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityCemetery.cs",
+      "sha256": "0897926AED4CF1969166A67D668BF37DA38E4AF797FA8CAA8235C2D0389C9F32",
+      "bytes": 2061,
+      "modifiedUtc": "2026-11-08T02:48:54.2487156Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityCemeteryProbe.cs",
+      "sha256": "06A30EEB11501C983B56BCAB3E8A6C0D65D760F964D3A4EBD7BA1A49FC303959",
+      "bytes": 12514,
+      "modifiedUtc": "2026-11-08T03:12:13.5174347Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityCommerce.cs",
+      "sha256": "CA16FE73ED7B21312F0EF7E92D986004185FF2AC09BFDA28E198AC97852D8A94",
+      "bytes": 15127,
+      "modifiedUtc": "2026-11-08T06:11:08.9491892Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityDestructible.cs",
+      "sha256": "4AE750E0B1ED11002A2C82648E5CA61E2E5E90AA7FE873A1A9810F52BE67A1C5",
+      "bytes": 1572,
+      "modifiedUtc": "2026-11-08T02:43:46.8449660Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityDestruction.cs",
+      "sha256": "85AC2DAEAD3B11BB6EA5F0BE7B39BBF0EFAA55B179D2A0A303E907EA3DCC6D69",
+      "bytes": 11031,
+      "modifiedUtc": "2026-11-08T03:46:52.2102581Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityDestruction.Fragments.cs",
+      "sha256": "2A960612F93519EA71861B6AC89A840458167D4F5D18FA9C82465DA800072D66",
+      "bytes": 5057,
+      "modifiedUtc": "2026-11-08T03:46:52.2112630Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityDoorProbe.cs",
+      "sha256": "97E4A48224D98D8D9BFE9D8D155949659B5BB8B450592E48FEC300544B667B64",
+      "bytes": 15377,
+      "modifiedUtc": "2026-11-08T06:24:18.4826692Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityFireGarage.cs",
+      "sha256": "5DF296E7A2AF2F26C6C2F6CF6538F5734F1A66EBA48B10C6985A613A9B14ADBD",
+      "bytes": 6121,
+      "modifiedUtc": "2026-11-08T04:42:54.2015554Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityFireGarageProbe.cs",
+      "sha256": "420565D72385F1490A3EBDD71578DC23D9EA80379E252C2E5F030D8AF8EAA2BC",
+      "bytes": 13295,
+      "modifiedUtc": "2026-11-08T04:42:54.2040630Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityFrontageProbe.cs",
+      "sha256": "973F3DFE0D709E463FD3189F40554699D16E52D4E8645D6D0782203316126E4B",
+      "bytes": 10192,
+      "modifiedUtc": "2026-11-07T22:43:19.4460000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityGroundCoverInfo.cs",
+      "sha256": "C2ED332F8923DF1836F0EECA51E265F2B0FA289010F1668F544B8EE3FA09C814",
+      "bytes": 530,
+      "modifiedUtc": "2026-11-07T22:43:19.4460000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityHackingProbe.cs",
+      "sha256": "02A2837C85A6E23CADF2C2AA266ABE9FE08485552A2752AFF4499B9496A367FB",
+      "bytes": 27996,
+      "modifiedUtc": "2026-11-07T23:35:32.6885407Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityHackOption.cs",
+      "sha256": "352871C42A9525CB36D285F879752B23BAC84D94A11F324157565452C1569C89",
+      "bytes": 422,
+      "modifiedUtc": "2026-11-07T22:43:19.4470000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityHomeCatalog.cs",
+      "sha256": "14078C8D1848B43AD3FF346974D26F7EA3AF3F25952935D6A7ABE5EE6B2CA1C5",
+      "bytes": 1289,
+      "modifiedUtc": "2026-11-08T03:26:47.4689407Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityHomeProbe.cs",
+      "sha256": "7095E43AD228B0981BFDA4220BEB59960AA0ED2C943D4B86526DBAA2C1515256",
+      "bytes": 26742,
+      "modifiedUtc": "2026-11-08T06:48:57.2211034Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityHomeStyleCatalog.cs",
+      "sha256": "DDE512C356C21B4CB02E659CEC15D3CDD155E896391A30DBEEA2AE54F3C890AD",
+      "bytes": 470,
+      "modifiedUtc": "2026-11-08T06:34:58.5627234Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityLighting.cs",
+      "sha256": "8795D1C5B9C18A2CC2A4EB751F8136DD422BB559ECA5ED50581EB534D48DBADF",
+      "bytes": 8152,
+      "modifiedUtc": "2026-11-08T02:56:05.8220384Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityLighting.Hacking.cs",
+      "sha256": "4A1E3D90144722BEAB5E277266BB9D06836341C29383D3122DF20A755823F0B6",
+      "bytes": 3287,
+      "modifiedUtc": "2026-11-07T22:43:19.4470000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityLightingProbe.cs",
+      "sha256": "CEB4BBE303598E3853C0C55FEA6E4C868577F1E2D154BBFD6F506E9602147351",
+      "bytes": 18196,
+      "modifiedUtc": "2026-11-07T22:43:19.4470000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityLodAudit.cs",
+      "sha256": "34E7D937D49A69807CA7C2F67B241FBA1A343623360C77EFBF49989860159404",
+      "bytes": 8259,
+      "modifiedUtc": "2026-11-08T04:12:10.9287710Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityLodManager.cs",
+      "sha256": "F2E28D11613675E268623CC8C25C28A8C169974C58077FC719BB9FDB953DC1EC",
+      "bytes": 748,
+      "modifiedUtc": "2026-11-07T22:43:19.4480000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityMapProbe.cs",
+      "sha256": "235AD1B5BAE8A12A46B17E2AFDD75767C2551FDBDAF7724A6101C96D3D807F30",
+      "bytes": 15520,
+      "modifiedUtc": "2026-11-08T07:18:30.7250000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityNatureAudit.cs",
+      "sha256": "EBBB429986E5393C884FE338D9AFDA41A60FAC6CB05321470E9F938A1D89D9F0",
+      "bytes": 7441,
+      "modifiedUtc": "2026-11-07T22:43:19.4480000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityNeighborhoodProbe.cs",
+      "sha256": "44D4802869539DEFF091E97F69F05B212EB730057F8377EFD34A97681DCBDA55",
+      "bytes": 13193,
+      "modifiedUtc": "2026-11-07T22:43:19.4490000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityNpcVoiceProbe.cs",
+      "sha256": "A468D1F88371CBFE360D10EC8C254E24CAF2D2D73BE927E35DE6951BBE073EFA",
+      "bytes": 14113,
+      "modifiedUtc": "2026-11-08T04:37:49.6854925Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityObjectLod.cs",
+      "sha256": "E87DC86B5C0052849070B0FC4B5AC35B0BB41DE683A314FE36C2759E44357D5D",
+      "bytes": 3256,
+      "modifiedUtc": "2026-11-07T22:43:19.4490000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityPropGrounding.cs",
+      "sha256": "F22C205858F82C3FEB8D052F9D0642A3E6E9629A142CCDF45674E526F3B5A755",
+      "bytes": 3326,
+      "modifiedUtc": "2026-11-08T07:26:45.6319246Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityPropGroundingProbe.cs",
+      "sha256": "73939F4DAF7652EAD4102386ED1CEA022410C6FA89F4A67DDAD5758AD84D312F",
+      "bytes": 9552,
+      "modifiedUtc": "2026-11-08T07:26:45.6339250Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityRemote.cs",
+      "sha256": "E0E3F44816A18A1052A9F4509BEB30A77A3138618E26FE735B3041097D2B5441",
+      "bytes": 15821,
+      "modifiedUtc": "2026-11-07T23:34:11.3966406Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityRemote.Hacking.cs",
+      "sha256": "84E87A376E07C78C3C70211E8163A70D8252BDAD2824B72F95DE6B7A66ED407C",
+      "bytes": 8912,
+      "modifiedUtc": "2026-11-07T23:34:11.3976463Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CitySky.cs",
+      "sha256": "8B8C6443A782C5F7A9BBDF42F65D67C79B9BBACD38AB344429C941AE085FC7EC",
+      "bytes": 3878,
+      "modifiedUtc": "2026-11-08T04:12:10.9249800Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityStreetReviewProbe.cs",
+      "sha256": "446BA4C4DDDEFD6C3DE0942DA4E73E3112DA227CE6EE583BA38233C1BE5FC03E",
+      "bytes": 19012,
+      "modifiedUtc": "2026-11-08T05:29:27.5879988Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CitySunRaysProbe.cs",
+      "sha256": "F545759CB4781BB0F60F4D4DA8F0A51BA700727D8422D2A364190250701438D6",
+      "bytes": 16131,
+      "modifiedUtc": "2026-11-08T03:54:48.3542786Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CitySystems.cs",
+      "sha256": "07DEEE4AECD10B62AEA92B6A9B4F935CE768DA7216627194789CB69B3B857C8E",
+      "bytes": 38282,
+      "modifiedUtc": "2026-11-08T04:32:55.5101508Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CitySystems.Hacking.cs",
+      "sha256": "844FFC8E80EB49249FBDDBFB8F7A7A288032AB99C44A55D0B4E8772F26B21432",
+      "bytes": 15318,
+      "modifiedUtc": "2026-11-08T02:57:12.5238142Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityWater.cs",
+      "sha256": "BD96329E617DBF12A00BD837C119127BDE263F42DA8DEAC856E9B1F92F5EB593",
+      "bytes": 3972,
+      "modifiedUtc": "2026-11-07T22:43:19.4490000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityWind.cs",
+      "sha256": "73C1BF4FEAB4AF979391DF6375CADD76DDBC709C2A5E7D0F4F25DB5691F51D24",
+      "bytes": 11021,
+      "modifiedUtc": "2026-11-07T22:43:19.4510000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityWindField.cs",
+      "sha256": "5CB9B90F3744880BED988E23150E835415BD5D79114C96053BB86862F62E3FC0",
+      "bytes": 1241,
+      "modifiedUtc": "2026-11-07T22:43:19.4510000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityWindows.cs",
+      "sha256": "F0B004FF4C69DFF19BB0D7AEFF97F6C1C6476DF135F7BC11C99B6325F6849D13",
+      "bytes": 1158,
+      "modifiedUtc": "2026-11-07T22:43:19.4510000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\CityWorldProbe.cs",
+      "sha256": "DA50925D7C6D3AA87160B74BE1E5E6BED6F254E063845F1053702F8C24FD9BD3",
+      "bytes": 22398,
+      "modifiedUtc": "2026-11-08T04:37:49.6849706Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\ReferenceMap.cs",
+      "sha256": "E9B8F92C82B6C9549E2946174AF7D560C913028C735AB516B889227554A7E2FC",
+      "bytes": 2291,
+      "modifiedUtc": "2026-11-07T22:43:19.4520000Z"
+    },
+    {
+      "path": "Assets\\Scripts\\World\\ReferenceMapProbe.cs",
+      "sha256": "C3EC517571CF88C075B53112FE13FEC15BC753620B5DA83F51929AF5CBE5BEC7",
+      "bytes": 17315,
+      "modifiedUtc": "2026-11-08T04:12:10.9297719Z"
+    }
+  ],
+  "sceneSha256": "4F1C4D43E246B3FB6E332F41CEFC49493632AA157252D1F55B2500D8AA7221C8",
+  "assetsBytes": 2429554416.0
+}

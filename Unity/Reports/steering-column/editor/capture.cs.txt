@@ -1,0 +1,25 @@
+var registry = UnityEngine.Object.FindFirstObjectByType<OpenTerritory.WorldRegistry>();
+var world = JsonUtility.FromJson<OpenTerritory.WorldData>(registry.manifest.text);
+var nodes = new System.Collections.Generic.Dictionary<int,Transform>(); foreach (var node in registry.nodes) if (node.transform) nodes[node.id] = node.transform;
+var seen = new System.Collections.Generic.HashSet<string>();
+var paths = new System.Collections.Generic.List<string>();
+string directory = "../Reports/steering-column/editor/captures"; System.IO.Directory.CreateDirectory(directory);
+var temporary = new GameObject("Steering inspection camera"); temporary.hideFlags=HideFlags.HideAndDontSave;
+var camera = temporary.AddComponent<Camera>(); camera.fieldOfView=50; camera.nearClipPlane=.025f; camera.farClipPlane=1500;
+camera.clearFlags=CameraClearFlags.Skybox;
+try {
+    foreach (var data in world.vehicles) {
+        if (data.kind!="car" || !seen.Add(data.model)) continue;
+        var root=nodes[data.id]; var wheel=nodes[data.steeringWheel];
+        var target=wheel.position + root.TransformDirection(new Vector3(0,-.05f,.2f));
+        camera.transform.position=target+root.TransformDirection(new Vector3(.95f,.18f,-.30f));
+        camera.transform.rotation=Quaternion.LookRotation(target-camera.transform.position,root.up);
+        var texture=RenderTexture.GetTemporary(1400,900,24); var active=RenderTexture.active; Texture2D picture=null;
+        try {
+            camera.targetTexture=texture; camera.Render(); RenderTexture.active=texture;
+            picture=new Texture2D(1400,900,TextureFormat.RGB24,false);picture.ReadPixels(new Rect(0,0,1400,900),0,0);picture.Apply();
+            string path=System.IO.Path.Combine(directory,data.id+"-column.png");System.IO.File.WriteAllBytes(path,picture.EncodeToPNG());paths.Add(path);
+        } finally {camera.targetTexture=null;RenderTexture.active=active;RenderTexture.ReleaseTemporary(texture);if(picture)UnityEngine.Object.DestroyImmediate(picture);}
+    }
+} finally {UnityEngine.Object.DestroyImmediate(temporary);}
+return Newtonsoft.Json.JsonConvert.SerializeObject(paths);

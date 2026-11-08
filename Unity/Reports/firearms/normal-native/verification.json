@@ -1,0 +1,29 @@
+﻿{
+    "verifiedAtUtc":  "2026-11-08T08:09:02.6788825Z",
+    "startedAtUtc":  "2026-11-08T08:08:46.7465800Z",
+    "passed":  true,
+    "executable":  "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\Firearms-20261108-0800\\BaiaDoSol.exe",
+    "assemblySha256":  "D0C9B772B9102EA02A47A01BD124F83EF1101F3B07E64ADF8B178BBC8992A462",
+    "exitCode":  0,
+    "checks":  [
+                   {
+                       "name":  "walking-through-real-input-poller",
+                       "passed":  true,
+                       "detail":  "distance=3.93505859375"
+                   },
+                   {
+                       "name":  "pause-stops-city-clock",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "native-session-has-no-runtime-errors",
+                       "passed":  true,
+                       "detail":  "errors=0"
+                   },
+                   {
+                       "name":  "normal-exit-with-default-graphics-api",
+                       "passed":  true,
+                       "detail":  "exit=0"
+                   }
+               ]
+}

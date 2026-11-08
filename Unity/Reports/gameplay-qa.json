@@ -1,0 +1,1230 @@
+{
+    "unity": "6000.3.27f1",
+    "firstNextStop": "",
+    "playerExitStop": "",
+    "npcExitStop": "",
+    "playerExitTime": 0.0,
+    "npcExitTime": 0.0,
+    "passed": true,
+    "vehicles": 38,
+    "boats": 5,
+    "checks": [
+        {
+            "name": "native-fleet",
+            "passed": true,
+            "value": 38.0,
+            "detail": ""
+        },
+        {
+            "name": "native-road-height-acacias",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.04; authored 0.04"
+        },
+        {
+            "name": "native-sidewalk-height-acacias",
+            "passed": true,
+            "value": -1.4901161193847657e-8,
+            "detail": "m; native 0.23; authored 0.23"
+        },
+        {
+            "name": "native-road-height-praca",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.04; authored 0.04"
+        },
+        {
+            "name": "native-sidewalk-height-praca",
+            "passed": true,
+            "value": -1.4901161193847657e-8,
+            "detail": "m; native 0.24; authored 0.24"
+        },
+        {
+            "name": "native-road-height-hospital",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.04; authored 0.04"
+        },
+        {
+            "name": "native-sidewalk-height-hospital",
+            "passed": true,
+            "value": -1.4901161193847657e-8,
+            "detail": "m; native 0.23; authored 0.23"
+        },
+        {
+            "name": "native-road-height-livraria",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.04; authored 0.04"
+        },
+        {
+            "name": "native-sidewalk-height-livraria",
+            "passed": true,
+            "value": -1.4901161193847657e-8,
+            "detail": "m; native 0.23; authored 0.23"
+        },
+        {
+            "name": "native-road-grade--80",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 1.23; authored 1.23"
+        },
+        {
+            "name": "native-road-grade--70",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 1.6375; authored 1.6375"
+        },
+        {
+            "name": "native-road-grade-60",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.72; authored 0.72"
+        },
+        {
+            "name": "native-road-grade-80",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 3.62; authored 3.62"
+        },
+        {
+            "name": "native-road-grade-90",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 4.34; authored 4.34"
+        },
+        {
+            "name": "native-road-grade-120",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 4.34; authored 4.34"
+        },
+        {
+            "name": "standing-hop-height",
+            "passed": true,
+            "value": 0.2986769676208496,
+            "detail": "m above settled feet"
+        },
+        {
+            "name": "running-hop-height",
+            "passed": true,
+            "value": 0.4338376522064209,
+            "detail": "m above takeoff"
+        },
+        {
+            "name": "held-sidestep-stays-straight",
+            "passed": true,
+            "value": 0.0000152587890625,
+            "detail": "sideways drift in m"
+        },
+        {
+            "name": "walking-camera-follows-new-heading",
+            "passed": true,
+            "value": 0.9999997615814209,
+            "detail": ""
+        },
+        {
+            "name": "held-diagonal-does-not-circle",
+            "passed": true,
+            "value": 0.0,
+            "detail": "degrees"
+        },
+        {
+            "name": "walk-up-existing-curb",
+            "passed": true,
+            "value": 3.8259124755859377,
+            "detail": "rise 0.155 m"
+        },
+        {
+            "name": "capsule-stops-at-physical-facade",
+            "passed": true,
+            "value": 0.6049995422363281,
+            "detail": "m from facade"
+        },
+        {
+            "name": "camera-remains-outside-facade",
+            "passed": true,
+            "value": 7.429956436157227,
+            "detail": ""
+        },
+        {
+            "name": "native-E-selects-car",
+            "passed": true,
+            "value": 0.0,
+            "detail": "vehicle-9668"
+        },
+        {
+            "name": "native-car-entry",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "rigidbody-accelerates",
+            "passed": true,
+            "value": 6.570013046264648,
+            "detail": "m/s"
+        },
+        {
+            "name": "steering-turns-body",
+            "passed": true,
+            "value": 11.415271759033204,
+            "detail": "degrees"
+        },
+        {
+            "name": "driving-camera-follows-heading",
+            "passed": true,
+            "value": 0.9889691472053528,
+            "detail": ""
+        },
+        {
+            "name": "native-service-brake",
+            "passed": true,
+            "value": -0.0025445190258324148,
+            "detail": "m/s"
+        },
+        {
+            "name": "suspension-remains-above-ground",
+            "passed": true,
+            "value": 0.04856715351343155,
+            "detail": ""
+        },
+        {
+            "name": "native-car-exit",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "exit-capsule-has-space",
+            "passed": true,
+            "value": 2.097135066986084,
+            "detail": ""
+        },
+        {
+            "name": "native-car-parkour-starts",
+            "passed": true,
+            "value": 2.3949942588806154,
+            "detail": "m above takeoff"
+        },
+        {
+            "name": "native-car-parkour-finishes-clear",
+            "passed": true,
+            "value": 2.670414447784424,
+            "detail": "m along actual car body"
+        },
+        {
+            "name": "bicycle-mount",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "bicycle-pedal-and-propel",
+            "passed": true,
+            "value": 1.183254361152649,
+            "detail": ""
+        },
+        {
+            "name": "bicycle-dismount",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "native-E-selects-bench",
+            "passed": true,
+            "value": 0.0,
+            "detail": "selected seat-2162; grounded True; player (-18.00, 8.78, 171.45); prompt (-18.00, 9.85, 171.00)"
+        },
+        {
+            "name": "native-sit-on-bench",
+            "passed": true,
+            "value": 0.8199996948242188,
+            "detail": ""
+        },
+        {
+            "name": "native-stand-from-bench",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "circular-roof-has-native-collision",
+            "passed": true,
+            "value": 3.1997313499450685,
+            "detail": "local roof height in m"
+        },
+        {
+            "name": "circular-stop-acacias",
+            "passed": true,
+            "value": 0.5108625292778015,
+            "detail": "gap 0.888855; target 0; reason embarque-acacias; position (-68.70, 0.08, -36.89)"
+        },
+        {
+            "name": "circular-stop-praca",
+            "passed": true,
+            "value": 0.5145477056503296,
+            "detail": "gap 0.8904419; target 0; reason embarque-praca; position (-68.70, 0.08, 35.11)"
+        },
+        {
+            "name": "circular-stop-hospital",
+            "passed": true,
+            "value": 0.5144926309585571,
+            "detail": "gap 0.8904419; target 0; reason embarque-hospital; position (68.70, 0.08, 36.89)"
+        },
+        {
+            "name": "circular-stop-livraria",
+            "passed": true,
+            "value": 0.5145475268363953,
+            "detail": "gap 0.8904419; target 0; reason embarque-livraria; position (68.70, 0.08, -35.12)"
+        },
+        {
+            "name": "all-four-circular-stops",
+            "passed": true,
+            "value": 4.0,
+            "detail": ""
+        },
+        {
+            "name": "native-boat-board",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "buoyant-boat-propels",
+            "passed": true,
+            "value": 6.35532808303833,
+            "detail": ""
+        },
+        {
+            "name": "boat-safe-disembark",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "shore-enters-swimming",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "native-swimming-movement",
+            "passed": true,
+            "value": 1.2997335195541382,
+            "detail": ""
+        },
+        {
+            "name": "native-ladder-returns-to-land",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "no-runtime-errors",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        }
+    ],
+    "errors": [],
+    "bus": [
+        {
+            "stop": "acacias",
+            "reason": "",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.0987093523144722,
+                "z": -2.000758171081543
+            },
+            "elapsed": 0.0,
+            "gap": -999.0,
+            "speed": 1.9999998807907105,
+            "target": 2.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07300183176994324,
+                "z": -44.50982666015625
+            },
+            "elapsed": 0.25663185119628909,
+            "gap": 8.54547119140625,
+            "speed": 2.095386505126953,
+            "target": 2.407999038696289,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.0795481875538826,
+                "z": -43.959266662597659
+            },
+            "elapsed": 0.5125179290771484,
+            "gap": 7.987945556640625,
+            "speed": 2.2228715419769289,
+            "target": 2.8499979972839357,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08099839091300965,
+                "z": -43.36243438720703
+            },
+            "elapsed": 0.7680759429931641,
+            "gap": 7.383270263671875,
+            "speed": 2.4634511470794679,
+            "target": 3.291996955871582,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07950252294540405,
+                "z": -42.69443130493164
+            },
+            "elapsed": 1.023672103881836,
+            "gap": 6.7056884765625,
+            "speed": 2.777108669281006,
+            "target": 3.470032215118408,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08016543090343476,
+                "z": -41.957000732421878
+            },
+            "elapsed": 1.279428482055664,
+            "gap": 6.015594482421875,
+            "speed": 2.958015203475952,
+            "target": 3.177321195602417,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07996302843093872,
+                "z": -41.19646453857422
+            },
+            "elapsed": 1.5355186462402344,
+            "gap": 5.2432861328125,
+            "speed": 2.943686008453369,
+            "target": 2.856769323348999,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000259846448899,
+                "z": -40.46368408203125
+            },
+            "elapsed": 1.7911090850830079,
+            "gap": 4.49566650390625,
+            "speed": 2.7836427688598635,
+            "target": 2.54287052154541,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000259101390839,
+                "z": -39.77864456176758
+            },
+            "elapsed": 2.0466690063476564,
+            "gap": 3.7967529296875,
+            "speed": 2.568855047225952,
+            "target": 2.226363182067871,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07999833673238754,
+                "z": -39.15214538574219
+            },
+            "elapsed": 2.302267074584961,
+            "gap": 3.158294677734375,
+            "speed": 2.3184831142425539,
+            "target": 1.9078012704849244,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000073581933975,
+                "z": -38.59077835083008
+            },
+            "elapsed": 2.558237075805664,
+            "gap": 2.6292724609375,
+            "speed": 2.0664713382720949,
+            "target": 1.6121764183044434,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07999983429908753,
+                "z": -38.09819412231445
+            },
+            "elapsed": 2.8154144287109377,
+            "gap": 2.12628173828125,
+            "speed": 1.7782518863677979,
+            "target": 1.290246605873108,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.0799998939037323,
+                "z": -37.68116760253906
+            },
+            "elapsed": 3.072103500366211,
+            "gap": 1.69964599609375,
+            "speed": 1.4791147708892823,
+            "target": 0.9663733243942261,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.0799998939037323,
+                "z": -37.34233474731445
+            },
+            "elapsed": 3.3276615142822267,
+            "gap": 1.351776123046875,
+            "speed": 1.172050952911377,
+            "target": 0.6395609378814697,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.0799998939037323,
+                "z": -37.080753326416019
+            },
+            "elapsed": 3.583402633666992,
+            "gap": 1.084014892578125,
+            "speed": 0.8604333400726318,
+            "target": 0.2986757457256317,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "acacias",
+            "reason": "parada-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.0799998864531517,
+                "z": -36.898681640625
+            },
+            "elapsed": 3.841205596923828,
+            "gap": 0.8995361328125,
+            "speed": 0.533689022064209,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "embarque-acacias",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.0799998939037323,
+                "z": -36.88691329956055
+            },
+            "elapsed": 0.0,
+            "gap": 0.88885498046875,
+            "speed": 2.0,
+            "target": 2.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07251688092947006,
+                "z": 27.479740142822267
+            },
+            "elapsed": 0.2580528259277344,
+            "gap": 8.524017333984375,
+            "speed": 1.9982484579086304,
+            "target": 2.4419989585876467,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.0798313319683075,
+                "z": 28.008636474609376
+            },
+            "elapsed": 0.5145721435546875,
+            "gap": 8.030792236328125,
+            "speed": 2.144352674484253,
+            "target": 2.8499979972839357,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08090002089738846,
+                "z": 28.591835021972658
+            },
+            "elapsed": 0.7705039978027344,
+            "gap": 7.4427490234375,
+            "speed": 2.4151153564453127,
+            "target": 3.291996955871582,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07952645421028137,
+                "z": 29.252891540527345
+            },
+            "elapsed": 1.0263290405273438,
+            "gap": 6.7750244140625,
+            "speed": 2.75105357170105,
+            "target": 3.4993999004364015,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08016293495893479,
+                "z": 29.98704719543457
+            },
+            "elapsed": 1.28192138671875,
+            "gap": 6.029937744140625,
+            "speed": 2.9594242572784426,
+            "target": 3.1827383041381838,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.0799616277217865,
+                "z": 30.747058868408204
+            },
+            "elapsed": 1.537567138671875,
+            "gap": 5.25701904296875,
+            "speed": 2.949492931365967,
+            "target": 2.861623525619507,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000362664461136,
+                "z": 31.48493003845215
+            },
+            "elapsed": 1.7936439514160157,
+            "gap": 4.56402587890625,
+            "speed": 2.8036444187164308,
+            "target": 2.571950674057007,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000224828720093,
+                "z": 32.17462921142578
+            },
+            "elapsed": 2.0493507385253908,
+            "gap": 3.8594970703125,
+            "speed": 2.5920169353485109,
+            "target": 2.2555973529815676,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07999838888645172,
+                "z": 32.806175231933597
+            },
+            "elapsed": 2.3051109313964845,
+            "gap": 3.214752197265625,
+            "speed": 2.3437068462371828,
+            "target": 1.937167763710022,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.08000065386295319,
+                "z": 33.372047424316409
+            },
+            "elapsed": 2.560863494873047,
+            "gap": 2.63763427734375,
+            "speed": 2.07137131690979,
+            "target": 1.6169404983520508,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07999983429908753,
+                "z": 33.87010192871094
+            },
+            "elapsed": 2.8181495666503908,
+            "gap": 2.1334228515625,
+            "speed": 1.7830837965011597,
+            "target": 1.2950479984283448,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07999995350837708,
+                "z": 34.291954040527347
+            },
+            "elapsed": 3.0745010375976564,
+            "gap": 1.73565673828125,
+            "speed": 1.5072267055511475,
+            "target": 0.996156632900238,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07999995350837708,
+                "z": 34.636844635009769
+            },
+            "elapsed": 3.330554962158203,
+            "gap": 1.380401611328125,
+            "speed": 1.2006925344467164,
+            "target": 0.6696431636810303,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07999995350837708,
+                "z": 34.90880584716797
+            },
+            "elapsed": 3.5915756225585939,
+            "gap": 1.104949951171875,
+            "speed": 0.8925383687019348,
+            "target": 0.3242764174938202,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "praca",
+            "reason": "parada-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07999995350837708,
+                "z": 35.09523391723633
+            },
+            "elapsed": 3.8498191833496095,
+            "gap": 0.91241455078125,
+            "speed": 0.5612742900848389,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "embarque-praca",
+            "position": {
+                "x": -68.69999694824219,
+                "y": 0.07999995350837708,
+                "z": 35.11320495605469
+            },
+            "elapsed": 0.0,
+            "gap": 0.89044189453125,
+            "speed": -2.0,
+            "target": 2.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.07293003797531128,
+                "z": 44.52867126464844
+            },
+            "elapsed": 0.2505607604980469,
+            "gap": 8.563812255859375,
+            "speed": 1.9920361042022706,
+            "target": 2.407999038696289,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.07929810881614685,
+                "z": 44.01350784301758
+            },
+            "elapsed": 0.5009689331054688,
+            "gap": 8.03076171875,
+            "speed": 2.144352674484253,
+            "target": 2.8499979972839357,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.0810113474726677,
+                "z": 43.424163818359378
+            },
+            "elapsed": 0.7606010437011719,
+            "gap": 7.442718505859375,
+            "speed": 2.4151153564453127,
+            "target": 3.291996955871582,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.07949934154748917,
+                "z": 42.766075134277347
+            },
+            "elapsed": 1.0161590576171876,
+            "gap": 6.774993896484375,
+            "speed": 2.7510530948638918,
+            "target": 3.4993889331817629,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.08016552031040192,
+                "z": 42.033447265625
+            },
+            "elapsed": 1.2717170715332032,
+            "gap": 6.08892822265625,
+            "speed": 2.9511260986328127,
+            "target": 3.2074875831604006,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.07996344566345215,
+                "z": 41.27333068847656
+            },
+            "elapsed": 1.5273933410644532,
+            "gap": 5.316162109375,
+            "speed": 2.9588024616241457,
+            "target": 2.886326551437378,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.08000239729881287,
+                "z": 40.53507995605469
+            },
+            "elapsed": 1.783233642578125,
+            "gap": 4.563995361328125,
+            "speed": 2.8036372661590578,
+            "target": 2.571937322616577,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.08000265061855316,
+                "z": 39.843597412109378
+            },
+            "elapsed": 2.039043426513672,
+            "gap": 3.8594970703125,
+            "speed": 2.592008352279663,
+            "target": 2.2555994987487795,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.07999831438064575,
+                "z": 39.21076965332031
+            },
+            "elapsed": 2.2946014404296877,
+            "gap": 3.2147216796875,
+            "speed": 2.343696355819702,
+            "target": 1.9371509552001954,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.08000073581933975,
+                "z": 38.64339065551758
+            },
+            "elapsed": 2.550159454345703,
+            "gap": 2.679473876953125,
+            "speed": 2.0929579734802248,
+            "target": 1.6416207551956177,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.07999983429908753,
+                "z": 38.146240234375
+            },
+            "elapsed": 2.805797576904297,
+            "gap": 2.16949462890625,
+            "speed": 1.8056836128234864,
+            "target": 1.3198394775390626,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.0799998939037323,
+                "z": 37.72265625
+            },
+            "elapsed": 3.0615310668945314,
+            "gap": 1.735626220703125,
+            "speed": 1.5072124004364014,
+            "target": 0.996126115322113,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.0799998939037323,
+                "z": 37.37488555908203
+            },
+            "elapsed": 3.317516326904297,
+            "gap": 1.380401611328125,
+            "speed": 1.200675368309021,
+            "target": 0.6696586012840271,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.0799998939037323,
+                "z": 37.10478591918945
+            },
+            "elapsed": 3.5730819702148439,
+            "gap": 1.10491943359375,
+            "speed": 0.8925172686576843,
+            "target": 0.32419145107269289,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "hospital",
+            "reason": "parada-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.0799998939037323,
+                "z": 36.91493225097656
+            },
+            "elapsed": 3.828643798828125,
+            "gap": 0.92413330078125,
+            "speed": 0.5858242511749268,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "embarque-hospital",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.0799998939037323,
+                "z": 36.8903694152832
+            },
+            "elapsed": 0.0,
+            "gap": 0.89044189453125,
+            "speed": 2.0,
+            "target": 2.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.07310179620981217,
+                "z": -27.46830177307129
+            },
+            "elapsed": 0.255950927734375,
+            "gap": 8.5638427734375,
+            "speed": 1.9920361042022706,
+            "target": 2.407999038696289,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.07948567718267441,
+                "z": -27.994279861450197
+            },
+            "elapsed": 0.5115127563476563,
+            "gap": 8.030792236328125,
+            "speed": 2.144352674484253,
+            "target": 2.8499979972839357,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.08101871609687805,
+                "z": -28.574771881103517
+            },
+            "elapsed": 0.7670707702636719,
+            "gap": 7.4427490234375,
+            "speed": 2.4151153564453127,
+            "target": 3.291996955871582,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.07949765026569367,
+                "z": -29.23273277282715
+            },
+            "elapsed": 1.0226364135742188,
+            "gap": 6.7750244140625,
+            "speed": 2.7510533332824709,
+            "target": 3.4993999004364015,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.08016553521156311,
+                "z": -29.96607208251953
+            },
+            "elapsed": 1.2784652709960938,
+            "gap": 6.088958740234375,
+            "speed": 2.951127767562866,
+            "target": 3.2074992656707765,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.07996357977390289,
+                "z": -30.72602653503418
+            },
+            "elapsed": 1.534088134765625,
+            "gap": 5.316192626953125,
+            "speed": 2.9588050842285158,
+            "target": 2.8863391876220705,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.0800023078918457,
+                "z": -31.463525772094728
+            },
+            "elapsed": 1.7896461486816407,
+            "gap": 4.56402587890625,
+            "speed": 2.8036398887634279,
+            "target": 2.5719516277313234,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.08000273257493973,
+                "z": -32.155426025390628
+            },
+            "elapsed": 2.0455780029296877,
+            "gap": 3.8594970703125,
+            "speed": 2.5920114517211916,
+            "target": 2.255598545074463,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.07999825477600098,
+                "z": -32.788639068603519
+            },
+            "elapsed": 2.3012619018554689,
+            "gap": 3.214752197265625,
+            "speed": 2.343700885772705,
+            "target": 1.9371694326400757,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.08000067621469498,
+                "z": -33.35650634765625
+            },
+            "elapsed": 2.557025909423828,
+            "gap": 2.67950439453125,
+            "speed": 2.092963457107544,
+            "target": 1.6416423320770264,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.0799998939037323,
+                "z": -33.8535270690918
+            },
+            "elapsed": 2.8125839233398439,
+            "gap": 2.169525146484375,
+            "speed": 1.805692434310913,
+            "target": 1.3198648691177369,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.0799998939037323,
+                "z": -34.276885986328128
+            },
+            "elapsed": 3.0681419372558595,
+            "gap": 1.73565673828125,
+            "speed": 1.5072221755981446,
+            "target": 0.9961593151092529,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.0799998864531517,
+                "z": -34.62430953979492
+            },
+            "elapsed": 3.3237571716308595,
+            "gap": 1.380401611328125,
+            "speed": 1.200687050819397,
+            "target": 0.6696479916572571,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.0799998939037323,
+                "z": -34.894596099853519
+            },
+            "elapsed": 3.5793190002441408,
+            "gap": 1.123291015625,
+            "speed": 0.9175213575363159,
+            "target": 0.35063356161117556,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "livraria",
+            "reason": "parada-livraria",
+            "position": {
+                "x": 68.69999694824219,
+                "y": 0.0799998939037323,
+                "z": -35.08467483520508
+            },
+            "elapsed": 3.8348770141601564,
+            "gap": 0.92413330078125,
+            "speed": 0.5858851671218872,
+            "target": 0.0,
+            "obstacle": -1.0
+        }
+    ]
+}

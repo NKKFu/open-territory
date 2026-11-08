@@ -1,0 +1,44 @@
+FREE WEAPON MODELS — Open Territory
+Downloaded: 2026-11-08
+
+PISTOL AND CARBINE
+Author: Quaternius
+Pack: Ultimate Guns Pack
+Source: https://quaternius.com/packs/ultimategun.html
+Game models: Pistol_4.obj, AssaultRifle2_2.obj
+License: CC0 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+Original license: Quaternius/License.txt
+Original OBJ/MTL and FBX downloads: Quaternius/
+Individual download URLs and SHA-256: Quaternius/downloads.json
+Original source page: quaternius-source.html
+
+PULSE DEVICE
+Author: Kenney
+Pack: Blaster Kit 2.1
+Source: https://kenney.nl/assets/blaster-kit
+Game model: blaster-b.obj, with the original colormap.png atlas
+License: CC0 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+Original license: Kenney/License.txt
+Original complete archive: kenney_blaster-kit_2.1.zip
+Original unpacked models and previews: Kenney/
+Original source page: kenney-source.html
+
+Both packs permit personal and commercial use without a purchase or required
+attribution. These voluntary credits preserve the artists' authorship.
+
+ADAPTATIONS
+Open Territory converts the source coordinates and scale, preserves every
+source triangle, normal and UV, and separates disconnected pieces into slide,
+bolt, magazine and body groups for the existing animations. Pistol and pulse
+reload inserts add 24 triangles each to the static source models. The pulse
+emitter adds a turquoise emission material. The art is baked into shared Unity
+mesh/material assets and local Resources prefabs; no network access or runtime
+geometry generation is used by the player.
+
+Reproduce prepared data: python Unity/Tools/prepare-weapon-models.py
+Rebuild prefabs in Unity: Open Territory > Import free weapon models
+Prepared source/geometry hashes: prepared-manifest.json
+Downloaded file hashes: download-manifest.json
+Player credits: Assets/StreamingAssets/Credits/WEAPON-MODELS.txt

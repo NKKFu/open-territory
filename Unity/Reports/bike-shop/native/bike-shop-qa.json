@@ -1,0 +1,232 @@
+{
+    "passed": true,
+    "routeSamples": 666,
+    "checks": [
+        {
+            "name": "native-bike-shop-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "QA-storage-is-isolated",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "two-halls-six-displays-two-rideable-bikes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "old-buildings-doors-and-garage-retired",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "old-solid-definitions-disabled",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "old-fire-services-do-not-remain-at-the-shop",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "unique-bicycle-node-ids",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "English-shop-signs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "shop-titles-fit-the-sign-panels",
+            "detail": "SUNSPOKE CYCLES required=65 available=72, REPAIRS & SERVICE required=65 available=72",
+            "passed": true
+        },
+        {
+            "name": "hall-0-preserves-neighboring-buildings-and-furniture",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hall-1-preserves-neighboring-buildings-and-furniture",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "wide-supported-sidewalk-entrances-and-interior-aisles",
+            "detail": "samples=666 unsupported=0 obstacles=",
+            "passed": true
+        },
+        {
+            "name": "walk-real-controller-hall-0-z-11.7",
+            "detail": "gap=0.206",
+            "passed": true
+        },
+        {
+            "name": "walk-real-controller-hall-0-z-7",
+            "detail": "gap=0.323",
+            "passed": true
+        },
+        {
+            "name": "walk-real-controller-hall-0-z--4",
+            "detail": "gap=0.255",
+            "passed": true
+        },
+        {
+            "name": "walk-real-controller-hall-0-z-7",
+            "detail": "gap=0.294",
+            "passed": true
+        },
+        {
+            "name": "walk-real-controller-hall-0-z-15",
+            "detail": "gap=0.252",
+            "passed": true
+        },
+        {
+            "name": "walk-real-controller-hall-1-z-11.7",
+            "detail": "gap=0.259",
+            "passed": true
+        },
+        {
+            "name": "walk-real-controller-hall-1-z-7",
+            "detail": "gap=0.237",
+            "passed": true
+        },
+        {
+            "name": "walk-real-controller-hall-1-z--4",
+            "detail": "gap=0.241",
+            "passed": true
+        },
+        {
+            "name": "walk-real-controller-hall-1-z-7",
+            "detail": "gap=0.268",
+            "passed": true
+        },
+        {
+            "name": "walk-real-controller-hall-1-z-15",
+            "detail": "gap=0.334",
+            "passed": true
+        },
+        {
+            "name": "automatic-door-0-opens",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-door-0-and-simulation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "automatic-door-0-closes-after-resume",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "glazing-0-blocks-player",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "automatic-door-1-opens",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-door-1-and-simulation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "automatic-door-1-closes-after-resume",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "glazing-1-blocks-player",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "jump-and-land-in-showroom",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bike-shop-appears-on-Places-map",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "shop-bikes-appear-through-normal-population",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "rideable-bike-81000-spawned",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "E-selects-shop-bike-81000",
+            "detail": "vehicle-81000",
+            "passed": true
+        },
+        {
+            "name": "E-mounts-shop-bike-81000",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "shop-bike-81000-pedals-and-moves",
+            "detail": "speed=2.319",
+            "passed": true
+        },
+        {
+            "name": "E-dismounts-shop-bike-81000",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "rideable-bike-81300-spawned",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "E-selects-shop-bike-81300",
+            "detail": "vehicle-81300",
+            "passed": true
+        },
+        {
+            "name": "E-mounts-shop-bike-81300",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "shop-bike-81300-pedals-and-moves",
+            "detail": "speed=2.478",
+            "passed": true
+        },
+        {
+            "name": "E-dismounts-shop-bike-81300",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "night-lighting-follows-city-cycle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "errors=0",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

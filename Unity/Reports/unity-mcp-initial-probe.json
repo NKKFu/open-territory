@@ -1,0 +1,131 @@
+{
+  "at": "2026-11-07T14:46:37.838890+00:00",
+  "endpoint": "http://127.0.0.1:8087/mcp",
+  "checks": [
+    {
+      "name": "recompile_and_reconnect",
+      "ok": true,
+      "seconds": 3.9,
+      "request": {
+        "result": {
+          "success": true,
+          "message": "Refresh requested.",
+          "error": null,
+          "data": {
+            "refresh_triggered": false,
+            "compile_requested": true,
+            "compile_started": null,
+            "resulting_state": "idle",
+            "hint": "If Unity enters compilation/domain reload, poll the mcpforunity://editor/state resource until data.advice.ready_for_tools is true."
+          },
+          "hint": null
+        }
+      },
+      "compilation": {
+        "is_compiling": false,
+        "is_domain_reload_pending": false,
+        "last_compile_started_unix_ms": 1794062808644,
+        "last_compile_finished_unix_ms": 1794062808869,
+        "last_domain_reload_before_unix_ms": null,
+        "last_domain_reload_after_unix_ms": 1794062811087
+      }
+    }
+  ],
+  "tools_count": 49,
+  "initial_state": {
+    "schema_version": "unity-mcp/editor_state@2",
+    "observed_at_unix_ms": 1794062798896,
+    "sequence": 12,
+    "unity": {
+      "instance_id": "OpenTerritory@a13b5c63dbd7b54e",
+      "unity_version": "6000.3.27f1",
+      "project_id": null,
+      "platform": "WindowsEditor",
+      "is_batch_mode": false
+    },
+    "editor": {
+      "is_focused": true,
+      "play_mode": {
+        "is_playing": false,
+        "is_paused": false,
+        "is_changing": false
+      },
+      "active_scene": {
+        "path": "Assets/Scenes/BaiaDoSol.unity",
+        "guid": "1f0405bbf492b734395a4cd1a3a43b4a",
+        "name": "BaiaDoSol"
+      }
+    },
+    "activity": {
+      "phase": "idle",
+      "since_unix_ms": 1794062775058,
+      "reasons": [
+        "compilation_finished"
+      ]
+    },
+    "compilation": {
+      "is_compiling": false,
+      "is_domain_reload_pending": false,
+      "last_compile_started_unix_ms": 1794062773084,
+      "last_compile_finished_unix_ms": 1794062775057,
+      "last_domain_reload_before_unix_ms": null,
+      "last_domain_reload_after_unix_ms": 1794062665535
+    },
+    "assets": {
+      "is_updating": false,
+      "external_changes_dirty": true,
+      "external_changes_last_seen_unix_ms": 1794062799007,
+      "external_changes_dirty_since_unix_ms": 1794062799007,
+      "external_changes_last_cleared_unix_ms": null,
+      "refresh": {
+        "is_refresh_in_progress": false,
+        "last_refresh_requested_unix_ms": null,
+        "last_refresh_finished_unix_ms": null
+      }
+    },
+    "tests": {
+      "is_running": false,
+      "mode": null,
+      "current_job_id": null,
+      "started_unix_ms": null,
+      "started_by": "unknown",
+      "last_run": null
+    },
+    "transport": {
+      "unity_bridge_connected": null,
+      "last_message_unix_ms": null
+    },
+    "settings": {
+      "batch_execute_max_commands": 25
+    },
+    "advice": {
+      "ready_for_tools": true,
+      "blocking_reasons": [],
+      "recommended_retry_after_ms": 0,
+      "recommended_next_action": "none"
+    },
+    "staleness": {
+      "age_ms": 145,
+      "is_stale": false
+    }
+  },
+  "scene": {
+    "success": true,
+    "message": "Retrieved active scene information.",
+    "data": {
+      "name": "BaiaDoSol",
+      "path": "Assets/Scenes/BaiaDoSol.unity",
+      "buildIndex": 0,
+      "isDirty": false,
+      "isLoaded": true,
+      "rootCount": 4
+    }
+  },
+  "errors_before": {
+    "success": true,
+    "message": "Retrieved 0 log entries.",
+    "data": []
+  },
+  "ok": false,
+  "error": "Editor did not become ready: {\"success\": false, \"message\": null, \"error\": \"Unity session not ready for 'get_editor_state' (ping not answered); please retry\", \"data\": null, \"hint\": \"retry\"}"
+}

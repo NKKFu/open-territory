@@ -1,0 +1,99 @@
+{
+  "verifiedAtUtc": "2026-11-08T08:02:49.9076464Z",
+  "passed": true,
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\VehicleMomentum-20261108\\BaiaDoSol.exe",
+  "assemblySha256": "72CF878B990A84F4F83E6DAFA99E656C79CD55F68C099E1AA6F0F43E3F258D97",
+  "nativeExitCode": 0,
+  "buildExitCode": 0,
+  "checks": 164,
+  "runtimeErrors": 0,
+  "graphicsApi": "Direct3D 12",
+  "resolution": "1280x720",
+  "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\vehicle-impact\\driving-default-02\\driving-qa.json",
+  "contentFrozenAtUtc": "2026-11-08T07:46:24.4664384Z",
+  "sceneSha256": "E5CE89B058AE3C97C62AF9DBBF360022942B2E26D4648F7DC8FA9F1C4B3D8953",
+  "loadedTypes": {
+    "verifiedAtUtc": "2026-11-08T08:00:12.4252482Z",
+    "momentumMethodLoaded": true,
+    "assemblyNewerThanSources": true,
+    "assemblyTimeUtc": "2026-11-08T08:00:09.7454975Z"
+  },
+  "sourceFiles": [
+    {
+      "file": "Assets/Scripts/World/CityDestruction.cs",
+      "sha256": "7435ECE30921E64590C237FA148E3AE222CCE6F0CC7FD75A7F02E87261EA7167",
+      "snapshotMatches": true
+    },
+    {
+      "file": "Assets/Scripts/World/CityDestructible.cs",
+      "sha256": "E00E64A7B8D5E09325A9D50F536CDF289BFCA64386BEB71DFCE21AD96385E200",
+      "snapshotMatches": true
+    },
+    {
+      "file": "Assets/Scripts/Gameplay/CityDrivingProbe.cs",
+      "sha256": "617608CD557CBA130E22EF8D3597010FC73925A329A110C8FBF0B641D3D7018D",
+      "snapshotMatches": true
+    },
+    {
+      "file": "Assets/Scripts/Gameplay/CityDrivingProbe.Impacts.cs",
+      "sha256": "1A45EA7AFA77C2E794875AAB793761BBA10C8C51C3AFE651679C41D1A2E22BD7",
+      "snapshotMatches": true
+    }
+  ],
+  "measuredSpeedsMetresPerSecond": [
+    {
+      "name": "impact-coast-reference",
+      "beforeValue": 11.555997848510742,
+      "afterValue": 11.555997848510742,
+      "passed": true
+    },
+    {
+      "name": "broken-light-prop-preserves-momentum",
+      "beforeValue": -0.18466776609420776,
+      "afterValue": 10.408613204956055,
+      "passed": true
+    },
+    {
+      "name": "resistant-prop-costs-more-momentum",
+      "beforeValue": -0.18466685712337494,
+      "afterValue": 8.954190254211426,
+      "passed": true
+    },
+    {
+      "name": "heavier-car-loses-less-speed",
+      "beforeValue": -0.1899402141571045,
+      "afterValue": 10.086212158203125,
+      "passed": true
+    },
+    {
+      "name": "authored-street-lamp-retains-momentum",
+      "beforeValue": -0.11751348525285721,
+      "afterValue": 8.95491886138916,
+      "passed": true
+    },
+    {
+      "name": "compound-prop-does-not-stop-car",
+      "beforeValue": -0.1409943401813507,
+      "afterValue": 10.42352294921875,
+      "passed": true
+    },
+    {
+      "name": "successive-props-cost-speed-without-freezing",
+      "beforeValue": -0.016149844974279404,
+      "afterValue": 8.068936347961426,
+      "passed": true
+    },
+    {
+      "name": "simultaneous-solid-contact-still-blocks",
+      "beforeValue": null,
+      "afterValue": -0.13124454021453857,
+      "passed": true
+    },
+    {
+      "name": "reverse-impact-retains-reverse-momentum",
+      "beforeValue": 0.20292389392852783,
+      "afterValue": -10.366053581237793,
+      "passed": true
+    }
+  ]
+}

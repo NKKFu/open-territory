@@ -1,0 +1,113 @@
+{
+    "passed": false,
+    "unity": "6000.3.27f1",
+    "graphics": "Direct3D12",
+    "checks": [
+        {
+            "name": "sedã-E-targets-car--1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-boards-visible-driver",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-driver-inherits-vehicle-render-pose",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-wheel-fit-is-idempotent",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-rim-clear-of-face-and-windscreen",
+            "detail": "back=0.3021307 front=0.5378692 top=1.55774",
+            "passed": true
+        },
+        {
+            "name": "sedã-driver-stays-inside-at-speed-and-in-turns",
+            "detail": "seatGap=7.60771E-06 angle=0",
+            "passed": true
+        },
+        {
+            "name": "sedã-both-hands-follow-the-wheel",
+            "detail": "maxGap=2.457562E-07",
+            "passed": true
+        },
+        {
+            "name": "sedã-Esc-freezes-driver-and-vehicle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-exit-restores-parent-capsule-and-scale",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sedã-walks-after-exit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compacto-E-targets-car-1",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "compacto-boards-visible-driver",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "perua-E-targets-car--1",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "perua-boards-visible-driver",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "picape-E-targets-car-1",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "picape-boards-visible-driver",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "furgão-E-targets-car--1",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "furgão-boards-visible-driver",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "sedã-E-targets-car--1",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "sedã-boards-visible-driver",
+            "detail": "",
+            "passed": false
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

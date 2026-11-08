@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "verifiedAtUtc": "2026-11-08T08:10:48.966623+00:00",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\Firearms-20261108-0800\\BaiaDoSol.exe",
+  "assemblySha256": "D0C9B772B9102EA02A47A01BD124F83EF1101F3B07E64ADF8B178BBC8992A462",
+  "totalChecks": 166,
+  "fullPlayerFiles": 142,
+  "graphicsApi": "Direct3D12 (player default)",
+  "runs": [
+    {
+      "verifiedAtUtc": "2026-11-08T08:01:22.9984851Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\Firearms-20261108-0800\\BaiaDoSol.exe",
+      "assemblySha256": "D0C9B772B9102EA02A47A01BD124F83EF1101F3B07E64ADF8B178BBC8992A462",
+      "graphicsApi": "Player default",
+      "exitCode": 0,
+      "passed": true,
+      "checks": 67,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\firearms\\native\\firearm-injury-qa.json",
+      "resolution": "1280x800",
+      "captures": true,
+      "suite": "native"
+    },
+    {
+      "verifiedAtUtc": "2026-11-08T08:02:37.1181095Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\Firearms-20261108-0800\\BaiaDoSol.exe",
+      "assemblySha256": "D0C9B772B9102EA02A47A01BD124F83EF1101F3B07E64ADF8B178BBC8992A462",
+      "graphicsApi": "Player default",
+      "exitCode": 0,
+      "passed": true,
+      "checks": 63,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\firearms\\weapons-native\\weapons-qa.json",
+      "captures": true,
+      "suite": "weapons-native"
+    },
+    {
+      "passed": true,
+      "exitCode": 0,
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\Firearms-20261108-0800\\BaiaDoSol.exe",
+      "assemblySha256": "D0C9B772B9102EA02A47A01BD124F83EF1101F3B07E64ADF8B178BBC8992A462",
+      "verifiedAtUtc": "2026-11-08T08:04:44.4151915Z",
+      "graphicsApi": "Player default",
+      "resolution": "1280x800",
+      "checks": 32,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\firearms\\locomotion-native\\qa.json",
+      "suite": "locomotion-native"
+    },
+    {
+      "verifiedAtUtc": "2026-11-08T08:09:02.6788825Z",
+      "startedAtUtc": "2026-11-08T08:08:46.7465800Z",
+      "passed": true,
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\Firearms-20261108-0800\\BaiaDoSol.exe",
+      "assemblySha256": "D0C9B772B9102EA02A47A01BD124F83EF1101F3B07E64ADF8B178BBC8992A462",
+      "exitCode": 0,
+      "checks": [
+        {
+          "name": "walking-through-real-input-poller",
+          "passed": true,
+          "detail": "distance=3.93505859375"
+        },
+        {
+          "name": "pause-stops-city-clock",
+          "passed": true
+        },
+        {
+          "name": "native-session-has-no-runtime-errors",
+          "passed": true,
+          "detail": "errors=0"
+        },
+        {
+          "name": "normal-exit-with-default-graphics-api",
+          "passed": true,
+          "detail": "exit=0"
+        }
+      ],
+      "suite": "normal-native"
+    }
+  ],
+  "captures": "native and weapons-native use Camera.Render; extra hidden-window ScreenCapture attempts failed, see RESULTADOS.md"
+}

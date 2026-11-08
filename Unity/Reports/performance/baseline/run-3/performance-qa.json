@@ -1,0 +1,755 @@
+{
+    "passed": true,
+    "completed": true,
+    "development": true,
+    "optimizedExpected": false,
+    "allocationCounterAvailable": false,
+    "label": "baseline",
+    "unity": "6000.3.27f1",
+    "layout": "marin-reference-v2",
+    "cpu": "AMD Ryzen 9 7900X 12-Core Processor ",
+    "gpu": "AMD Radeon RX 9070",
+    "graphicsApi": "Direct3D11",
+    "operatingSystem": "Windows 11  (10.0.26300)",
+    "startedUtc": "2026-11-08T03:30:47.0114697Z",
+    "width": 1280,
+    "height": 720,
+    "quality": 1,
+    "msaa": 2,
+    "vSync": 0,
+    "targetFrameRate": -1,
+    "navigationNodes": 11316,
+    "poolBefore": 0,
+    "poolAfter": 72,
+    "phases": [
+        {
+            "name": "city-street",
+            "frames": 1095,
+            "residents": 24,
+            "vehicles": 10,
+            "frameMs": {
+                "available": true,
+                "samples": 1095,
+                "mean": 9.129212328767128,
+                "median": 8.8692,
+                "p95": 12.4814,
+                "p99": 14.5885,
+                "maximum": 17.3083,
+                "total": 9996.487500000005
+            },
+            "mainThreadMs": {
+                "available": true,
+                "samples": 1095,
+                "mean": 9.119540612785395,
+                "median": 8.9217,
+                "p95": 12.3438,
+                "p99": 14.5781,
+                "maximum": 17.1383,
+                "total": 9985.896971000007
+            },
+            "renderThreadMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gpuMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gcBytes": {
+                "available": true,
+                "samples": 1095,
+                "mean": 7804.617351598174,
+                "median": 4284.0,
+                "p95": 56640.0,
+                "p99": 58460.0,
+                "maximum": 110068.0,
+                "total": 8546056.0
+            },
+            "usedMemoryMiB": {
+                "available": true,
+                "samples": 1095,
+                "mean": 2871.5675356843158,
+                "median": 2871.5464973449707,
+                "p95": 2874.379894256592,
+                "p99": 2874.720729827881,
+                "maximum": 2874.756031036377,
+                "total": 3144366.4515743257
+            },
+            "drawCalls": {
+                "available": true,
+                "samples": 1095,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        },
+        {
+            "name": "destruction-stress",
+            "frames": 16,
+            "residents": 24,
+            "vehicles": 10,
+            "frameMs": {
+                "available": true,
+                "samples": 16,
+                "mean": 14.251518749999998,
+                "median": 13.9982,
+                "p95": 17.3762,
+                "p99": 17.3762,
+                "maximum": 17.3762,
+                "total": 228.02429999999996
+            },
+            "mainThreadMs": {
+                "available": true,
+                "samples": 16,
+                "mean": 13.646537499999999,
+                "median": 13.544599999999999,
+                "p95": 19.6891,
+                "p99": 19.6891,
+                "maximum": 19.6891,
+                "total": 218.34459999999999
+            },
+            "renderThreadMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gpuMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gcBytes": {
+                "available": true,
+                "samples": 16,
+                "mean": 6846.875,
+                "median": 6532.0,
+                "p95": 11832.0,
+                "p99": 11832.0,
+                "maximum": 11832.0,
+                "total": 109550.0
+            },
+            "usedMemoryMiB": {
+                "available": true,
+                "samples": 16,
+                "mean": 2900.060072183609,
+                "median": 2901.0170822143555,
+                "p95": 2901.240411758423,
+                "p99": 2901.240411758423,
+                "maximum": 2901.240411758423,
+                "total": 46400.961154937744
+            },
+            "drawCalls": {
+                "available": true,
+                "samples": 16,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        },
+        {
+            "name": "destruction-stress-tail",
+            "frames": 48,
+            "residents": 24,
+            "vehicles": 10,
+            "frameMs": {
+                "available": true,
+                "samples": 48,
+                "mean": 14.607962500000005,
+                "median": 14.7138,
+                "p95": 16.9754,
+                "p99": 18.4494,
+                "maximum": 18.4494,
+                "total": 701.1822000000002
+            },
+            "mainThreadMs": {
+                "available": true,
+                "samples": 48,
+                "mean": 14.220866583333331,
+                "median": 14.8492,
+                "p95": 16.7773,
+                "p99": 18.365199999999999,
+                "maximum": 18.365199999999999,
+                "total": 682.6015959999999
+            },
+            "renderThreadMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gpuMs": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            },
+            "gcBytes": {
+                "available": true,
+                "samples": 48,
+                "mean": 6393.875,
+                "median": 6532.0,
+                "p95": 7960.0,
+                "p99": 11448.0,
+                "maximum": 11448.0,
+                "total": 306906.0
+            },
+            "usedMemoryMiB": {
+                "available": true,
+                "samples": 48,
+                "mean": 2895.3339800834656,
+                "median": 2895.3359451293945,
+                "p95": 2895.4968795776367,
+                "p99": 2895.5169525146484,
+                "maximum": 2895.5169525146484,
+                "total": 138976.03104400636
+            },
+            "drawCalls": {
+                "available": true,
+                "samples": 48,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        }
+    ],
+    "operations": [
+        {
+            "name": "resident-routes",
+            "count": 144,
+            "succeeded": 141,
+            "milliseconds": {
+                "available": true,
+                "samples": 144,
+                "mean": 6.957979861111111,
+                "median": 6.0302,
+                "p95": 16.6215,
+                "p99": 21.866,
+                "maximum": 23.4599,
+                "total": 1001.9491
+            },
+            "allocatedBytes": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        },
+        {
+            "name": "prop-destruction",
+            "count": 64,
+            "succeeded": 64,
+            "milliseconds": {
+                "available": true,
+                "samples": 64,
+                "mean": 4.444357812499999,
+                "median": 4.3658,
+                "p95": 4.9929,
+                "p99": 7.751,
+                "maximum": 7.751,
+                "total": 284.43889999999996
+            },
+            "allocatedBytes": {
+                "available": false,
+                "samples": 0,
+                "mean": 0.0,
+                "median": 0.0,
+                "p95": 0.0,
+                "p99": 0.0,
+                "maximum": 0.0,
+                "total": 0.0
+            }
+        }
+    ],
+    "routes": [
+        {
+            "start": 17,
+            "goal": 503,
+            "count": 305,
+            "found": true,
+            "valid": true,
+            "signature": "B0100EAB"
+        },
+        {
+            "start": 1014,
+            "goal": 3222,
+            "count": 172,
+            "found": true,
+            "valid": true,
+            "signature": "216677D6"
+        },
+        {
+            "start": 2011,
+            "goal": 5941,
+            "count": 212,
+            "found": true,
+            "valid": true,
+            "signature": "A2DF7502"
+        },
+        {
+            "start": 3008,
+            "goal": 8660,
+            "count": 114,
+            "found": true,
+            "valid": true,
+            "signature": "E35D95A2"
+        },
+        {
+            "start": 4005,
+            "goal": 63,
+            "count": 465,
+            "found": true,
+            "valid": true,
+            "signature": "91348800"
+        },
+        {
+            "start": 5002,
+            "goal": 2782,
+            "count": 289,
+            "found": true,
+            "valid": true,
+            "signature": "E9B93349"
+        },
+        {
+            "start": 5999,
+            "goal": 5501,
+            "count": 185,
+            "found": true,
+            "valid": true,
+            "signature": "4B7E31D7"
+        },
+        {
+            "start": 6996,
+            "goal": 8220,
+            "count": 87,
+            "found": true,
+            "valid": true,
+            "signature": "EBB5475F"
+        },
+        {
+            "start": 7993,
+            "goal": 10939,
+            "count": 218,
+            "found": true,
+            "valid": true,
+            "signature": "E4C8EA49"
+        },
+        {
+            "start": 8990,
+            "goal": 2342,
+            "count": 112,
+            "found": true,
+            "valid": true,
+            "signature": "DC7318EA"
+        },
+        {
+            "start": 9987,
+            "goal": 5061,
+            "count": 0,
+            "found": false,
+            "valid": true,
+            "signature": "811C9DC5"
+        },
+        {
+            "start": 10984,
+            "goal": 7780,
+            "count": 83,
+            "found": true,
+            "valid": true,
+            "signature": "F6A4EEAB"
+        },
+        {
+            "start": 665,
+            "goal": 10499,
+            "count": 179,
+            "found": true,
+            "valid": true,
+            "signature": "1AFE2177"
+        },
+        {
+            "start": 1662,
+            "goal": 1902,
+            "count": 33,
+            "found": true,
+            "valid": true,
+            "signature": "091759F1"
+        },
+        {
+            "start": 2659,
+            "goal": 4621,
+            "count": 298,
+            "found": true,
+            "valid": true,
+            "signature": "688D4C10"
+        },
+        {
+            "start": 3656,
+            "goal": 7340,
+            "count": 322,
+            "found": true,
+            "valid": true,
+            "signature": "B43B845D"
+        },
+        {
+            "start": 4653,
+            "goal": 10059,
+            "count": 132,
+            "found": true,
+            "valid": true,
+            "signature": "DDECD5AA"
+        },
+        {
+            "start": 5650,
+            "goal": 1462,
+            "count": 189,
+            "found": true,
+            "valid": true,
+            "signature": "EAA8CFAD"
+        },
+        {
+            "start": 6647,
+            "goal": 4181,
+            "count": 298,
+            "found": true,
+            "valid": true,
+            "signature": "BF70A9B4"
+        },
+        {
+            "start": 7644,
+            "goal": 6900,
+            "count": 60,
+            "found": true,
+            "valid": true,
+            "signature": "A9CBA623"
+        },
+        {
+            "start": 8641,
+            "goal": 9619,
+            "count": 119,
+            "found": true,
+            "valid": true,
+            "signature": "370511D7"
+        },
+        {
+            "start": 9638,
+            "goal": 1022,
+            "count": 152,
+            "found": true,
+            "valid": true,
+            "signature": "8BCA0477"
+        },
+        {
+            "start": 10635,
+            "goal": 3741,
+            "count": 253,
+            "found": true,
+            "valid": true,
+            "signature": "201EA097"
+        },
+        {
+            "start": 316,
+            "goal": 6460,
+            "count": 261,
+            "found": true,
+            "valid": true,
+            "signature": "9CE64A9F"
+        },
+        {
+            "start": 1313,
+            "goal": 9179,
+            "count": 235,
+            "found": true,
+            "valid": true,
+            "signature": "CBD7C654"
+        },
+        {
+            "start": 2310,
+            "goal": 582,
+            "count": 257,
+            "found": true,
+            "valid": true,
+            "signature": "FA4096D6"
+        },
+        {
+            "start": 3307,
+            "goal": 3301,
+            "count": 7,
+            "found": true,
+            "valid": true,
+            "signature": "2CE0E0C3"
+        },
+        {
+            "start": 4304,
+            "goal": 6020,
+            "count": 421,
+            "found": true,
+            "valid": true,
+            "signature": "B7AB5929"
+        },
+        {
+            "start": 5301,
+            "goal": 8739,
+            "count": 61,
+            "found": true,
+            "valid": true,
+            "signature": "324555CD"
+        },
+        {
+            "start": 6298,
+            "goal": 142,
+            "count": 137,
+            "found": true,
+            "valid": true,
+            "signature": "1C24147C"
+        },
+        {
+            "start": 7295,
+            "goal": 2861,
+            "count": 82,
+            "found": true,
+            "valid": true,
+            "signature": "2F3F9D1C"
+        },
+        {
+            "start": 8292,
+            "goal": 5580,
+            "count": 25,
+            "found": true,
+            "valid": true,
+            "signature": "E77CD7F5"
+        },
+        {
+            "start": 9289,
+            "goal": 8299,
+            "count": 89,
+            "found": true,
+            "valid": true,
+            "signature": "614A7718"
+        },
+        {
+            "start": 10286,
+            "goal": 11018,
+            "count": 123,
+            "found": true,
+            "valid": true,
+            "signature": "47226C98"
+        },
+        {
+            "start": 11283,
+            "goal": 2421,
+            "count": 26,
+            "found": true,
+            "valid": true,
+            "signature": "9A0DAED1"
+        },
+        {
+            "start": 964,
+            "goal": 5140,
+            "count": 322,
+            "found": true,
+            "valid": true,
+            "signature": "2E37F92F"
+        },
+        {
+            "start": 1961,
+            "goal": 7859,
+            "count": 96,
+            "found": true,
+            "valid": true,
+            "signature": "E1A7FA59"
+        },
+        {
+            "start": 2958,
+            "goal": 10578,
+            "count": 35,
+            "found": true,
+            "valid": true,
+            "signature": "5F3D7640"
+        },
+        {
+            "start": 3955,
+            "goal": 1981,
+            "count": 185,
+            "found": true,
+            "valid": true,
+            "signature": "1D6EEE36"
+        },
+        {
+            "start": 4952,
+            "goal": 4700,
+            "count": 74,
+            "found": true,
+            "valid": true,
+            "signature": "25C03000"
+        },
+        {
+            "start": 5949,
+            "goal": 7419,
+            "count": 81,
+            "found": true,
+            "valid": true,
+            "signature": "D229E981"
+        },
+        {
+            "start": 6946,
+            "goal": 10138,
+            "count": 201,
+            "found": true,
+            "valid": true,
+            "signature": "32F1788B"
+        },
+        {
+            "start": 7943,
+            "goal": 1541,
+            "count": 72,
+            "found": true,
+            "valid": true,
+            "signature": "3021083C"
+        },
+        {
+            "start": 8940,
+            "goal": 4260,
+            "count": 417,
+            "found": true,
+            "valid": true,
+            "signature": "26292248"
+        },
+        {
+            "start": 9937,
+            "goal": 6979,
+            "count": 84,
+            "found": true,
+            "valid": true,
+            "signature": "A419857B"
+        },
+        {
+            "start": 10934,
+            "goal": 9698,
+            "count": 248,
+            "found": true,
+            "valid": true,
+            "signature": "5A354792"
+        },
+        {
+            "start": 615,
+            "goal": 1101,
+            "count": 121,
+            "found": true,
+            "valid": true,
+            "signature": "6C68946F"
+        },
+        {
+            "start": 1612,
+            "goal": 3820,
+            "count": 195,
+            "found": true,
+            "valid": true,
+            "signature": "7F6CE8D7"
+        }
+    ],
+    "checks": [
+        {
+            "name": "isolated-QA-storage",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "routes-follow-unblocked-real-edges",
+            "detail": "successes=141/144",
+            "passed": true
+        },
+        {
+            "name": "unreachable-goal-clears-old-path",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "valid-search-recovers-after-failure",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "city-population-is-running",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bullet-melee-vehicle-damage-still-break-props",
+            "detail": "broken=64",
+            "passed": true
+        },
+        {
+            "name": "debris-budget-is-bounded",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "debris-keeps-collision-filter-and-source-color",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-debris-and-expiry",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "debris-expires-after-resume",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "only-explicit-performance-probe",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "errors=0",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

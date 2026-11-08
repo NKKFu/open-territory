@@ -3,8 +3,8 @@
 const groups=[
   ['#60767b','#82918a'],
   ['#e8b494','#e8d5ab','#a6c8bd','#dbaba0','#bdcad2','#e6cfb7','#d7b4ac','#ead1a3','#e6aa87','#e5d4c1','#c4d0bd','#c8d6d6','#c6c6d0','#e9b08e','#e8e9de','#e4b899','#e3b38e','#bccac0','#b5cbbd','#ddc295','#c2c8d2','#ecdfc5'],
-  ['#d9d2b9','#e5d9bf','#e3d6ba','#d9d0b8','#ded8c6','#d5d2bd','#e9ddc7'],
-  ['#b47b4f','#bd8758','#b4855e','#9e795a','#b77d5a','#a8795c','#c4936a','#ab805c','#a28060','#bb895e','#a87960','#d8bc91','#bc986e','#d8c5a4','#eee6d1'],
+  ['#d9d2b9','#e5d9bf','#e3d6ba','#d9d0b8','#ded8c6','#d5d2bd','#e9ddc7','#c4bb9e','#b6b3a5'],
+  ['#b47b4f','#bd8758','#b4855e','#9e795a','#b77d5a','#a8795c','#c4936a','#ab805c','#a28060','#bb895e','#a87960','#d8bc91','#bc986e','#d8c5a4','#eee6d1','#af8a61','#ad8962'],
   ['#a9c590','#a2c18b','#a6c58e','#b0ca96','#91ad78','#a2c18b'],
   ['#eed8a4','#e1c49a','#b9b38f','#e9d29d'],
   ['#6abac2','#72bfca','#7dc2c4']
@@ -59,11 +59,13 @@ function createAtlas(T,software){
 
 export function createCitySurfaces({THREE:T,enabled=true,software=false,atlas=null}){
   const texture=enabled?(atlas||createAtlas(T,software)):null,time={value:0};
+  const wetness={value:0},rain={value:0},sky={value:new T.Color('#9ac2cd')},cover={value:null};
   function decorate(material,kind=0,instanced=false){
     if(!enabled||(!kind&&!instanced))return material;
     material.userData.citySurface=instanced?'atlas':kind;
     material.onBeforeCompile=shader=>{
       shader.uniforms.cityAtlas={value:texture};shader.uniforms.cityTime=time;shader.uniforms.cityKind={value:kind};
+      shader.uniforms.cityWetness=wetness;shader.uniforms.cityRain=rain;shader.uniforms.citySky=sky;shader.uniforms.cityCover=cover;
       const vertex=`
         varying vec4 vCityUvTile;
         varying float vCityKind;
@@ -71,37 +73,66 @@ export function createCitySurfaces({THREE:T,enabled=true,software=false,atlas=nu
       `;
       shader.vertexShader=vertex+shader.vertexShader;
       shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',`#include <begin_vertex>
-        vCityKind=${instanced?'citySurface':'cityKind'};
+        float cityCode=${instanced?'citySurface':'cityKind'};
+        vCityKind=mod(cityCode,8.0);
         vCityUvTile=vec4(0.0);
         if(vCityKind>0.5){
           vec4 cityPoint=vec4(transformed,1.0);vec3 cityDirection=normal;
           #ifdef USE_INSTANCING
             cityPoint=instanceMatrix*cityPoint;cityDirection=mat3(instanceMatrix)*cityDirection;
           #endif
-          vec3 cityPosition=(modelMatrix*cityPoint).xyz,cityNormal=abs(mat3(modelMatrix)*cityDirection);
+          vec3 cityPosition=(modelMatrix*cityPoint).xyz,cityFacing=mat3(modelMatrix)*cityDirection,cityNormal=abs(cityFacing);
           vec2 cityUv=cityNormal.y>max(cityNormal.x,cityNormal.z)?cityPosition.xz:(cityNormal.x>cityNormal.z?cityPosition.zy:cityPosition.xy);
           float cityScale=vCityKind<1.5?0.32:vCityKind<2.5?0.55:vCityKind<3.5?0.5:vCityKind<4.5?0.55:vCityKind<5.5?0.18:vCityKind<6.5?0.3:0.11;
           float cityTile=floor(vCityKind+0.1)-1.0;
           vCityUvTile=vec4(cityUv*cityScale,mod(cityTile,4.0),floor(cityTile/4.0));
+          if(cityCode>=8.0&&cityFacing.y>max(cityNormal.x,cityNormal.z))
+            vCityUvTile.w+=2.0+min(.9,length(cityFacing.xz)/cityFacing.y);
         }
       `);
       shader.fragmentShader=`
         uniform sampler2D cityAtlas;
         uniform float cityTime;
+        uniform float cityWetness;
+        uniform float cityRain;
+        uniform vec3 citySky;
+        uniform sampler2D cityCover;
         varying vec4 vCityUvTile;
         varying float vCityKind;
       `+shader.fragmentShader;
       shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
+        float cityFilm=0.0,cityPool=0.0;
         if(vCityKind>0.5){
           vec2 cityUv=vCityUvTile.xy;
           if(vCityKind>6.5)cityUv+=vec2(cityTime*0.025,cityTime*0.012);
-          vec2 cityAtlasUv=(vCityUvTile.zw+mix(vec2(0.016),vec2(0.984),fract(cityUv)))/vec2(4.0,2.0);
+          vec2 tile=vec2(vCityUvTile.z,floor(mod(vCityUvTile.w,2.0)+.0001));
+          vec2 cityAtlasUv=(tile+mix(vec2(0.016),vec2(0.984),fract(cityUv)))/vec2(4.0,2.0);
           diffuseColor.rgb*=texture2D(cityAtlas,cityAtlasUv).rgb*1.1;
+          if(vCityUvTile.w>1.5&&cityWetness>.012){
+            vec2 p=cityUv/(vCityKind<1.5?.32:vCityKind<3.5?.50:.55);
+            cityFilm=cityWetness*texture2D(cityCover,p/512.0+.5).r;
+            float hollows=.48+.22*sin(p.x*.49+sin(p.y*.34))+.18*cos(p.y*.63-p.x*.18)+.10*sin(dot(p,vec2(.73,.37)));
+            cityPool=vCityKind>3.5?0.0:smoothstep(.62,.74,hollows)*smoothstep(.25,.84,cityFilm)*(1.0-smoothstep(.025,.105,fract(vCityUvTile.w)));
+            float angle=1.0-clamp(abs(dot(normalize(vViewPosition),viewMatrix[1].xyz)),0.0,1.0);
+            float ripple=.96+.04*cityRain*sin(10.0*length(fract(p*.63)-.5)-cityTime*7.0+dot(floor(p*.63),vec2(1.9,3.2)));
+            diffuseColor.rgb*=1.0-cityFilm*(vCityKind<1.5?.34:.21);
+            diffuseColor.rgb=mix(diffuseColor.rgb,citySky*(.23+.53*angle*angle)*ripple+diffuseColor.rgb*.22,cityPool*.74);
+          }
         }
       `);
+      shader.fragmentShader=shader.fragmentShader.replace('#include <roughnessmap_fragment>',
+        '#include <roughnessmap_fragment>\nroughnessFactor=mix(roughnessFactor,.16,clamp(cityFilm*.23+cityPool*.70,0.0,1.0));');
     };
-    material.customProgramCacheKey=()=>`city-surfaces-v3:${instanced?'instances':'uniform'}`;
+    material.customProgramCacheKey=()=>`city-surfaces-v4:${instanced?'instances':'uniform'}`;
     return material;
   }
-  return {decorate,update:t=>time.value=t,snapshot:()=>({enabled,atlasSize:texture?[texture.image.width,texture.image.height]:null,styles:7,filter:software?'light':'anisotropic'}),dispose:()=>texture?.dispose()};
+  return {decorate,
+    setWeatherCover(mask){
+      if(!enabled)return;
+      const tex=new T.DataTexture(mask,512,512,T.RedFormat);tex.minFilter=tex.magFilter=T.LinearFilter;
+      tex.needsUpdate=true;cover.value?.dispose();cover.value=tex;
+    },
+    update(t,state,skyColor){time.value=t;wetness.value=state?.wetness||0;rain.value=state?.rain||0;if(skyColor)sky.value.copy(skyColor);},
+    snapshot:()=>({enabled,atlasSize:texture?[texture.image.width,texture.image.height]:null,styles:7,wetness:wetness.value,filter:software?'light':'anisotropic'}),
+    dispose(){texture?.dispose();cover.value?.dispose();}};
 }

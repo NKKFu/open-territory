@@ -1,0 +1,124 @@
+{
+    "passed": true,
+    "routeSamples": 1317,
+    "graphicsApi": "Direct3D12",
+    "unityVersion": "6000.3.27f1",
+    "checks": [
+        {
+            "name": "city-and-waterfront-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing-city-terrain-mesh-present",
+            "detail": "mesh=s-surface:0:0-843 • Tideline interior cut",
+            "passed": true
+        },
+        {
+            "name": "authored-promenade-and-landscaping",
+            "detail": "route=29 bays=6 palms=5 shadeTrees=2 planters=14 flowerBeds=4 lamps=12 rocks=81",
+            "passed": true
+        },
+        {
+            "name": "benches-bound-to-city-actions",
+            "detail": "benches=8",
+            "passed": true
+        },
+        {
+            "name": "shore-rocks-have-collision",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "continuous-dry-wide-promenade",
+            "detail": "samples=1317 unsupported=0 blocked=0 wet=0 terrainAbovePaving=0 ",
+            "passed": true
+        },
+        {
+            "name": "regular-connections-to-existing-sidewalk",
+            "detail": "blocked or unsupported samples=0",
+            "passed": true
+        },
+        {
+            "name": "existing-road-remains-clear",
+            "detail": "blocked samples=0",
+            "passed": true
+        },
+        {
+            "name": "real-controller-walks-entire-promenade",
+            "detail": "position=(632.27, 1.63, 590.53)",
+            "passed": true
+        },
+        {
+            "name": "real-controller-enters-garden-0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "real-controller-enters-garden-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--97000",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--97001",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--97002",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--97003",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--97004",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--97005",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--97006",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "E-sit-and-stand--97007",
+            "detail": "selected=True sat=True",
+            "passed": true
+        },
+        {
+            "name": "lanterns-light-at-night",
+            "detail": "night=1",
+            "passed": true
+        },
+        {
+            "name": "Esc-settings-pause-world",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "resume-exploration",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

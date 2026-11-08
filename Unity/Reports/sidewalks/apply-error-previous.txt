@@ -1,0 +1,3 @@
+System.InvalidOperationException: Patch e manifesto não correspondem.
+  at OpenTerritory.Editor.CityStreetReviewBuilder.ApplyPatch (System.String patchPath, System.String assetPath) [0x00f49] in C:\Users\nelso\open-territory\Unity\OpenTerritory\Assets\Editor\CityStreetReviewBuilder.cs:206 
+  at OpenTerritory.Editor.CitySidewalkBuilder.Tick () [0x000e0] in C:\Users\nelso\open-territory\Unity\OpenTerritory\Assets\Editor\CitySidewalkBuilder.cs:43 

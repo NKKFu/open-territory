@@ -1,0 +1,51 @@
+{
+  "verifiedAtUtc": "2026-11-08T08:03:15.251656+00:00",
+  "passed": true,
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\TrafficAI-20261108-0735\\BaiaDoSol.exe",
+  "assemblySha256": "741DA63113883F38EFF974D8DF0BDE409C5CEDA38E4B4219CBC4F5571F9E2868",
+  "fullBuild": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\traffic-ai\\build-final.txt",
+  "fullBuildProcessExitCode": 0,
+  "snapshot": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\traffic-ai\\snapshot-final.json",
+  "playerManifest": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\traffic-ai\\player-manifest.json",
+  "liveTrafficSourcesMatchTestedSnapshot": {
+    "CityTrafficPolicy.cs": true,
+    "CityVehicles.cs": true,
+    "CityVehicleSafetyProbe.cs": true,
+    "CityVehicleSafetyProbe.Traffic.cs": true
+  },
+  "vehicleSafety": {
+    "checks": 58,
+    "passed": true,
+    "processExitCode": 0,
+    "graphicsApi": "Direct3D 12 [level 12.2]",
+    "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\traffic-ai\\native-final\\vehicle-safety-qa.json"
+  },
+  "ambientCirculation": {
+    "checks": 26,
+    "passed": true,
+    "processExitCodeValidatedByWrapper": true,
+    "graphicsApi": "Direct3D 12 [level 12.2]",
+    "samples": 380,
+    "cars": 11,
+    "movingSamples": 379,
+    "medianSpeedMetersPerSecond": 6.35495400428772,
+    "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\traffic-ai\\living-final\\living-city-qa.json"
+  },
+  "totalChecks": 84,
+  "changes": [
+    "Full-body curved-path obstacle sensing and immediate safety braking",
+    "Driver-specific headway and continuous-clear delay for pedestrians and queues",
+    "Patient wait before passing parked cars, with signalling, rear clearance and full corridor checks on the current street layout"
+  ],
+  "additionalCompilationFix": "Added explicit branch braces in CityWeaponHands.Show to fix CS0136 encountered during compilation.",
+  "earlierRuns": [
+    {
+      "report": "native-initial/vehicle-safety-qa.json",
+      "result": "rejected; corrected restart timing expectation and insufficient passing preparation distance"
+    },
+    {
+      "report": "native-r2/vehicle-safety-qa.json",
+      "result": "21 focused checks passed; scripts-only iteration, superseded by the full final build"
+    }
+  ]
+}

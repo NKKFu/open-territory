@@ -57,75 +57,54 @@ export function createNpcLife({THREE:T, scene, people, player, groundHeight,
     actor.state='idle';actor.elapsed=0;actor.person.lifeActivity=null;actor.person.lifeState='idle';
   }
   function hideProps(actor){
+    actor.person.routinePose=null;
     if(actor.props)for(const prop of Object.values(actor.props))prop.visible=false;
   }
   function propsFor(actor){
     if(actor.props)return actor.props;
-    const g=actor.person.g,hand=g.userData.limbs?.[3]||g;
-    const phone=box(hand,0,-.75,.12,.2,.34,.055,'#344c56');
-    box(phone,0,0,.52,.8,.75,.04,'#a5d4cf');
-    const book=new T.Group();g.add(book);book.position.set(0,1.2,.55);
-    box(book,-.19,0,0,.36,.07,.45,'#e0bd88');box(book,.19,0,0,.36,.07,.45,'#efdfbd');
-    const cup=box(hand,0,-.72,.12,.18,.25,.18,'#eee2bc');
-    const broom=new T.Group();hand.add(broom);broom.position.set(0,-.8,.1);
-    box(broom,0,-.25,0,.06,1.5,.06,'#99764e');box(broom,0,-1,0,.55,.18,.2,'#c7b07a');
-    const cigarette=box(hand,0,-.8,.13,.045,.045,.24,'#e4d9c1');
-    box(cigarette,0,0,.55,.85,.85,.15,'#c47b4f');
-    const smoke=new T.Group();smoke.position.set(.35,1.85,.6);g.add(smoke);
+    const g=actor.person.g,right=g.userData.hands?.[1]||g.userData.limbs?.[3]||g,left=g.userData.hands?.[0]||g.userData.limbs?.[2]||g;
+    const attach=(parent,name)=>{const node=new T.Group();node.name=name;parent.add(node);return node;};
+    const phone=attach(right,'routine-phone');phone.position.set(0,0,.035);
+    box(phone,0,0,0,.19,.31,.045,'#344c56');box(phone,0,.005,-.025,.15,.25,.009,'#a5d4cf');
+    const book=attach(g.userData.chest||g,'routine-book');book.position.set(0,g.userData.chest?.34:1.2,.51);book.rotation.x=-.22;
+    box(book,-.18,0,0,.35,.07,.40,'#e0bd88');box(book,.18,0,0,.35,.07,.40,'#efdfbd');
+    box(book,0,-.035,0,.04,.05,.41,'#8f7152');
+    const cup=attach(right,'routine-cup');box(cup,0,.04,.025,.18,.23,.18,'#eee2bc');box(cup,0,.159,.025,.14,.008,.14,'#755544');
+    const broom=attach(g,'routine-broom');
+    box(broom,0,.89,0,.055,1.60,.055,'#99764e');box(broom,0,.09,0,.55,.18,.2,'#c7b07a');
+    const cigarette=attach(right,'routine-cigarette');box(cigarette,0,0,.09,.045,.045,.22,'#e4d9c1');box(cigarette,0,0,.21,.045,.045,.03,'#c47b4f');
+    const smoke=attach(g,'routine-smoke');smoke.position.set(.20,2.0,.34);
     actor.smokeMaterial=new T.MeshBasicMaterial({color:'#c9cfca',transparent:true,opacity:.22,depthWrite:false});
     for(let i=0;i<3;i++){const puff=new T.Mesh(cube,actor.smokeMaterial);smoke.add(puff);}
     const ball=box(g,0,.22,.8,.42,.42,.42,'#d99b65');
-    actor.props={phone,book,cup,broom,cigarette,smoke,ball};hideProps(actor);return actor.props;
+    const brush=attach(right,'routine-paint-brush');box(brush,0,0,.12,.055,.055,.3,'#99764e');box(brush,0,0,.30,.11,.07,.1,'#e4b759');
+    const palette=attach(left,'routine-paint-palette');box(palette,0,-.04,.06,.34,.055,.40,'#c9aa77');
+    for(const [index,color] of ['#df9874','#4d9eac','#edc86a'].entries())box(palette,(index-1)*.09,-.009,.15,.055,.012,.075,color);
+    actor.props={phone,book,cup,broom,cigarette,smoke,ball,brush,palette};hideProps(actor);return actor.props;
   }
   function pose(actor,dt){
-    const p=actor.person,g=p.g,activity=actor.target.activity,t=now+actor.phase;
-    const limbs=g.userData.limbs||[],props=propsFor(actor);hideProps(actor);
-    limbs.forEach(l=>l.rotation.x=0);
-    const arm=(index,value)=>{if(limbs[index])limbs[index].rotation.x=value;};
-    if(activity==='phone'){
-      props.phone.visible=true;arm(3,-1.05+Math.sin(t*1.8)*.035);arm(2,-.25);
-    }else if(activity==='read'){
-      props.book.visible=true;arm(2,-.8);arm(3,-.8);
-    }else if(activity==='eat'){
-      props.cup.visible=true;arm(3,-.8-Math.max(0,Math.sin(t*1.3))*.65);
-    }else if(activity==='work'){
-      props.broom.visible=true;arm(3,-.35+Math.sin(t*2)*.2);arm(2,-.25);
-      props.broom.rotation.z=Math.sin(t*2)*.18;props.broom.position.y=-.65;
-    }else if(activity==='paint'){
-      if(!props.brush){
-        const hand=g.userData.limbs?.[3]||g,left=g.userData.limbs?.[2]||g;
-        const brush=new T.Group();brush.name='routine-paint-brush';brush.position.set(0,-.78,.1);hand.add(brush);
-        box(brush,0,0,.15,.07,.07,.3,'#99764e');box(brush,0,0,.34,.13,.08,.1,'#e4b759');
-        const palette=box(left,0,-.77,.1,.34,.07,.46,'#c9aa77');palette.name='routine-paint-palette';
-        for(const [index,color] of ['#df9874','#4d9eac','#edc86a'].entries())box(palette,(index-1)*.23,.65,.1,.17,.35,.17,color);
-        props.brush=brush;props.palette=palette;
-      }
+    const p=actor.person,g=p.g,activity=actor.target.activity,t=now+actor.phase,props=propsFor(actor);hideProps(actor);
+    // The routine schedules an intention. One articulated animator applies it
+    // after navigation, so independent systems cannot pull the same arm apart.
+    p.routinePose={kind:activity,time:t,props};
+    if(activity==='phone')props.phone.visible=true;
+    else if(activity==='read')props.book.visible=true;
+    else if(activity==='eat')props.cup.visible=true;
+    else if(activity==='work')props.broom.visible=true;
+    else if(activity==='paint'){
       props.brush.visible=props.palette.visible=true;
       const facing=actor.target.rotation??g.rotation.y;
       g.rotation.y+=Math.atan2(Math.sin(facing-g.rotation.y),Math.cos(facing-g.rotation.y))*(1-Math.exp(-dt*5));
-      arm(3,-1.3+Math.sin(t*2.1)*.16);arm(2,-.85);props.brush.rotation.z=Math.sin(t*1.4)*.15;
     }else if(activity==='smoke'){
-      props.cigarette.visible=true;arm(3,-.9-Math.max(0,Math.sin(t*.85))*.65);
-      props.smoke.visible=true;
-      props.smoke.children.forEach((puff,i)=>{
-        const phase=(t*.4+i/3)%1;puff.position.set(Math.sin(t+i)*.08,phase*.85,phase*.15);
-        puff.scale.setScalar(.055+phase*.1);puff.rotation.y=t*.3+i;
-      });
+      props.cigarette.visible=props.smoke.visible=true;
+      props.smoke.children.forEach((puff,i)=>{const phase=(t*.4+i/3)%1;puff.position.set(Math.sin(t+i)*.08,phase*.85,phase*.15);
+        puff.scale.setScalar(.055+phase*.1);puff.rotation.y=t*.3+i;});
     }else if(activity==='play'){
-      props.ball.visible=true;props.ball.position.set(Math.sin(t*1.3)*.55,.23+Math.abs(Math.sin(t*2))*.5,.9);
-      props.ball.rotation.x=t;props.ball.rotation.z=t*.7;arm(2,-.35);arm(3,.2);
-      if(limbs[1])limbs[1].rotation.x=Math.max(0,Math.sin(t*2))*.3;
+      props.ball.visible=true;props.ball.position.set(Math.sin(t*1.3)*.55,.23+Math.abs(Math.sin(t*2))*.5,.9);props.ball.rotation.x=t;props.ball.rotation.z=t*.7;
     }else if(activity==='chat'){
       const partner=actors.find(other=>other!==actor&&other.state==='activity'&&other.target?.id===actor.target.id);
-      if(partner){
-        const yaw=Math.atan2(partner.person.g.position.x-g.position.x,partner.person.g.position.z-g.position.z);
-        g.rotation.y+=Math.atan2(Math.sin(yaw-g.rotation.y),Math.cos(yaw-g.rotation.y))*(1-Math.exp(-dt*4));
-      }
-      arm(2,-.4+Math.sin(t*2.4)*.25);arm(3,Math.sin(t*1.5)*.12);
-    }else if(activity==='wait'){
-      arm(3,-.25);g.rotation.y+=Math.sin(t*.6)*dt*.12;
-    }else if(activity==='rest'){
-      arm(2,-.15);arm(3,-.15);
+      if(partner){const yaw=Math.atan2(partner.person.g.position.x-g.position.x,partner.person.g.position.z-g.position.z);
+        g.rotation.y+=Math.atan2(Math.sin(yaw-g.rotation.y),Math.cos(yaw-g.rotation.y))*(1-Math.exp(-dt*4));}
     }
   }
   const candidates=people.filter(p=>(!p.indoor||p.lifeResident)&&!p.stationary&&!p.sitting&&!p.role&&!p.debugId&&!p.busState);
@@ -136,12 +115,6 @@ export function createNpcLife({THREE:T, scene, people, player, groundHeight,
       phase:random()*20,lastLocation:null,props:null};
     // Keep every actor's feet at the same origin, varying height and accessories.
     const scale=.86+random()*.25;person.g.scale.multiplyScalar(person.fixedScale??scale);
-    if(index%4===0)box(person.g,0,1.35,-.35,.62,.7,.24,['#6d8270','#b58864','#70899d'][index%3]);
-    if(index%7===0){box(person.g,0,2.36,0,.72,.16,.65,'#b8a27b');box(person.g,0,2.49,-.02,.48,.2,.44,'#b8a27b');}
-    if(index%6===1){box(person.g,0,2.12,-.23,.6,.6,.15,person.g.userData.hair||'#594942');}
-    if(index%5===2)box(person.g,0,1,0,.84,.57,.53,person.g.userData.shirt||'#a595b9');
-    if(index%6===3)for(const side of [-1,1])box(person.g,side*.16,2.05,.285,.22,.12,.045,'#425960');
-    if(index%8===4&&!person.child)box(person.g,0,1.83,.25,.42,.18,.055,person.g.userData.hair||'#594942');
     person.lifeManaged=true;actors.push(actor);managed.add(person);choose(actor);
   });
   return {

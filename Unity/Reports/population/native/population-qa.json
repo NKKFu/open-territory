@@ -1,0 +1,100 @@
+{
+    "passed": true,
+    "residentSpawns": 94,
+    "vehicleSpawns": 27,
+    "residentRetirements": 70,
+    "vehicleRetirements": 15,
+    "checks": [
+        {
+            "name": "starts-without-citywide-population",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "nearby-population-arrives-gradually",
+            "detail": "people=24 cars=10",
+            "passed": true
+        },
+        {
+            "name": "new-vehicles-have-engine-audio-and-actions",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "spawned-resident-retains-world-dialogue",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-pauses-streaming-and-clock",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "distant-pool-is-retired-and-replaced",
+            "detail": "clock=16.91595 retired people=23 cars=9 current cars=10609:distance=1035:impact=-1000.0;12497:distance=134:impact=-1000.0;12684:distance=143:impact=-1000.0;12866:distance=140:impact=-1000.0;13061:distance=145:impact=14.4;13257:distance=151:impact=-1000.0;13444:distance=160:impact=-1000.0;13625:distance=136:impact=-1000.0;13811:distance=143:impact=-1000.0;17740:distance=130:impact=-1000.0",
+            "passed": true
+        },
+        {
+            "name": "witness-and-driver-incident-stay-present",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "returning-repopulates-the-original-neighborhood",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "musician-keeps-authored-performance-and-guitar",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pool-disables-dormant-actors-and-reuses-rig-body-audio",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "seated-resident-and-shopkeeper-spawn-in-their-own-places",
+            "detail": "seated=True staff=True",
+            "passed": true
+        },
+        {
+            "name": "spawns-respect-player-distance",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "spawned-meshes-are-out-of-sight",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "spawned-actors-have-one-physical-body",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "population-stays-bounded",
+            "detail": "maximum people=32 cars=12",
+            "passed": true
+        },
+        {
+            "name": "pool-does-not-duplicate-actions-or-audio",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "only-requested-QA-probe-is-installed",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "errors=0",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

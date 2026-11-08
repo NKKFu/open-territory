@@ -1,0 +1,71 @@
+{
+    "passed": false,
+    "captures": false,
+    "checks": [
+        {
+            "name": "real-car-available",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "real-car-parkour-starts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "real-car-parkour-finishes",
+            "passed": true,
+            "value": 2.1299896240234377
+        },
+        {
+            "name": "real-car-body-clear",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "real-car-hands-support-surface",
+            "passed": false,
+            "value": 0.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "trials": [
+        {
+            "name": "actual-car",
+            "mode": "climb",
+            "entered": true,
+            "complete": false,
+            "bodyClear": true,
+            "peak": 2.27496337890625,
+            "impact": 3.5,
+            "compression": 0.34999537467956545,
+            "knee": 157.98983764648438,
+            "asymmetry": 0.9273064136505127,
+            "armChange": 0.0,
+            "hipStep": 0.051690518856048587,
+            "speed": 2.650007963180542,
+            "finishY": 202.12998962402345,
+            "finishZ": -0.5800180435180664,
+            "minCameraDistance": 100.0,
+            "maxCameraLateralStep": 0.0,
+            "maxCameraTurn": 0.0,
+            "minHeadY": 1.0,
+            "maxHeadY": 0.0,
+            "cameraClear": true,
+            "handContactTime": [
+                0.0,
+                0.0
+            ],
+            "maxHandError": [
+                0.0,
+                0.0
+            ]
+        }
+    ],
+    "errors": [],
+    "cameraFrames": []
+}

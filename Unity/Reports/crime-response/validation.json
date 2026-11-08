@@ -1,0 +1,57 @@
+{
+  "verifiedAtUtc": "2026-11-08T07:00:06.2996038Z",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrimeResponse\\BaiaDoSol.exe",
+  "assemblySha256": "D427991286B9AF9EE06CAD35DC244F93FE1450A9CE058D37DCF5B905BC24D60A",
+  "passed": true,
+  "checks": 202.0,
+  "sceneSha256": "9EAF01349408D016BE954E969428CB223BF21ADEE78CA923B5FDC70F60ED7368",
+  "suites": [
+    {
+      "verifiedAtUtc": "2026-11-08T06:56:10.5567404Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrimeResponse\\BaiaDoSol.exe",
+      "assemblySha256": "D427991286B9AF9EE06CAD35DC244F93FE1450A9CE058D37DCF5B905BC24D60A",
+      "graphicsApi": "default",
+      "noGraphics": false,
+      "exitCode": 0,
+      "fresh": true,
+      "assemblyUnchanged": true,
+      "completed": true,
+      "passed": true,
+      "checks": 54,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crime-response\\native\\crime-response-qa.json"
+    },
+    {
+      "verifiedAtUtc": "2026-11-08T06:56:51.1210501Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrimeResponse\\BaiaDoSol.exe",
+      "assemblySha256": "D427991286B9AF9EE06CAD35DC244F93FE1450A9CE058D37DCF5B905BC24D60A",
+      "exitCode": 0,
+      "passed": true,
+      "checks": 52,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crime-response\\regressions\\melee-final\\melee-qa.json",
+      "captures": true
+    },
+    {
+      "verifiedAtUtc": "2026-11-08T06:57:28.5578001Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrimeResponse\\BaiaDoSol.exe",
+      "assemblySha256": "D427991286B9AF9EE06CAD35DC244F93FE1450A9CE058D37DCF5B905BC24D60A",
+      "assemblyUnchanged": true,
+      "exitCode": 0,
+      "passed": true,
+      "checks": 33,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crime-response\\regressions\\reactions\\native\\reactions-qa.json"
+    },
+    {
+      "verifiedAtUtc": "2026-11-08T06:57:54.5090287Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrimeResponse\\BaiaDoSol.exe",
+      "assemblySha256": "D427991286B9AF9EE06CAD35DC244F93FE1450A9CE058D37DCF5B905BC24D60A",
+      "graphicsApi": "Player default",
+      "exitCode": 0,
+      "passed": true,
+      "checks": 63,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crime-response\\regressions\\weapons\\weapons-qa.json",
+      "captures": true
+    }
+  ],
+  "normalStartup": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crime-response\\normal-startup.json",
+  "playerManifest": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crime-response\\player-manifest.json"
+}

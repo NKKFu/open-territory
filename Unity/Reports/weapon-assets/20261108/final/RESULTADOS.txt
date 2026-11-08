@@ -1,0 +1,33 @@
+ASSETS GRATUITOS DE ARMAS — RESULTADO FINAL
+
+P-9 Farol: Quaternius, Pistol_4 (1320 triângulos originais + 24 de inserto de recarga).
+C-12 Orla: Quaternius, AssaultRifle2_2 (1796 triângulos originais).
+Pulsor Maré: Kenney, Blaster Kit 2.1, blaster-b (736 originais + 24 de inserto).
+Licença de todos os modelos: CC0 1.0. Originais e licenças preservados em AssetLibrary/WeaponModels.
+
+Entrega completa: Unity/Deliveries/WeaponAssets-20261108-Verified/BaiaDoSol.exe
+Lançamento: Unity/Jogar-Armas-Assets.ps1
+137 verificações aprovadas: 70 de armas e efeitos; 67 de empunhadura e ferimentos.
+API padrão Direct3D 12, 1280x800; dois processos com código de saída 0.
+143 arquivos da entrega conferidos por SHA-256 antes e depois da aceitação.
+Assembly-CSharp.dll: 3907445BB3FCC521F885C29C76436BB8120A562EC1D907AD60744F277FF832BE
+
+Cobertura: modelos e licença local; preservação de triângulos; seleção; mira;
+encaixes das mãos, deslocamento lateral e elevação da mira; tiro, origem do
+projétil, alvos e cobertura; recarga e peças móveis; cadência e holster;
+partículas, superfícies, áudio e pausa; NPCs, polícia e ferimentos.
+Os probes são opt-in, usam armazenamento de QA e não rodam numa partida normal.
+Não foram feitas mudanças nos controles, na qualidade ou nas preferências normais.
+
+Histórico preservado, fora da aceitação final:
+- weapons/: uma captura tardia do pulsor ocorreu após a expiração do efeito.
+- grips/: a primeira inicialização foi abortada pelo Unity com falta de memória.
+- weapons-repeat/ e grips-repeat/: a versão anterior passou em 69+67 verificações.
+- final/weapons/: a nova captura foi antecipada demais e precedeu a simulação.
+- final/weapons-verified/: rodada descartada; o player ainda estava sendo recompilado.
+- final/weapons-acceptance/ e grips-acceptance/: aceitação da cópia final imutável.
+
+O probe final observa uma partícula entre dois quadros reais, confere avanço ou
+expiração pelo relógio do jogo e captura depois da simulação. Nenhuma regra de
+vida útil ou de movimento do jogo foi alterada para satisfazer o teste.
+A cena foi preservada e não foi necessário entrar em Play Mode no Editor.

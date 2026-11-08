@@ -1,0 +1,118 @@
+{
+  "verifiedAtUtc": "2026-11-08T05:47:33.240614+00:00",
+  "passed": true,
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\WindowsRelease\\BaiaDoSol.exe",
+  "assemblySha256": "7E881CD5BF380A144F8C30D4BDB27B34E365FBF5756273DAB708A683EA998E0F",
+  "sourceHash": "b71652004bacbad2ab87bc184b5823e2fc6c8444672d66397ff308b94420ece9",
+  "unityVersion": "6000.3.27f1",
+  "graphicsApi": "Direct3D12",
+  "build": {
+    "result": "Succeeded",
+    "output": "C:/Users/nelso/open-territory/Unity/OpenTerritory/Builds/WindowsRelease/BaiaDoSol.exe",
+    "observedAtUtc": "2026-11-08T05:40:54.2414209Z",
+    "durationSeconds": 40.0021372,
+    "errors": 0,
+    "warnings": 3,
+    "size": 1554326561
+  },
+  "changes": {
+    "signalJunctions": 6,
+    "incomingSignals": 21,
+    "crosswalks": 114,
+    "relocatedCrosswalks": 9,
+    "removedRedundantCrosswalks": 2,
+    "exteriorBenches": 144,
+    "relocatedBenches": 40,
+    "roadJoins": [
+      {
+        "road": "bay-west-descent",
+        "target": "101-south",
+        "length": 17.992
+      },
+      {
+        "road": "east-ramp-south",
+        "target": "waterfront",
+        "length": 13.755
+      }
+    ]
+  },
+  "validation": {
+    "streetReview": {
+      "verifiedAtUtc": "2026-11-08T05:43:18.7119758Z",
+      "startedAtUtc": "2026-11-08T05:42:22.3197398Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\WindowsRelease\\BaiaDoSol.exe",
+      "assemblySha256": "7E881CD5BF380A144F8C30D4BDB27B34E365FBF5756273DAB708A683EA998E0F",
+      "sourceHash": "b71652004bacbad2ab87bc184b5823e2fc6c8444672d66397ff308b94420ece9",
+      "requestedGraphicsApi": "default",
+      "graphicsApi": "Direct3D12",
+      "exitCode": 0,
+      "passed": true,
+      "checks": 501,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\map-revision\\native\\street-review-qa.json"
+    },
+    "nativeMap": {
+      "verifiedAtUtc": "2026-11-08T05:40:56.3147990Z",
+      "passed": true,
+      "checks": 18,
+      "assemblySha256": "7E881CD5BF380A144F8C30D4BDB27B34E365FBF5756273DAB708A683EA998E0F",
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\map-audit\\native\\map-qa.json"
+    },
+    "normalPlayer": {
+      "verifiedAtUtc": "2026-11-08T05:41:19.9238972Z",
+      "startedAtUtc": "2026-11-08T05:41:03.0334584Z",
+      "passed": true,
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\WindowsRelease\\BaiaDoSol.exe",
+      "assemblySha256": "7E881CD5BF380A144F8C30D4BDB27B34E365FBF5756273DAB708A683EA998E0F",
+      "exitCode": 0,
+      "checks": [
+        {
+          "name": "walking-through-real-input-poller",
+          "passed": true,
+          "detail": "distance=3.9144897460937"
+        },
+        {
+          "name": "pause-stops-city-clock",
+          "passed": true
+        },
+        {
+          "name": "native-session-has-no-runtime-errors",
+          "passed": true,
+          "detail": "errors=0"
+        },
+        {
+          "name": "normal-exit-with-default-graphics-api",
+          "passed": true,
+          "detail": "exit=0"
+        }
+      ]
+    },
+    "geometricRegressions": {
+      "command": "python Unity/Tools/test-street-review.py",
+      "passed": true,
+      "checks": 6
+    },
+    "nativeChecks": 523
+  },
+  "preserved": {
+    "places": true,
+    "vehicles": true,
+    "stops": true,
+    "boats": true,
+    "docks": true,
+    "ground": true,
+    "natureTrees": true,
+    "natureGroves": true,
+    "rocks": true,
+    "services": true,
+    "nav": true
+  },
+  "restoredLightingFixtures": 60,
+  "editorGeometry": {
+    "sourceHash": "b71652004bacbad2ab87bc184b5823e2fc6c8444672d66397ff308b94420ece9",
+    "crossings": 114,
+    "exteriorBenches": 144,
+    "lightingMismatches": 0,
+    "failures": [],
+    "sceneSaved": true
+  }
+}

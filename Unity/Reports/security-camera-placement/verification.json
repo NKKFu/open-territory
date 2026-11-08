@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "verifiedAtUtc": "2026-11-08T07:54:29.2856828Z",
+  "unity": "6000.3.27f1",
+  "sourceHash": "97b910e2bee3dfd4794898f79a02c6dc71d984bd7bb23c00e478167dd81eea9f",
+  "cameraChecks": 24,
+  "cameraReport": "isolated/camera-qa.json",
+  "nativeVerification": "native-verification.json",
+  "buildOptions": "None, full build, StandaloneWindows64",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\SecurityCameraMounts-Isolated-20261108\\BaiaDoSol.exe",
+  "assemblySha256": "20DDA40400AB67BCE0B02FE9F47CC8382D203293F088CE86D0752FF89C645366",
+  "nativeExitCode": 0,
+  "renderingCaptures": 8,
+  "sourceSnapshot": [
+    {
+      "path": "C:\\Users\\nelso\\AppData\\Local\\Temp\\open-territory-camera-mounts-20261108-0736\\Assets\\Scenes\\BaiaDoSol.unity",
+      "sha256": "7DB32DB20F468FE717CB790C24C5BABE47696FBFD58598349E9638AEB8F3E4C3"
+    },
+    {
+      "path": "C:\\Users\\nelso\\AppData\\Local\\Temp\\open-territory-camera-mounts-20261108-0736\\Assets\\Imported\\visual.json",
+      "sha256": "DDBB51F1E3055DE547884282F586B0A9862B4A6C14D288CBACB14E760F427B10"
+    },
+    {
+      "path": "C:\\Users\\nelso\\AppData\\Local\\Temp\\open-territory-camera-mounts-20261108-0736\\Assets\\Resources\\world.json",
+      "sha256": "01975FBB647F7C3D7BABA077E7EDA2CB7BA4C591A883750B8D05EFF6F1C3BED0"
+    }
+  ],
+  "editorOnlyAcceptanceRunner": "CameraMountsBatch.cs",
+  "changedFixtureNodes": [
+    3354,
+    3355,
+    3356,
+    3357,
+    3358,
+    3359
+  ],
+  "addedColliderIds": [
+    23658,
+    23659
+  ]
+}

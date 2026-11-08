@@ -1,0 +1,109 @@
+{
+    "passed": false,
+    "unityVersion": "6000.3.27f1",
+    "graphicsApi": "Direct3D11",
+    "samples": 1923,
+    "checks": [
+        {
+            "name": "native-city-and-park-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "isolated-review-storage",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "five-selected-residences-retired",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "all-lot-solids-retired",
+            "detail": "solids=122",
+            "passed": true
+        },
+        {
+            "name": "neighboring-homes-and-waterfront-preserved",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "playground-pergola-gym-and-gardens-authored",
+            "detail": "trees=6 beds=5 seats=4",
+            "passed": true
+        },
+        {
+            "name": "benches-use-normal-city-actions",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pedestrian-graph-connects-to-five-existing-sidewalk-nodes",
+            "detail": "park nodes=50",
+            "passed": true
+        },
+        {
+            "name": "all-paths-supported-and-clear",
+            "detail": "samples=1923 unsupported=0 blocked=22 buried=4 Sidewalk connection 1:Colisão-16982,Sidewalk connection 1:Colisão-16983,Sidewalk connection 2:Colisão-16966,Sidewalk connection 2:Colisão-16967,Sidewalk connection 3:Colisão-16942,Sidewalk connection 3:Colisão-16943,Sidewalk connection 4:Colisão-16924,Sidewalk connection 4:Colisão-16925,Sidewalk connection 5:Colisão-16916,Sidewalk connection 5:Colisão-16917,Lawn connection 89:Park litter bin",
+            "passed": false
+        },
+        {
+            "name": "controller-walks-Pedestrian path",
+            "detail": "position=(577.21, 8.17, 615.70)",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Cycle lane",
+            "detail": "position=(575.15, 8.28, 624.64)",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Sidewalk connection 1",
+            "detail": "position=(490.37, 8.80, 598.20)",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Sidewalk connection 2",
+            "detail": "position=(509.48, 8.97, 605.41)",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Sidewalk connection 3",
+            "detail": "position=(527.84, 9.12, 613.52)",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Sidewalk connection 4",
+            "detail": "position=(547.82, 9.27, 621.31)",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Sidewalk connection 5",
+            "detail": "position=(568.54, 8.59, 626.66)",
+            "passed": true
+        },
+        {
+            "name": "controller-walks-Lawn connection 8",
+            "detail": "position=(499.56, 2.90, 572.59)",
+            "passed": false
+        },
+        {
+            "name": "controller-walks-Lawn connection 89",
+            "detail": "position=(573.56, 3.66, 599.73)",
+            "passed": false
+        },
+        {
+            "name": "resident-walks-park-route",
+            "detail": "remaining=0.25",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

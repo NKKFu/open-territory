@@ -1,0 +1,182 @@
+{
+    "suite": "native-driver-incident",
+    "unity": "6000.3.27f1",
+    "startedUtc": "2026-11-07T15:19:35.1145458Z",
+    "passed": true,
+    "seconds": 23.50209617614746,
+    "impactSpeed": 8.487381935119629,
+    "distanceWalked": 12.384356498718262,
+    "checks": [
+        {
+            "name": "normal-E-selects-player-car",
+            "detail": "vehicle-9668; player=(-175.90, 0.10, -108.28); car=(-174.00, 0.17, -108.00); busy=False; speed=0.00",
+            "passed": true
+        },
+        {
+            "name": "normal-E-boards-player-car",
+            "detail": "Player entered through the registered vehicle action.",
+            "passed": true
+        },
+        {
+            "name": "real-PhysX-impact-starts-incident",
+            "detail": "relative speed=8.49 m/s",
+            "passed": true
+        },
+        {
+            "name": "driver-stops-and-warns",
+            "detail": "Vehicle held physically with hazards before walking.",
+            "passed": true
+        },
+        {
+            "name": "blocked-left-exits-clear-right",
+            "detail": "side=1; reused head=True; clear walking capsule=True",
+            "passed": true
+        },
+        {
+            "name": "inspection-and-return-stages",
+            "detail": "waiting → opening → exiting → walking → inspecting → returning → reopening → entering → closing",
+            "passed": true
+        },
+        {
+            "name": "temporary-driver-cleaned-up",
+            "detail": "residents=113; fleet=38; completed=1",
+            "passed": true
+        },
+        {
+            "name": "driver-reenters-and-route-resumes",
+            "detail": "head restored=True; auto=True; held=False; distance=6.50",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "0 errors",
+            "passed": true
+        }
+    ],
+    "stages": [
+        "waiting",
+        "opening",
+        "exiting",
+        "walking",
+        "inspecting",
+        "returning",
+        "reopening",
+        "entering",
+        "closing"
+    ],
+    "errors": [],
+    "samples": [
+        {
+            "elapsed": 0.011111259460449219,
+            "speed": 3.9090147018432619,
+            "angular": 0.05713558942079544,
+            "state": "waiting",
+            "wait": "settling-delay",
+            "position": {
+                "x": -174.00001525878907,
+                "y": 0.08540309965610504,
+                "z": -93.99545288085938
+            },
+            "hold": true,
+            "hazards": true
+        },
+        {
+            "elapsed": 2.012575149536133,
+            "speed": 0.0013786260969936848,
+            "angular": 0.000014365836250362918,
+            "state": "exiting",
+            "wait": "clear-exit",
+            "position": {
+                "x": -174.0001220703125,
+                "y": 0.03679739683866501,
+                "z": -93.18749237060547
+            },
+            "hold": true,
+            "hazards": true
+        },
+        {
+            "elapsed": 4.0219221115112309,
+            "speed": 0.0013802057364955545,
+            "angular": 1.2611879185442377e-7,
+            "state": "walking",
+            "wait": "clear-exit",
+            "position": {
+                "x": -174.0001220703125,
+                "y": 0.036714259535074237,
+                "z": -93.1905517578125
+            },
+            "hold": true,
+            "hazards": true
+        },
+        {
+            "elapsed": 6.022771835327148,
+            "speed": 0.0013802095782011748,
+            "angular": 1.0479345746716717e-7,
+            "state": "inspecting",
+            "wait": "clear-exit",
+            "position": {
+                "x": -174.0001220703125,
+                "y": 0.03664105385541916,
+                "z": -93.193603515625
+            },
+            "hold": true,
+            "hazards": true
+        },
+        {
+            "elapsed": 8.024932861328125,
+            "speed": 0.0013802088797092438,
+            "angular": 7.646335831168472e-8,
+            "state": "inspecting",
+            "wait": "clear-exit",
+            "position": {
+                "x": -174.0001220703125,
+                "y": 0.03656771406531334,
+                "z": -93.19666290283203
+            },
+            "hold": true,
+            "hazards": true
+        },
+        {
+            "elapsed": 10.025931358337403,
+            "speed": 0.0013802049215883017,
+            "angular": 1.3103500862143847e-7,
+            "state": "returning",
+            "wait": "clear-exit",
+            "position": {
+                "x": -174.0001220703125,
+                "y": 0.03649447113275528,
+                "z": -93.19972229003906
+            },
+            "hold": true,
+            "hazards": true
+        },
+        {
+            "elapsed": 12.028105735778809,
+            "speed": 0.0013802088797092438,
+            "angular": 1.4176077911542962e-7,
+            "state": "entering",
+            "wait": "clear-exit",
+            "position": {
+                "x": -174.0001220703125,
+                "y": 0.03642107918858528,
+                "z": -93.20277404785156
+            },
+            "hold": true,
+            "hazards": true
+        },
+        {
+            "elapsed": 14.031868934631348,
+            "speed": 0.001380205969326198,
+            "angular": 1.0695209340383372e-7,
+            "state": "closing",
+            "wait": "clear-exit",
+            "position": {
+                "x": -174.0001220703125,
+                "y": 0.036347754299640658,
+                "z": -93.20582580566406
+            },
+            "hold": true,
+            "hazards": true
+        }
+    ]
+}

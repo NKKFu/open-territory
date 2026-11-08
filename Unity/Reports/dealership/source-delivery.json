@@ -1,0 +1,97 @@
+{
+  "recordedAtUtc": "2026-11-08T09:59:27.2089241Z",
+  "build": {
+    "result": "Succeeded",
+    "output": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\CarDealership-20261108\\BaiaDoSol.exe",
+    "buildType": "Full",
+    "startedUtc": "2026-11-08T09:54:44.5153999Z",
+    "endedUtc": "2026-11-08T09:55:32.4924606Z",
+    "errors": 0,
+    "warnings": 0,
+    "bytes": 1599068950,
+    "options": "StrictMode, DetailedBuildReport",
+    "sceneSha256": "9117DB4B6AE493FBDC09EFA6275CC5C3718345C5380B173182AD065F13D846B5",
+    "editorRuntimeAssemblySha256": "1C144C9CD14F9CECCA614C3EC544ED1427A35FC92E92FA8B74C5DEF9628B825F",
+    "assemblySha256": "A9641C35BFB694E9C8ECDCAD5096FA0DC9508DF05F1529E5E46D6806380F11F7"
+  },
+  "verification": {
+    "verifiedAtUtc": "2026-11-08T09:56:33.6090177Z",
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\CarDealership-20261108\\BaiaDoSol.exe",
+    "assemblySha256": "A9641C35BFB694E9C8ECDCAD5096FA0DC9508DF05F1529E5E46D6806380F11F7",
+    "assemblyChangedDuringRun": false,
+    "passed": true,
+    "exitCode": 0,
+    "checks": 36,
+    "routeSamples": 876,
+    "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\dealership\\delivery\\dealership-qa.json",
+    "graphics": "Direct3D 12",
+    "requestedGraphicsApi": "default",
+    "arguments": [
+      "-batchmode",
+      "-screen-fullscreen",
+      "0",
+      "-screen-width",
+      "1280",
+      "-screen-height",
+      "800",
+      "--city-dealership-qa",
+      "--city-report-dir",
+      "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\dealership\\delivery\"",
+      "-logFile",
+      "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\dealership\\delivery\\player.log\""
+    ]
+  },
+  "sources": [
+    {
+      "path": "Assets/Editor/CityCarDealershipBuilder.cs",
+      "sha256": "7D7F85A3C3D4184E2F0BA2756247A06C253709011B0D1CD8B0EFEDCD4E9F6D55",
+      "modifiedUtc": "2026-11-08T09:26:50.9564939Z"
+    },
+    {
+      "path": "Assets/Editor/CityCarDealershipBuildJob.cs",
+      "sha256": "B748C75B2F8FEA540DC8C544E5EF7A7E4CF3DF02EC6F7ED2075FCF8F3C97E9CB",
+      "modifiedUtc": "2026-11-08T09:50:34.7513210Z"
+    },
+    {
+      "path": "Assets/Scripts/World/CityCarDealership.cs",
+      "sha256": "AB8C0F904EC6085FB0E5503D9092A9A7F5FEAF2D8B0831FD32224DA119AB92CC",
+      "modifiedUtc": "2026-11-08T09:26:50.9564939Z"
+    },
+    {
+      "path": "Assets/Scripts/World/CityCarDealershipProbe.cs",
+      "sha256": "4DFFE6FC6E77A92D8C8310D3C8D8500D9993C01A3D3592020287E85344717E2C",
+      "modifiedUtc": "2026-11-08T09:41:33.3292917Z"
+    },
+    {
+      "path": "Assets/Scripts/Core/CityContext.cs",
+      "sha256": "5DD744EA2A50C521AC6DD93825CF9FEC14AFD4DF4A2A2B9662276F09B3C49C1D",
+      "modifiedUtc": "2026-11-08T09:15:09.8642197Z"
+    },
+    {
+      "path": "Assets/Scripts/UI/CityMapUI.cs",
+      "sha256": "442B06FE40E98F004E2B0D3AF9254F9F3D4954DDB13E3BC910448ED08FF373F7",
+      "modifiedUtc": "2026-11-08T09:17:02.0118989Z"
+    },
+    {
+      "path": "Assets/Imported/CarDealership.asset",
+      "sha256": "9AE98C5B2B361F0A5F7DB5A0B5F8B5EB93B91AADAEF5563A4F4671D6AA1E0030",
+      "modifiedUtc": "2026-11-08T09:19:15.9634977Z"
+    },
+    {
+      "path": "Assets/Resources/Weapons/pulse.prefab",
+      "sha256": "FC3635DC993E6755E819FB02E63B8173B152388C4155281C4528D9635FEEEAAA",
+      "modifiedUtc": "2026-11-08T09:49:19.0804168Z"
+    },
+    {
+      "path": "Assets/Resources/Weapons/sidearm.prefab",
+      "sha256": "B64D82CFFA72B8A99551EA65F924867B29DDF7D420EBE89C960847EBBC0B600B",
+      "modifiedUtc": "2026-11-08T09:49:18.4937960Z"
+    },
+    {
+      "path": "Assets/Resources/Weapons/carbine.prefab",
+      "sha256": "F24D01FC611003F950F41E96F47015E492A1294DD7CDBDB761CD2922EE596D86",
+      "modifiedUtc": "2026-11-08T09:49:18.8223639Z"
+    }
+  ],
+  "currentSceneSha256": "9117DB4B6AE493FBDC09EFA6275CC5C3718345C5380B173182AD065F13D846B5"
+}

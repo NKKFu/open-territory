@@ -1,0 +1,172 @@
+{
+    "passed": true,
+    "completed": true,
+    "checks": [
+        {
+            "name": "Q-selects-real-resident",
+            "detail": "resident-4485",
+            "passed": true
+        },
+        {
+            "name": "Q-starts-world-conversation",
+            "detail": "Nina · Tem um posto de gasolina na avenida leste e um hospital ao lado da praça.",
+            "passed": true
+        },
+        {
+            "name": "conversation-faces-player-and-gestures",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "conversation-stops-only-speaker",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "walking-away-ends-conversation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "repeat-conversation-remembers-greeting",
+            "detail": "Nina · Oi de novo! Tem um posto de gasolina na avenida leste e um hospital ao lado da praça.",
+            "passed": true
+        },
+        {
+            "name": "drawing-weapon-interrupts-conversation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "armed-player-cannot-start-friendly-chat",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible-weapon-does-not-invent-crime",
+            "detail": "livre",
+            "passed": true
+        },
+        {
+            "name": "X-holsters-and-reassures-NPC",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "aim-ray-identifies-real-NPC",
+            "detail": "Nina",
+            "passed": true
+        },
+        {
+            "name": "aimed-at-NPC-raises-both-hands",
+            "detail": "Surrender",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-reaction-movement-and-pose",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "other-personality-flees-after-startle",
+            "detail": "Flee moved=2.698279",
+            "passed": true
+        },
+        {
+            "name": "fleeing-keeps-physical-ground-support",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "walls-block-weapon-perception-and-aim",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "unseen-quiet-crime-has-no-omniscient-witness",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "nearby-hidden-shot-is-heard-without-identification",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "weapon-perception-respects-distance",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual-fire-input-produces-shot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "crime-selects-only-one-phone-witness",
+            "detail": "chamada",
+            "passed": true
+        },
+        {
+            "name": "caller-keeps-phone-to-ear",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "gunshot-reacts-across-nearby-crowd",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "witness-dialogue-survives-ammo-message",
+            "detail": "Nina · Alô, polícia? Preciso de uma viatura!",
+            "passed": true
+        },
+        {
+            "name": "visible-crime-leaves-short-term-memory",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "later-chat-reflects-witnessed-crime",
+            "detail": "Lia · Ainda estou assustado com o que você fez. Preciso de um tempo.",
+            "passed": true
+        },
+        {
+            "name": "theft-prompts-protest-and-report",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "property-damage-provokes-protest",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hit-and-run-causes-alarm",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "stationary-worker-cowers-without-sliding",
+            "detail": "Surrender",
+            "passed": true
+        },
+        {
+            "name": "officer-warns-about-drawn-weapon",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "threatening-officer-triggers-police-response",
+            "detail": "perseguicao",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

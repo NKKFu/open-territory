@@ -1,0 +1,669 @@
+{
+    "passed": true,
+    "captures": false,
+    "checks": [
+        {
+            "name": "jump-idle-anticipates",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "jump-idle-takes-off-and-lands",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "jump-idle-height",
+            "passed": true,
+            "value": 0.577056884765625
+        },
+        {
+            "name": "jump-idle-knees-flex",
+            "passed": true,
+            "value": 95.9119873046875
+        },
+        {
+            "name": "jump-idle-asymmetric-flight",
+            "passed": true,
+            "value": 0.26000022888183596
+        },
+        {
+            "name": "jump-idle-arms-adapt-in-air",
+            "passed": true,
+            "value": 15.434127807617188
+        },
+        {
+            "name": "jump-idle-records-real-impact",
+            "passed": true,
+            "value": 5.0035786628723148
+        },
+        {
+            "name": "jump-idle-absorbs-impact",
+            "passed": true,
+            "value": 0.9033176898956299
+        },
+        {
+            "name": "jump-idle-returns-to-control",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "jump-walk-anticipates",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "jump-walk-takes-off-and-lands",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "jump-walk-height",
+            "passed": true,
+            "value": 0.6164093017578125
+        },
+        {
+            "name": "jump-walk-knees-flex",
+            "passed": true,
+            "value": 102.02595520019531
+        },
+        {
+            "name": "jump-walk-asymmetric-flight",
+            "passed": true,
+            "value": 1.0793991088867188
+        },
+        {
+            "name": "jump-walk-arms-adapt-in-air",
+            "passed": true,
+            "value": 22.79064178466797
+        },
+        {
+            "name": "jump-walk-records-real-impact",
+            "passed": true,
+            "value": 5.160245418548584
+        },
+        {
+            "name": "jump-walk-absorbs-impact",
+            "passed": true,
+            "value": 0.8484660387039185
+        },
+        {
+            "name": "jump-walk-returns-to-control",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "jump-sprint-anticipates",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "jump-sprint-takes-off-and-lands",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "jump-sprint-height",
+            "passed": true,
+            "value": 0.71368408203125
+        },
+        {
+            "name": "jump-sprint-knees-flex",
+            "passed": true,
+            "value": 151.51512145996095
+        },
+        {
+            "name": "jump-sprint-asymmetric-flight",
+            "passed": true,
+            "value": 1.264514446258545
+        },
+        {
+            "name": "jump-sprint-arms-adapt-in-air",
+            "passed": true,
+            "value": 22.486255645751954
+        },
+        {
+            "name": "jump-sprint-records-real-impact",
+            "passed": true,
+            "value": 5.3930134773254398
+        },
+        {
+            "name": "jump-sprint-absorbs-impact",
+            "passed": true,
+            "value": 0.7743377685546875
+        },
+        {
+            "name": "jump-sprint-returns-to-control",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "drop-detects-higher-impact",
+            "passed": true,
+            "value": 9.399413108825684
+        },
+        {
+            "name": "drop-stronger-compression",
+            "passed": true,
+            "value": 0.9399288892745972
+        },
+        {
+            "name": "drop-recovers-standing",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "jump-buffer-survives-landing",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-low-starts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-low-chooses-action",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-low-finishes-on-supported-side",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-low-body-clear-throughout",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-low-full-capsule-restored",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-walk-starts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-walk-chooses-action",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-walk-finishes-on-supported-side",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-walk-body-clear-throughout",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-walk-full-capsule-restored",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-close-starts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-close-chooses-action",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-close-finishes-on-supported-side",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-close-body-clear-throughout",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-close-full-capsule-restored",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-sprint-starts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-sprint-chooses-action",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-sprint-finishes-on-supported-side",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-sprint-body-clear-throughout",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-sprint-full-capsule-restored",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-diagonal-starts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-diagonal-chooses-action",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-diagonal-finishes-on-supported-side",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-diagonal-body-clear-throughout",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vault-diagonal-full-capsule-restored",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "mantle-wide-starts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "mantle-wide-chooses-action",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "mantle-wide-finishes-on-supported-side",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "mantle-wide-body-clear-throughout",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "mantle-wide-full-capsule-restored",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "climb-high-starts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "climb-high-chooses-action",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "climb-high-finishes-on-supported-side",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "climb-high-body-clear-throughout",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "climb-high-full-capsule-restored",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "mantle-high-wide-starts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "mantle-high-wide-chooses-action",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "mantle-high-wide-finishes-on-supported-side",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "mantle-high-wide-body-clear-throughout",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "mantle-high-wide-full-capsule-restored",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "too-high-rejects-unsafe-traversal",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "low-ceiling-rejects-unsafe-traversal",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "blocked-landing-rejects-unsafe-traversal",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "pause-case-traversal-starts",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "Esc-freezes-traversal",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "Esc-resumes-traversal",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "new-obstacle-releases-control",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "new-obstacle-not-crossed",
+            "passed": true,
+            "value": 1.8670179843902588
+        },
+        {
+            "name": "new-obstacle-no-body-overlap",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "trials": [
+        {
+            "name": "jump-idle",
+            "mode": "",
+            "entered": false,
+            "complete": false,
+            "bodyClear": true,
+            "peak": 0.577056884765625,
+            "impact": 5.0035786628723148,
+            "compression": 0.5003512501716614,
+            "knee": 95.9119873046875,
+            "asymmetry": 0.26000022888183596,
+            "armChange": 15.434127807617188,
+            "hipStep": 0.01777482032775879,
+            "speed": 0.0,
+            "finishY": 200.02499389648438,
+            "finishZ": -12.0
+        },
+        {
+            "name": "jump-walk",
+            "mode": "",
+            "entered": false,
+            "complete": false,
+            "bodyClear": true,
+            "peak": 0.6164093017578125,
+            "impact": 5.160245418548584,
+            "compression": 0.516017735004425,
+            "knee": 102.02595520019531,
+            "asymmetry": 1.0793991088867188,
+            "armChange": 22.79064178466797,
+            "hipStep": 0.032811760902404788,
+            "speed": 2.65006422996521,
+            "finishY": 200.02500915527345,
+            "finishZ": -6.424869537353516
+        },
+        {
+            "name": "jump-sprint",
+            "mode": "",
+            "entered": false,
+            "complete": false,
+            "bodyClear": true,
+            "peak": 0.71368408203125,
+            "impact": 5.3930134773254398,
+            "compression": 0.5392941832542419,
+            "knee": 151.51512145996095,
+            "asymmetry": 1.264514446258545,
+            "armChange": 22.486255645751954,
+            "hipStep": 0.04799908399581909,
+            "speed": 9.20003604888916,
+            "finishY": 200.02499389648438,
+            "finishZ": 5.732844352722168
+        },
+        {
+            "name": "drop-two-metres",
+            "mode": "",
+            "entered": false,
+            "complete": false,
+            "bodyClear": true,
+            "peak": 2.0,
+            "impact": 9.399413108825684,
+            "compression": 0.9399288892745972,
+            "knee": 85.19966888427735,
+            "asymmetry": 0.2303786277770996,
+            "armChange": 0.0,
+            "hipStep": 0.025646448135375978,
+            "speed": 0.0,
+            "finishY": 200.02499389648438,
+            "finishZ": -8.0
+        },
+        {
+            "name": "vault-low",
+            "mode": "vault",
+            "entered": true,
+            "complete": true,
+            "bodyClear": true,
+            "peak": 0.7699127197265625,
+            "impact": 4.708501815795898,
+            "compression": 0.47084394097328188,
+            "knee": 138.60488891601563,
+            "asymmetry": 0.9245991706848145,
+            "armChange": 0.0,
+            "hipStep": 0.016325294971466066,
+            "speed": 3.9665920734405519,
+            "finishY": 200.02499389648438,
+            "finishZ": 4.079999923706055
+        },
+        {
+            "name": "vault-walk",
+            "mode": "vault",
+            "entered": true,
+            "complete": true,
+            "bodyClear": true,
+            "peak": 1.1699981689453126,
+            "impact": 5.0684967041015629,
+            "compression": 0.5068429112434387,
+            "knee": 138.60630798339845,
+            "asymmetry": 0.9200525283813477,
+            "armChange": 0.0,
+            "hipStep": 0.018535256385803224,
+            "speed": 4.088712215423584,
+            "finishY": 200.02499389648438,
+            "finishZ": 4.125
+        },
+        {
+            "name": "vault-close",
+            "mode": "vault",
+            "entered": true,
+            "complete": true,
+            "bodyClear": true,
+            "peak": 1.1699676513671876,
+            "impact": 5.0684967041015629,
+            "compression": 0.5068429708480835,
+            "knee": 138.60626220703126,
+            "asymmetry": 0.9283561706542969,
+            "armChange": 0.0,
+            "hipStep": 0.01674652099609375,
+            "speed": 3.893491506576538,
+            "finishY": 200.02499389648438,
+            "finishZ": 4.125
+        },
+        {
+            "name": "vault-sprint",
+            "mode": "vault",
+            "entered": true,
+            "complete": true,
+            "bodyClear": true,
+            "peak": 1.169952392578125,
+            "impact": 5.0684967041015629,
+            "compression": 0.5068496465682983,
+            "knee": 138.60629272460938,
+            "asymmetry": 1.4074881076812745,
+            "armChange": 0.0,
+            "hipStep": 0.019654035568237306,
+            "speed": 9.2000093460083,
+            "finishY": 200.02499389648438,
+            "finishZ": 4.359999656677246
+        },
+        {
+            "name": "vault-diagonal",
+            "mode": "vault",
+            "entered": true,
+            "complete": true,
+            "bodyClear": true,
+            "peak": 1.1699981689453126,
+            "impact": 5.0684967041015629,
+            "compression": 0.5068429112434387,
+            "knee": 138.60626220703126,
+            "asymmetry": 0.925480842590332,
+            "armChange": 0.0,
+            "hipStep": 0.018963932991027833,
+            "speed": 4.0789008140563969,
+            "finishY": 200.02499389648438,
+            "finishZ": 4.123486042022705
+        },
+        {
+            "name": "mantle-wide",
+            "mode": "climb",
+            "entered": true,
+            "complete": true,
+            "bodyClear": true,
+            "peak": 1.1699981689453126,
+            "impact": 3.5,
+            "compression": 0.34999528527259829,
+            "knee": 138.6062774658203,
+            "asymmetry": 0.9321116805076599,
+            "armChange": 0.0,
+            "hipStep": 0.01721477508544922,
+            "speed": 2.650003671646118,
+            "finishY": 201.02499389648438,
+            "finishZ": 1.8299999237060547
+        },
+        {
+            "name": "climb-high",
+            "mode": "climb",
+            "entered": true,
+            "complete": true,
+            "bodyClear": true,
+            "peak": 2.16998291015625,
+            "impact": 5.968496322631836,
+            "compression": 0.5965832471847534,
+            "knee": 138.60626220703126,
+            "asymmetry": 0.9306981563568115,
+            "armChange": 0.0,
+            "hipStep": 0.017473459243774415,
+            "speed": 2.650015354156494,
+            "finishY": 200.02499389648438,
+            "finishZ": 4.125
+        },
+        {
+            "name": "mantle-high-wide",
+            "mode": "climb",
+            "entered": true,
+            "complete": true,
+            "bodyClear": true,
+            "peak": 2.16998291015625,
+            "impact": 3.5,
+            "compression": 0.34999528527259829,
+            "knee": 138.6062469482422,
+            "asymmetry": 0.933018147945404,
+            "armChange": 0.0,
+            "hipStep": 0.01571434736251831,
+            "speed": 2.6500024795532228,
+            "finishY": 202.02499389648438,
+            "finishZ": 1.8299998044967652
+        },
+        {
+            "name": "too-high",
+            "mode": "",
+            "entered": false,
+            "complete": false,
+            "bodyClear": true,
+            "peak": 0.6156463623046875,
+            "impact": 5.131097793579102,
+            "compression": 0.5130972862243652,
+            "knee": 102.32776641845703,
+            "asymmetry": 0.9319720268249512,
+            "armChange": 26.183456420898439,
+            "hipStep": 0.016653001308441163,
+            "speed": 2.650017499923706,
+            "finishY": 200.02499389648438,
+            "finishZ": 2.370000123977661
+        },
+        {
+            "name": "low-ceiling",
+            "mode": "",
+            "entered": false,
+            "complete": false,
+            "bodyClear": true,
+            "peak": 0.1750030517578125,
+            "impact": 0.0,
+            "compression": 0.0,
+            "knee": 89.87165069580078,
+            "asymmetry": 0.9255146980285645,
+            "armChange": 23.402814865112306,
+            "hipStep": 0.016157209873199464,
+            "speed": 2.650015354156494,
+            "finishY": 200.02499389648438,
+            "finishZ": 2.370000123977661
+        },
+        {
+            "name": "blocked-landing",
+            "mode": "",
+            "entered": false,
+            "complete": false,
+            "bodyClear": true,
+            "peak": 0.6156463623046875,
+            "impact": 5.1316142082214359,
+            "compression": 0.5131545066833496,
+            "knee": 102.28031158447266,
+            "asymmetry": 0.9244070053100586,
+            "armChange": 25.616960525512697,
+            "hipStep": 0.016051054000854493,
+            "speed": 2.6500110626220705,
+            "finishY": 200.02499389648438,
+            "finishZ": 2.438746213912964
+        }
+    ],
+    "errors": []
+}

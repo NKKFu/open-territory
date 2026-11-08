@@ -5,14 +5,70 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#a8dbe2">
   <title>Open Territory — Baía do Sol</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23234249'/%3E%3Cpath fill='%23f6c46c' d='M12 7h8v8h-8z'/%3E%3Cpath fill='%2392c8bd' d='m2 21 8-7 8 8 6-5 6 5v4H2z'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main id="world" aria-label="Open Territory: mundo 3D de Baía do Sol"></main>
   <div id="touch" class="hidden" aria-label="Controles de toque">
+    <button class="touch-settings" id="openSettings" aria-label="Abrir configurações">⚙</button>
+    <button class="touch-fullscreen" id="touchFullscreen" aria-label="Entrar em tela cheia" aria-pressed="false">⛶</button>
+    <div id="touchCombat" aria-label="Equipamento"><button id="touchDroneLaunch" aria-label="Lançar drone">Drone</button><button id="combatEquip" aria-label="Trocar ou guardar arma">Arma</button><button id="combatAim" class="hidden" aria-label="Alternar mira">Mirar</button><button id="combatFire" class="hidden" aria-label="Disparar">Atirar</button><button id="combatReload" class="hidden" aria-label="Recarregar">R</button></div>
+    <div id="touchDroneFlight" class="hidden" aria-label="Altitude do drone"><button data-key="droneup" aria-label="Subir com o drone">Subir</button><button data-key="dronedown" aria-label="Descer com o drone">Descer</button></div>
     <div class="dpad"><button data-key="w" aria-label="Andar para frente">▲</button><button data-key="a" aria-label="Andar para a esquerda">◀</button><button data-key="s" aria-label="Andar para trás">▼</button><button data-key="d" aria-label="Andar para a direita">▶</button></div>
-    <div class="touch-actions"><button id="touchJump" aria-label="Pular ou frear">↑</button><button id="touchE" aria-label="Interagir">E</button></div>
+    <div class="touch-actions"><button id="touchLink" aria-label="Segurar para mirar, soltar para hackear">F</button><button id="touchJump" aria-label="Pular ou frear">↑</button><button id="touchH" aria-label="Buzina ou campainha do veículo">H</button><button id="touchE" aria-label="Interagir">E</button></div>
   </div>
+  <dialog id="settings" aria-labelledby="settingsTitle">
+    <header class="settings-heading">
+      <span class="settings-place"><i aria-hidden="true"></i>Baía do Sol</span>
+      <h1 id="settingsTitle">Configurações</h1>
+    </header>
+    <nav class="settings-tabs" aria-label="Categorias" role="tablist">
+      <button id="tabImage" role="tab" aria-controls="panelImage" aria-selected="true">Imagem</button>
+      <button id="tabSound" role="tab" aria-controls="panelSound" aria-selected="false" tabindex="-1">Som</button>
+      <button id="tabInput" role="tab" aria-controls="panelInput" aria-selected="false" tabindex="-1">Controles</button>
+    </nav>
+    <section id="panelImage" role="tabpanel" aria-labelledby="tabImage">
+      <div class="fullscreen-setting"><button id="toggleFullscreen" aria-pressed="false">Entrar em tela cheia</button><kbd>Alt + Enter</kbd></div>
+      <div id="fullscreenStatus" role="status"></div>
+      <fieldset><legend>Qualidade gráfica</legend><div class="settings-options">
+        <label><input type="radio" name="quality" value="auto"><span>Automática</span></label>
+        <label><input type="radio" name="quality" value="low"><span>Leve</span></label>
+        <label><input type="radio" name="quality" value="high"><span>Alta</span></label>
+      </div></fieldset>
+      <label class="settings-range" for="settingFov"><span>Campo de visão</span><output for="settingFov"></output>
+        <input id="settingFov" name="fov" type="range" min="48" max="80" step="1"></label>
+    </section>
+    <section id="panelSound" role="tabpanel" aria-labelledby="tabSound" hidden>
+      <label class="settings-range" for="settingVolume"><span>Volume geral</span><output for="settingVolume"></output>
+        <input id="settingVolume" name="volume" type="range" min="0" max="100" step="1"></label>
+    </section>
+    <section id="panelInput" role="tabpanel" aria-labelledby="tabInput" hidden>
+      <label class="settings-range" for="settingSensitivity"><span>Sensibilidade da câmera</span><output for="settingSensitivity"></output>
+        <input id="settingSensitivity" name="sensitivity" type="range" min="40" max="180" step="5"></label>
+      <label class="settings-check"><span>Inverter câmera vertical</span><input type="checkbox" name="invertY"></label>
+      <dl class="key-list">
+        <div><dt>Andar / correr</dt><dd>WASD / Shift</dd></div>
+        <div><dt>Pular / transpor</dt><dd>Espaço</dd></div>
+        <div><dt>Interagir / sair da câmera</dt><dd>E</dd></div>
+        <div><dt>Hackear um dispositivo</dt><dd>Segurar e soltar F</dd></div>
+        <div><dt>Lançar / recolher drone</dt><dd>V / E</dd></div>
+        <div><dt>Subir / descer no voo</dt><dd>Espaço / Shift</dd></div>
+        <div><dt>Tela cheia</dt><dd>Alt + Enter</dd></div>
+        <div><dt>Pulsor / P-9 / C-12</dt><dd>1 / 2 / 3</dd></div>
+        <div><dt>Mirar / disparar</dt><dd>Mouse direito / esquerdo</dd></div>
+        <div><dt>Alternar a mira</dt><dd>G</dd></div>
+        <div><dt>Recarregar / guardar arma</dt><dd>R / X</dd></div>
+        <div><dt>Render-se em abordagem</dt><dd>E, a pé</dd></div>
+        <div><dt>Buzina / campainha</dt><dd>H</dd></div>
+        <div><dt>Freio / freio de mão</dt><dd>Espaço / Shift</dd></div>
+      </dl>
+    </section>
+    <footer class="settings-footer">
+      <button id="resumeGame"><kbd>Esc</kbd> Voltar ao jogo</button>
+      <button id="resetSettings">Restaurar padrões</button>
+    </footer>
+  </dialog>
   <script type="module" src="game.js"></script>
 </body>
 </html>

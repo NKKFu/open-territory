@@ -1,0 +1,54 @@
+﻿{
+    "passed":  true,
+    "executable":  "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\OverallMap-20261108\\BaiaDoSol.exe",
+    "assemblySha256":  "0C37F6338043717B826C7D831D04DCF8BFF82D3BB06352DD0911F96779C63A3D",
+    "graphicsApi":  "default",
+    "suites":  [
+                   {
+                       "suite":  "fire-station",
+                       "passed":  true,
+                       "exitCode":  0,
+                       "checks":  15,
+                       "floorSamples":  574,
+                       "report":  "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\fire-station\\fire-station\\fire-station-qa.json",
+                       "arguments":  [
+                                         "-batchmode",
+                                         "-screen-fullscreen",
+                                         "0",
+                                         "-screen-width",
+                                         "1440",
+                                         "-screen-height",
+                                         "1000",
+                                         "--city-fire-station-qa",
+                                         "--city-report-dir",
+                                         "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\fire-station\\fire-station\"",
+                                         "-logFile",
+                                         "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\fire-station\\fire-station\\player.log\""
+                                     ],
+                       "verifiedAtUtc":  "2026-11-08T13:24:14.3905083Z"
+                   },
+                   {
+                       "suite":  "garage",
+                       "passed":  true,
+                       "exitCode":  0,
+                       "checks":  26,
+                       "floorSamples":  168,
+                       "report":  "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\fire-station\\garage\\garage-qa.json",
+                       "arguments":  [
+                                         "-batchmode",
+                                         "-screen-fullscreen",
+                                         "0",
+                                         "-screen-width",
+                                         "1440",
+                                         "-screen-height",
+                                         "1000",
+                                         "--city-garage-qa",
+                                         "--city-report-dir",
+                                         "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\fire-station\\garage\"",
+                                         "-logFile",
+                                         "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\overall-map\\acceptance\\fire-station\\garage\\player.log\""
+                                     ],
+                       "verifiedAtUtc":  "2026-11-08T13:25:26.4130873Z"
+                   }
+               ]
+}

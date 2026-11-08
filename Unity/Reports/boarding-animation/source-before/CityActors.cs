@@ -1,0 +1,495 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace OpenTerritory
+{
+    // Articulated visual model. The controller/collider remains at the feet origin.
+    public sealed class CityRig
+    {
+        public Transform Root, Hips, Chest, Head;
+        public Transform[] Legs, Knees, Feet, Arms, Elbows, Hands;
+        public Vector3 HipRest, ChestRest, Previous;
+        public float Thigh, Shin, Upper, Lower, Ankle, HipHeight, Phase, Speed, Weight, Turn, LastYaw;
+        public bool Seated, WasAirborne;
+        public float Landing, SeatHeight, Momentum, AimWeight;
+        public float Run, PelvisHeight;
+        public float GaitOffset = .12f;
+        public int FootContacts, LastContact;
+        public Vector3 GaitVelocity;
+        public bool GroundGait;
+        public readonly Vector3[] FootAnchor = new Vector3[2], FootPoint = new Vector3[2], SwingFrom = new Vector3[2];
+        public readonly Vector3[] SwingTo = new Vector3[2];
+        public readonly Vector3[] AirFrom = new Vector3[2];
+        public readonly float[] FootPitch = new float[2], FootYaw = new float[2], Settle = { 1, 1 };
+        public readonly float[] LastFootPhase = new float[2], LiftPhase = new float[2];
+        public readonly bool[] EarlyLift = new bool[2];
+        public readonly bool[] Stance = { true, true };
+        public string Pose = "idle";
+        public bool Valid => Root && Hips && Chest && Head && Legs?.Length >= 2 && Arms?.Length >= 2 && Hands?.Length >= 2 && Feet?.Length >= 2 && Knees?.Length >= 2 && Elbows?.Length >= 2;
+    }
+
+    public struct CityPose
+    {
+        public string Mode;
+        public float Time, Speed, VerticalSpeed, Effort, Stroke, Progress, SeatHeight, Weight, Recoil, LookPitch, LookYaw;
+        public float JumpPrepare, AirTime, TakeoffSpeed, JumpLead, LandWeight, Tuck, RecoveryCrouch;
+        public bool Airborne, Seated, Aim, Reload, Clap, Talking;
+        public Vector3[] Hands;
+        public Transform[] HandNodes;
+        public Vector3 AimPoint;
+    }
+
+    [DefaultExecutionOrder(120)]
+    public sealed class CityActors : MonoBehaviour
+    {
+        CityContext ctx;
+        public CityRig PlayerRig { get; private set; }
+        public bool Petting => petTarget && petElapsed < 2.45f;
+        public bool InteractionBusy => Petting;
+        public Transform PetTarget { get => petTarget; }
+        readonly Dictionary<Transform, CityRig> rigs = new Dictionary<Transform, CityRig>();
+        Transform petTarget;
+        Transform phone;
+        float petElapsed, applauseUntil;
+
+        public void Initialize(CityContext context)
+        {
+            ctx = context; SetPlayerRig(BindData(ctx.Data.playerRig));
+            if (PlayerRig != null)
+            {
+                phone = new GameObject("Celular do jogador").transform; phone.SetParent(PlayerRig.Hands[1], false);
+                void Part(Vector3 position, Vector3 scale, Color color)
+                {
+                    var part = GameObject.CreatePrimitive(PrimitiveType.Cube); part.layer = CityContext.PlayerLayer; Destroy(part.GetComponent<Collider>());
+                    part.transform.SetParent(phone, false); part.transform.localPosition = position; part.transform.localScale = scale;
+                    var material = new Material(Shader.Find("Standard")); material.color = color; part.GetComponent<Renderer>().sharedMaterial = material;
+                }
+                Part(new Vector3(0, 0, .035f), new Vector3(.18f, .31f, .045f), new Color(.13f, .21f, .24f));
+                Part(new Vector3(0, 0, .009f), new Vector3(.145f, .25f, .009f), new Color(.40f, .86f, .76f)); phone.gameObject.SetActive(false);
+            }
+        }
+        public CityRig BindData(RigData data, bool seated = false)
+        {
+            if (data == null) return null;
+            Transform[] Map(int[] ids) { var result = new Transform[ids.Length]; for (int i = 0; i < ids.Length; i++) result[i] = ctx.Node(ids[i]); return result; }
+            var limbs = Map(data.limbs); if (limbs.Length < 4) return null;
+            var rig = Bind(ctx.Node(data.root), ctx.Node(data.hips), ctx.Node(data.chest), ctx.Node(data.head), new[] { limbs[0], limbs[1] },
+                Map(data.knees), Map(data.ankles), new[] { limbs[2], limbs[3] }, Map(data.elbows), Map(data.hands), seated || data.seated);
+            if (rig != null)
+            {
+                rig.GaitOffset = data.root == ctx.Data.playerId ? .12f : Mathf.Repeat(data.root * .618034f, 1);
+                if (data.root == ctx.Data.playerId) { rig.Ankle = .125f; rig.HipHeight = .989f; }
+                else { rig.Ankle = data.ankleHeight; rig.Thigh = data.thighLength; rig.Shin = data.shinLength; rig.Upper = data.upperLength; rig.Lower = data.lowerLength; }
+            }
+            return rig;
+        }
+        public CityRig Bind(Transform root, Transform hips, Transform chest, Transform head, Transform[] legs, Transform[] knees,
+            Transform[] feet, Transform[] arms, Transform[] elbows, Transform[] hands, bool seated = false, float seatHeight = .61f)
+        {
+            var r = new CityRig { Root = root, Hips = hips, Chest = chest, Head = head, Legs = legs, Knees = knees, Feet = feet,
+                Arms = arms, Elbows = elbows, Hands = hands, Seated = seated, SeatHeight = seatHeight };
+            if (!r.Valid) return null;
+            r.HipRest = hips.localPosition; r.ChestRest = chest.localPosition; r.HipHeight = hips.localPosition.y;
+            r.PelvisHeight = r.HipHeight;
+            r.Thigh = knees[0].localPosition.magnitude; r.Shin = feet[0].localPosition.magnitude;
+            r.Upper = elbows[0].localPosition.magnitude; r.Lower = hands[0].localPosition.magnitude;
+            r.Ankle = Mathf.Max(.06f, root.InverseTransformPoint(feet[0].position).y); r.Previous = root.position; r.LastYaw = root.eulerAngles.y; r.Phase = .6f * Mathf.PI;
+            for (int i = 0; i < 2; i++) { r.FootAnchor[i] = r.FootPoint[i] = r.SwingFrom[i] = r.SwingTo[i] = feet[i].position; r.FootYaw[i] = root.eulerAngles.y; }
+            rigs[root] = r; return r;
+        }
+        public void SetPlayerRig(CityRig rig) { PlayerRig = rig; }
+        public CityRig Rig(Transform root) => root && rigs.TryGetValue(root, out var value) ? value : null;
+        public void ForgetTemporaryRig(Transform root)
+        { if (root && (PlayerRig == null || root != PlayerRig.Root)) rigs.Remove(root); }
+        public void Applaud(float duration = 1.5f) { applauseUntil = (ctx != null ? ctx.Clock : Time.time) + Mathf.Clamp(duration, .2f, 3f); }
+        public bool Pet(Transform target)
+        {
+            if (!target || Petting || PlayerRig == null || Vector3.Distance(PlayerRig.Root.position, target.position) > 2.8f) return false;
+            petTarget = target; petElapsed = 0; return true;
+        }
+        public void CancelInteraction() { petTarget = null; applauseUntil = 0; }
+
+        void LateUpdate()
+        {
+            if (ctx == null || !ctx.Ready || ctx.Paused || PlayerRig == null) return;
+            if (ctx.Combat.Down) { if (phone) phone.gameObject.SetActive(false); return; }
+            var motor = ctx.Motor; float dt = Time.deltaTime;
+            bool scan = (ctx.Remote.Scanning || ctx.Remote.Active) && string.IsNullOrEmpty(ctx.Combat.Equipped);
+            if (phone) phone.gameObject.SetActive(scan);
+            if (Petting) petElapsed += dt; else petTarget = null;
+            if (motor.Speed > .18f || !string.IsNullOrEmpty(ctx.Combat.Equipped)) applauseUntil = 0;
+            var pose = new CityPose { Time = ctx.Clock, Mode = motor.Mode, Speed = motor.Speed, VerticalSpeed = motor.VerticalSpeed,
+                Airborne = !motor.Grounded && !motor.Swimming && !motor.Riding && !motor.Traversing && !motor.SeatHeight.HasValue, Effort = motor.SwimEffort, Stroke = motor.SwimStroke,
+                JumpPrepare = motor.JumpPreparation, AirTime = motor.AirTime, TakeoffSpeed = motor.TakeoffSpeed, JumpLead = motor.JumpLead,
+                LandWeight = motor.LandingBlend, Tuck = motor.VaultTuck, RecoveryCrouch = motor.RecoveryCrouch,
+                Progress = motor.Mode == "car-door" ? ctx.Vehicles.TransitionProgress : motor.VaultProgress, Hands = motor.HandTargets, Seated = motor.SeatHeight.HasValue, SeatHeight = motor.SeatHeight ?? .61f,
+                Aim = ctx.Combat.Aiming, Reload = ctx.Combat.Reloading, AimPoint = ctx.Combat.AimPoint, Recoil = ctx.Combat.Recoil,
+                Clap = applauseUntil > ctx.Clock && motor.Speed < .18f };
+            if (Petting)
+            {
+                pose.Mode = "pet"; pose.Weight = Mathf.SmoothStep(0, 1, petElapsed / .4f) * (1 - Mathf.SmoothStep(0, 1, (petElapsed - 1.9f) / .55f));
+                pose.Hands = new[] { PlayerRig.Hands[0].position, petTarget.position + Vector3.up * .12f + ctx.Player.forward * .05f };
+            }
+            Animate(PlayerRig, pose, dt);
+            if (ctx.Emotes && ctx.Emotes.Performing)
+                CityEmoteAnimation.Apply(PlayerRig, ctx.Emotes.Current, ctx.Clock - ctx.Emotes.StartedAt, ctx.Emotes.Until - ctx.Clock);
+            if (scan)
+            {
+                PlayerRig.Head.localRotation = Quaternion.Euler(18, 5, 0);
+                Reach(PlayerRig, 1, ctx.Player.TransformPoint(new Vector3(.27f, 1.43f, .47f)));
+                Reach(PlayerRig, 0, ctx.Player.TransformPoint(new Vector3(-.10f, 1.31f, .45f)));
+                Upright(phone, ctx.Player, new Vector3(-10, 0, 0));
+            }
+            ctx.Combat.PoseWeapon();
+            ctx.Combat.PoseMelee(PlayerRig);
+            ctx.Vehicles.PoseBoarding();
+        }
+
+        public static float Damped(float current, float target, float rate, float dt) => Mathf.Lerp(current, target, 1 - Mathf.Exp(-rate * dt));
+        static Quaternion BendRotation(Vector3 direction) => Quaternion.FromToRotation(Vector3.down, direction.normalized);
+        public static void Reach(CityRig r, int arm, Vector3 worldPoint, float weight = 1)
+        {
+            if (r == null || !r.Valid) return;
+            Solve(r.Chest, r.Arms[arm], r.Elbows[arm], worldPoint, r.Upper, r.Lower, new Vector3(arm == 0 ? -1 : 1, -.3f, -.38f), weight);
+        }
+        static void Solve(Transform parent, Transform first, Transform second, Vector3 point, float a, float b, Vector3 bend, float weight = 1)
+        {
+            Vector3 direction = parent.InverseTransformPoint(point) - first.localPosition;
+            float length = direction.magnitude; if (length < .001f || a <= .001f || b <= .001f) return;
+            direction /= length; float distance = Mathf.Clamp(length, Mathf.Abs(a - b) + .001f, a + b - .00001f);
+            Vector3 pole = bend - direction * Vector3.Dot(bend, direction);
+            if (pole.sqrMagnitude < .00001f) pole = Vector3.Cross(direction, Vector3.right);
+            if (pole.sqrMagnitude < .00001f) pole = Vector3.forward;
+            pole.Normalize(); float along = (a * a + distance * distance - b * b) / (2 * distance);
+            Vector3 upper = direction * along + pole * Mathf.Sqrt(Mathf.Max(0, a * a - along * along));
+            Vector3 lower = direction * distance - upper;
+            Quaternion rotation = BendRotation(upper);
+            first.localRotation = Quaternion.Slerp(first.localRotation, rotation, weight);
+            second.localRotation = Quaternion.Slerp(second.localRotation, BendRotation(Quaternion.Inverse(rotation) * lower), weight);
+        }
+        public static void Upright(Transform node, Transform root, Vector3 euler = default)
+        { if (node && root) node.rotation = root.rotation * Quaternion.Euler(euler); }
+
+        public void Animate(CityRig r, CityPose pose, float dt)
+        {
+            if (r == null || !r.Valid || dt <= 0) return;
+            var root = r.Root; bool protagonist = r == PlayerRig; Quaternion previousChest = r.Chest.localRotation; string previousMode = r.Pose;
+            Vector3 travel = Vector3.ProjectOnPlane(root.position - r.Previous, Vector3.up); float distance = travel.magnitude;
+            if (distance > 1.4f)
+            { ResetFeet(r); distance = 0; travel = Vector3.zero; }
+            float raw = distance / dt; r.Previous = root.position;
+            float turn = Mathf.DeltaAngle(r.LastYaw, root.eulerAngles.y) / dt * Mathf.Deg2Rad; r.LastYaw = root.eulerAngles.y;
+            r.Speed = Damped(r.Speed, protagonist && pose.Speed > 0 ? pose.Speed : raw, 16, dt);
+            r.Weight = Damped(r.Weight, r.Speed > .05f && !pose.Seated ? 1 : 0, raw > .05f ? 11 : 16, dt);
+            r.Turn = Damped(r.Turn, Mathf.Clamp(turn, -2.5f, 2.5f) * r.Weight, 8, dt);
+            r.AimWeight=Damped(r.AimWeight,pose.Aim?1:0,12,dt);
+            float scale = Mathf.Max(.1f, root.lossyScale.y), anatomy = (r.Thigh + r.Shin) / .89f;
+            float localSpeed = r.Speed / Mathf.Max(.1f, scale * anatomy);
+            r.Run = Damped(r.Run, Mathf.SmoothStep(0, 1, Mathf.InverseLerp(protagonist ? 3.1f : 1.7f, protagonist ? CityPlayer.SprintSpeed * .95f : 3.1f, localSpeed)), 8, dt);
+            float run = r.Run;
+            // One cycle contains TWO contacts. A sprint needs a longer cycle,
+            // a shorter support phase and a genuine airborne recovery.
+            float walkStride = Mathf.Lerp(.95f, 1.8f, Mathf.InverseLerp(.35f, CityPlayer.WalkSpeed, localSpeed));
+            float runStride = Mathf.Lerp(2.15f, 4.3f, Mathf.InverseLerp(2.5f, CityPlayer.SprintSpeed, localSpeed));
+            float stride = Mathf.Lerp(walkStride, runStride, run) * anatomy * scale;
+            float support = Mathf.Lerp(.51f, Mathf.Clamp(.95f * anatomy * scale / stride, .22f, .36f), run);
+            r.GaitVelocity = Vector3.Lerp(r.GaitVelocity, travel / dt, 1 - Mathf.Exp(-18 * dt));
+            if (raw > .02f || r == PlayerRig && pose.Aim && Mathf.Abs(turn)>.15f) r.Phase = Mathf.Repeat(r.Phase + (distance / stride + (r == PlayerRig && pose.Aim ? Mathf.Abs(turn)*dt*.20f : 0)) * Mathf.PI * 2, Mathf.PI * 2);
+            if (protagonist && pose.Airborne && !r.WasAirborne)
+                for (int i = 0; i < 2; i++) r.AirFrom[i] = root.InverseTransformPoint(r.Feet[i].position);
+            if (protagonist) r.Landing = pose.LandWeight;
+            else
+            {
+                if (r.WasAirborne && !pose.Airborne) r.Landing = Mathf.Clamp01(Mathf.Abs(pose.VerticalSpeed) / 7 + .3f);
+                r.Landing = Mathf.Max(0, r.Landing - dt * 4);
+            }
+            r.WasAirborne = pose.Airborne;
+            string mode = string.IsNullOrEmpty(pose.Mode) ? pose.Airborne ? "jump" : r.Speed > 5 ? "run" : r.Weight > .1f ? "walk" : "idle" : pose.Mode;
+            r.Pose = mode;
+            bool swimming = mode == "swim" || mode == "float", climbing = mode == "ladder", piloting = mode == "pilot" || mode == "drive" || mode == "bike";
+            if (swimming || climbing || piloting)
+            {
+                r.GroundGait = false;
+                float t = pose.Stroke != 0 ? pose.Stroke : pose.Time * 2.1f, effort = pose.Effort;
+                r.Hips.localPosition = new Vector3(0, piloting ? .61f : .94f, 0);
+                r.Hips.localRotation = Quaternion.Euler((piloting ? .05f : climbing ? .10f : .16f + effort * .89f) * Mathf.Rad2Deg, 0, piloting ? 0 : Mathf.Sin(t) * effort * 5);
+                r.Chest.localRotation = Quaternion.Euler(-1.4f, piloting ? 0 : Mathf.Sin(t) * effort * 7, 0);
+                r.Head.localRotation = Quaternion.Euler(piloting ? -2 : -5 - effort * 32, 0, 0);
+                for (int i = 0; i < 2; i++)
+                {
+                    float side = i == 0 ? -1 : 1, s = Mathf.Sin(t + i * Mathf.PI), c = Mathf.Cos(t + i * Mathf.PI);
+                    r.Legs[i].localRotation = Quaternion.Euler((piloting ? -1.22f : climbing ? -.60f - .4f * s : .13f + s * (.23f + effort * .22f)) * Mathf.Rad2Deg, 0, side * 5);
+                    r.Knees[i].localRotation = Quaternion.Euler((piloting ? 1.32f : climbing ? .91f - .36f * s : .34f + Mathf.Max(0, -s) * .47f) * Mathf.Rad2Deg, 0, 0);
+                    r.Feet[i].localRotation = Quaternion.Euler(-12, 0, 0);
+                    r.Arms[i].localRotation = Quaternion.Euler((piloting ? -1.04f : climbing ? -1.72f + .57f * s : Mathf.Lerp(-.7f + .23f * c, -1.45f + 1.60f * c, effort)) * Mathf.Rad2Deg, 0, side * (piloting ? 7 : climbing ? 12 : 47 - 23 * effort));
+                    r.Elbows[i].localRotation = Quaternion.Euler((piloting ? -.84f : climbing ? -.9f : -.58f - .44f * Mathf.Max(0, s)) * Mathf.Rad2Deg, 0, 0);
+                    if (piloting && pose.Hands != null && pose.Hands.Length > i) Reach(r, i, pose.Hands[i]);
+                }
+                return;
+            }
+            float wave = Mathf.Sin(r.Phase), idle = 1 - r.Weight, tNow = pose.Time;
+            bool vault = mode == "vault" || mode == "climb";
+            if (protagonist && vault && previousMode != "vault" && previousMode != "climb")
+                for (int i = 0; i < 2; i++) r.AirFrom[i] = root.InverseTransformPoint(r.Feet[i].position);
+            float plant = vault ? protagonist ? pose.Tuck : Mathf.Sin(Mathf.Clamp01(pose.Progress) * Mathf.PI) : 0;
+            float cabin = mode == "car-door" ? Mathf.Sin(Mathf.Clamp01(pose.Progress) * Mathf.PI) : 0;
+            bool groundGait = !pose.Seated && !pose.Airborne && !vault && mode != "pet" && cabin <= 0;
+            if (groundGait && !r.GroundGait)
+            {
+                float previousHip = r.PelvisHeight; ResetFeet(r);
+                if (protagonist) r.PelvisHeight = previousHip;
+            }
+            r.GroundGait = groundGait;
+            float momentum = protagonist && !pose.Airborne && !pose.Seated && !vault ? Mathf.Clamp(ctx.Motor.Acceleration / 25, -1, 1) : 0;
+            r.Momentum = Damped(r.Momentum, momentum, 9, dt);
+            float hipY = r.HipHeight - (.075f * r.Weight + .035f * run + (protagonist ? .20f : .15f) * r.Landing) * anatomy;
+            float lean = .025f + .075f * r.Weight + .16f * run + .22f * r.Landing;
+            lean=Mathf.Lerp(lean,.11f,r.AimWeight);
+            lean += r.Momentum * .13f;
+            hipY += (-Mathf.Cos(r.Phase * 2) * .025f * (1 - run) + Mathf.Cos(r.Phase * 2 - .8f) * .025f * run) * r.Weight * anatomy;
+            float twist = (.07f * wave * r.Weight - r.Turn * .05f)*(1-r.AimWeight)+18*Mathf.Deg2Rad*r.AimWeight, roll = -r.Turn * .04f*(1-r.AimWeight*.7f);
+            if (pose.Seated) { hipY = pose.SeatHeight + .10f; lean = -.055f; twist = roll = 0; }
+            float descent = Mathf.SmoothStep(0, 1, Mathf.InverseLerp(1, -5, pose.VerticalSpeed));
+            if (protagonist && !pose.Seated)
+            {
+                hipY -= .13f * pose.JumpPrepare + .28f * pose.RecoveryCrouch;
+                lean += .12f * pose.JumpPrepare + .24f * pose.RecoveryCrouch;
+                if (pose.Airborne) { hipY = r.HipHeight - .04f - .035f * (1 - descent); lean = .07f + .10f * Mathf.Clamp01(pose.TakeoffSpeed / CityPlayer.SprintSpeed); twist *= .35f; roll *= .35f; }
+            }
+            if (vault) { hipY = Mathf.Lerp(hipY, protagonist ? .64f : .40f, plant); lean = (protagonist ? mode == "climb" ? .38f : .55f : 1.1f) * plant; roll = mode == "climb" ? 0 : (protagonist ? -.07f : -.48f) * plant; }
+            if (mode == "pet") { hipY = Mathf.Lerp(hipY, .49f, pose.Weight); lean += .48f * pose.Weight; }
+            hipY -= .30f * cabin; lean += .45f * cabin;
+            float weightShift = groundGait ? -wave * r.Weight * Mathf.Lerp(.026f, .016f, run) * anatomy : 0;
+            r.Hips.localPosition = new Vector3(.012f * idle * Mathf.Sin(tNow * .7f) + weightShift, hipY, 0);
+            r.Hips.localRotation = groundGait ? Quaternion.Euler(0, Mathf.Cos(r.Phase) * r.Weight * Mathf.Lerp(3, 5.5f, run), -r.Turn * 2.2f + wave * r.Weight * 1.4f) : Quaternion.identity;
+            r.Chest.localPosition = r.ChestRest + Vector3.up * (.004f * idle * Mathf.Sin(tNow * 1.8f));
+            if (groundGait) twist = (-Mathf.Cos(r.Phase) * r.Weight * Mathf.Lerp(.045f, .09f, run) - r.Turn * .045f) * (1 - r.AimWeight) + 18 * Mathf.Deg2Rad * r.AimWeight;
+            bool absorb = protagonist && !pose.Seated && (pose.Airborne || vault || pose.JumpPrepare > 0 || r.Landing > .001f || pose.RecoveryCrouch > 0);
+            Quaternion chestTarget = Quaternion.Euler(lean * Mathf.Rad2Deg, twist * Mathf.Rad2Deg, roll * Mathf.Rad2Deg);
+            r.Chest.localRotation = absorb ? Quaternion.Slerp(previousChest, chestTarget, 1 - Mathf.Exp(-20 * dt)) : chestTarget;
+            r.Head.localRotation = Quaternion.Euler((-.035f - .11f * run + pose.LookPitch) * Mathf.Rad2Deg, (r.Turn * .13f + pose.LookYaw + idle * .045f * Mathf.Sin(tNow * .65f)) * Mathf.Rad2Deg, -roll * 15);
+            float reachCeiling = float.PositiveInfinity;
+            for (int i = 0; i < 2; i++)
+            {
+                float side = i == 0 ? -1 : 1, u = Mathf.Repeat(r.Phase / (Mathf.PI * 2) + i * .5f, 1), stanceEnd = support;
+                bool stance = u < stanceEnd;
+                if (pose.Seated || pose.Airborne || vault || mode == "pet")
+                {
+                    float seatedForward = Mathf.Min(.49f, Mathf.Sqrt(Mathf.Max(.015f, Mathf.Pow(r.Thigh + r.Shin - .01f, 2) - Mathf.Pow(pose.SeatHeight + .10f - r.Ankle, 2))));
+                    float forward = pose.Seated ? seatedForward : pose.Airborne ? side * .18f : vault ? side < 0 ? .35f : -.2f : side * -.23f;
+                    float ankle = r.Ankle + (pose.Airborne ? .16f : vault ? .3f * plant : 0);
+                    Vector3 local = new Vector3(side * .20f, ankle, forward);
+                    if (protagonist && pose.Airborne)
+                    {
+                        bool lead = side == pose.JumpLead; float pace = Mathf.Clamp01(pose.TakeoffSpeed / CityPlayer.SprintSpeed);
+                        float fold = Mathf.SmoothStep(0, 1, pose.AirTime / .10f) * (1 - descent);
+                        local = new Vector3(r.Legs[i].localPosition.x, r.Ankle + (lead ? .21f + .14f * pace : .12f + .08f * pace) * fold,
+                            (lead ? .14f + .12f * pace : -.12f - .08f * pace) * (1 - descent));
+                        local = Vector3.Lerp(r.AirFrom[i], local, Mathf.SmoothStep(0, 1, pose.AirTime / .10f));
+                    }
+                    else if (protagonist && vault)
+                    {
+                        bool lead = side == pose.JumpLead;
+                        local = new Vector3(r.Legs[i].localPosition.x, r.Ankle + (lead ? .29f : .19f) * plant,
+                            (lead ? .22f : -.17f) * plant);
+                        local = Vector3.Lerp(r.AirFrom[i], local, Mathf.SmoothStep(0, 1, pose.Progress / .14f));
+                    }
+                    r.FootPoint[i] = root.TransformPoint(local); r.FootAnchor[i] = r.FootPoint[i];
+                }
+                else
+                {
+                    stance = GroundStep(r, i, u, stanceEnd, run, stride, scale, anatomy, raw, turn, pose.Aim, dt);
+                }
+                r.Stance[i] = stance;
+                Vector3 footLocal = root.InverseTransformPoint(r.FootPoint[i]);
+                Vector3 hipJoint = r.Hips.localRotation * r.Legs[i].localPosition + new Vector3(r.Hips.localPosition.x, 0, 0);
+                float span = new Vector2(footLocal.x - hipJoint.x, footLocal.z - hipJoint.z).magnitude;
+                float leg = r.Thigh + r.Shin - .006f;
+                float ceiling = footLocal.y - hipJoint.y + Mathf.Sqrt(Mathf.Max(.12f * anatomy * anatomy, leg * leg - span * span));
+                reachCeiling = Mathf.Min(reachCeiling, ceiling); hipY = Mathf.Min(hipY, ceiling);
+            }
+            if (absorb) hipY = Mathf.Min(reachCeiling, Damped(r.PelvisHeight, hipY, 22, dt));
+            else if (groundGait)
+            {
+                // Recover height gradually after support; never stretch a
+                // planted leg just to smooth the visible pelvis.
+                hipY = Mathf.Min(hipY, Damped(r.PelvisHeight, hipY, 18, dt));
+            }
+            r.PelvisHeight = hipY;
+            r.Hips.localPosition = new Vector3(r.Hips.localPosition.x, hipY, 0);
+            for (int i = 0; i < 2; i++)
+            {
+                float side = i == 0 ? -1 : 1; Quaternion previousArm = r.Arms[i].localRotation, previousElbow = r.Elbows[i].localRotation;
+                Solve(r.Hips, r.Legs[i], r.Knees[i], r.FootPoint[i], r.Thigh, r.Shin, Vector3.forward); Upright(r.Feet[i], root);
+                if (groundGait)
+                {
+                    r.Feet[i].rotation = Quaternion.Euler(0, r.FootYaw[i], 0) * Quaternion.Euler(r.FootPitch[i], 0, 0);
+                }
+                else if (protagonist && pose.Airborne) Upright(r.Feet[i], root, new Vector3(Mathf.Lerp(-10, 3, descent), 0, 0));
+                // The arm opposes the leg on its own side, instead of marching
+                // forward with it. Elbows stay relaxed walking and tuck in running.
+                float armSwing = -side * Mathf.Cos(r.Phase - .12f) * Mathf.Lerp(.31f, .66f, run) * r.Weight;
+                r.Arms[i].localRotation = Quaternion.Euler((-.06f - .10f * run + armSwing) * Mathf.Rad2Deg, side * run * 4, side * Mathf.Lerp(5, 9, run));
+                r.Elbows[i].localRotation = Quaternion.Euler((-.13f - .17f * r.Weight - .85f * run - Mathf.Max(0, -armSwing) * .22f) * Mathf.Rad2Deg, 0, 0); r.Hands[i].localRotation = Quaternion.identity;
+                if (pose.Talking) { r.Arms[i].localRotation = Quaternion.Euler(i == 0 ? -25 - Mathf.Sin(tNow * 2.4f) * 10 : -7, 0, side * 12); r.Elbows[i].localRotation = Quaternion.Euler(i == 0 ? -42 : -15, 0, 0); }
+                if (pose.Airborne)
+                {
+                    Quaternion arm = Quaternion.Euler(protagonist ? Mathf.Lerp(-40, -18, descent) + side * pose.JumpLead * 22 * (1 - descent) : -35 + side * 12, 0, side * (protagonist ? 17 : 22));
+                    Quaternion elbow = Quaternion.Euler(protagonist ? Mathf.Lerp(-55, -28, descent) : -42, 0, 0);
+                    r.Arms[i].localRotation = protagonist ? Quaternion.Slerp(previousArm, arm, 1 - Mathf.Exp(-18 * dt)) : arm;
+                    r.Elbows[i].localRotation = protagonist ? Quaternion.Slerp(previousElbow, elbow, 1 - Mathf.Exp(-18 * dt)) : elbow;
+                }
+                else if (protagonist && vault)
+                {
+                    float effort = Mathf.Sin(Mathf.Clamp01(pose.Progress) * Mathf.PI), lead = side == pose.JumpLead ? 1 : -1;
+                    Quaternion arm = Quaternion.Euler(-15 - (mode == "climb" ? 38 : 26) * effort + lead * 10 * effort, 0, side * (8 + 14 * effort));
+                    Quaternion elbow = Quaternion.Euler(-20 - 32 * effort, 0, 0);
+                    r.Arms[i].localRotation = Quaternion.Slerp(previousArm, arm, 1 - Mathf.Exp(-18 * dt));
+                    r.Elbows[i].localRotation = Quaternion.Slerp(previousElbow, elbow, 1 - Mathf.Exp(-18 * dt));
+                }
+                else if (protagonist && r.Landing > .01f)
+                    r.Arms[i].localRotation = Quaternion.Slerp(r.Arms[i].localRotation, Quaternion.Euler(-18, 0, side * 20), r.Landing);
+                if (cabin > 0) { r.Arms[i].localRotation *= Quaternion.Euler(-45 * cabin, 0, 0); r.Elbows[i].localRotation *= Quaternion.Euler(-26 * cabin, 0, 0); }
+                if (pose.Seated) Reach(r, i, root.TransformPoint(new Vector3(side * .26f, pose.SeatHeight + .23f, .28f)));
+                if (pose.Clap) Reach(r, i, root.TransformPoint(new Vector3(side * (.10f + .15f * (.5f + .5f * Mathf.Cos(tNow * 12))), 1.42f, .48f)));
+                if (pose.HandNodes != null && pose.HandNodes.Length > i && pose.HandNodes[i]) Reach(r, i, pose.HandNodes[i].position);
+                else if (pose.Hands != null && pose.Hands.Length > i && (vault || mode == "pet"))
+                {
+                    float grip = mode == "pet" ? pose.Weight : Mathf.Clamp01(plant * 2);
+                    if (protagonist && vault)
+                    {
+                        float contact = Mathf.SmoothStep(0, 1, pose.Progress / .16f) * (1 - Mathf.SmoothStep(0, 1, (pose.Progress - .42f) / .30f));
+                        float reach = 1 - Mathf.SmoothStep(0, 1, (Vector3.Distance(r.Arms[i].position, pose.Hands[i]) - (r.Upper + r.Lower) * .90f) / .16f);
+                        grip = contact * reach;
+                    }
+                    Reach(r, i, pose.Hands[i], grip);
+                }
+            }
+            if (r.AimWeight>.01f && !pose.Reload)
+            {
+                Vector3 direction = (pose.AimPoint - r.Arms[1].position).normalized;
+                Reach(r, 1, r.Arms[1].position + direction * (.56f - pose.Recoil * .08f) - root.right * .035f + Vector3.up * .04f,r.AimWeight);
+                Reach(r, 0, r.Hands[1].position + direction * (ctx.Combat.Equipped=="carbine"?.23f:.06f) - root.right * .04f - Vector3.up * .035f,r.AimWeight);
+                float aimPitch=-Mathf.Asin(Mathf.Clamp(direction.y,-1,1))*Mathf.Rad2Deg;
+                r.Head.localRotation=Quaternion.Slerp(r.Head.localRotation,Quaternion.Euler(aimPitch*.55f,18,0),r.AimWeight);
+            }
+            else if (pose.Reload)
+            {
+                Reach(r, 0, root.TransformPoint(new Vector3(-.22f, 1.35f, .43f)));
+                Reach(r, 1, r.Hands[0].position + root.forward * .14f - root.up * (.08f + .09f * Mathf.Sin(pose.Time * 8)));
+            }
+        }
+
+        static void ResetFeet(CityRig r)
+        {
+            r.Phase = r.GaitOffset * Mathf.PI * 2; r.GaitVelocity = Vector3.zero; r.PelvisHeight = r.HipHeight;
+            for (int i = 0; i < 2; i++)
+            {
+                r.FootAnchor[i] = r.FootPoint[i] = r.SwingFrom[i] = r.SwingTo[i] = r.Root.TransformPoint(new Vector3(r.Legs[i].localPosition.x, r.Ankle, 0));
+                r.FootPitch[i] = 0; r.FootYaw[i] = r.Root.eulerAngles.y; r.Stance[i] = true; r.Settle[i] = 1;
+                r.EarlyLift[i] = false; r.LastFootPhase[i] = Mathf.Repeat(r.GaitOffset + i * .5f, 1);
+            }
+        }
+
+        bool GroundStep(CityRig r, int i, float u, float support, float run, float stride, float scale, float anatomy, float raw, float turn, bool aim, float dt)
+        {
+            var root = r.Root;
+            bool moving = raw > .035f || aim && Mathf.Abs(turn) > .15f;
+            float side = i == 0 ? -1 : 1;
+            Vector3 home = new Vector3(r.Legs[i].localPosition.x, r.Ankle, 0);
+            if (!moving)
+            {
+                if (r.Settle[i] == 0) r.SwingFrom[i] = r.FootPoint[i];
+                r.Settle[i] = Mathf.Min(1, r.Settle[i] + dt / .23f);
+                Vector3 goal = root.TransformPoint(home); goal.y = Floor(goal, root.position.y) + r.Ankle * scale;
+                float t = Mathf.SmoothStep(0, 1, r.Settle[i]);
+                float lift = Mathf.Min(.065f * anatomy * scale, Vector3.ProjectOnPlane(goal - r.SwingFrom[i], Vector3.up).magnitude * .2f);
+                r.FootPoint[i] = Vector3.Lerp(r.SwingFrom[i], goal, t) + Vector3.up * (Mathf.Sin(t * Mathf.PI) * lift);
+                r.FootAnchor[i] = r.FootPoint[i]; r.FootPitch[i] = Damped(r.FootPitch[i], 0, 18, dt);
+                r.FootYaw[i] = Mathf.LerpAngle(r.FootYaw[i], root.eulerAngles.y + side * 3, 1 - Mathf.Exp(-14 * dt));
+                return true;
+            }
+            r.Settle[i] = 0;
+            if (u < r.LastFootPhase[i]) r.EarlyLift[i] = false;
+            r.LastFootPhase[i] = u;
+            bool stance = u < support && !r.EarlyLift[i];
+            Vector3 supportHip = r.Hips.localRotation * r.Legs[i].localPosition + new Vector3(r.Hips.localPosition.x, 0, 0);
+            Vector3 supported = root.InverseTransformPoint(r.FootPoint[i]);
+            float legLength = r.Thigh + r.Shin;
+            float supportVertical = Mathf.Clamp(r.Ankle + legLength * .83f + supportHip.y - supported.y, .15f * anatomy, legLength - .02f * anatomy);
+            float supportReach = Mathf.Sqrt(Mathf.Max(.01f, Mathf.Pow(legLength - .012f, 2) - supportVertical * supportVertical));
+            float supportSpan = new Vector2(supported.x - supportHip.x, supported.z - supportHip.z).magnitude;
+            if (stance && r.Stance[i] && supportSpan > Mathf.Min(.59f * anatomy, supportReach))
+            {
+                // Release an exhausted support during a sharp reversal instead
+                // of dragging the planted foot or folding the entire body.
+                r.EarlyLift[i] = true; r.LiftPhase[i] = u; stance = false;
+            }
+            float heel = Mathf.Lerp(11, 16, run), push = Mathf.Lerp(19, 29, run);
+            if (stance)
+            {
+                if (!r.Stance[i])
+                {
+                    // Plant the ankle that was actually visible at the end of
+                    // recovery, including reach/turn correction.
+                    r.FootAnchor[i] = r.FootPoint[i];
+                    r.FootAnchor[i].y = Floor(r.FootAnchor[i], root.position.y) + r.Ankle * scale;
+                    r.FootContacts++; r.LastContact = i;
+                }
+                float contact = u / support;
+                r.FootPitch[i] = -heel * (1 - Mathf.SmoothStep(0, 1, contact / .23f)) + push * Mathf.SmoothStep(0, 1, (contact - .62f) / .38f);
+                r.FootPoint[i] = r.FootAnchor[i];
+                // Rotate over heel/toe with the ankle above the sole, not into
+                // the floor. The anchor remains fixed throughout support.
+                r.FootPoint[i].y += Mathf.Sin(Mathf.Abs(r.FootPitch[i]) * Mathf.Deg2Rad) * (r.FootPitch[i] > 0 ? .23f : .10f) * anatomy * scale;
+                return true;
+            }
+            float swing = r.EarlyLift[i] ? (u - r.LiftPhase[i]) / (1 - r.LiftPhase[i]) : (u - support) / (1 - support);
+            if (r.Stance[i]) r.SwingFrom[i] = r.FootPoint[i];
+            float speed = Mathf.Max(.25f, r.GaitVelocity.magnitude);
+            float remaining = (1 - u) * stride / speed;
+            Vector3 direction = r.GaitVelocity.sqrMagnitude > .015f ? r.GaitVelocity.normalized : root.forward;
+            float reach = stride * support * .5f * Mathf.Clamp01(raw / .7f);
+            Quaternion landingYaw = Quaternion.AngleAxis(Mathf.Clamp(turn * remaining * Mathf.Rad2Deg, -35, 35), Vector3.up) * root.rotation;
+            Vector3 goalPoint = root.position + landingYaw * Vector3.Scale(home, root.lossyScale) + direction * reach + r.GaitVelocity * remaining;
+            goalPoint.y = Floor(goalPoint, root.position.y) + r.Ankle * scale;
+            // Predict the landing in world space. At constant velocity this
+            // target is stationary, so both ends of the swing ease to rest.
+            r.SwingTo[i] = r.Stance[i] ? goalPoint : Vector3.Lerp(r.SwingTo[i], goalPoint, 1 - Mathf.Exp(-22 * dt));
+            // Short acceleration/deceleration windows keep the recovering foot
+            // near the body, rather than overshooting behind/ahead of the leg.
+            float ramp = Mathf.Lerp(.18f, .13f, run), edge = Mathf.Min(swing, 1 - swing);
+            float ease = edge < ramp ? (edge * .5f - ramp * Mathf.Sin(Mathf.PI * edge / ramp) / (2 * Mathf.PI)) / (1 - ramp) : (edge - ramp * .5f) / (1 - ramp);
+            if (swing > .5f) ease = 1 - ease;
+            float arc = Mathf.Pow(Mathf.Max(0, Mathf.Sin(Mathf.Pow(swing, .82f) * Mathf.PI)), 1.3f);
+            r.FootPitch[i] = Mathf.Lerp(push, -heel, ease) + Mathf.Sin(swing * Mathf.PI) * Mathf.Lerp(-3, 20, run);
+            float sprintEffort = Mathf.InverseLerp(2.5f, CityPlayer.SprintSpeed, speed / (anatomy * scale));
+            r.FootPoint[i] = Vector3.Lerp(r.SwingFrom[i], r.SwingTo[i], ease) + Vector3.up * (arc * Mathf.Lerp(.12f, Mathf.Lerp(.25f, .43f, sprintEffort), run) * anatomy * scale);
+            // Converge to the heel height before touchdown rather than snapping
+            // the ankle up when the support state changes.
+            r.FootPoint[i].y += Mathf.Sin(Mathf.Abs(r.FootPitch[i]) * Mathf.Deg2Rad) * .10f * anatomy * scale * Mathf.SmoothStep(0, 1, swing);
+            // Keep the recovering ankle inside the anatomical reach envelope.
+            // This also handles a landing replanned while the body turns.
+            Vector3 local = root.InverseTransformPoint(r.FootPoint[i]);
+            Vector3 hipJoint = r.Hips.localRotation * r.Legs[i].localPosition + new Vector3(r.Hips.localPosition.x, 0, 0);
+            Vector2 offset = new Vector2(local.x - hipJoint.x, local.z - hipJoint.z);
+            float minimumHip = r.Ankle + (r.Thigh + r.Shin) * Mathf.Lerp(.826f, .83f, run);
+            float vertical = Mathf.Clamp(minimumHip + hipJoint.y - local.y, .15f * anatomy, r.Thigh + r.Shin - .02f * anatomy);
+            float horizontal = Mathf.Sqrt(Mathf.Max(.01f, Mathf.Pow(r.Thigh + r.Shin - .012f, 2) - vertical * vertical));
+            if (offset.magnitude > horizontal)
+            {
+                offset = offset.normalized * horizontal; local.x = hipJoint.x + offset.x; local.z = hipJoint.z + offset.y;
+                r.FootPoint[i] = root.TransformPoint(local);
+            }
+            float heading = root.eulerAngles.y + Mathf.Clamp(Vector3.SignedAngle(root.forward, direction, Vector3.up), -22, 22) + side * 3;
+            r.FootYaw[i] = Mathf.LerpAngle(r.FootYaw[i], heading, 1 - Mathf.Exp(-16 * dt));
+            return false;
+        }
+
+        float Floor(Vector3 point, float fallback)
+        {
+            return Physics.Raycast(point + Vector3.up * .7f, Vector3.down, out var hit, 1.7f, ctx != null ? ctx.SolidMask : ~0, QueryTriggerInteraction.Ignore) && hit.normal.y > .45f ? hit.point.y : fallback;
+        }
+    }
+}

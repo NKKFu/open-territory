@@ -1,0 +1,131 @@
+{
+    "passed": true,
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\OverallMap-20261108\\BaiaDoSol.exe",
+    "graphics": "Direct3D12",
+    "verifiedAtUtc": "2026-11-08T13:08:06.7866496Z",
+    "routeSamples": 209,
+    "checks": [
+        {
+            "name": "authored-native-scene-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "QA-storage-is-isolated",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact-house-from-user-picture",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "authorized-open-shop-refit-keeps-original-floor",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "preserved-collision-audit-recorded",
+            "detail": "original=32052",
+            "passed": true
+        },
+        {
+            "name": "retail-shelves-counter-candles-and-lighting",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "native-square-building-style-no-spires-or-raised-roof",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "central-pentagram-keeps-the-open-floor",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "all-building-materials-supported",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "English-signage",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "wizard-is-a-native-resident-with-valid-rig",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sidewalk-door-central-pentagram-and-both-shop-aisles-clearance",
+            "detail": "samples=209 unsupported=0 blocked=0",
+            "passed": true
+        },
+        {
+            "name": "real-controller-enter-circle-shelves-pentagram-and-leave",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "preserved-manual-front-door-opens-on-approach",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "shop-counter-stops-the-body",
+            "detail": "localZ=-3.580059",
+            "passed": true
+        },
+        {
+            "name": "wizard-Talk-is-visible-across-counter",
+            "detail": "resident--956000",
+            "passed": true
+        },
+        {
+            "name": "talk-to-wizard-keeps-the-world-running",
+            "detail": "Elias · The old books are on the back shelves.",
+            "passed": true
+        },
+        {
+            "name": "prepared-crystal-animates-in-world",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Esc-freezes-crystal-and-candle-lights",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "settings-resume-world",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Blackthorn-House-is-a-map-place",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "map-keeps-city-running",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "night-lanterns-and-ritual-lighting",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "errors=0",
+            "passed": true
+        }
+    ],
+    "errors": [],
+    "obstacles": []
+}

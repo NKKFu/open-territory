@@ -1,0 +1,137 @@
+{
+    "passed": false,
+    "checks": [
+        {
+            "name": "square-dismantled-and-assets-redistributed",
+            "detail": "",
+            "passed": true,
+            "value": 305.0
+        },
+        {
+            "name": "backyards-created-between-real-buildings",
+            "detail": "",
+            "passed": true,
+            "value": 126.0
+        },
+        {
+            "name": "small-parking-courts-and-pocket-gardens",
+            "detail": "",
+            "passed": true,
+            "value": 10.0
+        },
+        {
+            "name": "plaza-trees-and-usable-benches-reused",
+            "detail": "",
+            "passed": true,
+            "value": 100.0
+        },
+        {
+            "name": "all-yard-and-parking-paths-supported",
+            "detail": "points=5112 maxHeightError=0.1250069",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "gates-and-side-paths-clear-of-walls-and-furniture",
+            "detail": "",
+            "passed": false,
+            "value": 3.0
+        },
+        {
+            "name": "access-paths-have-no-abrupt-ground-steps",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "every-new-space-connected-to-pedestrian-navigation",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "low-walls-have-real-collision",
+            "detail": "walls=1602",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "yards-have-usable-walking-routes",
+            "detail": "",
+            "passed": true,
+            "value": 115.0
+        },
+        {
+            "name": "walk-through-side-gate-into-yard-0",
+            "detail": "yard-2",
+            "passed": true,
+            "value": 0.946940541267395
+        },
+        {
+            "name": "walk-through-side-gate-into-yard-1",
+            "detail": "yard-47",
+            "passed": true,
+            "value": 0.22447150945663453
+        },
+        {
+            "name": "walk-through-side-gate-into-yard-2",
+            "detail": "yard-90",
+            "passed": true,
+            "value": 0.22310437262058259
+        },
+        {
+            "name": "walk-through-side-gate-into-yard-3",
+            "detail": "yard-168",
+            "passed": true,
+            "value": 0.2204630821943283
+        },
+        {
+            "name": "reused-garden-bench-operates-26981",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "reused-garden-bench-has-clear-exit-26981",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "reused-garden-bench-operates-27017",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "reused-garden-bench-has-clear-exit-27017",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "reused-garden-bench-operates-27050",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "reused-garden-bench-has-clear-exit-27050",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "errors": [],
+    "obstacles": [
+        "blocked yard-141 (915.75, 5.30, 910.40) Colisão-211,Colisão-212",
+        "blocked yard-141 (916.27, 5.31, 910.80) Colisão-211,Colisão-212",
+        "blocked yard-141 (916.79, 5.31, 911.19) Colisão-211"
+    ]
+}

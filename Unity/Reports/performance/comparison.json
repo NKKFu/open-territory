@@ -1,0 +1,348 @@
+﻿{
+    "comparedAtUtc":  "2026-11-08T04:16:19.6778018Z",
+    "configurationMatches":  true,
+    "contentMatches":  true,
+    "routeSignaturesMatch":  true,
+    "contentSha256":  "C6F1233E0E96FD537E19EF51AD4F568B9315B0EF3F300A087E76CC59BB8DCD74",
+    "engineSha256":  "BAAD0CCEF88AABF544E14B6A576D718F46D24ABE6ED550469436862A7D56F3F0",
+    "baselineAssemblies":  [
+                               "7CEF0FF307D5E74AC522666544DA6C16C475595A3EDBFFD16A52F5BE417C1421"
+                           ],
+    "optimizedAssemblies":  [
+                                "6C38304195DAD2A7C719D5D05302D4596278F14056292B48379CFFCC83D4E163"
+                            ],
+    "baselineRuns":  3,
+    "optimizedRuns":  3,
+    "configuration":  {
+                          "unity":  "6000.3.27f1",
+                          "layout":  "marin-reference-v2",
+                          "cpu":  "AMD Ryzen 9 7900X 12-Core Processor ",
+                          "gpu":  "AMD Radeon RX 9070",
+                          "graphicsApi":  "Direct3D11",
+                          "width":  1280,
+                          "height":  720,
+                          "quality":  1,
+                          "msaa":  2,
+                          "vSync":  0,
+                          "targetFrameRate":  -1,
+                          "development":  false,
+                          "navigationNodes":  11316
+                      },
+    "operations":  [
+                       {
+                           "name":  "resident-routes",
+                           "operationTimeMs":  {
+                                                   "available":  true,
+                                                   "baseline":  {
+                                                                    "runs":  3,
+                                                                    "median":  7.22948888888889,
+                                                                    "minimum":  7.227377777777775,
+                                                                    "maximum":  7.3025125
+                                                                },
+                                                   "optimized":  {
+                                                                     "runs":  3,
+                                                                     "median":  1.6813930555555555,
+                                                                     "minimum":  1.5672631944444442,
+                                                                     "maximum":  2.2398013888888896
+                                                                 },
+                                                   "changePercent":  -76.742573625921000755766716885
+                                               },
+                           "operationP95Ms":  {
+                                                  "available":  true,
+                                                  "baseline":  {
+                                                                   "runs":  3,
+                                                                   "median":  17.7389,
+                                                                   "minimum":  17.6958,
+                                                                   "maximum":  17.7905
+                                                               },
+                                                  "optimized":  {
+                                                                    "runs":  3,
+                                                                    "median":  3.5142,
+                                                                    "minimum":  3.2588,
+                                                                    "maximum":  4.8269
+                                                                },
+                                                  "changePercent":  -80.18930147867116901273472425
+                                              },
+                           "allocatedBytes":  {
+                                                  "available":  false
+                                              }
+                       },
+                       {
+                           "name":  "prop-destruction",
+                           "operationTimeMs":  {
+                                                   "available":  true,
+                                                   "baseline":  {
+                                                                    "runs":  3,
+                                                                    "median":  5.191995312500001,
+                                                                    "minimum":  5.062357812500002,
+                                                                    "maximum":  5.40070625
+                                                                },
+                                                   "optimized":  {
+                                                                     "runs":  3,
+                                                                     "median":  0.6899156250000003,
+                                                                     "minimum":  0.44633750000000008,
+                                                                     "maximum":  0.8385765625000001
+                                                                 },
+                                                   "changePercent":  -86.71193667415314780064399872
+                                               },
+                           "operationP95Ms":  {
+                                                  "available":  true,
+                                                  "baseline":  {
+                                                                   "runs":  3,
+                                                                   "median":  6.2405,
+                                                                   "minimum":  5.9787,
+                                                                   "maximum":  6.3283
+                                                               },
+                                                  "optimized":  {
+                                                                    "runs":  3,
+                                                                    "median":  0.932,
+                                                                    "minimum":  0.6729,
+                                                                    "maximum":  1.2007
+                                                                },
+                                                  "changePercent":  -85.0652992548673984456373688
+                                              },
+                           "allocatedBytes":  {
+                                                  "available":  false
+                                              }
+                       }
+                   ],
+    "phases":  [
+                   {
+                       "name":  "city-street",
+                       "frameMs":  {
+                                       "available":  true,
+                                       "baseline":  {
+                                                        "runs":  3,
+                                                        "median":  11.137213808463253,
+                                                        "minimum":  11.024373208379279,
+                                                        "maximum":  11.16578113839286
+                                                    },
+                                       "optimized":  {
+                                                         "runs":  3,
+                                                         "median":  6.582062080316,
+                                                         "minimum":  6.51989191655803,
+                                                         "maximum":  9.12251167883212
+                                                     },
+                                       "changePercent":  -40.90028086455302449812259344
+                                   },
+                       "mainThreadMs":  {
+                                            "available":  true,
+                                            "baseline":  {
+                                                             "runs":  3,
+                                                             "median":  11.130472826280647,
+                                                             "minimum":  11.02885456670341,
+                                                             "maximum":  11.172677566964282
+                                                         },
+                                            "optimized":  {
+                                                              "runs":  3,
+                                                              "median":  6.582529221856494,
+                                                              "minimum":  6.516922090612777,
+                                                              "maximum":  9.123029456204375
+                                                          },
+                                            "changePercent":  -40.860291161088899267441945749
+                                        },
+                       "renderThreadMs":  {
+                                              "available":  false
+                                          },
+                       "gpuMs":  {
+                                     "available":  false
+                                 },
+                       "gcBytes":  {
+                                       "available":  false
+                                   },
+                       "usedMemoryMiB":  {
+                                             "available":  true,
+                                             "baseline":  {
+                                                              "runs":  3,
+                                                              "median":  1487.045234562294,
+                                                              "minimum":  1487.0242915302515,
+                                                              "maximum":  1487.1486624661984
+                                                          },
+                                             "optimized":  {
+                                                               "runs":  3,
+                                                               "median":  1489.484780720302,
+                                                               "minimum":  1489.1949570500938,
+                                                               "maximum":  1489.4908012846458
+                                                           },
+                                             "changePercent":  0.1640532581865992095578878565
+                                         },
+                       "drawCalls":  {
+                                         "available":  false
+                                     },
+                       "frameP95Ms":  {
+                                          "available":  true,
+                                          "baseline":  {
+                                                           "runs":  3,
+                                                           "median":  14.5955,
+                                                           "minimum":  14.3966,
+                                                           "maximum":  18.1272
+                                                       },
+                                          "optimized":  {
+                                                            "runs":  3,
+                                                            "median":  9.6067,
+                                                            "minimum":  8.8441,
+                                                            "maximum":  12.5501
+                                                        },
+                                          "changePercent":  -34.180398067897639683464081395
+                                      }
+                   },
+                   {
+                       "name":  "destruction-stress",
+                       "frameMs":  {
+                                       "available":  true,
+                                       "baseline":  {
+                                                        "runs":  3,
+                                                        "median":  17.729899999999998,
+                                                        "minimum":  16.2798625,
+                                                        "maximum":  18.47859375
+                                                    },
+                                       "optimized":  {
+                                                         "runs":  3,
+                                                         "median":  8.12396875,
+                                                         "minimum":  6.111475,
+                                                         "maximum":  8.92878125
+                                                     },
+                                       "changePercent":  -54.179274840805639533136096741
+                                   },
+                       "mainThreadMs":  {
+                                            "available":  true,
+                                            "baseline":  {
+                                                             "runs":  3,
+                                                             "median":  15.89611875,
+                                                             "minimum":  15.278649999999999,
+                                                             "maximum":  17.406887437499998
+                                                         },
+                                            "optimized":  {
+                                                              "runs":  3,
+                                                              "median":  8.5839875,
+                                                              "minimum":  5.9266874375,
+                                                              "maximum":  9.018793749999999
+                                                          },
+                                            "changePercent":  -45.9994755008986077183148874
+                                        },
+                       "renderThreadMs":  {
+                                              "available":  false
+                                          },
+                       "gpuMs":  {
+                                     "available":  false
+                                 },
+                       "gcBytes":  {
+                                       "available":  false
+                                   },
+                       "usedMemoryMiB":  {
+                                             "available":  true,
+                                             "baseline":  {
+                                                              "runs":  3,
+                                                              "median":  1504.5048723220825,
+                                                              "minimum":  1504.127013206482,
+                                                              "maximum":  1504.5209350585938
+                                                          },
+                                             "optimized":  {
+                                                               "runs":  3,
+                                                               "median":  1501.8591055870056,
+                                                               "minimum":  1501.7761716246605,
+                                                               "maximum":  1505.947965145111
+                                                           },
+                                             "changePercent":  -0.1758563088594968407664691888
+                                         },
+                       "drawCalls":  {
+                                         "available":  false
+                                     },
+                       "frameP95Ms":  {
+                                          "available":  true,
+                                          "baseline":  {
+                                                           "runs":  3,
+                                                           "median":  21.3185,
+                                                           "minimum":  18.2009,
+                                                           "maximum":  26.0515
+                                                       },
+                                          "optimized":  {
+                                                            "runs":  3,
+                                                            "median":  10.6829,
+                                                            "minimum":  7.9597,
+                                                            "maximum":  11.4153
+                                                        },
+                                          "changePercent":  -49.889063489457513427304922954
+                                      }
+                   },
+                   {
+                       "name":  "destruction-stress-tail",
+                       "frameMs":  {
+                                       "available":  true,
+                                       "baseline":  {
+                                                        "runs":  3,
+                                                        "median":  17.54235833333333,
+                                                        "minimum":  17.39482083333333,
+                                                        "maximum":  18.361175
+                                                    },
+                                       "optimized":  {
+                                                         "runs":  3,
+                                                         "median":  8.253799999999999,
+                                                         "minimum":  6.5009812500000019,
+                                                         "maximum":  9.431685416666666
+                                                     },
+                                       "changePercent":  -52.949313637514527066023266069
+                                   },
+                       "mainThreadMs":  {
+                                            "available":  true,
+                                            "baseline":  {
+                                                             "runs":  3,
+                                                             "median":  16.943016562500003,
+                                                             "minimum":  16.7268583125,
+                                                             "maximum":  17.888579145833334
+                                                         },
+                                            "optimized":  {
+                                                              "runs":  3,
+                                                              "median":  8.129993749999999,
+                                                              "minimum":  6.495362458333331,
+                                                              "maximum":  9.315035375
+                                                          },
+                                            "changePercent":  -52.01566545125073526605092382
+                                        },
+                       "renderThreadMs":  {
+                                              "available":  false
+                                          },
+                       "gpuMs":  {
+                                     "available":  false
+                                 },
+                       "gcBytes":  {
+                                       "available":  false
+                                   },
+                       "usedMemoryMiB":  {
+                                             "available":  true,
+                                             "baseline":  {
+                                                              "runs":  3,
+                                                              "median":  1505.4134961764018,
+                                                              "minimum":  1505.0337249437969,
+                                                              "maximum":  1505.4340405464172
+                                                          },
+                                             "optimized":  {
+                                                               "runs":  3,
+                                                               "median":  1502.6690293749173,
+                                                               "minimum":  1502.5555243492126,
+                                                               "maximum":  1506.8090440432231
+                                                           },
+                                             "changePercent":  -0.1823065097034913280308380226
+                                         },
+                       "drawCalls":  {
+                                         "available":  false
+                                     },
+                       "frameP95Ms":  {
+                                          "available":  true,
+                                          "baseline":  {
+                                                           "runs":  3,
+                                                           "median":  21.5658,
+                                                           "minimum":  21.0564,
+                                                           "maximum":  22.4914
+                                                       },
+                                          "optimized":  {
+                                                            "runs":  3,
+                                                            "median":  10.9081,
+                                                            "minimum":  8.5663,
+                                                            "maximum":  12.5329
+                                                        },
+                                          "changePercent":  -49.41945116805312114551743965
+                                      }
+                   }
+               ]
+}

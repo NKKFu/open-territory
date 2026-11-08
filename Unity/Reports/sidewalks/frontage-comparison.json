@@ -1,0 +1,49 @@
+{
+  "verifiedAtUtc": "2026-11-08T08:05:31.294183+00:00",
+  "sameBlockedPointsBeforeAndAfter": true,
+  "beforeBlockedSamples": 24,
+  "afterBlockedSamples": 24,
+  "existingBlockedEntrances": [
+    "#053763",
+    "#07474D",
+    "#713EE2",
+    "#DBDAE6",
+    "#F1C3A7",
+    "#F908F8",
+    "GALERIA SOL"
+  ],
+  "newBlockedPoints": [],
+  "removedBlockedPoints": [],
+  "differentReportedPartsOfSameExistingObject": [
+    {
+      "point": "blocked #07474D (236.94, 10.11, 694.33)",
+      "beforeCollider": 305,
+      "afterCollider": 304,
+      "sameOwner": 2574,
+      "bothColliderDefinitionsUnchanged": true
+    },
+    {
+      "point": "blocked #07474D (237.33, 10.10, 694.35)",
+      "beforeCollider": 305,
+      "afterCollider": 304,
+      "sameOwner": 2574,
+      "bothColliderDefinitionsUnchanged": true
+    },
+    {
+      "point": "blocked #F908F8 (223.44, 10.10, 693.90)",
+      "beforeCollider": 303,
+      "afterCollider": 302,
+      "sameOwner": 2563,
+      "bothColliderDefinitionsUnchanged": true
+    },
+    {
+      "point": "blocked #F908F8 (223.83, 10.11, 693.91)",
+      "beforeCollider": 303,
+      "afterCollider": 302,
+      "sameOwner": 2563,
+      "bothColliderDefinitionsUnchanged": true
+    }
+  ],
+  "frontageAuditPassedBefore": false,
+  "frontageAuditPassedAfter": false
+}

@@ -1,0 +1,1764 @@
+{
+    "unity": "6000.3.27f1",
+    "firstNextStop": "",
+    "playerExitStop": "",
+    "npcExitStop": "",
+    "playerExitTime": 0.0,
+    "npcExitTime": 0.0,
+    "passed": true,
+    "vehicles": 38,
+    "boats": 5,
+    "checks": [
+        {
+            "name": "native-fleet",
+            "passed": true,
+            "value": 38.0,
+            "detail": ""
+        },
+        {
+            "name": "native-road-height-acacias",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.04; authored 0.04"
+        },
+        {
+            "name": "native-sidewalk-height-acacias",
+            "passed": true,
+            "value": -1.4901161193847657e-8,
+            "detail": "m; native 0.23; authored 0.23"
+        },
+        {
+            "name": "native-road-height-praca",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.04; authored 0.04"
+        },
+        {
+            "name": "native-sidewalk-height-praca",
+            "passed": true,
+            "value": -1.4901161193847657e-8,
+            "detail": "m; native 0.24; authored 0.24"
+        },
+        {
+            "name": "native-road-height-hospital",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.04; authored 0.04"
+        },
+        {
+            "name": "native-sidewalk-height-hospital",
+            "passed": true,
+            "value": -1.4901161193847657e-8,
+            "detail": "m; native 0.23; authored 0.23"
+        },
+        {
+            "name": "native-road-height-livraria",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.04; authored 0.04"
+        },
+        {
+            "name": "native-sidewalk-height-livraria",
+            "passed": true,
+            "value": -1.4901161193847657e-8,
+            "detail": "m; native 0.23; authored 0.23"
+        },
+        {
+            "name": "native-road-grade--80",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 1.23; authored 1.23"
+        },
+        {
+            "name": "native-road-grade--70",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 1.6375; authored 1.6375"
+        },
+        {
+            "name": "native-road-grade-60",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 0.72; authored 0.72"
+        },
+        {
+            "name": "native-road-grade-80",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 3.62; authored 3.62"
+        },
+        {
+            "name": "native-road-grade-90",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 4.34; authored 4.34"
+        },
+        {
+            "name": "native-road-grade-120",
+            "passed": true,
+            "value": 0.0,
+            "detail": "m; native 4.34; authored 4.34"
+        },
+        {
+            "name": "traffic-native-fixtures",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "native-PARE-complete-stop",
+            "passed": true,
+            "value": 1.3599989414215088,
+            "detail": "s; gap 0.5574341; speed 1.60906E-05"
+        },
+        {
+            "name": "native-PARE-yields-to-person",
+            "passed": true,
+            "value": 0.000016090594726847485,
+            "detail": ""
+        },
+        {
+            "name": "native-PARE-resumes-after-clearance",
+            "passed": true,
+            "value": 1.1449601650238038,
+            "detail": ""
+        },
+        {
+            "name": "native-contour-rejects-oncoming",
+            "passed": true,
+            "value": 3.299999713897705,
+            "detail": "x while opposing vehicle approaches"
+        },
+        {
+            "name": "native-contour-rejects-person",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "native-contour-two-way",
+            "passed": true,
+            "value": 6.640137672424316,
+            "detail": "m lateral; phase ; reversed True; reason "
+        },
+        {
+            "name": "native-contour-signals-two-way",
+            "passed": true,
+            "value": 8.381683349609375,
+            "detail": "s before lateral movement"
+        },
+        {
+            "name": "native-contour-no-impact-two-way",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "native-two-lane-branch-present",
+            "passed": true,
+            "value": 14.0,
+            "detail": ""
+        },
+        {
+            "name": "native-two-lane-grade-matches-asphalt",
+            "passed": true,
+            "value": 0.014779988676309586,
+            "detail": "m ground error; legitimate lane height difference 0.4923601"
+        },
+        {
+            "name": "native-contour-one-way",
+            "passed": true,
+            "value": 5.703181743621826,
+            "detail": "m lateral; phase ; reversed False; reason "
+        },
+        {
+            "name": "native-contour-signals-one-way",
+            "passed": true,
+            "value": 1.5470466613769532,
+            "detail": "s before lateral movement"
+        },
+        {
+            "name": "native-contour-no-impact-one-way",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        },
+        {
+            "name": "no-runtime-errors",
+            "passed": true,
+            "value": 0.0,
+            "detail": ""
+        }
+    ],
+    "errors": [],
+    "bus": [
+        {
+            "stop": "pare",
+            "reason": "; ; wait 0; signal 0; denied ",
+            "position": {
+                "x": -181.06948852539063,
+                "y": 1.0504884719848633,
+                "z": -63.71910858154297
+            },
+            "elapsed": 1.2309117317199708,
+            "gap": -999.0,
+            "speed": 0.9870790839195252,
+            "target": 2.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "pare",
+            "reason": "pare; ; wait 0; signal 0; denied ",
+            "position": {
+                "x": -189.2245635986328,
+                "y": 0.025644060224294664,
+                "z": -7.974152088165283
+            },
+            "elapsed": 1.636030673980713,
+            "gap": 7.228118896484375,
+            "speed": 2.173215627670288,
+            "target": 2.6799983978271486,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "pare",
+            "reason": "pare; ; wait 0; signal 0; denied ",
+            "position": {
+                "x": -189.08157348632813,
+                "y": 0.04268248379230499,
+                "z": -7.000904560089111
+            },
+            "elapsed": 2.0361721515655519,
+            "gap": 6.254119873046875,
+            "speed": 2.7576467990875246,
+            "target": 3.359996795654297,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "pare",
+            "reason": "pare; ; wait 0; signal 0; denied ",
+            "position": {
+                "x": -188.90118408203126,
+                "y": 0.04233536124229431,
+                "z": -5.80330753326416
+            },
+            "elapsed": 2.442901134490967,
+            "gap": 5.007171630859375,
+            "speed": 3.0214357376098635,
+            "target": 2.9178466796875,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "pare",
+            "reason": "pare; ; wait 0; signal 0; denied ",
+            "position": {
+                "x": -188.7229461669922,
+                "y": 0.041889581829309466,
+                "z": -4.65703010559082
+            },
+            "elapsed": 2.844763994216919,
+            "gap": 3.851165771484375,
+            "speed": 2.717186212539673,
+            "target": 2.4190938472747804,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "pare",
+            "reason": "pare; ; wait 0; signal 0; denied ",
+            "position": {
+                "x": -188.56344604492188,
+                "y": 0.04199685528874397,
+                "z": -3.6569199562072756
+            },
+            "elapsed": 3.2463903427124025,
+            "gap": 2.8401947021484377,
+            "speed": 2.3053855895996095,
+            "target": 1.9146950244903565,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "pare",
+            "reason": "pare; ; wait 0; signal 0; denied ",
+            "position": {
+                "x": -188.42861938476563,
+                "y": 0.041989877820014957,
+                "z": -2.8306727409362795
+            },
+            "elapsed": 3.6485283374786379,
+            "gap": 2.004058837890625,
+            "speed": 1.848384976387024,
+            "target": 1.420607328414917,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "pare",
+            "reason": "pare; ; wait 0; signal 0; denied ",
+            "position": {
+                "x": -188.32266235351563,
+                "y": 0.041991714388132098,
+                "z": -2.192753314971924
+            },
+            "elapsed": 4.048543930053711,
+            "gap": 1.3531494140625,
+            "speed": 1.382069706916809,
+            "target": 0.9529069662094116,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "pare",
+            "reason": "pare; ; wait 0; signal 0; denied ",
+            "position": {
+                "x": -188.24481201171876,
+                "y": 0.04199513792991638,
+                "z": -1.729661226272583
+            },
+            "elapsed": 4.456679821014404,
+            "gap": 0.88702392578125,
+            "speed": 0.915217399597168,
+            "target": 0.34876716136932375,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "pare",
+            "reason": "pare; ; wait 0; signal 0; denied ",
+            "position": {
+                "x": -188.2048797607422,
+                "y": 0.041998714208602908,
+                "z": -1.493421196937561
+            },
+            "elapsed": 4.856691360473633,
+            "gap": 0.6380615234375,
+            "speed": 0.35402029752731326,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "pare",
+            "reason": "pare; ; wait 0.03999998; signal 0; denied ",
+            "position": {
+                "x": -188.19241333007813,
+                "y": 0.04200012609362602,
+                "z": -1.4197674989700318
+            },
+            "elapsed": 5.256694793701172,
+            "gap": 0.557464599609375,
+            "speed": 0.000016091678844531998,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "pare",
+            "reason": "pare; ; wait 0.4399998; signal 0; denied ",
+            "position": {
+                "x": -188.19241333007813,
+                "y": 0.04199862480163574,
+                "z": -1.4197603464126588
+            },
+            "elapsed": 5.656884670257568,
+            "gap": 0.5574493408203125,
+            "speed": 0.00001609052014828194,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "pare",
+            "reason": "pare; ; wait 0.8399994; signal 0; denied ",
+            "position": {
+                "x": -188.19241333007813,
+                "y": 0.041999101638793948,
+                "z": -1.4197531938552857
+            },
+            "elapsed": 6.057223320007324,
+            "gap": 0.55743408203125,
+            "speed": 0.00001609060745977331,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "pare",
+            "reason": "pare; ; wait 1.239999; signal 0; denied ",
+            "position": {
+                "x": -188.19241333007813,
+                "y": 0.041999101638793948,
+                "z": -1.4197460412979127
+            },
+            "elapsed": 6.4575700759887699,
+            "gap": 0.55743408203125,
+            "speed": 0.000016090609278762713,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "obstaculo-Group-8908; ; wait 0; signal 0; denied pedestre-4225",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.020953627303242685,
+                "z": -44.84874725341797
+            },
+            "elapsed": 11.490043640136719,
+            "gap": -999.0,
+            "speed": 2.8442182540893556,
+            "target": 2.0504350662231447,
+            "obstacle": 3.880305051803589
+        },
+        {
+            "stop": "two-way",
+            "reason": "sinalizando; indicate; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.020969323813915254,
+                "z": -43.881919860839847
+            },
+            "elapsed": 11.890888214111329,
+            "gap": -999.0,
+            "speed": 1.9757062196731568,
+            "target": 1.2000000476837159,
+            "obstacle": 2.9064199924468996
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.020974604412913324,
+                "z": -43.21929168701172
+            },
+            "elapsed": 12.2908935546875,
+            "gap": -999.0,
+            "speed": 1.4110684394836426,
+            "target": 0.0,
+            "obstacle": 2.237653970718384
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.02100400999188423,
+                "z": -42.81665802001953
+            },
+            "elapsed": 12.69186019897461,
+            "gap": -999.0,
+            "speed": 0.10874108225107193,
+            "target": 0.0,
+            "obstacle": 1.8209476470947266
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.021002084016799928,
+                "z": -42.90351867675781
+            },
+            "elapsed": 13.091865539550782,
+            "gap": -999.0,
+            "speed": -0.5351535677909851,
+            "target": 0.0,
+            "obstacle": 1.9001713991165162
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.021011197939515115,
+                "z": -43.217857360839847
+            },
+            "elapsed": 13.491925239562989,
+            "gap": -999.0,
+            "speed": -0.975924551486969,
+            "target": 0.0,
+            "obstacle": 2.2092268466949465
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999713897705,
+                "y": 0.021011987701058389,
+                "z": -43.654930114746097
+            },
+            "elapsed": 13.893024444580079,
+            "gap": -999.0,
+            "speed": -1.1747397184371949,
+            "target": 0.0,
+            "obstacle": 2.6426374912261965
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.02101259119808674,
+                "z": -44.14860153198242
+            },
+            "elapsed": 14.295708656311036,
+            "gap": -999.0,
+            "speed": -1.2635445594787598,
+            "target": 0.0,
+            "obstacle": 3.1317617893218996
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.02101282961666584,
+                "z": -44.663230895996097
+            },
+            "elapsed": 14.695714950561524,
+            "gap": -999.0,
+            "speed": -1.303195834159851,
+            "target": 0.0,
+            "obstacle": 3.645765542984009
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.02101290225982666,
+                "z": -45.19194793701172
+            },
+            "elapsed": 15.098226547241211,
+            "gap": -999.0,
+            "speed": -1.3208980560302735,
+            "target": 0.0,
+            "obstacle": 4.170881271362305
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.02101290225982666,
+                "z": -45.72246551513672
+            },
+            "elapsed": 15.498456954956055,
+            "gap": -999.0,
+            "speed": -1.3288003206253052,
+            "target": 0.0,
+            "obstacle": 4.700944900512695
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.021012961864471437,
+                "z": -46.254825592041019
+            },
+            "elapsed": 15.898462295532227,
+            "gap": -999.0,
+            "speed": -1.3323280811309815,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.021012961864471437,
+                "z": -46.78910827636719
+            },
+            "elapsed": 16.299198150634767,
+            "gap": -999.0,
+            "speed": -1.3339028358459473,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.021012961864471437,
+                "z": -47.323299407958987
+            },
+            "elapsed": 16.699539184570314,
+            "gap": -999.0,
+            "speed": -1.3346055746078492,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.021012961864471437,
+                "z": -47.857418060302737
+            },
+            "elapsed": 17.09969139099121,
+            "gap": -999.0,
+            "speed": -1.3349206447601319,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999952316284,
+                "y": 0.021012961864471437,
+                "z": -48.39149856567383
+            },
+            "elapsed": 17.499759674072267,
+            "gap": -999.0,
+            "speed": -1.3350613117218018,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "recuo; reverse; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.299999713897705,
+                "y": 0.021012961864471437,
+                "z": -48.9309196472168
+            },
+            "elapsed": 17.903776168823243,
+            "gap": -999.0,
+            "speed": -1.3351260423660279,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.2999935150146486,
+                "y": 0.020974235609173776,
+                "z": -49.126651763916019
+            },
+            "elapsed": 18.303813934326173,
+            "gap": -999.0,
+            "speed": 0.005940152332186699,
+            "target": 0.23799988627433778,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.2890467643737795,
+                "y": 0.020982693880796434,
+                "z": -49.07072830200195
+            },
+            "elapsed": 18.703840255737306,
+            "gap": -999.0,
+            "speed": 0.36079737544059756,
+            "target": 0.9179995059967041,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.228113889694214,
+                "y": 0.02097107097506523,
+                "z": -48.809940338134769
+            },
+            "elapsed": 19.104232788085939,
+            "gap": -999.0,
+            "speed": 0.9875701069831848,
+            "target": 1.598000168800354,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": 3.0836021900177,
+                "y": 0.02095979079604149,
+                "z": -48.29124069213867
+            },
+            "elapsed": 19.504558563232423,
+            "gap": -999.0,
+            "speed": 1.6732243299484254,
+            "target": 2.2779998779296877,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": 2.817720890045166,
+                "y": 0.020948993042111398,
+                "z": -47.517845153808597
+            },
+            "elapsed": 19.905168533325197,
+            "gap": -999.0,
+            "speed": 2.3662421703338625,
+            "target": 2.957998275756836,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": 2.403670310974121,
+                "y": 0.020938169211149217,
+                "z": -46.507652282714847
+            },
+            "elapsed": 20.305320739746095,
+            "gap": -999.0,
+            "speed": 3.054513692855835,
+            "target": 3.6379966735839845,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": 1.8320341110229493,
+                "y": 0.020927298814058305,
+                "z": -45.27349090576172
+            },
+            "elapsed": 20.70551872253418,
+            "gap": -999.0,
+            "speed": 3.7238049507141115,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": 1.1336978673934937,
+                "y": 0.02092556282877922,
+                "z": -43.85802459716797
+            },
+            "elapsed": 21.10643768310547,
+            "gap": -999.0,
+            "speed": 4.074187755584717,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": 0.4066486954689026,
+                "y": 0.02092742919921875,
+                "z": -42.38688659667969
+            },
+            "elapsed": 21.506977081298829,
+            "gap": -999.0,
+            "speed": 4.100283145904541,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": -0.28972408175468447,
+                "y": 0.020927108824253084,
+                "z": -40.899784088134769
+            },
+            "elapsed": 21.90771484375,
+            "gap": -999.0,
+            "speed": 4.095480442047119,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": -0.9267978668212891,
+                "y": 0.02092769555747509,
+                "z": -39.38543701171875
+            },
+            "elapsed": 22.30868911743164,
+            "gap": -999.0,
+            "speed": 4.074641704559326,
+            "target": 4.130851745605469,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": -1.4723494052886963,
+                "y": 0.020931148901581765,
+                "z": -37.87517547607422
+            },
+            "elapsed": 22.709163665771486,
+            "gap": -999.0,
+            "speed": 3.9378645420074465,
+            "target": 3.9393699169158937,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": -1.9210671186447144,
+                "y": 0.02093326672911644,
+                "z": -36.38172149658203
+            },
+            "elapsed": 23.111780166625978,
+            "gap": -999.0,
+            "speed": 3.8027961254119875,
+            "target": 3.8080990314483644,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": -2.277416229248047,
+                "y": 0.02093517780303955,
+                "z": -34.92298889160156
+            },
+            "elapsed": 23.513317108154298,
+            "gap": -999.0,
+            "speed": 3.671837091445923,
+            "target": 3.715395212173462,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; out; wait 0; signal -1; denied ",
+            "position": {
+                "x": -2.5566418170928957,
+                "y": 0.020937176421284677,
+                "z": -33.493263244628909
+            },
+            "elapsed": 23.91692352294922,
+            "gap": -999.0,
+            "speed": 3.5441184043884279,
+            "target": 3.6478922367095949,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; pass; wait 0; signal -1; denied ",
+            "position": {
+                "x": -2.7712225914001467,
+                "y": 0.020936889573931695,
+                "z": -32.09986877441406
+            },
+            "elapsed": 24.316940307617189,
+            "gap": -999.0,
+            "speed": 3.5032904148101808,
+            "target": 3.605679512023926,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; pass; wait 0; signal -1; denied ",
+            "position": {
+                "x": -2.9371073246002199,
+                "y": 0.020937299355864526,
+                "z": -30.71356201171875
+            },
+            "elapsed": 24.71700096130371,
+            "gap": -999.0,
+            "speed": 3.4721298217773439,
+            "target": 3.575961112976074,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; pass; wait 0; signal -1; denied ",
+            "position": {
+                "x": -3.063040256500244,
+                "y": 0.020937450230121614,
+                "z": -29.332490921020509
+            },
+            "elapsed": 25.117382049560548,
+            "gap": -999.0,
+            "speed": 3.453622341156006,
+            "target": 3.5543901920318605,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; pass; wait 0; signal -1; denied ",
+            "position": {
+                "x": -3.1569554805755617,
+                "y": 0.020937621593475343,
+                "z": -27.950536727905275
+            },
+            "elapsed": 25.519338607788087,
+            "gap": -999.0,
+            "speed": 3.4368886947631838,
+            "target": 3.5390310287475588,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; pass; wait 0; signal -1; denied veiculo-8908",
+            "position": {
+                "x": -3.224684953689575,
+                "y": 0.020937802270054818,
+                "z": -26.579025268554689
+            },
+            "elapsed": 25.91948890686035,
+            "gap": -999.0,
+            "speed": 3.42403244972229,
+            "target": 3.5277292728424074,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; pass; wait 0; signal -1; denied veiculo-8908",
+            "position": {
+                "x": -3.272390842437744,
+                "y": 0.020938007161021234,
+                "z": -25.208566665649415
+            },
+            "elapsed": 26.320146560668947,
+            "gap": -999.0,
+            "speed": 3.4205877780914308,
+            "target": 3.5201711654663088,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; pass; wait 0; signal -1; denied veiculo-8908",
+            "position": {
+                "x": -3.3046798706054689,
+                "y": 0.02093806117773056,
+                "z": -23.836381912231447
+            },
+            "elapsed": 26.72176170349121,
+            "gap": -999.0,
+            "speed": 3.410750150680542,
+            "target": 3.5151901245117189,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; pass; wait 0; signal -1; denied veiculo-8908",
+            "position": {
+                "x": -3.325173854827881,
+                "y": 0.020937921479344369,
+                "z": -22.46888542175293
+            },
+            "elapsed": 27.12259864807129,
+            "gap": -999.0,
+            "speed": 3.4116733074188234,
+            "target": 3.512211799621582,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; pass; wait 0; signal -1; denied veiculo-8908",
+            "position": {
+                "x": -3.3370556831359865,
+                "y": 0.020937995985150338,
+                "z": -21.097923278808595
+            },
+            "elapsed": 27.52456283569336,
+            "gap": -999.0,
+            "speed": 3.4068918228149416,
+            "target": 3.5103542804718019,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": -3.2782533168792726,
+                "y": 0.020940005779266359,
+                "z": -19.74073028564453
+            },
+            "elapsed": 27.924589157104493,
+            "gap": -999.0,
+            "speed": 3.364346504211426,
+            "target": 3.513683319091797,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": -2.929189920425415,
+                "y": 0.020936250686645509,
+                "z": -18.40377426147461
+            },
+            "elapsed": 28.32469940185547,
+            "gap": -999.0,
+            "speed": 3.470885992050171,
+            "target": 3.575040102005005,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": -2.4258995056152345,
+                "y": 0.02093503437936306,
+                "z": -17.07945442199707
+            },
+            "elapsed": 28.72470474243164,
+            "gap": -999.0,
+            "speed": 3.575493335723877,
+            "target": 3.67086124420166,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": -1.822340488433838,
+                "y": 0.02093299850821495,
+                "z": -15.756233215332032
+            },
+            "elapsed": 29.124717712402345,
+            "gap": -999.0,
+            "speed": 3.684436559677124,
+            "target": 3.8094096183776857,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": -1.155024766921997,
+                "y": 0.020929887890815736,
+                "z": -14.408487319946289
+            },
+            "elapsed": 29.524761199951173,
+            "gap": -999.0,
+            "speed": 3.8356473445892336,
+            "target": 4.0095953941345219,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": -0.4540073871612549,
+                "y": 0.020926276221871377,
+                "z": -13.000724792480469
+            },
+            "elapsed": 29.924938201904298,
+            "gap": -999.0,
+            "speed": 4.034980297088623,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "preferencia; return; wait 0; signal 1; denied veiculo-12497",
+            "position": {
+                "x": 0.2405966967344284,
+                "y": 0.020930666476488115,
+                "z": -11.53024673461914
+            },
+            "elapsed": 30.3249454498291,
+            "gap": -999.0,
+            "speed": 3.959352731704712,
+            "target": 3.5399999618530275,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": 0.8202115297317505,
+                "y": 0.02094879560172558,
+                "z": -10.17529582977295
+            },
+            "elapsed": 30.731704711914064,
+            "gap": -999.0,
+            "speed": 3.239401340484619,
+            "target": 2.619999885559082,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": 1.2638102769851685,
+                "y": 0.020944107323884965,
+                "z": -9.00503921508789
+            },
+            "elapsed": 31.138681411743165,
+            "gap": -999.0,
+            "speed": 3.021780014038086,
+            "target": 3.2999982833862306,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": 1.6646119356155396,
+                "y": 0.028215935453772546,
+                "z": -7.793515205383301
+            },
+            "elapsed": 31.53898048400879,
+            "gap": -999.0,
+            "speed": 3.399034261703491,
+            "target": 3.979996681213379,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": 2.069549798965454,
+                "y": 0.030510202050209047,
+                "z": -6.353289604187012
+            },
+            "elapsed": 31.94270896911621,
+            "gap": -999.0,
+            "speed": 3.9457483291625978,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": 2.431138753890991,
+                "y": 0.03784643113613129,
+                "z": -4.752195358276367
+            },
+            "elapsed": 32.34843444824219,
+            "gap": -999.0,
+            "speed": 4.09844446182251,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": 2.715597629547119,
+                "y": 0.03807550296187401,
+                "z": -3.1322109699249269
+            },
+            "elapsed": 32.749752044677737,
+            "gap": -999.0,
+            "speed": 4.100951671600342,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": 2.929722785949707,
+                "y": 0.038516588509082797,
+                "z": -1.505730390548706
+            },
+            "elapsed": 33.14980697631836,
+            "gap": -999.0,
+            "speed": 4.098283290863037,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "two-way",
+            "reason": "contorno; return; wait 0; signal 1; denied ",
+            "position": {
+                "x": 3.0864932537078859,
+                "y": 0.038417793810367587,
+                "z": 0.1279832124710083
+            },
+            "elapsed": 33.5501823425293,
+            "gap": -999.0,
+            "speed": 4.095431327819824,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "pare; ; wait 0; signal -1; denied ",
+            "position": {
+                "x": -139.12350463867188,
+                "y": 1.452019453048706,
+                "z": 65.02993774414063
+            },
+            "elapsed": 33.82798767089844,
+            "gap": 1.499664306640625,
+            "speed": -1.8351997137069703,
+            "target": 2.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "; ; wait 0; signal 0; denied veiculo-8908",
+            "position": {
+                "x": -158.6880340576172,
+                "y": 1.590445876121521,
+                "z": -74.17013549804688
+            },
+            "elapsed": 34.230743408203128,
+            "gap": -999.0,
+            "speed": 2.15579891204834,
+            "target": 2.6799983978271486,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "; ; wait 0; signal 0; denied veiculo-8908",
+            "position": {
+                "x": -159.61776733398438,
+                "y": 1.617016077041626,
+                "z": -73.89551544189453
+            },
+            "elapsed": 34.63081741333008,
+            "gap": -999.0,
+            "speed": 2.736985206604004,
+            "target": 3.359996795654297,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "sinalizando; indicate; wait 0; signal 1; denied ",
+            "position": {
+                "x": -160.79139709472657,
+                "y": 1.6223701238632203,
+                "z": -73.53070831298828
+            },
+            "elapsed": 35.03176498413086,
+            "gap": -999.0,
+            "speed": 3.359811544418335,
+            "target": 3.439995765686035,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "sinalizando; indicate; wait 0; signal 1; denied ",
+            "position": {
+                "x": -162.0317840576172,
+                "y": 1.6216702461242676,
+                "z": -73.12115478515625
+            },
+            "elapsed": 35.44157028198242,
+            "gap": -999.0,
+            "speed": 2.8577163219451906,
+            "target": 2.0539960861206056,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; out; wait 0; signal 1; denied ",
+            "position": {
+                "x": -162.9578857421875,
+                "y": 1.6220366954803467,
+                "z": -72.742919921875
+            },
+            "elapsed": 35.84654998779297,
+            "gap": -999.0,
+            "speed": 2.155289888381958,
+            "target": 2.03399658203125,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; out; wait 0; signal 1; denied ",
+            "position": {
+                "x": -163.69601440429688,
+                "y": 1.6219842433929444,
+                "z": -72.24122619628906
+            },
+            "elapsed": 36.25515365600586,
+            "gap": -999.0,
+            "speed": 2.253650188446045,
+            "target": 2.7139949798583986,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; out; wait 0; signal 1; denied ",
+            "position": {
+                "x": -164.4923095703125,
+                "y": 1.6217308044433594,
+                "z": -71.59617614746094
+            },
+            "elapsed": 36.65654754638672,
+            "gap": -999.0,
+            "speed": 2.823201894760132,
+            "target": 3.393993377685547,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; out; wait 0; signal 1; denied ",
+            "position": {
+                "x": -165.43943786621095,
+                "y": 1.6013522148132325,
+                "z": -70.74491882324219
+            },
+            "elapsed": 37.05669403076172,
+            "gap": -999.0,
+            "speed": 3.519667625427246,
+            "target": 4.073991775512695,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; out; wait 0; signal 1; denied ",
+            "position": {
+                "x": -166.53041076660157,
+                "y": 1.5701411962509156,
+                "z": -69.67660522460938
+            },
+            "elapsed": 37.45673370361328,
+            "gap": -999.0,
+            "speed": 4.066376686096191,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; out; wait 0; signal 1; denied ",
+            "position": {
+                "x": -167.68780517578126,
+                "y": 1.4886637926101685,
+                "z": -68.49607849121094
+            },
+            "elapsed": 37.85732650756836,
+            "gap": -999.0,
+            "speed": 4.188812255859375,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; out; wait 0; signal 1; denied ",
+            "position": {
+                "x": -168.86534118652345,
+                "y": 1.3951239585876465,
+                "z": -67.2884521484375
+            },
+            "elapsed": 38.257625579833987,
+            "gap": -999.0,
+            "speed": 4.27052116394043,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; out; wait 0; signal 1; denied ",
+            "position": {
+                "x": -170.07846069335938,
+                "y": 1.2900420427322388,
+                "z": -66.08795928955078
+            },
+            "elapsed": 38.65772247314453,
+            "gap": -999.0,
+            "speed": 4.249170780181885,
+            "target": 3.999692916870117,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; out; wait 0; signal 1; denied ",
+            "position": {
+                "x": -171.29736328125,
+                "y": 1.1827985048294068,
+                "z": -64.94998168945313
+            },
+            "elapsed": 39.05780029296875,
+            "gap": -999.0,
+            "speed": 4.120664119720459,
+            "target": 3.810776948928833,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; out; wait 0; signal 1; denied ",
+            "position": {
+                "x": -172.50396728515626,
+                "y": 1.0675640106201172,
+                "z": -63.88112258911133
+            },
+            "elapsed": 39.45790481567383,
+            "gap": -999.0,
+            "speed": 3.9844346046447756,
+            "target": 3.672525644302368,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; pass; wait 0; signal 1; denied ",
+            "position": {
+                "x": -173.696044921875,
+                "y": 0.9566293358802795,
+                "z": -62.86998748779297
+            },
+            "elapsed": 39.857975006103519,
+            "gap": -999.0,
+            "speed": 3.8643007278442385,
+            "target": 3.5322086811065676,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; pass; wait 0; signal 1; denied ",
+            "position": {
+                "x": -174.8666534423828,
+                "y": 0.8433253765106201,
+                "z": -61.90245056152344
+            },
+            "elapsed": 40.25801467895508,
+            "gap": -999.0,
+            "speed": 3.7588512897491457,
+            "target": 3.4585304260253908,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; pass; wait 0; signal 1; denied ",
+            "position": {
+                "x": -176.01031494140626,
+                "y": 0.7346639037132263,
+                "z": -60.964656829833987
+            },
+            "elapsed": 40.65805435180664,
+            "gap": -999.0,
+            "speed": 3.6612942218780519,
+            "target": 3.3716940879821779,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; pass; wait 0; signal 1; denied ",
+            "position": {
+                "x": -177.1205596923828,
+                "y": 0.6276103258132935,
+                "z": -60.041664123535159
+            },
+            "elapsed": 41.05809783935547,
+            "gap": -999.0,
+            "speed": 3.5809967517852785,
+            "target": 3.293013334274292,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; pass; wait 0; signal 1; denied ",
+            "position": {
+                "x": -178.19171142578126,
+                "y": 0.5207414031028748,
+                "z": -59.12038040161133
+            },
+            "elapsed": 41.45813751220703,
+            "gap": -999.0,
+            "speed": 3.509242296218872,
+            "target": 3.230626344680786,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; pass; wait 0; signal 1; denied ",
+            "position": {
+                "x": -179.22242736816407,
+                "y": 0.4122248888015747,
+                "z": -58.184791564941409
+            },
+            "elapsed": 41.859161376953128,
+            "gap": -999.0,
+            "speed": 3.456073522567749,
+            "target": 3.1764049530029299,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; pass; wait 0; signal 1; denied ",
+            "position": {
+                "x": -180.2078094482422,
+                "y": 0.3011011779308319,
+                "z": -57.22669982910156
+            },
+            "elapsed": 42.260494232177737,
+            "gap": -999.0,
+            "speed": 3.41560697555542,
+            "target": 3.134080648422241,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; pass; wait 0; signal 1; denied ",
+            "position": {
+                "x": -181.13623046875,
+                "y": 0.19679059088230134,
+                "z": -56.236751556396487
+            },
+            "elapsed": 42.660552978515628,
+            "gap": -999.0,
+            "speed": 3.3650388717651369,
+            "target": 3.1296133995056154,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "preferencia; pass; wait 0; signal 1; denied veiculo-8908",
+            "position": {
+                "x": -181.98976135253907,
+                "y": 0.11407676339149475,
+                "z": -55.211463928222659
+            },
+            "elapsed": 43.06063461303711,
+            "gap": -999.0,
+            "speed": 3.188361167907715,
+            "target": 2.5085670948028566,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "preferencia; pass; wait 0; signal 1; denied veiculo-8908",
+            "position": {
+                "x": -182.6695098876953,
+                "y": 0.07143295556306839,
+                "z": -54.29087448120117
+            },
+            "elapsed": 43.46067428588867,
+            "gap": -999.0,
+            "speed": 2.3988304138183595,
+            "target": 1.1885673999786378,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "preferencia; pass; wait 0; signal 1; denied veiculo-8908",
+            "position": {
+                "x": -183.06851196289063,
+                "y": 0.055856745690107349,
+                "z": -53.66562271118164
+            },
+            "elapsed": 43.86099624633789,
+            "gap": -999.0,
+            "speed": 1.243032455444336,
+            "target": 0.0,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; pass; wait 0; signal 1; denied ",
+            "position": {
+                "x": -183.25827026367188,
+                "y": 0.04637277498841286,
+                "z": -53.34599304199219
+            },
+            "elapsed": 44.261104583740237,
+            "gap": -999.0,
+            "speed": 0.7218073606491089,
+            "target": 0.6119996905326843,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; pass; wait 0; signal 1; denied ",
+            "position": {
+                "x": -183.40774536132813,
+                "y": 0.04120539128780365,
+                "z": -53.08501052856445
+            },
+            "elapsed": 44.661163330078128,
+            "gap": -999.0,
+            "speed": 0.8487261533737183,
+            "target": 1.2919998168945313,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -183.6719970703125,
+                "y": 0.042086243629455569,
+                "z": -52.74393081665039
+            },
+            "elapsed": 45.06120300292969,
+            "gap": -999.0,
+            "speed": 1.3703150749206544,
+            "target": 1.9720005989074708,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -184.15371704101563,
+                "y": 0.04198727011680603,
+                "z": -52.26101303100586
+            },
+            "elapsed": 45.46124267578125,
+            "gap": -999.0,
+            "speed": 2.052880048751831,
+            "target": 2.651998996734619,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -184.85153198242188,
+                "y": 0.04197656735777855,
+                "z": -51.60386657714844
+            },
+            "elapsed": 45.86134338378906,
+            "gap": -999.0,
+            "speed": 2.7393059730529787,
+            "target": 3.2078638076782228,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -185.70870971679688,
+                "y": 0.04197922348976135,
+                "z": -50.778377532958987
+            },
+            "elapsed": 46.26145935058594,
+            "gap": -999.0,
+            "speed": 3.188431739807129,
+            "target": 3.4649295806884767,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -186.62554931640626,
+                "y": 0.04197719693183899,
+                "z": -49.81696319580078
+            },
+            "elapsed": 46.6614990234375,
+            "gap": -999.0,
+            "speed": 3.445197582244873,
+            "target": 3.6628732681274416,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -187.544921875,
+                "y": 0.04197581857442856,
+                "z": -48.727439880371097
+            },
+            "elapsed": 47.06172561645508,
+            "gap": -999.0,
+            "speed": 3.6939237117767336,
+            "target": 3.9677987098693849,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -188.43765258789063,
+                "y": 0.04197405278682709,
+                "z": -47.47532272338867
+            },
+            "elapsed": 47.46262741088867,
+            "gap": -999.0,
+            "speed": 3.9785966873168947,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -189.25257873535157,
+                "y": 0.041973959654569629,
+                "z": -46.0662956237793
+            },
+            "elapsed": 47.8627815246582,
+            "gap": -999.0,
+            "speed": 4.097042560577393,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -189.9283447265625,
+                "y": 0.04197433590888977,
+                "z": -44.56816101074219
+            },
+            "elapsed": 48.26332092285156,
+            "gap": -999.0,
+            "speed": 4.09181547164917,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -190.4569091796875,
+                "y": 0.0419742576777935,
+                "z": -43.01313018798828
+            },
+            "elapsed": 48.66344451904297,
+            "gap": -999.0,
+            "speed": 4.0958123207092289,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -190.8492889404297,
+                "y": 0.041974250227212909,
+                "z": -41.41625213623047
+            },
+            "elapsed": 49.06400680541992,
+            "gap": -999.0,
+            "speed": 4.098706245422363,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -191.1190643310547,
+                "y": 0.04197429120540619,
+                "z": -39.796573638916019
+            },
+            "elapsed": 49.46411895751953,
+            "gap": -999.0,
+            "speed": 4.095963478088379,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -191.28509521484376,
+                "y": 0.04197436571121216,
+                "z": -38.16413116455078
+            },
+            "elapsed": 49.86418914794922,
+            "gap": -999.0,
+            "speed": 4.098410606384277,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        },
+        {
+            "stop": "one-way",
+            "reason": "contorno; return; wait 0; signal -1; denied ",
+            "position": {
+                "x": -191.3665313720703,
+                "y": 0.04197414591908455,
+                "z": -36.523475646972659
+            },
+            "elapsed": 50.264671325683597,
+            "gap": -999.0,
+            "speed": 4.096551895141602,
+            "target": 4.199999809265137,
+            "obstacle": -1.0
+        }
+    ]
+}

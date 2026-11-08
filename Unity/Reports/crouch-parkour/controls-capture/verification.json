@@ -1,0 +1,28 @@
+{
+  "verifiedAtUtc": "2026-11-08T08:12:24.6711457Z",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrouchParkour-Final-20261108\\BaiaDoSol.exe",
+  "assemblySha256": "7B2903AD74D05A143A24B6E939873843677D4EACD666AD457550B9246A43D4FE",
+  "checks": 30,
+  "exitCode": 0,
+  "cameraOnly": false,
+  "crouchOnly": true,
+  "carOnly": false,
+  "graphics": true,
+  "arguments": [
+    "-batchmode",
+    "-screen-fullscreen",
+    "0",
+    "-screen-width",
+    "960",
+    "-screen-height",
+    "540",
+    "--city-parkour-qa",
+    "--city-report-dir",
+    "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\controls-capture\"",
+    "-logFile",
+    "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\controls-capture\\player.log\"",
+    "--city-crouch-qa"
+  ],
+  "passed": true,
+  "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\controls-capture\\parkour-qa.json"
+}

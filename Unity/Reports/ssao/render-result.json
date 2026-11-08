@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "contact-occlusion-MSAA-1",
+      "passed": true,
+      "darkened": 15417,
+      "brightened": 0,
+      "skyPixels": 156489,
+      "skyChanged": 0,
+      "shimmer": 0,
+      "excessive": 0
+    },
+    {
+      "name": "contact-occlusion-MSAA-2",
+      "passed": true,
+      "darkened": 15914,
+      "brightened": 0,
+      "skyPixels": 156244,
+      "skyChanged": 0,
+      "shimmer": 0,
+      "excessive": 0
+    },
+    {
+      "name": "contact-occlusion-MSAA-4",
+      "passed": true,
+      "darkened": 16188,
+      "brightened": 0,
+      "skyPixels": 156095,
+      "skyChanged": 0,
+      "shimmer": 0,
+      "excessive": 0
+    },
+    {
+      "name": "flat-surfaces-unchanged",
+      "passed": true,
+      "changed": 0
+    },
+    {
+      "name": "transparent-pass-unaffected",
+      "passed": true,
+      "changed": 0
+    },
+    {
+      "name": "4K-buffer-capped-at-960x540",
+      "passed": true,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "name": "disable-releases-owned-depth-and-preserves-other-flags",
+      "passed": true
+    },
+    {
+      "name": "preexisting-depth-request-retained",
+      "passed": true
+    }
+  ],
+  "graphicsAPI": "Direct3D12",
+  "gpu": "AMD Radeon RX 9070"
+}

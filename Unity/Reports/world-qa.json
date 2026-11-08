@@ -1,0 +1,250 @@
+{
+    "unity": "6000.3.27f1",
+    "sourceHash": "842a21456de6e21ba393462631a07cb27c8c870e7f5000d11720aa8a2e8aa9c4",
+    "savedAt": "2026-11-07T15:19:57.5620065Z",
+    "savePath": "C:/Users/nelso/AppData/Local/Temp/Open Territory/Baía do Sol\\BaiaDoSol-QA\\city-world-qa-51368\\baia-wallet-v1.json",
+    "passed": true,
+    "checks": [
+        {
+            "name": "native-context",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "qa-wallet-isolation",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "weather-smooth-front",
+            "detail": "rain=0.001461113",
+            "pass": true
+        },
+        {
+            "name": "settings-pause",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "settings-resume",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "weather-light-fog",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "street-lights-at-physical-lamps",
+            "detail": "fixtures=86",
+            "pass": true
+        },
+        {
+            "name": "rain-roof-and-grip",
+            "detail": "indoor=1 street=0.73293",
+            "pass": true
+        },
+        {
+            "name": "rain-vehicle-does-not-shelter-own-grip",
+            "detail": "axleGrip=0.73293",
+            "pass": true
+        },
+        {
+            "name": "touch-equipment-initial-pulse",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "touch-equipment-skips-unowned-to-empty-hands",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "shop-metadata",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "shop-real-action",
+            "detail": "commerce-service-15",
+            "pass": true
+        },
+        {
+            "name": "shop-buy-E",
+            "detail": "cash=140",
+            "pass": true
+        },
+        {
+            "name": "touch-equipment-includes-purchased-sidearm",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "touch-equipment-returns-to-empty-hands",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "shop-ammo-E",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "shop-resale-E",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "shop-insufficient-funds",
+            "detail": "Faltam R$ 139. Seu saldo é R$ 221. O Galpão da Maré paga por lotes pesados.",
+            "pass": true
+        },
+        {
+            "name": "range-card-metadata",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "range-empty-card-E",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "range-real-round-for-scorecard",
+            "detail": "rounds=1 hits=1",
+            "pass": true
+        },
+        {
+            "name": "range-scorecard-E-shows-live-counts",
+            "detail": "Esta série: 1 acertos nos alvos em 1 disparos no anteparo.",
+            "pass": true
+        },
+        {
+            "name": "fish-weight-action",
+            "detail": "fish-2",
+            "pass": true
+        },
+        {
+            "name": "fish-physical-balance",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "fish-dispatch-action",
+            "detail": "fish-3",
+            "pass": true
+        },
+        {
+            "name": "fish-real-payout",
+            "detail": "cash=277",
+            "pass": true
+        },
+        {
+            "name": "fish-no-repeat-payout",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "wallet-complete-checkpoint",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "door-home",
+            "detail": "openingBlocked=False",
+            "pass": true
+        },
+        {
+            "name": "door-bookstore",
+            "detail": "openingBlocked=False",
+            "pass": true
+        },
+        {
+            "name": "door-hospital",
+            "detail": "openingBlocked=False",
+            "pass": true
+        },
+        {
+            "name": "drone-V",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "drone-lift",
+            "detail": "lift=2.208004",
+            "pass": true
+        },
+        {
+            "name": "drone-continuous-move",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "drone-E-return",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "CCTV-F-live-camera",
+            "detail": "node=3346 lens=3353",
+            "pass": true
+        },
+        {
+            "name": "CCTV-E-exit",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "phone-fixture-available",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "phone-listener-clear-space",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "phone-F-preserves-conversation",
+            "detail": "speech=Telefone tocando",
+            "pass": true
+        },
+        {
+            "name": "phone-F-causes-listener-reaction",
+            "detail": "gesture=look reactionSeconds=1.853643",
+            "pass": true
+        },
+        {
+            "name": "crane-lift",
+            "detail": "progress=1",
+            "pass": true
+        },
+        {
+            "name": "crane-blocks-occupied-sweep",
+            "detail": "progress=0.4829285",
+            "pass": true
+        },
+        {
+            "name": "crane-resumes-clear-path",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "cinema-native-playback",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "music-native-playing",
+            "detail": "",
+            "pass": true
+        },
+        {
+            "name": "audio-native-sources",
+            "detail": "",
+            "pass": true
+        }
+    ],
+    "errors": []
+}

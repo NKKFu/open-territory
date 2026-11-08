@@ -1,0 +1,151 @@
+{
+    "passed": true,
+    "layout": "marin-reference-v2",
+    "checks": [
+        {
+            "name": "only-traced-map-active",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "reference-coast-and-44-traces",
+            "detail": "",
+            "passed": true,
+            "value": 44.0
+        },
+        {
+            "name": "donor-buildings-and-interiors-reused",
+            "detail": "",
+            "passed": true,
+            "value": 217.0
+        },
+        {
+            "name": "population-and-fleet-reused",
+            "detail": "",
+            "passed": true,
+            "value": 111.0
+        },
+        {
+            "name": "population-excludes-children",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "navigation-rebuilt-for-new-streets",
+            "detail": "",
+            "passed": true,
+            "value": 11316.0
+        },
+        {
+            "name": "vegetation-forest-with-three-lods",
+            "detail": "",
+            "passed": true,
+            "value": 7000.0
+        },
+        {
+            "name": "vegetation-24-shared-variants",
+            "detail": "",
+            "passed": true,
+            "value": 72.0
+        },
+        {
+            "name": "vegetation-each-lod-reduces-triangles",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "vegetation-trunks-retain-collision",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-mixed-tree-ages",
+            "detail": "7000 trees, scale 0.427 to 1.9495",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-no-groves",
+            "detail": "all trees use dispersed placement",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-spread-shrubs",
+            "detail": "shrubs=36737 scattered supplements=9640",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-map-wide-distribution",
+            "detail": "occupied 120m areas=240",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-vegetation-keeps-trails-clear",
+            "detail": "samples=3258 nature obstacles=0 existing structural obstacles=7",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-rocks-baked-with-lod",
+            "detail": "rocks=561",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-rocks-share-36-meshes",
+            "detail": "meshes=36",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-rocks-follow-terrain",
+            "detail": "all rock bases checked against physical ground",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-boulders-have-real-collision",
+            "detail": "independent of visible LOD",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-rock-lods-reduce-triangles",
+            "detail": "54 -> 36 -> 24",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-character-respects-boulder-surface",
+            "detail": "contact=True penetrated=False",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-native-trail-walking",
+            "detail": "west-cape-trail",
+            "passed": true,
+            "value": 3.3178560733795168
+        },
+        {
+            "name": "nature-Esc-pause",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "nature-no-runtime-errors",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "errors": []
+}

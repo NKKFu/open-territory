@@ -1,0 +1,27 @@
+var scene = UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene();
+if (Application.isPlaying || scene.path != "Assets/Scenes/BaiaDoSol.unity") throw new System.Exception("Saved city scene required");
+var registry = UnityEngine.Object.FindFirstObjectByType<OpenTerritory.WorldRegistry>();
+var world = JsonUtility.FromJson<OpenTerritory.WorldData>(registry.manifest.text);
+var cars = new System.Collections.Generic.List<Transform>();
+foreach (var car in world.vehicles) if (car.kind == "car") foreach (var node in registry.nodes) if (node.id == car.id) { cars.Add(node.transform); break; }
+var colliders = new System.Text.StringBuilder(); var scenery = new System.Text.StringBuilder(); int colliderCount = 0, sceneryCount = 0;
+foreach (var root in scene.GetRootGameObjects()) {
+    foreach (var collider in root.GetComponentsInChildren<Collider>(true)) {
+        colliderCount++;
+        colliders.Append(UnityEditor.AnimationUtility.CalculateTransformPath(collider.transform, null));
+        colliders.Append(collider.transform.localToWorldMatrix.ToString("F7"));
+        colliders.Append(UnityEditor.EditorJsonUtility.ToJson(collider));
+    }
+    foreach (var mesh in root.GetComponentsInChildren<MeshFilter>(true)) {
+        bool vehicle = mesh.name.StartsWith("Car ");
+        foreach (var car in cars) if (mesh.transform.IsChildOf(car)) { vehicle = true; break; }
+        if (vehicle || !mesh.sharedMesh) continue;
+        sceneryCount++;
+        scenery.Append(UnityEditor.AnimationUtility.CalculateTransformPath(mesh.transform, null));
+        scenery.Append(mesh.transform.localToWorldMatrix.ToString("F7"));
+        scenery.Append(UnityEditor.AssetDatabase.GetAssetPath(mesh.sharedMesh));
+        scenery.Append(mesh.sharedMesh.GetInstanceID()); scenery.Append(mesh.sharedMesh.vertexCount);
+        scenery.Append(mesh.sharedMesh.bounds.ToString("F7"));
+    }
+}
+return Newtonsoft.Json.JsonConvert.SerializeObject(new {colliderCount=colliderCount,colliderHash=Hash128.Compute(colliders.ToString()).ToString(),sceneryCount=sceneryCount,sceneryHash=Hash128.Compute(scenery.ToString()).ToString(),scene=scene.path,dirty=scene.isDirty});

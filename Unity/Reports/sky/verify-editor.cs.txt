@@ -1,0 +1,91 @@
+var ctx = OpenTerritory.CityContext.Instance;
+if (!UnityEditor.EditorApplication.isPlaying || !ctx || !ctx.Ready || ctx.Systems.Sky == null) return "Fresh Play Mode required";
+var cam = ctx.Camera; var sky = ctx.Systems.Sky; var mat = RenderSettings.skybox;
+var atmosphere = UnityEngine.Object.FindFirstObjectByType<OpenTerritory.CityAtmosphere>();
+var origin = cam.transform.position; var rotation = cam.transform.rotation; int mask = cam.cullingMask;
+bool follow = ctx.Follow.enabled, atmosphereActive = atmosphere.gameObject.activeSelf;
+float clock = ctx.Clock, cover = Shader.GetGlobalFloat("_CityCloudCover"), fogEnd = RenderSettings.fogEndDistance;
+string weather = ctx.Systems.Weather.Id;
+string folder = "C:/Users/nelso/open-territory/Unity/Reports/sky";
+System.IO.Directory.CreateDirectory(folder);
+var checks = new System.Collections.Generic.List<object>(); bool passed = true;
+System.Action<string,bool,string> check = (name, ok, detail) => { passed &= ok; checks.Add(new { name=name, passed=ok, detail=detail }); };
+System.Func<string,Color32[]> capture = name => {
+    var target = RenderTexture.GetTemporary(1280,720,24,RenderTextureFormat.ARGB32);
+    var previous = cam.targetTexture; var active = RenderTexture.active;
+    var texture = new Texture2D(1280,720,TextureFormat.RGB24,false);
+    try { cam.targetTexture=target; cam.Render(); RenderTexture.active=target;
+        texture.ReadPixels(new Rect(0,0,1280,720),0,0); texture.Apply();
+        if (!string.IsNullOrEmpty(name)) System.IO.File.WriteAllBytes(System.IO.Path.Combine(folder,name+".png"),texture.EncodeToPNG());
+        return texture.GetPixels32();
+    } finally { cam.targetTexture=previous; RenderTexture.active=active; RenderTexture.ReleaseTemporary(target); UnityEngine.Object.DestroyImmediate(texture); }
+};
+System.Func<Color32[],Color32[],int> changed = (a,b) => {
+    int count=0;
+    for(int y=336;y<384;y++) for(int x=616;x<664;x++) { int i=y*1280+x;
+        if(Mathf.Abs(a[i].r-b[i].r)+Mathf.Abs(a[i].g-b[i].g)+Mathf.Abs(a[i].b-b[i].b)>15)count++;
+    } return count;
+};
+GameObject blocker = null, cloud = null;
+try {
+    ctx.Pause(true); ctx.Follow.enabled=false;
+    check("native-sky-shader-supported", mat && mat.shader.name=="OpenTerritory/CitySky" && mat.shader.isSupported && !UnityEditor.ShaderUtil.ShaderHasError(mat.shader),mat.shader.name);
+    check("camera-draws-skybox",cam.clearFlags==CameraClearFlags.Skybox,cam.clearFlags.ToString());
+    check("normal-play-has-no-opt-in-probes",UnityEngine.Object.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).All(p=>!p.GetType().Name.EndsWith("Probe")),"");
+    var names=new[]{"01-sunrise","02-day","03-sunset","04-moon"};
+    var times=new[]{250f,18f,86f,168f};
+    for(int stage=0;stage<times.Length;stage++){
+        ctx.Clock=times[stage];ctx.Systems.Weather.Request("clear",true);ctx.Systems.SendMessage("UpdateSky");
+        atmosphere.gameObject.SetActive(true);atmosphere.SendMessage("UpdateClouds",0f);
+        Vector3 direction=stage==3?sky.MoonDirection:sky.SunDirection;
+        var flat=new Vector3(direction.x,0,direction.z).normalized;
+        cam.cullingMask=mask;cam.transform.position=ctx.Player.position+Vector3.up*8;
+        cam.transform.rotation=Quaternion.LookRotation((flat+Vector3.up*.28f).normalized);
+        capture(names[stage]);
+        var viewport=cam.WorldToViewportPoint(cam.transform.position+direction*100);
+        check(names[stage]+"-visible-with-current-camera",viewport.z>0 && viewport.x>0 && viewport.x<1 && viewport.y>0 && viewport.y<1,viewport.ToString());
+        check(names[stage]+"-shadow-alignment",Vector3.Dot(-RenderSettings.sun.transform.forward,direction)>.9999f,"dot="+Vector3.Dot(-RenderSettings.sun.transform.forward,direction));
+        atmosphere.gameObject.SetActive(false);cam.cullingMask=0;cam.transform.rotation=Quaternion.LookRotation(direction);
+        var on=capture(null);string property=stage==3?"_MoonColor":"_SunColor";
+        var color=mat.GetColor(property);var hidden=color;hidden.a=0;mat.SetColor(property,hidden);
+        var off=capture(null);mat.SetColor(property,color);
+        int count=changed(on,off);
+        check(names[stage]+"-disc-renders",count>180,"changed center pixels="+count);
+        if(stage==3) {
+            var sunColor=mat.GetColor("_SunColor");var forced=sunColor;forced.a=1;mat.SetColor("_SunColor",forced);
+            var ghost=capture(null);mat.SetColor("_SunColor",sunColor);
+            check("sun-has-no-opposite-side-ghost",changed(on,ghost)==0,"changed center pixels="+changed(on,ghost));
+        }
+    }
+    ctx.Clock=18;ctx.Systems.Weather.Request("clear",true);ctx.Systems.SendMessage("UpdateSky");
+    cam.transform.rotation=Quaternion.LookRotation(sky.SunDirection);cam.cullingMask=0;
+    var clear=capture(null);cam.transform.position+=new Vector3(1600,30,-1100);var moved=capture(null);
+    check("sky-has-no-parallax-when-player-moves",changed(clear,moved)==0,"changed center pixels="+changed(clear,moved));
+    cam.transform.position=origin;
+    RenderSettings.fogEndDistance=1;var fogged=capture(null);RenderSettings.fogEndDistance=fogEnd;
+    check("street-fog-does-not-erase-sun",changed(clear,fogged)==0,"changed center pixels="+changed(clear,fogged));
+    ctx.Systems.Weather.Request("squall",true);ctx.Systems.SendMessage("UpdateSky");var storm=capture("05-storm-sun");
+    var sunLit=mat.GetColor("_SunColor");
+    check("storm-veils-celestial-disc",sunLit.a<.2f,"sun opacity="+sunLit.a);
+    ctx.Systems.Weather.Request("clear",true);ctx.Systems.SendMessage("UpdateSky");cam.cullingMask=mask;
+    blocker=GameObject.CreatePrimitive(PrimitiveType.Cube);blocker.name="QA sky occlusion";
+    blocker.transform.position=cam.transform.position+sky.SunDirection*12;blocker.transform.localScale=Vector3.one*3;
+    var blockedOn=capture("06-solid-occlusion");var sun=mat.GetColor("_SunColor");var hiddenSun=sun;hiddenSun.a=0;
+    mat.SetColor("_SunColor",hiddenSun);var blockedOff=capture(null);mat.SetColor("_SunColor",sun);
+    check("solid-geometry-occludes-sun",changed(blockedOn,blockedOff)==0,"changed center pixels="+changed(blockedOn,blockedOff));
+    UnityEngine.Object.DestroyImmediate(blocker);blocker=null;
+    cloud=UnityEngine.Object.Instantiate(atmosphere.transform.Find("Nuvem • 0").gameObject);
+    cloud.name="QA real cloud occlusion";cloud.transform.SetParent(null);
+    cloud.transform.position=cam.transform.position+sky.SunDirection*270;
+    cloud.transform.rotation=Quaternion.identity;cloud.transform.localScale=Vector3.one;
+    Shader.SetGlobalFloat("_CityCloudCover",1);
+    var cloudOn=capture("07-cloud-occlusion");mat.SetColor("_SunColor",hiddenSun);var cloudOff=capture(null);mat.SetColor("_SunColor",sun);
+    check("real-cloud-mesh-occludes-sun",changed(cloudOn,cloudOff)<5,"changed center pixels="+changed(cloudOn,cloudOff));
+    return new {passed=passed,unity=Application.unityVersion,checks=checks,folder=folder};
+} finally {
+    if(blocker)UnityEngine.Object.DestroyImmediate(blocker);if(cloud)UnityEngine.Object.DestroyImmediate(cloud);
+    cam.cullingMask=mask;cam.transform.SetPositionAndRotation(origin,rotation);ctx.Follow.enabled=follow;
+    atmosphere.gameObject.SetActive(atmosphereActive);Shader.SetGlobalFloat("_CityCloudCover",cover);
+    ctx.Clock=clock;ctx.Systems.Weather.Request(weather,true);ctx.Systems.SendMessage("UpdateSky");
+    atmosphere.SendMessage("UpdateClouds",0f);RenderSettings.fogEndDistance=fogEnd;
+}

@@ -1,0 +1,181 @@
+{
+    "passed": true,
+    "checks": [
+        {
+            "name": "closed-in-normal-play-and-M-binding",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "probe-is-explicit-only",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "sampled-map-key-opens",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "map-releases-visible-cursor",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "chart-has-native-roads-and-building-footprints",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "projection-roundtrip-and-north-up",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "map-consumes-gameplay-and-emotes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "city-clock-and-traffic-continue",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "world-actions-not-selected-through-map",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "wheel-zooms-at-cursor",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "click-creates-marker",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "drag-pans-without-replacing-marker",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "touch-pointer-also-marks",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "outside-release-recovers-pointer",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "guide-selects-real-place",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "distance-uses-live-player-position",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bus-filter-hides-stops",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bus-filter-restores-stops",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "remove-clears-marker-and-disables-action",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "locate-centers-real-character",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "maximum-zoom-and-disabled-button",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "minimum-zoom-and-disabled-button",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "pan-is-bounded",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "fit-restores-whole-chart",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "escape-closes-map-without-pausing",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "settings-retain-pause",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "map-cannot-cover-settings",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "M-toggles-closed-again",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "gameplay-input-restored-after-closing",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "layout-at-1080p",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "layout-at-4-by-3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compact-layout-hides-guide",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compact-marker-retains-distance-and-touch-removal",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "compact-touch-removes-marker",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

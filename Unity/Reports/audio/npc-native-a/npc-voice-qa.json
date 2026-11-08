@@ -1,0 +1,243 @@
+{
+    "passed": true,
+    "sampleRate": 48000,
+    "frames": 635904,
+    "peak": 0.22852617502212525,
+    "checks": [
+        {
+            "name": "all-18-human-vocal-assets-loaded-with-CC0-provenance",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "only-opt-in-probe-installed",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "five-real-resident-rigs-and-both-stable-voice-tones",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "talk-action-starts-recorded-conversation-and-keeps-Portuguese-text",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "conversation-reaches-real-listener-DSP",
+            "detail": "",
+            "passed": true,
+            "value": 0.046583473682403567
+        },
+        {
+            "name": "voice-follows-moving-speaker-head",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "Esc-freezes-voice-position-and-simulation-clock",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "closing-Esc-resumes-the-same-voice",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "controlling-NPC-interrupts-its-voice",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "resident-pitch-stays-stable-take-0",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "resident-pitch-stays-stable-take-1",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "resident-pitch-stays-stable-take-2",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "resident-pitch-stays-stable-take-3",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "eight-distinct-recorded-conversation-excerpts",
+            "detail": "",
+            "passed": true,
+            "value": 8.0
+        },
+        {
+            "name": "actual-NPC-emote-plays-Laugh",
+            "detail": "npc-laugh-bright-0",
+            "passed": true,
+            "value": 1.0
+        },
+        {
+            "name": "real-DSP-response-Laugh",
+            "detail": "",
+            "passed": true,
+            "value": 0.16671928763389588
+        },
+        {
+            "name": "actual-NPC-emote-plays-Sad",
+            "detail": "npc-sigh-bright-0",
+            "passed": true,
+            "value": 1.0
+        },
+        {
+            "name": "real-DSP-response-Sad",
+            "detail": "",
+            "passed": true,
+            "value": 0.0024828126188367607
+        },
+        {
+            "name": "actual-NPC-emote-plays-Dance",
+            "detail": "npc-cheer-bright-0",
+            "passed": true,
+            "value": 1.0
+        },
+        {
+            "name": "real-DSP-response-Dance",
+            "detail": "",
+            "passed": true,
+            "value": 0.09792504459619522
+        },
+        {
+            "name": "actual-NPC-emote-plays-Wave",
+            "detail": "npc-ack-0",
+            "passed": true,
+            "value": 1.0
+        },
+        {
+            "name": "real-DSP-response-Wave",
+            "detail": "",
+            "passed": true,
+            "value": 0.08345372974872589
+        },
+        {
+            "name": "actual-NPC-emote-plays-Clap",
+            "detail": "npc-cheer-bright-0",
+            "passed": true,
+            "value": 1.0
+        },
+        {
+            "name": "real-DSP-response-Clap",
+            "detail": "",
+            "passed": true,
+            "value": 0.09782536327838898
+        },
+        {
+            "name": "surprise-replaces-dialogue-with-a-real-gasp-once",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "wall-attenuates-and-lowpasses-NPC-voice",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "clearing-wall-restores-voice",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "effects-slider-mutes-live-NPC-voice-DSP",
+            "detail": "",
+            "passed": true,
+            "value": 2.031546294804216e-22
+        },
+        {
+            "name": "out-of-range-voice-returns-to-pool",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "routine-starts-a-real-social-conversation",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "both-NPCs-take-audible-turns-without-overlap",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "bounded-pool-drops-fifth-background-speaker",
+            "detail": "",
+            "passed": true,
+            "value": 4.0
+        },
+        {
+            "name": "addressed-speaker-replaces-only-background",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "interrupting-all-speakers-fully-returns-pool",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "NPC-interruption-preserves-unrelated-effects",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "all-four-voice-slots-reuse-cleanly-without-new-emitters",
+            "detail": "",
+            "passed": true,
+            "value": 4.0
+        },
+        {
+            "name": "downed-NPC-cannot-keep-speaking",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        },
+        {
+            "name": "native-DSP-capture-has-speech-with-headroom",
+            "detail": "",
+            "passed": true,
+            "value": 0.22852617502212525
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "",
+            "passed": true,
+            "value": 0.0
+        }
+    ],
+    "errors": []
+}

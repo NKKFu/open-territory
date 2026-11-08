@@ -1,0 +1,82 @@
+{
+    "passed": false,
+    "floorSamples": 574,
+    "checks": [
+        {
+            "name": "relocated-station-ready",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "map-and-place-use-new-fire-station",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "bike-shop-preserved-at-original-site",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-neighbour-tree-wall-or-furniture-overlap",
+            "detail": "Colisão-16881,Colisão-16880",
+            "passed": false
+        },
+        {
+            "name": "walls-roof-trim-and-garage-are-red",
+            "detail": "paintedRenderers=39",
+            "passed": true
+        },
+        {
+            "name": "water-interaction-and-hack-moved",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "firefighter-and-bike-mechanic-both-present",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "navigation-reconnected-to-existing-sidewalk",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "interior-and-both-street-approaches-have-continuous-floor",
+            "detail": "samples=574 missing=0",
+            "passed": true
+        },
+        {
+            "name": "driveway-and-pedestrian-access-unobstructed",
+            "detail": "blocked=0",
+            "passed": true
+        },
+        {
+            "name": "walk-0-12.4",
+            "detail": "actual=(0.00, 0.21, 12.45)",
+            "passed": true
+        },
+        {
+            "name": "walk-0-9.7",
+            "detail": "actual=(0.00, 0.22, 9.74)",
+            "passed": true
+        },
+        {
+            "name": "walk--8.5-26.5",
+            "detail": "actual=(-8.50, 0.25, 26.44)",
+            "passed": true
+        },
+        {
+            "name": "new-fire-truck-parking-record",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-runtime-errors",
+            "detail": "errors=0",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

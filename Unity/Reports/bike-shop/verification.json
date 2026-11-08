@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "completedAtUtc": "2026-11-08T11:50:04.833096+00:00",
+  "build": {
+    "passed": true,
+    "result": "Succeeded",
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\BikeShop-20261108\\BaiaDoSol.exe",
+    "snapshot": "C:\\Users\\nelso\\open-territory\\Unity\\ValidationProjects\\BikeShop-20261108",
+    "completedAtUtc": "2026-11-08T11:47:17.7187522Z",
+    "errors": 0,
+    "warnings": 3,
+    "bytes": 1803051851
+  },
+  "buildProcess": {
+    "completedAtUtc": "2026-11-08T11:47:21.5506689Z",
+    "processExitCode": 0,
+    "output": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\BikeShop-20261108\\BaiaDoSol.exe"
+  },
+  "native": {
+    "verifiedAtUtc": "2026-11-08T11:49:12.8935987Z",
+    "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\BikeShop-20261108\\BaiaDoSol.exe",
+    "assemblySha256": "056E95048110A82D2DF819C12360E3E38BC2ADF4474C13892749576D4AEA9191",
+    "assemblyChangedDuringRun": false,
+    "passed": true,
+    "exitCode": 0,
+    "checks": 45,
+    "routeSamples": 666,
+    "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\bike-shop\\native\\bike-shop-qa.json",
+    "graphics": "Direct3D 12",
+    "requestedGraphicsApi": "default",
+    "arguments": [
+      "-batchmode",
+      "-screen-fullscreen",
+      "0",
+      "-screen-width",
+      "1280",
+      "-screen-height",
+      "800",
+      "--city-bike-shop-qa",
+      "--city-report-dir",
+      "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\bike-shop\\native\"",
+      "-logFile",
+      "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\bike-shop\\native\\player.log\""
+    ]
+  },
+  "preservation": {
+    "passed": true,
+    "verifiedAtUtc": "2026-11-08T11:04:58.3766864Z",
+    "preservedColliders": 31908,
+    "retiredColliders": 55,
+    "retiredObjects": 19,
+    "modifiedFloorChunks": 4,
+    "unexpected": []
+  },
+  "authoredScene": {
+    "componentMatchesLiveScene": true,
+    "componentSha256": "c55baff24d66f8dadfdd3b8f073d83ada8676a2b1629e2b188ec1e5511768cb4",
+    "assetMatchesLiveScene": true
+  },
+  "freezeRecord": "frozen-content.json",
+  "roadClearance": "road-clearance.json",
+  "launcher": "C:\\Users\\nelso\\open-territory\\Unity\\Jogar-Bicicletaria.ps1"
+}

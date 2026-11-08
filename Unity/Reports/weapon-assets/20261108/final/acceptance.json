@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "verifiedAtUtc": "2026-11-08T10:05:39.944581+00:00",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\WeaponAssets-20261108-Verified\\BaiaDoSol.exe",
+  "launcher": "C:\\Users\\nelso\\open-territory\\Unity\\Jogar-Armas-Assets.ps1",
+  "fullBuild": true,
+  "assemblySha256": "3907445BB3FCC521F885C29C76436BB8120A562EC1D907AD60744F277FF832BE",
+  "graphicsApi": "Direct3D12",
+  "resolution": "1280x800",
+  "checks": 137,
+  "exitCodes": [
+    0,
+    0
+  ],
+  "verifiedDeliveryFiles": 143,
+  "sources": "Unity/AssetLibrary/WeaponModels/CREDITS.txt",
+  "runs": [
+    {
+      "verifiedAtUtc": "2026-11-08T10:03:32.5661393Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\WeaponAssets-20261108-Verified\\BaiaDoSol.exe",
+      "assemblySha256": "3907445BB3FCC521F885C29C76436BB8120A562EC1D907AD60744F277FF832BE",
+      "graphicsApi": "Player default",
+      "exitCode": 0,
+      "passed": true,
+      "checks": 70,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\weapon-assets\\20261108\\final\\weapons-acceptance\\weapons-qa.json",
+      "captures": true
+    },
+    {
+      "verifiedAtUtc": "2026-11-08T10:04:17.4693245Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\Deliveries\\WeaponAssets-20261108-Verified\\BaiaDoSol.exe",
+      "assemblySha256": "3907445BB3FCC521F885C29C76436BB8120A562EC1D907AD60744F277FF832BE",
+      "graphicsApi": "Player default",
+      "exitCode": 0,
+      "passed": true,
+      "checks": 67,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\weapon-assets\\20261108\\final\\grips-acceptance\\firearm-injury-qa.json",
+      "resolution": "1280x800",
+      "captures": true
+    }
+  ],
+  "editorAtHandoff": {
+    "scene": "Assets/Scenes/BaiaDoSol.unity",
+    "dirty": false,
+    "playing": true,
+    "ownEditorPlayTests": false,
+    "note": "A concurrently started Play session was observed and preserved."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "verifiedAtUtc": "2026-11-08T08:13:59.9709726Z",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrouchParkour-Final-20261108\\BaiaDoSol.exe",
+  "assemblySha256": "99DDE309615AE64E1579860E4EA80BC3FEB611A55FD5AA07A4887F22A567D811",
+  "checks": 6,
+  "exitCode": 0,
+  "cameraOnly": false,
+  "crouchOnly": false,
+  "carOnly": true,
+  "graphics": false,
+  "arguments": [
+    "-batchmode",
+    "-screen-fullscreen",
+    "0",
+    "-screen-width",
+    "960",
+    "-screen-height",
+    "540",
+    "--city-parkour-qa",
+    "--city-report-dir",
+    "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\car-roof-support\"",
+    "-logFile",
+    "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\car-roof-support\\player.log\"",
+    "-nographics",
+    "--city-parkour-car-qa"
+  ],
+  "passed": true,
+  "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\car-roof-support\\parkour-qa.json"
+}

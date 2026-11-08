@@ -1,0 +1,134 @@
+{
+  "verifiedAtUtc": "2026-11-08T08:30:55.2193633Z",
+  "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrouchParkour-Final-20261108\\BaiaDoSol.exe",
+  "assemblySha256": "28FB967A1AF6D5E94C2111401616E37F21E542DA1593422733CCC8AB9472F0A9",
+  "fullBuildSucceeded": true,
+  "requestedGameplayPassed": true,
+  "gameplayAssertions": 255,
+  "defaultCityChecks": 4,
+  "sourceManifest": "final-source-manifest.json",
+  "runtimeSourceChangesSinceBuild": [
+    null
+  ],
+  "nativeRuns": [
+    {
+      "verifiedAtUtc": "2026-11-08T08:19:22.1917241Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrouchParkour-Final-20261108\\BaiaDoSol.exe",
+      "assemblySha256": "28FB967A1AF6D5E94C2111401616E37F21E542DA1593422733CCC8AB9472F0A9",
+      "checks": 223,
+      "exitCode": 0,
+      "cameraOnly": false,
+      "crouchOnly": false,
+      "carOnly": false,
+      "graphics": true,
+      "arguments": [
+        "-batchmode",
+        "-screen-fullscreen",
+        "0",
+        "-screen-width",
+        "960",
+        "-screen-height",
+        "540",
+        "--city-parkour-qa",
+        "--city-report-dir",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\native-complete\"",
+        "-logFile",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\native-complete\\player.log\""
+      ],
+      "passed": true,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\native-complete\\parkour-qa.json"
+    },
+    {
+      "verifiedAtUtc": "2026-11-08T08:20:42.0110666Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrouchParkour-Final-20261108\\BaiaDoSol.exe",
+      "assemblySha256": "28FB967A1AF6D5E94C2111401616E37F21E542DA1593422733CCC8AB9472F0A9",
+      "passed": true,
+      "exitCode": 0,
+      "checks": 32,
+      "arguments": [
+        "-batchmode",
+        "-screen-fullscreen",
+        "0",
+        "-screen-width",
+        "1280",
+        "-screen-height",
+        "800",
+        "--city-locomotion-qa",
+        "--city-report-dir",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\native-locomotion\"",
+        "-logFile",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\native-locomotion\\player.log\""
+      ],
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\native-locomotion\\qa.json"
+    },
+    {
+      "verifiedAtUtc": "2026-11-08T08:27:53.0701722Z",
+      "startedAtUtc": "2026-11-08T08:27:37.9867666Z",
+      "passed": true,
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrouchParkour-Final-20261108\\BaiaDoSol.exe",
+      "assemblySha256": "28FB967A1AF6D5E94C2111401616E37F21E542DA1593422733CCC8AB9472F0A9",
+      "exitCode": 0,
+      "checks": [
+        {
+          "name": "walking-through-real-input-poller",
+          "passed": true,
+          "detail": "distance=3.94247436523438"
+        },
+        {
+          "name": "pause-stops-city-clock",
+          "passed": true
+        },
+        {
+          "name": "native-session-has-no-runtime-errors",
+          "passed": true,
+          "detail": "errors=0"
+        },
+        {
+          "name": "normal-exit-with-default-graphics-api",
+          "passed": true,
+          "detail": "exit=0"
+        }
+      ]
+    },
+    {
+      "verifiedAtUtc": "2026-11-08T08:27:27.944591Z",
+      "executable": "C:\\Users\\nelso\\open-territory\\Unity\\OpenTerritory\\Builds\\CrouchParkour-Final-20261108\\BaiaDoSol.exe",
+      "assemblySha256": "28FB967A1AF6D5E94C2111401616E37F21E542DA1593422733CCC8AB9472F0A9",
+      "exitCode": 0,
+      "graphicsApi": "d3d11",
+      "arguments": [
+        "-batchmode",
+        "-screen-fullscreen",
+        "0",
+        "-screen-width",
+        "1280",
+        "-screen-height",
+        "800",
+        "--city-seat-camera-qa",
+        "--city-report-dir",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\native-seats-d3d11\"",
+        "-logFile",
+        "\"C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\native-seats-d3d11\\player.log\"",
+        "-force-d3d11"
+      ],
+      "passed": true,
+      "checks": 50,
+      "report": "C:\\Users\\nelso\\open-territory\\Unity\\Reports\\crouch-parkour\\native-seats-d3d11\\seat-camera-qa.json"
+    }
+  ],
+  "knownGraphicsIssue": {
+    "api": "Direct3D 12 (default)",
+    "phase": "seated-camera QA process shutdown",
+    "module": "D3D12Core.dll",
+    "exitCode": -1073741819,
+    "assertionsPassed": true,
+    "assertionCount": 50,
+    "repeatedRuns": [
+      "native-seats",
+      "native-seats-confirmed"
+    ],
+    "diagnostic": "d3d12-shutdown-fault.json",
+    "d3d11SameBuildPassed": true,
+    "defaultCityNormalExit": true
+  }
+}
